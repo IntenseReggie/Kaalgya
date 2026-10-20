@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KAALGYA | Ancient Wisdom • Modern Intelligence</title>
     
-    <!-- Meta & Social Sharing (Ads & SEO Ready) -->
+    <!-- Meta & Social Sharing -->
     <meta name="description" content="पूज्य कालज्ञ गुरु जी - वैदिक ज्योतिष, संकट निवारण एवं आध्यात्मिक तंत्र विज्ञान। 15 वर्षों का अनुसंधान, 5000+ प्रामाणिक कुंडलियाँ।">
     <meta property="og:title" content="KAALGYA - Decoding Destiny, Guiding Life">
     <meta property="og:description" content="जीवन की हर समस्या का वैज्ञानिक, वैदिक एवं तांत्रिक रक्षा समाधान।">
@@ -35,7 +35,7 @@
                             200: '#FDEBB3',
                             300: '#FBDD80',
                             400: '#F9CF4D',
-                            500: '#D4AF37', // Kaalgya Divine Gold
+                            500: '#D4AF37',
                             600: '#B8860B',
                             700: '#996515',
                             800: '#7B4A12',
@@ -441,7 +441,6 @@
                             </div>
                         </div>
 
-                        <!-- Specialized Ekadashi & Paran Box -->
                         <div class="p-4 rounded-2xl bg-gradient-to-r from-amber-950/40 via-obsidian-900 to-obsidian-900 border border-amber-500/40 mb-4">
                             <div class="flex items-center justify-between mb-2">
                                 <span class="text-xs text-amber-400 uppercase tracking-widest font-bold flex items-center gap-1.5">
@@ -894,7 +893,7 @@
             </div>
         </section>
 
-        <!-- REDESIGNED REVIEWS SECTION: SHASTRIYA & CONVERSION-OPTIMIZED -->
+        <!-- ANUBHUT SATYA & JATAK EXPERIENCES (LIVE GOOGLE SHEET READING) -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10 pb-6 border-b border-gold-500/20">
                 <div>
@@ -908,7 +907,6 @@
                 </div>
                 
                 <div class="flex flex-wrap items-center gap-3">
-                    <!-- Discreet API Settings Icon for Admin Only -->
                     <button onclick="openAppsScriptSettingsModal()" title="व्यवस्थापन सेटिंग्स" class="p-2.5 rounded-xl border border-slate-700 text-slate-400 hover:text-gold-300 hover:border-gold-500/40 text-xs transition-all">
                         <i data-lucide="settings" class="w-4 h-4"></i>
                     </button>
@@ -918,6 +916,7 @@
                 </div>
             </div>
 
+            <!-- Dynamic Reviews Loaded from Google Sheets -->
             <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </section>
 
@@ -943,7 +942,6 @@
                 </div>
             </div>
 
-            <!-- Ads Compliance Disclaimer -->
             <div class="pt-6 border-t border-slate-800 text-[11px] text-gray-500 leading-relaxed text-center">
                 <strong>अस्वीकरण (Disclaimer):</strong> ज्योतिष, अंकशास्त्र एवं तांत्रिक परामर्श प्राचीन भारतीय परंपरा व शास्त्रसम्मत मान्यताओं पर आधारित हैं। यह किसी भी प्रकार के चिकित्सा अथवा विधिक निर्णय का विकल्प नहीं है। परिणाम व्यक्ति के व्यक्तिगत प्रारब्ध, साधना व कर्मों पर निर्भर करते हैं।
             </div>
@@ -1072,468 +1070,4 @@
                         <input id="client-time" type="time" required class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
                     </div>
                     <div>
-                        <label class="block text-xs text-gray-300 font-medium mb-1">जन्म स्थान (शहर / राज्य)</label>
-                        <input id="client-city" type="text" required placeholder="जैसे: जयपुर, राजस्थान" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-xs text-gray-300 font-medium mb-1">मुख्य समस्या या प्रश्न</label>
-                    <textarea id="client-concern" rows="3" required placeholder="अपनी वर्तमान चिंता, नौकरी, विवाह या कर्ज आदि के बारे में स्पष्ट लिखें..." class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400"></textarea>
-                </div>
-
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(212,175,55,0.4)]">
-                    <i data-lucide="calendar-check" class="w-4 h-4"></i> परामर्श विवरण प्रेषित करें
-                </button>
-            </form>
-            <p class="text-[10px] text-gray-500 text-center mt-3">यह विवरण सीधे पूज्य गुरु जी के सुरक्षित CRM में दर्ज होगा।</p>
-        </div>
-    </div>
-
-    <!-- MODAL: ADD REVIEW -->
-    <div id="review-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-md w-full relative">
-            <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-
-            <h3 class="text-xl font-bold font-cinzel text-white mb-1">अनुभव साझा करें</h3>
-            <p class="text-xs text-gray-400 mb-5">आपकी अनुभूत सत्य कथा अन्य साधकों एवं जातकों का संशय दूर करेगी।</p>
-
-            <form onsubmit="submitReviewToCRM(event)" class="space-y-3.5">
-                <input id="rev-name" type="text" required placeholder="आपका नाम" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                <input id="rev-city" type="text" required placeholder="शहर (उदा. दिल्ली, मुंबई)" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                
-                <select id="rev-category" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                    <option value="व्यापार व कर्ज">व्यापार व कर्ज मुक्ति</option>
-                    <option value="विवाह व दांपत्य">विवाह व दांपत्य समाधान</option>
-                    <option value="ब्रह्मास्त्र व तांत्रिक रक्षा">ब्रह्मास्त्र व प्रत्यंगिरा रक्षा</option>
-                    <option value="करियर व प्रमोशन">करियर व पदोन्नति</option>
-                    <option value="दोष व शांति">ग्रह शांति व अनुष्ठान</option>
-                </select>
-
-                <textarea id="rev-text" rows="3" required placeholder="गुरु जी के परामर्श या उपाय का आपके जीवन पर क्या प्रभाव पड़ा?" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400"></textarea>
-
-                <button type="submit" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-all">
-                    अनुभव दर्ज करें
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- MODAL: CAREER APPLICATION -->
-    <div id="career-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-md w-full relative">
-            <button onclick="closeCareerModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-
-            <h3 class="text-xl font-bold font-cinzel text-white mb-1">गुरुकुल कार्यभार आवेदन</h3>
-            <p id="career-role-title" class="text-xs text-gold-400 mb-5">पद: शोधकर्ता</p>
-
-            <form onsubmit="submitCareerApplication(event)" class="space-y-3">
-                <input id="car-name" type="text" required placeholder="आपका नाम" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                <input id="car-phone" type="tel" required placeholder="मोबाइल नंबर" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                <input id="car-city" type="text" required placeholder="वर्तमान शहर" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400">
-                <textarea id="car-exp" rows="3" required placeholder="आपका अनुभव या योग्यता का संक्षिप्त विवरण..." class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-sm focus:outline-none focus:border-gold-400"></textarea>
-
-                <button type="submit" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-all">
-                    आवेदन प्रेषित करें
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- MODAL: GOOGLE APPS SCRIPT SETTINGS (Hidden from Public Eyes) -->
-    <div id="gas-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-xl w-full relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeAppsScriptSettingsModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
-
-            <div class="flex items-center gap-3 mb-3">
-                <i data-lucide="settings" class="w-6 h-6 text-gold-400"></i>
-                <h3 class="text-xl font-bold font-cinzel text-white">सिस्टम डेटाबेस व्यवस्थापन</h3>
-            </div>
-            <p class="text-xs text-gray-300 leading-relaxed mb-4">
-                Google Apps Script Web App Endpoint URL दर्ज करें:
-            </p>
-
-            <div class="space-y-3 mb-4">
-                <input id="gas-url-input" type="url" placeholder="https://script.google.com/macros/s/.../exec" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/40 text-white text-xs font-mono focus:outline-none focus:border-gold-400">
-                <button onclick="saveAppsScriptUrl()" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider">
-                    सुरक्षित करें
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- LOGIC & SCRIPTS -->
-    <script>
-        lucide.createIcons();
-
-        const CONFIG = {
-            whatsappNumber: "919999999999", // Apna 10-digit WhatsApp number yahan dalein
-            youtubeChannelUrl: "https://www.youtube.com/@Kaalgya",
-            crmDefaultGasUrl: ""
-        };
-
-        // Starfield Canvas
-        const canvas = document.getElementById('cosmic-canvas');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-
-        const starsGeometry = new THREE.BufferGeometry();
-        const starsCount = 1200;
-        const starPositions = new Float32Array(starsCount * 3);
-        for (let i = 0; i < starsCount * 3; i += 3) {
-            starPositions[i] = (Math.random() - 0.5) * 2000;
-            starPositions[i + 1] = (Math.random() - 0.5) * 2000;
-            starPositions[i + 2] = (Math.random() - 0.5) * 2000;
-        }
-        starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
-        const starsMaterial = new THREE.PointsMaterial({ color: 0xD4AF37, size: 1.6, transparent: true, opacity: 0.7 });
-        const starField = new THREE.Points(starsGeometry, starsMaterial);
-        scene.add(starField);
-        camera.position.z = 1000;
-
-        function animateStars() {
-            requestAnimationFrame(animateStars);
-            starField.rotation.y += 0.0003;
-            starField.rotation.x += 0.0001;
-            renderer.render(scene, camera);
-        }
-        animateStars();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Audio
-        let synth = null;
-        function playCalmingChime() {
-            try {
-                if (!synth) {
-                    synth = new Tone.PolySynth(Tone.Synth, {
-                        oscillator: { type: "sine" },
-                        envelope: { attack: 0.8, decay: 1.5, sustain: 0.6, release: 2.5 }
-                    }).toDestination();
-                }
-                Tone.start();
-                synth.triggerAttackRelease(["C#4", "G#4", "C#5"], "2.5s");
-            } catch (e) {
-                console.log("Audio initialized");
-            }
-        }
-
-        // Sukoon Kaksh Problem Selector
-        const problemData = {
-            karz: {
-                title: "कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान",
-                message: `"वत्स! समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है। यह आपकी व्यक्तिगत विफलता नहीं, अपितु ग्रहों के गोचर का चक्र है।"`,
-                remedy: "मंगलवार के दिन ऋणमोचक मंगल स्तोत्र का पाठ करें तथा 3 चुटकी लाल मसूर की दाल बहते जल में प्रवाहित करें। गुरु जी से अपनी सटीक दशा की डिग्री जाँच करवाएं।"
-            },
-            career: {
-                title: "करियर में ठहराव, विघ्न व पदोन्नति मार्गदर्शन",
-                message: `"कर्म कभी व्यर्थ नहीं जाता। दशमेश का सूर्य अथवा शनि के साथ संबंध जब कमजोर होता है, तो प्रतिभा होने पर भी प्रतिष्ठा रुक जाती है। समय को दोष देने के स्थान पर दशम भाव को सक्रिय कीजिए, मार्ग स्वतः खुलेगा।"`,
-                remedy: "प्रातः तांबे के लोटे में अक्षत और रोली डालकर सूर्य देव को अर्घ्य दें। कार्यस्थल पर उत्तर-पूर्व दिशा को सदैव स्वच्छ व प्रकाशमय रखें।"
-            },
-            breakup: {
-                title: "दांपत्य कलह, संबंध विच्छेद व विवाह विलंब समाधान",
-                message: `"संबंधों की डोर केवल दो व्यक्तियों से नहीं, बल्कि दो कुंडलियों के शुक्र, गुरु और मंगल के तालमेल से बंधती है। सप्तम भाव के कलह को शांति से सुलझाया जा सकता है। व्यर्थ का संताप त्यागें।"`,
-                remedy: "गुरुवार के दिन भगवान लक्ष्मीनारायण को हल्दी युक्त पीले चने की दाल अर्पित करें। शयनकक्ष में दक्षिण-पश्चिम दिशा का संतुलन बनाएं।"
-            },
-            anxiety: {
-                title: "मानसिक अशांति, अवसाद व अज्ञात भय से मुक्ति",
-                message: `"चंद्रमा मन का स्वामी है। जब चंद्र पर राहु, केतु अथवा शनि की दृष्टि होती है, तो मन बिना कारण व्यथित, भयभीत और अनिद्रा का शिकार हो जाता है। आप अकेले नहीं हैं, आपका चित्त शीघ्र शांत होगा।"`,
-                remedy: "सोमवार को चांदी के पात्र से जल पिएं तथा रात्रि में सोते समय सिरहाने जल का पात्र रखकर प्रातः किसी पौधे की जड़ में डाल दें।"
-            },
-            rahu: {
-                title: "राहु-शनि महादशा व साढ़ेसाती का सात्विक शोधन",
-                message: `"राहु भ्रम का कारक है और शनि अनुशासन का। इन दशाओं का उद्देश्य आपका विनाश करना नहीं, बल्कि आपकी आत्मा को निखारना है। जब आप सत्य और नियम पर चलते हैं, तो यही ग्रह राजा बना देते हैं।"`,
-                remedy: "शनिवार को संध्या काल में पीपल के वृक्ष के नीचे तिल के तेल का दीपक प्रज्वलित करें और ॐ शं शनैश्चराय नमः का 108 बार जाप करें।"
-            }
-        };
-
-        function selectProblem(key) {
-            document.querySelectorAll('.problem-btn').forEach(btn => {
-                btn.classList.remove('bg-gold-500/20', 'border-gold-400', 'text-gold-300');
-            });
-            const activeBtn = document.getElementById(`btn-${key}`);
-            if (activeBtn) activeBtn.classList.add('bg-gold-500/20', 'border-gold-400', 'text-gold-300');
-
-            const data = problemData[key];
-            if (data) {
-                document.getElementById('console-title').innerText = data.title;
-                document.getElementById('console-message').innerText = data.message;
-                document.getElementById('console-remedy').innerText = data.remedy;
-            }
-        }
-
-        // Gupt Man Ki Tijori
-        function saveSecretLocally() {
-            const pin = document.getElementById('vault-pin').value || "1008";
-            const text = document.getElementById('secret-text').value;
-            if (!text.trim()) { alert("कृपया पहले अपनी गुप्त बात या चिंता लिखें।"); return; }
-            localStorage.setItem('kaalgya_vault_pin', pin);
-            localStorage.setItem('kaalgya_vault_secret', btoa(unescape(encodeURIComponent(text))));
-            alert("✨ आपकी गुप्त चिंता सुरक्षित रूप से तिजोरी में लॉक कर दी गई है।");
-        }
-
-        function loadSecretLocally() {
-            const enteredPin = document.getElementById('vault-pin').value;
-            const savedPin = localStorage.getItem('kaalgya_vault_pin');
-            const savedSecret = localStorage.getItem('kaalgya_vault_secret');
-            if (!savedSecret) { alert("तिजोरी में अभी कोई गुप्त विचार सुरक्षित नहीं है।"); return; }
-            if (enteredPin !== savedPin) { alert("गलत पिन!"); return; }
-            document.getElementById('secret-text').value = decodeURIComponent(escape(atob(savedSecret)));
-            alert("तिजोरी खुल गई!");
-        }
-
-        function burnMentalBurden() {
-            const text = document.getElementById('secret-text').value;
-            if (!text.trim()) { alert("कृपया पहले वह चिंता लिखें जिसे आप विसर्जित करना चाहते हैं।"); return; }
-            const container = document.getElementById('burnable-container');
-            container.classList.add('burn-away');
-            playCalmingChime();
-            setTimeout(() => {
-                document.getElementById('secret-text').value = "";
-                container.classList.remove('burn-away');
-                document.getElementById('burn-status').classList.remove('hidden');
-            }, 1800);
-        }
-
-        // WhatsApp Panchang Subscription
-        function subscribeWhatsAppPanchang(e) {
-            e.preventDefault();
-            const name = document.getElementById('wa-name').value;
-            const phone = document.getElementById('wa-phone').value;
-            const message = ` सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक एकादशी, पारण समय व शुभ मुहूर्त पंचांग अपने व्हाट्सएप नंबर (${phone}) पर निःशुल्क प्राप्त करना चाहता/चाहती हूँ।`;
-            const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(waUrl, '_blank');
-        }
-
-        // Subscribe-to-Unlock Engine
-        let pendingPlaylistUrl = "";
-        let isChannelSubscribed = localStorage.getItem('kaalgya_yt_subscribed') === 'true';
-
-        function triggerPlaylistRedirect(playlistUrl) {
-            pendingPlaylistUrl = playlistUrl;
-            if (isChannelSubscribed) {
-                window.open(pendingPlaylistUrl, '_blank');
-            } else {
-                openUnlockModal();
-            }
-        }
-
-        function openUnlockModal() {
-            document.getElementById('unlock-modal').classList.remove('hidden');
-            document.getElementById('unlock-action-box').classList.remove('hidden');
-            document.getElementById('unlock-timer-box').classList.add('hidden');
-        }
-
-        function closeUnlockModal() {
-            document.getElementById('unlock-modal').classList.add('hidden');
-        }
-
-        function proceedToSubscribeAndOpen() {
-            window.open(`${CONFIG.youtubeChannelUrl}?sub_confirmation=1`, '_blank');
-            document.getElementById('unlock-action-box').classList.add('hidden');
-            document.getElementById('unlock-timer-box').classList.remove('hidden');
-            
-            const progress = document.getElementById('unlock-progress');
-            let width = 0;
-            const interval = setInterval(() => {
-                width += 33.3;
-                progress.style.width = width + '%';
-                if (width >= 100) {
-                    clearInterval(interval);
-                    isChannelSubscribed = true;
-                    localStorage.setItem('kaalgya_yt_subscribed', 'true');
-                    closeUnlockModal();
-                    if (pendingPlaylistUrl) window.open(pendingPlaylistUrl, '_blank');
-                }
-            }, 900);
-        }
-
-        function bypassDirectOpen() {
-            isChannelSubscribed = true;
-            localStorage.setItem('kaalgya_yt_subscribed', 'true');
-            closeUnlockModal();
-            if (pendingPlaylistUrl) window.open(pendingPlaylistUrl, '_blank');
-        }
-
-        function handleDirectSubscribe() {
-            window.open(`${CONFIG.youtubeChannelUrl}?sub_confirmation=1`, '_blank');
-            setTimeout(() => {
-                isChannelSubscribed = true;
-                localStorage.setItem('kaalgya_yt_subscribed', 'true');
-                const subTag = document.getElementById('sub-status-tag');
-                if (subTag) subTag.classList.remove('hidden');
-            }, 3000);
-        }
-
-        // Guru Thoughts
-        const guruThoughts = [
-            `"वत्स! चेहरे पर इतनी चिंता क्यों? क्या मन अशांत है? संकोच छोड़िए, मुझे बताइए क्या समस्या है?"`,
-            `"जो घटित हो चुका है, वह प्रारब्ध था। जो आगे होने वाला है, वह आपके आज के सही निर्णय और शुद्ध कर्म से बदलेगा।"`,
-            `"कुंडली भाग्य की सीमा नहीं, बल्कि संभावनाओं का नक्शा है। सही समय पर उठाया गया कदम अंधकार मिटा देता है।"`,
-            `"यदि संसार का कोई मार्ग न दिखे, तो माँ प्रत्यंगिरा व ब्रह्मास्त्र विधान का आश्रय लें। संकट का शमन निश्चित है।"`,
-            `"आर्थिक तंगी हो या मन का भारीपन, हर प्रश्न का एक सटीक खगोलीय उत्तर है। आइए, इसका समाधान खोजें।"`
-        ];
-        let currentThoughtIdx = 0;
-
-        function guruSpeakNextThought() {
-            currentThoughtIdx = (currentThoughtIdx + 1) % guruThoughts.length;
-            document.getElementById('guru-bubble-text').innerText = guruThoughts[currentThoughtIdx];
-        }
-
-        function toggleGuruBubble() {
-            const bubble = document.getElementById('guru-speech-bubble');
-            bubble.classList.toggle('hidden');
-            if (!bubble.classList.contains('hidden')) guruSpeakNextThought();
-        }
-
-        function closeGuruBubble() {
-            document.getElementById('guru-speech-bubble').classList.add('hidden');
-        }
-
-        // Experiences Render (Authentic & Inspiring)
-        const cachedReviews = [
-            { name: "राजेश सिंघल", city: "गाजियाबाद (NCR)", category: "व्यापार व कर्ज", rating: 5, text: "व्यापार में 3 साल से भारी मंदी थी। गुरु जी के सूक्ष्म गोचर विश्लेषण और ब्रह्मास्त्र उपाय से 6 माह में समस्त स्थिति संभल गई। कोई दिखावा नहीं, केवल सत्य वैदिक अनुभव।" },
-            { name: "डॉ. अलका मेहता", city: "जयपुर", category: "विवाह व दांपत्य", rating: 5, text: "बेटी के विवाह में 4 वर्ष से लगातार रुकावटें आ रही थीं। गुरु जी ने सप्तमेश का सटीक शोधन कराया और 3 महीने में अत्यंत सुयोग्य परिवार से रिश्ता तय हो गया।" },
-            { name: "अमित कुमार वर्मा", city: "लखनऊ", category: "ब्रह्मास्त्र व तांत्रिक रक्षा", rating: 5, text: "शत्रु बाधा और अज्ञात भय से पूरा परिवार त्रस्त था। माँ प्रत्यंगिरा अनुष्ठान के बाद घर में अद्भुत सकारात्मक शांति व सुरक्षा का वास हुआ।" }
-        ];
-
-        function renderReviews() {
-            const container = document.getElementById('reviews-container');
-            if (!container) return;
-            container.innerHTML = "";
-            cachedReviews.forEach(rev => {
-                const card = document.createElement('div');
-                card.className = "cosmic-glass border border-gold-500/30 rounded-2xl p-6 hover:border-gold-400 transition-all flex flex-col justify-between";
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center justify-between mb-3">
-                            <span class="text-xs text-gold-400 font-mono tracking-wider">${rev.category}</span>
-                            <div class="flex text-gold-400 text-xs">★★★★★</div>
-                        </div>
-                        <p class="text-xs text-gray-200 leading-relaxed mb-4 font-sans">"${rev.text}"</p>
-                    </div>
-                    <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
-                        <span class="font-bold text-white">${rev.name}</span>
-                        <span class="text-gray-400">${rev.city}</span>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-        renderReviews();
-
-        // Booking Modal
-        function openBookingModal(topic) {
-            document.getElementById('booking-modal-topic').innerText = topic || "वैदिक परामर्श";
-            document.getElementById('booking-modal').classList.remove('hidden');
-        }
-        function closeBookingModal() {
-            document.getElementById('booking-modal').classList.add('hidden');
-        }
-
-        function submitConsultationForm(e) {
-            e.preventDefault();
-            const payload = {
-                type: "consultation",
-                name: document.getElementById('client-name').value,
-                phone: document.getElementById('client-phone').value,
-                dob: document.getElementById('client-dob').value,
-                time: document.getElementById('client-time').value,
-                city: document.getElementById('client-city').value,
-                concern: document.getElementById('client-concern').value,
-                topic: document.getElementById('booking-modal-topic').innerText
-            };
-
-            const gasEndpoint = localStorage.getItem('kaalgya_gas_url') || CONFIG.crmDefaultGasUrl;
-            if (gasEndpoint) {
-                fetch(gasEndpoint, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                }).catch(err => console.log("CRM Log:", err));
-            }
-
-            const waMsg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मैंने परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
-            const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
-            
-            alert("✨ आपका परामर्श विवरण सुरक्षित दर्ज हो गया है। अब आपको WhatsApp पर कनेक्ट किया जा रहा है।");
-            closeBookingModal();
-            window.open(waUrl, '_blank');
-        }
-
-        // Review Modal
-        function openReviewModal() { document.getElementById('review-modal').classList.remove('hidden'); }
-        function closeReviewModal() { document.getElementById('review-modal').classList.add('hidden'); }
-
-        function submitReviewToCRM(e) {
-            e.preventDefault();
-            const newRev = {
-                type: "review",
-                name: document.getElementById('rev-name').value,
-                city: document.getElementById('rev-city').value,
-                category: document.getElementById('rev-category').value,
-                rating: 5,
-                text: document.getElementById('rev-text').value
-            };
-
-            cachedReviews.unshift(newRev);
-            renderReviews();
-
-            const gasEndpoint = localStorage.getItem('kaalgya_gas_url') || CONFIG.crmDefaultGasUrl;
-            if (gasEndpoint) {
-                fetch(gasEndpoint, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(newRev)
-                }).catch(err => console.log("Review CRM Log:", err));
-            }
-
-            alert("धन्यवाद! आपका अनुभव सुरक्षित जोड़ दिया गया है।");
-            closeReviewModal();
-        }
-
-        // Career Application
-        function openCareerModal(role) {
-            document.getElementById('career-role-title').innerText = "पद: " + role;
-            document.getElementById('career-modal').classList.remove('hidden');
-        }
-        function closeCareerModal() { document.getElementById('career-modal').classList.add('hidden'); }
-
-        function submitCareerApplication(e) {
-            e.preventDefault();
-            const name = document.getElementById('car-name').value;
-            const phone = document.getElementById('car-phone').value;
-            const city = document.getElementById('car-city').value;
-            const exp = document.getElementById('car-exp').value;
-            const role = document.getElementById('career-role-title').innerText;
-
-            const waMsg = `सादर प्रणाम! कालज्ञ गुरुकुल कार्यभार हेतु आवेदन:\n${role}\nनाम: ${name}\nफ़ोन: ${phone}\nशहर: ${city}\nयोग्यता: ${exp}`;
-            const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`;
-            alert("✨ आपका आवेदन दर्ज हो गया है। समन्वय हेतु WhatsApp से जुड़ें।");
-            closeCareerModal();
-            window.open(waUrl, '_blank');
-        }
-
-        // Apps Script Settings (Admin)
-        function openAppsScriptSettingsModal() {
-            document.getElementById('gas-url-input').value = localStorage.getItem('kaalgya_gas_url') || "";
-            document.getElementById('gas-modal').classList.remove('hidden');
-        }
-        function closeAppsScriptSettingsModal() { document.getElementById('gas-modal').classList.add('hidden'); }
-        function saveAppsScriptUrl() {
-            const url = document.getElementById('gas-url-input').value;
-            localStorage.setItem('kaalgya_gas_url', url);
-            alert("सिस्टम व्यवस्थापन URL सुरक्षित हो गया!");
-            closeAppsScriptSettingsModal();
-        }
-    </script>
-</body>
-</html>
+                        <label class="block text-xs
