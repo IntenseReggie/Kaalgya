@@ -103,8 +103,8 @@
             z-index: 10;
         }
 
-        /* LIVING MEDALLION PRECISION HARMONY */
-        .occult-medallion-box {
+        /* 100% ALIGNED OCCULT MEDALLION HOUSING */
+        .medallion-stage {
             position: relative;
             width: 320px;
             height: 320px;
@@ -116,97 +116,82 @@
         }
 
         @media (min-width: 768px) {
-            .occult-medallion-box {
+            .medallion-stage {
                 width: 420px;
                 height: 420px;
             }
         }
 
-        .hd-logo-image {
+        .crisp-base-logo {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 2px solid rgba(212, 175, 55, 0.5);
-            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4), inset 0 0 30px rgba(0, 0, 0, 0.9);
+            border: 2px solid rgba(212, 175, 55, 0.55);
+            box-shadow: 0 0 45px rgba(212, 175, 55, 0.4), inset 0 0 25px rgba(0, 0, 0, 0.85);
             display: block;
-            position: relative;
-            z-index: 5;
         }
 
-        /* REVOLVING CELESTIAL ZODIAC RINGS (BORDER-PINNED) */
-        @keyframes zodiacRingSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        /* PURE OCCULT KEYFRAMES */
+        @keyframes smoothZodiacSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        @keyframes reverseYantraSpin {
-            0% { transform: rotate(360deg); }
-            100% { transform: rotate(0deg); }
+        @keyframes reverseInnerOrbit {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
         }
 
-        @keyframes eyeOccultBeam {
-            0%, 100% { transform: scale(1); opacity: 0.3; filter: drop-shadow(0 0 4px #F5D061); }
-            50% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 18px #FFFFFF); }
+        /* TRUE NATURAL BLINK: Top lid moves down, meets bottom lid */
+        @keyframes realisticEyeBlink {
+            0%, 45%, 53%, 100% {
+                transform: scaleY(0);
+                opacity: 0;
+            }
+            48%, 50% {
+                transform: scaleY(1);
+                opacity: 0.98;
+            }
         }
 
-        @keyframes lotusAuraFlames {
-            0%, 100% { transform: scale(1) translateY(0); opacity: 0.35; }
-            50% { transform: scale(1.08) translateY(-6px); opacity: 0.9; filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.85)); }
+        @keyframes lotusPetalBreathing {
+            0%, 100% {
+                transform: scale(0.96) translateY(0);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.08) translateY(-4px);
+                opacity: 0.85;
+                filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8));
+            }
         }
 
-        .live-zodiac-orbit-halo {
-            position: absolute;
-            inset: -14px;
-            border-radius: 50%;
-            border: 1.5px dashed rgba(245, 208, 97, 0.7);
-            animation: zodiacRingSpin 50s linear infinite;
-            pointer-events: none;
-            z-index: 10;
+        .anim-zodiac-wheel {
+            animation: smoothZodiacSpin 60s linear infinite;
+            transform-origin: center center;
         }
 
-        .live-zodiac-inner-orbit {
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            border: 1px dotted rgba(212, 175, 55, 0.6);
-            animation: reverseYantraSpin 70s linear infinite;
-            pointer-events: none;
-            z-index: 10;
+        .anim-sacred-yantra {
+            animation: reverseInnerOrbit 80s linear infinite;
+            transform-origin: center center;
         }
 
-        .live-eye-pulsar-point {
-            position: absolute;
-            top: 45%;
-            left: 50%;
-            width: 18px;
-            height: 18px;
-            margin-top: -9px;
-            margin-left: -9px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #FFFFFF 0%, #F5D061 50%, transparent 80%);
-            animation: eyeOccultBeam 3.2s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 20;
+        .anim-human-eyelid {
+            animation: realisticEyeBlink 4.5s ease-in-out infinite;
+            transform-origin: 250px 228px;
         }
 
-        .live-lotus-aura-glow {
-            position: absolute;
-            bottom: 22px;
-            width: 58%;
-            height: 28%;
-            border-radius: 50%;
-            background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.5) 0%, rgba(184, 134, 11, 0.2) 60%, transparent 100%);
-            animation: lotusAuraFlames 4s ease-in-out infinite;
-            pointer-events: none;
-            z-index: 15;
+        .anim-lotus-aura {
+            animation: lotusPetalBreathing 3.8s ease-in-out infinite;
+            transform-origin: 250px 360px;
         }
 
-        /* EXTRA OCCULT AMBIENT VIBES */
-        .occult-bg-symbol {
+        /* OCCULT AMBIENT SACRED WATERMARKS */
+        .occult-sacred-glyph {
             position: absolute;
             font-family: 'Rozha One', serif;
-            color: rgba(212, 175, 55, 0.04);
+            color: rgba(212, 175, 55, 0.035);
             user-select: none;
             pointer-events: none;
             z-index: 0;
@@ -276,33 +261,62 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-28">
 
-        <!-- HERO SECTION: FULL-SCALE LIVE OCCULT MEDALLION -->
+        <!-- HERO SECTION: FULL OCCULT ATMOSPHERE & SYNCHRONIZED MEDALLION -->
         <section class="min-h-[88vh] flex flex-col items-center justify-center px-4 text-center relative overflow-hidden">
             
-            <!-- Large Floating Occult Watermarks -->
-            <div class="occult-bg-symbol text-[220px] -top-10 -left-10 leading-none">ॐ</div>
-            <div class="occult-bg-symbol text-[200px] -bottom-10 -right-10 leading-none">श्रीं</div>
+            <!-- Large Floating Occult Watermarks Across Background -->
+            <div class="occult-sacred-glyph text-[240px] -top-12 -left-12">ॐ</div>
+            <div class="occult-sacred-glyph text-[220px] -bottom-16 -right-12">श्रीं</div>
 
             <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10">
 
-                <!-- 100% HD LIVING MEDALLION HOUSING -->
-                <div class="occult-medallion-box my-4 select-none">
+                <!-- MEDALLION STAGE (VECTOR-ALIGNED SYNCHRONIZATION) -->
+                <div class="medallion-stage my-4 select-none">
                     
-                    <!-- Ambient Glow Flare -->
-                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500/25 via-gold-500/15 to-transparent blur-3xl pointer-events-none"></div>
+                    <!-- Ambient Back-Flare -->
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500/30 via-gold-500/15 to-transparent blur-3xl pointer-events-none"></div>
 
-                    <!-- 1. BASE ORIGINAL CRISP HD LOGO (100% CLEAN & VISIBLE) -->
-                    <img src="logo.jpg" alt="Kaalgya Sacred Emblem" class="hd-logo-image" onerror="this.onerror=null; this.src='Kaalgya Logo.jpeg';">
+                    <!-- 1. BASE CRISP LOGO (EXACT HD RESOLUTION) -->
+                    <img src="logo.jpg" alt="Kaalgya Sacred Emblem" class="crisp-base-logo" onerror="this.onerror=null; this.src='Kaalgya Logo.jpeg';">
 
-                    <!-- 2. REVOLVING OUTER ZODIAC ORBITAL COMPASS (BORDER-PINNED) -->
-                    <div class="live-zodiac-orbit-halo"></div>
-                    <div class="live-zodiac-inner-orbit"></div>
+                    <!-- 2. VECTOR ALIGNED OVERLAY ENGINE (RESPONSIVE SVG) -->
+                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none">
+                        
+                        <!-- A. LIVE ROTATING OUTER ZODIAC ORBIT -->
+                        <g class="anim-zodiac-wheel">
+                            <circle cx="250" cy="250" r="240" fill="none" stroke="#FCD34D" stroke-width="2.2" stroke-dasharray="6,8" opacity="0.85"/>
+                            <circle cx="250" cy="250" r="180" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-dasharray="4,6" opacity="0.65"/>
+                            <!-- Cardinal Points -->
+                            <line x1="250" y1="10" x2="250" y2="28" stroke="#FFFBEB" stroke-width="2.5"/>
+                            <line x1="250" y1="472" x2="250" y2="490" stroke="#FFFBEB" stroke-width="2.5"/>
+                            <line x1="10" y1="250" x2="28" y2="250" stroke="#FFFBEB" stroke-width="2.5"/>
+                            <line x1="472" y1="250" x2="490" y2="250" stroke="#FFFBEB" stroke-width="2.5"/>
+                        </g>
 
-                    <!-- 3. LIVE EYE PULSAR FLASH (NO BLACK CURTAIN, PURE AWAKENING) -->
-                    <div class="live-eye-pulsar-point"></div>
+                        <!-- B. REVERSE ROTATING SACRED GEOMETRY ORBITS -->
+                        <g class="anim-sacred-yantra" opacity="0.75">
+                            <circle cx="250" cy="195" r="78" fill="none" stroke="#F5D061" stroke-width="1.6" stroke-dasharray="8,4"/>
+                            <circle cx="192" cy="245" r="78" fill="none" stroke="#F5D061" stroke-width="1.6" stroke-dasharray="8,4"/>
+                            <circle cx="308" cy="245" r="78" fill="none" stroke="#F5D061" stroke-width="1.6" stroke-dasharray="8,4"/>
+                        </g>
 
-                    <!-- 4. LOTUS BLOSSOM FLAME AURA -->
-                    <div class="live-lotus-aura-glow"></div>
+                        <!-- C. REAL EYE BLINK CURTAIN (SHAPED TO CENTRAL ALMOND EYE) -->
+                        <!-- Dark Obsidian Eyelid that opens & closes naturally -->
+                        <path class="anim-human-eyelid" d="M192,228 Q250,180 308,228 Q250,276 192,228 Z" fill="#05060A"/>
+
+                        <!-- D. LOTUS BASE AURA BREATHING -->
+                        <g class="anim-lotus-aura">
+                            <ellipse cx="250" cy="360" rx="115" ry="42" fill="url(#lotusGlowGrad)"/>
+                        </g>
+
+                        <defs>
+                            <radialGradient id="lotusGlowGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#FCD34D" stop-opacity="0.5"/>
+                                <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
 
                 </div>
 
@@ -345,7 +359,7 @@
 
         <!-- SECTION: SUKOON KAKSH -->
         <section id="sukoon-kaksh" class="py-16 px-4 max-w-5xl mx-auto relative">
-            <div class="occult-bg-symbol text-[180px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">ह्रीं</div>
+            <div class="occult-sacred-glyph text-[190px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">ह्रीं</div>
 
             <div class="text-center mb-10 relative z-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Sanctuary of Peace & Consolation ✦</span>
@@ -485,7 +499,7 @@
 
         <!-- MAA PRATYANGIRA TANTRA SECTION -->
         <section id="pratyangira-section" class="py-16 px-4 max-w-5xl mx-auto relative">
-            <div class="occult-bg-symbol text-[200px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500/5">फट्</div>
+            <div class="occult-sacred-glyph text-[220px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500/5">फट्</div>
 
             <div class="rounded-3xl p-8 border-2 border-red-600/70 bg-gradient-to-b from-red-950/60 via-obsidian-900 to-obsidian-950 text-center shadow-[0_0_45px_rgba(220,38,38,0.25)] relative z-10">
                 <span class="px-3 py-1 rounded-full bg-red-600/20 text-red-300 text-xs font-bold uppercase mb-4 inline-block tracking-wider">सर्वोच्च उग्र तांत्रिक महाशक्ति</span>
@@ -1049,7 +1063,7 @@
             openWhatsAppChat(msg);
         }
 
-        // 3D Occult Particle Sky
+        // 3D Occult Particle Atmosphere Engine
         const canvas = document.getElementById('cosmic-canvas');
         if (canvas) {
             const scene = new THREE.Scene();
@@ -1057,19 +1071,20 @@
             const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
 
+            // Gold Embers Particles
             const starsGeo = new THREE.BufferGeometry();
-            const count = 1200;
+            const count = 1400;
             const pos = new Float32Array(count * 3);
-            for (let i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 2000;
+            for (let i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * 2200;
             starsGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-            const starMat = new THREE.PointsMaterial({ color: 0xD4AF37, size: 1.6, transparent: true, opacity: 0.75 });
+            const starMat = new THREE.PointsMaterial({ color: 0xD4AF37, size: 1.8, transparent: true, opacity: 0.8 });
             const stars = new THREE.Points(starsGeo, starMat);
             scene.add(stars);
             camera.position.z = 1000;
 
             function animate() {
                 requestAnimationFrame(animate);
-                stars.rotation.y += 0.00035;
+                stars.rotation.y += 0.0004;
                 renderer.render(scene, camera);
             }
             animate();
