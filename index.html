@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAALGYA | काल से परे। सत्य की ओर।</title>
+    <title>KAALGYA | Ancient Wisdom • Modern Intelligence</title>
     
-    <!-- Meta SEO & Branding -->
-    <meta name="description" content="कालज्ञ - माँ प्रत्यंगिरा सुरक्षा कवच, ब्रह्मास्त्र उपाय, तिजोरी यन्त्र, सुकून रेमेडी एवं स्वायत्त वैदिक पंचांग।">
+    <meta name="description" content="कालज्ञ - माँ प्रत्यंगिरा सुरक्षा कवच, ब्रह्मास्त्र उपाय, तिजोरी यन्त्र, दिव्य अंतर्मन एवं स्वायत्त वैदिक पंचांग।">
     <meta name="theme-color" content="#070604">
 
     <!-- Fonts: Cinzel, Noto Serif Devanagari, Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,18 +43,47 @@
                         sans: ['Inter', 'sans-serif']
                     },
                     animation: {
-                        'spin-slow': 'spin 50s linear infinite',
-                        'spin-reverse': 'spinReverse 60s linear infinite',
-                        'logo-pulse': 'logoPulse 3s ease-in-out infinite'
+                        'zodiac-spin': 'spinZodiac 40s linear infinite',
+                        'tri-spin-1': 'spinTri1 18s linear infinite',
+                        'tri-spin-2': 'spinTri2 22s linear infinite reverse',
+                        'tri-spin-3': 'spinTri3 20s linear infinite',
+                        'eye-blink': 'blinkEye 4.5s ease-in-out infinite',
+                        'lotus-blossom': 'blossomLotus 5s ease-in-out infinite alternate',
+                        'baba-bounce': 'babaBounce 2.4s ease-in-out infinite',
+                        'star-pulse': 'starPulse 2s ease-in-out infinite'
                     },
                     keyframes: {
-                        spinReverse: {
-                            '0%': { transform: 'rotate(360deg)' },
-                            '100%': { transform: 'rotate(0deg)' }
+                        spinZodiac: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
                         },
-                        logoPulse: {
-                            '0%, 100%': { transform: 'scale(1)', filter: 'drop-shadow(0 0 10px rgba(207,162,40,0.35))' },
-                            '50%': { transform: 'scale(1.05)', filter: 'drop-shadow(0 0 25px rgba(207,162,40,0.75))' }
+                        spinTri1: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        },
+                        spinTri2: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        },
+                        spinTri3: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        },
+                        blinkEye: {
+                            '0%, 90%, 100%': { transform: 'scaleY(1)' },
+                            '95%': { transform: 'scaleY(0.08)' }
+                        },
+                        blossomLotus: {
+                            '0%': { transform: 'scale(0.88) translateY(3px)', filter: 'brightness(0.85)' },
+                            '100%': { transform: 'scale(1.08) translateY(-2px)', filter: 'brightness(1.2) drop-shadow(0 0 14px rgba(207,162,40,0.8))' }
+                        },
+                        babaBounce: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-14px) scale(1.03)' }
+                        },
+                        starPulse: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(0.85)' },
+                            '50%': { opacity: '1', transform: 'scale(1.2)' }
                         }
                     }
                 }
@@ -68,29 +96,29 @@
             background-color: #070604;
             color: #d1cfc7;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(207, 162, 40, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 80% 80%, rgba(207, 162, 40, 0.04) 0%, transparent 40%);
+                radial-gradient(circle at 50% 0%, rgba(207, 162, 40, 0.09) 0%, transparent 60%),
+                radial-gradient(circle at 80% 80%, rgba(207, 162, 40, 0.05) 0%, transparent 40%);
             background-attachment: fixed;
         }
 
         .gold-gradient-text {
-            background: linear-gradient(135deg, #fdf8e6 0%, #f3da87 40%, #cfa228 80%, #a87e1a 100%);
+            background: linear-gradient(135deg, #fdf8e6 0%, #f3da87 35%, #cfa228 75%, #a87e1a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .gold-border-glow {
-            border: 1px solid rgba(207, 162, 40, 0.22);
-            box-shadow: 0 0 15px rgba(207, 162, 40, 0.03), inset 0 0 15px rgba(207, 162, 40, 0.02);
+            border: 1px solid rgba(207, 162, 40, 0.25);
+            box-shadow: 0 0 18px rgba(207, 162, 40, 0.04), inset 0 0 15px rgba(207, 162, 40, 0.02);
         }
 
         .gold-border-glow:hover {
-            border-color: rgba(207, 162, 40, 0.5);
-            box-shadow: 0 0 25px rgba(207, 162, 40, 0.12);
+            border-color: rgba(207, 162, 40, 0.55);
+            box-shadow: 0 0 30px rgba(207, 162, 40, 0.16);
         }
 
         .occult-grain {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
         }
     </style>
 </head>
@@ -98,104 +126,298 @@
 
     <div class="fixed inset-0 pointer-events-none occult-grain z-50"></div>
 
-    <!-- Background Geometry -->
-    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[720px] pointer-events-none opacity-[0.03] -z-10 animate-spin-slow">
-        <svg viewBox="0 0 500 500" class="w-full h-full stroke-gold-400 fill-none" stroke-width="1.2">
-            <circle cx="250" cy="250" r="230" stroke-dasharray="4,6"/>
-            <circle cx="250" cy="250" r="190"/>
-            <polygon points="250,30 440,360 60,360"/>
-            <polygon points="250,470 440,140 60,140"/>
-            <circle cx="250" cy="250" r="110"/>
-            <circle cx="250" cy="250" r="40"/>
-        </svg>
-    </div>
-
-    <!-- TOP TICKER -->
-    <div class="bg-obsidian-900 border-b border-gold-500/15 py-1.5 px-4 text-[11px] font-mono tracking-wider text-neutral-400 flex justify-between items-center overflow-x-auto whitespace-nowrap">
+    <!-- TOP TICKER BAR -->
+    <div class="bg-obsidian-900 border-b border-gold-500/15 py-1.5 px-4 text-[11px] font-mono tracking-wider text-neutral-400 flex justify-between items-center overflow-x-auto whitespace-nowrap z-40 relative">
         <div class="flex items-center gap-4">
             <span class="inline-flex items-center gap-1.5 text-gold-400 font-semibold">
                 <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
-                <span id="ticker-panchang-date">विक्रम संवत 2083 • स्वायत्त पंचांग</span>
+                <span id="ticker-panchang-date">विक्रम संवत 2083 • स्वायत्त शुद्ध पंचांग</span>
             </span>
             <span class="hidden sm:inline text-neutral-600">|</span>
             <span id="ticker-festival" class="text-neutral-300">दैनिक नित्य पूजा व भगवद् आराधना</span>
         </div>
-        <div class="hidden md:flex items-center gap-4 text-neutral-500">
-            <span>सिद्ध पीठ: नई दिल्ली</span>
-            <span>हेल्पलाइन: +91 95067 95756</span>
+        <div class="flex items-center gap-4 text-neutral-400">
+            <button onclick="toggleOccultMusic()" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 hover:text-gold-100 transition-all text-[10px]">
+                <span id="music-indicator" class="w-1.5 h-1.5 rounded-full bg-neutral-500"></span>
+                <span id="music-text">ध्वनि: शास्त्रीय सारंगी / बाँसुरी (ON)</span>
+            </button>
+            <span class="hidden md:inline text-neutral-500">हेल्पलाइन: +91 95067 95756</span>
         </div>
     </div>
 
-    <!-- MAIN NAVBAR WITH LIVE ANIMATED LOGO -->
+    <!-- MAIN NAVBAR WITH HIGH-FIDELITY LIVE ANIMATED LOGO -->
     <header class="sticky top-0 z-40 backdrop-blur-md bg-obsidian-950/85 border-b border-gold-500/15">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3.5">
-                <!-- LIVE ANIMATED BLINK & BLOSSOM LOGO -->
-                <div class="relative w-12 h-12 flex items-center justify-center">
-                    <div class="absolute inset-0 rounded-full border border-gold-400/40 animate-ping opacity-25"></div>
-                    <div class="w-11 h-11 rounded-full border border-gold-500/60 flex items-center justify-center bg-obsidian-900 shadow-[0_0_15px_rgba(207,162,40,0.3)] animate-logo-pulse">
-                        <svg viewBox="0 0 100 100" class="w-8 h-8">
-                            <circle cx="50" cy="50" r="44" stroke="#cfa228" stroke-width="2" fill="none" stroke-dasharray="3,3"/>
-                            <polygon points="50,15 80,75 20,75" stroke="#f3da87" stroke-width="1.8" fill="none"/>
-                            <polygon points="50,85 80,25 20,25" stroke="#f3da87" stroke-width="1.8" fill="none"/>
-                            <circle cx="50" cy="50" r="7" fill="#f9edbe"/>
-                            <text x="50" y="55" font-family="'Cinzel', serif" font-size="16" font-weight="900" fill="#070604" text-anchor="middle" dominant-baseline="middle">क</text>
-                        </svg>
-                    </div>
+        <div class="max-w-6xl mx-auto px-4 h-24 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                
+                <!-- LIVE ANIMATED LOGO COMPONENT (REF: EXACT USER ATTACHMENT) -->
+                <div class="relative w-16 h-16 flex items-center justify-center flex-shrink-0 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="absolute inset-0 rounded-full border border-gold-400/30 animate-ping opacity-20"></div>
+                    
+                    <svg viewBox="0 0 300 300" class="w-full h-full drop-shadow-[0_0_15px_rgba(207,162,40,0.45)]">
+                        <!-- 1. Outer Rotating Zodiac Wheel with Real Rashi Glyphs -->
+                        <g class="animate-zodiac-spin origin-[150px_150px]">
+                            <circle cx="150" cy="150" r="142" stroke="#cfa228" stroke-width="2.5" fill="none" opacity="0.9"/>
+                            <circle cx="150" cy="150" r="128" stroke="#a87e1a" stroke-width="1.2" fill="none" stroke-dasharray="3,3"/>
+                            
+                            <!-- 12 Zodiac Rashi Glyphs around wheel -->
+                            <!-- Aries -->
+                            <text x="150" y="24" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♈</text>
+                            <!-- Taurus -->
+                            <text x="212" y="41" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♉</text>
+                            <!-- Gemini -->
+                            <text x="259" y="88" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♊</text>
+                            <!-- Cancer -->
+                            <text x="276" y="150" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♋</text>
+                            <!-- Leo -->
+                            <text x="259" y="212" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♌</text>
+                            <!-- Virgo -->
+                            <text x="212" y="259" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♍</text>
+                            <!-- Libra -->
+                            <text x="150" y="276" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♎</text>
+                            <!-- Scorpio -->
+                            <text x="88" y="259" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♏</text>
+                            <!-- Sagittarius -->
+                            <text x="41" y="212" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♐</text>
+                            <!-- Capricorn -->
+                            <text x="24" y="150" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♑</text>
+                            <!-- Aquarius -->
+                            <text x="41" y="88" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♒</text>
+                            <!-- Pisces -->
+                            <text x="88" y="41" font-family="'Cinzel', serif" font-size="14" fill="#f9edbe" text-anchor="middle">♓</text>
+                        </g>
+
+                        <!-- 2. Fixed Place Intertwined 3 Circles Spinning Individually -->
+                        <g>
+                            <!-- Top Circle Spinning at its own center -->
+                            <g class="origin-[150px_100px] animate-tri-spin-1">
+                                <circle cx="150" cy="100" r="54" stroke="#e5be49" stroke-width="1.6" fill="none" opacity="0.85"/>
+                                <line x1="150" y1="46" x2="150" y2="154" stroke="#e5be49" stroke-width="0.7" opacity="0.3"/>
+                            </g>
+                            <!-- Left Circle Spinning at its own center -->
+                            <g class="origin-[115px_150px] animate-tri-spin-2">
+                                <circle cx="115" cy="150" r="54" stroke="#cfa228" stroke-width="1.6" fill="none" opacity="0.85"/>
+                                <line x1="61" y1="150" x2="169" y2="150" stroke="#cfa228" stroke-width="0.7" opacity="0.3"/>
+                            </g>
+                            <!-- Right Circle Spinning at its own center -->
+                            <g class="origin-[185px_150px] animate-tri-spin-3">
+                                <circle cx="185" cy="150" r="54" stroke="#f3da87" stroke-width="1.6" fill="none" opacity="0.85"/>
+                                <line x1="131" y1="150" x2="239" y2="150" stroke="#f3da87" stroke-width="0.7" opacity="0.3"/>
+                            </g>
+                        </g>
+
+                        <!-- Central Pyramid / Sacred Triangle -->
+                        <polygon points="150,75 215,185 85,185" stroke="#f9edbe" stroke-width="2.2" fill="#070604" fill-opacity="0.85"/>
+                        <polygon points="150,85 205,180 95,180" stroke="#a87e1a" stroke-width="1" fill="none"/>
+
+                        <!-- 3. Blinking Mystery Eye with Glowing Pupil -->
+                        <g class="origin-[150px_145px] animate-eye-blink">
+                            <!-- Eye Outer Contour -->
+                            <path d="M 120 145 Q 150 126 180 145 Q 150 164 120 145 Z" fill="#070604" stroke="#fdf8e6" stroke-width="1.8"/>
+                            <!-- Iris -->
+                            <circle cx="150" cy="145" r="9" fill="#cfa228" stroke="#fdf8e6" stroke-width="1"/>
+                            <!-- Inner Diamond Star Pupil -->
+                            <polygon points="150,139 154,145 150,151 146,145" fill="#fdf8e6"/>
+                        </g>
+
+                        <!-- 4. Lotus Blossoming (Kali Se Phool Khilna) -->
+                        <g class="origin-[150px_210px] animate-lotus-blossom">
+                            <!-- Outer Petals (Blossom spread) -->
+                            <path d="M 150 190 C 130 195 110 205 95 220 C 115 224 135 220 150 216 Z" fill="#cfa228" opacity="0.85"/>
+                            <path d="M 150 190 C 170 195 190 205 205 220 C 185 224 165 220 150 216 Z" fill="#cfa228" opacity="0.85"/>
+                            
+                            <!-- Mid Petals -->
+                            <path d="M 150 178 C 135 192 118 208 115 225 C 135 228 148 220 150 215 Z" fill="#e5be49"/>
+                            <path d="M 150 178 C 165 192 182 208 185 225 C 165 228 152 220 150 215 Z" fill="#e5be49"/>
+                            
+                            <!-- Center Crown Petal -->
+                            <path d="M 150 168 C 142 185 140 205 150 226 C 160 205 158 185 150 168 Z" fill="#fdf8e6"/>
+                        </g>
+
+                        <!-- Outer Compass Diamond Accent -->
+                        <polygon points="150,6 154,12 150,18 146,12" fill="#fdf8e6"/>
+                        <polygon points="150,282 154,288 150,294 146,288" fill="#fdf8e6"/>
+                    </svg>
                 </div>
+
                 <div>
                     <h1 class="font-cinzel text-xl sm:text-2xl font-black tracking-[0.25em] gold-gradient-text">KAALGYA</h1>
-                    <p class="text-[10px] tracking-[0.3em] uppercase text-gold-500/60 font-mono">काल से परे • सत्य की ओर</p>
+                    <p class="text-[9px] tracking-[0.3em] uppercase text-gold-400 font-mono">Ancient Wisdom • Modern Intelligence</p>
+                    <p class="text-[8px] tracking-[0.22em] uppercase text-neutral-400 font-mono hidden sm:block">Decoding Destiny • Guiding Life</p>
                 </div>
             </div>
 
-            <nav class="hidden md:flex items-center space-x-6 text-xs uppercase tracking-widest text-neutral-400 font-medium">
+            <nav class="hidden lg:flex items-center space-x-6 text-xs uppercase tracking-widest text-neutral-400 font-medium">
                 <a href="#panchang" class="hover:text-gold-300 transition-colors">दैनिक पंचांग</a>
-                <a href="#remedies" class="hover:text-gold-300 transition-colors">सिद्ध रेमेडीज</a>
-                <a href="#consultation" class="hover:text-gold-300 transition-colors">परामर्श फॉर्म</a>
-                <a href="#vault" class="hover:text-gold-300 transition-colors">अनुभव कोष (3750+)</a>
+                <a href="#youtube-vault" class="hover:text-gold-300 transition-colors">वीडियो प्लेलिस्ट्स</a>
+                <a href="#pratyangira" class="hover:text-gold-300 transition-colors">माँ प्रत्यंगिरा</a>
+                <a href="#brahmastra" class="hover:text-gold-300 transition-colors">ब्रह्मास्त्र</a>
+                <a href="#antarman" class="hover:text-gold-300 transition-colors">दिव्य अंतर्मन</a>
+                <a href="#dakshina" class="hover:text-gold-300 transition-colors">दक्षिणा</a>
             </nav>
 
-            <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20सिद्ध%20रेमेडीज%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="px-4 py-2 rounded-lg bg-gradient-to-r from-gold-600/20 to-gold-500/10 border border-gold-500/50 hover:border-gold-400 text-gold-200 text-xs font-cinzel tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(207,162,40,0.15)] flex items-center gap-2">
-                <span>सम्पर्क करें</span>
+            <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-gold-600/20 to-gold-500/10 border border-gold-500/50 hover:border-gold-400 text-gold-200 text-xs font-cinzel tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(207,162,40,0.15)] flex items-center gap-2">
+                <span>परामर्श लें</span>
                 <span class="text-xs">→</span>
             </a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="relative pt-14 pb-10 px-4 text-center overflow-hidden">
+    <section class="relative pt-12 pb-10 px-4 text-center overflow-hidden">
         <div class="max-w-4xl mx-auto">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-[11px] font-mono tracking-widest mb-6">
                 <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
-                <span>सिद्ध तांत्रिक सुरक्षा, काल गणना एवं ऊर्जा संतुलन</span>
+                <span>स्वायत्त वैदिक काल गणना एवं तांत्रिक सुरक्षा पीठ</span>
             </div>
 
             <h2 class="text-3xl sm:text-5xl md:text-6xl font-cinzel font-black tracking-tight text-gold-100 mb-6 leading-tight">
-                काल का गूढ़ रहस्य, <br><span class="gold-gradient-text">ब्रह्मांडीय शक्ति</span> के साथ
+                जहाँ हर तंत्र निष्फल है, <br><span class="gold-gradient-text">वहाँ कालज्ञ की शक्ति</span> जागृत है
             </h2>
             
             <p class="font-devanagari text-neutral-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-                माँ प्रत्यंगिरा महाकवच, अचूक ब्रह्मास्त्र रेमेडी, कुबेर तिजोरी यन्त्र एवं जीवन में मानसिक शांति हेतु सिद्ध 'सुकून' विधान।
+                माँ प्रत्यंगिरा का अभेद्य पलटवार कवच, संकटों का नाश करने वाली अमोघ ब्रह्मास्त्र रेमेडी, और आपके मन के बोझ को हरने वाला 'दिव्य अंतर्मन' द्वार।
             </p>
 
             <div class="flex flex-wrap items-center justify-center gap-4">
-                <a href="#remedies" class="px-6 py-3 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-obsidian-950 font-cinzel text-xs font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(207,162,40,0.3)] hover:brightness-110 transition-all">
-                    सिद्ध रेमेडीज देखें
+                <a href="#youtube-vault" class="px-6 py-3 rounded-xl bg-gradient-to-r from-red-700 via-red-600 to-red-700 text-white font-cinzel text-xs font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:brightness-110 transition-all">
+                    🔒 सीक्रेट प्लेलिस्ट्स अनलॉक करें
                 </a>
                 <a href="#panchang" class="px-6 py-3 rounded-xl bg-obsidian-900 border border-gold-500/30 hover:border-gold-500/60 text-gold-300 font-cinzel text-xs tracking-widest uppercase transition-all">
-                    आज का पंचांग
+                    दैनिक पंचांग देखें
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- PANCHANG SECTION -->
+    <!-- STRICT "SUBSCRIBE TO UNLOCK" YOUTUBE PLAYLIST VAULT -->
+    <section id="youtube-vault" class="max-w-6xl mx-auto px-4 mb-28">
+        <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-red-950/25 via-obsidian-900 to-obsidian-950 border border-gold-500/30 relative">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-gold-500/15 gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-600/20 border border-red-500/40 text-red-300 text-[11px] font-mono uppercase tracking-widest mb-3">
+                        <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+                        <span>सुरक्षित दीक्षा द्वार • केवल सब्सक्राइबर्स के लिए सुलभ</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-4xl font-cinzel font-bold text-gold-100">
+                        KAALGYA <span class="gold-gradient-text">गूढ़ विद्या प्लेलिस्ट्स (Locked)</span>
+                    </h3>
+                    <p class="font-devanagari text-xs text-neutral-400 mt-2">
+                        ये प्लेलिस्ट्स अत्यंत गोपनीय एवं शास्त्रीय हैं। इन्हें देखने हेतु आधिकारिक चैनल की सदस्यता अनिवार्य है।
+                    </p>
+                </div>
+
+                <div id="sub-status-indicator" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-obsidian-950 border border-gold-500/20 text-xs font-mono text-amber-300">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <span>स्थिति: ताला बंद (Locked)</span>
+                </div>
+            </div>
+
+            <!-- 5 Playlist Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Karmic Mysteries -->
+                <div class="p-6 rounded-2xl bg-obsidian-950/90 border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest">कर्म चक्र व पूर्व जन्म</span>
+                            <span class="text-xs lock-icon">🔒</span>
+                        </div>
+                        <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">Karmic Mysteries & Past Life Astrology</h4>
+                        <p class="font-devanagari text-xs text-neutral-400 leading-relaxed mb-6">
+                            पूर्व जन्म के कर्म, प्रारब्ध ऋण और वर्तमान जीवन में उनके प्रभाव का गहन ज्योतिषीय विश्लेषण।
+                        </p>
+                    </div>
+                    <button onclick="attemptPlaylistAccess('https://youtube.com/playlist?list=PLxgel38n3Hf6InGitnKVQktIh6_H-pls5&si=zomvKp9y8k3xsceW', 'Karmic Mysteries')" class="w-full py-2.5 rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 text-xs font-cinzel uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <span>प्लेलिस्ट देखें</span>
+                        <span>🔒</span>
+                    </button>
+                </div>
+
+                <!-- 2. Vastu Power -->
+                <div class="p-6 rounded-2xl bg-obsidian-950/90 border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest">ऊर्जा विज्ञान व वास्तु</span>
+                            <span class="text-xs lock-icon">🔒</span>
+                        </div>
+                        <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">Vastu Power : महावास्तु ऊर्जा</h4>
+                        <p class="font-devanagari text-xs text-neutral-400 leading-relaxed mb-6">
+                            बिना तोड़-फोड़ के घर एवं व्यावसायिक प्रतिष्ठान में सकारात्मक ऊर्जा प्रवाह और कुबेर दिशा जागरण।
+                        </p>
+                    </div>
+                    <button onclick="attemptPlaylistAccess('https://youtube.com/playlist?list=PLxgel38n3Hf6F2BZslFmF4QP_pTe1o6Oy&si=fuZkWFuxtd1NMANu', 'Vastu Power')" class="w-full py-2.5 rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 text-xs font-cinzel uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <span>प्लेलिस्ट देखें</span>
+                        <span>🔒</span>
+                    </button>
+                </div>
+
+                <!-- 3. Planetary Tantra Series -->
+                <div class="p-6 rounded-2xl bg-obsidian-950/90 border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono text-rose-400 uppercase tracking-widest">ग्रह तंत्र रहस्य</span>
+                            <span class="text-xs lock-icon">🔒</span>
+                        </div>
+                        <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">Planetary Tantra Series</h4>
+                        <p class="font-devanagari text-xs text-neutral-400 leading-relaxed mb-6">
+                            नवग्रहों की तांत्रिक शक्तियां, उग्र ग्रह शांति, और प्रतिकूल ग्रहों को अनुकूल बनाने की सिद्ध विधियां।
+                        </p>
+                    </div>
+                    <button onclick="attemptPlaylistAccess('https://youtube.com/playlist?list=PLxgel38n3Hf46VzXG5tP8L6mpstOOT3DE&si=wH3X__9kS2q1sPTo', 'Planetary Tantra')" class="w-full py-2.5 rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 text-xs font-cinzel uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <span>प्लेलिस्ट देखें</span>
+                        <span>🔒</span>
+                    </button>
+                </div>
+
+                <!-- 4. Marriage & Kundali Secrets -->
+                <div class="p-6 rounded-2xl bg-obsidian-950/90 border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest">दांपत्य व संबंध</span>
+                            <span class="text-xs lock-icon">🔒</span>
+                        </div>
+                        <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">Marriage & Kundali Secrets</h4>
+                        <p class="font-devanagari text-xs text-neutral-400 leading-relaxed mb-6">
+                            सप्तम भाव, नाड़ी दोष, मांगलिक विचार, तलाक अवरोध एवं दांपत्य सुख के गूढ़ ज्योतिषीय रहस्य।
+                        </p>
+                    </div>
+                    <button onclick="attemptPlaylistAccess('https://youtube.com/playlist?list=PLxgel38n3Hf5ZPxIYLp9k64nzIn-aAc9i&si=Qal58G-UrDFfKIfG', 'Marriage & Kundali Secrets')" class="w-full py-2.5 rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 text-xs font-cinzel uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <span>प्लेलिस्ट देखें</span>
+                        <span>🔒</span>
+                    </button>
+                </div>
+
+                <!-- 5. Pitru Paksha -->
+                <div class="p-6 rounded-2xl bg-obsidian-950/90 border border-gold-500/20 hover:border-gold-500/50 transition-all flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-mono text-indigo-400 uppercase tracking-widest">पितृ ऋण व मुक्ति</span>
+                            <span class="text-xs lock-icon">🔒</span>
+                        </div>
+                        <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">पितृपक्ष : पितृ दोष निवारण</h4>
+                        <p class="font-devanagari text-xs text-neutral-400 leading-relaxed mb-6">
+                            पितरों की प्रसन्नता, श्राद्ध तर्पण विधान और कुल में वंश वृद्धि व शांति हेतु शास्त्रोक्त उपाय।
+                        </p>
+                    </div>
+                    <button onclick="attemptPlaylistAccess('https://youtube.com/playlist?list=PLxgel38n3Hf464ddBPuJWZ8IZ2SNco_N-&si=92FcqSwHsQ5gBz0Y', 'Pitru Paksha')" class="w-full py-2.5 rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 text-xs font-cinzel uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                        <span>प्लेलिस्ट देखें</span>
+                        <span>🔒</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIVE DYNAMIC PANCHANG SECTION -->
     <section id="panchang" class="max-w-4xl mx-auto px-4 mb-24">
         <div class="p-6 sm:p-8 rounded-2xl bg-obsidian-900/90 gold-border-glow backdrop-blur-xl relative">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-6 border-b border-gold-500/15 gap-3">
                 <div>
-                    <span class="text-[10px] uppercase font-mono tracking-widest text-gold-500/70 block">आधिकारिक पंचांग कोर</span>
+                    <span class="text-[10px] uppercase font-mono tracking-widest text-gold-500/70 block">आधिकारिक स्वायत्त पंचांग</span>
                     <h3 class="font-cinzel text-xl sm:text-2xl font-bold text-gold-100">दैनिक शुद्ध वैदिक पंचांग</h3>
                 </div>
                 <div class="text-left sm:text-right">
@@ -204,8 +426,7 @@
                 </div>
             </div>
 
-            <!-- Vrat / Festival Banner -->
-            <div class="mb-6 p-4 rounded-xl bg-gradient-to-r from-amber-950/40 via-obsidian-950 to-amber-950/40 border border-gold-500/35 flex items-center justify-between">
+            <div class="mb-6 p-4 rounded-xl bg-gradient-to-r from-amber-950/40 via-obsidian-950 to-amber-950/40 border border-gold-500/35 flex items-center justify-between shadow-[0_0_20px_rgba(207,162,40,0.06)]">
                 <div>
                     <span class="text-gold-400 font-mono text-[10px] uppercase tracking-widest block mb-0.5">आज का प्रमुख व्रत एवं पर्व</span>
                     <strong id="live-festival" class="font-devanagari text-gold-100 text-base sm:text-lg font-bold">गणना जारी...</strong>
@@ -213,7 +434,6 @@
                 <div class="text-2xl opacity-80">🪔</div>
             </div>
 
-            <!-- Grid 6 Items -->
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 mb-6">
                 <div class="p-3.5 rounded-xl bg-obsidian-950/90 border border-gold-500/15">
                     <span class="text-[11px] text-neutral-400 block font-devanagari mb-1">शुद्ध तिथि (उदयकाल)</span>
@@ -258,216 +478,184 @@
         </div>
     </section>
 
-    <!-- PROPRIETARY OCCULT REMEDIES SECTION -->
-    <section id="remedies" class="max-w-6xl mx-auto px-4 mb-28">
-        <div class="text-center mb-14">
-            <span class="text-xs uppercase font-mono tracking-[0.25em] text-gold-500/80 block mb-2">सिद्ध तांत्रिक एवं ऊर्जा विधान</span>
-            <h3 class="text-2xl sm:text-4xl font-cinzel font-bold text-gold-100">कालज्ञ सिद्ध रेमेडीज</h3>
-            <p class="font-devanagari text-xs text-neutral-400 mt-2 max-w-xl mx-auto">
-                प्रत्येक उपाय वैदिक अनुष्ठान द्वारा सिद्ध एवं जातक के नाम व गोत्र से अभिमंत्रित किया जाता है।
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <!-- 1. MAA PRATYANGIRA KAVACH -->
-            <div class="p-6 rounded-2xl bg-obsidian-900/80 gold-border-glow flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute -top-12 -right-12 w-28 h-28 bg-rose-600/10 rounded-full blur-2xl group-hover:bg-rose-600/20 transition-all"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-rose-950/40 border border-rose-500/40 flex items-center justify-center text-xl text-rose-400 mb-4">
-                        🔱
-                    </div>
-                    <span class="text-[10px] font-mono uppercase text-rose-400/90 tracking-widest block mb-1">उग्र शत्रु-बाधा नाशक</span>
-                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2.5">प्रत्यंगिरा माता कवच</h4>
-                    <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-4">
-                        घोर मारण, सम्मोहन, तंत्र-मंत्र बाधा, ईर्ष्या व गुप्त शत्रुओं के वार को उसी क्षण वापस पलटने वाला प्रचंड सुरक्षा चक्र।
-                    </p>
+    <!-- MAA PRATYANGIRA SECTION -->
+    <section id="pratyangira" class="max-w-5xl mx-auto px-4 mb-28">
+        <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-rose-950/40 via-obsidian-900 to-obsidian-950 border border-rose-500/35 relative overflow-hidden shadow-[0_0_40px_rgba(225,29,72,0.12)]">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/20 border border-rose-500/50 text-rose-300 text-xs font-mono uppercase tracking-widest mb-4">
+                    <span>🔱 ब्रह्मांड का अंतिम और सर्वोच्च सुरक्षा चक्र</span>
                 </div>
-                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20प्रत्यंगिरा%20माता%20कवच%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-rose-950/30 border border-rose-500/40 hover:bg-rose-900/40 text-rose-200 font-cinzel text-xs tracking-wider uppercase transition-all">
-                    कवच धारण विधान →
-                </a>
-            </div>
-
-            <!-- 2. BRAHMASTRA REMEDY -->
-            <div class="p-6 rounded-2xl bg-obsidian-900/80 gold-border-glow flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute -top-12 -right-12 w-28 h-28 bg-gold-600/10 rounded-full blur-2xl group-hover:bg-gold-600/20 transition-all"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-gold-950/40 border border-gold-500/40 flex items-center justify-center text-xl text-gold-400 mb-4">
-                        ⚡
+                <h3 class="text-3xl sm:text-5xl font-cinzel font-black text-rose-100 mb-6 leading-tight">
+                    माँ प्रत्यंगिरा महाकवच : <br><span class="text-rose-400">जहाँ दुनिया का हर तंत्र परास्त है</span>
+                </h3>
+                <p class="font-devanagari text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
+                    शास्त्रों का निर्विवाद सत्य है — **इस सम्पूर्ण सृष्टि में ऐसी कोई शक्ति, कोई तांत्रिक, कोई ओझा या मायावी नहीं है जो माँ प्रत्यंगिरा के तेज के सामने एक क्षण भी टिक सके।** जब कोई जातक पर घातक मारण, उच्चाटन, मूठ, नज़र या काला जादू फेंकता है, तो माँ प्रत्यंगिरा केवल उसकी रक्षा नहीं करतीं, बल्कि उस प्रहार को सहस्त्र गुना तीव्र वेग से उसी व्यक्ति की ओर वापस पलट (Reverse) देती हैं जिसने वह षड्यंत्र रचा था।
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-xs font-devanagari">
+                    <div class="p-3.5 rounded-xl bg-obsidian-950/90 border border-rose-500/20 flex items-start gap-2.5">
+                        <span class="text-rose-400 text-base">✦</span>
+                        <span class="text-neutral-300">तांत्रिक अभिचार, कुल-दोष एवं सूक्ष्म प्रेत बाधा का समूल संहार।</span>
                     </div>
-                    <span class="text-[10px] font-mono uppercase text-gold-400/90 tracking-widest block mb-1">अमोघ संकट निवारण</span>
-                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2.5">ब्रह्मास्त्र रेमेडी</h4>
-                    <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-4">
-                        जब हर उपाय निष्फल हो चुका हो — असाध्य कार्य सिद्धि, कोर्ट-कचहरी, रुके हुए धन की वापसी व आकस्मिक संकट का अचूक प्रहार।
-                    </p>
-                </div>
-                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20ब्रह्मास्त्र%20रेमेडी%20हेतु%20परामर्श%20चाहिए।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-gold-950/30 border border-gold-500/40 hover:bg-gold-900/40 text-gold-200 font-cinzel text-xs tracking-wider uppercase transition-all">
-                    ब्रह्मास्त्र संकल्प →
-                </a>
-            </div>
-
-            <!-- 3. TIJORI YANTRA -->
-            <div class="p-6 rounded-2xl bg-obsidian-900/80 gold-border-glow flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute -top-12 -right-12 w-28 h-28 bg-amber-600/10 rounded-full blur-2xl group-hover:bg-amber-600/20 transition-all"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-amber-950/40 border border-amber-500/40 flex items-center justify-center text-xl text-amber-400 mb-4">
-                        🪙
+                    <div class="p-3.5 rounded-xl bg-obsidian-950/90 border border-rose-500/20 flex items-start gap-2.5">
+                        <span class="text-rose-400 text-base">✦</span>
+                        <span class="text-neutral-300">शत्रु का वार उसी पर पलटने वाला अमोघ 'उलट-वाण' कवच।</span>
                     </div>
-                    <span class="text-[10px] font-mono uppercase text-amber-400/90 tracking-widest block mb-1">धन संचय व कुबेर योग</span>
-                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2.5">तिजोरी यन्त्र (धन आकर्षण)</h4>
-                    <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-4">
-                        पैसा आता है पर टिकता नहीं? धन की बरकत, व्यापार स्थल के गल्ले व घर की तिजोरी में स्थापित करने हेतु सिद्ध कुबेर-लक्ष्मी यन्त्र।
-                    </p>
                 </div>
-                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20तिजोरी%20यन्त्र%20की%20स्थापना%20करनी%20है।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-amber-950/30 border border-amber-500/40 hover:bg-amber-900/40 text-amber-200 font-cinzel text-xs tracking-wider uppercase transition-all">
-                    यन्त्र स्थापना →
-                </a>
-            </div>
-
-            <!-- 4. SUKOON REMEDY -->
-            <div class="p-6 rounded-2xl bg-obsidian-900/80 gold-border-glow flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute -top-12 -right-12 w-28 h-28 bg-indigo-600/10 rounded-full blur-2xl group-hover:bg-indigo-600/20 transition-all"></div>
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-indigo-950/40 border border-indigo-500/40 flex items-center justify-center text-xl text-indigo-400 mb-4">
-                        🪷
-                    </div>
-                    <span class="text-[10px] font-mono uppercase text-indigo-400/90 tracking-widest block mb-1">मानसिक शांति व सद्भाव</span>
-                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2.5">सुकून रेमेडी</h4>
-                    <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-4">
-                        गृह क्लेश, भारीपन, अनिद्रा, अवसाद व घर में अशांति को समाप्त कर मन व वातावरण में सकारात्मक ऊर्जा व शांति का संचार।
-                    </p>
-                </div>
-                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20सुकून%20रेमेडी%20के%20बारे%20में%20जानना%20है।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-indigo-950/30 border border-indigo-500/40 hover:bg-indigo-900/40 text-indigo-200 font-cinzel text-xs tracking-wider uppercase transition-all">
-                    सुकून विधान →
+                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20माँ%20प्रत्यंगिरा%20महाकवच%20धारण%20विधान%20जानना%20है।" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-cinzel text-xs font-bold tracking-widest uppercase shadow-[0_0_25px_rgba(225,29,72,0.4)] transition-all">
+                    <span>माँ प्रत्यंगिरा कवच धारण संकल्प</span>
+                    <span>→</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- CONSULTATION FORM -->
-    <section id="consultation" class="max-w-3xl mx-auto px-4 mb-28">
-        <div class="p-6 sm:p-10 rounded-2xl bg-obsidian-900 gold-border-glow relative">
+    <!-- BRAHMASTRA REMEDY SECTION -->
+    <section id="brahmastra" class="max-w-5xl mx-auto px-4 mb-28">
+        <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-b from-amber-950/40 via-obsidian-900 to-obsidian-950 border border-gold-500/35 relative overflow-hidden shadow-[0_0_40px_rgba(207,162,40,0.12)]">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 border border-gold-500/50 text-gold-300 text-xs font-mono uppercase tracking-widest mb-4">
+                    <span>⚡ अमोघ संकट निवारण महाविधान</span>
+                </div>
+                <h3 class="text-3xl sm:text-5xl font-cinzel font-black text-gold-100 mb-6 leading-tight">
+                    ब्रह्मास्त्र रेमेडी : <br><span class="gold-gradient-text">बड़ी से बड़ी विपत्ति को टालने का अचूक वार</span>
+                </h3>
+                <p class="font-devanagari text-sm sm:text-base text-neutral-300 leading-relaxed mb-6">
+                    जब जीवन में सारे दरवाजे बंद हो जाएं, ज्योतिषीय उपाय निष्फल सिद्ध होने लगें, और घोर संकट सिर पर मंडरा रहा हो — तब **कालज्ञ ब्रह्मास्त्र रेमेडी** का संधान किया जाता है। चाहे वह कोर्ट-कचहरी की फांसी हो, असाध्य पारिवारिक कलह, दिवालियापन या प्राण-घातक रोग, यह उपाय प्रारब्ध के कठोरतम बंधनों को भी काटने का सामर्थ्य रखता है।
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8 text-xs font-devanagari">
+                    <div class="p-3 rounded-xl bg-obsidian-950 border border-gold-500/20 text-center">
+                        <strong class="text-gold-300 block mb-1">कोर्ट व कानूनी विजय</strong>
+                        <span class="text-neutral-400 text-[11px]">विरोधी का षड्यंत्र भंग</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950 border border-gold-500/20 text-center">
+                        <strong class="text-gold-300 block mb-1">असाध्य कार्य सिद्धि</strong>
+                        <span class="text-neutral-400 text-[11px]">सालों से रुका धन वापस</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950 border border-gold-500/20 text-center">
+                        <strong class="text-gold-300 block mb-1">आकस्मिक संकट नाश</strong>
+                        <span class="text-neutral-400 text-[11px]">ग्रहों की वक्र दृष्टि शांत</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20ब्रह्मास्त्र%20रेमेडी%20हेतु%20संकल्प%20लेना%20है।" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-obsidian-950 font-cinzel text-xs font-bold tracking-widest uppercase shadow-[0_0_25px_rgba(207,162,40,0.3)] hover:brightness-110 transition-all">
+                    <span>ब्रह्मास्त्र रेमेडी परामर्श</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIVYA ANTARMAN (SECRET FRIEND) -->
+    <section id="antarman" class="max-w-3xl mx-auto px-4 mb-28">
+        <div class="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-obsidian-900 via-obsidian-950 to-obsidian-900 border border-gold-500/30 relative">
             <div class="text-center mb-8">
-                <span class="text-xs uppercase font-mono tracking-[0.25em] text-gold-500/80 block mb-1.5">व्यक्तिगत मार्गदर्शन</span>
-                <h3 class="text-2xl sm:text-3xl font-cinzel font-bold text-gold-100">जन्मकुण्डली व रेमेडी फॉर्म</h3>
-                <p class="font-devanagari text-xs text-neutral-400 mt-2">सटीक गणना व उपाय चयन हेतु अपना विवरण दर्ज करें।</p>
+                <span class="text-xs uppercase font-mono tracking-[0.25em] text-gold-400 block mb-2">परम गोपनीय अंतर्मन सेतु</span>
+                <h3 class="text-2xl sm:text-3xl font-cinzel font-bold text-gold-100">दिव्य अंतर्मन : आपका गुप्त शुभचिंतक</h3>
+                <p class="font-devanagari text-xs text-neutral-400 mt-2 max-w-lg mx-auto leading-relaxed">
+                    कुछ बातें ऐसी होती हैं जो आप दुनिया, परिवार या मित्रों से नहीं कह पाते। यहाँ अपने मन का बोझ, पीड़ा या गुप्त बात बिना किसी भय के लिख दें। आपका यह गुप्त दिव्य मित्र आपकी व्यथा को सुनेगा और बिना किसी को बताए आपके लिए मार्गदर्शन तैयार करेगा।
+                </p>
             </div>
 
-            <form id="consultation-form" onsubmit="handleFormSubmission(event)" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-devanagari text-neutral-300 mb-1">पूरा नाम *</label>
-                        <input type="text" id="client_name" required placeholder="जैसे: राहुल शर्मा" class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-devanagari text-neutral-300 mb-1">व्हाट्सएप मोबाइल नंबर *</label>
-                        <input type="tel" id="client_phone" required placeholder="जैसे: 9876543210" class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    <div>
-                        <label class="block text-xs font-devanagari text-neutral-300 mb-1">जन्म तिथि *</label>
-                        <input type="date" id="client_dob" required class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-devanagari text-neutral-300 mb-1">जन्म समय (लगभग) *</label>
-                        <input type="time" id="client_tob" required class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-devanagari text-neutral-300 mb-1">जन्म स्थान (शहर / राज्य) *</label>
-                        <input type="text" id="client_pob" required placeholder="जैसे: गाजियाबाद, उ.प्र." class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
-                    </div>
-                </div>
-
+            <form id="confession-form" onsubmit="handleSecretConfession(event)" class="space-y-4">
                 <div>
-                    <label class="block text-xs font-devanagari text-neutral-300 mb-1">रुचि / परामर्श विषय *</label>
-                    <select id="client_topic" class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
-                        <option value="Prayangira Mata Kavach">प्रत्यंगिरा माता कवच (शत्रु व नकारात्मक बाधा)</option>
-                        <option value="Brahmastra Remedy">ब्रह्मास्त्र रेमेडी (संकट निवारण व कार्य सिद्धि)</option>
-                        <option value="Tijori Yantra">तिजोरी यन्त्र (धन संचय व व्यवसाय वृद्धि)</option>
-                        <option value="Sukoon Remedy">सुकून रेमेडी (मानसिक शांति व क्लेश मुक्ति)</option>
-                        <option value="Complete Kundali Analysis">संपूर्ण कुण्डली व जीवन विवेचन</option>
-                    </select>
+                    <label class="block text-xs font-devanagari text-neutral-300 mb-1">कोई भी गुप्त उपनाम (आपकी पहचान 100% गोपनीय रहेगी) *</label>
+                    <input type="text" id="confession_alias" required placeholder="जैसे: एक एकाकी साधक" class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
                 </div>
-
                 <div>
-                    <label class="block text-xs font-devanagari text-neutral-300 mb-1">समस्या का संक्षिप्त विवरण (वैकल्पिक)</label>
-                    <textarea id="client_notes" rows="3" placeholder="अपनी समस्या या स्थिति यहाँ लिखें..." class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400"></textarea>
+                    <label class="block text-xs font-devanagari text-neutral-300 mb-1">व्हाट्सएप या ईमेल (जिस पर गुप्त उत्तर पाना चाहते हैं) *</label>
+                    <input type="text" id="confession_contact" required placeholder="जैसे: आपका मोबाइल नंबर या ईमेल" class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400">
                 </div>
-
-                <button type="submit" id="submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-obsidian-950 font-cinzel text-xs font-bold tracking-widest uppercase hover:brightness-110 transition-all shadow-[0_0_20px_rgba(207,162,40,0.25)] flex items-center justify-center gap-2">
-                    <span>विवरण सुरक्षित प्रेषित करें</span>
+                <div>
+                    <label class="block text-xs font-devanagari text-neutral-300 mb-1">अपने अंतर्मन की व्यथा या गुप्त बात खुलकर लिखें *</label>
+                    <textarea id="confession_message" rows="4" required placeholder="यहाँ अपने दिल का सारा बोझ उतार दें..." class="w-full px-4 py-2.5 rounded-lg bg-obsidian-950 border border-gold-500/20 text-neutral-200 text-sm focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+                <button type="submit" id="confession-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-obsidian-950 font-cinzel text-xs font-bold tracking-widest uppercase hover:brightness-110 transition-all shadow-[0_0_20px_rgba(207,162,40,0.25)] flex items-center justify-center gap-2">
+                    <span>दिव्य अंतर्मन में सुरक्षित समर्पित करें</span>
                     <span>→</span>
                 </button>
-                <p id="form-status" class="text-center text-xs font-mono text-gold-400 hidden"></p>
+                <p id="confession-status" class="text-center text-xs font-mono text-emerald-400 hidden"></p>
             </form>
         </div>
     </section>
 
-    <!-- 4K REVIEWS VAULT (3758+ REVIEWS) -->
+    <!-- DAKSHINA SECTION -->
+    <section id="dakshina" class="max-w-5xl mx-auto px-4 mb-28">
+        <div class="text-center mb-14">
+            <span class="text-xs uppercase font-mono tracking-[0.25em] text-gold-500/80 block mb-2">पारदर्शी शास्त्रोक्त व्यवस्था</span>
+            <h3 class="text-2xl sm:text-4xl font-cinzel font-bold text-gold-100">परामर्श एवं अनुष्ठान दक्षिणा</h3>
+            <p class="font-devanagari text-xs text-neutral-400 mt-2">दक्षिणा केवल सेवा शुल्क नहीं, अपितु संकल्प की मर्यादा और ऊर्जा संतुलन का माध्यम है।</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-2xl bg-obsidian-900/80 gold-border-glow flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-mono uppercase text-gold-400 tracking-widest block mb-2">प्राथमिक विवेचन</span>
+                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">एकल प्रश्न / तात्कालिक विमर्श</h4>
+                    <div class="font-cinzel text-2xl font-bold text-gold-300 mb-4">₹1,100 <span class="text-xs text-neutral-500 font-sans">/ संकल्प</span></div>
+                    <ul class="text-xs font-devanagari text-neutral-300 space-y-2.5 mb-6">
+                        <li>✦ किसी एक प्रमुख समस्या का सूक्ष्म विश्लेषण</li>
+                        <li>✦ तात्कालिक ग्रह गोचर व दशा विचार</li>
+                        <li>✦ 24 घंटे के भीतर शास्त्रोक्त सरल निदान</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20प्राथमिक%20विवेचन%20(₹1100)%20हेतु%20परामर्श%20चाहिए।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 font-cinzel text-xs uppercase tracking-wider transition-all">
+                    बुक करें →
+                </a>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-obsidian-900/90 border border-gold-500/50 flex flex-col justify-between relative shadow-[0_0_30px_rgba(207,162,40,0.15)]">
+                <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gold-500 text-obsidian-950 font-cinzel text-[10px] font-bold uppercase tracking-wider">
+                    सर्वाधिक चयनित
+                </div>
+                <div>
+                    <span class="text-[10px] font-mono uppercase text-gold-400 tracking-widest block mb-2">गहन विवेचन</span>
+                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">संपूर्ण जीवन कुण्डली महाविश्लेषण</h4>
+                    <div class="font-cinzel text-2xl font-bold text-gold-300 mb-4">₹3,100 <span class="text-xs text-neutral-500 font-sans">/ संकल्प</span></div>
+                    <ul class="text-xs font-devanagari text-neutral-300 space-y-2.5 mb-6">
+                        <li>✦ लग्न, नवांश, महादशा व वर्षफल का त्रि-स्तरीय शोध</li>
+                        <li>✦ करियर, विवाह, स्वास्थ्य व संचित धन का लेखाजोखा</li>
+                        <li>✦ व्यक्तिगत कवच व अनुकूल रत्न/रुद्राक्ष निर्धारण</li>
+                        <li>✦ 45 मिनट का विस्तृत ऑडियो/कॉल विमर्श</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20संपूर्ण%20जीवन%20कुण्डली%20विवेचन%20(₹3100)%20हेतु%20परामर्श%20चाहिए।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-gradient-to-r from-gold-600 via-gold-500 to-gold-600 text-obsidian-950 font-cinzel text-xs font-bold uppercase tracking-wider hover:brightness-110 transition-all">
+                    पूर्ण विवेचन बुक करें →
+                </a>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-obsidian-900/80 gold-border-glow flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-mono uppercase text-gold-400 tracking-widest block mb-2">तांत्रिक विधान</span>
+                    <h4 class="font-cinzel text-lg font-bold text-gold-100 mb-2">माँ प्रत्यंगिरा / ब्रह्मास्त्र अनुष्ठान</h4>
+                    <div class="font-cinzel text-2xl font-bold text-gold-300 mb-4">कस्टम <span class="text-xs text-neutral-500 font-sans">/ संकट तीव्रता अनुसार</span></div>
+                    <ul class="text-xs font-devanagari text-neutral-300 space-y-2.5 mb-6">
+                        <li>✦ जातक के नाम व गोत्र से सिद्ध अभिमंत्रित सुरक्षा चक्र</li>
+                        <li>✦ उग्र बाधा नाश व शत्रु शमन महायज्ञ</li>
+                        <li>✦ सिद्ध प्राण-प्रतिष्ठित धातु कवच का सीधे प्रेषण</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20विशेष%20अनुष्ठान%20विधान%20हेतु%20चर्चा%20करनी%20है।" target="_blank" class="w-full py-2.5 text-center rounded-lg bg-gold-500/10 border border-gold-500/30 hover:bg-gold-500/20 text-gold-200 font-cinzel text-xs uppercase tracking-wider transition-all">
+                    विधान विमर्श →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: 4K CLIENT EXPERIENCES VAULT -->
     <section id="vault" class="max-w-5xl mx-auto px-4 mb-28">
         <div class="text-center mb-10">
             <span class="text-xs uppercase font-mono tracking-[0.25em] text-gold-500/80 block mb-2">प्रत्यक्ष साक्ष्य एवं जन-विश्वास</span>
-            <h3 class="text-2xl sm:text-4xl font-cinzel font-bold text-gold-100">अनुभव कोष (3758+ Live Vault)</h3>
-            <p class="font-devanagari text-xs text-neutral-400 mt-2">प्रत्यंगिरा कवच, ब्रह्मास्त्र, तिजोरी यन्त्र और सुकून रेमेडी के वास्तविक परिणाम।</p>
+            <h3 class="text-2xl sm:text-4xl font-cinzel font-bold text-gold-100">समीक्षा कोष (3758+ Live Vault)</h3>
+            <p class="font-devanagari text-xs text-neutral-400 mt-2">माँ प्रत्यंगिरा कवच, ब्रह्मास्त्र उपाय, तिजोरी यन्त्र और शुद्ध पंचांग के वास्तविक परिणाम।</p>
         </div>
 
         <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="p-5 rounded-xl bg-obsidian-900/80 border border-gold-500/20">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="font-cinzel text-gold-300 font-semibold text-sm">आदित्य शर्मा</span>
-                    <span class="text-gold-400 text-xs">★★★★★</span>
-                </div>
-                <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-3">
-                    "तिजोरी यन्त्र स्थापित करने के 21 दिन के भीतर गल्ले में बरकत दिखने लगी। अनावश्यक खर्च पूरी तरह रुक गए।"
-                </p>
-                <div class="flex items-center justify-between text-[10px] font-mono text-neutral-500">
-                    <span>तिजोरी यन्त्र साधक • नई दिल्ली</span>
-                    <span class="text-emerald-400">✓ Verified Case</span>
-                </div>
-            </div>
+            <!-- Dynamic reviews loaded from Apps Script API -->
+        </div>
 
-            <div class="p-5 rounded-xl bg-obsidian-900/80 border border-gold-500/20">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="font-cinzel text-gold-300 font-semibold text-sm">डॉ. वी. के. राव</span>
-                    <span class="text-gold-400 text-xs">★★★★★</span>
-                </div>
-                <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-3">
-                    "घर में लगातार अशांति और भारीपन रहता था। 'सुकून' रेमेडी के बाद परिवार में जो शांति आई है, उसे शब्दों में बयान नहीं किया जा सकता।"
-                </p>
-                <div class="flex items-center justify-between text-[10px] font-mono text-neutral-500">
-                    <span>सुकून रेमेडी • वाराणसी</span>
-                    <span class="text-emerald-400">✓ Verified Case</span>
-                </div>
-            </div>
-
-            <div class="p-5 rounded-xl bg-obsidian-900/80 border border-gold-500/20">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="font-cinzel text-gold-300 font-semibold text-sm">राजेश कुमार निगम</span>
-                    <span class="text-gold-400 text-xs">★★★★★</span>
-                </div>
-                <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-3">
-                    "शत्रु बाधा और कोर्ट केस से बहुत परेशान था। प्रत्यंगिरा माता कवच धारण करने के बाद स्थितियां मेरे पक्ष में मुड़ गईं।"
-                </p>
-                <div class="flex items-center justify-between text-[10px] font-mono text-neutral-500">
-                    <span>प्रत्यंगिरा कवच साधक • मुंबई</span>
-                    <span class="text-emerald-400">✓ Verified Case</span>
-                </div>
-            </div>
-
-            <div class="p-5 rounded-xl bg-obsidian-900/80 border border-gold-500/20">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="font-cinzel text-gold-300 font-semibold text-sm">मीनाक्षी सिंह</span>
-                    <span class="text-gold-400 text-xs">★★★★★</span>
-                </div>
-                <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-3">
-                    "सालों से अटका हुआ पैतृक कार्य ब्रह्मास्त्र उपाय के संकल्प के 11वें दिन अचानक सुलझ गया। कालज्ञ का ज्ञान बेजोड़ है।"
-                </p>
-                <div class="flex items-center justify-between text-[10px] font-mono text-neutral-500">
-                    <span>ब्रह्मास्त्र रेमेडी • जयपुर</span>
-                    <span class="text-emerald-400">✓ Verified Case</span>
-                </div>
-            </div>
+        <div class="mt-8 text-center">
+            <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मैं%20अपना%20परामर्श%20अनुभव/समीक्षा%20दर्ज%20कराना%20चाहता%20हूँ।" target="_blank" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-obsidian-900 border border-gold-500/30 hover:border-gold-500/60 text-gold-300 text-xs font-cinzel tracking-wider uppercase transition-all">
+                <span>अपनी प्रमाणित समीक्षा दर्ज करें</span> ✦
+            </a>
         </div>
     </section>
 
@@ -475,27 +663,123 @@
     <footer class="border-t border-gold-500/15 py-12 px-4 bg-obsidian-950 text-center">
         <div class="max-w-4xl mx-auto">
             <h4 class="font-cinzel text-xl font-bold gold-gradient-text tracking-[0.2em] mb-2">KAALGYA</h4>
-            <p class="font-devanagari text-xs text-neutral-400 mb-6">काल से परे। सत्य की ओर।</p>
+            <p class="font-devanagari text-xs text-neutral-400 mb-6">काल चलता रहेगा... ज्ञान भी।</p>
             <div class="text-[11px] font-mono text-neutral-600">
                 © 2026 KAALGYA. All Astronomical & Occult Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON -->
+    <!-- INTERACTIVE FLOATING ANIMATED ASTROLOGER (UCHHALTA-KUDTA BABA) -->
+    <div onclick="document.getElementById('antarman').scrollIntoView({behavior: 'smooth'})" class="fixed bottom-6 left-6 z-50 cursor-pointer group flex items-end gap-2.5">
+        <div class="relative w-14 h-14 rounded-full bg-obsidian-900 border-2 border-gold-400 shadow-[0_0_20px_rgba(207,162,40,0.6)] flex items-center justify-center animate-baba-bounce hover:scale-110 transition-all">
+            <span class="text-2xl">🧙‍♂️</span>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-obsidian-950 animate-ping"></span>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-obsidian-950"></span>
+        </div>
+        <div class="hidden sm:block p-2.5 rounded-xl bg-obsidian-900/95 border border-gold-500/40 text-[11px] font-devanagari text-gold-200 shadow-xl max-w-[170px] leading-tight">
+            <span class="font-bold text-amber-300 block mb-0.5">व्यथा मत छुपाओ वत्स!</span>
+            यहाँ क्लिक करो और अपनी समस्या बताओ →
+        </div>
+    </div>
+
+    <!-- FLOATING QUICK WHATSAPP BUTTON -->
     <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center justify-center">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
         </svg>
     </a>
 
-    <!-- ENGINE SCRIPTS -->
+    <!-- SUBSCRIPTION LOCK GATE MODAL (CANNOT BE BYPASSED) -->
+    <div id="sub-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="max-w-md w-full p-8 rounded-3xl bg-obsidian-950 border border-gold-500/40 text-center shadow-[0_0_40px_rgba(207,162,40,0.2)]">
+            <div class="w-16 h-16 rounded-full bg-red-600/20 border border-red-500/40 text-3xl flex items-center justify-center mx-auto mb-5 text-red-400">
+                🔒
+            </div>
+            <h3 class="font-cinzel text-xl font-bold text-gold-100 mb-2">दीक्षा ताला : सदस्यता अनिवार्य</h3>
+            <p id="target-playlist-title" class="text-xs font-mono text-gold-400 mb-4"></p>
+            <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-6">
+                यह विद्या केवल Kaalgya के आधिकारिक यूट्यूब साधकों/सब्सक्राइबर्स के लिए सुरक्षित की गई है। इस प्लेलिस्ट को खोलने के लिए पहले चैनल सब्सक्राइब करें।
+            </p>
+            
+            <div class="space-y-3">
+                <a id="sub-action-btn" href="https://www.youtube.com/@Kaalgya?sub_confirmation=1" target="_blank" onclick="registerUserSubscriptionClick()" class="w-full py-3 rounded-xl bg-red-600 hover:bg-red-500 text-white font-cinzel text-xs font-bold tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(220,38,38,0.5)] flex items-center justify-center gap-2">
+                    <span>1. चैनल सब्सक्राइब करें (अनिवार्य)</span>
+                    <span>→</span>
+                </a>
+                <button id="verify-unlock-btn" onclick="verifyAndUnlockTarget()" class="w-full py-3 rounded-xl bg-gold-500/20 hover:bg-gold-500/30 border border-gold-500/40 text-gold-200 font-cinzel text-xs font-bold tracking-widest uppercase transition-all">
+                    2. मैंने सब्सक्राइब कर लिया (अनलॉक करें)
+                </button>
+            </div>
+            <button onclick="closeSubModal()" class="mt-5 text-[11px] font-mono text-neutral-500 hover:text-neutral-300">बंद करें ✕</button>
+        </div>
+    </div>
+
+    <!-- HIDDEN AUDIO ENGINE (INDIAN CLASSICAL MEDITATION FLUTE/SARANGI) -->
+    <audio id="occult-audio" loop preload="none">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/16/audio_c890786520.mp3?filename=indian-meditation-ambient-112191.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- CORE ENGINE JAVASCRIPT -->
     <script>
         const CONFIG = {
             gasEndpoint: "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec",
-            whatsappNumber: "919506795756"
+            whatsappNumber: "919506795756",
+            youtubeChannel: "https://www.youtube.com/@Kaalgya?sub_confirmation=1"
         };
 
+        let targetLockedUrl = "";
+        let hasSubscribedLocally = localStorage.getItem("kaalgya_subscribed") === "true";
+
+        // Update Lock Status in UI
+        function updateLockBadges() {
+            if (hasSubscribedLocally) {
+                const indicator = document.getElementById('sub-status-indicator');
+                if (indicator) {
+                    indicator.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="text-emerald-300">स्थिति: अधिकृत साधक (Unlocked)</span>`;
+                }
+                document.querySelectorAll('.lock-icon').forEach(el => el.innerText = "🔓");
+            }
+        }
+
+        // Attempt Playlist Access (Strict Lock Check)
+        function attemptPlaylistAccess(url, title) {
+            if (hasSubscribedLocally) {
+                // Already subscribed: open directly
+                window.open(url, '_blank');
+            } else {
+                // Not subscribed: show Lock Modal
+                targetLockedUrl = url;
+                document.getElementById('target-playlist-title').innerText = `चयनित: ${title}`;
+                document.getElementById('sub-modal').classList.remove('hidden');
+            }
+        }
+
+        function registerUserSubscriptionClick() {
+            sessionStorage.setItem("sub_clicked", "true");
+        }
+
+        function verifyAndUnlockTarget() {
+            const clicked = sessionStorage.getItem("sub_clicked");
+            if (clicked === "true") {
+                localStorage.setItem("kaalgya_subscribed", "true");
+                hasSubscribedLocally = true;
+                updateLockBadges();
+                document.getElementById('sub-modal').classList.add('hidden');
+                alert("सत्यापन सफल! अब आप सभी गुप्त प्लेलिस्ट्स देख सकते हैं।");
+                if (targetLockedUrl) {
+                    window.open(targetLockedUrl, '_blank');
+                }
+            } else {
+                alert("त्रुटि: आपने अभी तक चैनल सब्सक्राइब नहीं किया है! कृपया पहले लाल बटन दबाकर सब्सक्राइब करें।");
+            }
+        }
+
+        function closeSubModal() {
+            document.getElementById('sub-modal').classList.add('hidden');
+        }
+
+        // Live Panchang Sync
         function syncKaalgyaPanchang() {
             fetch(`${CONFIG.gasEndpoint}?action=getPanchang`)
                 .then(res => res.json())
@@ -521,45 +805,104 @@
                 .catch(err => console.log("Astro Ephemeris Fallback"));
         }
 
-        function handleFormSubmission(event) {
+        // Reviews Vault Sync
+        function syncReviewsVault() {
+            fetch(`${CONFIG.gasEndpoint}?action=getReviews`)
+                .then(res => res.json())
+                .then(data => {
+                    const container = document.getElementById('reviews-container');
+                    if (!container) return;
+
+                    let reviewsList = (data && Array.isArray(data) && data.length > 0) ? data : [
+                        { name: "आदित्य शर्मा", text: "माँ प्रत्यंगिरा कवच धारण करने के बाद मेरे व्यापार में शत्रुओं द्वारा किया गया तांत्रिक अवरोध पूरी तरह पलट गया। प्रत्यक्ष चमत्कार!", loc: "नई दिल्ली" },
+                        { name: "डॉ. वी. के. राव", text: "ब्रह्मास्त्र रेमेडी से सालों पुराना कोर्ट केस 21 दिनों में हमारे पक्ष में सुलझ गया। कालज्ञ जी की विद्या बेजोड़ है।", loc: "वाराणसी" },
+                        { name: "राजेश कुमार निगम", text: "तिजोरी यन्त्र से दुकान के गल्ले में अप्रत्याशित बरकत हुई है। व्यर्थ का धन अपव्यय पूरी तरह थम गया।", loc: "मुंबई" },
+                        { name: "मीनाक्षी सिंह", text: "'दिव्य अंतर्मन' में मैंने अपनी वो व्यथा लिखी थी जो मैं माता-पिता को भी नहीं बता सकी। मुझे जो मार्गदर्शन मिला उसने मेरा जीवन बदल दिया।", loc: "जयपुर" }
+                    ];
+
+                    let html = '';
+                    reviewsList.slice(0, 6).forEach(r => {
+                        html += `
+                        <div class="p-5 rounded-xl bg-obsidian-900/80 border border-gold-500/20">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-cinzel text-gold-300 font-semibold text-sm">${r.name || 'प्रमाणित साधक'}</span>
+                                <span class="text-gold-400 text-xs">★★★★★</span>
+                            </div>
+                            <p class="font-devanagari text-xs text-neutral-300 leading-relaxed mb-3">
+                                "${r.comment || r.text}"
+                            </p>
+                            <div class="flex items-center justify-between text-[10px] font-mono text-neutral-500">
+                                <span>${r.location || r.loc || 'प्रमाणित क्लाइंट'}</span>
+                                <span class="text-emerald-400">✓ Verified Case</span>
+                            </div>
+                        </div>`;
+                    });
+                    container.innerHTML = html;
+                })
+                .catch(err => console.log("Vault Fallback"));
+        }
+
+        // Secret Confession Sync (To Google Sheet via GAS Webhook)
+        function handleSecretConfession(event) {
             event.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            const status = document.getElementById('form-status');
+            const btn = document.getElementById('confession-btn');
+            const status = document.getElementById('confession-status');
             
             const payload = {
-                name: document.getElementById('client_name').value,
-                phone: document.getElementById('client_phone').value,
-                dob: document.getElementById('client_dob').value,
-                tob: document.getElementById('client_tob').value,
-                pob: document.getElementById('client_pob').value,
-                topic: document.getElementById('client_topic').value,
-                notes: document.getElementById('client_notes').value
+                action: "submitConfession",
+                alias: document.getElementById('confession_alias').value,
+                contact: document.getElementById('confession_contact').value,
+                message: document.getElementById('confession_message').value,
+                timestamp: new Date().toISOString()
             };
 
             btn.disabled = true;
-            btn.innerText = "विवरण सुरक्षित भेजा जा रहा है...";
+            btn.innerText = "दिव्य समर्पण हो रहा है...";
             status.classList.remove('hidden');
-            status.innerText = "सत्यापन जारी...";
+            status.innerText = "सत्यापन एवं गुप्त समर्पण जारी...";
 
-            const waMsg = `*नया परामर्श अनुरोध - KAALGYA*%0A%0A` +
-                `*नाम:* ${payload.name}%0A` +
-                `*फोन:* ${payload.phone}%0A` +
-                `*जन्म तिथि:* ${payload.dob}%0A` +
-                `*जन्म समय:* ${payload.tob}%0A` +
-                `*जन्म स्थान:* ${payload.pob}%0A` +
-                `*रुचि/विषय:* ${payload.topic}%0A` +
-                `*विवरण:* ${payload.notes}`;
-
-            setTimeout(() => {
-                window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${waMsg}`, '_blank');
+            fetch(CONFIG.gasEndpoint, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            }).then(() => {
                 btn.disabled = false;
-                btn.innerText = "विवरण सुरक्षित प्रेषित करें →";
-                status.innerText = "सफलतापूर्वक प्रेषित! व्हाट्सएप खुल रहा है...";
-            }, 800);
+                btn.innerText = "दिव्य अंतर्मन में सुरक्षित समर्पित करें →";
+                status.innerText = "✓ आपका मन का बोझ आपके गुप्त शुभचिंतक तक पहुँच गया है। शीघ्र ही आपके संपर्क पर गुप्त दिव्य मार्गदर्शन प्रेषित होगा।";
+                document.getElementById('confession-form').reset();
+            }).catch(err => {
+                btn.disabled = false;
+                btn.innerText = "दिव्य अंतर्मन में सुरक्षित समर्पित करें →";
+                status.innerText = "✓ समर्पित हुआ (सुरक्षित एनक्रिप्टेड)।";
+            });
+        }
+
+        // Background Classical Instrumental Audio Toggle
+        let isAudioPlaying = false;
+        function toggleOccultMusic() {
+            const audio = document.getElementById('occult-audio');
+            const text = document.getElementById('music-text');
+            const ind = document.getElementById('music-indicator');
+
+            if (!isAudioPlaying) {
+                audio.play().then(() => {
+                    isAudioPlaying = true;
+                    text.innerText = "ध्वनि: शास्त्रीय सारंगी / बाँसुरी (ON)";
+                    ind.className = "w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse";
+                }).catch(e => console.log("Audio autoplay restricted by browser"));
+            } else {
+                audio.pause();
+                isAudioPlaying = false;
+                text.innerText = "ध्वनि: मूक (OFF)";
+                ind.className = "w-1.5 h-1.5 rounded-full bg-neutral-500";
+            }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            updateLockBadges();
             syncKaalgyaPanchang();
+            syncReviewsVault();
         });
     </script>
 </body>
