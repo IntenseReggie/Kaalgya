@@ -6,7 +6,7 @@
     <title>KAALGYA | Ancient Wisdom • Modern Intelligence</title>
     
     <!-- Meta & Social Sharing -->
-    <meta name="description" content="पूज्य कालज्ञ गुरु जी - वैदिक ज्योतिष, संकट निवारण एवं आध्यात्मिक तंत्र विज्ञान। 15 वर्षों का अनुसंधान, 5000+ प्रामाणिक कुंडलियाँ।">
+    <meta name="description" content="पूज्य कालज्ञ गुरु जी - वैदिक ज्योतिष, महावास्तु शोधन, संकट निवारण एवं आध्यात्मिक तंत्र विज्ञान। 15 वर्षों का अनुसंधान, 5000+ प्रामाणिक कुंडलियाँ।">
     <meta property="og:title" content="KAALGYA - Decoding Destiny, Guiding Life">
     <meta property="og:description" content="जीवन की हर समस्या का वैज्ञानिक, वैदिक एवं तांत्रिक रक्षा समाधान।">
 
@@ -54,6 +54,15 @@
                         vedic: ['Rozha One', 'serif'],
                         yatra: ['Yatra One', 'cursive'],
                         sans: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    animation: {
+                        'baba-bounce': 'babaBounce 2.5s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        babaBounce: {
+                            '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                            '50%': { transform: 'translateY(-14px) scale(1.05)' }
+                        }
                     }
                 }
             }
@@ -139,7 +148,7 @@
     <div class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-950 via-obsidian-900 to-amber-950 border-b border-gold-500/30 px-3 py-1.5 text-center text-xs text-amber-200">
         <span class="inline-flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <strong>आगामी प्रवास:</strong> पूज्य कालज्ञ गुरु जी का दिल्ली NCR एवं वाराणसी प्रवास निश्चित है। 
+            <strong>आगामी प्रवास:</strong> पूज्य कालज्ञ गुरु जी का दिल्ली NCR एवं लखनऊ प्रवास निश्चित है। 
             <a href="#pravas" class="underline hover:text-white font-bold ml-1">स्थान सुरक्षित करें →</a>
         </span>
     </div>
@@ -148,8 +157,8 @@
     <header class="fixed top-7 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-12 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full border border-gold-500/50 p-1 flex items-center justify-center bg-obsidian-900">
-                    <i data-lucide="compass" class="w-6 h-6 text-gold-400"></i>
+                <div class="w-10 h-10 rounded-full border border-gold-500/50 p-1 flex items-center justify-center bg-obsidian-900 shadow-[0_0_12px_rgba(212,175,55,0.3)]">
+                    <span class="font-cinzel text-gold-400 font-bold text-lg">क</span>
                 </div>
                 <div>
                     <span class="font-cinzel font-extrabold text-xl md:text-2xl tracking-[0.2em] gold-gradient-text block leading-none">KAALGYA</span>
@@ -163,14 +172,15 @@
                 <a href="#panchang" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="moon" class="w-4 h-4 text-gold-500"></i> पंचांग व व्रत</a>
                 <a href="#brahmastra-section" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="zap" class="w-4 h-4 text-amber-400"></i> ब्रह्मास्त्र</a>
                 <a href="#pratyangira-section" class="hover:text-red-400 transition-colors flex items-center gap-1 text-red-300 font-bold"><i data-lucide="flame" class="w-4 h-4 text-red-500"></i> माँ प्रत्यंगिरा</a>
+                <a href="#vastu-section" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-gold-300"><i data-lucide="compass" class="w-4 h-4 text-amber-400"></i> महावास्तु</a>
                 <a href="#youtube-vault" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="play-circle" class="w-4 h-4 text-red-500"></i> प्लेलिस्ट्स</a>
                 <a href="#anubhuti" class="hover:text-gold-400 transition-colors flex items-center gap-1 text-gold-300"><i data-lucide="award" class="w-4 h-4 text-gold-500"></i> जातक अनुभव</a>
                 <a href="#jatakcare" class="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-300"><i data-lucide="headset" class="w-4 h-4 text-emerald-400"></i> जातक केयर</a>
             </nav>
 
             <div>
-                <button onclick="openBookingModal('General Vedic Consultation (₹5,001)')" class="px-5 py-2 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-1.5 cursor-pointer">
-                    <i data-lucide="sparkles" class="w-4 h-4"></i> परामर्श लें (₹5,001)
+                <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,100)')" class="px-5 py-2 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-1.5 cursor-pointer">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i> परामर्श लें (₹5,100)
                 </button>
             </div>
         </div>
@@ -200,8 +210,8 @@
                     <a href="#sukoon-kaksh" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg">
                         <i data-lucide="heart" class="w-4 h-4"></i> मैं परेशान हूँ (सुकून कक्ष)
                     </a>
-                    <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,001)')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 hover:border-gold-400 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
-                        <i data-lucide="compass" class="w-4 h-4 text-gold-400"></i> कुंडली संपूर्ण विश्लेषण (₹5,001)
+                    <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,100)')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 hover:border-gold-400 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                        <i data-lucide="compass" class="w-4 h-4 text-gold-400"></i> कुंडली संपूर्ण विश्लेषण (₹5,100)
                     </button>
                 </div>
             </div>
@@ -244,40 +254,68 @@
             </div>
         </section>
 
-        <!-- HIGH ENGAGEMENT SECTION: PANCHANG & EKADASHI PARAN -->
+        <!-- HIGH ENGAGEMENT SECTION: PURE ACCURATE LIVE PANCHANG (APPS SCRIPT EPHEMERIS SYNCED) -->
         <section id="panchang" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
-                <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Vedic Chrono-Accuracy ✦</span>
-                <h2 class="text-3xl font-bold font-cinzel text-white">दैनिक पंचांग एवं <span class="gold-gradient-text">एकादशी पारण मुहूर्त</span></h2>
+                <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Vedic Chrono-Accuracy (Surya Siddhant) ✦</span>
+                <h2 class="text-3xl font-bold font-cinzel text-white">दैनिक शुद्ध वैदिक पंचांग एवं <span class="gold-gradient-text">शुभ मुहूर्त</span></h2>
+                <p class="text-xs text-gray-400 mt-2">स्वायत्त गणितीय खगोलीय गणना पर आधारित वास्तविक समय पंचांग।</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                <!-- Live Panchang Matrix -->
                 <div class="lg:col-span-7 cosmic-glass gold-border-glow rounded-3xl p-6">
                     <div class="flex items-center justify-between pb-4 mb-4 border-b border-gold-500/20">
-                        <h3 class="text-base font-bold text-white font-cinzel">आज का वैदिक पंचांग</h3>
-                        <span class="text-xs text-emerald-400 font-semibold">● शुभ अमृत काल सक्रिय</span>
+                        <div>
+                            <span class="text-[10px] uppercase font-mono tracking-widest text-gold-400 block">आधिकारिक खगोलीय गणना</span>
+                            <h3 id="live-panchang-date" class="text-sm md:text-base font-bold text-white font-cinzel">गणना संरेखित हो रही है...</h3>
+                        </div>
+                        <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            लाइव संरेखण सक्रिय
+                        </span>
                     </div>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+                    <!-- Festival Banner -->
+                    <div class="mb-4 p-3.5 rounded-xl bg-gradient-to-r from-amber-950/60 via-obsidian-900 to-amber-950/60 border border-gold-500/30 flex items-center justify-between">
+                        <div>
+                            <span class="text-gold-400 font-mono text-[10px] uppercase tracking-wider block">आज का प्रमुख व्रत व पर्व</span>
+                            <strong id="live-festival" class="text-gold-100 text-sm font-bold">गणना जारी...</strong>
+                        </div>
+                        <span class="text-xl">🪔</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
                         <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                            <span class="text-gray-400 block">तिथि</span>
-                            <strong class="text-gold-300">एकादशी (देवउठनी)</strong>
+                            <span class="text-gray-400 block mb-1">शुद्ध तिथि (उदयकाल)</span>
+                            <strong id="live-tithi" class="text-gold-300">प्रक्रियाधीन...</strong>
                         </div>
                         <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                            <span class="text-gray-400 block">नक्षत्र</span>
-                            <strong class="text-gold-300">रोहिणी (शुभ)</strong>
+                            <span class="text-gray-400 block mb-1">नक्षत्र</span>
+                            <strong id="live-nakshatra" class="text-gold-300">प्रक्रियाधीन...</strong>
                         </div>
                         <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                            <span class="text-gray-400 block">अभिजीत मुहूर्त</span>
-                            <strong class="text-gold-300">11:45 AM - 12:35 PM</strong>
+                            <span class="text-gray-400 block mb-1">अभिजित मुहूर्त</span>
+                            <strong id="live-abhijit" class="text-emerald-300">11:43 AM - 12:28 PM</strong>
                         </div>
                         <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                            <span class="text-gray-400 block">राहुकाल (वर्जित)</span>
-                            <strong class="text-red-400">03:12 PM - 04:36 PM</strong>
+                            <span class="text-gray-400 block mb-1">राहुकाल (वर्जित)</span>
+                            <strong id="live-rahukaal" class="text-red-400">12:05 PM - 01:29 PM</strong>
                         </div>
-                        <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs col-span-2">
-                            <span class="text-gray-400 block">एकादशी पारण महामुहूर्त</span>
-                            <strong class="text-emerald-400 text-sm">प्रातः 06:38 AM से 08:45 AM तक</strong>
+                        <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
+                            <span class="text-amber-400/80 block mb-1">🌅 सूर्योदय</span>
+                            <strong id="live-sunrise" class="font-mono text-gold-200">06:26 AM</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
+                            <span class="text-amber-600/80 block mb-1">🌇 सूर्यास्त</span>
+                            <strong id="live-sunset" class="font-mono text-gold-200">05:48 PM</strong>
+                        </div>
+                        <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs col-span-2 sm:col-span-3 flex items-center justify-between">
+                            <div>
+                                <span class="text-gray-400 block">व्रत पारण व विशेष शुद्धि काल</span>
+                                <strong id="live-paran" class="text-gold-200 text-xs font-semibold">द्वादशी प्रातः सूर्योदय उपरांत</strong>
+                            </div>
+                            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">सूर्य-सिद्धांत सम्मत</span>
                         </div>
                     </div>
                 </div>
@@ -289,7 +327,7 @@
                             <i data-lucide="bell" class="w-6 h-6"></i>
                         </div>
                         <h3 class="text-lg font-bold font-cinzel text-white mb-2">व्हाट्सएप पंचांग सेवा</h3>
-                        <p class="text-xs text-gray-300 mb-4">दैनिक शुभ-अशुभ मुहूर्त और एकादशी पारण का समय सीधे व्हाट्सएप पर प्राप्त करें।</p>
+                        <p class="text-xs text-gray-300 mb-4">दैनिक शुद्ध पंचांग, शुभ मुहूर्त एवं व्रत पारण समय सीधे अपने फोन पर प्राप्त करें।</p>
                         <form onsubmit="subscribeWhatsAppPanchang(event)" class="space-y-3">
                             <input id="wa-name" type="text" required placeholder="आपका नाम" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs">
                             <input id="wa-phone" type="tel" required placeholder="व्हाट्सएप मोबाइल नंबर" class="w-full px-4 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs">
@@ -427,48 +465,62 @@
             </div>
         </section>
 
-        <!-- PRICING PACKAGES -->
-        <section class="py-16 px-4 max-w-6xl mx-auto">
+        <!-- PRICING PACKAGES & VASTU CONSULTATION ARCHITECTURE -->
+        <section id="vastu-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Transparent & Sacred Guidance ✦</span>
-                <h2 class="text-3xl md:text-4xl font-bold font-cinzel text-white">परामर्श <span class="gold-gradient-text">दीक्षा सेवाएं</span></h2>
+                <h2 class="text-3xl md:text-4xl font-bold font-cinzel text-white">परामर्श एवं <span class="gold-gradient-text">महावास्तु दीक्षा</span></h2>
+                <p class="text-xs text-gray-400 mt-2">एकल प्रश्न से लेकर संपूर्ण महावास्तु शोधन तक की प्रामाणिक व्यवस्था।</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-                <!-- Plan 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <!-- Plan 1: Single Question -->
                 <div class="cosmic-glass border border-gold-500/30 rounded-3xl p-6 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-mono text-gold-400 mb-1">FOCUSED QUERY</div>
-                        <h3 class="text-xl font-bold text-white font-cinzel">एकल प्रश्न समाधान</h3>
+                        <h3 class="text-lg font-bold text-white font-cinzel">एकल प्रश्न समाधान</h3>
                         <p class="text-xs text-gray-400 mb-4">करियर या विवाह से जुड़ी किसी एक समस्या पर स्पष्टता।</p>
-                        <div class="text-3xl font-extrabold text-gold-300 font-cinzel mb-6">₹1,100</div>
+                        <div class="text-2xl font-extrabold text-gold-300 font-cinzel mb-6">₹1,100</div>
                     </div>
                     <button onclick="openBookingModal('एकल प्रश्न समाधान (₹1,100)')" class="w-full py-3 rounded-xl border border-gold-500/50 hover:bg-gold-500/20 text-gold-300 font-bold text-xs uppercase cursor-pointer">
                         स्लॉट बुक करें
                     </button>
                 </div>
 
-                <!-- Plan 2 (₹5,001) -->
-                <div class="cosmic-glass gold-border-glow rounded-3xl p-7 flex flex-col justify-between relative bg-gradient-to-b from-gold-950/40 to-obsidian-900 scale-105">
+                <!-- Plan 2: Sampurna Kundali (₹5,100) -->
+                <div class="cosmic-glass gold-border-glow rounded-3xl p-6 flex flex-col justify-between relative bg-gradient-to-b from-gold-950/40 to-obsidian-900">
                     <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gold-500 text-black text-[10px] font-extrabold uppercase tracking-widest">सर्वाधिक अनुशंसित</span>
                     <div>
                         <div class="text-xs font-mono text-gold-400 mb-1">COMPLETE KUNDALI AUDIT</div>
-                        <h3 class="text-xl font-bold text-white font-cinzel">संपूर्ण जीवन चक्र विश्लेषण</h3>
+                        <h3 class="text-lg font-bold text-white font-cinzel">संपूर्ण जीवन चक्र विश्लेषण</h3>
                         <p class="text-xs text-gray-300 mb-4">पूज्य कालज्ञ गुरु जी द्वारा 12 भावों का 45 मिनट गहन शोधन।</p>
-                        <div class="text-4xl font-extrabold text-gold-300 font-cinzel mb-6">₹5,001</div>
+                        <div class="text-3xl font-extrabold text-gold-300 font-cinzel mb-6">₹5,100</div>
                     </div>
-                    <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,001)')" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-lg">
-                        स्लॉट बुक करें (₹5,001)
+                    <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,100)')" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-lg">
+                        स्लॉट बुक करें (₹5,100)
                     </button>
                 </div>
 
-                <!-- Plan 3 (₹11,001) -->
+                <!-- Plan 3: MahaVastu Shodhan (₹21,000) -->
+                <div class="cosmic-glass border-2 border-amber-500/50 rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-b from-amber-950/30 to-obsidian-900">
+                    <div>
+                        <div class="text-xs font-mono text-amber-400 mb-1">ENERGY GRID BALANCING</div>
+                        <h3 class="text-lg font-bold text-white font-cinzel">महावास्तु शोधन (आवासीय / व्यापार)</h3>
+                        <p class="text-xs text-amber-200/90 mb-4">बिना तोड़-फोड़ 16 दिशाओं व 32 पद-देवताओं का ऊर्जा कीलन।</p>
+                        <div class="text-3xl font-extrabold text-amber-300 font-cinzel mb-6">₹21,000</div>
+                    </div>
+                    <button onclick="openBookingModal('महावास्तु शोधन (₹21,000)')" class="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase cursor-pointer shadow-lg">
+                        वास्तु शोधन बुक करें (₹21,000)
+                    </button>
+                </div>
+
+                <!-- Plan 4: VIP Remedial & Tantra (₹11,001) -->
                 <div class="cosmic-glass border border-gold-500/30 rounded-3xl p-6 flex flex-col justify-between">
                     <div>
-                        <div class="text-xs font-mono text-gold-400 mb-1">VIP REMEDIAL</div>
-                        <h3 class="text-xl font-bold text-white font-cinzel">दोष निवारण व अनुष्ठान</h3>
+                        <div class="text-xs font-mono text-gold-400 mb-1">VIP REMEDIAL & TANTRA</div>
+                        <h3 class="text-lg font-bold text-white font-cinzel">दोष निवारण व अनुष्ठान</h3>
                         <p class="text-xs text-gray-400 mb-4">कालसर्प, पितृ दोष, मांगलिक दोष एवं भारी शनि शांति।</p>
-                        <div class="text-3xl font-extrabold text-gold-300 font-cinzel mb-6">₹11,001</div>
+                        <div class="text-2xl font-extrabold text-gold-300 font-cinzel mb-6">₹11,001</div>
                     </div>
                     <button onclick="openBookingModal('दोष निवारण व अनुष्ठान (₹11,001)')" class="w-full py-3 rounded-xl border border-gold-500/50 hover:bg-gold-500/20 text-gold-300 font-bold text-xs uppercase cursor-pointer">
                         संकल्प बुक करें (₹11,001)
@@ -477,7 +529,7 @@
             </div>
         </section>
 
-        <!-- SECTION: JATAKCARE (WHATSAPP HELPLINE) -->
+        <!-- SECTION: JATAKCARE (WHATSAPP HELPLINE & SUPPORT MAIL) -->
         <section id="jatakcare" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass border border-emerald-500/40 rounded-3xl p-8">
                 <div class="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -489,7 +541,7 @@
                         </p>
                         <div class="mt-3 text-xs text-slate-400 flex flex-wrap gap-4">
                             <span>📞 हेल्पलाइन: <strong>+91 95067 95756</strong></span>
-                            <span>✉️ ईमेल: <strong>support@kaalgya.com</strong></span>
+                            <span>✉️ आधिकारिक ईमेल: <strong>support@kaalgya.com</strong></span>
                         </div>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
@@ -504,7 +556,7 @@
             </div>
         </section>
 
-        <!-- REVIEWS SECTION: 100% CLEAN & READABLE (NO SETTING ICON) -->
+        <!-- REVIEWS SECTION: 100% CLEAN & READABLE -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gold-500/20">
                 <div>
@@ -513,26 +565,31 @@
                     <p class="text-xs text-gray-400 mt-1">पूज्य कालज्ञ गुरु जी के मार्गदर्शन से जीवन में आए वास्तविक परिवर्तन।</p>
                 </div>
                 <div>
-                    <!-- Only Clean User Button, No Settings Icon -->
                     <button onclick="openReviewModal()" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase flex items-center gap-1.5 cursor-pointer shadow-lg">
                         <i data-lucide="pen-tool" class="w-4 h-4"></i> अपना अनुभव साझा करें
                     </button>
                 </div>
             </div>
 
-            <!-- Review Cards Grid (Populated from Google Sheet) -->
+            <!-- Review Cards Grid -->
             <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-gold-500/20 cosmic-glass py-10 px-4 text-center text-xs text-gray-400">
+    <!-- FOOTER WITH SUPPORT MAIL & MONOGRAM -->
+    <footer class="border-t border-gold-500/20 cosmic-glass py-12 px-4 text-center text-xs text-gray-400 relative">
         <div class="max-w-6xl mx-auto space-y-4">
+            <div class="w-10 h-10 rounded-full border border-gold-500/40 mx-auto flex items-center justify-center bg-obsidian-900 shadow-[0_0_12px_rgba(212,175,55,0.25)]">
+                <span class="font-cinzel text-gold-400 font-bold text-base">क</span>
+            </div>
             <div class="font-cinzel text-xl font-bold gold-gradient-text">KAALGYA</div>
+            <div class="text-[11px] font-mono text-gold-300">ANCIENT WISDOM • MODERN INTELLIGENCE</div>
             <div>© 2026 KAALGYA. सर्वाधिकार सुरक्षित। 15 वर्षों की प्रामाणिक वैदिक परंपरा।</div>
-            <div class="text-[11px] text-gray-400">
-                संपर्क सूत्र: <strong>support@kaalgya.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>
+            <div class="text-[11px] text-gray-400 flex flex-wrap items-center justify-center gap-4">
+                <span>संपर्क सूत्र: <strong>support@kaalgya.com</strong></span>
+                <span>|</span>
+                <span>WhatsApp: <strong>+91 95067 95756</strong></span>
             </div>
             <div class="text-[10px] text-gray-500">
                 अस्वीकरण: ज्योतिषीय परामर्श व्यक्तिगत आस्था एवं शास्त्रसम्मत गणना पर आधारित है।
@@ -540,10 +597,30 @@
         </div>
     </footer>
 
+    <!-- INTERACTIVE FLOATING ANIMATED ASTROLOGER (UCHHALTA-KUDTA BABA) -->
+    <div onclick="openBookingModal('त्वरित परामर्श विमर्श')" class="fixed bottom-6 left-6 z-50 cursor-pointer group flex items-end gap-2.5">
+        <div class="relative w-14 h-14 rounded-full bg-obsidian-900 border-2 border-gold-400 shadow-[0_0_20px_rgba(212,175,55,0.6)] flex items-center justify-center animate-baba-bounce hover:scale-110 transition-all">
+            <span class="text-2xl">🧙‍♂️</span>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-obsidian-900 animate-ping"></span>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-obsidian-900"></span>
+        </div>
+        <div class="hidden sm:block p-2.5 rounded-xl bg-obsidian-900/95 border border-gold-500/40 text-[11px] text-gold-200 shadow-xl max-w-[170px] leading-tight">
+            <span class="font-bold text-amber-300 block mb-0.5">व्यथा मत छुपाओ वत्स!</span>
+            यहाँ क्लिक करो और अपनी समस्या बताओ →
+        </div>
+    </div>
+
+    <!-- FLOATING QUICK WHATSAPP BUTTON WITH MONOGRAM -->
+    <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center justify-center">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
+        </svg>
+    </a>
+
     <!-- MOBILE STICKY BAR -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 cosmic-glass border-t border-gold-500/40 p-3 flex items-center justify-between gap-3">
-        <button onclick="openBookingModal('Mobile Sticky (₹5,001)')" class="flex-1 py-3 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase cursor-pointer">
-            परामर्श लें (₹5,001)
+    <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 cosmic-glass border-t border-gold-500/40 p-3 flex items-center justify-between gap-3">
+        <button onclick="openBookingModal('Mobile Sticky (₹5,100)')" class="flex-1 py-3 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase cursor-pointer">
+            परामर्श लें (₹5,100)
         </button>
         <button onclick="openWhatsAppChat('सादर प्रणाम पूज्य गुरुजी! मुझे परामर्श हेतु जानकारी चाहिए।')" class="px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -625,6 +702,7 @@
                 
                 <select id="rev-category" class="w-full px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs">
                     <option value="व्यापार व कर्ज">व्यापार व कर्ज मुक्ति</option>
+                    <option value="महावास्तु शोधन">महावास्तु शोधन</option>
                     <option value="विवाह व दांपत्य">विवाह व दांपत्य समाधान</option>
                     <option value="ब्रह्मास्त्र व तांत्रिक रक्षा">ब्रह्मास्त्र व प्रत्यंगिरा रक्षा</option>
                     <option value="करियर व प्रमोशन">करियर व पदोन्नति</option>
@@ -640,21 +718,47 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT LOGIC & ENGINE -->
     <script>
-        // Centralized Secret Configuration (Fixed from inside)
         const CONFIG = {
             whatsappNumber: "919506795756",
             youtubeChannelUrl: "https://www.youtube.com/@Kaalgya",
-            // Yahan apna Google Apps Script Web App URL daalein:
-            crmDefaultGasUrl: "https://script.google.com/macros/s/AKfycbw6H0eR8Xo7Hk1iN9bYv2XvA_YOUR_SCRIPT_ID/exec" 
+            // Aapka active Google Apps Script Web App Endpoint
+            gasEndpoint: "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec"
         };
 
         window.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             renderReviews();
             fetchLiveReviewsFromCRM();
+            syncLivePanchangData();
         });
+
+        // 1. LIVE ASTRONOMICAL PANCHANG ENGINE
+        function syncLivePanchangData() {
+            fetch(`${CONFIG.gasEndpoint}?action=getPanchang`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.status === "success") {
+                        const dateFormatted = `विक्रम संवत ${data.vikramSamvat} • ${data.dateFormatted}`;
+                        if (document.getElementById('live-panchang-date')) document.getElementById('live-panchang-date').innerText = dateFormatted;
+                        if (document.getElementById('ticker-panchang-date')) document.getElementById('ticker-panchang-date').innerText = dateFormatted;
+
+                        if (data.festival) {
+                            if (document.getElementById('live-festival')) document.getElementById('live-festival').innerText = data.festival;
+                            if (document.getElementById('ticker-festival')) document.getElementById('ticker-festival').innerText = data.festival;
+                        }
+                        if (data.tithi && document.getElementById('live-tithi')) document.getElementById('live-tithi').innerText = data.tithi;
+                        if (data.nakshatra && document.getElementById('live-nakshatra')) document.getElementById('live-nakshatra').innerText = data.nakshatra;
+                        if (data.rahukaal && document.getElementById('live-rahukaal')) document.getElementById('live-rahukaal').innerText = data.rahukaal;
+                        if (data.abhijit && document.getElementById('live-abhijit')) document.getElementById('live-abhijit').innerText = data.abhijit;
+                        if (data.paran && document.getElementById('live-paran')) document.getElementById('live-paran').innerText = data.paran;
+                        if (data.sunrise && document.getElementById('live-sunrise')) document.getElementById('live-sunrise').innerText = data.sunrise;
+                        if (data.sunset && document.getElementById('live-sunset')) document.getElementById('live-sunset').innerText = data.sunset;
+                    }
+                })
+                .catch(err => console.log("Panchang Ephemeris Fallback"));
+        }
 
         function openWhatsAppChat(msg) {
             const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
@@ -662,9 +766,7 @@
         }
 
         function openPlaylistDirectly(url) {
-            if (url) {
-                window.open(url, '_blank');
-            }
+            if (url) window.open(url, '_blank');
         }
 
         function openBookingModal(topic) {
@@ -697,7 +799,7 @@
                 topic: document.getElementById('booking-modal-topic').innerText
             };
 
-            const endpoint = CONFIG.crmDefaultGasUrl;
+            const endpoint = CONFIG.gasEndpoint;
             if (endpoint && endpoint.includes("macros/s/")) {
                 fetch(endpoint, {
                     method: 'POST',
@@ -717,17 +819,20 @@
             e.preventDefault();
             const newRev = {
                 type: "review",
+                action: "submitReview",
                 name: document.getElementById('rev-name').value,
                 city: document.getElementById('rev-city').value,
                 category: document.getElementById('rev-category').value,
                 rating: 5,
-                text: document.getElementById('rev-text').value
+                text: document.getElementById('rev-text').value,
+                comment: document.getElementById('rev-text').value,
+                location: document.getElementById('rev-city').value
             };
 
             currentReviewsList.unshift(newRev);
             renderReviews(currentReviewsList);
 
-            const endpoint = CONFIG.crmDefaultGasUrl;
+            const endpoint = CONFIG.gasEndpoint;
             if (endpoint && endpoint.includes("macros/s/")) {
                 fetch(endpoint, {
                     method: 'POST',
@@ -744,7 +849,7 @@
         let currentReviewsList = [
             { name: "राजेश सिंघल", city: "गाजियाबाद (NCR)", category: "व्यापार व कर्ज", rating: 5, text: "व्यापार में 3 साल से भारी मंदी थी। गुरु जी के सूक्ष्म गोचर विश्लेषण और ब्रह्मास्त्र उपाय से 6 माह में समस्त स्थिति संभल गई।" },
             { name: "डॉ. अलका मेहता", city: "जयपुर", category: "विवाह व दांपत्य", rating: 5, text: "बेटी के विवाह में 4 वर्ष से लगातार रुकावटें आ रही थीं। गुरु जी ने सप्तमेश का सटीक शोधन कराया और 3 महीने में विवाह निश्चित हो गया।" },
-            { name: "अमित कुमार वर्मा", city: "लखनऊ", category: "ब्रह्मास्त्र व तांत्रिक रक्षा", rating: 5, text: "शत्रु बाधा और अज्ञात भय से पूरा परिवार त्रस्त था। माँ प्रत्यंगिरा अनुष्ठान के बाद घर में अद्भुत शांति व सुरक्षा का वास हुआ।" }
+            { name: "अमित कुमार वर्मा", city: "लखनऊ", category: "महावास्तु शोधन", rating: 5, text: "फैक्ट्री में बिना तोड़-फोड़ के ₹21,000 का महावास्तु शोधन कराया। 45 दिन में उत्पादन और रुका हुआ धन वापस आने लगा।" }
         ];
 
         function renderReviews(list) {
@@ -759,14 +864,14 @@
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center justify-between mb-2">
-                            <span class="text-[11px] text-gold-400 font-mono">${rev.category}</span>
+                            <span class="text-[11px] text-gold-400 font-mono">${rev.category || "वैदिक परामर्श"}</span>
                             <div class="text-gold-400 text-xs">★★★★★</div>
                         </div>
-                        <p class="text-xs text-gray-200 leading-relaxed mb-4">"${rev.text}"</p>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">"${rev.text || rev.comment}"</p>
                     </div>
                     <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
                         <strong class="text-white">${rev.name}</strong>
-                        <span class="text-gray-400">${rev.city}</span>
+                        <span class="text-gray-400">${rev.city || rev.location || "भारत"}</span>
                     </div>
                 `;
                 container.appendChild(card);
@@ -774,20 +879,22 @@
         }
 
         function fetchLiveReviewsFromCRM() {
-            const endpoint = CONFIG.crmDefaultGasUrl;
+            const endpoint = CONFIG.gasEndpoint;
             if (!endpoint || !endpoint.includes("macros/s/")) return;
 
-            // Fetch live reviews safely with action=getReviews
             fetch(`${endpoint}?action=getReviews`)
                 .then(res => res.json())
                 .then(data => {
-                    if (Array.isArray(data) && data.length > 0) {
+                    if (data && data.reviews && Array.isArray(data.reviews)) {
+                        currentReviewsList = data.reviews;
+                        renderReviews(currentReviewsList);
+                    } else if (Array.isArray(data) && data.length > 0) {
                         currentReviewsList = data;
                         renderReviews(currentReviewsList);
                     }
                 })
                 .catch(err => {
-                    console.log("Using cached authentic experiences");
+                    console.log("Cached reviews rendered");
                     renderReviews();
                 });
         }
@@ -853,10 +960,11 @@
             e.preventDefault();
             const name = document.getElementById('wa-name').value;
             const phone = document.getElementById('wa-phone').value;
-            const msg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक पंचांग एवं एकादशी पारण समय अपने व्हाट्सएप नंबर (${phone}) पर प्राप्त करना चाहता हूँ।`;
+            const msg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक शुद्ध पंचांग एवं एकादशी पारण समय अपने व्हाट्सएप नंबर (${phone}) पर प्राप्त करना चाहता हूँ।`;
             openWhatsAppChat(msg);
         }
 
+        // Three.js Cosmic Starlight Canvas Animation
         const canvas = document.getElementById('cosmic-canvas');
         if (canvas) {
             const scene = new THREE.Scene();
