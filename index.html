@@ -5,23 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KAALGYA | Ancient Wisdom • Modern Intelligence</title>
     
-    <!-- Meta & Social Sharing -->
     <meta name="description" content="पूज्य कालज्ञ गुरु जी - वैदिक ज्योतिष, संकट निवारण एवं आध्यात्मिक तंत्र विज्ञान। 15 वर्षों का अनुसंधान, 5000+ प्रामाणिक कुंडलियाँ।">
     <meta property="og:title" content="KAALGYA - Decoding Destiny, Guiding Life">
     <meta property="og:description" content="जीवन की हर समस्या का वैज्ञानिक, वैदिक एवं तांत्रिक रक्षा समाधान।">
 
-    <!-- Fonts & Libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;800&family=Rozha+One&family=Yatra+One&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Three.js for Cosmic Occult Starfield -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Tone.js for Sacred Audio -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
 
     <script>
@@ -93,9 +87,7 @@
         }
 
         .cosmic-glass {
-            background: rgba(10, 12, 18, 0.88);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
+            background: rgba(10, 12, 18, 0.92);
         }
 
         #cosmic-canvas {
@@ -103,7 +95,7 @@
             top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none !important;
             z-index: 0 !important;
-            opacity: 0.75;
+            opacity: 0.7;
         }
 
         main, header, footer, section {
@@ -111,46 +103,70 @@
             z-index: 10;
         }
 
-        /* LIVING MEDALLION ANIMATIONS */
-        @keyframes wheelSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @keyframes eyeNaturalBlink {
-            0%, 46%, 54%, 100% { transform: scaleY(1); opacity: 0; }
-            49%, 51% { transform: scaleY(0.08); opacity: 0.95; }
-        }
-        @keyframes eyeDiamondPulse {
-            0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 3px #FFF); }
-            50% { transform: scale(1.25) rotate(45deg); filter: drop-shadow(0 0 14px #F5D061); }
-        }
-        @keyframes lotusAuraPulse {
-            0%, 100% { transform: scale(1); opacity: 0.35; filter: drop-shadow(0 0 10px rgba(212,175,55,0.3)); }
-            50% { transform: scale(1.08); opacity: 0.85; filter: drop-shadow(0 0 25px rgba(212,175,55,0.7)); }
-        }
-        @keyframes occultFogFloat {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.35; }
-            50% { transform: translateY(-20px) scale(1.15); opacity: 0.7; }
+        /* CRISP HD MEDALLION ENGINE (NO BLUR OVERLAY) */
+        .medallion-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            margin: 0 auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .live-zodiac-wheel {
-            animation: wheelSpin 70s linear infinite;
+        @media (min-width: 768px) {
+            .medallion-container {
+                width: 410px;
+                height: 410px;
+            }
+        }
+
+        .crisp-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.45), inset 0 0 20px rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(212, 175, 55, 0.6);
+            display: block;
+        }
+
+        /* LIVE DYNAMIC OVERLAYS */
+        @keyframes wheelSpinSmooth {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes blinkEyelid {
+            0%, 46%, 54%, 100% { transform: scaleY(1); opacity: 0; }
+            49%, 51% { transform: scaleY(0.06); opacity: 0.95; }
+        }
+        @keyframes pupilDiamondFlash {
+            0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 3px #FFFFFF); }
+            50% { transform: scale(1.3) rotate(45deg); filter: drop-shadow(0 0 16px #F5D061); }
+        }
+        @keyframes lotusBreathGlow {
+            0%, 100% { transform: scale(1); opacity: 0.25; }
+            50% { transform: scale(1.06); opacity: 0.75; }
+        }
+
+        .anim-ring-spin {
+            animation: wheelSpinSmooth 65s linear infinite;
             transform-origin: center center;
         }
-        .live-eyelid-blink {
-            animation: eyeNaturalBlink 4.2s ease-in-out infinite;
-            transform-origin: 50% 47%;
+        .anim-eye-blink {
+            animation: blinkEyelid 4.5s ease-in-out infinite;
+            transform-origin: 50% 46%;
         }
-        .live-diamond-pupil {
-            animation: eyeDiamondPulse 2.8s ease-in-out infinite;
-            transform-origin: 50% 47%;
+        .anim-pupil-flash {
+            animation: pupilDiamondFlash 2.8s ease-in-out infinite;
+            transform-origin: 50% 46%;
         }
-        .live-lotus-glow {
-            animation: lotusAuraPulse 3.8s ease-in-out infinite;
-            transform-origin: 50% 70%;
-        }
-        .occult-ambient-fog {
-            animation: occultFogFloat 6s ease-in-out infinite;
+        .anim-lotus-pulse {
+            animation: lotusBreathGlow 3.6s ease-in-out infinite;
+            transform-origin: 50% 72%;
         }
 
         .modal-backdrop {
@@ -159,7 +175,7 @@
             inset: 0;
             z-index: 100;
             background: rgba(0, 0, 0, 0.88);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
             align-items: center;
             justify-content: center;
             padding: 1rem;
@@ -217,56 +233,39 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-28">
 
-        <!-- HERO SECTION: FULL-SCALE LIVING MEDALLION (LOADS DIRECT logo.jpg) -->
+        <!-- HERO SECTION: 100% CRISP ORIGINAL LOGO WITH DYNAMIC EFFECTS -->
         <section class="min-h-[88vh] flex flex-col items-center justify-center px-4 text-center relative overflow-hidden">
-            <div class="absolute -top-32 -left-32 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl occult-ambient-fog pointer-events-none"></div>
-            <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-red-600/15 rounded-full blur-3xl occult-ambient-fog pointer-events-none"></div>
-
+            
             <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10">
 
-                <!-- 1:1 REALISTIC COMPOSITE MEDALLION -->
-                <div class="relative w-72 h-72 sm:w-88 sm:h-88 md:w-[420px] md:h-[420px] my-3 flex items-center justify-center select-none">
+                <!-- MEDALLION HOUSING (CLEAN SHARP RENDERING) -->
+                <div class="medallion-container my-3 select-none">
                     
-                    <!-- Ambient Glow Behind Logo -->
-                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500/30 via-gold-500/20 to-transparent blur-3xl pointer-events-none"></div>
+                    <!-- Direct Clean Image File -->
+                    <img src="logo.jpg" alt="Kaalgya Sacred Emblem" class="crisp-logo-img" onerror="this.onerror=null; this.src='Kaalgya Logo.jpeg';">
 
-                    <!-- DIRECT ORIGINAL MEDALLION ASSET FROM REPO -->
-                    <img src="logo.jpg" alt="Kaalgya Sacred Emblem" class="w-full h-full object-contain drop-shadow-[0_0_35px_rgba(212,175,55,0.55)] rounded-full border-2 border-gold-500/40" onerror="this.onerror=null; this.src='Kaalgya Logo.jpeg';">
-
-                    <!-- LIVE ZODIAC ORBIT RAY OVERLAY -->
-                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full live-zodiac-wheel pointer-events-none">
-                        <defs>
-                            <linearGradient id="orbitGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#FFFBEB"/>
-                                <stop offset="50%" stop-color="#FCD34D"/>
-                                <stop offset="100%" stop-color="#78350F"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="250" cy="250" r="236" fill="none" stroke="url(#orbitGold)" stroke-width="2.5" stroke-dasharray="4,6" opacity="0.85"/>
-                        <circle cx="250" cy="250" r="176" fill="none" stroke="url(#orbitGold)" stroke-width="1.8" stroke-dasharray="8,8" opacity="0.6"/>
+                    <!-- LIVE ZODIAC ORBIT RAY OVERLAY (SHARP TRANSPARENT SVG) -->
+                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full anim-ring-spin pointer-events-none">
+                        <circle cx="250" cy="250" r="240" fill="none" stroke="#FCD34D" stroke-width="2.2" stroke-dasharray="6,8" opacity="0.85"/>
+                        <circle cx="250" cy="250" r="182" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-dasharray="4,6" opacity="0.6"/>
                     </svg>
 
-                    <!-- LIVE NATURAL EYE BLINK & PULSING DIAMOND STAR -->
+                    <!-- LIVE BLINK & DIAMOND FLASH (ALIGNED TO CENTER EYE) -->
                     <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none">
-                        <defs>
-                            <radialGradient id="pupilAura" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#FFFFFF"/>
-                                <stop offset="50%" stop-color="#FCD34D"/>
-                                <stop offset="100%" stop-color="transparent"/>
-                            </radialGradient>
-                        </defs>
-                        <!-- Diamond Star Pupil in Central Triangle -->
-                        <g class="live-diamond-pupil">
-                            <circle cx="250" cy="235" r="15" fill="url(#pupilAura)"/>
-                            <polygon points="250,210 257,235 250,260 243,235" fill="#FFFBEB"/>
-                            <polygon points="225,235 250,242 275,235 250,228" fill="#FFFBEB"/>
+                        <!-- Diamond Star Pupil Pulse -->
+                        <g class="anim-pupil-flash">
+                            <circle cx="250" cy="230" r="14" fill="rgba(253, 224, 71, 0.45)"/>
+                            <polygon points="250,208 256,230 250,252 244,230" fill="#FFFBEB"/>
+                            <polygon points="228,230 250,236 272,230 250,224" fill="#FFFBEB"/>
                         </g>
-                        <!-- Gentle Eyelid Curtain Blink -->
-                        <ellipse cx="250" cy="235" rx="64" ry="26" fill="#05060A" class="live-eyelid-blink"/>
+                        <!-- Realistic Subtle Eyelid Curtain -->
+                        <ellipse cx="250" cy="230" rx="60" ry="24" fill="#030305" class="anim-eye-blink"/>
                     </svg>
 
-                    <!-- LOTUS BLOOM RADIANCE BACKLIGHT -->
-                    <div class="absolute bottom-8 w-48 h-24 rounded-full bg-gradient-to-t from-gold-500/40 via-amber-400/20 to-transparent blur-md pointer-events-none live-lotus-glow"></div>
+                    <!-- LOTUS EXPANSION AURA OVERLAY -->
+                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none anim-lotus-pulse">
+                        <ellipse cx="250" cy="355" rx="110" ry="40" fill="rgba(212, 175, 55, 0.35)"/>
+                    </svg>
 
                 </div>
 
@@ -344,7 +343,7 @@
             </div>
         </section>
 
-        <!-- ACCURATE REAL-TIME PANCHANG (DRIK PANCHANG VERIFIED) -->
+        <!-- ACCURATE REAL-TIME PANCHANG (ASTRONOMICAL CALCULATION) -->
         <section id="panchang" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Real-Time Chrono Accuracy ✦</span>
@@ -359,7 +358,7 @@
                         <div class="flex items-center justify-between pb-4 mb-4 border-b border-gold-500/20">
                             <div>
                                 <h3 class="text-base font-bold text-white font-cinzel">आज का वैदिक पंचांग</h3>
-                                <p id="live-panchang-date" class="text-xs text-gold-400 font-mono mt-0.5">विक्रम संवत 2083 • आश्विन शुक्ल पक्ष</p>
+                                <p id="live-panchang-date" class="text-xs text-gold-400 font-mono mt-0.5">गणना की जा रही है...</p>
                             </div>
                             <span class="text-xs text-emerald-400 font-semibold px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
                                 ● शुभ विजय मुहूर्त सक्रिय
@@ -643,7 +642,6 @@
                 </div>
             </div>
 
-            <!-- Dynamic Reviews Grid -->
             <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </section>
 
@@ -672,8 +670,6 @@
             <i data-lucide="message-circle" class="w-5 h-5"></i>
         </button>
     </div>
-
-    <!-- ==================== MODALS ==================== -->
 
     <!-- 1. BOOKING MODAL -->
     <div id="booking-modal" class="modal-backdrop">
@@ -827,7 +823,7 @@
                 }).catch(err => console.log("CRM Log:", err));
             }
 
-            const waMsg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मैंने परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
+            const waMsg = ` सादर प्रणाम पूज्य कालज्ञ गुरु जी! मैंने परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
             alert("✨ आपका विवरण सुरक्षित दर्ज हो गया है। अब आपको WhatsApp पर कनेक्ट किया जा रहा है।");
             closeBookingModal();
             openWhatsAppChat(waMsg);
@@ -861,7 +857,7 @@
             closeReviewModal();
         }
 
-        // DRIK PANCHANG CERTIFIED EPHEMERIS ENGINE
+        // REAL-TIME ACCURATE PANCHANG (ASTRO CALCULATION)
         function initDynamicPanchang() {
             const now = new Date();
             const days = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
@@ -898,7 +894,6 @@
             document.getElementById('live-paran').innerText = "द्वादशी प्रातः 06:27 AM से 08:44 AM";
         }
 
-        // Dynamic Reviews Rendering
         let currentReviewsList = [
             { name: "राजेश सिंघल", city: "गाजियाबाद (NCR)", category: "व्यापार व कर्ज", rating: 5, text: "व्यापार में 3 साल से भारी मंदी थी। गुरु जी के सूक्ष्म गोचर विश्लेषण और ब्रह्मास्त्र उपाय से 6 माह में समस्त स्थिति संभल गई।" },
             { name: "डॉ. अलका मेहता", city: "जयपुर", category: "विवाह व दांपत्य", rating: 5, text: "बेटी के विवाह में 4 वर्ष से लगातार रुकावटें आ रही थीं। गुरु जी ने सप्तमेश का सटीक शोधन कराया और 3 महीने में विवाह निश्चित हो गया।" },
@@ -944,12 +939,10 @@
                     }
                 })
                 .catch(err => {
-                    console.log("Using cached authentic experiences");
                     renderReviews();
                 });
         }
 
-        // Problem Selector
         const problemData = {
             karz: {
                 title: "कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान",
@@ -1015,7 +1008,6 @@
             openWhatsAppChat(msg);
         }
 
-        // 3D Occult Particle Sky
         const canvas = document.getElementById('cosmic-canvas');
         if (canvas) {
             const scene = new THREE.Scene();
