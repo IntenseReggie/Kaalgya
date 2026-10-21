@@ -103,70 +103,30 @@
             z-index: 10;
         }
 
-        /* CRISP HD MEDALLION ENGINE (NO BLUR OVERLAY) */
-        .medallion-container {
-            position: relative;
-            width: 320px;
-            height: 320px;
-            margin: 0 auto;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* LIVE HARDWARE ACCELERATED ANIMATIONS */
+        @keyframes spinWheel {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        @media (min-width: 768px) {
-            .medallion-container {
-                width: 410px;
-                height: 410px;
-            }
+        @keyframes reverseSpin {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
         }
 
-        .crisp-logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.45), inset 0 0 20px rgba(0, 0, 0, 0.8);
-            border: 2px solid rgba(212, 175, 55, 0.6);
-            display: block;
+        @keyframes naturalBlink {
+            0%, 45%, 55%, 100% { transform: scaleY(0); opacity: 0; }
+            49%, 51% { transform: scaleY(1); opacity: 0.95; }
         }
 
-        /* LIVE DYNAMIC OVERLAYS */
-        @keyframes wheelSpinSmooth {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        @keyframes blinkEyelid {
-            0%, 46%, 54%, 100% { transform: scaleY(1); opacity: 0; }
-            49%, 51% { transform: scaleY(0.06); opacity: 0.95; }
-        }
-        @keyframes pupilDiamondFlash {
-            0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 3px #FFFFFF); }
-            50% { transform: scale(1.3) rotate(45deg); filter: drop-shadow(0 0 16px #F5D061); }
-        }
-        @keyframes lotusBreathGlow {
-            0%, 100% { transform: scale(1); opacity: 0.25; }
-            50% { transform: scale(1.06); opacity: 0.75; }
+        @keyframes diamondPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px #FFF); }
+            50% { transform: scale(1.3) rotate(45deg); filter: drop-shadow(0 0 14px #F5D061); }
         }
 
-        .anim-ring-spin {
-            animation: wheelSpinSmooth 65s linear infinite;
-            transform-origin: center center;
-        }
-        .anim-eye-blink {
-            animation: blinkEyelid 4.5s ease-in-out infinite;
-            transform-origin: 50% 46%;
-        }
-        .anim-pupil-flash {
-            animation: pupilDiamondFlash 2.8s ease-in-out infinite;
-            transform-origin: 50% 46%;
-        }
-        .anim-lotus-pulse {
-            animation: lotusBreathGlow 3.6s ease-in-out infinite;
-            transform-origin: 50% 72%;
+        @keyframes lotusBlossom {
+            0%, 100% { transform: scale(0.95) translateY(0); opacity: 0.3; }
+            50% { transform: scale(1.1) translateY(-6px); opacity: 0.85; }
         }
 
         .modal-backdrop {
@@ -233,39 +193,59 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-28">
 
-        <!-- HERO SECTION: 100% CRISP ORIGINAL LOGO WITH DYNAMIC EFFECTS -->
+        <!-- HERO SECTION: LIVING MEDALLION (100% PURE LAYERED INTEGRATION) -->
         <section class="min-h-[88vh] flex flex-col items-center justify-center px-4 text-center relative overflow-hidden">
             
             <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10">
 
-                <!-- MEDALLION HOUSING (CLEAN SHARP RENDERING) -->
-                <div class="medallion-container my-3 select-none">
+                <!-- LIVING MEDALLION BOX -->
+                <div class="relative w-72 h-72 sm:w-88 sm:h-88 md:w-[410px] md:h-[410px] my-3 mx-auto flex items-center justify-center select-none">
                     
-                    <!-- Direct Clean Image File -->
-                    <img src="logo.jpg" alt="Kaalgya Sacred Emblem" class="crisp-logo-img" onerror="this.onerror=null; this.src='Kaalgya Logo.jpeg';">
+                    <!-- Ambient Glow Background -->
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500/25 via-gold-500/15 to-transparent blur-2xl pointer-events-none"></div>
 
-                    <!-- LIVE ZODIAC ORBIT RAY OVERLAY (SHARP TRANSPARENT SVG) -->
-                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full anim-ring-spin pointer-events-none">
-                        <circle cx="250" cy="250" r="240" fill="none" stroke="#FCD34D" stroke-width="2.2" stroke-dasharray="6,8" opacity="0.85"/>
-                        <circle cx="250" cy="250" r="182" fill="none" stroke="#D4AF37" stroke-width="1.6" stroke-dasharray="4,6" opacity="0.6"/>
+                    <!-- 1. BASE ORIGINAL LOGO IMAGE -->
+                    <img src="logo.jpg" alt="Kaalgya Sacred Emblem" class="w-full h-full object-contain rounded-full drop-shadow-[0_0_35px_rgba(212,175,55,0.55)] border-2 border-gold-500/40 block">
+
+                    <!-- 2. LIVE ROTATING ZODIAC RING OVERLAY (Clockwise Rotation) -->
+                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none" style="animation: spinWheel 60s linear infinite; transform-origin: center center;">
+                        <circle cx="250" cy="250" r="236" fill="none" stroke="#FCD34D" stroke-width="2.5" stroke-dasharray="4,8" opacity="0.85"/>
+                        <circle cx="250" cy="250" r="176" fill="none" stroke="#D4AF37" stroke-width="1.8" stroke-dasharray="6,6" opacity="0.7"/>
+                        <!-- 4 Major Compass Lines -->
+                        <line x1="250" y1="14" x2="250" y2="34" stroke="#FFF9E6" stroke-width="2.5"/>
+                        <line x1="250" y1="466" x2="250" y2="486" stroke="#FFF9E6" stroke-width="2.5"/>
+                        <line x1="14" y1="250" x2="34" y2="250" stroke="#FFF9E6" stroke-width="2.5"/>
+                        <line x1="466" y1="250" x2="486" y2="250" stroke="#FFF9E6" stroke-width="2.5"/>
                     </svg>
 
-                    <!-- LIVE BLINK & DIAMOND FLASH (ALIGNED TO CENTER EYE) -->
+                    <!-- 3. THREE CONNECTED SACRED CIRCLES (Counter-Clockwise Rotation) -->
+                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none" style="animation: reverseSpin 75s linear infinite; transform-origin: center center; opacity: 0.75;">
+                        <circle cx="250" cy="195" r="78" fill="none" stroke="#F5D061" stroke-width="1.6" stroke-dasharray="8,4"/>
+                        <circle cx="192" cy="245" r="78" fill="none" stroke="#F5D061" stroke-width="1.6" stroke-dasharray="8,4"/>
+                        <circle cx="308" cy="245" r="78" fill="none" stroke="#F5D061" stroke-width="1.6" stroke-dasharray="8,4"/>
+                    </svg>
+
+                    <!-- 4. NATURAL THIRD-EYE BLINK & PULSING DIAMOND PUPIL -->
                     <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none">
-                        <!-- Diamond Star Pupil Pulse -->
-                        <g class="anim-pupil-flash">
-                            <circle cx="250" cy="230" r="14" fill="rgba(253, 224, 71, 0.45)"/>
-                            <polygon points="250,208 256,230 250,252 244,230" fill="#FFFBEB"/>
-                            <polygon points="228,230 250,236 272,230 250,224" fill="#FFFBEB"/>
+                        <defs>
+                            <radialGradient id="pupilAuraGold" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#FFFFFF"/>
+                                <stop offset="50%" stop-color="#FCD34D"/>
+                                <stop offset="100%" stop-color="transparent"/>
+                            </radialGradient>
+                        </defs>
+                        <!-- Star Pupil Pulse -->
+                        <g style="animation: diamondPulse 2.8s ease-in-out infinite; transform-origin: 250px 232px;">
+                            <circle cx="250" cy="232" r="14" fill="url(#pupilAuraGold)"/>
+                            <polygon points="250,210 256,232 250,254 244,232" fill="#FFFBEB"/>
+                            <polygon points="228,232 250,238 272,232 250,226" fill="#FFFBEB"/>
                         </g>
-                        <!-- Realistic Subtle Eyelid Curtain -->
-                        <ellipse cx="250" cy="230" rx="60" ry="24" fill="#030305" class="anim-eye-blink"/>
+                        <!-- Realistic Natural Eyelid Blink Curtain -->
+                        <ellipse cx="250" cy="232" rx="64" ry="26" fill="#05060A" style="animation: naturalBlink 4.2s ease-in-out infinite; transform-origin: 250px 232px;"/>
                     </svg>
 
-                    <!-- LOTUS EXPANSION AURA OVERLAY -->
-                    <svg viewBox="0 0 500 500" class="absolute inset-0 w-full h-full pointer-events-none anim-lotus-pulse">
-                        <ellipse cx="250" cy="355" rx="110" ry="40" fill="rgba(212, 175, 55, 0.35)"/>
-                    </svg>
+                    <!-- 5. LOTUS BLOSSOM EXPANDING AURA -->
+                    <div class="absolute bottom-8 w-52 h-28 rounded-full bg-gradient-to-t from-gold-500/40 via-amber-400/20 to-transparent blur-md pointer-events-none" style="animation: lotusBlossom 3.8s ease-in-out infinite; transform-origin: center bottom;"></div>
 
                 </div>
 
@@ -343,7 +323,7 @@
             </div>
         </section>
 
-        <!-- ACCURATE REAL-TIME PANCHANG (ASTRONOMICAL CALCULATION) -->
+        <!-- ACCURATE REAL-TIME PANCHANG -->
         <section id="panchang" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Real-Time Chrono Accuracy ✦</span>
@@ -823,7 +803,7 @@
                 }).catch(err => console.log("CRM Log:", err));
             }
 
-            const waMsg = ` सादर प्रणाम पूज्य कालज्ञ गुरु जी! मैंने परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
+            const waMsg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मैंने परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
             alert("✨ आपका विवरण सुरक्षित दर्ज हो गया है। अब आपको WhatsApp पर कनेक्ट किया जा रहा है।");
             closeBookingModal();
             openWhatsAppChat(waMsg);
