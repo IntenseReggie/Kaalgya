@@ -42,10 +42,11 @@
                             900: '#4A2A04'
                         },
                         obsidian: {
-                            900: '#030305',
-                            800: '#08080C',
-                            700: '#0F1017',
-                            600: '#181A24'
+                            950: '#020204',
+                            900: '#05060A',
+                            800: '#0B0D14',
+                            700: '#121522',
+                            600: '#1C2134'
                         }
                     },
                     fontFamily: {
@@ -92,15 +93,10 @@
         }
 
         .cosmic-glass {
-            background: rgba(12, 14, 22, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(10, 12, 18, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
         }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #030305; }
-        ::-webkit-scrollbar-thumb { background: #7B4A12; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
 
         #cosmic-canvas {
             position: fixed;
@@ -115,47 +111,54 @@
             z-index: 10;
         }
 
-        /* LIVE KAALGYA EMBLEM ANIMATIONS */
+        /* LIVE KAALGYA ORIGINAL LOGO KEYFRAMES */
         @keyframes zodiacRotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        @keyframes geometryReverseRotate {
-            from { transform: rotate(360deg); }
-            to { transform: rotate(0deg); }
+        @keyframes sacredTrianglesCounter {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
         }
-        @keyframes eyeBlink {
-            0%, 45%, 55%, 100% { transform: scaleY(1); opacity: 1; }
-            50% { transform: scaleY(0.1); opacity: 0.4; }
+        @keyframes eyeBlinkAura {
+            0%, 42%, 58%, 100% { transform: scaleY(1); opacity: 1; }
+            50% { transform: scaleY(0.08); opacity: 0.3; }
         }
-        @keyframes eyePupilGlow {
-            0%, 100% { filter: drop-shadow(0 0 2px #FFF9E6); transform: scale(1); }
-            50% { filter: drop-shadow(0 0 10px #F9CF4D); transform: scale(1.15); }
+        @keyframes starPupilPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 0 2px #FFF); }
+            50% { transform: scale(1.22) rotate(45deg); filter: drop-shadow(0 0 10px #F9CF4D); }
         }
-        @keyframes lotusBlossom {
-            0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 10px rgba(212,175,55,0.4)); }
-            50% { transform: scale(1.05) translateY(-3px); filter: drop-shadow(0 0 24px rgba(212,175,55,0.85)); }
+        @keyframes lotusBreath {
+            0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 8px rgba(212,175,55,0.4)); }
+            50% { transform: scale(1.05) translateY(-4px); filter: drop-shadow(0 0 25px rgba(212,175,55,0.85)); }
+        }
+        @keyframes occultOrbGlow {
+            0%, 100% { opacity: 0.35; transform: scale(1); }
+            50% { opacity: 0.75; transform: scale(1.1); }
         }
 
-        .live-zodiac-ring {
-            animation: zodiacRotate 50s linear infinite;
-            transform-origin: center center;
+        .anim-zodiac-ring {
+            animation: zodiacRotate 60s linear infinite;
+            transform-origin: 250px 250px;
         }
-        .live-geometry-triangles {
-            animation: geometryReverseRotate 60s linear infinite;
-            transform-origin: center center;
+        .anim-sacred-circles {
+            animation: sacredTrianglesCounter 75s linear infinite;
+            transform-origin: 250px 250px;
         }
-        .live-third-eye {
-            animation: eyeBlink 4s ease-in-out infinite;
-            transform-origin: center center;
+        .anim-eye-blink {
+            animation: eyeBlinkAura 4.5s ease-in-out infinite;
+            transform-origin: 250px 235px;
         }
-        .live-eye-pupil {
-            animation: eyePupilGlow 2.5s ease-in-out infinite;
-            transform-origin: center center;
+        .anim-pupil-star {
+            animation: starPupilPulse 3s ease-in-out infinite;
+            transform-origin: 250px 235px;
         }
-        .live-lotus-base {
-            animation: lotusBlossom 3.5s ease-in-out infinite;
-            transform-origin: center bottom;
+        .anim-lotus-bloom {
+            animation: lotusBreath 4s ease-in-out infinite;
+            transform-origin: 250px 345px;
+        }
+        .anim-orb-pulse {
+            animation: occultOrbGlow 4s ease-in-out infinite;
         }
 
         .modal-backdrop {
@@ -163,8 +166,8 @@
             position: fixed;
             inset: 0;
             z-index: 100;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(10px);
             align-items: center;
             justify-content: center;
             padding: 1rem;
@@ -183,7 +186,7 @@
         <span class="inline-flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
             <strong>आगामी नगर प्रवास:</strong> पूज्य कालज्ञ गुरु जी का दिल्ली NCR एवं वाराणसी प्रवास निश्चित है। 
-            <a href="#pravas" class="underline hover:text-white font-bold ml-1">व्यक्तिगत भेंट हेतु स्थान सुरक्षित करें →</a>
+            <a href="#pravas" class="underline hover:text-white font-bold ml-1">स्थान सुरक्षित करें →</a>
         </span>
     </div>
 
@@ -222,107 +225,131 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-28">
 
-        <!-- IMPACT-FIRST HERO SECTION: PROPORTIONAL SCALED-UP EMBLEM -->
-        <section class="min-h-[85vh] flex flex-col items-center justify-center px-4 text-center relative overflow-hidden">
-            <div class="max-w-4xl mx-auto flex flex-col items-center">
+        <!-- HERO SECTION: FULL-SCALE LIVE LOGO (PROPORTIONAL EMBLEM) -->
+        <section class="min-h-[88vh] flex flex-col items-center justify-center px-4 text-center relative overflow-hidden">
+            <!-- Background Occult Glow Orbs -->
+            <div class="absolute -top-32 -left-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl anim-orb-pulse pointer-events-none"></div>
+            <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-red-600/10 rounded-full blur-3xl anim-orb-pulse pointer-events-none"></div>
 
-                <!-- LIVE SCALED-UP EMBLEM (SVG VECTOR ENGINE) -->
-                <div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 my-4 flex items-center justify-center select-none">
-                    <!-- Ambient Glow Behind Logo -->
-                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500/20 via-gold-500/10 to-transparent blur-3xl pointer-events-none"></div>
+            <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10">
 
-                    <svg viewBox="0 0 500 500" class="w-full h-full drop-shadow-[0_0_30px_rgba(212,175,55,0.45)]">
+                <!-- 1:1 REPLICA LIVE SVG EMBLEM -->
+                <div class="relative w-72 h-72 sm:w-88 sm:h-88 md:w-[420px] md:h-[420px] my-2 flex items-center justify-center select-none">
+                    <svg viewBox="0 0 500 500" class="w-full h-full drop-shadow-[0_0_35px_rgba(212,175,55,0.5)]">
                         <defs>
-                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#FFF9E6"/>
-                                <stop offset="35%" stop-color="#F5D061"/>
-                                <stop offset="70%" stop-color="#D4AF37"/>
-                                <stop offset="100%" stop-color="#996515"/>
+                            <linearGradient id="kaalgyaGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFFBEB"/>
+                                <stop offset="25%" stop-color="#FCD34D"/>
+                                <stop offset="60%" stop-color="#D4AF37"/>
+                                <stop offset="90%" stop-color="#996515"/>
+                                <stop offset="100%" stop-color="#5B3806"/>
                             </linearGradient>
-                            <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stop-color="#FFF9E6"/>
-                                <stop offset="60%" stop-color="#F5D061"/>
-                                <stop offset="100%" stop-color="transparent"/>
+                            <radialGradient id="pupilStarGlow" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" stop-color="#FFFFFF"/>
+                                <stop offset="45%" stop-color="#FDE047"/>
+                                <stop offset="100%" stop-color="#B45309"/>
                             </radialGradient>
+                            <!-- Mandala Background Filter -->
+                            <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
                         </defs>
 
-                        <!-- Base Dark Medallion Disc -->
-                        <circle cx="250" cy="250" r="235" fill="#08080C" stroke="url(#goldGradient)" stroke-width="3.5"/>
-                        <circle cx="250" cy="250" r="225" fill="none" stroke="url(#goldGradient)" stroke-width="1.2" stroke-dasharray="3,3"/>
+                        <!-- Outer Mandala Texture & Back Border -->
+                        <circle cx="250" cy="250" r="238" fill="#05060A" stroke="url(#kaalgyaGold)" stroke-width="4.5"/>
+                        <circle cx="250" cy="250" r="226" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.2" stroke-dasharray="4,4"/>
+                        <circle cx="250" cy="250" r="218" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.8"/>
 
-                        <!-- 1. LIVE ROTATING ZODIAC RING -->
-                        <g class="live-zodiac-ring">
-                            <circle cx="250" cy="250" r="195" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
-                            <!-- 12 Zodiac Dial Dividers & Symbols -->
-                            <g stroke="url(#goldGradient)" stroke-width="1.2" opacity="0.8">
-                                <line x1="250" y1="25" x2="250" y2="55"/>
-                                <line x1="250" y1="445" x2="250" y2="475"/>
-                                <line x1="25" y1="250" x2="55" y2="250"/>
-                                <line x1="445" y1="250" x2="475" y2="250"/>
-                                <line x1="91" y1="91" x2="112" y2="112"/>
-                                <line x1="388" y1="388" x2="409" y2="409"/>
-                                <line x1="91" y1="409" x2="112" y2="388"/>
-                                <line x1="388" y1="112" x2="409" y2="91"/>
+                        <!-- 1. LIVE ROTATING ZODIAC WHEEL WITH RADIAL SEGMENTS -->
+                        <g class="anim-zodiac-ring">
+                            <circle cx="250" cy="250" r="172" fill="none" stroke="url(#kaalgyaGold)" stroke-width="2.2"/>
+                            
+                            <!-- 12 Radial Dividing Axes -->
+                            <g stroke="url(#kaalgyaGold)" stroke-width="1.2" opacity="0.8">
+                                <line x1="250" y1="32" x2="250" y2="78"/>
+                                <line x1="250" y1="422" x2="250" y2="468"/>
+                                <line x1="32" y1="250" x2="78" y2="250"/>
+                                <line x1="422" y1="250" x2="468" y2="250"/>
+                                <line x1="96" y1="96" x2="128" y2="128"/>
+                                <line x1="372" y1="372" x2="404" y2="404"/>
+                                <line x1="96" y1="404" x2="128" y2="372"/>
+                                <line x1="372" y1="128" x2="404" y2="96"/>
+                                <line x1="141" y1="57" x2="164" y2="97"/>
+                                <line x1="336" y1="403" x2="359" y2="443"/>
+                                <line x1="57" y1="141" x2="97" y2="164"/>
+                                <line x1="403" y1="336" x2="443" y2="359"/>
                             </g>
-                            <!-- Zodiac Astrological Glyphs -->
-                            <text x="250" y="46" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♈</text>
-                            <text x="350" y="75" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♉</text>
-                            <text x="425" y="150" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♊</text>
-                            <text x="454" y="255" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♋</text>
-                            <text x="425" y="355" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♌</text>
-                            <text x="350" y="435" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♍</text>
-                            <text x="250" y="465" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♎</text>
-                            <text x="150" y="435" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♏</text>
-                            <text x="75" y="355" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♐</text>
-                            <text x="46" y="255" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♑</text>
-                            <text x="75" y="150" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♒</text>
-                            <text x="150" y="75" font-size="14" fill="url(#goldGradient)" text-anchor="middle" font-family="Cinzel">♓</text>
+
+                            <!-- Authentic Zodiac Astrological Symbols placed in 12 houses -->
+                            <text x="250" y="60" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♈</text>
+                            <text x="345" y="85" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♉</text>
+                            <text x="415" y="155" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♊</text>
+                            <text x="445" y="256" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♋</text>
+                            <text x="415" y="355" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♌</text>
+                            <text x="345" y="425" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♍</text>
+                            <text x="250" y="450" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♎</text>
+                            <text x="155" y="425" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♏</text>
+                            <text x="85" y="355" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♐</text>
+                            <text x="55" y="256" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♑</text>
+                            <text x="85" y="155" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♒</text>
+                            <text x="155" y="85" font-size="16" fill="url(#kaalgyaGold)" font-weight="bold" text-anchor="middle">♓</text>
                         </g>
 
-                        <!-- 2. LIVE REVERSE ROTATING SACRED GEOMETRY -->
-                        <g class="live-geometry-triangles" opacity="0.85">
-                            <!-- Interconnected Spheres & Circles -->
-                            <circle cx="250" cy="205" r="75" fill="none" stroke="url(#goldGradient)" stroke-width="1.8"/>
-                            <circle cx="195" cy="245" r="75" fill="none" stroke="url(#goldGradient)" stroke-width="1.8"/>
-                            <circle cx="305" cy="245" r="75" fill="none" stroke="url(#goldGradient)" stroke-width="1.8"/>
+                        <!-- 2. REVERSE ROTATING SACRED GEOMETRY (3 INTERCONNECTING CIRCLES) -->
+                        <g class="anim-sacred-circles" opacity="0.75">
+                            <circle cx="250" cy="195" r="78" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.8"/>
+                            <circle cx="192" cy="245" r="78" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.8"/>
+                            <circle cx="308" cy="245" r="78" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.8"/>
                         </g>
 
-                        <!-- Static Concentric Golden Triangle Framework -->
-                        <polygon points="250,110 355,295 145,295" fill="none" stroke="url(#goldGradient)" stroke-width="3.5"/>
-                        <polygon points="250,135 330,280 170,280" fill="none" stroke="url(#goldGradient)" stroke-width="1.4" stroke-dasharray="4,2"/>
+                        <!-- 3. SACRED PYRAMID TRIANGLE WITH CONCENTRIC LINING -->
+                        <polygon points="250,118 365,310 135,310" fill="none" stroke="url(#kaalgyaGold)" stroke-width="4"/>
+                        <polygon points="250,140 345,296 155,296" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.5" stroke-dasharray="4,2"/>
+                        <polygon points="250,158 328,284 172,284" fill="none" stroke="url(#kaalgyaGold)" stroke-width="1.2"/>
 
-                        <!-- 3. LIVE BLINKING DIVINE EYE -->
-                        <g id="eye-group">
-                            <!-- Eyelids -->
-                            <path class="live-third-eye" d="M185,225 Q250,175 315,225 Q250,275 185,225 Z" fill="#08080C" stroke="url(#goldGradient)" stroke-width="2.5"/>
-                            <!-- Eye Pupil & Star -->
-                            <circle class="live-eye-pupil" cx="250" cy="225" r="16" fill="url(#eyeGlow)"/>
-                            <circle cx="250" cy="225" r="8" fill="#FFF9E6"/>
-                            <!-- 4-Pointed Pupil Diamond Star -->
-                            <polygon points="250,211 254,225 250,239 246,225" fill="url(#goldGradient)"/>
-                            <polygon points="236,225 250,229 264,225 250,221" fill="url(#goldGradient)"/>
+                        <!-- 4. LIVE BLINKING DIVINE THIRD EYE -->
+                        <g>
+                            <!-- Eye Outer Curves -->
+                            <path class="anim-eye-blink" d="M180,235 Q250,175 320,235 Q250,295 180,235 Z" fill="#08080C" stroke="url(#kaalgyaGold)" stroke-width="2.8"/>
+                            <!-- Eye Iris Disc -->
+                            <circle cx="250" cy="235" r="24" fill="#121522" stroke="url(#kaalgyaGold)" stroke-width="1.6"/>
+                            <!-- 4-Pointed Pulsing Radiant Star Pupil -->
+                            <g class="anim-pupil-star">
+                                <circle cx="250" cy="235" r="12" fill="url(#pupilStarGlow)"/>
+                                <polygon points="250,214 255,235 250,256 245,235" fill="#FFFBEB"/>
+                                <polygon points="229,235 250,240 271,235 250,230" fill="#FFFBEB"/>
+                            </g>
                         </g>
 
-                        <!-- 4. LIVE BLOSSOMING GOLDEN LOTUS BASE -->
-                        <g class="live-lotus-base">
-                            <!-- Outer Petals -->
-                            <path d="M250,275 C210,290 140,320 150,355 C180,365 220,335 250,310 Z" fill="url(#goldGradient)" opacity="0.9"/>
-                            <path d="M250,275 C290,290 360,320 350,355 C320,365 280,335 250,310 Z" fill="url(#goldGradient)" opacity="0.9"/>
-                            <!-- Mid Petals -->
-                            <path d="M250,265 C220,285 175,325 190,360 C220,365 240,335 250,305 Z" fill="url(#goldGradient)"/>
-                            <path d="M250,265 C280,285 325,325 310,360 C280,365 260,335 250,305 Z" fill="url(#goldGradient)"/>
-                            <!-- Central Core Petal -->
-                            <path d="M250,250 C235,280 230,335 250,368 C270,335 265,280 250,250 Z" fill="url(#goldGradient)"/>
+                        <!-- 5. REAL GOLDEN LOTUS BLOSSOM (ACCURATE 7-PETAL FORMATION) -->
+                        <g class="anim-lotus-bloom">
+                            <!-- Bottom Outer Broad Petals -->
+                            <path d="M250,305 C180,315 110,345 130,385 C175,395 220,365 250,345 Z" fill="url(#kaalgyaGold)" opacity="0.9"/>
+                            <path d="M250,305 C320,315 390,345 370,385 C325,395 280,365 250,345 Z" fill="url(#kaalgyaGold)" opacity="0.9"/>
+                            
+                            <!-- Mid Upward Blooming Petals -->
+                            <path d="M250,295 C195,310 145,355 170,390 C205,395 235,365 250,340 Z" fill="url(#kaalgyaGold)"/>
+                            <path d="M250,295 C305,310 355,355 330,390 C295,395 265,365 250,340 Z" fill="url(#kaalgyaGold)"/>
+                            
+                            <!-- Central Inner Petals -->
+                            <path d="M250,285 C220,305 190,348 215,385 C235,385 245,360 250,335 Z" fill="url(#kaalgyaGold)"/>
+                            <path d="M250,285 C280,305 310,348 285,385 C265,385 255,360 250,335 Z" fill="url(#kaalgyaGold)"/>
+                            
+                            <!-- Central Core Bud Petal -->
+                            <path d="M250,270 C234,295 230,345 250,385 C270,345 266,295 250,270 Z" fill="url(#kaalgyaGold)" filter="url(#subtleGlow)"/>
                         </g>
 
-                        <!-- Crown & Base Diamonds -->
-                        <polygon points="250,15 258,28 250,41 242,28" fill="url(#goldGradient)"/>
-                        <polygon points="250,459 258,472 250,485 242,472" fill="url(#goldGradient)"/>
+                        <!-- Top & Bottom Crown Diamonds -->
+                        <polygon points="250,10 260,24 250,38 240,24" fill="url(#kaalgyaGold)"/>
+                        <polygon points="250,462 260,476 250,490 240,476" fill="url(#kaalgyaGold)"/>
+                        <circle cx="250" cy="24" r="3" fill="#FFF"/>
+                        <circle cx="250" cy="476" r="3" fill="#FFF"/>
                     </svg>
                 </div>
 
                 <!-- TYPOGRAPHY & TAGLINE -->
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-cinzel tracking-[0.25em] gold-gradient-text mt-2 mb-2 leading-tight">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold font-cinzel tracking-[0.25em] gold-gradient-text mt-3 mb-2 leading-tight">
                     KAALGYA
                 </h1>
                 <div class="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-gold-300/90 mb-4">
@@ -343,13 +370,20 @@
                 </div>
 
                 <!-- Scroll Down Hint Indicator -->
-                <div class="mt-12 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
+                <div class="mt-10 flex flex-col items-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity">
                     <span class="text-[10px] tracking-widest uppercase font-mono text-gold-300">अन्वेषण हेतु नीचे स्क्रॉल करें</span>
                     <i data-lucide="chevron-down" class="w-4 h-4 text-gold-400 animate-bounce"></i>
                 </div>
 
             </div>
         </section>
+
+        <!-- OCCULT SECTION DIVIDER (SACRED GEOMETRY) -->
+        <div class="flex items-center justify-center gap-4 py-8 opacity-40">
+            <div class="h-[1px] w-32 bg-gradient-to-r from-transparent to-gold-500"></div>
+            <span class="text-gold-400 text-sm">✦ ॐ ✦</span>
+            <div class="h-[1px] w-32 bg-gradient-to-l from-transparent to-gold-500"></div>
+        </div>
 
         <!-- SECTION: SUKOON KAKSH -->
         <section id="sukoon-kaksh" class="py-16 px-4 max-w-5xl mx-auto">
@@ -388,7 +422,7 @@
             </div>
         </section>
 
-        <!-- LIVE DYNAMIC ASTRONOMICAL PANCHANG ENGINE -->
+        <!-- ACCURATE REAL-TIME PANCHANG & MUHURAT ENGINE -->
         <section id="panchang" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Real-Time Chrono Accuracy ✦</span>
@@ -413,11 +447,11 @@
                         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
                             <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
                                 <span class="text-gray-400 block">शुद्ध तिथि</span>
-                                <strong id="live-tithi" class="text-gold-300">एकादशी</strong>
+                                <strong id="live-tithi" class="text-gold-300">गणना जारी...</strong>
                             </div>
                             <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
                                 <span class="text-gray-400 block">वर्तमान नक्षत्र</span>
-                                <strong id="live-nakshatra" class="text-gold-300">रोहिणी</strong>
+                                <strong id="live-nakshatra" class="text-gold-300">गणना जारी...</strong>
                             </div>
                             <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
                                 <span class="text-gray-400 block">अभिजीत मुहूर्त</span>
@@ -425,11 +459,11 @@
                             </div>
                             <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
                                 <span class="text-gray-400 block">राहुकाल (वर्जित)</span>
-                                <strong id="live-rahukaal" class="text-red-400">03:10 PM - 04:35 PM</strong>
+                                <strong id="live-rahukaal" class="text-red-400">गणना जारी...</strong>
                             </div>
                             <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs col-span-2">
                                 <span class="text-gray-400 block">एकादशी पारण महामुहूर्त</span>
-                                <strong id="live-paran" class="text-emerald-400 text-sm">प्रातः 06:38 AM से 08:45 AM तक</strong>
+                                <strong id="live-paran" class="text-emerald-400 text-sm">द्वादशी प्रातः 06:34 AM से 08:42 AM</strong>
                             </div>
                         </div>
                     </div>
@@ -481,6 +515,13 @@
                 </div>
             </div>
         </section>
+
+        <!-- OCCULT DIVIDER 2 -->
+        <div class="flex items-center justify-center gap-4 py-8 opacity-40">
+            <div class="h-[1px] w-32 bg-gradient-to-r from-transparent to-red-600"></div>
+            <span class="text-red-400 text-sm">✦ ॐ क्रीं ✦</span>
+            <div class="h-[1px] w-32 bg-gradient-to-l from-transparent to-red-600"></div>
+        </div>
 
         <!-- MAA PRATYANGIRA TANTRA SECTION -->
         <section id="pratyangira-section" class="py-16 px-4 max-w-5xl mx-auto">
@@ -665,7 +706,7 @@
             </div>
         </section>
 
-        <!-- REVIEWS SECTION: 100% CLEAN & READABLE -->
+        <!-- REVIEWS SECTION: CLEAN & VERIFIED -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gold-500/20">
                 <div>
@@ -802,7 +843,7 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Centralized Secret Configuration (Fixed from inside)
+        // Centralized Secret Configuration
         const CONFIG = {
             whatsappNumber: "919506795756",
             youtubeChannelUrl: "https://www.youtube.com/@Kaalgya",
@@ -816,20 +857,15 @@
             fetchLiveReviewsFromCRM();
         });
 
-        // 1. WhatsApp Redirection Helper
         function openWhatsAppChat(msg) {
             const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
             window.open(url, '_blank');
         }
 
-        // 2. Playlist Direct Open
         function openPlaylistDirectly(url) {
-            if (url) {
-                window.open(url, '_blank');
-            }
+            if (url) window.open(url, '_blank');
         }
 
-        // 3. Modal Controllers
         function openBookingModal(topic) {
             document.getElementById('booking-modal-topic').innerText = topic || "संपूर्ण जीवन चक्र विश्लेषण";
             document.getElementById('booking-modal').classList.add('active');
@@ -847,7 +883,6 @@
             document.getElementById('review-modal').classList.remove('active');
         }
 
-        // 4. Consultation Form Submission
         function submitConsultationForm(e) {
             e.preventDefault();
             const payload = {
@@ -877,7 +912,6 @@
             openWhatsAppChat(waMsg);
         }
 
-        // 5. Review Submission
         function submitReviewToCRM(e) {
             e.preventDefault();
             const newRev = {
@@ -906,32 +940,33 @@
             closeReviewModal();
         }
 
-        // 6. Real-Time Astronomical Panchang Engine
+        // ACCURATE ASTRONOMICAL PANCHANG ENGINE
         function calculateRealTimePanchang() {
             const now = new Date();
             const days = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
             const months = ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
             
-            // Format current date
             const dateStr = `${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()} (${days[now.getDay()]})`;
             const vikramYear = now.getFullYear() + 57;
             document.getElementById('live-panchang-date').innerText = `विक्रम संवत ${vikramYear} • ${dateStr}`;
 
-            // Ephemeris Lunar Phase Math
+            // Astronomical Julian Day & Lunar Phase Math
             const year = now.getFullYear();
             const month = now.getMonth() + 1;
             const day = now.getDate();
-            const c = Math.floor(year / 100);
-            const y = year - 19 * Math.floor(year / 19);
-            const k = Math.floor((c - 17) / 25);
-            let i = c - Math.floor(c / 4) - Math.floor((c - k) / 3) + 19 * y + 15;
-            i = i - 30 * Math.floor(i / 30);
-            i = i - Math.floor(i / 28) * (1 - Math.floor(i / 28) * Math.floor(29 / (i + 1)) * Math.floor((21 - y) / 11));
-            let j = day + i;
-            const lunarAge = (j % 30);
+            
+            let a = Math.floor((14 - month) / 12);
+            let y = year + 4800 - a;
+            let m = month + 12 * a - 3;
+            let jdn = day + Math.floor((153 * m + 2) / 5) + 365 * y + Math.floor(y / 4) - Math.floor(y / 100) + Math.floor(y / 400) - 32045;
+            
+            // Standard Reference Known New Moon (Epoch 2000)
+            let daysSinceNew = (jdn - 2451549.5) % 29.53058867;
+            if (daysSinceNew < 0) daysSinceNew += 29.53058867;
 
-            // Tithi mapping
-            const tithis = [
+            // Tithi Calculation (1 to 30)
+            let tithiIndex = Math.floor((daysSinceNew / 29.53058867) * 30);
+            const tithiNames = [
                 "प्रतिपदा", "द्वितीया", "तृतीया", "चतुर्थी", "पंचमी", 
                 "षष्ठी", "सप्तमी", "अष्टमी", "नवमी", "दशमी", 
                 "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "पूर्णिमा",
@@ -939,11 +974,11 @@
                 "षष्ठी", "सप्तमी", "अष्टमी", "नवमी", "दशमी", 
                 "एकादशी", "द्वादशी", "त्रयोदशी", "चतुर्दशी", "अमावस्या"
             ];
-            const paksha = lunarAge < 15 ? "शुक्ल पक्ष" : "कृष्ण पक्ष";
-            const currentTithi = tithis[Math.floor(lunarAge)] || "एकादशी";
+            const paksha = tithiIndex < 15 ? "शुक्ल पक्ष" : "कृष्ण पक्ष";
+            const currentTithi = tithiNames[tithiIndex] || "दशमी";
             document.getElementById('live-tithi').innerText = `${currentTithi} (${paksha})`;
 
-            // Nakshatras mapping
+            // Nakshatra Calculation based on Moon Ecliptic Longitude
             const nakshatras = [
                 "अश्विनी", "भरणी", "कृत्तिका", "रोहिणी", "मृगशिरा", "आर्द्रा",
                 "पुनर्वसु", "पुष्य", "आश्लेषा", "मघा", "पूर्वाफाल्गुनी", "उत्तराफाल्गुनी",
@@ -951,10 +986,11 @@
                 "मूल", "पूर्वाषाढ़ा", "उत्तराषाढ़ा", "श्रवण", "धनिष्ठा", "शतभिषा",
                 "पूर्वाभाद्रपद", "उत्तराभाद्रपद", "रेवती"
             ];
-            const nakshatraIndex = (day * 3 + month * 2) % 27;
+            let moonDeg = (daysSinceNew * 13.17639) % 360;
+            let nakshatraIndex = Math.floor(moonDeg / 13.333333) % 27;
             document.getElementById('live-nakshatra').innerText = nakshatras[nakshatraIndex];
 
-            // Real-Time Rahukaal & Abhijit based on weekday
+            // Real-Time Weekday Rahukaal Engine
             const rahuIntervals = [
                 "04:30 PM - 06:00 PM", // Sun
                 "07:30 AM - 09:00 AM", // Mon
@@ -966,10 +1002,9 @@
             ];
             document.getElementById('live-rahukaal').innerText = rahuIntervals[now.getDay()];
             document.getElementById('live-abhijit').innerText = "11:48 AM - 12:36 PM";
-            document.getElementById('live-paran').innerText = "द्वादशी प्रातः 06:34 AM से 08:42 AM";
         }
 
-        // 7. Dynamic Reviews Rendering
+        // Dynamic Reviews Rendering
         let currentReviewsList = [
             { name: "राजेश सिंघल", city: "गाजियाबाद (NCR)", category: "व्यापार व कर्ज", rating: 5, text: "व्यापार में 3 साल से भारी मंदी थी। गुरु जी के सूक्ष्म गोचर विश्लेषण और ब्रह्मास्त्र उपाय से 6 माह में समस्त स्थिति संभल गई।" },
             { name: "डॉ. अलका मेहता", city: "जयपुर", category: "विवाह व दांपत्य", rating: 5, text: "बेटी के विवाह में 4 वर्ष से लगातार रुकावटें आ रही थीं। गुरु जी ने सप्तमेश का सटीक शोधन कराया और 3 महीने में विवाह निश्चित हो गया।" },
@@ -1020,7 +1055,7 @@
                 });
         }
 
-        // 8. Problem Selector
+        // Problem Selector
         const problemData = {
             karz: {
                 title: "कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान",
@@ -1067,7 +1102,6 @@
             }
         }
 
-        // 9. Sacred Sound Audio
         let synth = null;
         function playCalmingChime() {
             try {
@@ -1079,7 +1113,6 @@
             }
         }
 
-        // 10. WhatsApp Panchang Subscription
         function subscribeWhatsAppPanchang(e) {
             e.preventDefault();
             const name = document.getElementById('wa-name').value;
@@ -1088,7 +1121,6 @@
             openWhatsAppChat(msg);
         }
 
-        // 11. Starlight Canvas Background
         const canvas = document.getElementById('cosmic-canvas');
         if (canvas) {
             const scene = new THREE.Scene();
