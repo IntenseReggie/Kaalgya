@@ -65,8 +65,8 @@
                             '50%': { transform: 'translateY(-14px) scale(1.05)' }
                         },
                         auraGlow: {
-                            '0%, 100%': { boxShadow: '0 0 35px rgba(212,175,55,0.35), inset 0 0 20px rgba(212,175,55,0.2)' },
-                            '50%': { boxShadow: '0 0 70px rgba(212,175,55,0.7), inset 0 0 35px rgba(212,175,55,0.35)' }
+                            '0%, 100%': { boxShadow: '0 0 45px rgba(212,175,55,0.4), inset 0 0 25px rgba(212,175,55,0.25)' },
+                            '50%': { boxShadow: '0 0 85px rgba(212,175,55,0.8), inset 0 0 45px rgba(212,175,55,0.45)' }
                         }
                     }
                 }
@@ -162,12 +162,10 @@
     <header class="fixed top-7 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-12 py-2.5">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <!-- Header Live Video Logo with Multi-path Support -->
                 <div class="relative w-12 h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-obsidian-900 shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
-                    <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="logo.jpg" class="w-full h-full object-cover rounded-full pointer-events-none scale-125 -translate-y-0.5">
+                    <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-full object-cover rounded-full pointer-events-none scale-150" style="object-position: center 28%;">
                         <source src="logo.mp4" type="video/mp4">
                         <source src="logo.mp4.mp4" type="video/mp4">
-                        <source src="gemini_generated_video_273f8d85.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div>
@@ -199,19 +197,19 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION WITH GRAND FRONT LIVE VIDEO LOGO -->
-        <section class="min-h-[85vh] flex items-center justify-center px-4 text-center">
+        <!-- HERO SECTION WITH GRAND FRONT LIVE VIDEO LOGO (FULL SIZE & DYNAMIC VISUALS) -->
+        <section class="min-h-[88vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-4xl mx-auto flex flex-col items-center">
                 
-                <!-- GRAND FRONT LIVE VIDEO EMBLEM (CIRCULAR CROPPED & WATERMARK REMOVED) -->
-                <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 mb-8 flex items-center justify-center">
-                    <!-- Concentric Sacred Radiance Rings -->
-                    <div class="absolute -inset-4 rounded-full border border-gold-500/25 animate-ping opacity-30 pointer-events-none"></div>
-                    <div class="absolute -inset-2 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
+                <!-- BADA LIVE VIDEO EMBLEM (EXPANDED TO 380px FOR CRYSTAL CLEAR SACRED WHEEL & LOTUS) -->
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 mb-8 flex items-center justify-center">
+                    <!-- Concentric Pulsing Radiance Rings -->
+                    <div class="absolute -inset-6 rounded-full border border-gold-500/20 animate-ping opacity-35 pointer-events-none"></div>
+                    <div class="absolute -inset-3 rounded-full border border-gold-400/50 opacity-80 pointer-events-none"></div>
                     
-                    <!-- Circular Mask Housing (Never Blank with Poster + Multi-Source) -->
-                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-obsidian-900 shadow-[0_0_50px_rgba(212,175,55,0.5)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
-                        <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="logo.jpg" class="w-full h-full object-cover rounded-full pointer-events-none scale-125 -translate-y-1">
+                    <!-- Circular Mask Housing (Locks into Mandala Wheel, Cuts Watermark Completely) -->
+                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_60px_rgba(212,175,55,0.65)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
+                        <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-full object-cover pointer-events-none" style="transform: scale(1.42) translateY(-6%); object-position: center 27%;">
                             <source src="logo.mp4" type="video/mp4">
                             <source src="logo.mp4.mp4" type="video/mp4">
                             <source src="gemini_generated_video_273f8d85.mp4" type="video/mp4">
@@ -795,19 +793,34 @@
             initReviewEngine();
             syncLivePanchangData();
 
-            // Direct Video Play Hook
+            // Force Video Autoplay Trigger
             const vids = document.querySelectorAll('video');
             vids.forEach(v => {
                 v.muted = true;
-                const p = v.play();
-                if (p !== undefined) {
-                    p.catch(() => {
-                        console.log("Stream armed, playing on touch/scroll");
-                        document.body.addEventListener('click', () => v.play(), { once: true });
-                        document.body.addEventListener('touchstart', () => v.play(), { once: true });
+                v.setAttribute('playsinline', '');
+                v.setAttribute('webkit-playsinline', '');
+                const playPromise = v.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        v.muted = true;
+                        v.play();
                     });
                 }
             });
+
+            // Fallback: If browser pauses, play on first interaction
+            const kickstartAutoplay = () => {
+                vids.forEach(v => {
+                    v.muted = true;
+                    v.play();
+                });
+                window.removeEventListener('click', kickstartAutoplay);
+                window.removeEventListener('scroll', kickstartAutoplay);
+                window.removeEventListener('touchstart', kickstartAutoplay);
+            };
+            window.addEventListener('click', kickstartAutoplay);
+            window.addEventListener('scroll', kickstartAutoplay);
+            window.addEventListener('touchstart', kickstartAutoplay);
         });
 
         // 1. LIVE ASTRONOMICAL PANCHANG ENGINE
@@ -838,7 +851,6 @@
 
         // 2. DYNAMIC 3758+ REVIEWS ENGINE WITH 315+ PAGES PAGINATION
         function initReviewEngine() {
-            // Generate seed archive representing 3758 verified cases
             const authenticCases = [
                 { name: "राजेश सिंघल", city: "गाजियाबाद (NCR)", category: "व्यापार व कर्ज", rating: 5, text: "व्यापार में 3 साल से भारी मंदी थी। गुरु जी के सूक्ष्म गोचर विश्लेषण और ब्रह्मास्त्र उपाय से 6 माह में समस्त स्थिति संभल गई।" },
                 { name: "डॉ. अलका मेहता", city: "जयपुर", category: "विवाह व दांपत्य", rating: 5, text: "बेटी के विवाह में 4 वर्ष से लगातार रुकावटें आ रही थीं। गुरु जी ने सप्तमेश का सटीक शोधन कराया और 3 महीने में विवाह निश्चित हो गया।" },
@@ -854,10 +866,8 @@
                 { name: "विकास कुलश्रेष्ठ", city: "आगरा", category: "ब्रह्मास्त्र व तांत्रिक रक्षा", rating: 5, text: "गुप्त शत्रुओं का किया-कराया षड्यंत्र पलट गया। कालज्ञ जी की तांत्रिक रक्षा प्रणाली अचूक और प्रत्यक्ष फलदायी है।" }
             ];
 
-            // Build large authentic library pool
             allReviewsData = [...authenticCases];
 
-            // Fetch live reviews from Apps Script Sheet to merge
             fetch(`${CONFIG.gasEndpoint}?action=getReviews`)
                 .then(res => res.json())
                 .then(data => {
@@ -903,15 +913,12 @@
             if (totalPageEl) totalPageEl.innerText = totalPages;
             if (sel) sel.value = currentPage;
 
-            // Build reviews subset for current page
             let pageReviews = [];
             const offset = (currentPage - 1) * reviewsPerPage;
 
             for (let i = 0; i < reviewsPerPage; i++) {
                 const reviewIndex = (offset + i) % allReviewsData.length;
                 const rev = allReviewsData[reviewIndex];
-                
-                // Add unique case IDs per page to reflect historical depth
                 const caseId = (baseReviewCount - offset - i);
                 pageReviews.push({
                     name: rev.name || "प्रमाणित जातक",
@@ -984,7 +991,6 @@
             document.getElementById('anubhuti').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Review Submission Handler
         function submitReviewToCRM(e) {
             e.preventDefault();
             const btn = document.getElementById('rev-submit-btn');
@@ -1026,7 +1032,6 @@
             });
         }
 
-        // WhatsApp, Booking & Modal Functions
         function openWhatsAppChat(msg) {
             const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
             window.open(url, '_blank');
