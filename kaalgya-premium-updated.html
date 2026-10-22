@@ -144,20 +144,21 @@
             display: flex !important;
         }
 
-        /* Responsive Sacred Emblem Lock */
-        .sacred-circle-container {
+        /* 100% Outer Zodiac Wheel Visible Frame */
+        .live-circle-frame {
             position: relative;
             width: 100%;
             height: 100%;
             border-radius: 9999px;
             overflow: hidden;
-            background-color: #030305;
+            background-color: #000000;
         }
-        .sacred-circle-container video {
+        .live-circle-frame video {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -46%) scale(1.42);
+            /* 1.18x allows full outer Zodiac wheel to stay fully visible inside circle while trimming bottom watermark */
+            transform: translate(-50%, -46.5%) scale(1.18);
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -183,10 +184,9 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
                 <div class="relative w-12 h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-obsidian-900 shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
-                    <div class="sacred-circle-container">
-                        <video autoplay loop muted playsinline webkit-playsinline preload="auto" poster="logo.jpg">
+                    <div class="live-circle-frame">
+                        <video autoplay loop muted playsinline webkit-playsinline preload="auto">
                             <source src="logo.mp4" type="video/mp4">
-                            <source src="logo.mp4.mp4" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -219,22 +219,21 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION WITH EXPANDED FRONT LIVE VIDEO LOGO -->
+        <!-- HERO SECTION WITH GRAND FRONT LIVE VIDEO LOGO (FULL ZODIAC WHEEL) -->
         <section class="min-h-[88vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-4xl mx-auto flex flex-col items-center">
                 
-                <!-- BADA LIVE VIDEO EMBLEM (EXPANDED TO 380px, COMPLETE SACRED CIRCLE, ZERO WATERMARK) -->
-                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[380px] md:h-[380px] mb-8 flex items-center justify-center">
+                <!-- BADA LIVE VIDEO EMBLEM (390px RADIANCE, COMPLETE 12 RASHI WHEEL, ZERO WATERMARK) -->
+                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[390px] md:h-[390px] mb-8 flex items-center justify-center">
                     <!-- Concentric Pulsing Radiance Rings -->
                     <div class="absolute -inset-6 rounded-full border border-gold-500/25 animate-ping opacity-30 pointer-events-none"></div>
                     <div class="absolute -inset-3 rounded-full border border-gold-400/50 opacity-80 pointer-events-none"></div>
                     
                     <!-- Circular Mask Housing -->
                     <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_70px_rgba(212,175,55,0.7)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
-                        <div class="sacred-circle-container">
-                            <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto" poster="logo.jpg">
+                        <div class="live-circle-frame">
+                            <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto">
                                 <source src="logo.mp4" type="video/mp4">
-                                <source src="logo.mp4.mp4" type="video/mp4">
                             </video>
                         </div>
                     </div>
@@ -700,7 +699,7 @@
         <button onclick="openBookingModal('Mobile Sticky (₹5,100)')" class="flex-1 py-3 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase cursor-pointer">
             परामर्श लें (₹5,100)
         </button>
-        <button onclick="openWhatsAppChat('सादर प्रणाम पूज्य गुरुजी! मुझे परामर्श हेतु जानकारी चाहिए।')" class="px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer">
+        <button onclick="openWhatsAppChat(' सादर प्रणाम पूज्य गुरुजी! मुझे परामर्श हेतु जानकारी चाहिए।')" class="px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
         </button>
     </div>
@@ -824,11 +823,10 @@
                 heroVid.playsInline = true;
 
                 const startVideo = () => {
-                    heroVid.play().catch(e => console.log("Waiting for user gesture"));
+                    heroVid.play().catch(e => console.log("Gesture pending"));
                 };
                 startVideo();
 
-                // Gesture fallback if browser blocks on initial load
                 window.addEventListener('click', startVideo, { once: true });
                 window.addEventListener('touchstart', startVideo, { once: true });
                 window.addEventListener('scroll', startVideo, { once: true });
