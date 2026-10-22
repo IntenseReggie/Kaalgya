@@ -162,9 +162,10 @@
     <header class="fixed top-7 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-12 py-2.5">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <!-- Header Live Video Logo -->
+                <!-- Header Live Video Logo (With all filename fallback checks) -->
                 <div class="relative w-12 h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-obsidian-900 shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
                     <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-full object-cover rounded-full pointer-events-none scale-125 -translate-y-0.5">
+                        <source src="logo.mp4.mp4" type="video/mp4">
                         <source src="logo.mp4" type="video/mp4">
                         <source src="gemini_generated_video_273f8d85.mp4" type="video/mp4">
                     </video>
@@ -198,7 +199,7 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION WITH GRAND FRONT LIVE VIDEO LOGO (ONLY REAL VIDEO, NO DRAWINGS) -->
+        <!-- HERO SECTION WITH GRAND FRONT LIVE VIDEO LOGO -->
         <section class="min-h-[85vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-4xl mx-auto flex flex-col items-center">
                 
@@ -208,9 +209,10 @@
                     <div class="absolute -inset-4 rounded-full border border-gold-500/25 animate-ping opacity-30 pointer-events-none"></div>
                     <div class="absolute -inset-2 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
-                    <!-- Circular Mask with Auto-Cropping Watermark -->
+                    <!-- Circular Mask Housing (Multi-Filename Safe) -->
                     <div class="w-full h-full rounded-full border-2 border-gold-400 bg-obsidian-900 shadow-[0_0_50px_rgba(212,175,55,0.5)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
                         <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="w-full h-full object-cover rounded-full pointer-events-none scale-125 -translate-y-1">
+                            <source src="logo.mp4.mp4" type="video/mp4">
                             <source src="logo.mp4" type="video/mp4">
                             <source src="gemini_generated_video_273f8d85.mp4" type="video/mp4">
                         </video>
@@ -639,7 +641,7 @@
     <!-- FLOATING QUICK WHATSAPP BUTTON WITH MONOGRAM -->
     <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center justify-center">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
         </svg>
     </a>
 
@@ -648,7 +650,7 @@
         <button onclick="openBookingModal('Mobile Sticky (₹5,100)')" class="flex-1 py-3 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase cursor-pointer">
             परामर्श लें (₹5,100)
         </button>
-        <button onclick="openWhatsAppChat(' सादर प्रणाम पूज्य गुरुजी! मुझे परामर्श हेतु जानकारी चाहिए।')" class="px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer">
+        <button onclick="openWhatsAppChat('सादर प्रणाम पूज्य गुरुजी! मुझे परामर्श हेतु जानकारी चाहिए।')" class="px-4 py-3 rounded-xl bg-emerald-600 text-white font-bold text-xs cursor-pointer">
             <i data-lucide="message-circle" class="w-5 h-5"></i>
         </button>
     </div>
@@ -992,7 +994,7 @@
             e.preventDefault();
             const name = document.getElementById('wa-name').value;
             const phone = document.getElementById('wa-phone').value;
-            const msg = ` सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक शुद्ध पंचांग एवं एकादशी पारण समय अपने व्हाट्सएप नंबर (${phone}) पर प्राप्त करना चाहता हूँ।`;
+            const msg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक शुद्ध पंचांग एवं एकादशी पारण समय अपने व्हाट्सएप नंबर (${phone}) पर प्राप्त करना चाहता हूँ।`;
             openWhatsAppChat(msg);
         }
 
