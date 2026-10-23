@@ -59,8 +59,8 @@
                             '50%': { transform: 'translateY(-14px) scale(1.05)' }
                         },
                         auraGlow: {
-                            '0%, 100%': { boxShadow: '0 0 50px rgba(212,175,55,0.45), inset 0 0 30px rgba(212,175,55,0.3)' },
-                            '50%': { boxShadow: '0 0 130px rgba(212,175,55,0.95), inset 0 0 65px rgba(212,175,55,0.6)' }
+                            '0%, 100%': { boxShadow: '0 0 45px rgba(212,175,55,0.4), inset 0 0 25px rgba(212,175,55,0.25)' },
+                            '50%': { boxShadow: '0 0 90px rgba(212,175,55,0.85), inset 0 0 45px rgba(212,175,55,0.45)' }
                         }
                     }
                 }
@@ -137,6 +137,13 @@
         .modal-backdrop.active {
             display: flex !important;
         }
+
+        /* Custom Date Picker Styling so Calendar Icon is 100% visible */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.8) sepia(1) saturate(5) hue-rotate(5deg);
+            cursor: pointer;
+            padding: 4px;
+        }
     </style>
 </head>
 <body class="selection:bg-gold-500 selection:text-black pb-24 md:pb-0">
@@ -156,8 +163,8 @@
     <header class="fixed top-7 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-2.5">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
-                <div class="relative w-12 h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-obsidian-900 shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
-                    <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
+                <div class="relative w-12 h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-black shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
+                    <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-contain rounded-full">
                         <source src="logo.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -191,18 +198,18 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION: FULL VISHAL ZODIAC WHEEL (800px DESKTOP / 480px MOBILE) -->
-        <section class="min-h-[96vh] flex items-center justify-center px-4 text-center">
+        <!-- HERO SECTION: BALANCED 540px CONTAINER WITH 100% UNCLIPPED ZODIAC WHEEL -->
+        <section class="min-h-[90vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-5xl mx-auto flex flex-col items-center">
                 
-                <!-- BADA LIVE VIDEO EMBLEM CONTAINER (800px DESKTOP / 480px MOBILE) -->
-                <div class="relative w-[340px] h-[340px] sm:w-[480px] sm:h-[480px] md:w-[800px] md:h-[800px] mb-10 mx-auto flex items-center justify-center">
+                <!-- BALANCED VIDEO EMBLEM (540px DESKTOP / 340px MOBILE) -->
+                <div class="relative w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] md:w-[540px] md:h-[540px] mb-8 mx-auto flex items-center justify-center">
                     <!-- Concentric Sacred Radiance Rings -->
-                    <div class="absolute -inset-16 rounded-full border border-gold-500/25 animate-ping opacity-25 pointer-events-none"></div>
-                    <div class="absolute -inset-8 rounded-full border-2 border-gold-400/50 opacity-80 pointer-events-none"></div>
+                    <div class="absolute -inset-10 rounded-full border border-gold-500/25 animate-ping opacity-25 pointer-events-none"></div>
+                    <div class="absolute -inset-5 rounded-full border-2 border-gold-400/50 opacity-80 pointer-events-none"></div>
                     
-                    <!-- Exact Circular Mask Housing (Full Zodiac Wheel Bound) -->
-                    <div class="w-full h-full rounded-full border-4 border-gold-400 bg-black shadow-[0_0_130px_rgba(212,175,55,0.95)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
+                    <!-- Circular Mask Housing (contain ensures 12 zodiac wheel stays 100% inside border) -->
+                    <div class="w-full h-full rounded-full border-4 border-gold-400 bg-black shadow-[0_0_90px_rgba(212,175,55,0.85)] animate-aura-glow overflow-hidden relative flex items-center justify-center p-1">
                         <video 
                             id="heroLiveVideo" 
                             autoplay 
@@ -211,8 +218,7 @@
                             playsinline 
                             webkit-playsinline 
                             preload="auto" 
-                            class="absolute pointer-events-none max-w-none"
-                            style="width: 180%; height: 180%; object-fit: cover; top: 50%; left: 50%; transform: translate(-50%, -49%);">
+                            class="w-full h-full object-contain pointer-events-none">
                             <source src="logo.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -247,14 +253,15 @@
             </div>
         </section>
 
-        <!-- SECTION: GURU JI INTRODUCTION -->
+        <!-- SECTION: GURU JI INTRODUCTION (AAPKI PHOTO LINKED TO GURUJI.JPG) -->
         <section id="guruji" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass gold-border-glow rounded-3xl p-8 md:p-12 relative overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     
                     <div class="md:col-span-5 flex flex-col items-center text-center">
-                        <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-2 border-gold-400 shadow-[0_0_35px_rgba(212,175,55,0.45)] bg-obsidian-900 group">
-                            <img src="guruji.jpg" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600'" alt="पूज्य कालज्ञ गुरु जी" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                        <div class="relative w-60 h-60 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-2 border-gold-400 shadow-[0_0_35px_rgba(212,175,55,0.45)] bg-obsidian-900 group">
+                            <!-- AAPKI PHOTO DIRECTLY LOADED FROM guruji.jpg -->
+                            <img src="guruji.jpg" alt="पूज्य कालज्ञ गुरु जी" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-0 right-0 text-center text-xs font-cinzel text-gold-300 tracking-wider font-bold">पूज्य कालज्ञ गुरु जी</span>
                         </div>
@@ -411,92 +418,92 @@
             </div>
         </section>
 
-        <!-- SECTION 2: DEDICATED 16 SAMSARA MUHURAT HUB -->
+        <!-- SECTION 2: DEDICATED 16 SAMSARA MUHURAT HUB (CLICK FIXED) -->
         <section id="muhurat-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Complete Shastriya Muhurat Codex ✦</span>
                 <h2 class="text-3xl md:text-4xl font-bold font-cinzel text-white">16 वैदिक संस्कार एवं <span class="gold-gradient-text">कार्य सिद्धि मुहूर्त</span></h2>
-                <p class="text-xs text-gray-400 mt-2">किसी भी संस्कार पर क्लिक करके उसका शास्त्र-रहस्य, लाभ-हानि व वार्षिक तिथियां देखें।</p>
+                <p class="text-xs text-gray-400 mt-2">किसी भी संस्कार पर क्लिक करें, नीचे उसका संपूर्ण विवरण व तिथियां खुल जाएंगी।</p>
             </div>
 
             <!-- 16 Muhurat Selection Cards Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3.5 mb-10">
-                <button onclick="openMuhuratDetail('vivah')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('vivah')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">💍</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">1. विवाह मुहूर्त</strong>
                     <span class="text-[10px] text-gray-400">पाणिग्रहण व गठबंधन</span>
                 </button>
-                <button onclick="openMuhuratDetail('grihapravesh')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('grihapravesh')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🏠</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">2. गृह प्रवेश मुहूर्त</strong>
                     <span class="text-[10px] text-gray-400">नए भवन में प्रवेश</span>
                 </button>
-                <button onclick="openMuhuratDetail('bhumipujan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('bhumipujan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">⛏️</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">3. भूमि पूजन मुहूर्त</strong>
                     <span class="text-[10px] text-gray-400">खनन व नींव शिलान्यास</span>
                 </button>
-                <button onclick="openMuhuratDetail('vastupujan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('vastupujan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🏛️</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">4. वास्तु पूजन मुहूर्त</strong>
                     <span class="text-[10px] text-gray-400">वास्तु शांति कीलन</span>
                 </button>
-                <button onclick="openMuhuratDetail('vyapar')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('vyapar')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">💼</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">5. व्यापार आरंभ</strong>
                     <span class="text-[10px] text-gray-400">दुकान व फर्म उद्घाटन</span>
                 </button>
-                <button onclick="openMuhuratDetail('vahan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('vahan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🚗</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">6. वाहन क्रय मुहूर्त</strong>
                     <span class="text-[10px] text-gray-400">नया वाहन खरीद</span>
                 </button>
-                <button onclick="openMuhuratDetail('yatra')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('yatra')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">✈️</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">7. यात्रा मुहूर्त</strong>
                     <span class="text-[10px] text-gray-400">दिशा शूल व प्रस्थान</span>
                 </button>
-                <button onclick="openMuhuratDetail('shiksha')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('shiksha')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">📚</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">8. शिक्षा व विद्यारंभ</strong>
                     <span class="text-[10px] text-gray-400">अक्षरारंभ व उच्च अध्ययन</span>
                 </button>
-                <button onclick="openMuhuratDetail('namkaran')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('namkaran')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">👶</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">9. नामकरण संस्कार</strong>
                     <span class="text-[10px] text-gray-400">शिशु का प्रथम नामकरण</span>
                 </button>
-                <button onclick="openMuhuratDetail('annaprashan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('annaprashan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🥣</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">10. अन्नप्राशन संस्कार</strong>
                     <span class="text-[10px] text-gray-400">प्रथम अन्न ग्रहण</span>
                 </button>
-                <button onclick="openMuhuratDetail('mundan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('mundan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">✂️</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">11. मुंडन (चूड़ाकर्म)</strong>
                     <span class="text-[10px] text-gray-400">केश त्याग व मेधा योग</span>
                 </button>
-                <button onclick="openMuhuratDetail('upnayan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('upnayan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🕉️</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">12. उपनयन (यज्ञोपवीत)</strong>
                     <span class="text-[10px] text-gray-400">जनेऊ धारण व दीक्षा</span>
                 </button>
-                <button onclick="openMuhuratDetail('garbhadhan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('garbhadhan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🌸</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">13. गर्भाधान संस्कार</strong>
                     <span class="text-[10px] text-gray-400">संतान उत्पत्ति विधान</span>
                 </button>
-                <button onclick="openMuhuratDetail('devapratishtha')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('devapratishtha')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🛕</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">14. देव-प्रतिष्ठा</strong>
                     <span class="text-[10px] text-gray-400">मूर्ति चैतन्य प्रतिष्ठा</span>
                 </button>
-                <button onclick="openMuhuratDetail('yagya')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('yagya')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🔥</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">15. यज्ञ एवं अनुष्ठान</strong>
                     <span class="text-[10px] text-gray-400">हवन व अग्नि वास</span>
                 </button>
-                <button onclick="openMuhuratDetail('krishi')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                <button type="button" onclick="window.openMuhuratDetail('krishi')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">🌾</span>
                     <strong class="text-sm text-white group-hover:text-gold-300 block">16. कृषि व बीज बोना</strong>
                     <span class="text-[10px] text-gray-400">बुवाई व फसल संचयन</span>
@@ -504,7 +511,7 @@
             </div>
 
             <!-- Dynamic Muhurat Detailed Showcase Panel -->
-            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
+            <div id="muhurat-display-panel" class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
                 <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-gold-500/20 mb-6">
                     <div>
                         <span id="panel-category" class="text-xs font-mono uppercase tracking-widest text-gold-400 block mb-1">संस्कार 1 • पाणिग्रहण विधान</span>
@@ -547,7 +554,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: AAJ KA MUHURAT, ASHUBH KAAL & 24 HORA (DATE PICKER ENABLED) -->
+        <!-- SECTION 3: AAJ KA MUHURAT, ASHUBH KAAL & 24 HORA (CALENDAR & HORA FIXED) -->
         <section id="today-hora-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Autonomous Calculation ✦</span>
@@ -555,15 +562,17 @@
                 <p class="text-xs text-gray-400 mt-2">कैलेंडर से किसी भी तिथि का चयन करके उस दिन के मुहूर्त और होरा देखें।</p>
             </div>
 
-            <!-- Date Picker Header -->
+            <!-- Date Picker Header with Visible Calendar Icon Trigger -->
             <div class="cosmic-glass gold-border-glow rounded-3xl p-5 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
                     <strong class="text-white text-sm block">विशिष्ट तिथि का मुहूर्त व होरा चयन</strong>
                     <span class="text-xs text-gray-400">कैलेंडर से दिनांक बदलें, नीचे दिए गए शुभ-अशुभ काल एवं 24 होरा स्वतः बदल जाएंगे।</span>
                 </div>
                 <div class="flex items-center gap-3">
-                    <label class="text-xs text-gold-300 font-semibold">दिनांक चुनें:</label>
-                    <input id="muhurat-date-picker" type="date" onchange="calculateDateBasedMuhurat(this.value)" class="px-3 py-2 rounded-xl bg-obsidian-900 border border-gold-500/40 text-gold-200 text-xs focus:outline-none">
+                    <label class="text-xs text-gold-300 font-semibold flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('muhurat-date-picker').showPicker()">
+                        <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> दिनांक चुनें:
+                    </label>
+                    <input id="muhurat-date-picker" type="date" onchange="calculateDateBasedMuhurat(this.value)" class="px-4 py-2.5 rounded-xl bg-obsidian-900 border-2 border-gold-500/50 text-gold-200 text-xs font-mono font-bold focus:outline-none focus:border-gold-400 cursor-pointer shadow-inner">
                 </div>
             </div>
 
@@ -630,18 +639,18 @@
 
             <!-- 24 Hora Matrix -->
             <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
-                <h3 class="text-base font-bold text-white font-cinzel mb-4 flex items-center justify-between pb-3 border-b border-gold-500/20">
+                <h3 class="text-base font-bold text-white font-cinzel mb-4 flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-gold-500/20 gap-2">
                     <span>दिन एवं रात्रि का 24 होरा चक्र</span>
-                    <span id="hora-day-indicator" class="text-xs text-gold-400 font-mono">सूर्योदय-आधारित चक्र</span>
+                    <span id="hora-day-indicator" class="text-xs text-gold-400 font-mono font-bold">गणना संरेखित...</span>
                 </h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <strong class="text-xs text-gold-300 uppercase block mb-3">☀️ दिन की 12 होरा (प्रातः से संध्या)</strong>
-                        <div class="space-y-1.5 text-xs" id="day-hora-list"></div>
+                        <strong class="text-xs text-gold-300 uppercase block mb-3 font-cinzel">☀️ दिन की 12 होरा (प्रातः सूर्योदय से संध्या)</strong>
+                        <div class="space-y-2 text-xs" id="day-hora-list"></div>
                     </div>
                     <div>
-                        <strong class="text-xs text-indigo-300 uppercase block mb-3">🌙 रात्रि की 12 होरा (संध्या से प्रातः)</strong>
-                        <div class="space-y-1.5 text-xs" id="night-hora-list"></div>
+                        <strong class="text-xs text-indigo-300 uppercase block mb-3 font-cinzel">🌙 रात्रि की 12 होरा (संध्या सूर्यास्त से प्रातः)</strong>
+                        <div class="space-y-2 text-xs" id="night-hora-list"></div>
                     </div>
                 </div>
             </div>
@@ -743,7 +752,7 @@
             </div>
         </section>
 
-        <!-- REVIEWS SECTION: PROFESSIONAL 6-CARD SHOWCASE -->
+        <!-- REVIEWS SECTION: COMPACT 6 PROFESSIONAL REVIEWS -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gold-500/20">
                 <div>
@@ -815,7 +824,7 @@
     <!-- FLOATING WHATSAPP -->
     <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center justify-center">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
-            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
         </svg>
     </a>
 
@@ -991,8 +1000,8 @@
                 category: "संस्कार 7 • महाप्रस्थान, विदेश गमन व व्यापारिक यात्रा",
                 title: "यात्रा मुहूर्त (Travel Muhurat)",
                 importance: "दिशा शूल विचार और चंद्र वास का ध्यान रखकर की गई यात्रा ही अभीष्ट फल देती है। सोमवार और शनिवार को पूर्व दिशा तथा रविवार को पश्चिम दिशा में शूल रहता है।",
-                benefits: "जिस उद्देश्य से यात्रा की जा रही है (वीजा, डील, इंटरव्यू या तीर्थ) उसमें शत-प्रतिशत सफलता।",
-                risks: "सामान चोरी होना, स्वास्थ्य बिगड़ना, फ्लाइट/ट्रेन छूटना तथा कार्य में विफलता।",
+                benefits: "जिस उद्देश्य से यात्रा की जा रही है उसमें शत-प्रतिशत सफलता।",
+                risks: "सामान चोरी होना, स्वास्थ्य बिगड़ना, कार्य में विफलता।",
                 dates: [
                     { date: "17 नवम्बर 2026 (मंगलवार)", time: "प्रातः 07:30 से 09:45 AM", tithi: "शुक्ल सप्तमी", nakshatra: "धनिष्ठा", effect: "कार्य सिद्धि योग" },
                     { date: "01 दिसम्बर 2026 (मंगलवार)", time: "प्रातः 08:15 से 10:30 AM", tithi: "कृष्ण सप्तमी", nakshatra: "मघा", effect: "विजय यात्रा योग" }
@@ -1041,7 +1050,7 @@
             upnayan: {
                 category: "संस्कार 12 • यज्ञोपवीत व गायत्री दीक्षा",
                 title: "उपनयन संस्कार (Yagyopaveet / Janeu)",
-                importance: "द्विजत्व प्राप्ति का यह सर्वोच्च संस्कार है। तीनों सूत्रों में ब्रह्मा, विष्णु, महेश तथा नौ तंतुओं में ओंकार आदि का वास होता है।",
+                importance: "द्विजत्व प्राप्ति का यह सर्वोच्च संस्कार है। तीनों सूत्रों में ब्रह्मा, विष्णु, महेश का वास होता है।",
                 benefits: "आध्यात्मिक तेज, आत्मबल, एकाग्रता तथा संस्कारों की रक्षा।",
                 risks: "संस्कारहीनता, मन की चंचलता और नैतिक पतन।",
                 dates: [
@@ -1053,7 +1062,7 @@
                 title: "गर्भाधान संस्कार (Garbhadhan Sanskar)",
                 importance: "ऋतुकाल की शुद्ध रात्रियों में ग्रहों की स्थिति देखकर किया गया गर्भाधान कुलतारक संतान प्रदान करता है।",
                 benefits: "धर्मात्मा, स्वस्थ, पराक्रमी और कुल का नाम रोशन करने वाली संतान की प्राप्ति।",
-                risks: "जन्मजात रोग, मानसिक विकलांगता तथा कुलघाती संतान का भय।",
+                risks: "जन्मजात रोग, मानसिक विकार तथा कुलघाती संतान का भय।",
                 dates: [
                     { date: "15 दिसम्बर 2026 (मंगलवार)", time: "रात्रि 10:30 से 01:15 AM", tithi: "शुक्ल सप्तमी", nakshatra: "शतभिषा", effect: "श्रेष्ठ संतान योग" }
                 ]
@@ -1071,7 +1080,7 @@
             yagya: {
                 category: "संस्कार 15 • महायज्ञ, अनुष्ठान व तांत्रिक संकल्प",
                 title: "यज्ञ एवं अनुष्ठान मुहूर्त (Yagya / Havan)",
-                importance: "अग्नि वास का विचार (पृथ्वी पर अग्नि का वास) देखकर किया गया हवन ही देवताओं और पितरों तक पहुंचता है।",
+                importance: "अग्नि वास का विचार देखकर किया गया हवन ही देवताओं और पितरों तक पहुंचता है।",
                 benefits: "रोग, शोक, शत्रु बाधा का समूल नाश तथा ग्रह जनित पीड़ाओं से मुक्ति।",
                 risks: "आकाश या पाताल में अग्नि वास होने पर आहुति देने से धन नाश और रोग का भय होता है।",
                 dates: [
@@ -1091,88 +1100,71 @@
         };
 
         // 24 Hora System Data
-        const HORA_PLANETS = ["सूर्य", "शुक्र", "बुध", "चंद्र", "शनि", "बृहस्पति", "मंगल"];
-
-        // Curated Reviews (Compact 6)
-        const authenticRealisticReviews = [
-            { name: "Harvinder Singh (Harry)", city: "Ludhiana / Brampton", category: "महावास्तु शोधन", rating: 5, text: "Paaji tussi sach vich rab de bande ho! Sade transport business vich 2 saal ton masla chal reha si. Guru ji ne bina tod-fod vastu da jo hal dassya, 40 dina de andar sari payment clear ho gayi. Lakh-lakh shukrana!" },
-            { name: "पंडित राधेश्याम शर्मा", city: "उज्जैन", category: "दोष व शांति", rating: 5, text: "कालसर्प व पितृदोष की शांति अनेक स्थानों पर कराई परंतु मानसिक अशांति नहीं गई। पूज्य कालज्ञ जी ने सूक्ष्म गोचर में केतु और राहु की डिग्री देखकर जो ब्रह्मास्त्र संकल्प करवाया, उससे 21 दिन में परिवार में अद्भुत शांति का अनुभव हुआ।" },
-            { name: "Vikramaditya Roy", city: "London, UK", category: "करियर व प्रमोशन", rating: 5, text: "I was stuck at VP level for 4 years without growth. Guru ji precisely identified 10th lord combustion. Did his suggested remedial regimen and got promoted to Director last week. Pure mathematical precision." },
-            { name: "पूजा वर्मा", city: "नोएडा सेक्टर 62", category: "विवाह व दांपत्य", rating: 5, text: "Rishta final ho gaya! 3 saal se ladka nahi mil raha tha, guru ji ne jo yellow daal wala nuskha aur grah shodhan bataya uske 2 mahine me shadi pakki ho gayi thank you guruji." },
-            { name: "बबलू यादव", city: "आजमगढ़", category: "व्यापार व कर्ज", rating: 5, text: "Bhai sach me guru ji ka bataya upay kaam kr gaya, dukan pr grahak wapis aane lage 🙏" },
-            { name: "Abhishek Kulkarni", city: "Bengaluru", category: "संपूर्ण जीवन कुण्डली", rating: 5, text: "₹5,100 consultation was worth every rupee. Guruji told exact past events of 2019 and 2022 which nobody knew. Remedial guidance is completely scientific without superstition." }
+        const HORA_PLANETS = [
+            { name: "सूर्य", nature: "राजकीय कार्य, सम्मान व पदोन्नति" },
+            { name: "शुक्र", nature: "प्रेम, कला, आभूषण व ऐश्वर्य" },
+            { name: "बुध", nature: "व्यापार, संवाद व बौद्धिक कार्य" },
+            { name: "चंद्र", nature: "मानसिक शांति, जल कार्य व यात्रा" },
+            { name: "शनि", nature: "स्थिर संपत्ति, श्रम व गुप्त शोध" },
+            { name: "बृहस्पति", nature: "धर्म, विद्या, विवाह व परामर्श" },
+            { name: "मंगल", nature: "भूमि, पराक्रम, साहस व निर्णय" }
         ];
 
-        let allReviewsData = [...authenticRealisticReviews];
-        let currentPage = 1;
-        const reviewsPerPage = 6;
-        let totalPages = 12;
-        const baseReviewCount = 3758;
-
-        window.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            initReviewEngine();
-            syncLivePanchangData();
-            openMuhuratDetail('vivah');
-
-            // Set current date in picker
-            const todayStr = new Date().toISOString().split('T')[0];
-            const picker = document.getElementById('muhurat-date-picker');
-            if (picker) {
-                picker.value = todayStr;
-                calculateDateBasedMuhurat(todayStr);
-            }
-
-            const heroVid = document.getElementById('heroLiveVideo');
-            if (heroVid) {
-                heroVid.muted = true;
-                heroVid.defaultMuted = true;
-                heroVid.playsInline = true;
-
-                const startVideo = () => heroVid.play().catch(e => console.log("Waiting"));
-                startVideo();
-                window.addEventListener('click', startVideo, { once: true });
-                window.addEventListener('touchstart', startVideo, { once: true });
-            }
-        });
-
-        // 1. OPEN 16 MUHURAT DETAILS
-        function openMuhuratDetail(key) {
+        // 1. GLOBAL FUNCTION TO OPEN 16 MUHURAT DETAILS
+        window.openMuhuratDetail = function(key) {
             const data = MUHURAT_DB[key] || MUHURAT_DB['vivah'];
-            document.getElementById('panel-category').innerText = data.category;
-            document.getElementById('panel-title').innerText = data.title;
-            document.getElementById('panel-importance').innerText = data.importance;
-            document.getElementById('panel-benefits').innerText = data.benefits;
-            document.getElementById('panel-risks').innerText = data.risks;
-
+            const catEl = document.getElementById('panel-category');
+            const titleEl = document.getElementById('panel-title');
+            const impEl = document.getElementById('panel-importance');
+            const benEl = document.getElementById('panel-benefits');
+            const riskEl = document.getElementById('panel-risks');
             const tbody = document.getElementById('panel-dates-table');
-            tbody.innerHTML = "";
-            data.dates.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-gold-500/5 transition";
-                tr.innerHTML = `
-                    <td class="p-3 font-semibold text-white">${row.date}</td>
-                    <td class="p-3 font-mono text-emerald-300">${row.time}</td>
-                    <td class="p-3 text-gold-200">${row.tithi}</td>
-                    <td class="p-3 text-amber-300">${row.nakshatra}</td>
-                    <td class="p-3 text-emerald-400 font-medium">${row.effect}</td>
-                `;
-                tbody.appendChild(tr);
-            });
 
-            document.querySelectorAll('.muhurat-card').forEach(c => c.classList.remove('border-gold-400', 'bg-gold-500/10'));
-            if (window.event && window.event.currentTarget) {
-                window.event.currentTarget.classList.add('border-gold-400', 'bg-gold-500/10');
+            if (catEl) catEl.innerText = data.category;
+            if (titleEl) titleEl.innerText = data.title;
+            if (impEl) impEl.innerText = data.importance;
+            if (benEl) benEl.innerText = data.benefits;
+            if (riskEl) riskEl.innerText = data.risks;
+
+            if (tbody) {
+                tbody.innerHTML = "";
+                data.dates.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.className = "hover:bg-gold-500/10 transition";
+                    tr.innerHTML = `
+                        <td class="p-3 font-semibold text-white">${row.date}</td>
+                        <td class="p-3 font-mono text-emerald-300 font-bold">${row.time}</td>
+                        <td class="p-3 text-gold-200">${row.tithi}</td>
+                        <td class="p-3 text-amber-300">${row.nakshatra}</td>
+                        <td class="p-3 text-emerald-400 font-medium">${row.effect}</td>
+                    `;
+                    tbody.appendChild(tr);
+                });
             }
-        }
 
-        // 2. DATE-BASED DYNAMIC MUHURAT & 24 HORA ENGINE
-        function calculateDateBasedMuhurat(dateString) {
+            document.querySelectorAll('.muhurat-card').forEach(c => c.classList.remove('border-gold-400', 'bg-gold-500/20'));
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.add('border-gold-400', 'bg-gold-500/20');
+            }
+
+            // Smooth scroll to details panel
+            const panel = document.getElementById('muhurat-display-panel');
+            if (panel) {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        };
+
+        // 2. DYNAMIC DATE-BASED MUHURAT & 24 HORA CALCULATION
+        window.calculateDateBasedMuhurat = function(dateString) {
+            if (!dateString) return;
             const date = new Date(dateString);
-            const dayOfWeek = date.getDay(); // 0 is Sunday, 1 Monday, etc.
+            const dayOfWeek = date.getDay(); // 0 is Sunday, 1 is Monday...
             const dayNames = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
             
-            document.getElementById('hora-day-indicator').innerText = `${dayNames[dayOfWeek]} • सूर्योदय से 24 होरा गणना`;
+            const indicator = document.getElementById('hora-day-indicator');
+            if (indicator) {
+                indicator.innerText = `${dateString} (${dayNames[dayOfWeek]}) • 24 होरा चक्र संरेखित`;
+            }
 
             // Day-wise Rahukaal offsets
             const rahuTimings = [
@@ -1194,47 +1186,111 @@
                 "01:30 PM - 03:00 PM"
             ];
 
-            document.getElementById('dyn-rahu').innerText = rahuTimings[dayOfWeek];
-            document.getElementById('dyn-yamgand').innerText = yamgandTimings[dayOfWeek];
+            const rahuEl = document.getElementById('dyn-rahu');
+            const yamEl = document.getElementById('dyn-yamgand');
+            if (rahuEl) rahuEl.innerText = rahuTimings[dayOfWeek];
+            if (yamEl) yamEl.innerText = yamgandTimings[dayOfWeek];
 
             // Render Day & Night Horas
+            // First hora lord of the day matches the day ruler:
+            // Sun=0, Mon=3, Tue=6, Wed=2, Thu=5, Fri=1, Sat=4
             const dayLordIndexMap = [0, 3, 6, 2, 5, 1, 4];
             let startLordIdx = dayLordIndexMap[dayOfWeek];
 
             const dayHContainer = document.getElementById('day-hora-list');
             const nightHContainer = document.getElementById('night-hora-list');
+            if (!dayHContainer || !nightHContainer) return;
+
             dayHContainer.innerHTML = "";
             nightHContainer.innerHTML = "";
 
-            // 12 Day Horas
+            // 12 Day Horas (6 AM to 6 PM approx)
             for (let i = 0; i < 12; i++) {
-                const planetIdx = (startLordIdx + i) % 7;
-                const planetName = HORA_PLANETS[planetIdx];
-                const hourNum = 6 + i;
-                const timeStr = `${hourNum > 12 ? hourNum - 12 : hourNum}:00 ${hourNum >= 12 ? 'PM' : 'AM'} - ${hourNum + 1 > 12 ? hourNum + 1 - 12 : hourNum + 1}:00 ${hourNum + 1 >= 12 ? 'PM' : 'AM'}`;
+                const planetObj = HORA_PLANETS[(startLordIdx + i) % 7];
+                const startHour = 6 + i;
+                const endHour = startHour + 1;
+                const timeStr = `${startHour > 12 ? startHour - 12 : startHour}:00 ${startHour >= 12 ? 'PM' : 'AM'} - ${endHour > 12 ? endHour - 12 : endHour}:00 ${endHour >= 12 ? 'PM' : 'AM'}`;
                 
                 const div = document.createElement('div');
-                div.className = "flex justify-between items-center p-2 rounded-xl bg-obsidian-900 border border-gold-500/20";
+                div.className = "flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-gold-500/20";
                 div.innerHTML = `
-                    <div><strong class="text-gold-300">${i + 1}. ${planetName} होरा</strong></div>
-                    <span class="text-[10px] font-mono text-emerald-400 font-semibold">${timeStr}</span>
+                    <div>
+                        <strong class="text-gold-300 block text-xs">होरा ${i + 1}: ${planetObj.name} होरा</strong>
+                        <span class="text-[10px] text-gray-400">${planetObj.nature}</span>
+                    </div>
+                    <span class="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">${timeStr}</span>
                 `;
                 dayHContainer.appendChild(div);
             }
 
-            // 12 Night Horas
+            // 12 Night Horas (6 PM to 6 AM)
             for (let i = 12; i < 24; i++) {
-                const planetIdx = (startLordIdx + i) % 7;
-                const planetName = HORA_PLANETS[planetIdx];
+                const planetObj = HORA_PLANETS[(startLordIdx + i) % 7];
+                const hourIndex = i - 12;
+                const startHour = 6 + hourIndex;
+                const endHour = startHour + 1;
+                const timeStr = `${startHour > 12 ? startHour - 12 : startHour}:00 ${startHour >= 12 ? 'AM' : 'PM'} - ${endHour > 12 ? endHour - 12 : endHour}:00 ${endHour >= 12 ? 'AM' : 'PM'}`;
+                
                 const div = document.createElement('div');
-                div.className = "flex justify-between items-center p-2 rounded-xl bg-obsidian-900 border border-indigo-500/20";
+                div.className = "flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-indigo-500/20";
                 div.innerHTML = `
-                    <div><strong class="text-indigo-300">${i + 1}. ${planetName} होरा</strong></div>
-                    <span class="text-[10px] font-mono text-indigo-400 font-semibold">रात्रि काल</span>
+                    <div>
+                        <strong class="text-indigo-300 block text-xs">होरा ${i + 1}: ${planetObj.name} होरा</strong>
+                        <span class="text-[10px] text-gray-400">${planetObj.nature}</span>
+                    </div>
+                    <span class="text-[11px] font-mono text-indigo-300 font-bold bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">${timeStr}</span>
                 `;
                 nightHContainer.appendChild(div);
             }
-        }
+        };
+
+        // Curated Reviews (Compact 6)
+        const authenticRealisticReviews = [
+            { name: "Harvinder Singh (Harry)", city: "Ludhiana / Brampton", category: "महावास्तु शोधन", rating: 5, text: "Paaji tussi sach vich rab de bande ho! Sade transport business vich 2 saal ton masla chal reha si. Guru ji ne bina tod-fod vastu da jo hal dassya, 40 dina de andar sari payment clear ho gayi. Lakh-lakh shukrana!" },
+            { name: "पंडित राधेश्याम शर्मा", city: "उज्जैन", category: "दोष व शांति", rating: 5, text: "कालसर्प व पितृदोष की शांति अनेक स्थानों पर कराई परंतु मानसिक अशांति नहीं गई। पूज्य कालज्ञ जी ने सूक्ष्म गोचर में केतु और राहु की डिग्री देखकर जो ब्रह्मास्त्र संकल्प करवाया, उससे 21 दिन में परिवार में अद्भुत शांति का अनुभव हुआ।" },
+            { name: "Vikramaditya Roy", city: "London, UK", category: "करियर व प्रमोशन", rating: 5, text: "I was stuck at VP level for 4 years without growth. Guru ji precisely identified 10th lord combustion. Did his suggested remedial regimen and got promoted to Director last week. Pure mathematical precision." },
+            { name: "पूजा वर्मा", city: "नोएडा सेक्टर 62", category: "विवाह व दांपत्य", rating: 5, text: "Rishta final ho gaya! 3 saal se ladka nahi mil raha tha, guru ji ne jo yellow daal wala nuskha aur grah shodhan bataya uske 2 mahine me shadi pakki ho gayi thank you guruji." },
+            { name: "बबलू यादव", city: "आजमगढ़", category: "व्यापार व कर्ज", rating: 5, text: "Bhai sach me guru ji ka bataya upay kaam kr gaya, dukan pr grahak wapis aane lage 🙏" },
+            { name: "Abhishek Kulkarni", city: "Bengaluru", category: "संपूर्ण जीवन कुण्डली", rating: 5, text: "₹5,100 consultation was worth every rupee. Guruji told exact past events of 2019 and 2022 which nobody knew. Remedial guidance is completely scientific without superstition." }
+        ];
+
+        let allReviewsData = [...authenticRealisticReviews];
+        let currentPage = 1;
+        const reviewsPerPage = 6;
+        let totalPages = 12;
+        const baseReviewCount = 3758;
+
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            initReviewEngine();
+            syncLivePanchangData();
+            window.openMuhuratDetail('vivah');
+
+            // Initialize Date Picker with today's date
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const todayStr = `${yyyy}-${mm}-${dd}`;
+            
+            const picker = document.getElementById('muhurat-date-picker');
+            if (picker) {
+                picker.value = todayStr;
+                window.calculateDateBasedMuhurat(todayStr);
+            }
+
+            const heroVid = document.getElementById('heroLiveVideo');
+            if (heroVid) {
+                heroVid.muted = true;
+                heroVid.defaultMuted = true;
+                heroVid.playsInline = true;
+
+                const startVideo = () => heroVid.play().catch(e => console.log("Waiting"));
+                startVideo();
+                window.addEventListener('click', startVideo, { once: true });
+                window.addEventListener('touchstart', startVideo, { once: true });
+            }
+        });
 
         // 3. PANCHANG LIVE FETCH
         function syncLivePanchangData() {
@@ -1250,7 +1306,7 @@
                         if (data.sunset) document.getElementById('live-sunset').innerText = data.sunset;
                     }
                 })
-                .catch(() => console.log("Panchang Ephemeris Fallback"));
+                .catch(() => console.log("Panchang Offline"));
         }
 
         // 4. PROFESSIONAL REVIEWS ENGINE
@@ -1509,6 +1565,14 @@
                 Tone.start();
                 synth.triggerAttackRelease(["C#4", "G#4", "C#5"], "2.5s");
             } catch (e) {}
+        }
+
+        function subscribeWhatsAppPanchang(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value;
+            const phone = document.getElementById('wa-phone').value;
+            const msg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक शुद्ध पंचांग एवं एकादशी पारण समय अपने व्हाट्सएप नंबर (${phone}) पर प्राप्त करना चाहता हूँ।`;
+            openWhatsAppChat(msg);
         }
 
         // Three.js Cosmic Starlight Canvas Animation
