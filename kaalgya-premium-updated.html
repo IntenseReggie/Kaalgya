@@ -138,7 +138,7 @@
             display: flex !important;
         }
 
-        /* Full Zodiac Wheel Precise Masking */
+        /* 12 Zodiac Wheel Perfectly Framed Inside Circle */
         .live-circle-frame {
             position: relative;
             width: 100%;
@@ -151,8 +151,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            /* scale 1.05 and slight top adjustment shows the entire 12 Zodiac boundary wheel clearly */
-            transform: translate(-50%, -48%) scale(1.06);
+            transform: translate(-50%, -48%) scale(1.01);
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -214,18 +213,18 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION WITH GRAND LIVE ZODIAC WHEEL EMBLEM -->
+        <!-- HERO SECTION WITH EXPANDED 460px LIVE ZODIAC WHEEL EMBLEM -->
         <section class="min-h-[88vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-4xl mx-auto flex flex-col items-center">
                 
-                <!-- BADA LIVE VIDEO EMBLEM (FULL 12 ZODIAC WHEEL CLEARLY VISIBLE) -->
-                <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[410px] md:h-[410px] mb-8 flex items-center justify-center">
+                <!-- BADA LIVE VIDEO EMBLEM (FULL OUTER ZODIAC WHEEL VISIBLE) -->
+                <div class="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[460px] md:h-[460px] mb-8 flex items-center justify-center">
                     <!-- Concentric Sacred Radiance Rings -->
-                    <div class="absolute -inset-6 rounded-full border border-gold-500/25 animate-ping opacity-30 pointer-events-none"></div>
-                    <div class="absolute -inset-3 rounded-full border border-gold-400/50 opacity-80 pointer-events-none"></div>
+                    <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-30 pointer-events-none"></div>
+                    <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
                     <!-- Circular Mask Housing -->
-                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_75px_rgba(212,175,55,0.75)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
+                    <div class="w-full h-full rounded-full border-2 border-gold-400/80 bg-black shadow-[0_0_80px_rgba(212,175,55,0.75)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
                         <div class="live-circle-frame">
                             <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto">
                                 <source src="logo.mp4" type="video/mp4">
@@ -263,15 +262,14 @@
             </div>
         </section>
 
-        <!-- SECTION: GURU JI INTRODUCTION (DEDICATED PHOTO & AUTHORITY SECTION) -->
+        <!-- SECTION: GURU JI INTRODUCTION (DEDICATED PROFILE PHOTO & BIO) -->
         <section id="guruji" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass gold-border-glow rounded-3xl p-8 md:p-12 relative overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     
-                    <!-- Guru Ji Profile Photo Container -->
+                    <!-- Guru Ji Profile Photo -->
                     <div class="md:col-span-5 flex flex-col items-center text-center">
                         <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-2 border-gold-400 shadow-[0_0_35px_rgba(212,175,55,0.45)] bg-obsidian-900 group">
-                            <!-- Aap apni photo ko 'guruji.jpg' naam se repo me upload karenge toh yahan live ho jayegi -->
                             <img src="guruji.jpg" onerror="this.src='https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=600'" alt="पूज्य कालज्ञ गुरु जी" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-0 right-0 text-center text-xs font-cinzel text-gold-300 tracking-wider font-bold">पूज्य कालज्ञ गुरु जी</span>
@@ -282,7 +280,7 @@
                         </div>
                     </div>
 
-                    <!-- Guru Ji Biography & Mission -->
+                    <!-- Guru Ji Philosophy -->
                     <div class="md:col-span-7 space-y-4">
                         <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block">✦ Divine Mentor & Vedic Researcher ✦</span>
                         <h2 class="text-2xl md:text-4xl font-bold font-cinzel text-white leading-tight">
@@ -637,7 +635,7 @@
             </div>
         </section>
 
-        <!-- REVIEWS SECTION: DYNAMIC 3758+ READABLE VAULT WITH FULL PAGINATION (MULTI-LANGUAGE, REAL ACCENTS & VARIED SIZES) -->
+        <!-- REVIEWS SECTION: DYNAMIC 3758+ READABLE VAULT WITH FULL WORKING PAGINATION -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gold-500/20">
                 <div>
@@ -667,13 +665,13 @@
 
                 <!-- Page Buttons -->
                 <div class="flex items-center gap-1.5 flex-wrap justify-center">
-                    <button onclick="changePage(1)" class="px-2.5 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 font-mono cursor-pointer">« पहला</button>
-                    <button onclick="changePage(currentPage - 1)" class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 cursor-pointer">‹ पिछला</button>
+                    <button type="button" onclick="changePage(1)" class="px-2.5 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 font-mono cursor-pointer">« पहला</button>
+                    <button type="button" onclick="changePage(currentPage - 1)" class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 cursor-pointer">‹ पिछला</button>
                     
                     <span id="pagination-pills" class="flex items-center gap-1"></span>
 
-                    <button onclick="changePage(currentPage + 1)" class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 cursor-pointer">अगला ›</button>
-                    <button onclick="changePage(totalPages)" class="px-2.5 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 font-mono cursor-pointer">अंतिम »</button>
+                    <button type="button" onclick="changePage(currentPage + 1)" class="px-3 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 cursor-pointer">अगला ›</button>
+                    <button type="button" onclick="changePage(totalPages)" class="px-2.5 py-1.5 rounded-lg bg-obsidian-900 border border-gold-500/30 hover:bg-gold-500/20 text-xs text-gold-300 font-mono cursor-pointer">अंतिम »</button>
                 </div>
 
                 <!-- Quick Jump Dropdown -->
@@ -833,42 +831,19 @@
             gasEndpoint: "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec"
         };
 
-        // Realistic Diverse Master Reviews Library (Varying Sizes, Accents & Languages)
+        // Diverse Master Reviews
         const authenticRealisticReviews = [
-            // 1. Desi One-Liner / Short
             { name: "बबलू यादव", city: "आजमगढ़", category: "व्यापार व कर्ज", rating: 5, text: "bhai sach me guru ji ka bataya upay kaam kr gaya, dukan pr grahak wapis aane lage 🙏" },
-            
-            // 2. Punjabi Accent in Hinglish
             { name: "Harvinder Singh (Harry)", city: "Ludhiana / Brampton", category: "महावास्तु शोधन", rating: 5, text: "Paaji tussi sach vich rab de bande ho! Sade transport business vich 2 saal ton masla chal reha si. Guru ji ne bina tod-fod vastu da jo hal dassya, 40 dina de andar sari payment clear ho gayi. Lakh-lakh shukrana!" },
-            
-            // 3. Shuddh Vedic Hindi (Explaining in detail)
             { name: "पंडित राधेश्याम शर्मा", city: "उज्जैन", category: "दोष व शांति", rating: 5, text: "कालसर्प व पितृदोष की शांति अनेक स्थानों पर कराई परंतु मानसिक अशांति नहीं गई। पूज्य कालज्ञ जी ने सूक्ष्म गोचर में केतु और राहु की डिग्री देखकर जो ब्रह्मास्त्र संकल्प करवाया, उससे 21 दिन में परिवार में अद्भुत शांति का अनुभव हुआ। गुरुदेव के चरणों में कोटि-कोटि वंदन।" },
-            
-            // 4. English (NRI / Corporate)
             { name: "Vikramaditya Roy", city: "London, UK", category: "करियर व प्रमोशन", rating: 5, text: "I was stuck at VP level for 4 years without growth despite all performance ratings. Guru ji precisely identified 10th lord combustion. Did his suggested remedial mantra regimen. Got promoted to Director last week. Pure mathematical precision." },
-            
-            // 5. Short Hinglish
             { name: "पूजा वर्मा", city: "नोएडा सेक्टर 62", category: "विवाह व दांपत्य", rating: 5, text: "Rishta final ho gaya finaly!! 3 saal se ladka nahi mil raha tha, guru ji ne jo yellow daal wala nuskha aur grah shodhan bataya uske 2 mahine me shadi pakki ho gayi thank you guruji." },
-
-            // 6. Broken / Raw Hinglish
             { name: "Munna Bhai (Gupta ji)", city: "गोरखपुर", category: "व्यापार व कर्ज", rating: 5, text: "karja bhut tha market ka 18 lakh ka sar pe danda tha. guru ji se baat kiya unhone bola ghabrao mat. ab jaise rasta khul gaya hai pura paisa set ho rha h." },
-
-            // 7. Middle Class Family Emotion
             { name: "श्रीमती कांता देवी", city: "जयपुर (सांगानेर)", category: "सुकून कक्ष विधान", rating: 5, text: "मेरे बेटे को रात को भयानक सपने और घबराहट होती थी, डिप्रेशन में दवाई चल रही थी। गुरु जी के सुकून कक्ष के चंद्र उपाय और अभिमंत्रित जल से अब वह शांत है और नौकरी पर जाने लगा है।" },
-
-            // 8. Punjabi Hinglish Short
             { name: "Manpreet Kaur", city: "Amritsar", category: "विवाह व दांपत्य", rating: 5, text: "Kalesh muk gya sade ghar da. Guru ji de charna ch pranam. Boht sukoon mileya ji." },
-
-            // 9. Technical / Skeptical Client Turned Believer
             { name: "Abhishek Kulkarni", city: "Bengaluru", category: "संपूर्ण जीवन कुण्डली", rating: 5, text: "Initially I was very skeptical about astrology. But ₹5,100 consultation opened my eyes. Guruji told exact past events of 2019 and 2022 which nobody knew. Remedial guidance is completely scientific without superstition." },
-
-            // 10. Tantra & Protection
             { name: "दिनेश चंद्र त्रिपाठी", city: "वाराणसी", category: "ब्रह्मास्त्र व तांत्रिक रक्षा", rating: 5, text: "माँ विप्रीत प्रत्यंगिरा कवच धारण करने के बाद व्यापार में जो ईर्ष्या और तंत्र बाधा थी, वह पूरी तरह भस्म हो गई। जो शत्रु षड्यंत्र रच रहे थे, वे स्वयं नतमस्तक हो गए।" },
-
-            // 11. Casual Short
             { name: "रोहित मल्होत्रा", city: "दिल्ली", category: "करियर व प्रमोशन", rating: 5, text: "Sirf 1 consultation me sab clear kar diya guru ji ne. Best astrologer in NCR hands down." },
-
-            // 12. Pure Emotional Hinglish
             { name: "Simranjeet & Aman", city: "Chandigarh", category: "विवाह व दांपत्य", rating: 5, text: "Divorce hone ki naubat aa gayi thi court tak case chala gaya tha. Guru ji ke samadhan ne hamara ghar tootne se bacha liya. We can never thank you enough guruji." }
         ];
 
@@ -901,7 +876,7 @@
             }
         });
 
-        // 1. LIVE ASTRONOMICAL PANCHANG
+        // 1. LIVE PANCHANG
         function syncLivePanchangData() {
             fetch(`${CONFIG.gasEndpoint}?action=getPanchang`)
                 .then(res => res.json())
@@ -923,7 +898,7 @@
                 .catch(() => {});
         }
 
-        // 2. DYNAMIC 3758+ REVIEWS ENGINE WITH WORKING MULTI-PAGE SWITCHER
+        // 2. DYNAMIC 3758+ REVIEWS ENGINE
         function initReviewEngine() {
             fetch(`${CONFIG.gasEndpoint}?action=getReviews`)
                 .then(res => res.json())
@@ -991,8 +966,6 @@
             pageReviews.forEach(rev => {
                 const card = document.createElement('div');
                 card.className = "cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between hover:border-gold-400 transition-all shadow-md";
-                
-                // Natural mixed length aesthetics
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center justify-between mb-2">
@@ -1043,7 +1016,6 @@
             document.getElementById('anubhuti').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Live Review Submission with Immediate Front Display
         function submitReviewToCRM(e) {
             e.preventDefault();
             const btn = document.getElementById('rev-submit-btn');
@@ -1060,7 +1032,6 @@
                 comment: document.getElementById('rev-text').value
             };
 
-            // 1. Google Sheets sync in background
             fetch(CONFIG.gasEndpoint, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -1068,7 +1039,6 @@
                 body: JSON.stringify(userReview)
             }).catch(err => console.log("Sync logged"));
 
-            // 2. Immediately insert on website Page 1 top
             allReviewsData.unshift(userReview);
             changePage(1);
 
