@@ -60,7 +60,7 @@
                         },
                         auraGlow: {
                             '0%, 100%': { boxShadow: '0 0 45px rgba(212,175,55,0.4), inset 0 0 25px rgba(212,175,55,0.25)' },
-                            '50%': { boxShadow: '0 0 85px rgba(212,175,55,0.85), inset 0 0 45px rgba(212,175,55,0.45)' }
+                            '50%': { boxShadow: '0 0 95px rgba(212,175,55,0.85), inset 0 0 50px rgba(212,175,55,0.5)' }
                         }
                     }
                 }
@@ -138,7 +138,7 @@
             display: flex !important;
         }
 
-        /* Nav Logo Frame */
+        /* Top Nav Logo Frame */
         .nav-logo-frame {
             position: relative;
             width: 100%;
@@ -151,14 +151,14 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -48%) scale(1.75);
+            transform: translate(-50%, -46%) scale(2.2);
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 9999px;
         }
 
-        /* Hero Zodiac Wheel Exact Frame Lock */
+        /* Hero Zodiac Wheel One-Shot Frame Architecture */
         .hero-zodiac-frame {
             position: relative;
             width: 100%;
@@ -171,11 +171,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            /* 1.75 scaling locks vertical 9:16 frame so the outer 12 zodiac ring matches the circle rim */
-            transform: translate(-50%, -48%) scale(1.75);
+            /* contain + 2.25x scaling locks the 9:16 vertical video so the outer 12 Zodiac Wheel sits edge-to-edge inside the circular rim */
+            transform: translate(-50%, -46%) scale(2.25);
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 9999px;
         }
     </style>
@@ -234,18 +234,18 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION: FULL OUTER ZODIAC WHEEL EMBLEM -->
-        <section class="min-h-[88vh] flex items-center justify-center px-4 text-center">
-            <div class="max-w-4xl mx-auto flex flex-col items-center">
+        <!-- HERO SECTION: GRAND 520px SACRED ZODIAC WHEEL EMBLEM -->
+        <section class="min-h-[92vh] flex items-center justify-center px-4 text-center">
+            <div class="max-w-5xl mx-auto flex flex-col items-center">
                 
-                <!-- BADA LIVE VIDEO EMBLEM (FULL OUTER ZODIAC WHEEL VISIBLE) -->
-                <div class="relative w-80 h-80 sm:w-96 sm:h-96 md:w-[460px] md:h-[460px] mb-8 flex items-center justify-center">
+                <!-- GRAND LIVE VIDEO EMBLEM (520px DESKTOP / 380px MOBILE) -->
+                <div class="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[520px] md:h-[520px] mb-8 flex items-center justify-center">
                     <!-- Concentric Sacred Radiance Rings -->
-                    <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-30 pointer-events-none"></div>
-                    <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
+                    <div class="absolute -inset-10 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
+                    <div class="absolute -inset-5 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
-                    <!-- Circular Mask Housing -->
-                    <div class="w-full h-full rounded-full border-2 border-gold-400/80 bg-black shadow-[0_0_80px_rgba(212,175,55,0.75)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
+                    <!-- Grand Circular Mask Housing -->
+                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_95px_rgba(212,175,55,0.85)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
                         <div class="hero-zodiac-frame">
                             <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto">
                                 <source src="logo.mp4" type="video/mp4">
@@ -283,7 +283,7 @@
             </div>
         </section>
 
-        <!-- SECTION: GURU JI INTRODUCTION (DEDICATED PROFILE PHOTO & BIO) -->
+        <!-- SECTION: GURU JI INTRODUCTION -->
         <section id="guruji" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass gold-border-glow rounded-3xl p-8 md:p-12 relative overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -301,7 +301,7 @@
                         </div>
                     </div>
 
-                    <!-- Guru Ji Philosophy -->
+                    <!-- Guru Ji Bio -->
                     <div class="md:col-span-7 space-y-4">
                         <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block">✦ Divine Mentor & Vedic Researcher ✦</span>
                         <h2 class="text-2xl md:text-4xl font-bold font-cinzel text-white leading-tight">
@@ -852,7 +852,7 @@
             gasEndpoint: "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec"
         };
 
-        // Diverse Master Reviews
+        // Master Diverse Reviews
         const authenticRealisticReviews = [
             { name: "बबलू यादव", city: "आजमगढ़", category: "व्यापार व कर्ज", rating: 5, text: "bhai sach me guru ji ka bataya upay kaam kr gaya, dukan pr grahak wapis aane lage 🙏" },
             { name: "Harvinder Singh (Harry)", city: "Ludhiana / Brampton", category: "महावास्तु शोधन", rating: 5, text: "Paaji tussi sach vich rab de bande ho! Sade transport business vich 2 saal ton masla chal reha si. Guru ji ne bina tod-fod vastu da jo hal dassya, 40 dina de andar sari payment clear ho gayi. Lakh-lakh shukrana!" },
