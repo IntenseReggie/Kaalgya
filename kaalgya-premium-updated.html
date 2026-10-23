@@ -157,26 +157,6 @@
             object-fit: contain;
             border-radius: 9999px;
         }
-
-        /* 15% Extra Grand Hero Zodiac Frame (690px desktop / 440px mobile) */
-        .hero-zodiac-frame {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 9999px;
-            overflow: hidden;
-            background-color: #000000;
-        }
-        .hero-zodiac-frame video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -46%) scale(2.25);
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 9999px;
-        }
     </style>
 </head>
 <body class="selection:bg-gold-500 selection:text-black pb-24 md:pb-0">
@@ -233,23 +213,30 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION: 15% EXTRA EXPANDED 690px SACRED ZODIAC WHEEL EMBLEM -->
+        <!-- HERO SECTION: FULL OUTER ZODIAC WHEEL EMBLEM (NO SQUEEZE/CROP) -->
         <section class="min-h-[96vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-5xl mx-auto flex flex-col items-center">
                 
-                <!-- 15% LARGER LIVE VIDEO EMBLEM (690px DESKTOP / 440px MOBILE) -->
-                <div class="relative w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] md:w-[690px] md:h-[690px] mb-8 flex items-center justify-center">
+                <!-- GRAND LIVE VIDEO EMBLEM CONTAINER -->
+                <div class="relative w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] md:w-[620px] md:h-[620px] mb-8 flex items-center justify-center">
                     <!-- Concentric Sacred Radiance Rings -->
-                    <div class="absolute -inset-14 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
-                    <div class="absolute -inset-7 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
+                    <div class="absolute -inset-10 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
+                    <div class="absolute -inset-5 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
                     <!-- Grand Circular Mask Housing -->
-                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_120px_rgba(212,175,55,0.9)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
-                        <div class="hero-zodiac-frame">
-                            <video id="heroLiveVideo" autoplay loop muted playsinline webkit-playsinline preload="auto">
-                                <source src="logo.mp4" type="video/mp4">
-                            </video>
-                        </div>
+                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_100px_rgba(212,175,55,0.85)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
+                        <video 
+                            id="heroLiveVideo" 
+                            autoplay 
+                            loop 
+                            muted 
+                            playsinline 
+                            webkit-playsinline 
+                            preload="auto" 
+                            class="absolute pointer-events-none max-w-none"
+                            style="width: 178%; height: 178%; object-fit: cover; top: 50%; left: 50%; transform: translate(-50%, -47%);">
+                            <source src="logo.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
 
@@ -352,7 +339,7 @@
             <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
                 <h3 id="console-title" class="text-xl font-bold text-gold-300 font-cinzel mb-3">कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान</h3>
                 <p id="console-message" class="text-sm text-gray-200 leading-relaxed mb-5 font-sans">
-                    "वत्स! समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है। यह आपकी व्यक्तिगत विफलता नहीं, अपितु ग्रहों के गोचर का चक्र है।"
+                    "वत्स! समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है।"
                 </p>
                 <div class="bg-obsidian-900 border border-gold-500/30 rounded-2xl p-4 mb-6 text-xs text-gold-200">
                     <strong class="text-gold-400 block mb-1">त्वरित उपाय:</strong>
@@ -877,7 +864,7 @@
             </div>
         </section>
 
-        <!-- REVIEWS SECTION: CURATED PROFESSIONAL SHOWCASE (6 COMPACT HIGH-AUTHORITY CARDS) -->
+        <!-- REVIEWS SECTION: COMPACT PROFESSIONAL 6-CARD SHOWCASE -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gold-500/20">
                 <div>
@@ -894,7 +881,7 @@
                 </div>
             </div>
 
-            <!-- Review Cards Grid (Clean 6 Cards Limit) -->
+            <!-- Review Cards Grid -->
             <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start"></div>
 
             <!-- Streamlined Pagination -->
@@ -968,7 +955,8 @@
         </button>
     </div>
 
-    <!-- ==================== MODALS ==================== -->
+    <!-- MODALS -->
+    <!-- 1. BOOKING MODAL -->
     <div id="booking-modal" class="modal-backdrop">
         <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-lg w-full relative max-h-[90vh] overflow-y-auto">
             <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white cursor-pointer">
@@ -1309,7 +1297,7 @@
             ]
         };
 
-        // Curated Professional Master Reviews (Filtered & Clean)
+        // Curated Professional Master Reviews (Filtered 6 Cards)
         const authenticRealisticReviews = [
             { name: "Harvinder Singh (Harry)", city: "Ludhiana / Brampton", category: "महावास्तु शोधन", rating: 5, text: "Paaji tussi sach vich rab de bande ho! Sade transport business vich 2 saal ton masla chal reha si. Guru ji ne bina tod-fod vastu da jo hal dassya, 40 dina de andar sari payment clear ho gayi. Lakh-lakh shukrana!" },
             { name: "पंडित राधेश्याम शर्मा", city: "उज्जैन", category: "दोष व शांति", rating: 5, text: "कालसर्प व पितृदोष की शांति अनेक स्थानों पर कराई परंतु मानसिक अशांति नहीं गई। पूज्य कालज्ञ जी ने सूक्ष्म गोचर में केतु और राहु की डिग्री देखकर जो ब्रह्मास्त्र संकल्प करवाया, उससे 21 दिन में परिवार में अद्भुत शांति का अनुभव हुआ।" },
@@ -1321,7 +1309,7 @@
 
         let allReviewsData = [...authenticRealisticReviews];
         let currentPage = 1;
-        const reviewsPerPage = 6; // Professional Compact Count
+        const reviewsPerPage = 6;
         let totalPages = 12;
         const baseReviewCount = 3758;
 
