@@ -10,7 +10,7 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600;700;800&family=Rozha+One&family=Yatra+One&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -197,16 +197,16 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION: PRECISE ZODIAC WHEEL CROPPED EMBLEM -->
+        <!-- HERO SECTION: 100% EVEN CIRCULAR FIT ZODIAC WHEEL EMBLEM -->
         <section class="min-h-[88vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-5xl mx-auto flex flex-col items-center">
                 
-                <!-- BALANCED LIVE VIDEO EMBLEM CONTAINER -->
-                <div class="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] mb-8 mx-auto flex items-center justify-center">
+                <!-- BALANCED LIVE VIDEO CONTAINER (500px DESKTOP / 340px MOBILE) -->
+                <div class="relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] mb-8 mx-auto flex items-center justify-center">
                     <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
                     <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
-                    <!-- Exact Circular Mask Housing: Scaled 156% & translated -36% to lock Zodiac Wheel and mask bottom text -->
+                    <!-- Exact Concentric Housing: Width 177.78% perfectly fits the 9:16 circle and -35.2% centers the Zodiac Wheel evenly -->
                     <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_75px_rgba(212,175,55,0.7)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
                         <video 
                             id="heroLiveVideo" 
@@ -217,7 +217,7 @@
                             webkit-playsinline 
                             preload="auto" 
                             class="absolute pointer-events-none max-w-none"
-                            style="width: 156%; height: 156%; object-fit: contain; top: 50%; left: 50%; transform: translate(-50%, -36%);">
+                            style="width: 177.78%; height: 177.78%; object-fit: contain; top: 50%; left: 50%; transform: translate(-50%, -35.2%);">
                             <source src="logo.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -252,15 +252,18 @@
             </div>
         </section>
 
-        <!-- SECTION: GURU JI INTRODUCTION -->
+        <!-- SECTION: GURU JI INTRODUCTION (MULTI-EXTENSION SMART IMAGE FALLBACK) -->
         <section id="guruji" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass gold-border-glow rounded-3xl p-8 md:p-12 relative overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     
                     <div class="md:col-span-5 flex flex-col items-center text-center">
                         <div class="relative w-60 h-60 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-2 border-gold-400 shadow-[0_0_35px_rgba(212,175,55,0.45)] bg-obsidian-900 group">
-                            <!-- AAPKI PHOTO: Ensure guruji.jpg is uploaded in GitHub root folder -->
-                            <img src="guruji.jpg" alt="पूज्य कालज्ञ गुरु जी" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
+                            <!-- Robust auto-fallback for guruji.jpg, JPG, png -->
+                            <img src="guruji.jpg" 
+                                 onerror="if (!this.tried) { this.tried = 1; this.src='guruji.JPG'; } else if (this.tried === 1) { this.tried = 2; this.src='guruji.png'; } else if (this.tried === 2) { this.tried = 3; this.src='guruji.jpeg'; }" 
+                                 alt="पूज्य कालज्ञ गुरु जी" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-0 right-0 text-center text-xs font-cinzel text-gold-300 tracking-wider font-bold">पूज्य कालज्ञ गुरु जी</span>
                         </div>
@@ -553,7 +556,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: AAJ KA MUHURAT, ASHUBH KAAL & 24 HORA -->
+        <!-- SECTION 3: AAJ KA MUHURAT, ASHUBH KAAL & 24 HORA (CALENDAR & TODAY'S DYNAMIC DATE) -->
         <section id="today-hora-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Autonomous Calculation ✦</span>
@@ -564,8 +567,8 @@
             <!-- Date Picker Header with Visible Calendar Icon Trigger -->
             <div class="cosmic-glass gold-border-glow rounded-3xl p-5 mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                    <strong class="text-white text-sm block">विशिष्ट तिथि का मुहूर्त व होरा चयन</strong>
-                    <span class="text-xs text-gray-400">कैलेंडर से दिनांक बदलें, नीचे दिए गए शुभ-अशुभ काल एवं 24 होरा स्वतः बदल जाएंगे।</span>
+                    <strong class="text-white text-sm block">दैनिक तिथि का मुहूर्त व होरा चयन</strong>
+                    <span class="text-xs text-gray-400">आज की तिथि स्वतः चयनित है। अन्य दिनांक देखने हेतु कैलेंडर से बदलें।</span>
                 </div>
                 <div class="flex items-center gap-3">
                     <label class="text-xs text-gold-300 font-semibold flex items-center gap-1.5 cursor-pointer" onclick="document.getElementById('muhurat-date-picker').showPicker()">
@@ -1155,13 +1158,22 @@
         // 2. DYNAMIC DATE-BASED MUHURAT & 24 HORA CALCULATION
         window.calculateDateBasedMuhurat = function(dateString) {
             if (!dateString) return;
-            const date = new Date(dateString);
+            // Parse YYYY-MM-DD reliably in local time
+            const parts = dateString.split('-');
+            const year = parseInt(parts[0], 10);
+            const month = parseInt(parts[1], 10) - 1;
+            const day = parseInt(parts[2], 10);
+            const date = new Date(year, month, day);
+
             const dayOfWeek = date.getDay();
             const dayNames = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
             
+            // Format as DD/MM/YYYY
+            const formattedDisplayDate = `${String(day).padStart(2, '0')}/${String(month + 1).padStart(2, '0')}/${year}`;
+
             const indicator = document.getElementById('hora-day-indicator');
             if (indicator) {
-                indicator.innerText = `${dateString} (${dayNames[dayOfWeek]}) • 24 होरा चक्र संरेखित`;
+                indicator.innerText = `${formattedDisplayDate} (${dayNames[dayOfWeek]}) • 24 होरा चक्र संरेखित`;
             }
 
             // Day-wise Rahukaal offsets
@@ -1261,17 +1273,17 @@
             syncLivePanchangData();
             window.openMuhuratDetail('vivah');
 
-            // Initialize Date Picker with today's date
+            // Dynamic Real-Time Today's Date Setup
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
             const dd = String(today.getDate()).padStart(2, '0');
-            const todayStr = `${yyyy}-${mm}-${dd}`;
+            const dynamicToday = `${yyyy}-${mm}-${dd}`;
             
             const picker = document.getElementById('muhurat-date-picker');
             if (picker) {
-                picker.value = todayStr;
-                window.calculateDateBasedMuhurat(todayStr);
+                picker.value = dynamicToday;
+                window.calculateDateBasedMuhurat(dynamicToday);
             }
 
             const heroVid = document.getElementById('heroLiveVideo');
@@ -1560,14 +1572,6 @@
                 Tone.start();
                 synth.triggerAttackRelease(["C#4", "G#4", "C#5"], "2.5s");
             } catch (e) {}
-        }
-
-        function subscribeWhatsAppPanchang(e) {
-            e.preventDefault();
-            const name = document.getElementById('wa-name').value;
-            const phone = document.getElementById('wa-phone').value;
-            const msg = `सादर प्रणाम पूज्य कालज्ञ गुरु जी! मेरा नाम ${name} है। मैं दैनिक शुद्ध पंचांग एवं एकादशी पारण समय अपने व्हाट्सएप नंबर (${phone}) पर प्राप्त करना चाहता हूँ।`;
-            openWhatsAppChat(msg);
         }
 
         // Three.js Cosmic Starlight Canvas Animation
