@@ -59,8 +59,8 @@
                             '50%': { transform: 'translateY(-14px) scale(1.05)' }
                         },
                         auraGlow: {
-                            '0%, 100%': { boxShadow: '0 0 45px rgba(212,175,55,0.4), inset 0 0 25px rgba(212,175,55,0.25)' },
-                            '50%': { boxShadow: '0 0 90px rgba(212,175,55,0.85), inset 0 0 45px rgba(212,175,55,0.45)' }
+                            '0%, 100%': { boxShadow: '0 0 35px rgba(212,175,55,0.4), inset 0 0 20px rgba(212,175,55,0.25)' },
+                            '50%': { boxShadow: '0 0 75px rgba(212,175,55,0.75), inset 0 0 40px rgba(212,175,55,0.45)' }
                         }
                     }
                 }
@@ -138,7 +138,6 @@
             display: flex !important;
         }
 
-        /* Custom Date Picker Styling so Calendar Icon is 100% visible */
         input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(0.8) sepia(1) saturate(5) hue-rotate(5deg);
             cursor: pointer;
@@ -164,7 +163,7 @@
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="#" class="flex items-center gap-3">
                 <div class="relative w-12 h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-black shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
-                    <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-contain rounded-full">
+                    <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
                         <source src="logo.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -198,18 +197,17 @@
     <!-- Main Content -->
     <main class="relative z-10 pt-32 pb-20">
 
-        <!-- HERO SECTION: BALANCED 540px CONTAINER WITH 100% UNCLIPPED ZODIAC WHEEL -->
-        <section class="min-h-[90vh] flex items-center justify-center px-4 text-center">
+        <!-- HERO SECTION: PRECISE ZODIAC WHEEL CROPPED EMBLEM -->
+        <section class="min-h-[88vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-5xl mx-auto flex flex-col items-center">
                 
-                <!-- BALANCED VIDEO EMBLEM (540px DESKTOP / 340px MOBILE) -->
-                <div class="relative w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] md:w-[540px] md:h-[540px] mb-8 mx-auto flex items-center justify-center">
-                    <!-- Concentric Sacred Radiance Rings -->
-                    <div class="absolute -inset-10 rounded-full border border-gold-500/25 animate-ping opacity-25 pointer-events-none"></div>
-                    <div class="absolute -inset-5 rounded-full border-2 border-gold-400/50 opacity-80 pointer-events-none"></div>
+                <!-- BALANCED LIVE VIDEO EMBLEM CONTAINER -->
+                <div class="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[480px] md:h-[480px] mb-8 mx-auto flex items-center justify-center">
+                    <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
+                    <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
-                    <!-- Circular Mask Housing (contain ensures 12 zodiac wheel stays 100% inside border) -->
-                    <div class="w-full h-full rounded-full border-4 border-gold-400 bg-black shadow-[0_0_90px_rgba(212,175,55,0.85)] animate-aura-glow overflow-hidden relative flex items-center justify-center p-1">
+                    <!-- Exact Circular Mask Housing: Scaled 156% & translated -36% to lock Zodiac Wheel and mask bottom text -->
+                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_75px_rgba(212,175,55,0.7)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
                         <video 
                             id="heroLiveVideo" 
                             autoplay 
@@ -218,7 +216,8 @@
                             playsinline 
                             webkit-playsinline 
                             preload="auto" 
-                            class="w-full h-full object-contain pointer-events-none">
+                            class="absolute pointer-events-none max-w-none"
+                            style="width: 156%; height: 156%; object-fit: contain; top: 50%; left: 50%; transform: translate(-50%, -36%);">
                             <source src="logo.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -253,14 +252,14 @@
             </div>
         </section>
 
-        <!-- SECTION: GURU JI INTRODUCTION (AAPKI PHOTO LINKED TO GURUJI.JPG) -->
+        <!-- SECTION: GURU JI INTRODUCTION -->
         <section id="guruji" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass gold-border-glow rounded-3xl p-8 md:p-12 relative overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                     
                     <div class="md:col-span-5 flex flex-col items-center text-center">
                         <div class="relative w-60 h-60 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-2 border-gold-400 shadow-[0_0_35px_rgba(212,175,55,0.45)] bg-obsidian-900 group">
-                            <!-- AAPKI PHOTO DIRECTLY LOADED FROM guruji.jpg -->
+                            <!-- AAPKI PHOTO: Ensure guruji.jpg is uploaded in GitHub root folder -->
                             <img src="guruji.jpg" alt="पूज्य कालज्ञ गुरु जी" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                             <span class="absolute bottom-3 left-0 right-0 text-center text-xs font-cinzel text-gold-300 tracking-wider font-bold">पूज्य कालज्ञ गुरु जी</span>
@@ -418,7 +417,7 @@
             </div>
         </section>
 
-        <!-- SECTION 2: DEDICATED 16 SAMSARA MUHURAT HUB (CLICK FIXED) -->
+        <!-- SECTION 2: 16 SAMSARA MUHURAT HUB -->
         <section id="muhurat-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Complete Shastriya Muhurat Codex ✦</span>
@@ -426,7 +425,7 @@
                 <p class="text-xs text-gray-400 mt-2">किसी भी संस्कार पर क्लिक करें, नीचे उसका संपूर्ण विवरण व तिथियां खुल जाएंगी।</p>
             </div>
 
-            <!-- 16 Muhurat Selection Cards Grid -->
+            <!-- 16 Muhurat Cards Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3.5 mb-10">
                 <button type="button" onclick="window.openMuhuratDetail('vivah')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
                     <span class="text-2xl mb-1 block">💍</span>
@@ -554,7 +553,7 @@
             </div>
         </section>
 
-        <!-- SECTION 3: AAJ KA MUHURAT, ASHUBH KAAL & 24 HORA (CALENDAR & HORA FIXED) -->
+        <!-- SECTION 3: AAJ KA MUHURAT, ASHUBH KAAL & 24 HORA -->
         <section id="today-hora-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="text-center mb-10">
                 <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Autonomous Calculation ✦</span>
@@ -999,7 +998,7 @@
             yatra: {
                 category: "संस्कार 7 • महाप्रस्थान, विदेश गमन व व्यापारिक यात्रा",
                 title: "यात्रा मुहूर्त (Travel Muhurat)",
-                importance: "दिशा शूल विचार और चंद्र वास का ध्यान रखकर की गई यात्रा ही अभीष्ट फल देती है। सोमवार और शनिवार को पूर्व दिशा तथा रविवार को पश्चिम दिशा में शूल रहता है।",
+                importance: "दिशा शूल विचार और चंद्र वास का ध्यान रखकर की गई यात्रा ही अभीष्ट फल देती है।",
                 benefits: "जिस उद्देश्य से यात्रा की जा रही है उसमें शत-प्रतिशत सफलता।",
                 risks: "सामान चोरी होना, स्वास्थ्य बिगड़ना, कार्य में विफलता।",
                 dates: [
@@ -1147,7 +1146,6 @@
                 window.event.currentTarget.classList.add('border-gold-400', 'bg-gold-500/20');
             }
 
-            // Smooth scroll to details panel
             const panel = document.getElementById('muhurat-display-panel');
             if (panel) {
                 panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1158,7 +1156,7 @@
         window.calculateDateBasedMuhurat = function(dateString) {
             if (!dateString) return;
             const date = new Date(dateString);
-            const dayOfWeek = date.getDay(); // 0 is Sunday, 1 is Monday...
+            const dayOfWeek = date.getDay();
             const dayNames = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
             
             const indicator = document.getElementById('hora-day-indicator');
@@ -1191,9 +1189,6 @@
             if (rahuEl) rahuEl.innerText = rahuTimings[dayOfWeek];
             if (yamEl) yamEl.innerText = yamgandTimings[dayOfWeek];
 
-            // Render Day & Night Horas
-            // First hora lord of the day matches the day ruler:
-            // Sun=0, Mon=3, Tue=6, Wed=2, Thu=5, Fri=1, Sat=4
             const dayLordIndexMap = [0, 3, 6, 2, 5, 1, 4];
             let startLordIdx = dayLordIndexMap[dayOfWeek];
 
@@ -1204,7 +1199,7 @@
             dayHContainer.innerHTML = "";
             nightHContainer.innerHTML = "";
 
-            // 12 Day Horas (6 AM to 6 PM approx)
+            // 12 Day Horas
             for (let i = 0; i < 12; i++) {
                 const planetObj = HORA_PLANETS[(startLordIdx + i) % 7];
                 const startHour = 6 + i;
@@ -1223,7 +1218,7 @@
                 dayHContainer.appendChild(div);
             }
 
-            // 12 Night Horas (6 PM to 6 AM)
+            // 12 Night Horas
             for (let i = 12; i < 24; i++) {
                 const planetObj = HORA_PLANETS[(startLordIdx + i) % 7];
                 const hourIndex = i - 12;
@@ -1244,7 +1239,7 @@
             }
         };
 
-        // Curated Reviews (Compact 6)
+        // Curated Reviews
         const authenticRealisticReviews = [
             { name: "Harvinder Singh (Harry)", city: "Ludhiana / Brampton", category: "महावास्तु शोधन", rating: 5, text: "Paaji tussi sach vich rab de bande ho! Sade transport business vich 2 saal ton masla chal reha si. Guru ji ne bina tod-fod vastu da jo hal dassya, 40 dina de andar sari payment clear ho gayi. Lakh-lakh shukrana!" },
             { name: "पंडित राधेश्याम शर्मा", city: "उज्जैन", category: "दोष व शांति", rating: 5, text: "कालसर्प व पितृदोष की शांति अनेक स्थानों पर कराई परंतु मानसिक अशांति नहीं गई। पूज्य कालज्ञ जी ने सूक्ष्म गोचर में केतु और राहु की डिग्री देखकर जो ब्रह्मास्त्र संकल्प करवाया, उससे 21 दिन में परिवार में अद्भुत शांति का अनुभव हुआ।" },
@@ -1309,7 +1304,7 @@
                 .catch(() => console.log("Panchang Offline"));
         }
 
-        // 4. PROFESSIONAL REVIEWS ENGINE
+        // 4. REVIEWS ENGINE
         function initReviewEngine() {
             fetch(`${CONFIG.gasEndpoint}?action=getReviews`)
                 .then(res => res.json())
