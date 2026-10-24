@@ -35,11 +35,10 @@
                             900: '#4A2A04'
                         },
                         obsidian: {
-                            950: '#020204',
-                            900: '#07070B',
-                            800: '#0F1017',
-                            700: '#181A24',
-                            600: '#232636'
+                            900: '#030305',
+                            800: '#08080C',
+                            700: '#0F1017',
+                            600: '#181A24'
                         }
                     },
                     fontFamily: {
@@ -100,7 +99,7 @@
         }
 
         .cosmic-glass {
-            background: rgba(12, 14, 22, 0.92);
+            background: rgba(12, 14, 22, 0.88);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
         }
@@ -153,35 +152,35 @@
         }
     </style>
 </head>
-<body class="selection:bg-gold-500 selection:text-black pb-28 md:pb-0">
+<body class="selection:bg-gold-500 selection:text-black pb-24 md:pb-0">
 
     <canvas id="cosmic-canvas"></canvas>
 
-    <!-- Top Announcement Bar (Fixed Responsive Height) -->
-    <div id="top-announcement" class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-950 via-obsidian-950 to-amber-950 border-b border-gold-500/30 px-3 py-1.5 text-center text-[11px] sm:text-xs text-amber-200">
-        <span class="inline-flex items-center gap-1.5 flex-wrap justify-center">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block"></span>
+    <!-- Top Announcement Bar (Fixed Height 32px with robust text clipping) -->
+    <div id="top-announcement" class="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-950 via-obsidian-900 to-amber-950 border-b border-gold-500/30 px-3 h-8 flex items-center justify-center text-xs text-amber-200">
+        <span class="inline-flex items-center gap-1.5 truncate text-[11px] sm:text-xs">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping flex-shrink-0"></span>
             <strong>आगामी प्रवास:</strong> दिल्ली NCR एवं लखनऊ प्रवास निश्चित है। 
-            <button onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('vastu-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="underline hover:text-white font-bold cursor-pointer">स्थान सुरक्षित करें →</button>
+            <button onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('vastu-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="underline hover:text-white font-bold ml-1 cursor-pointer">स्थान सुरक्षित करें →</button>
         </span>
     </div>
 
-    <!-- Top Navigation Bar (Positioned under announcement bar with clean mobile clearance) -->
-    <header class="fixed top-8 sm:top-7 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-8 py-2.5">
+    <!-- Top Navigation Bar (Offset from top-8 so it never overlaps on mobile view) -->
+    <header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-2.5 sm:py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-2.5">
-                <div class="relative w-11 h-11 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-black shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
+            <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-2.5 sm:gap-3">
+                <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-gold-500/60 p-0.5 flex items-center justify-center bg-black shadow-[0_0_15px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
                     <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
                         <source src="logo.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div>
-                    <span class="font-cinzel font-extrabold text-lg sm:text-xl md:text-2xl tracking-[0.2em] gold-gradient-text block leading-none">KAALGYA</span>
-                    <span class="text-[7.5px] sm:text-[8px] tracking-[0.14em] text-gold-300/80 uppercase font-sans">Ancient Wisdom • Modern Intelligence</span>
+                    <span class="font-cinzel font-extrabold text-lg sm:text-2xl tracking-[0.2em] gold-gradient-text block leading-none">KAALGYA</span>
+                    <span class="text-[7px] sm:text-[8px] tracking-[0.15em] text-gold-300/80 uppercase font-sans">Ancient Wisdom • Modern Intelligence</span>
                 </div>
             </a>
 
-            <!-- Nav Links -->
+            <!-- Desktop Nav Links -->
             <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold text-gray-300">
                 <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5 text-gold-500"></i> मेरे बारे में</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="eye" class="w-3.5 h-3.5 text-gold-500"></i> My Vision</a>
@@ -190,80 +189,32 @@
                 <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-emerald-400 transition-colors flex items-center gap-1 text-emerald-300"><i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400"></i> आज का मुहूर्त व होरा</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('brahmastra-full')" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i> ब्रह्मास्त्र</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('pratyangira-full')" class="hover:text-red-400 transition-colors flex items-center gap-1 text-red-300 font-bold"><i data-lucide="flame" class="w-3.5 h-3.5 text-red-500"></i> प्रत्यंगिरा</a>
-                <a href="javascript:void(0)" onclick="navigateToPage('ai-prompts')" class="hover:text-purple-300 transition-colors flex items-center gap-1 text-purple-300 font-bold"><i data-lucide="sparkle" class="w-3.5 h-3.5 text-purple-400"></i> AI Image Prompts</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('anubhuti').scrollIntoView({behavior:'smooth'}); }, 100);" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="award" class="w-3.5 h-3.5 text-gold-500"></i> समीक्षाएं</a>
             </nav>
 
-            <div class="flex items-center gap-2">
-                <button onclick="toggleLabPanel()" class="px-3 py-1.5 rounded-full border border-emerald-500/60 bg-emerald-950/40 hover:bg-emerald-500/20 text-emerald-300 font-mono text-[11px] font-bold flex items-center gap-1.5 cursor-pointer shadow-sm">
-                    <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Calibrate Wheel
-                </button>
-                <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,100)')" class="hidden sm:flex px-4 py-2 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] items-center gap-1.5 cursor-pointer">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> परामर्श (₹5,100)
+            <div>
+                <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,100)')" class="px-4 sm:px-5 py-2 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-1.5 cursor-pointer">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i> परामर्श लें (₹5,100)
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- LIVE CALIBRATION LAB PANEL (FLOATING CONTROLLER TO FIT THE CIRCLE IN REAL TIME) -->
-    <aside id="calibration-lab-panel" class="fixed bottom-4 right-4 z-50 w-80 sm:w-96 p-4 rounded-3xl cosmic-glass border-2 border-emerald-500/60 shadow-[0_0_40px_rgba(16,185,129,0.35)] transition-all">
-        <div class="flex items-center justify-between pb-2 mb-3 border-b border-emerald-500/30">
-            <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <strong class="text-xs font-mono uppercase text-emerald-300 tracking-wider">Live Wheel Calibrator</strong>
-            </div>
-            <button onclick="toggleLabPanel()" class="text-gray-400 hover:text-white text-xs cursor-pointer font-bold">✕ Close</button>
-        </div>
-
-        <div class="space-y-3 text-xs">
-            <div>
-                <div class="flex justify-between text-gray-300 mb-1 font-mono">
-                    <span>1. Scale (Zoom):</span>
-                    <span id="label-scale" class="text-emerald-400 font-bold">148%</span>
-                </div>
-                <input id="slider-scale" type="range" min="110" max="220" step="1" value="148" oninput="updateCalibrationLive()" class="w-full accent-emerald-400 cursor-pointer">
-            </div>
-
-            <div>
-                <div class="flex justify-between text-gray-300 mb-1 font-mono">
-                    <span>2. Vertical Offset (Y-Shift):</span>
-                    <span id="label-shift-y" class="text-emerald-400 font-bold">-37.8%</span>
-                </div>
-                <input id="slider-shift-y" type="range" min="-60" max="-20" step="0.2" value="-37.8" oninput="updateCalibrationLive()" class="w-full accent-emerald-400 cursor-pointer">
-            </div>
-
-            <div>
-                <div class="flex justify-between text-gray-300 mb-1 font-mono">
-                    <span>3. Horizontal Offset (X-Shift):</span>
-                    <span id="label-shift-x" class="text-emerald-400 font-bold">-50%</span>
-                </div>
-                <input id="slider-shift-x" type="range" min="-65" max="-35" step="0.2" value="-50" oninput="updateCalibrationLive()" class="w-full accent-emerald-400 cursor-pointer">
-            </div>
-
-            <div class="pt-2">
-                <button onclick="copyCalibrationCode()" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-mono font-bold text-xs uppercase flex items-center justify-center gap-1.5 cursor-pointer shadow-md">
-                    <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copy Exact Style Code
-                </button>
-                <span id="copy-status-msg" class="text-[10px] text-emerald-300 font-mono text-center block mt-1 hidden">✓ Code Copied to Clipboard!</span>
-            </div>
-        </div>
-    </aside>
-
     <!-- ========================================== -->
-    <!-- VIEW 1: HOME PAGE (RESPONSIVE & CLEAN)     -->
+    <!-- VIEW 1: HOME PAGE (BRIEF, CLEAN & FAST)     -->
     <!-- ========================================== -->
-    <div id="view-home" class="page-view active pt-32 sm:pt-36 pb-20">
+    <div id="view-home" class="page-view active pt-32 sm:pt-36 md:pt-40 pb-20">
 
         <!-- HERO SECTION: CALIBRATED ZODIAC WHEEL EMBLEM -->
         <section class="min-h-[84vh] flex items-center justify-center px-4 text-center">
             <div class="max-w-5xl mx-auto flex flex-col items-center">
                 
-                <!-- BALANCED LIVE VIDEO CONTAINER (500px DESKTOP / 330px MOBILE) -->
-                <div class="relative w-[320px] h-[320px] sm:w-[410px] sm:h-[410px] md:w-[480px] md:h-[480px] mb-8 mx-auto flex items-center justify-center">
+                <!-- BALANCED LIVE VIDEO CONTAINER (PINPOINT CONCENTRIC WHEEL ALIGNMENT) -->
+                <div class="relative w-[320px] h-[320px] sm:w-[420px] sm:h-[420px] md:w-[490px] md:h-[490px] mb-8 mx-auto flex items-center justify-center">
                     <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
                     <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
                     
-                    <!-- Exact Concentric Housing -->
+                    <!-- Exact Concentric Housing with User's Calibrated Coordinates -->
                     <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_75px_rgba(212,175,55,0.7)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
                         <video 
                             id="heroLiveVideo" 
@@ -273,8 +224,8 @@
                             playsinline 
                             webkit-playsinline 
                             preload="auto" 
-                            class="absolute pointer-events-none max-w-none transition-all duration-75"
-                            style="width: 148%; height: 148%; object-fit: contain; top: 50%; left: 50%; transform: translate(-50%, -37.8%);">
+                            class="absolute pointer-events-none max-w-none"
+                            style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
                             <source src="logo.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -316,6 +267,7 @@
                     
                     <div class="md:col-span-5 flex flex-col items-center text-center">
                         <div class="relative w-64 h-72 sm:w-72 sm:h-80 rounded-3xl overflow-hidden border-2 border-gold-400/80 shadow-[0_0_35px_rgba(212,175,55,0.45)] bg-obsidian-900 group">
+                            <!-- Object-position: top ensures hair & upper head are never hidden -->
                             <img src="guruji.jpg" 
                                  onerror="if (!this.tried) { this.tried = 1; this.src='guruji.JPG'; } else if (this.tried === 1) { this.tried = 2; this.src='guruji.png'; } else if (this.tried === 2) { this.tried = 3; this.src='guruji.jpeg'; }" 
                                  alt="Arambh Nath - Kaalgya" 
@@ -469,6 +421,100 @@
             </div>
         </section>
 
+        <!-- SECTION: SUKOON KAKSH -->
+        <section id="sukoon-kaksh" class="py-16 px-4 max-w-5xl mx-auto">
+            <div class="text-center mb-10">
+                <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Sanctuary of Peace & Consolation ✦</span>
+                <h2 class="text-3xl font-bold font-cinzel text-white">संकट हरण व <span class="gold-gradient-text">सुकून कक्ष</span></h2>
+                <p class="text-xs text-gray-400 mt-2">अपनी चिंता चुनें और समाधान व मानसिक शांति प्राप्त करें।</p>
+            </div>
+
+            <!-- Problem Tabs -->
+            <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+                <button onclick="selectProblem('karz')" id="btn-karz" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gold-300 font-semibold cursor-pointer">💸 भारी कर्ज / व्यापार नुकसान</button>
+                <button onclick="selectProblem('career')" id="btn-career" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">💼 नौकरी / करियर तनाव</button>
+                <button onclick="selectProblem('breakup')" id="btn-breakup" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">💔 दांपत्य कलह / विवाह विलंब</button>
+                <button onclick="selectProblem('anxiety')" id="btn-anxiety" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">🌑 डिप्रेशन व अनिद्रा</button>
+                <button onclick="selectProblem('rahu')" id="btn-rahu" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">🪐 राहु-शनि दशा / पितृ दोष</button>
+            </div>
+
+            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
+                <h3 id="console-title" class="text-xl font-bold text-gold-300 font-cinzel mb-3">कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान</h3>
+                <p id="console-message" class="text-sm text-gray-200 leading-relaxed mb-5 font-sans">
+                    "समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है। यह आपकी व्यक्तिगत विफलता नहीं, अपितु ग्रहों के गोचर का चक्र है।"
+                </p>
+                <div class="bg-obsidian-900 border border-gold-500/30 rounded-2xl p-4 mb-6 text-xs text-gold-200">
+                    <strong class="text-gold-400 block mb-1">त्वरित उपाय:</strong>
+                    <span id="console-remedy">मंगलवार के दिन ऋणमोचक मंगल स्तोत्र का पाठ करें तथा 3 चुटकी लाल मसूर की दाल बहते जल में प्रवाहित करें। सटीक दशा की डिग्री जाँच करवाएं।</span>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <button onclick="openBookingModal('Sukoon Kaksh Special Guidance')" class="px-5 py-2.5 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="message-square" class="w-4 h-4"></i> मार्गदर्शन लें
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING PACKAGES & VASTU CONSULTATION ARCHITECTURE -->
+        <section id="vastu-section" class="py-16 px-4 max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-gold-400 font-cinzel text-xs tracking-widest uppercase block mb-1">✦ Transparent & Sacred Guidance ✦</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-cinzel text-white">परामर्श एवं <span class="gold-gradient-text">महावास्तु दीक्षा</span></h2>
+                <p class="text-xs text-gray-400 mt-2">एकल प्रश्न से लेकर संपूर्ण महावास्तु शोधन तक की प्रामाणिक व्यवस्था।</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <div class="cosmic-glass border border-gold-500/30 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono text-gold-400 mb-1">FOCUSED QUERY</div>
+                        <h3 class="text-lg font-bold text-white font-cinzel">एकल प्रश्न समाधान</h3>
+                        <p class="text-xs text-gray-400 mb-4">करियर या विवाह से जुड़ी किसी एक समस्या पर स्पष्टता।</p>
+                        <div class="text-2xl font-extrabold text-gold-300 font-cinzel mb-6">₹1,100</div>
+                    </div>
+                    <button onclick="openBookingModal('एकल प्रश्न समाधान (₹1,100)')" class="w-full py-3 rounded-xl border border-gold-500/50 hover:bg-gold-500/20 text-gold-300 font-bold text-xs uppercase cursor-pointer">
+                        स्लॉट बुक करें
+                    </button>
+                </div>
+
+                <div class="cosmic-glass gold-border-glow rounded-3xl p-6 flex flex-col justify-between relative bg-gradient-to-b from-gold-950/40 to-obsidian-900">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-gold-500 text-black text-[10px] font-extrabold uppercase tracking-widest">सर्वाधिक अनुशंसित</span>
+                    <div>
+                        <div class="text-xs font-mono text-gold-400 mb-1">COMPLETE KUNDALI AUDIT</div>
+                        <h3 class="text-lg font-bold text-white font-cinzel">संपूर्ण जीवन चक्र विश्लेषण</h3>
+                        <p class="text-xs text-gray-300 mb-4">12 भावों का 45 मिनट गहन गणितीय व आध्यात्मिक शोधन।</p>
+                        <div class="text-3xl font-extrabold text-gold-300 font-cinzel mb-6">₹5,100</div>
+                    </div>
+                    <button onclick="openBookingModal('संपूर्ण जीवन चक्र विश्लेषण (₹5,100)')" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-lg">
+                        स्लॉट बुक करें (₹5,100)
+                    </button>
+                </div>
+
+                <div class="cosmic-glass border-2 border-amber-500/50 rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-b from-amber-950/30 to-obsidian-900">
+                    <div>
+                        <div class="text-xs font-mono text-amber-400 mb-1">ENERGY GRID BALANCING</div>
+                        <h3 class="text-lg font-bold text-white font-cinzel">महावास्तु शोधन (आवासीय / व्यापार)</h3>
+                        <p class="text-xs text-amber-200/90 mb-4">बिना तोड़-फोड़ 16 दिशाओं व 32 पद-देवताओं का ऊर्जा कीलन।</p>
+                        <div class="text-3xl font-extrabold text-amber-300 font-cinzel mb-6">₹21,000</div>
+                    </div>
+                    <button onclick="openBookingModal('महावास्तु शोधन (₹21,000)')" class="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs uppercase cursor-pointer shadow-lg">
+                        वास्तु शोधन बुक करें (₹21,000)
+                    </button>
+                </div>
+
+                <div class="cosmic-glass border border-gold-500/30 rounded-3xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono text-gold-400 mb-1">VIP REMEDIAL & TANTRA</div>
+                        <h3 class="text-lg font-bold text-white font-cinzel">दोष निवारण व अनुष्ठान</h3>
+                        <p class="text-xs text-gray-400 mb-4">कालसर्प, पितृ दोष, मांगलिक दोष एवं भारी शनि शांति।</p>
+                        <div class="text-2xl font-extrabold text-gold-300 font-cinzel mb-6">₹11,001</div>
+                    </div>
+                    <button onclick="openBookingModal('दोष निवारण व अनुष्ठान (₹11,001)')" class="w-full py-3 rounded-xl border border-gold-500/50 hover:bg-gold-500/20 text-gold-300 font-bold text-xs uppercase cursor-pointer">
+                        संकल्प बुक करें (₹11,001)
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- REVIEWS SECTION: 8 GENUINE MULTI-LINGUAL REVIEWS -->
         <section id="anubhuti" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gold-500/20">
@@ -486,7 +532,9 @@
                 </div>
             </div>
 
+            <!-- Authentic 8 Reviews Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                
                 <div class="cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-2">
@@ -534,6 +582,87 @@
                         <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified जातक ✓</span>
                     </div>
                 </div>
+
+                <div class="cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] text-gold-400 font-mono uppercase">पितृ व कालसर्प शांति</span>
+                            <div class="text-gold-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            "कालसर्प व पितृदोष की शांति अनेक जगह कराई परंतु मानसिक अशांति और भय बना रहता था। कालज्ञ जी ने सूक्ष्म गोचर में केतु और राहु की डिग्री देखकर जो संकल्प करवाया, उससे 21 दिन में परिवार में शांति आ गई।"
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
+                        <div><strong class="text-white block">पं. राधेश्याम शर्मा</strong><span class="text-[10px] text-gray-400">उज्जैन</span></div>
+                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified जातक ✓</span>
+                    </div>
+                </div>
+
+                <div class="cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] text-gold-400 font-mono uppercase">व्यापार व कर्ज</span>
+                            <div class="text-gold-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            "Bhai sach me bataya upay kaam kr gaya! Dukan pr grahak wapis aane lage aur bank ki EMI ka rasta nikal aaya. Dhanyawad guru ji 🙏"
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
+                        <div><strong class="text-white block">बबलू यादव</strong><span class="text-[10px] text-gray-400">आजमगढ़</span></div>
+                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified जातक ✓</span>
+                    </div>
+                </div>
+
+                <div class="cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] text-gold-400 font-mono uppercase">ब्रह्मास्त्र विधान</span>
+                            <div class="text-gold-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            "Court case was dragging for 7 years without any outcome. Brahmastra sankalp changed the entire situation in just 45 days. Truth and authentic mantra shakti exists."
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
+                        <div><strong class="text-white block">R. K. Mehra</strong><span class="text-[10px] text-gray-400">Chandigarh</span></div>
+                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified जातक ✓</span>
+                    </div>
+                </div>
+
+                <div class="cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] text-gold-400 font-mono uppercase">प्रत्यंगिरा तंत्र कवच</span>
+                            <div class="text-gold-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            "Ghar me ajeeb sa bhari-pan aur bimariya rehti thi, doctor bhi thak chuke the. Maa Pratyangira suraksha kavach ke baad se ghar me sote waqt darr lagna band ho gaya aur negative energy khatam ho gayi."
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
+                        <div><strong class="text-white block">सपना देसाई</strong><span class="text-[10px] text-gray-400">अहमदाबाद</span></div>
+                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified जातक ✓</span>
+                    </div>
+                </div>
+
+                <div class="cosmic-glass border border-gold-500/30 rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] text-gold-400 font-mono uppercase">संपूर्ण कुंडली विश्लेषण</span>
+                            <div class="text-gold-400 text-xs">★★★★★</div>
+                        </div>
+                        <p class="text-xs text-gray-200 leading-relaxed mb-4">
+                            "₹5,100 consultation was worth every rupee. He revealed accurate past incidents of 2018 and 2021 without me saying a word. Clear, practical and zero superstition."
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20 flex items-center justify-between text-xs">
+                        <div><strong class="text-white block">Abhishek Kulkarni</strong><span class="text-[10px] text-gray-400">Bengaluru</span></div>
+                        <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Verified जातक ✓</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -542,13 +671,14 @@
     <!-- ========================================== -->
     <!-- VIEW 2: DEDICATED ABOUT ME PAGE            -->
     <!-- ========================================== -->
-    <div id="view-about" class="page-view pt-32 sm:pt-36 pb-24">
+    <div id="view-about" class="page-view pt-32 sm:pt-36 md:pt-40 pb-24">
         <div class="max-w-4xl mx-auto px-4">
             <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
                 ← मुख्य पृष्ठ पर वापस जाएं
             </button>
 
             <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 space-y-8">
+                
                 <div class="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gold-500/20">
                     <div class="w-48 h-56 rounded-2xl overflow-hidden border-2 border-gold-400 shadow-xl flex-shrink-0">
                         <img src="guruji.jpg" 
@@ -593,7 +723,7 @@
                             जीवन में एक जैसी दिखाई देने वाली दो समस्याओं के पीछे कारण अलग-अलग हो सकते हैं। परिवार, विवाह, रिश्ते, कामकाज, आर्थिक जिम्मेदारियाँ और सामाजिक परिस्थितियाँ हर व्यक्ति के जीवन को अलग ढंग से प्रभावित करती हैं।
                         </p>
                         <p>
-                            इसलिए मेरा मानना है कि किसी की बात सुने बिना उसके बारे में निष्कर्ष निकालना उचित नहीं है। मार्गदर्शन का पहला कदम सुनना है, दूसरा परिस्थिति को समझना और तीसरा उपलब्ध विकल्पों पर विचार करना। हर प्रश्न का उत्तर एक ही तरीके से नहीं दिया जा सकता।
+                            इसलिए मेरा मानना है कि किसी की बात सुने बिना उसके बारे में निष्कर्ष निकालना उचित नहीं है। मार्गदर्शन का पहला कदम सुनना है, दूसरा परिस्थिति को समझना और तीसरा उपलब्ध विकल्पों पर विचार करना। ज्योतिष और वास्तु परामर्श में भी व्यक्ति की परिस्थिति, उसके प्रश्न और संबंधित विषय को समझना आवश्यक है। हर प्रश्न का उत्तर एक ही तरीके से नहीं दिया जा सकता।
                         </p>
                     </div>
 
@@ -603,9 +733,9 @@
                             <strong>Kaalgya</strong> के माध्यम से मेरा प्रयास है कि ज्योतिष, वास्तु और पारंपरिक आध्यात्मिक विषयों से जुड़े प्रश्नों पर व्यवस्थित, संवेदनशील और जिम्मेदार तरीके से मार्गदर्शन दिया जाए।
                         </p>
                         <p>
-                            मेरी रुचि ज्योतिष एवं वास्तु के साथ रिश्तों और विवाह से जुड़े परामर्श तथा भारतीय आध्यात्मिक परंपराओं को समझने में भी है। मैं यह नहीं मानता कि हर परिस्थिति का कोई सरल या तुरंत मिलने वाला समाधान होता है।
+                            मेरी रुचि ज्योतिष एवं वास्तु के साथ रिश्तों और विवाह से जुड़े परामर्श तथा भारतीय आध्यात्मिक परंपराओं को समझने में भी है। मैं यह नहीं मानता कि हर परिस्थिति का कोई सरल या तुरंत मिलने वाला समाधान होता है। कुछ प्रश्नों में समय लगता है, कुछ में अपने दृष्टिकोण पर दोबारा विचार करना पड़ता है और कुछ में व्यावहारिक निर्णय लेना आवश्यक होता है।
                         </p>
-                        <p class="text-amber-200 font-medium">
+                        <p class="text-amber-200">
                             मेरे लिए मार्गदर्शन का अर्थ किसी व्यक्ति के मन में भय पैदा करना या उसे किसी निर्णय के लिए विवश करना नहीं, बल्कि उसे अपनी परिस्थिति बेहतर ढंग से समझने में सहायता देना है।
                         </p>
                     </div>
@@ -613,11 +743,26 @@
                     <div class="space-y-3">
                         <h3 class="text-lg font-bold text-gold-300 font-cinzel">कुछ बातें, जिन्हें मैं महत्त्वपूर्ण मानता हूँ:</h3>
                         <ul class="space-y-2">
-                            <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">• सम्मान:</span> <span>हर व्यक्ति की परिस्थिति, विश्वास और निजी जीवन का सम्मान किया जाना चाहिए।</span></li>
-                            <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">• गोपनीयता:</span> <span>परामर्श में साझा की गई व्यक्तिगत बातों को संवेदनशीलता और जिम्मेदारी से संभालना चाहिए।</span></li>
-                            <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">• स्पष्टता:</span> <span>जहाँ किसी विषय पर निश्चित निष्कर्ष देना उचित न हो, वहाँ उसकी सीमा स्पष्ट होनी चाहिए।</span></li>
-                            <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">• मर्यादा:</span> <span>परंपरा, समाज और व्यक्तिगत स्वतंत्रता—तीनों के प्रति जिम्मेदार दृष्टिकोण आवश्यक है।</span></li>
-                            <li class="flex items-start gap-2"><span class="text-gold-400 font-bold">• विवेक:</span> <span>किसी भी सलाह को समझकर, अपनी परिस्थितियों के अनुसार निर्णय लेना महत्त्वपूर्ण है।</span></li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 font-bold">• सम्मान:</span>
+                                <span>हर व्यक्ति की परिस्थिति, विश्वास और निजी जीवन का सम्मान किया जाना चाहिए।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 font-bold">• गोपनीयता:</span>
+                                <span>परामर्श में साझा की गई व्यक्तिगत बातों को संवेदनशीलता और जिम्मेदारी से संभालना चाहिए।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 font-bold">• स्पष्टता:</span>
+                                <span>जहाँ किसी विषय पर निश्चित निष्कर्ष देना उचित न हो, वहाँ उसकी सीमा स्पष्ट होनी चाहिए।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 font-bold">• मर्यादा:</span>
+                                <span>परंपरा, समाज और व्यक्तिगत स्वतंत्रता—तीनों के प्रति जिम्मेदार दृष्टिकोण आवश्यक है।</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-gold-400 font-bold">• विवेक:</span>
+                                <span>किसी भी सलाह को समझकर, अपनी परिस्थितियों के अनुसार निर्णय लेना महत्त्वपूर्ण है।</span>
+                            </li>
                         </ul>
                     </div>
 
@@ -625,6 +770,12 @@
                         <h3 class="text-lg font-bold text-gold-300 font-cinzel">अंत में, एक व्यक्तिगत बात।</h3>
                         <p>
                             मैं मानता हूँ कि ज्ञान का वास्तविक मूल्य केवल इस बात में नहीं है कि हम कितना जानते हैं, बल्कि इस बात में भी है कि हम अपने ज्ञान का उपयोग किस समझ और जिम्मेदारी के साथ करते हैं।
+                        </p>
+                        <p>
+                            हर व्यक्ति अपने जीवन में कुछ अनुभव लेकर चलता है—कुछ सुखद, कुछ कठिन और कुछ ऐसे जिन्हें वह बहुत कम लोगों से साझा कर पाता है। किसी की परिस्थिति को समझने के लिए उसे पहले एक इंसान के रूप में देखना आवश्यक है।
+                        </p>
+                        <p>
+                            <strong>Kaalgya</strong> पर मेरा प्रयास इसी दृष्टिकोण के साथ काम करना है—भारतीय परंपराओं के प्रति सम्मान रखते हुए, जीवन की वास्तविकताओं को समझते हुए और हर व्यक्ति की परिस्थिति को महत्त्व देते हुए।
                         </p>
                         <p class="font-serif italic text-gold-300 text-base">
                             "क्योंकि सही मार्गदर्शन की शुरुआत अक्सर किसी उत्तर से नहीं, बल्कि किसी की बात ध्यान से सुनने से होती है।"
@@ -634,7 +785,9 @@
                             <span class="text-xs text-gold-400">Kaalgya</span>
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </div>
     </div>
@@ -642,13 +795,14 @@
     <!-- ========================================== -->
     <!-- VIEW 3: DEDICATED MY VISION PAGE           -->
     <!-- ========================================== -->
-    <div id="view-vision" class="page-view pt-32 sm:pt-36 pb-24">
+    <div id="view-vision" class="page-view pt-32 sm:pt-36 md:pt-40 pb-24">
         <div class="max-w-4xl mx-auto px-4">
             <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
                 ← मुख्य पृष्ठ पर वापस जाएं
             </button>
 
             <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 space-y-8">
+                
                 <div class="pb-6 border-b border-gold-500/20">
                     <span class="text-gold-400 font-cinzel text-xs uppercase tracking-widest block mb-1">Kaalgya Core Philosophy</span>
                     <h1 class="text-3xl md:text-4xl font-bold font-cinzel text-white">My Vision</h1>
@@ -662,15 +816,54 @@
                         मेरी दृष्टि में ज्योतिष केवल भविष्य जानने का माध्यम नहीं है। यह भारतीय ज्ञान-परंपरा का एक गहरा और विस्तृत विषय है, जिसे समझने के लिए अध्ययन, धैर्य, अनुभव, संदर्भ और जिम्मेदारी—सभी की आवश्यकता होती है।
                     </p>
                     <p>
-                        दुर्भाग्य से, कई बार लोगों को ज्योतिष के नाम पर ऐसे अनुभव मिलते हैं जो उनके मन में भय, भ्रम या निराशा पैदा कर देते हैं। जब किसी व्यक्ति को गलत सलाह मिलती है, उसकी परिस्थितियों को समझे बिना निष्कर्ष सुना दिया जाता है या उसकी भावनाओं का लाभ उठाया जाता है, तो उसका विश्वास पूरे ज्योतिष के प्रति डगमगाने लगता है।
+                        दुर्भाग्य से, कई बार लोगों को ज्योतिष के नाम पर ऐसे अनुभव मिलते हैं जो उनके मन में भय, भ्रम या निराशा पैदा कर देते हैं। जब किसी व्यक्ति को गलत सलाह मिलती है, उसकी परिस्थितियों को समझे बिना निष्कर्ष सुना दिया जाता है या उसकी भावनाओं का लाभ उठाया जाता है, तो उसका विश्वास केवल किसी एक व्यक्ति से नहीं, बल्कि पूरे ज्योतिष के प्रति डगमगाने लगता है।
                     </p>
                     <p>
-                        मेरा प्रयास ज्योतिष के प्रति अंधविश्वास पैदा करना नहीं, बल्कि उसे समझने के लिए एक विवेकपूर्ण दृष्टिकोण विकसित करने में योगदान देना है।
+                        लेकिन मेरा मानना है कि कुछ लोगों के गलत अनुभवों को पूरे विषय का अंतिम सत्य मान लेना भी उचित नहीं है। किसी ज्ञान को समझने के लिए यह जानना आवश्यक है कि उसका अध्ययन कैसे किया जाता है, उसकी सीमाएँ क्या हैं और उसे समझने के लिए सही मार्गदर्शन कितना महत्त्वपूर्ण है।
                     </p>
-                    <p class="text-amber-200 font-medium">
-                        मैं चाहता हूँ कि लोग ज्योतिष से डरें नहीं, उसे बिना समझे नकारें भी नहीं—बल्कि उसे जानें, समझें और विवेक के साथ उसके बारे में अपना दृष्टिकोण बनाएँ। यही वह दिशा है जिसमें मैं Kaalgya को आगे बढ़ाना चाहता हूँ।
+
+                    <div class="p-6 rounded-2xl bg-obsidian-900 border border-gold-500/20 space-y-3">
+                        <h3 class="text-lg font-bold text-gold-300 font-cinzel">विवेकपूर्ण दृष्टिकोण का विकास</h3>
+                        <p>
+                            मेरा प्रयास ज्योतिष के प्रति अंधविश्वास पैदा करना नहीं, बल्कि उसे समझने के लिए एक विवेकपूर्ण दृष्टिकोण विकसित करने में योगदान देना है।
+                        </p>
+                        <p>
+                            मैं चाहता हूँ कि लोग ज्योतिष को भय, मजबूरी या किसी चमत्कारी दावे के आधार पर नहीं, बल्कि सही जानकारी, समझ और विचार के साथ जानें। वे प्रश्न पूछ सकें, बातों को समझ सकें और अपने निर्णय स्वयं लेने की स्वतंत्रता बनाए रखें।
+                        </p>
+                        <p>
+                            मेरे लिए एक अच्छे ज्योतिषी की भूमिका केवल किसी योग, दोष या संभावित परिस्थिति के बारे में बता देना नहीं है। उसकी जिम्मेदारी यह भी है कि वह सामने बैठे व्यक्ति की बात सुने, उसकी वास्तविक परिस्थितियों को समझे, अपनी जानकारी की सीमाओं को पहचाने और ऐसी बात न कहे जिससे किसी के मन में अनावश्यक भय या निराशा पैदा हो।
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h3 class="text-lg font-bold text-gold-300 font-cinzel">मार्गदर्शन का सही चुनाव</h3>
+                        <p>
+                            हमारी संस्कृति में गुरु और मार्गदर्शक का स्थान हमेशा महत्त्वपूर्ण रहा है। लेकिन सही मार्गदर्शन मिलना भी अपने आप में एक महत्त्वपूर्ण बात है। जैसे किसी विषय को सीखने के लिए सही शिक्षक आवश्यक होता है, वैसे ही ज्योतिष को समझने के लिए ऐसे व्यक्ति का चुनाव भी आवश्यक है जो अध्ययन, विवेक, मर्यादा और जिम्मेदारी को महत्त्व देता हो।
+                        </p>
+                        <p>
+                            मैं यह भी मानता हूँ कि किसी सही मार्गदर्शक तक पहुँचना केवल संयोग का विषय नहीं, बल्कि व्यक्ति की खोज, समझ और चुनाव से भी जुड़ा है। परंपरा के प्रति श्रद्धा रखते हुए विवेक का उपयोग करना इसलिए और भी आवश्यक हो जाता है।
+                        </p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-obsidian-900 border border-gold-500/20 space-y-3">
+                        <h3 class="text-lg font-bold text-gold-300 font-cinzel">Kaalgya का ध्येय</h3>
+                        <p>
+                            <strong>Kaalgya</strong> के माध्यम से मेरा उद्देश्य भारतीय ज्योतिष और उससे जुड़ी ज्ञान-परंपराओं को अधिक गंभीरता, स्पष्टता और जिम्मेदारी के साथ लोगों तक पहुँचाने में अपना योगदान देना है।
+                        </p>
+                        <p>
+                            मैं नहीं मानता कि एक व्यक्ति अकेले इस विशाल परंपरा को पूरी तरह समझा सकता है या उसके सभी प्रश्नों का उत्तर दे सकता है। मेरा प्रयास इस परंपरा का अध्ययन करते रहना, अपनी समझ को बेहतर बनाना और जो कुछ समझता हूँ, उसे लोगों तक सरल, संवेदनशील और जिम्मेदार भाषा में पहुँचाना है।
+                        </p>
+                        <p class="text-amber-200">
+                            मेरी दृष्टि में ज्योतिष का सम्मान केवल उसे सही साबित करने में नहीं, बल्कि उसे सही ढंग से समझने, उसके प्रति उठने वाले प्रश्नों को सुनने और उसके उपयोग में मर्यादा बनाए रखने में भी है।
+                        </p>
+                    </div>
+
+                    <p class="font-serif italic text-gold-300 text-base pt-4 border-t border-gold-500/20">
+                        "मैं चाहता हूँ कि लोग ज्योतिष से डरें नहीं, उसे बिना समझे नकारें भी नहीं—बल्कि उसे जानें, समझें और विवेक के साथ उसके बारे में अपना दृष्टिकोण बनाएँ। यही वह दिशा है जिसमें मैं Kaalgya को आगे बढ़ाना चाहता हूँ।"
                     </p>
+
                 </div>
+
             </div>
         </div>
     </div>
@@ -678,13 +871,13 @@
     <!-- ========================================== -->
     <!-- VIEW 4: DEDICATED 16 MUHURAT FULL PAGE     -->
     <!-- ========================================== -->
-    <div id="view-muhurat-full" class="page-view pt-32 sm:pt-36 pb-24">
+    <div id="view-muhurat-full" class="page-view pt-32 sm:pt-36 md:pt-40 pb-24">
         <div class="max-w-6xl mx-auto px-4">
             <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
                 ← मुख्य पृष्ठ पर वापस जाएं
             </button>
 
-            <!-- Authentic Header Banner -->
+            <!-- Authentic Header -->
             <div class="relative w-full h-44 md:h-56 rounded-3xl overflow-hidden mb-8 border border-gold-500/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
                 <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=1400" alt="वैदिक संस्कार महायज्ञ" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-obsidian-900/60 to-transparent flex flex-col justify-end p-6 text-center">
@@ -736,9 +929,49 @@
                     <strong class="text-sm text-white group-hover:text-gold-300 block">8. शिक्षा व विद्यारंभ</strong>
                     <span class="text-[10px] text-gray-400">अक्षरारंभ व अध्ययन</span>
                 </button>
+                <button type="button" onclick="window.openMuhuratDetail('namkaran')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">👶</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">9. नामकरण संस्कार</strong>
+                    <span class="text-[10px] text-gray-400">शिशु प्रथम नामकरण</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('annaprashan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">🥣</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">10. अन्नप्राशन संस्कार</strong>
+                    <span class="text-[10px] text-gray-400">प्रथम अन्न ग्रहण</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('mundan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">✂️</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">11. मुंडन (चूड़ाकर्म)</strong>
+                    <span class="text-[10px] text-gray-400">केश त्याग व मेधा योग</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('upnayan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">🕉️</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">12. उपनयन (यज्ञोपवीत)</strong>
+                    <span class="text-[10px] text-gray-400">जनेऊ धारण व दीक्षा</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('garbhadhan')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">🌸</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">13. गर्भाधान संस्कार</strong>
+                    <span class="text-[10px] text-gray-400">संतान उत्पत्ति विधान</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('devapratishtha')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">🛕</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">14. देव-प्रतिष्ठा</strong>
+                    <span class="text-[10px] text-gray-400">मूर्ति चैतन्य प्रतिष्ठा</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('yagya')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">🔥</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">15. यज्ञ एवं अनुष्ठान</strong>
+                    <span class="text-[10px] text-gray-400">हवन व अग्नि वास</span>
+                </button>
+                <button type="button" onclick="window.openMuhuratDetail('krishi')" class="muhurat-card p-4 rounded-2xl cosmic-glass border border-gold-500/30 hover:border-gold-400 transition text-left cursor-pointer group">
+                    <span class="text-2xl mb-1 block">🌾</span>
+                    <strong class="text-sm text-white group-hover:text-gold-300 block">16. कृषि व बीज बोना</strong>
+                    <span class="text-[10px] text-gray-400">बुवाई व फसल संचयन</span>
+                </button>
             </div>
 
-            <!-- Dynamic Muhurat Detail Showcase with Accordion -->
+            <!-- Dynamic Muhurat Detailed Showcase Panel With Month-On-Month Accordion -->
             <div id="muhurat-display-panel" class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
                 <div class="relative w-full h-36 md:h-44 rounded-2xl overflow-hidden mb-6 border border-gold-500/20">
                     <img id="panel-hero-img" src="https://images.unsplash.com/photo-1583089892943-e02e5b017b6a?auto=format&fit=crop&q=80&w=1200" alt="मुहूर्त दृश्य" class="w-full h-full object-cover">
@@ -765,7 +998,8 @@
                     </div>
                 </div>
 
-                <div>
+                <!-- Month-on-Month Dropdown Accordion Section -->
+                <div class="mb-4">
                     <h4 class="text-sm font-bold text-gold-300 font-cinzel uppercase tracking-wider mb-3 flex items-center gap-2">
                         <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> वार्षिक माहवार शुद्ध तिथियां (माह पर क्लिक करें)
                     </h4>
@@ -778,13 +1012,13 @@
     <!-- ========================================== -->
     <!-- VIEW 5: DEDICATED HORA & MUHURAT FULL PAGE -->
     <!-- ========================================== -->
-    <div id="view-hora-full" class="page-view pt-32 sm:pt-36 pb-24">
+    <div id="view-hora-full" class="page-view pt-32 sm:pt-36 md:pt-40 pb-24">
         <div class="max-w-6xl mx-auto px-4">
             <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
                 ← मुख्य पृष्ठ पर वापस जाएं
             </button>
 
-            <!-- Astronomical Header -->
+            <!-- Astronomical Aura Header -->
             <div class="relative w-full h-44 md:h-56 rounded-3xl overflow-hidden mb-8 border border-gold-500/30 shadow-[0_0_40px_rgba(212,175,55,0.2)]">
                 <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&q=80&w=1400" alt="सूर्य सिद्धांत खगोलीय चक्र" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-obsidian-900/60 to-transparent flex flex-col justify-end p-6 text-center">
@@ -828,6 +1062,14 @@
                             <div><strong class="text-emerald-300 block">विजय मुहूर्त</strong><span class="text-[10px] text-gray-400">यात्रा व नवीन अनुबंध</span></div>
                             <span id="dyn-vijaya" class="font-mono text-emerald-200 font-bold">02:00 PM - 02:46 PM</span>
                         </div>
+                        <div class="flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-emerald-500/20">
+                            <div><strong class="text-emerald-300 block">गोधूलि मुहूर्त</strong><span class="text-[10px] text-gray-400">संध्या वंदन व शांति</span></div>
+                            <span id="dyn-godhuli" class="font-mono text-emerald-200 font-bold">05:46 PM - 06:10 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-emerald-500/20">
+                            <div><strong class="text-emerald-300 block">निशीथ काल</strong><span class="text-[10px] text-gray-400">मध्यरात्रि महापूजा</span></div>
+                            <span id="dyn-nishita" class="font-mono text-emerald-200 font-bold">11:40 PM - 12:31 AM</span>
+                        </div>
                     </div>
                 </div>
 
@@ -848,6 +1090,14 @@
                         <div class="flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-red-500/20">
                             <div><strong class="text-red-300 block">गुलिक काल</strong><span class="text-[10px] text-gray-400">शनि पुत्र प्रभाव</span></div>
                             <span id="dyn-gulik" class="font-mono text-red-300 font-bold">01:29 PM - 02:54 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-red-500/20">
+                            <div><strong class="text-red-300 block">दुर्मुहूर्त</strong><span class="text-[10px] text-gray-400">प्रतिकूल नक्षत्र वेला</span></div>
+                            <span id="dyn-durmuhurta" class="font-mono text-red-300 font-bold">08:44 AM - 09:30 AM</span>
+                        </div>
+                        <div class="flex justify-between items-center p-2.5 rounded-xl bg-obsidian-900 border border-red-500/20">
+                            <div><strong class="text-red-300 block">भद्रा स्थिति</strong><span class="text-[10px] text-gray-400">विष्टि करण योग</span></div>
+                            <span id="dyn-bhadra" class="font-mono text-amber-300 font-bold">प्रातः 09:12 तक (समाप्त)</span>
                         </div>
                     </div>
                 </div>
@@ -876,7 +1126,7 @@
     <!-- ========================================== -->
     <!-- VIEW 6: DEDICATED BRAHMASTRA FULL PAGE     -->
     <!-- ========================================== -->
-    <div id="view-brahmastra-full" class="page-view pt-32 sm:pt-36 pb-24">
+    <div id="view-brahmastra-full" class="page-view pt-32 sm:pt-36 md:pt-40 pb-24">
         <div class="max-w-4xl mx-auto px-4">
             <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
                 ← मुख्य पृष्ठ पर वापस जाएं
@@ -907,12 +1157,22 @@
                         यह कोई सामान्य पूजा-पाठ नहीं है। यह जातक के जन्म नक्षत्र, लग्न की सूक्ष्म डिग्री, दशानाथ और गोचर की नकारात्मक तरंगों को एक विशेष ब्रह्मांडीय वेला में त्रिगुणित ऊर्जा के साथ निष्प्रभावी करने की प्राचीन तांत्रिक प्रक्रिया है।
                     </div>
 
+                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-amber-500/20">
+                        <strong class="text-amber-300 text-base block mb-2 font-cinzel">🛡️ इसके मुख्य प्रभाव:</strong>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>वर्षों से फंसे हुए व्यापारिक लेन-देन, भारी कर्जे और दिवालियापन से मुक्ति का मार्ग।</li>
+                            <li>पारिवारिक व कानूनी विवादों में जहां पराजय निश्चित दिख रही हो, वहां अप्रत्याशित अनुकूलता।</li>
+                            <li>कुंडली के अत्यंत घातक दोषों (मारक दशा, घोर पितृ दोष) का अचूक शमन।</li>
+                        </ul>
+                    </div>
+
                     <div class="text-center pt-4">
                         <button onclick="openBookingModal('कालज्ञ ब्रह्मास्त्र उपाय (अमोघ संकट निवारण)')" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-gold-400 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl">
                             ब्रह्मास्त्र विधान संकल्प लें
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -920,7 +1180,7 @@
     <!-- ========================================== -->
     <!-- VIEW 7: DEDICATED PRATYANGIRA FULL PAGE    -->
     <!-- ========================================== -->
-    <div id="view-pratyangira-full" class="page-view pt-32 sm:pt-36 pb-24">
+    <div id="view-pratyangira-full" class="page-view pt-32 sm:pt-36 md:pt-40 pb-24">
         <div class="max-w-4xl mx-auto px-4">
             <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
                 ← मुख्य पृष्ठ पर वापस जाएं
@@ -947,12 +1207,21 @@
                 <div class="space-y-6 text-sm text-gray-200 leading-relaxed font-sans">
                     <div class="p-5 rounded-2xl bg-red-950/40 border border-red-500/30">
                         <strong class="text-red-300 text-base block mb-2 font-cinzel">🔥 ब्रह्मांड का अंतिम संहारक चक्र:</strong>
-                        जब नरसिंह भगवान का क्रोध समस्त लोकों को भस्म करने लगा, तब परमशिव ने शरभावतार लिया और उनके हृदय से महाभैरवी माँ प्रत्यंगिरा का प्राकट्य हुआ। इनका मुख सिंह का और देह साक्षात पराम्बा का है।
+                        जब नरसिंह भगवान का क्रोध समस्त लोकों को भस्म करने लगा, तब परमशिव ने शरभावतार लिया और उनके हृदय से महाभैरवी माँ प्रत्यंगिरा का प्राकट्य हुआ। इनका मुख सिंह का और देह साक्षात पराम्बा का है। इनके मुख की ज्वाला से त्रिलोक कंपित होता है।
                     </div>
 
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/20">
                         <strong class="text-gold-300 text-base block mb-2 font-cinzel">⚡ 'विपरीत' प्रत्यंगिरा क्यों कहलाती हैं?</strong>
-                        शत्रु द्वारा किया गया कोई भी तांत्रिक अभिचार—चाहे वह मारण हो, उच्चाटन हो, व्यापार बंधन हो, मूठ हो या कुल कीलन—माँ प्रत्यंगिरा उसे उसी क्षण उलट देती हैं (Reverse)।
+                        शत्रु द्वारा किया गया कोई भी तांत्रिक अभिचार—चाहे वह मारण हो, उच्चाटन हो, व्यापार बंधन हो, मूठ हो या कुल कीलन—माँ प्रत्यंगिरा उसे उसी क्षण उलट देती हैं (Reverse)। जो तंत्र आपके विनाश के लिए छोड़ा गया था, वह सहस्त्र गुना तीव्र होकर उसी तांत्रिक और कराने वाले पर पलटकर प्रहार करता है।
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-red-500/20">
+                        <strong class="text-red-300 text-base block mb-2 font-cinzel">🛡️ किन परिस्थितियों में यह सुरक्षा कवच अनिवार्य है?</strong>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300">
+                            <li>जब घर में बिना किसी चिकित्सकीय कारण के लगातार अकाल मृत्यु, दुर्घटनाएं या गंभीर रोग बने रहें।</li>
+                            <li>ईर्ष्यालु या तांत्रिक शत्रुओं द्वारा व्यापार, तिजोरी और प्रतिष्ठा का पूर्ण बंधन कर दिया गया हो।</li>
+                            <li>अज्ञात भय, डिप्रेशन, रात्रि में विचित्र अनुभूतियां और घर में नकारात्मक ऊर्जा का वास हो।</li>
+                        </ul>
                     </div>
 
                     <div class="text-center pt-4">
@@ -961,83 +1230,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- ========================================== -->
-    <!-- VIEW 8: AI IMAGE PROMPTS MATRIX TAB        -->
-    <!-- ========================================== -->
-    <div id="view-ai-prompts" class="page-view pt-32 sm:pt-36 pb-24">
-        <div class="max-w-4xl mx-auto px-4">
-            <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer">
-                ← मुख्य पृष्ठ पर वापस जाएं
-            </button>
-
-            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 space-y-8">
-                <div class="border-b border-gold-500/20 pb-4">
-                    <span class="text-purple-400 font-mono text-xs uppercase tracking-widest block mb-1">Authentic Visual Asset Studio</span>
-                    <h1 class="text-2xl md:text-3xl font-bold font-cinzel text-white">AI Image Generation Prompts & Dimensions</h1>
-                    <p class="text-xs text-gray-300 mt-1">Midjourney, Leonardo AI या Flux AI me in prompts ko copy karein aur generate hui pictures ko website me use karein.</p>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Prompt 1: Maa Pratyangira -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-red-500/40">
-                        <div class="flex items-center justify-between mb-2">
-                            <strong class="text-red-400 text-sm font-cinzel">1. माँ विप्रीत प्रत्यंगिरा (Banner Image)</strong>
-                            <span class="text-[11px] font-mono text-gray-400 bg-red-950/60 px-2.5 py-0.5 rounded border border-red-500/30">1200 × 600 px (16:9)</span>
-                        </div>
-                        <div class="p-3 bg-black/60 rounded-xl border border-gold-500/20 font-mono text-xs text-amber-200 select-all mb-3 leading-relaxed">
-                            Maa Pratyangira Devi, divine fierce goddess, fierce lion face with glowing golden eyes, radiant dark cosmic body, four arms holding trident and skull, surrounded by mystical crimson flames, dark nebula background, sacred sacred geometry yantra aura, high dynamic range, hyper-detailed, 8k resolution, cinematic sacred lighting, photorealistic, cinematic render --ar 16:9 --v 6.0
-                        </div>
-                        <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); alert('Prompt Copied!');" class="px-4 py-1.5 rounded-lg bg-red-700 hover:bg-red-600 text-white text-xs font-bold uppercase cursor-pointer">
-                            Copy Prompt
-                        </button>
-                    </div>
-
-                    <!-- Prompt 2: Brahmastra -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-amber-500/40">
-                        <div class="flex items-center justify-between mb-2">
-                            <strong class="text-amber-400 text-sm font-cinzel">2. कालज्ञ ब्रह्मास्त्र विधान (Banner Image)</strong>
-                            <span class="text-[11px] font-mono text-gray-400 bg-amber-950/60 px-2.5 py-0.5 rounded border border-amber-500/30">1200 × 600 px (16:9)</span>
-                        </div>
-                        <div class="p-3 bg-black/60 rounded-xl border border-gold-500/20 font-mono text-xs text-amber-200 select-all mb-3 leading-relaxed">
-                            Vedic Brahmastra divine supreme celestial weapon, radiant spear of concentrated golden cosmic light, sacred Sanskrit glowing runes floating, deep obsidian dark space background with gold dust particles, ancient Indian epic aesthetic, majestic divine aura, volumetric golden rays, 8k photorealistic, unreal engine 5 render --ar 16:9 --v 6.0
-                        </div>
-                        <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); alert('Prompt Copied!');" class="px-4 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-black text-xs font-bold uppercase cursor-pointer">
-                            Copy Prompt
-                        </button>
-                    </div>
-
-                    <!-- Prompt 3: 16 Muhurat Hero -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
-                        <div class="flex items-center justify-between mb-2">
-                            <strong class="text-gold-300 text-sm font-cinzel">3. 16 वैदिक संस्कार एवं महायज्ञ (Banner Image)</strong>
-                            <span class="text-[11px] font-mono text-gray-400 bg-gold-950/60 px-2.5 py-0.5 rounded border border-gold-500/30">1400 × 500 px (21:9 or 16:9)</span>
-                        </div>
-                        <div class="p-3 bg-black/60 rounded-xl border border-gold-500/20 font-mono text-xs text-amber-200 select-all mb-3 leading-relaxed">
-                            Ancient Indian Vedic Yagya ceremony, sacred sacred brass havan kund with divine golden fire rising, temple pillars with sacred carvings, ghee lamps (diyas) glowing in dark serene night, Vedic scriptures and lotus flowers, mystical spiritual atmosphere, golden glow, atmospheric smoke, cinematic lighting, ultra-realistic 8k --ar 16:9 --v 6.0
-                        </div>
-                        <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); alert('Prompt Copied!');" class="px-4 py-1.5 rounded-lg bg-gold-500 hover:bg-gold-400 text-black text-xs font-bold uppercase cursor-pointer">
-                            Copy Prompt
-                        </button>
-                    </div>
-
-                    <!-- Prompt 4: Surya Siddhanta 24 Hora -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-blue-500/40">
-                        <div class="flex items-center justify-between mb-2">
-                            <strong class="text-blue-300 text-sm font-cinzel">4. सूर्य सिद्धांत एवं 24 होरा चक्र (Banner Image)</strong>
-                            <span class="text-[11px] font-mono text-gray-400 bg-blue-950/60 px-2.5 py-0.5 rounded border border-blue-500/30">1400 × 500 px (16:9)</span>
-                        </div>
-                        <div class="p-3 bg-black/60 rounded-xl border border-gold-500/20 font-mono text-xs text-blue-200 select-all mb-3 leading-relaxed">
-                            Astronomical Surya Siddhanta cosmic dial, ancient Indian astronomical brass astrolabe, 12 zodiac constellation rings glowing softly, central rising golden sun with intricate rays, deep deep indigo night sky full of stars, photorealistic, precision clockwork astrolabe, atmospheric golden rim lighting, 8k --ar 16:9 --v 6.0
-                        </div>
-                        <button onclick="navigator.clipboard.writeText(this.previousElementSibling.innerText); alert('Prompt Copied!');" class="px-4 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold uppercase cursor-pointer">
-                            Copy Prompt
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -1047,7 +1240,7 @@
         <div class="max-w-6xl mx-auto space-y-4">
             <div class="font-cinzel text-xl font-bold gold-gradient-text">KAALGYA</div>
             <div class="text-[11px] font-mono text-gold-300">ANCIENT WISDOM • MODERN INTELLIGENCE</div>
-            <div>© 2026 KAALGYA. सर्वाधिकार सुरक्षित। 15 वर्षों की प्रामाणिक परंपरा।</div>
+            <div>© 2026 KAALGYA. सर्वाधिकार सुरक्षित। 15 वर्षों की प्रामाणिक वैदिक परंपरा।</div>
             <div class="text-[11px] text-gray-400 flex flex-wrap items-center justify-center gap-4">
                 <span>संपर्क सूत्र: <strong>support@kaalgya.com</strong></span>
                 <span>|</span>
@@ -1056,7 +1249,7 @@
         </div>
     </footer>
 
-    <!-- INTERACTIVE FLOATING ASTROLOGER -->
+    <!-- INTERACTIVE FLOATING ANIMATED ASTROLOGER -->
     <div onclick="openBookingModal('त्वरित परामर्श विमर्श')" class="fixed bottom-6 left-6 z-50 cursor-pointer group flex items-end gap-2.5">
         <div class="relative w-14 h-14 rounded-full bg-obsidian-900 border-2 border-gold-400 shadow-[0_0_20px_rgba(212,175,55,0.6)] flex items-center justify-center animate-baba-bounce hover:scale-110 transition-all">
             <span class="text-2xl">🧙‍♂️</span>
@@ -1070,7 +1263,7 @@
     </div>
 
     <!-- FLOATING WHATSAPP -->
-    <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center justify-center">
+    <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" class="fixed bottom-6 right-6 z-50 p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all flex items-center justify-center">
         <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
             <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
         </svg>
@@ -1133,7 +1326,7 @@
         </div>
     </div>
 
-    <!-- REVIEW MODAL -->
+    <!-- REVIEW SUBMIT MODAL -->
     <div id="review-modal" class="modal-backdrop">
         <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-md w-full relative">
             <button onclick="closeReviewModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white cursor-pointer">
@@ -1146,67 +1339,34 @@
             <form onsubmit="submitReviewToCRM(event)" class="space-y-3">
                 <input id="rev-name" type="text" required placeholder="आपका नाम (उदा: Harvinder Singh / राहुल)" class="w-full px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs">
                 <input id="rev-city" type="text" required placeholder="शहर (उदा: Ludhiana / Delhi / Toronto)" class="w-full px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs">
+                
+                <select id="rev-category" class="w-full px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs">
+                    <option value="व्यापार व कर्ज">व्यापार व कर्ज मुक्ति</option>
+                    <option value="महावास्तु शोधन">महावास्तु शोधन</option>
+                    <option value="विवाह व दांपत्य">विवाह व दांपत्य समाधान</option>
+                    <option value="ब्रह्मास्त्र व तांत्रिक रक्षा">ब्रह्मास्त्र व प्रत्यंगिरा रक्षा</option>
+                    <option value="करियर व प्रमोशन">करियर व पदोन्नति</option>
+                    <option value="दोष व शांति">ग्रह शांति व अनुष्ठान</option>
+                </select>
+
                 <textarea id="rev-text" rows="3" required placeholder="अपना सच्चा अनुभव लिखें..." class="w-full px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white text-xs"></textarea>
-                <button type="submit" class="w-full py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase cursor-pointer">
+
+                <button type="submit" id="rev-submit-btn" class="w-full py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase cursor-pointer">
                     अनुभव दर्ज करें
                 </button>
             </form>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC & ENGINE -->
+    <!-- JAVASCRIPT LOGIC & ROUTER -->
     <script>
         const CONFIG = {
             whatsappNumber: "919506795756",
+            youtubeChannelUrl: "https://www.youtube.com/@Kaalgya",
             gasEndpoint: "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec"
         };
 
-        // Live Calibrator Controller Logic
-        function updateCalibrationLive() {
-            const scale = document.getElementById('slider-scale').value;
-            const shiftY = document.getElementById('slider-shift-y').value;
-            const shiftX = document.getElementById('slider-shift-x').value;
-
-            document.getElementById('label-scale').innerText = `${scale}%`;
-            document.getElementById('label-shift-y').innerText = `${shiftY}%`;
-            document.getElementById('label-shift-x').innerText = `${shiftX}%`;
-
-            const vid = document.getElementById('heroLiveVideo');
-            if (vid) {
-                vid.style.width = `${scale}%`;
-                vid.style.height = `${scale}%`;
-                vid.style.transform = `translate(${shiftX}%, ${shiftY}%)`;
-            }
-        }
-
-        function toggleLabPanel() {
-            const panel = document.getElementById('calibration-lab-panel');
-            if (panel) {
-                panel.classList.toggle('hidden');
-            }
-        }
-
-        function copyCalibrationCode() {
-            const scale = document.getElementById('slider-scale').value;
-            const shiftY = document.getElementById('slider-shift-y').value;
-            const shiftX = document.getElementById('slider-shift-x').value;
-            const codeStr = `style="width: ${scale}%; height: ${scale}%; object-fit: contain; top: 50%; left: 50%; transform: translate(${shiftX}%, ${shiftY}%);"`;
-
-            const tempInput = document.createElement("input");
-            tempInput.value = codeStr;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-
-            const msg = document.getElementById('copy-status-msg');
-            if (msg) {
-                msg.classList.remove('hidden');
-                setTimeout(() => msg.classList.add('hidden'), 3500);
-            }
-        }
-
-        // Multi-Page Router
+        // Multi-Page Router System
         window.navigateToPage = function(pageId) {
             document.querySelectorAll('.page-view').forEach(view => {
                 view.classList.remove('active');
@@ -1242,6 +1402,13 @@
                             { date: "02 दिसम्बर 2026 (बुधवार)", time: "रात्रि 10:05 से 05:25 AM", tithi: "कृष्ण अष्टमी", nakshatra: "हस्त", effect: "धन-धान्य संपदा योग" },
                             { date: "11 दिसम्बर 2026 (शुक्रवार)", time: "सायं 06:30 से 11:45 PM", tithi: "शुक्ल तृतीया", nakshatra: "मूल", effect: "प्रीति योग" }
                         ]
+                    },
+                    {
+                        monthName: "जनवरी - फ़रवरी 2027 के विवाह मुहूर्त",
+                        dates: [
+                            { date: "18 जनवरी 2027 (सोमवार)", time: "सायं 06:40 से 11:55 PM", tithi: "शुक्ल दशमी", nakshatra: "अनुराधा", effect: "स्थिर प्रीति सिद्धि" },
+                            { date: "05 फ़रवरी 2027 (शुक्रवार)", time: "रात्रि 08:15 से 03:10 AM", tithi: "शुक्ल चतुर्दशी", nakshatra: "पुनर्वसु", effect: "दीर्घायु दांपत्य" }
+                        ]
                     }
                 ]
             },
@@ -1249,14 +1416,21 @@
                 category: "संस्कार 2 • नूतन भवन मंगल प्रवेश विधान",
                 title: "गृह प्रवेश मुहूर्त (Griha Pravesh)",
                 heroImg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
-                importance: "नवनिर्मित या क्रय किए गए भवन में सूर्य के उत्तरायण काल में और शुभ तिथि में प्रवेश से वास्तु देवता एवं 32 पद-देवता तृप्त होते हैं।",
-                benefits: "भवन में सकारात्मक ऊर्जा का स्थायी वास, लक्ष्मी कृपा और आरोग्य।",
-                risks: "अशुभ काल में प्रवेश से गृह क्लेश और अचानक वित्तीय संकट।",
+                importance: "नवनिर्मित या क्रय किए गए भवन में सूर्य के उत्तरायण काल में और शुभ तिथि में प्रवेश से वास्तु देवता एवं 32 पद-देवता तृप्त होते हैं। अमावस्या, ग्रहण काल, मंगलवार व शनिवार को गृह प्रवेश सर्वथा वर्जित माना गया है।",
+                benefits: "भवन में सकारात्मक ऊर्जा का स्थायी वास, लक्ष्मी कृपा, रोगों से मुक्ति और परिवार के सदस्यों का मानसिक उत्थान।",
+                risks: "अशुभ काल में प्रवेश से गृह क्लेश, आर्थिक हानि, अग्नि भय तथा परिवार में अचानक दुर्घटनाओं की संभावना।",
                 months: [
                     {
-                        monthName: "नवम्बर 2026 के गृह प्रवेश मुहूर्त",
+                        monthName: "नवम्बर - दिसम्बर 2026 के गृह प्रवेश मुहूर्त",
                         dates: [
-                            { date: "12 नवम्बर 2026 (गुरुवार)", time: "प्रातः 07:15 से 10:45 AM", tithi: "शुक्ल द्वितीया", nakshatra: "अनुराधा", effect: "श्री वृद्धि व स्थायित्व" }
+                            { date: "12 नवम्बर 2026 (गुरुवार)", time: "प्रातः 07:15 से 10:45 AM", tithi: "शुक्ल द्वितीया", nakshatra: "अनुराधा", effect: "श्री वृद्धि व स्थायित्व" },
+                            { date: "26 नवम्बर 2026 (गुरुवार)", time: "प्रातः 06:45 से 11:20 AM", tithi: "शुक्ल तृतीया", nakshatra: "उत्तराषाढ़ा", effect: "सर्व सुख शांति" }
+                        ]
+                    },
+                    {
+                        monthName: "फरवरी 2027 के गृह प्रवेश मुहूर्त",
+                        dates: [
+                            { date: "08 फ़रवरी 2027 (सोमवार)", time: "प्रातः 08:30 से 12:15 PM", tithi: "शुक्ल द्वितीया", nakshatra: "शतभिषा", effect: "लक्ष्मी-कुबेर वास" }
                         ]
                     }
                 ]
@@ -1265,14 +1439,15 @@
                 category: "संस्कार 3 • भूमि शोधन, खनन व शिलान्यास",
                 title: "भूमि पूजन मुहूर्त (Bhumi Pujan)",
                 heroImg: "https://images.unsplash.com/photo-1541888946425-d0fbb18615f8?auto=format&fit=crop&q=80&w=1200",
-                importance: "पृथ्वी तत्व और शेषनाग की अनुमति के बिना भूमि पर किया गया निर्माण स्थिर नहीं रहता।",
-                benefits: "निर्माण कार्य बिना किसी कानूनी या ठेकेदार विवाद के संपन्न होता है।",
-                risks: "नींव में दरार और दुर्घटनाओं का भय।",
+                importance: "पृथ्वी तत्व और शेषनाग की अनुमति के बिना भूमि पर किया गया निर्माण स्थिर नहीं रहता। भूमि शयन के दिन खनन करने से वास्तुदोष उत्पन्न होता है। अतः नंदा तिथियों व स्थिर लग्न में ही शिलान्यास करना चाहिए।",
+                benefits: "निर्माण कार्य बिना किसी कानूनी, वित्तीय या दैहिक बाधा के निर्विघ्न संपन्न होता है।",
+                risks: "शिल्पकार दुर्घटना, ठेकेदार विवाद, निर्माण में रुकावट तथा नींव में दरार का भय।",
                 months: [
                     {
-                        monthName: "नवम्बर - दिसम्बर 2026 शिलान्यास",
+                        monthName: "वर्ष 2026-2027 के प्रमुख भूमि पूजन मुहूर्त",
                         dates: [
-                            { date: "18 नवम्बर 2026 (बुधवार)", time: "प्रातः 08:10 से 10:25 AM", tithi: "शुक्ल अष्टमी", nakshatra: "शतभिषा", effect: "वज्र नींव सिद्धि" }
+                            { date: "18 नवम्बर 2026 (बुधवार)", time: "प्रातः 08:10 से 10:25 AM", tithi: "शुक्ल अष्टमी", nakshatra: "शतभिषा", effect: "वज्र नींव सिद्धि" },
+                            { date: "09 दिसम्बर 2026 (बुधवार)", time: "प्रातः 09:20 से 11:45 AM", tithi: "शुक्ल प्रतिपदा", nakshatra: "मूल", effect: "अखंड वास्तु रक्षा" }
                         ]
                     }
                 ]
@@ -1281,13 +1456,14 @@
                 category: "संस्कार 4 • 16 दिशा व 32 पद-देवता कीलन",
                 title: "वास्तु पूजन मुहूर्त (Vastu Pujan)",
                 heroImg: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=1200",
-                importance: "घर में ब्रह्मस्थान व 16 दिशाओं का ऊर्जा संतुलन।",
-                benefits: "बिना तोड़-फोड़ ऊर्जा शांति।",
-                risks: "वास्तु दोष के कारण निरंतर अशांति।",
+                importance: "वास्तु पुरुष का सिर ईशान में और चरण नैऋत्य में होते हैं। यदि घर में ब्रह्मस्थान या दिशाओं में असंतुलन हो, तो शुभ मुहूर्त में वास्तु पूजन द्वारा ऊर्जा का सात्विक कीलन किया जाता है।",
+                benefits: "बिना तोड़-फोड़ ऊर्जा संतुलन, घर में अकारण भय व भारीपन का अंत तथा व्यापारिक उन्नति।",
+                risks: "वास्तुदोष के कारण परिवार में लगातार दवाइयों पर धन का अपव्यय और अशांति।",
                 months: [
                     {
-                        monthName: "दिसम्बर 2026 वास्तु शांति",
+                        monthName: "वार्षिक वास्तु शांति व कीलन मुहूर्त",
                         dates: [
+                            { date: "16 नवम्बर 2026 (सोमवार)", time: "प्रातः 09:15 से 11:30 AM", tithi: "शुक्ल षष्ठी", nakshatra: "श्रवण", effect: "दिशा कीलन पूर्ण" },
                             { date: "14 दिसम्बर 2026 (सोमवार)", time: "प्रातः 08:45 से 10:50 AM", tithi: "शुक्ल षष्ठी", nakshatra: "धनिष्ठा", effect: "सर्वदोष शमन" }
                         ]
                     }
@@ -1297,14 +1473,15 @@
                 category: "संस्कार 5 • नवीन व्यवसाय, फर्म व दुकान उद्घाटन",
                 title: "व्यापार आरंभ मुहूर्त (Business Launch)",
                 heroImg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200",
-                importance: "व्यापार का कारक बुध और धन का कारक गुरु है।",
-                benefits: "नकदी प्रवाह की निरंतरता व ग्राहकों का विश्वास।",
-                risks: "कर्ज और पार्टनरशिप में धोखा।",
+                importance: "व्यापार का कारक बुध और धन का कारक गुरु है। जब शुभ लग्न में द्वितीयेश व एकादशेश बलवान हों, तभी व्यापार की नींव रखनी चाहिए।",
+                benefits: "दुकान या ऑफिस में नकदी प्रवाह की निरंतरता, ग्राहकों का विश्वास तथा व्यापार का बहुआयामी विस्तार।",
+                risks: "कर्ज में डूबना, पार्टनरशिप में धोखा, माल का न बिकना तथा प्रतिष्ठान का शीघ्र बंद होना।",
                 months: [
                     {
-                        monthName: "नवम्बर 2026 व्यापार मुहूर्त",
+                        monthName: "व्यापार शुभारंभ व दुकान उद्घाटन मुहूर्त",
                         dates: [
-                            { date: "19 नवम्बर 2026 (गुरुवार)", time: "प्रातः 10:15 से 12:40 PM", tithi: "शुक्ल नवमी", nakshatra: "पूर्वाभाद्रपद", effect: "अक्षय धन लाभ" }
+                            { date: "19 नवम्बर 2026 (गुरुवार)", time: "प्रातः 10:15 से 12:40 PM", tithi: "शुक्ल नवमी", nakshatra: "पूर्वाभाद्रपद", effect: "अक्षय धन लाभ" },
+                            { date: "03 दिसम्बर 2026 (गुरुवार)", time: "प्रातः 09:30 से 11:45 AM", tithi: "कृष्ण नवमी", nakshatra: "चित्रा", effect: "व्यापार कीर्ति योग" }
                         ]
                     }
                 ]
@@ -1313,13 +1490,14 @@
                 category: "संस्कार 6 • वाहन क्रय व प्रथम चालन विधान",
                 title: "वाहन क्रय मुहूर्त (Vehicle Purchase)",
                 heroImg: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200",
-                importance: "वाहन का संबंध शुक्र (ऐश्वर्य) और शनि (मशीनरी) से है।",
-                benefits: "सुरक्षित यात्रा व लंबी आयु।",
-                risks: "सड़क दुर्घटना व बार-बार खराबी।",
+                importance: "वाहन का संबंध शुक्र (ऐश्वर्य), शनि (लोहा/मशीनरी) और मंगल (दुर्घटना/ऊर्जा) से है। अशुभ नक्षत्र में लिया गया वाहन बार-बार दुर्घटनाग्रस्त होता है।",
+                benefits: "सुरक्षित यात्रा, वाहन की लंबी आयु, परिवार के लिए सुखदायी व दुर्घटनाओं से ईश्वरीय रक्षा।",
+                risks: "सड़क दुर्घटना का भय, चालान, अकारण खराबी व मानसिक तनाव।",
                 months: [
                     {
-                        monthName: "दिसम्बर 2026 वाहन मुहूर्त",
+                        monthName: "वाहन क्रय एवं डिलीवरी शुभ तिथियां",
                         dates: [
+                            { date: "22 नवम्बर 2026 (रविवार)", time: "दोपहर 01:15 से 03:40 PM", tithi: "शुक्ल द्वादशी", nakshatra: "मृगशिरा", effect: "शुभ सुरक्षा योग" },
                             { date: "06 दिसम्बर 2026 (रविवार)", time: "प्रातः 10:30 से 12:45 PM", tithi: "कृष्ण द्वादशी", nakshatra: "स्वाति", effect: "अखंड गति सिद्धि" }
                         ]
                     }
@@ -1329,12 +1507,12 @@
                 category: "संस्कार 7 • महाप्रस्थान, विदेश गमन व व्यापारिक यात्रा",
                 title: "यात्रा मुहूर्त (Travel Muhurat)",
                 heroImg: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=1200",
-                importance: "दिशा शूल विचार और चंद्र वास का शुद्ध संरेखण।",
-                benefits: "कार्य में शत-प्रतिशत सफलता।",
-                risks: "सामान चोरी व कार्य विफलता।",
+                importance: "दिशा शूल विचार और चंद्र वास का ध्यान रखकर की गई यात्रा ही अभीष्ट फल देती है।",
+                benefits: "जिस उद्देश्य से यात्रा की जा रही है उसमें शत-प्रतिशत सफलता।",
+                risks: "सामान चोरी होना, स्वास्थ्य बिगड़ना, कार्य में विफलता।",
                 months: [
                     {
-                        monthName: "नवम्बर 2026 यात्रा मुहूर्त",
+                        monthName: "विदेश यात्रा व महाप्रस्थान मुहूर्त",
                         dates: [
                             { date: "17 नवम्बर 2026 (मंगलवार)", time: "प्रातः 07:30 से 09:45 AM", tithi: "शुक्ल सप्तमी", nakshatra: "धनिष्ठा", effect: "कार्य सिद्धि योग" }
                         ]
@@ -1345,14 +1523,142 @@
                 category: "संस्कार 8 • विद्यारंभ, उच्च अध्ययन व प्रवेश",
                 title: "शिक्षा व विद्यारंभ मुहूर्त (Education / Vidyarambh)",
                 heroImg: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1200",
-                importance: "सरस्वती नक्षत्रों में विद्या आरंभ करने से बुद्धि की एकाग्रता बढ़ती है।",
-                benefits: "प्रतियोगी परीक्षाओं में सफलता।",
-                risks: "पढ़ाई में मन न लगना और तनाव।",
+                importance: "बुधवार, गुरुवार और सरस्वती नक्षत्रों में विद्या आरंभ करने से बुद्धि की एकाग्रता बढ़ती है।",
+                benefits: "अध्ययन में तीव्र बुद्धि, प्रतियोगी परीक्षाओं में सफलता तथा ज्ञान का जीवन में सदुपयोग।",
+                risks: "पढ़ाई में मन न लगना, ध्यान भटकना, बार-बार अनुत्तीर्ण होना।",
                 months: [
                     {
-                        monthName: "नवम्बर 2026 विद्यारंभ",
+                        monthName: "विद्यारंभ व अक्षरारंभ मुहूर्त",
                         dates: [
                             { date: "25 नवम्बर 2026 (बुधवार)", time: "प्रातः 08:00 से 10:30 AM", tithi: "शुक्ल पूर्णिमा", nakshatra: "रोहिणी", effect: "सरस्वती कृपा योग" }
+                        ]
+                    }
+                ]
+            },
+            namkaran: {
+                category: "संस्कार 9 • शिशु प्रथम नामकरण संस्कार",
+                title: "नामकरण संस्कार (Namkaran Sanskar)",
+                heroImg: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=1200",
+                importance: "नाम केवल पुकारने का साधन नहीं, अपितु ब्रह्मांडीय ध्वनि तरंग है।",
+                benefits: "शिशु के व्यक्तित्व में ओज, समाज में प्रतिष्ठा तथा जीवन भर भाग्य का अनुकूल सहयोग।",
+                risks: "अशुभ अक्षर से नाम रखने पर जीवन भर संघर्ष।",
+                months: [
+                    {
+                        monthName: "शिशु नामकरण संस्कार तिथियां",
+                        dates: [
+                            { date: "20 नवम्बर 2026 (शुक्रवार)", time: "प्रातः 09:10 से 11:20 AM", tithi: "शुक्ल दशमी", nakshatra: "उत्तराभाद्रपद", effect: "आयु-कीर्ति वृद्धि" }
+                        ]
+                    }
+                ]
+            },
+            annaprashan: {
+                category: "संस्कार 10 • शिशु प्रथम अन्न ग्रहण संस्कार",
+                title: "अन्नप्राशन संस्कार (Annaprashan Sanskar)",
+                heroImg: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=1200",
+                importance: "शिशु के 6ठे या 8वें माह में शुद्ध अन्न ग्रहण से उसकी जठराग्नि और आयु की शुद्धि होती है।",
+                benefits: "रोग-प्रतिरोधक क्षमता का विकास, शारीरिक पुष्टि तथा दीर्घायु की प्राप्ति।",
+                risks: "पाचन विकार, बार-बार अस्वस्थ होना तथा शारीरिक कमजोरी।",
+                months: [
+                    {
+                        monthName: "अन्नप्राशन शुभ मुहूर्त",
+                        dates: [
+                            { date: "27 नवम्बर 2026 (शुक्रवार)", time: "प्रातः 08:30 से 10:45 AM", tithi: "कृष्ण द्वितीया", nakshatra: "मृगशिरा", effect: "आरोग्य पुष्टि योग" }
+                        ]
+                    }
+                ]
+            },
+            mundan: {
+                category: "संस्कार 11 • चूड़ाकर्म संस्कार (केश विसर्जन)",
+                title: "मुंडन संस्कार (Mundan Sanskar)",
+                heroImg: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=1200",
+                importance: "गर्भ के बालों को हटाकर मस्तिष्क की नसों को शीतलता और बुद्धि को प्रखरता देने का विधान।",
+                benefits: "शिशु की मेधा शक्ति का जागरण, त्वचा की शुद्धि और नकारात्मक दृष्टियों से रक्षा।",
+                risks: "मस्तिष्क ताप, स्वभाव में चिड़चिड़ापन।",
+                months: [
+                    {
+                        monthName: "चूड़ाकर्म / मुंडन संस्कार मुहूर्त",
+                        dates: [
+                            { date: "11 दिसम्बर 2026 (शुक्रवार)", time: "प्रातः 09:00 से 11:15 AM", tithi: "शुक्ल तृतीया", nakshatra: "उत्तराषाढ़ा", effect: "दीर्घायु मेधा योग" }
+                        ]
+                    }
+                ]
+            },
+            upnayan: {
+                category: "संस्कार 12 • यज्ञोपवीत व गायत्री दीक्षा",
+                title: "उपनयन संस्कार (Yagyopaveet / Janeu)",
+                heroImg: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=1200",
+                importance: "द्विजत्व प्राप्ति का सर्वोच्च संस्कार। तीनों सूत्रों में ब्रह्मा, विष्णु, महेश का वास।",
+                benefits: "आध्यात्मिक तेज, आत्मबल, एकाग्रता तथा संस्कारों की रक्षा।",
+                risks: "संस्कारहीनता, मन की चंचलता।",
+                months: [
+                    {
+                        monthName: "यज्ञोपवीत व गायत्री दीक्षा मुहूर्त",
+                        dates: [
+                            { date: "22 जनवरी 2027 (शुक्रवार)", time: "प्रातः 08:15 से 11:30 AM", tithi: "शुक्ल चतुर्दशी", nakshatra: "पुनर्वसु", effect: "ब्रह्मतेज सिद्धि" }
+                        ]
+                    }
+                ]
+            },
+            garbhadhan: {
+                category: "संस्कार 13 • श्रेष्ठ संतान उत्पत्ति हेतु गर्भाधान",
+                title: "गर्भाधान संस्कार (Garbhadhan Sanskar)",
+                heroImg: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=1200",
+                importance: "ऋतुकाल की शुद्ध रात्रियों में ग्रहों की स्थिति देखकर किया गया गर्भाधान।",
+                benefits: "धर्मात्मा, स्वस्थ, पराक्रमी और कुल का नाम रोशन करने वाली संतान।",
+                risks: "जन्मजात रोग, मानसिक विकार।",
+                months: [
+                    {
+                        monthName: "श्रेष्ठ संतान उत्पत्ति मुहूर्त",
+                        dates: [
+                            { date: "15 दिसम्बर 2026 (मंगलवार)", time: "रात्रि 10:30 से 01:15 AM", tithi: "शुक्ल सप्तमी", nakshatra: "शतभिषा", effect: "श्रेष्ठ संतान योग" }
+                        ]
+                    }
+                ]
+            },
+            devapratishtha: {
+                category: "संस्कार 14 • मूर्ति प्राण-प्रतिष्ठा व देवालय कीलन",
+                title: "देव-प्रतिष्ठा मुहूर्त (Murti Pran Pratishtha)",
+                heroImg: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&q=80&w=1200",
+                importance: "पाषाण या धातु की मूर्ति में मंत्रों द्वारा चैतन्य प्राण स्थापित करने का विधान।",
+                benefits: "मंदिर या पूजास्थल में साक्षात् देवत्व का वास।",
+                risks: "गलत प्रतिष्ठा से घर में विपत्ति।",
+                months: [
+                    {
+                        monthName: "मूर्ति चैतन्य प्राण-प्रतिष्ठा मुहूर्त",
+                        dates: [
+                            { date: "28 जनवरी 2027 (गुरुवार)", time: "प्रातः 07:45 से 10:15 AM", tithi: "शुक्ल षष्ठी", nakshatra: "हस्त", effect: "चैतन्य प्राण योग" }
+                        ]
+                    }
+                ]
+            },
+            yagya: {
+                category: "संस्कार 15 • महायज्ञ, अनुष्ठान व तांत्रिक संकल्प",
+                title: "यज्ञ एवं अनुष्ठान मुहूर्त (Yagya / Havan)",
+                heroImg: "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&q=80&w=1200",
+                importance: "अग्नि वास का विचार देखकर किया गया हवन देवताओं तक पहुंचता है।",
+                benefits: "रोग, शोक, शत्रु बाधा का समूल नाश तथा ग्रह शांति।",
+                risks: "अग्नि वास प्रतिकूल होने पर धन हानि।",
+                months: [
+                    {
+                        monthName: "महायज्ञ व अनुष्ठान संकल्प मुहूर्त",
+                        dates: [
+                            { date: "13 नवम्बर 2026 (शुक्रवार)", time: "प्रातः 08:30 से 11:45 AM", tithi: "शुक्ल तृतीया", nakshatra: "मूल", effect: "सर्वबाधा शमन योग" }
+                        ]
+                    }
+                ]
+            },
+            krishi: {
+                category: "संस्कार 16 • बीज बोना, कृषि कार्य व फसल संचयन",
+                title: "कृषि मुहूर्त (Agriculture & Sowing)",
+                heroImg: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=1200",
+                importance: "भूमिपुत्र मंगल और अन्नपूर्णा का ध्यान रखकर शुभ नक्षत्रों में बीज बोना।",
+                benefits: "बंपर पैदावार, फसल की सुरक्षा और आर्थिक समृद्धि।",
+                risks: "फसल खराब होना, कीट लगना।",
+                months: [
+                    {
+                        monthName: "बीज बोआई व फसल कटाई मुहूर्त",
+                        dates: [
+                            { date: "14 नवम्बर 2026 (शनिवार)", time: "प्रातः 07:15 से 09:30 AM", tithi: "शुक्ल चतुर्थी", nakshatra: "पूर्वाषाढ़ा", effect: "प्रचुर धान्य वृद्धि" }
                         ]
                     }
                 ]
@@ -1434,6 +1740,11 @@
                 lucide.createIcons();
             }
 
+            document.querySelectorAll('.muhurat-card').forEach(c => c.classList.remove('border-gold-400', 'bg-gold-500/20'));
+            if (window.event && window.event.currentTarget) {
+                window.event.currentTarget.classList.add('border-gold-400', 'bg-gold-500/20');
+            }
+
             const panel = document.getElementById('muhurat-display-panel');
             if (panel) {
                 panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1450,12 +1761,37 @@
 
             const dayOfWeek = date.getDay();
             const dayNames = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
+            
             const formattedDisplayDate = `${String(day).padStart(2, '0')}/${String(month + 1).padStart(2, '0')}/${year}`;
 
             const indicator = document.getElementById('hora-day-indicator');
             if (indicator) {
                 indicator.innerText = `${formattedDisplayDate} (${dayNames[dayOfWeek]}) • 24 होरा चक्र संरेखित`;
             }
+
+            const rahuTimings = [
+                "04:30 PM - 06:00 PM (रविवार)",
+                "07:30 AM - 09:00 AM (सोमवार)",
+                "03:00 PM - 04:30 PM (मंगलवार)",
+                "12:00 PM - 01:30 PM (बुधवार)",
+                "01:30 PM - 03:00 PM (गुरुवार)",
+                "10:30 AM - 12:00 PM (शुक्रवार)",
+                "09:00 AM - 10:30 AM (शनिवार)"
+            ];
+            const yamgandTimings = [
+                "12:00 PM - 01:30 PM",
+                "10:30 AM - 12:00 PM",
+                "09:00 AM - 10:30 AM",
+                "07:30 AM - 09:00 AM",
+                "06:00 AM - 07:30 AM",
+                "03:00 PM - 04:30 PM",
+                "01:30 PM - 03:00 PM"
+            ];
+
+            const rahuEl = document.getElementById('dyn-rahu');
+            const yamEl = document.getElementById('dyn-yamgand');
+            if (rahuEl) rahuEl.innerText = rahuTimings[dayOfWeek];
+            if (yamEl) yamEl.innerText = yamgandTimings[dayOfWeek];
 
             const dayLordIndexMap = [0, 3, 6, 2, 5, 1, 4];
             let startLordIdx = dayLordIndexMap[dayOfWeek];
@@ -1507,8 +1843,10 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
+            syncLivePanchangData();
             window.openMuhuratDetail('vivah');
 
+            // Set current live dynamic date
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -1552,6 +1890,7 @@
         function submitConsultationForm(e) {
             e.preventDefault();
             const payload = {
+                type: "consultation",
                 name: document.getElementById('client-name').value,
                 phone: document.getElementById('client-phone').value,
                 dob: document.getElementById('client-dob').value,
@@ -1560,8 +1899,16 @@
                 concern: document.getElementById('client-concern').value,
                 topic: document.getElementById('booking-modal-topic').innerText
             };
-            const waMsg = `सादर प्रणाम! मैंने परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
-            alert("✨ आपका विवरण सुरक्षित दर्ज हो गया है।");
+
+            fetch(CONFIG.gasEndpoint, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(() => {});
+
+            const waMsg = `नमस्ते! मैंने Kaalgya पर परामर्श हेतु आवेदन किया है:\n\nनाम: ${payload.name}\nमोबाइल: ${payload.phone}\nजन्म तिथि: ${payload.dob}\nसमय: ${payload.time}\nस्थान: ${payload.city}\nविषय: ${payload.topic}\nसमस्या: ${payload.concern}`;
+            alert("✨ आपका विवरण सुरक्षित दर्ज हो गया है। अब आपको WhatsApp पर कनेक्ट किया जा रहा है।");
             closeBookingModal();
             window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(waMsg)}`, '_blank');
         }
@@ -1572,7 +1919,69 @@
             closeReviewModal();
         }
 
-        // Three.js Starlight Canvas Animation
+        const problemData = {
+            karz: {
+                title: "कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान",
+                message: `"समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है।"`,
+                remedy: "मंगलवार के दिन ऋणमोचक मंगल स्तोत्र का पाठ करें तथा 3 चुटकी लाल मसूर की दाल बहते जल में प्रवाहित करें। सटीक दशा की डिग्री जाँच करवाएं।"
+            },
+            career: {
+                title: "करियर में ठहराव, विघ्न व पदोन्नति मार्गदर्शन",
+                message: `"कर्म कभी व्यर्थ नहीं जाता। दशमेश का सूर्य अथवा शनि के साथ संबंध जब कमजोर होता है, तो प्रतिभा होने पर भी प्रतिष्ठा रुक जाती है।"`,
+                remedy: "प्रातः तांबे के लोटे में अक्षत और रोली डालकर सूर्य देव को अर्घ्य दें। कार्यस्थल पर उत्तर-पूर्व दिशा को सदैव स्वच्छ व प्रकाशमय रखें।"
+            },
+            breakup: {
+                title: "दांपत्य कलह, संबंध विच्छेद व विवाह विलंब समाधान",
+                message: `"संबंधों की डोर केवल दो व्यक्तियों से नहीं, बल्कि दो कुंडलियों के ग्रहों के तालमेल से बंधती है।"`,
+                remedy: "गुरुवार के दिन भगवान लक्ष्मीनारायण को हल्दी युक्त पीले चने की दाल अर्पित करें।"
+            },
+            anxiety: {
+                title: "मानसिक अशांति, अवसाद व अज्ञात भय से मुक्ति",
+                message: `"चंद्रमा मन का स्वामी है। जब चंद्र पर राहु, केतु अथवा शनि की दृष्टि होती है, तो मन बिना कारण व्यथित हो जाता है।"`,
+                remedy: "सोमवार को चांदी के पात्र से जल पिएं।"
+            },
+            rahu: {
+                title: "राहु-शनि महादशा व साढ़ेसाती का सात्विक शोधन",
+                message: `"राहु भ्रम का कारक है और शनि अनुशासन का। इन दशाओं का उद्देश्य व्यक्ति के विवेक को जागृत करना है।"`,
+                remedy: "शनिवार को पीपल के वृक्ष के नीचे तिल के तेल का दीपक प्रज्वलित करें।"
+            }
+        };
+
+        function selectProblem(key) {
+            document.querySelectorAll('.problem-btn').forEach(b => {
+                b.classList.remove('text-gold-300', 'font-semibold');
+                b.classList.add('text-gray-300');
+            });
+            const active = document.getElementById(`btn-${key}`);
+            if (active) {
+                active.classList.add('text-gold-300', 'font-semibold');
+                active.classList.remove('text-gray-300');
+            }
+            const data = problemData[key];
+            if (data) {
+                document.getElementById('console-title').innerText = data.title;
+                document.getElementById('console-message').innerText = data.message;
+                document.getElementById('console-remedy').innerText = data.remedy;
+            }
+        }
+
+        function syncLivePanchangData() {
+            fetch(`${CONFIG.gasEndpoint}?action=getPanchang`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data && data.status === "success") {
+                        if (data.dateFormatted) document.getElementById('live-panchang-date').innerText = `विक्रम संवत ${data.vikramSamvat || 2083} • ${data.dateFormatted}`;
+                        if (data.festival) document.getElementById('live-festival').innerText = data.festival;
+                        if (data.tithi) document.getElementById('live-tithi').innerText = data.tithi;
+                        if (data.nakshatra) document.getElementById('live-nakshatra').innerText = data.nakshatra;
+                        if (data.sunrise) document.getElementById('live-sunrise').innerText = data.sunrise;
+                        if (data.sunset) document.getElementById('live-sunset').innerText = data.sunset;
+                    }
+                })
+                .catch(() => console.log("Panchang Offline"));
+        }
+
+        // Three.js Cosmic Starlight Canvas
         const canvas = document.getElementById('cosmic-canvas');
         if (canvas) {
             const scene = new THREE.Scene();
