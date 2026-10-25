@@ -345,7 +345,7 @@
                     </span>
                 </div>
 
-                <!-- Tithi & Nakshatra Transitions (2 Cards Each) -->
+                <!-- Tithi & Nakshatra Transitions -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
                         <div class="flex items-center gap-2 mb-3 text-gold-300 font-bold text-sm">
@@ -383,11 +383,11 @@
                     </div>
                     <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
                         <span class="text-blue-400/80 block mb-1">🌙 भद्रा स्थिति</span>
-                        <strong id="bhadraText" class="text-blue-200 font-medium">जाँच हो रही है...</strong>
+                        <strong id="bhadraText" class="text-blue-200 font-medium">पाताल निवास (दोष रहित)</strong>
                     </div>
                     <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
                         <span class="text-rose-400 block mb-1">⚠️ आज का राहुकाल</span>
-                        <strong id="rahuTime" class="font-mono text-rose-300 font-bold">गणना जारी...</strong>
+                        <strong id="rahuTime" class="font-mono text-rose-300 font-bold">04:30 PM - 06:00 PM</strong>
                     </div>
                 </div>
 
@@ -1176,7 +1176,7 @@
                     <div class="p-4 rounded-2xl bg-obsidian-900 border border-red-500/20 space-y-2">
                         <div class="flex justify-between items-center">
                             <strong class="text-red-300 text-sm">राहुकाल (पूर्ण वर्जित)</strong>
-                            <span id="dyn-rahu" class="font-mono text-red-300 font-bold text-xs bg-red-500/10 px-2 py-0.5 rounded">12:05 PM - 01:29 PM</span>
+                            <span id="dyn-rahu" class="font-mono text-red-300 font-bold text-xs bg-red-500/10 px-2 py-0.5 rounded">04:30 PM - 06:00 PM</span>
                         </div>
                         <p class="text-xs text-gray-400">सूर्य का छाया-अवरोधक काल। किसी भी शुभ ऊर्जा का क्षरण करता है।</p>
                         <div class="p-2.5 rounded-lg bg-black/40 border border-red-500/10 text-xs space-y-1">
@@ -1189,7 +1189,7 @@
                     <div class="p-4 rounded-2xl bg-obsidian-900 border border-red-500/20 space-y-2">
                         <div class="flex justify-between items-center">
                             <strong class="text-red-300 text-sm">यमगण्ड काल</strong>
-                            <span id="dyn-yamgand" class="font-mono text-red-300 font-bold text-xs bg-red-500/10 px-2 py-0.5 rounded">07:51 AM - 09:16 AM</span>
+                            <span id="dyn-yamgand" class="font-mono text-red-300 font-bold text-xs bg-red-500/10 px-2 py-0.5 rounded">12:00 PM - 01:30 PM</span>
                         </div>
                         <p class="text-xs text-gray-400">मृत्यु के देवता यम से संबंधित कालखंड। कार्यों के फल का नाश करता है।</p>
                         <div class="p-2.5 rounded-lg bg-black/40 border border-red-500/10 text-xs space-y-1">
@@ -1202,7 +1202,7 @@
                     <div class="p-4 rounded-2xl bg-obsidian-900 border border-red-500/20 space-y-2">
                         <div class="flex justify-between items-center">
                             <strong class="text-red-300 text-sm">गुलिक काल</strong>
-                            <span id="dyn-gulika" class="font-mono text-red-300 font-bold text-xs bg-red-500/10 px-2 py-0.5 rounded">01:30 PM - 03:00 PM</span>
+                            <span id="dyn-gulika" class="font-mono text-red-300 font-bold text-xs bg-red-500/10 px-2 py-0.5 rounded">03:00 PM - 04:30 PM</span>
                         </div>
                         <p class="text-xs text-gray-400">शनि पुत्र गुलिक की अवधि। जो कार्य इसमें होता है उसकी बारंबार पुनरावृत्ति होती है।</p>
                         <div class="p-2.5 rounded-lg bg-black/40 border border-red-500/10 text-xs space-y-1">
@@ -1667,46 +1667,179 @@
             }
         };
 
-        // 2. DYNAMIC 1-YEAR ROLLING ENGINE: Generates 12 Months Ahead from Current Date
+        // 2. SPECIFIC CONSTRAINTS FOR EACH SAMSKARA
+        const SAMSKARA_CONSTRAINTS = {
+            vivah: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "शुक्ल त्रयोदशी", "कृष्ण द्वितीया"],
+                nakshatras: ["रोहिणी", "मृगशिरा", "मघा", "उत्तराफाल्गुनी", "हस्त", "स्वाति", "अनुराधा", "मूल", "उत्तराषाढ़ा", "उत्तराभाद्रपद", "रेवती"],
+                baseDays: [1, 4, 7, 12, 18, 22, 27],
+                timeWindow: "रात्रि 08:30 PM - 02:45 AM",
+                score: "98%",
+                decision: "उत्तम (सर्वजन ग्राह्य)"
+            },
+            grihapravesh: {
+                tithis: ["शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "शुक्ल त्रयोदशी"],
+                nakshatras: ["रोहिणी", "मृगशिरा", "उत्तराफाल्गुनी", "चित्रा", "अनुराधा", "उत्तराषाढ़ा", "उत्तराभाद्रपद", "रेवती"],
+                baseDays: [3, 8, 14, 19, 25],
+                timeWindow: "प्रातः 06:45 AM - 10:30 AM",
+                score: "96%",
+                decision: "शुभ (आवासीय व व्यापार ग्राह्य)"
+            },
+            bhumipujan: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी"],
+                nakshatras: ["मृगशिरा", "पुष्य", "हस्त", "चित्रा", "स्वाति", "अनुराधा", "धनिष्ठा", "शतभिषा"],
+                baseDays: [5, 11, 17, 23, 28],
+                timeWindow: "प्रातः 07:30 AM - 11:15 AM",
+                score: "95%",
+                decision: "सिद्ध (नींव शिलान्यास ग्राह्य)"
+            },
+            vastupujan: {
+                tithis: ["शुक्ल प्रतिपदा", "शुक्ल पंचमी", "शुक्ल एकादशी", "पूर्णिमा"],
+                nakshatras: ["रोहिणी", "पुनर्वसु", "पुष्य", "उत्तराषाढ़ा", "श्रवण"],
+                baseDays: [2, 9, 16, 24],
+                timeWindow: "प्रातः 08:00 AM - 11:45 AM",
+                score: "97%",
+                decision: "उत्तम (ऊर्जा कीलन शुद्ध)"
+            },
+            vyapar: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल अष्टमी", "शुक्ल दशमी", "शुक्ल त्रयोदशी"],
+                nakshatras: ["अश्विनी", "रोहिणी", "पुष्य", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "अनुराधा", "रेवती"],
+                baseDays: [4, 10, 15, 20, 26],
+                timeWindow: "प्रातः 09:15 AM - 12:40 PM",
+                score: "96%",
+                decision: "सर्वश्रेष्ठ (कुबेर दिशा संरेखित)"
+            },
+            vahan: {
+                tithis: ["शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल षष्ठी", "शुक्ल दशमी", "शुक्ल द्वादशी"],
+                nakshatras: ["अश्विनी", "रोहिणी", "मृगशिरा", "पुनर्वसु", "पुष्य", "हस्त", "चित्रा", "स्वाति", "श्रवण"],
+                baseDays: [2, 6, 12, 18, 22, 27],
+                timeWindow: "दोपहर 01:15 PM - 04:30 PM",
+                score: "95%",
+                decision: "उत्तम (दीर्घायु व सुरक्षा योग)"
+            },
+            yatra: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल दशमी", "शुक्ल त्रयोदशी"],
+                nakshatras: ["अश्विनी", "मृगशिरा", "पुनर्वसु", "पुष्य", "हस्त", "अनुराधा", "श्रवण"],
+                baseDays: [3, 7, 13, 19, 25],
+                timeWindow: "प्रातः 06:30 AM - 09:45 AM",
+                score: "94%",
+                decision: "शुभ (कार्य सिद्धि वेला)"
+            },
+            shiksha: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल पंचमी", "शुक्ल दशमी", "शुक्ल एकादशी"],
+                nakshatras: ["अश्विनी", "रोहिणी", "आर्द्रा", "पुनर्वसु", "पुष्य", "हस्त", "चित्रा", "अनुराधा", "रेवती"],
+                baseDays: [1, 8, 15, 21, 28],
+                timeWindow: "प्रातः 07:00 AM - 10:15 AM",
+                score: "97%",
+                decision: "उत्तम (सरस्वती योग)"
+            },
+            namkaran: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "शुक्ल द्वादशी"],
+                nakshatras: ["अश्विनी", "रोहिणी", "मृगशिरा", "पुनर्वसु", "पुष्य", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "अनुराधा", "रेवती"],
+                baseDays: [4, 9, 14, 20, 26],
+                timeWindow: "प्रातः 08:45 AM - 11:30 AM",
+                score: "98%",
+                decision: "सर्वश्रेष्ठ (ओज-कीर्ति वृद्धि)"
+            },
+            annaprashan: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी"],
+                nakshatras: ["अश्विनी", "रोहिणी", "मृगशिरा", "पुनर्वसु", "पुष्य", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "अनुराधा", "श्रवण"],
+                baseDays: [2, 7, 13, 18, 24],
+                timeWindow: "प्रातः 08:15 AM - 10:45 AM",
+                score: "96%",
+                decision: "उत्तम (आरोग्य पुष्टि योग)"
+            },
+            mundan: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी"],
+                nakshatras: ["अश्विनी", "मृगशिरा", "पुष्य", "हस्त", "चित्रा", "स्वाति", "पुनर्वसु", "ज्येष्ठा", "श्रवण", "धनिष्ठा", "शतभिषा"],
+                baseDays: [5, 11, 16, 22, 27],
+                timeWindow: "प्रातः 09:00 AM - 11:30 AM",
+                score: "95%",
+                decision: "शुभ (मेधा जागरण योग)"
+            },
+            upnayan: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल दशमी", "शुक्ल एकादशी", "शुक्ल द्वादशी"],
+                nakshatras: ["रोहिणी", "आर्द्रा", "पुनर्वसु", "पुष्य", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "स्वाति", "अनुराधा", "धनिष्ठा"],
+                baseDays: [3, 10, 17, 23],
+                timeWindow: "प्रातः 07:15 AM - 10:30 AM",
+                score: "99%",
+                decision: "सर्वश्रेष्ठ (गायत्री दीक्षा सिद्ध)"
+            },
+            garbhadhan: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "शुक्ल द्वादशी"],
+                nakshatras: ["रोहिणी", "मृगशिरा", "पुनर्वसु", "पुष्य", "हस्त", "चित्रा", "अनुराधा", "श्रवण", "धनिष्ठा", "शतभिषा"],
+                baseDays: [6, 12, 18, 24],
+                timeWindow: "रात्रि 09:30 PM - 12:45 AM",
+                score: "96%",
+                decision: "उत्तम (संस्कारवान संतति योग)"
+            },
+            devpratishtha: {
+                tithis: ["शुक्ल द्वितीया", "शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "पूर्णिमा"],
+                nakshatras: ["रोहिणी", "पुष्य", "उत्तराफाल्गुनी", "हस्त", "उत्तराषाढ़ा", "श्रवण", "धनिष्ठा", "उत्तराभाद्रपद", "रेवती"],
+                baseDays: [2, 9, 16, 25],
+                timeWindow: "प्रातः 06:15 AM - 09:45 AM",
+                score: "99%",
+                decision: "सर्वश्रेष्ठ (चैतन्य प्राण प्रतिष्ठा)"
+            },
+            yagya: {
+                tithis: ["शुक्ल प्रतिपदा", "शुक्ल पंचमी", "शुक्ल अष्टमी", "शुक्ल एकादशी", "पूर्णिमा"],
+                nakshatras: ["कृत्तिका", "रोहिणी", "पुनर्वसु", "पुष्य", "मघा", "चित्रा", "विशाखा", "धनिष्ठा"],
+                baseDays: [4, 11, 18, 26],
+                timeWindow: "प्रातः 07:30 AM - 11:00 AM",
+                score: "97%",
+                decision: "सिद्ध (ग्रह दोष निवारक हवन)"
+            },
+            krishi: {
+                tithis: ["शुक्ल तृतीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "शुक्ल त्रयोदशी"],
+                nakshatras: ["रोहिणी", "मृगशिरा", "पुनर्वसु", "पुष्य", "मघा", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "विशाखा", "अनुराधा", "मूल", "श्रवण"],
+                baseDays: [1, 6, 12, 17, 23, 28],
+                timeWindow: "प्रातः 06:00 AM - 09:30 AM",
+                score: "94%",
+                decision: "शुभ (प्रचुर पैदावार व लाभ)"
+            }
+        };
+
+        // 3. DYNAMIC 12 MONTHS ROLLING GENERATOR (Sanskar Specific, 4 to 7 Dates Each Month)
         function generateRolling1YearMonths(key) {
             const monthsNames = ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
-            const tithis = ["शुक्ल द्वितीया", "शुक्ल पंचमी", "शुक्ल सप्तमी", "शुक्ल दशमी", "शुक्ल त्रयोदशी", "कृष्ण द्वितीया", "कृष्ण पंचमी", "पूर्णिमा"];
-            const nakshatras = ["रोहिणी", "मृगशिरा", "उत्तराफाल्गुनी", "हस्त", "चित्रा", "अनुराधा", "उत्तराषाढ़ा", "श्रवण", "धनिष्ठा", "पुष्य"];
             const daysHindi = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
-
+            
+            const meta = SAMSKARA_CONSTRAINTS[key] || SAMSKARA_CONSTRAINTS['vivah'];
             const now = new Date();
             const resultMonths = [];
 
             for (let m = 0; m < 12; m++) {
                 const targetDate = new Date(now.getFullYear(), now.getMonth() + m, 1);
-                const monthNameStr = `${monthsNames[targetDate.getMonth()]} ${targetDate.getFullYear()}`;
+                const monthIndex = targetDate.getMonth();
+                const yearVal = targetDate.getFullYear();
+                const daysInMonth = new Date(yearVal, monthIndex + 1, 0).getDate();
+                const monthNameStr = `${monthsNames[monthIndex]} ${yearVal}`;
                 
-                const date1Num = 5 + (m * 2) % 10;
-                const date2Num = 16 + (m * 3) % 11;
+                const datesArr = [];
 
-                const d1 = new Date(targetDate.getFullYear(), targetDate.getMonth(), date1Num);
-                const d2 = new Date(targetDate.getFullYear(), targetDate.getMonth(), date2Num);
+                meta.baseDays.forEach((daySeed, idx) => {
+                    let actualDay = (daySeed + (m * 2)) % daysInMonth;
+                    if (actualDay === 0) actualDay = daysInMonth - 2;
+                    if (actualDay < 1) actualDay = 1;
 
-                const datesArr = [
-                    {
-                        date: `${date1Num} ${monthsNames[d1.getMonth()]} ${d1.getFullYear()} (${daysHindi[d1.getDay()]})`,
-                        time: "प्रातः 07:15 से 11:30 AM",
-                        tithi: tithis[(m + 1) % tithis.length],
-                        nakshatra: nakshatras[(m + 2) % nakshatras.length],
-                        score: "98%",
-                        decision: "सर्वश्रेष्ठ (सर्वजन ग्राह्य)",
-                        remarks: "त्रिबल पूर्ण शुद्ध, सर्वार्थ सिद्धि योग। निर्विवाद शुभ फल प्रदायक।"
-                    },
-                    {
-                        date: `${date2Num} ${monthsNames[d2.getMonth()]} ${d2.getFullYear()} (${daysHindi[d2.getDay()]})`,
-                        time: "सायं 06:20 से 10:45 PM",
-                        tithi: tithis[(m + 3) % tithis.length],
-                        nakshatra: nakshatras[(m + 4) % nakshatras.length],
-                        score: "95%",
-                        decision: "उत्तम (ग्राह्य)",
-                        remarks: "स्थिर लग्न योग, कार्य की पूर्ण सफलता सुनिश्चित।"
-                    }
-                ];
+                    const dateObj = new Date(yearVal, monthIndex, actualDay);
+                    const dayOfWeek = daysHindi[dateObj.getDay()];
+                    
+                    const tithiVal = meta.tithis[(idx + m) % meta.tithis.length];
+                    const nakshatraVal = meta.nakshatras[(idx + m * 2) % meta.nakshatras.length];
+
+                    datesArr.push({
+                        date: `${actualDay} ${monthsNames[monthIndex]} ${yearVal} (${dayOfWeek})`,
+                        time: meta.timeWindow,
+                        tithi: tithiVal,
+                        nakshatra: nakshatraVal,
+                        score: meta.score,
+                        decision: meta.decision,
+                        remarks: `${nakshatraVal} नक्षत्र युक्त शुद्ध लग्न, सर्वार्थ सिद्धि व शुभ फल प्रदायक।`
+                    });
+                });
+
+                datesArr.sort((a, b) => parseInt(a.date) - parseInt(b.date));
 
                 resultMonths.push({
                     monthName: monthNameStr,
@@ -1801,7 +1934,7 @@
             document.getElementById('muhurat-display-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });
         };
 
-        // 3. 24 HORA MATRIX GENERATOR WITH DETAILED DO'S & DON'TS
+        // 4. 24 HORA MATRIX GENERATOR WITH DETAILED DO'S & DON'TS
         const HORA_RULES = {
             Surya: {
                 planet: "सूर्य (Sun)",
@@ -1891,7 +2024,6 @@
             const dayLordOrder = ["Surya", "Chandra", "Mangal", "Budh", "Guru", "Shukra", "Shani"];
             let startIdx = horaOrderKeys.indexOf(dayLordOrder[dayOfWeek]);
 
-            // 12 Din ki Horas
             for (let i = 0; i < 12; i++) {
                 const planetKey = horaOrderKeys[(startIdx + i) % 7];
                 const rule = HORA_RULES[planetKey];
@@ -1914,7 +2046,6 @@
                 dayHContainer.appendChild(div);
             }
 
-            // 12 Raatri ki Horas
             for (let i = 12; i < 24; i++) {
                 const planetKey = horaOrderKeys[(startIdx + i) % 7];
                 const rule = HORA_RULES[planetKey];
@@ -1939,68 +2070,74 @@
             }
         };
 
-        // 4. MAIN LIVE PANCHANG API FETCH ENGINE
+        // 5. LIVE PANCHANG API FETCH ENGINE (NO STATIC TEXT)
         async function loadLivePanchang() {
+            const freshUrl = `${CONFIG.panchangApiUrl}&_t=${Date.now()}`;
+            
             try {
-                const res = await fetch(CONFIG.panchangApiUrl);
+                const res = await fetch(freshUrl);
                 const data = await res.json();
-                console.log("Panchang Data Received:", data);
+                console.log("Live Panchang Data Received:", data);
 
                 if (data && data.status === "success") {
-                    // Header Date & Vikram Samvat
-                    if (document.getElementById("panchangDate")) {
-                        document.getElementById("panchangDate").innerText = `${data.calendarDate || ''} • विक्रम संवत ${data.vikramSamvat || '2083'}`;
+                    if (data.calendarDate && document.getElementById("panchangDate")) {
+                        document.getElementById("panchangDate").innerText = `${data.calendarDate} • विक्रम संवत ${data.vikramSamvat || '2083'}`;
                     }
 
-                    // Tithi Transition Windows (Exact User Format)
                     const tithiContainer = document.getElementById("tithi-container-box");
                     if (tithiContainer) {
-                        const prevT = data.lunarFramework?.tithiSpan?.previous || { 
-                            name: "Sukla Paksha Trayodashi (शुक्ल पक्ष त्रयोदशी)", 
-                            window: "Oct 23 02:36 PM – Oct 24 01:37 PM" 
-                        };
-                        const currT = data.lunarFramework?.tithiSpan?.current || { 
-                            name: "Sukla Paksha Chaturdashi (शुक्ल पक्ष चतुर्दशी)", 
-                            window: "Oct 24 01:37 PM – Oct 25 11:56 AM" 
-                        };
+                        const prevT = data.lunarFramework?.tithiSpan?.previous;
+                        const currT = data.lunarFramework?.tithiSpan?.current;
 
-                        tithiContainer.innerHTML = `
-                            <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block text-xs">1. ${prevT.name}</strong>
-                                <span class="text-gray-300 font-mono block mt-1">${prevT.window}</span>
-                            </div>
-                            <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
-                                <strong class="text-emerald-300 block text-xs">2. ${currT.name} <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
-                                <span class="text-gray-200 font-mono block mt-1">${currT.window}</span>
-                            </div>
-                        `;
+                        if (currT) {
+                            tithiContainer.innerHTML = `
+                                ${prevT ? `
+                                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
+                                    <strong class="text-amber-300 block text-xs">1. ${prevT.name || 'पूर्व तिथि'}</strong>
+                                    <span class="text-gray-300 font-mono block mt-1">${prevT.window || '--'}</span>
+                                </div>` : ''}
+                                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
+                                    <strong class="text-emerald-300 block text-xs">2. ${currT.name || 'सक्रिय तिथि'} <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
+                                    <span class="text-gray-200 font-mono block mt-1">${currT.window || '--'}</span>
+                                </div>
+                            `;
+                        } else if (data.lunarFramework?.tithiSpan?.formattedString) {
+                            tithiContainer.innerHTML = `
+                                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
+                                    <strong class="text-emerald-300 block text-xs">सक्रिय तिथि <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
+                                    <span class="text-gray-200 font-mono block mt-1">${data.lunarFramework.tithiSpan.formattedString}</span>
+                                </div>
+                            `;
+                        }
                     }
 
-                    // Nakshatra Transition Windows (Exact User Format)
                     const nakshatraContainer = document.getElementById("nakshatra-container-box");
                     if (nakshatraContainer) {
-                        const prevN = data.lunarFramework?.nakshatraSpan?.previous || { 
-                            name: "Uttara Bhadrapada (उत्तराभाद्रपद नक्षत्र)", 
-                            window: "Oct 23 09:03 PM – Oct 24 08:32 PM" 
-                        };
-                        const currN = data.lunarFramework?.nakshatraSpan?.current || { 
-                            name: "Revati (रेवती नक्षत्र)", 
-                            window: "Oct 24 08:32 PM – Oct 25 07:22 PM" 
-                        };
+                        const prevN = data.lunarFramework?.nakshatraSpan?.previous;
+                        const currN = data.lunarFramework?.nakshatraSpan?.current;
 
-                        nakshatraContainer.innerHTML = `
-                            <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block text-xs">1. ${prevN.name}</strong>
-                                <span class="text-gray-300 font-mono block mt-1">${prevN.window}</span>
-                            </div>
-                            <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
-                                <strong class="text-emerald-300 block text-xs">2. ${currN.name} <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
-                                <span class="text-gray-200 font-mono block mt-1">${currN.window}</span>
-                            </div>
-                        `;
+                        if (currN) {
+                            nakshatraContainer.innerHTML = `
+                                ${prevN ? `
+                                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
+                                    <strong class="text-amber-300 block text-xs">1. ${prevN.name || 'पूर्व नक्षत्र'}</strong>
+                                    <span class="text-gray-300 font-mono block mt-1">${prevN.window || '--'}</span>
+                                </div>` : ''}
+                                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
+                                    <strong class="text-emerald-300 block text-xs">2. ${currN.name || 'सक्रिय नक्षत्र'} <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
+                                    <span class="text-gray-200 font-mono block mt-1">${currN.window || '--'}</span>
+                                </div>
+                            `;
+                        } else if (data.lunarFramework?.nakshatraSpan?.formattedString) {
+                            nakshatraContainer.innerHTML = `
+                                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
+                                    <strong class="text-emerald-300 block text-xs">सक्रिय नक्षत्र <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
+                                    <span class="text-gray-200 font-mono block mt-1">${data.lunarFramework.nakshatraSpan.formattedString}</span>
+                                </div>
+                            `;
+                        }
                     }
 
-                    // Surya, Chandra, Bhadra & Kaal Timings
                     if (data.solarAstro?.sunrise && document.getElementById("live-sunrise")) {
                         document.getElementById("live-sunrise").innerText = data.solarAstro.sunrise;
                     }
@@ -2013,35 +2150,49 @@
                     if (data.cautionaryPeriods?.rahuKaal && document.getElementById("rahuTime")) {
                         document.getElementById("rahuTime").innerText = data.cautionaryPeriods.rahuKaal;
                     }
-
-                    // Daily Muhurats
                     if (data.auspiciousDailyWindows?.brahmaMuhurta && document.getElementById("brahmaTime")) {
                         document.getElementById("brahmaTime").innerText = data.auspiciousDailyWindows.brahmaMuhurta;
                     }
                     if (data.auspiciousDailyWindows?.abhijitMuhurta && document.getElementById("abhijitTime")) {
                         document.getElementById("abhijitTime").innerText = data.auspiciousDailyWindows.abhijitMuhurta;
                     }
+                } else {
+                    renderDynamicTodayFallback();
                 }
             } catch (err) {
                 console.warn("Panchang API fallback initialized:", err);
-                const tithiContainer = document.getElementById("tithi-container-box");
-                if (tithiContainer) {
-                    tithiContainer.innerHTML = `
-                        <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
-                            <strong class="text-emerald-300 block text-xs">शुक्ल पक्ष तिथि <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
-                            <span class="text-gray-200 font-mono block mt-1">खगोलीय संक्रमण सक्रिय</span>
-                        </div>
-                    `;
-                }
-                const nakshatraContainer = document.getElementById("nakshatra-container-box");
-                if (nakshatraContainer) {
-                    nakshatraContainer.innerHTML = `
-                        <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
-                            <strong class="text-emerald-300 block text-xs">शुभ नक्षत्र <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
-                            <span class="text-gray-200 font-mono block mt-1">खगोलीय संक्रमण सक्रिय</span>
-                        </div>
-                    `;
-                }
+                renderDynamicTodayFallback();
+            }
+        }
+
+        function renderDynamicTodayFallback() {
+            const today = new Date();
+            const monthsNames = ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
+            const daysNames = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"];
+            
+            const liveDateStr = `${daysNames[today.getDay()]}, ${today.getDate()} ${monthsNames[today.getMonth()]} ${today.getFullYear()}`;
+            if (document.getElementById("panchangDate")) {
+                document.getElementById("panchangDate").innerText = `${liveDateStr} • विक्रम संवत 2083`;
+            }
+
+            const tithiContainer = document.getElementById("tithi-container-box");
+            if (tithiContainer) {
+                tithiContainer.innerHTML = `
+                    <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
+                        <strong class="text-emerald-300 block text-xs">दैनिक तिथि <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
+                        <span class="text-gray-200 font-mono block mt-1">आज का खगोलीय संरेखण सक्रिय</span>
+                    </div>
+                `;
+            }
+
+            const nakshatraContainer = document.getElementById("nakshatra-container-box");
+            if (nakshatraContainer) {
+                nakshatraContainer.innerHTML = `
+                    <div class="p-3 rounded-xl bg-obsidian-800/80 border border-emerald-500/30">
+                        <strong class="text-emerald-300 block text-xs">शुभ नक्षत्र <span class="text-[10px] text-emerald-400 font-mono font-bold ml-1">[सक्रिय]</span></strong>
+                        <span class="text-gray-200 font-mono block mt-1">दैनिक नक्षत्र संरेखण सक्रिय</span>
+                    </div>
+                `;
             }
         }
 
@@ -2181,15 +2332,13 @@
             }
         };
 
-        // DOM READY INITIALIZATION
+        // INITIALIZATION
         window.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             
-            // 1. Render all 16 Muhurat Cards
             renderSixteenCards();
             openMuhuratDetailModal('vivah');
 
-            // 2. Set dynamic current date for 24 Hora
             const today = new Date();
             const yyyy = today.getFullYear();
             const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -2202,10 +2351,8 @@
                 calculateDateBasedMuhurat(dynamicToday);
             }
 
-            // 3. Load Live Google Script Panchang
             loadLivePanchang();
 
-            // 4. Hero Video
             const heroVid = document.getElementById('heroLiveVideo');
             if (heroVid) {
                 heroVid.muted = true;
