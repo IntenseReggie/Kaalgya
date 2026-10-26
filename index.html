@@ -229,48 +229,45 @@
         </span>
     </div>
 
-   <!-- START: HEADER_NAV (Updated with Social Links on Left & Proper Spacing) -->
-    <header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-3 sm:px-6 py-3">
-        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
-            
-            <!-- Left Side: Social Media Links (Replacing Logo in Header) -->
-            <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <a href="https://youtube.com/@Kaalgya" target="_blank" rel="noopener noreferrer" title="YouTube" class="w-8 h-8 rounded-full bg-red-600/90 hover:bg-red-500 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-md">
-                    <i data-lucide="youtube" class="w-4 h-4"></i>
-                </a>
-                <a href="https://instagram.com/harmonyhorizonheaven" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-8 h-8 rounded-full bg-pink-600/90 hover:bg-pink-500 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-md">
-                    <i data-lucide="instagram" class="w-4 h-4"></i>
-                </a>
-                <a href="https://facebook.com/Kaalgya" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-8 h-8 rounded-full bg-blue-600/90 hover:bg-blue-500 text-white flex items-center justify-center transition-transform hover:scale-110 shadow-md">
-                    <i data-lucide="facebook" class="w-4 h-4"></i>
-                </a>
+   <!-- START: HEADER_NAV -->
+<header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3 sm:py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3 sm:gap-4">
+            <div class="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black shadow-[0_0_25px_rgba(212,175,55,0.5)] overflow-hidden flex-shrink-0">
+                <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
+                    <source src="logo.mp4" type="video/mp4">
+                </video>
             </div>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden xl:flex items-center gap-4 text-xs font-semibold text-gray-300">
-                <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="navAbout">मेरे बारे में</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="eye" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="navVision">मेरा सपना</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="moon" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="navPanchang">सूक्ष्म पंचांग</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-gold-300 font-bold"><i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navMuhurat">16 संस्कार मुहूर्त</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-gold-300 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navHora">24 होरा चक्र</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('tijori-full')" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navTijori">भावनाओं की तिजोरी</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('brahmastra-full')" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navBrahmastra">ब्रह्मास्त्र</span></a>
-                <a href="javascript:void(0)" onclick="navigateToPage('pratyangira-full')" class="hover:text-red-400 transition-colors flex items-center gap-1 text-red-300 font-bold"><i data-lucide="flame" class="w-3.5 h-3.5 text-red-500"></i> <span data-i18n="navPratyangira">प्रत्यंगिरा</span></a>
-            </nav>
-
-            <!-- Right Actions -->
-            <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-                <button onclick="toggleSiteLanguage()" id="lang-switch-btn" class="px-3 py-1.5 rounded-full border border-gold-500/60 bg-obsidian-900 text-gold-300 hover:text-white font-mono text-[11px] font-extrabold uppercase transition-all shadow-inner cursor-pointer">
-                    EN / हिन्दी
-                </button>
-                <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-3.5 sm:px-5 py-2 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-1.5 cursor-pointer">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> <span data-i18n="ctaBook">परामर्श लें</span>
-                </button>
+            <div>
+                <span class="font-cinzel font-black text-2xl sm:text-3xl md:text-4xl tracking-[0.22em] gold-gradient-text block leading-none">KAALGYA</span>
+                <span class="text-[8px] sm:text-[10px] tracking-[0.18em] text-gold-300 font-semibold uppercase font-sans mt-1 block">Ancient Wisdom • Modern Intelligence</span>
             </div>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold text-gray-300">
+            <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="navAbout">मेरे बारे में</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="eye" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="navVision">मेरा सपना</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="moon" class="w-3.5 h-3.5 text-gold-500"></i> <span data-i18n="navPanchang">सूक्ष्म पंचांग</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-gold-300 font-bold"><i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navMuhurat">16 संस्कार मुहूर्त</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-gold-300 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navHora">24 होरा चक्र</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('tijori-full')" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navTijori">भावनाओं की तिजोरी</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('brahmastra-full')" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="zap" class="w-3.5 h-3.5 text-amber-400"></i> <span data-i18n="navBrahmastra">ब्रह्मास्त्र</span></a>
+            <a href="javascript:void(0)" onclick="navigateToPage('pratyangira-full')" class="hover:text-red-400 transition-colors flex items-center gap-1 text-red-300 font-bold"><i data-lucide="flame" class="w-3.5 h-3.5 text-red-500"></i> <span data-i18n="navPratyangira">प्रत्यंगिरा</span></a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+            <button onclick="toggleSiteLanguage()" id="lang-switch-btn" class="px-3.5 py-1.5 rounded-full border border-gold-500/60 bg-obsidian-900 text-gold-300 hover:text-white font-mono text-[11px] font-extrabold uppercase transition-all shadow-inner cursor-pointer">
+                EN / हिन्दी
+            </button>
+            <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 sm:px-5 py-2.5 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-1.5 cursor-pointer">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i> <span data-i18n="ctaBook">परामर्श लें</span>
+            </button>
         </div>
-    </header>
-    <!-- END: HEADER_NAV -->
-
+    </div>
+</header>
+<!-- END: HEADER_NAV -->
+    
 
             <!-- Desktop Nav Links -->
             <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold text-gray-300">
@@ -1153,48 +1150,57 @@
     </section>
     <!-- END: PRICING_GRID -->
 
-    <!-- FLOATING SOCIALS & WHATSAPP WIDGET (Stacked above WhatsApp) -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-2.5">
-        <a href="https://youtube.com/@Kaalgya" target="_blank" rel="noopener noreferrer" title="YouTube @Kaalgya" class="p-3 rounded-full bg-red-600 hover:bg-red-500 text-white shadow-lg transition-all flex items-center justify-center hover:scale-110">
-            <i data-lucide="youtube" class="w-4 h-4"></i>
-        </a>
-        <a href="https://instagram.com/harmonyhorizonheaven" target="_blank" rel="noopener noreferrer" title="Instagram" class="p-3 rounded-full bg-pink-600 hover:bg-pink-500 text-white shadow-lg transition-all flex items-center justify-center hover:scale-110">
-            <i data-lucide="instagram" class="w-4 h-4"></i>
-        </a>
-        <a href="https://facebook.com/Kaalgya" target="_blank" rel="noopener noreferrer" title="Facebook" class="p-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg transition-all flex items-center justify-center hover:scale-110">
-            <i data-lucide="facebook" class="w-4 h-4"></i>
-        </a>
-        <!-- WhatsApp Button at bottom -->
-        <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" class="p-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all flex items-center justify-center hover:scale-110">
-            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/></svg>
-        </a>
-    </div>
-    
-   <!-- START: FOOTER_SECTION (With Large Live Video Logo & Side-by-Side KAALGYA) -->
-    <footer class="border-t border-gold-500/20 cosmic-glass py-12 px-4 text-xs text-gray-400 relative">
-        <div class="max-w-4xl mx-auto flex flex-col items-center justify-center text-center gap-6">
-            
-            <!-- Large Logo Video & KAALGYA Side-by-side -->
-            <div onclick="navigateToPage('home')" class="flex items-center gap-4 cursor-pointer">
-                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-gold-500 p-1 bg-black flex-shrink-0 shadow-[0_0_25px_rgba(212,175,55,0.4)] overflow-hidden">
-                    <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
-                        <source src="logo.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="text-left">
-                    <span class="font-cinzel text-2xl sm:text-3xl font-black gold-gradient-text block leading-tight tracking-wider">KAALGYA</span>
-                    <span class="text-[10px] sm:text-xs font-mono text-gold-300 tracking-[0.2em] uppercase block mt-1">ANCIENT WISDOM • MODERN INTELLIGENCE</span>
-                </div>
-            </div>
+   <!-- FLOATING SOCIALS & WHATSAPP WIDGET (With visible Monograms) -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-2.5">
+    <a href="https://youtube.com/@Kaalgya" target="_blank" rel="noopener noreferrer" title="YouTube @Kaalgya" class="w-11 h-11 rounded-full bg-red-600 hover:bg-red-500 text-white shadow-lg transition-all flex items-center justify-center hover:scale-110">
+        <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+    </a>
+    <a href="https://instagram.com/harmonyhorizonheaven" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-11 h-11 rounded-full bg-pink-600 hover:bg-pink-500 text-white shadow-lg transition-all flex items-center justify-center hover:scale-110">
+        <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+    </a>
+    <a href="https://facebook.com/Kaalgya" target="_blank" rel="noopener noreferrer" title="Facebook" class="w-11 h-11 rounded-full bg-blue-600 hover:bg-blue-500 text-white shadow-lg transition-all flex items-center justify-center hover:scale-110">
+        <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+    </a>
+    <!-- WhatsApp Button at bottom -->
+    <a href="https://wa.me/919506795756?text=नमस्ते%20कालज्ञ,%20मुझे%20परामर्श%20हेतु%20जानकारी%20चाहिए।" target="_blank" rel="noopener noreferrer" title="WhatsApp Chat" class="w-12 h-12 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-[0_0_20px_rgba(16,185,129,0.5)] transition-all flex items-center justify-center hover:scale-110">
+        <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.839.814 2.791.814 3.18 0 5.766-2.587 5.766-5.766 0-3.18-2.586-5.766-5.766-5.766zm9.969 5.766c0 5.514-4.486 10-10 10-1.745 0-3.376-.449-4.809-1.236l-7.191 1.882 1.916-6.996c-.881-1.488-1.392-3.226-1.392-5.086 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/></svg>
+    </a>
+</div>
 
-            <!-- Copyright & Contact Info -->
-            <div class="text-gray-300 font-sans leading-relaxed pt-2 border-t border-gold-500/20 w-full max-w-lg">
+    
+   <!-- START: FOOTER_SECTION (Logo & Kaalgya on side, Social Links above copyright) -->
+<footer class="border-t border-gold-500/20 cosmic-glass py-12 px-4 text-xs text-gray-400 relative">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left Side: Logo & KAALGYA side-by-side -->
+        <div onclick="navigateToPage('home')" class="flex items-center gap-4 cursor-pointer">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-gold-500 p-0.5 bg-black flex-shrink-0 shadow-[0_0_25px_rgba(212,175,55,0.4)] overflow-hidden">
+                <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
+                    <source src="logo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="text-left">
+                <span class="font-cinzel text-xl sm:text-2xl font-black gold-gradient-text block leading-tight tracking-wider">KAALGYA</span>
+                <span class="text-[9px] font-mono text-gold-300 tracking-[0.2em] uppercase block mt-0.5">ANCIENT WISDOM • MODERN INTELLIGENCE</span>
+            </div>
+        </div>
+
+        <!-- Right Side: Social Links & Copyright Info -->
+        <div class="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+            <div class="flex items-center gap-4 text-gold-300 font-semibold">
+                <a href="https://youtube.com/@Kaalgya" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="youtube" class="w-4 h-4 text-red-500"></i> YouTube</a>
+                <a href="https://instagram.com/harmonyhorizonheaven" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="instagram" class="w-4 h-4 text-pink-500"></i> Instagram</a>
+                <a href="https://facebook.com/Kaalgya" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1.5"><i data-lucide="facebook" class="w-4 h-4 text-blue-500"></i> Facebook</a>
+            </div>
+            <div class="text-gray-300 font-sans leading-relaxed">
                 © 2026 KAALGYA. सर्वाधिकार सुरक्षित। 15 वर्षों की प्रामाणिक वैदिक परंपरा।<br>
                 Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>
             </div>
         </div>
-    </footer>
-    <!-- END: FOOTER_SECTION -->
+
+    </div>
+</footer>
+<!-- END: FOOTER_SECTION -->
     
     <!-- MASTER JAVASCRIPT ENGINE -->
     <script>
