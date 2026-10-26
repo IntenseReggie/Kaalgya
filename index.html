@@ -493,7 +493,61 @@
     <!-- ========================================== -->
     <!-- START: SECTION_3_PANCHANG_AND_MUHURAT      -->
     <!-- ========================================== -->
+<!-- START: SUKOON_KAKSH -->
+    <section id="sukoon-kaksh" class="py-16 px-4 max-w-5xl mx-auto">
+        <div class="master-banner-slot">
+            <img src="banner-sukoon.jpg" onerror="this.style.display='none'" alt="संकट हरण व सुकून कक्ष">
+            <div class="master-banner-badge">
+                <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide" data-i18n="bannerSukoon">संकट हरण व सुकून कक्ष</h2>
+            </div>
+        </div>
 
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+            <button onclick="selectProblem('karz')" id="btn-karz" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gold-300 font-semibold cursor-pointer">💸 भारी कर्ज / व्यापार नुकसान</button>
+            <button onclick="selectProblem('career')" id="btn-career" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">💼 नौकरी / करियर तनाव</button>
+            <button onclick="selectProblem('breakup')" id="btn-breakup" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">💔 दांपत्य कलह / विवाह विलंब</button>
+            <button onclick="selectProblem('anxiety')" id="btn-anxiety" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">🌑 डिप्रेशन व अनिद्रा</button>
+            <button onclick="selectProblem('rahu')" id="btn-rahu" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">🪐 राहु-शनि दशा / पितृ दोष</button>
+        </div>
+
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-4">
+            <h3 id="console-title" class="text-xl font-bold text-gold-300 font-cinzel mb-2">कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान</h3>
+            <p id="console-message" class="text-sm text-gray-200 leading-relaxed font-sans">
+                "समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है।"
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                <div class="bg-obsidian-900 border border-emerald-500/30 rounded-2xl p-4 text-xs">
+                    <strong class="text-emerald-400 block mb-1">✓ क्या करें:</strong>
+                    <span id="console-kya-kare">मंगलवार के दिन ऋणमोचक मंगल स्तोत्र का पाठ करें तथा 3 चुटकी लाल मसूर की दाल बहते जल में प्रवाहित करें।</span>
+                </div>
+                <div class="bg-obsidian-900 border border-rose-500/30 rounded-2xl p-4 text-xs">
+                    <strong class="text-rose-400 block mb-1">✗ क्या न करें:</strong>
+                    <span id="console-kya-na-kare">तामसिक भोजन, मदिरा, झूठ बोलने और दूसरों का हक मारने से पूर्णतः बचें।</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-obsidian-900 border border-gold-500/30 rounded-2xl p-4 text-xs">
+                    <strong class="text-gold-400 block mb-1">⏳ कितने दिन / कब तक करें:</strong>
+                    <span id="console-kab-tak">नियमित रूप से कम से कम 43 दिनों तक या लगातार 7 मंगलवार तक करें।</span>
+                </div>
+                <div class="bg-obsidian-900 border border-amber-500/30 rounded-2xl p-4 text-xs">
+                    <strong class="text-amber-400 block mb-1">⚠️ विशेष नोट:</strong>
+                    <span id="console-note">नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।</span>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <button onclick="openBookingModal('Finance', 'Sukoon Kaksh Special')" class="px-5 py-2.5 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase flex items-center gap-1.5 cursor-pointer">
+                    <i data-lucide="message-square" class="w-4 h-4"></i> मार्गदर्शन लें
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- END: SUKOON_KAKSH -->
+
+    
     <!-- PANCHANG PORTAL SECTION (HOME) -->
     <section id="panchang-section" class="py-16 px-4 max-w-6xl mx-auto">
         <div class="master-banner-slot">
@@ -934,60 +988,7 @@
     <!-- START: SECTION_4_UTILITIES_PRICING_ENGINE  -->
     <!-- ========================================== -->
 
-    <!-- START: SUKOON_KAKSH -->
-    <section id="sukoon-kaksh" class="py-16 px-4 max-w-5xl mx-auto">
-        <div class="master-banner-slot">
-            <img src="banner-sukoon.jpg" onerror="this.style.display='none'" alt="संकट हरण व सुकून कक्ष">
-            <div class="master-banner-badge">
-                <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide" data-i18n="bannerSukoon">संकट हरण व सुकून कक्ष</h2>
-            </div>
-        </div>
-
-        <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
-            <button onclick="selectProblem('karz')" id="btn-karz" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gold-300 font-semibold cursor-pointer">💸 भारी कर्ज / व्यापार नुकसान</button>
-            <button onclick="selectProblem('career')" id="btn-career" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">💼 नौकरी / करियर तनाव</button>
-            <button onclick="selectProblem('breakup')" id="btn-breakup" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">💔 दांपत्य कलह / विवाह विलंब</button>
-            <button onclick="selectProblem('anxiety')" id="btn-anxiety" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">🌑 डिप्रेशन व अनिद्रा</button>
-            <button onclick="selectProblem('rahu')" id="btn-rahu" class="problem-btn px-4 py-2 rounded-full border border-gold-500/40 cosmic-glass text-xs text-gray-300 font-medium cursor-pointer">🪐 राहु-शनि दशा / पितृ दोष</button>
-        </div>
-
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-4">
-            <h3 id="console-title" class="text-xl font-bold text-gold-300 font-cinzel mb-2">कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान</h3>
-            <p id="console-message" class="text-sm text-gray-200 leading-relaxed font-sans">
-                "समय का पहिया सदा एक सा नहीं रहता। जब कुंडली में छठा भाव या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है।"
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                <div class="bg-obsidian-900 border border-emerald-500/30 rounded-2xl p-4 text-xs">
-                    <strong class="text-emerald-400 block mb-1">✓ क्या करें:</strong>
-                    <span id="console-kya-kare">मंगलवार के दिन ऋणमोचक मंगल स्तोत्र का पाठ करें तथा 3 चुटकी लाल मसूर की दाल बहते जल में प्रवाहित करें।</span>
-                </div>
-                <div class="bg-obsidian-900 border border-rose-500/30 rounded-2xl p-4 text-xs">
-                    <strong class="text-rose-400 block mb-1">✗ क्या न करें:</strong>
-                    <span id="console-kya-na-kare">तामसिक भोजन, मदिरा, झूठ बोलने और दूसरों का हक मारने से पूर्णतः बचें।</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-obsidian-900 border border-gold-500/30 rounded-2xl p-4 text-xs">
-                    <strong class="text-gold-400 block mb-1">⏳ कितने दिन / कब तक करें:</strong>
-                    <span id="console-kab-tak">नियमित रूप से कम से कम 43 दिनों तक या लगातार 7 मंगलवार तक करें।</span>
-                </div>
-                <div class="bg-obsidian-900 border border-amber-500/30 rounded-2xl p-4 text-xs">
-                    <strong class="text-amber-400 block mb-1">⚠️ विशेष नोट:</strong>
-                    <span id="console-note">नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।</span>
-                </div>
-            </div>
-
-            <div class="pt-4">
-                <button onclick="openBookingModal('Finance', 'Sukoon Kaksh Special')" class="px-5 py-2.5 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase flex items-center gap-1.5 cursor-pointer">
-                    <i data-lucide="message-square" class="w-4 h-4"></i> मार्गदर्शन लें
-                </button>
-            </div>
-        </div>
-    </section>
-    <!-- END: SUKOON_KAKSH -->
-    
+        
     <!-- START: YOUTUBE_PLAYLISTS -->
     <section id="playlists-section" class="py-16 px-4 max-w-6xl mx-auto">
         <div class="master-banner-slot">
