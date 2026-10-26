@@ -233,11 +233,11 @@
 <header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-4 sm:py-5">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
         <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3 sm:gap-4">
-            <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black shadow-[0_0_25px_rgba(212,175,55,0.5)] overflow-hidden flex-shrink-0 my-auto">
-                <video autoplay loop muted playsinline webkit-playsinline class="w-full h-full object-cover rounded-full">
-                    <source src="logo.mp4" type="video/mp4">
-                </video>
-            </div>
+            <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-500/80 flex items-center justify-center bg-black shadow-[0_0_20px_rgba(212,175,55,0.4)] overflow-hidden flex-shrink-0">
+    <video autoplay loop muted playsinline webkit-playsinline class="absolute w-[200%] h-[200%] object-cover rounded-full" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <source src="logo.mp4" type="video/mp4">
+    </video>
+</div>
             <div>
                 <span class="font-cinzel font-black text-xl sm:text-2xl md:text-3xl tracking-[0.22em] gold-gradient-text block leading-none">KAALGYA</span>
                 <span class="text-[7px] sm:text-[9px] tracking-[0.18em] text-gold-300 font-semibold uppercase font-sans mt-1 block">Ancient Wisdom • Modern Intelligence</span>
@@ -292,59 +292,60 @@
     </header>
     <!-- END: HEADER_NAV -->
 
-<!-- START: HERO_SECTION -->
-        <section class="min-h-[80vh] flex items-center justify-center px-4 text-center">
-            <div class="max-w-5xl mx-auto flex flex-col items-center">
-                <div class="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[460px] md:h-[460px] mb-8 mx-auto flex items-center justify-center">
-                    <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
-                    <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
-                    
-                    <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_75px_rgba(212,175,55,0.7)] animate-aura-glow overflow-hidden relative flex items-center justify-center">
-                        <video 
-                            id="heroLiveVideo" 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline 
-                            webkit-playsinline 
-                            preload="auto" 
-                            class="absolute pointer-events-none max-w-none"
-                            style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
-                            <source src="logo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/40 bg-gold-500/10 mb-6">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                    <span class="text-xs text-gold-300 font-medium" data-i18n="heroBadge">15 वर्षों का गहन अनुसंधान • 5,000+ प्रामाणिक कुंडलियाँ</span>
-                </div>
-
-                <h1 class="text-4xl md:text-6xl font-extrabold font-cinzel text-white mb-4 leading-tight">
-                    DECODING <span class="gold-gradient-text">DESTINY.</span><br/>
-                    GUIDING <span class="gold-gradient-text">LIFE.</span>
-                </h1>
-
-                <p class="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-gold-400 uppercase mb-6 font-semibold">
-                    ANCIENT WISDOM • MODERN INTELLIGENCE
-                </p>
-                
-                <p class="max-w-2xl mx-auto text-sm md:text-base text-gray-300 mb-8 leading-relaxed font-sans" data-i18n="heroDesc">
-                    अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                    <button onclick="openBookingModal('General Consultation', 'Hero Button')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer">
-                        <i data-lucide="sparkles" class="w-4 h-4"></i> <span data-i18n="heroBtnConsult">परामर्श बुक करें</span>
-                    </button>
-                    <button onclick="navigateToPage('muhurat-full')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 hover:border-gold-400 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
-                        <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> <span data-i18n="heroBtnMuhurat">16 संस्कार मुहूर्त कोष</span>
-                    </button>
-                </div>
+<!-- START: HERO_SECTION (Fixed top padding so big logo doesn't hide under header) -->
+<section class="min-h-[80vh] pt-36 sm:pt-40 md:pt-48 pb-16 px-4 text-center flex items-center justify-center">
+    <div class="max-w-5xl mx-auto flex flex-col items-center">
+        <div class="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[460px] md:h-[460px] mb-8 mx-auto flex items-center justify-center">
+            <div class="absolute -inset-8 rounded-full border border-gold-500/20 animate-ping opacity-25 pointer-events-none"></div>
+            <div class="absolute -inset-4 rounded-full border border-gold-400/40 opacity-70 pointer-events-none"></div>
+            
+            <div class="w-full h-full rounded-full border-2 border-gold-400 bg-black shadow-[0_0_75px_rgba(212,175,55,0.7)] overflow-hidden relative flex items-center justify-center">
+                <video 
+                    id="heroLiveVideo" 
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline 
+                    webkit-playsinline 
+                    preload="auto" 
+                    class="absolute pointer-events-none max-w-none"
+                    style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
+                    <source src="logo.mp4" type="video/mp4">
+                </video>
             </div>
-        </section>
-        <!-- END: HERO_SECTION -->
+        </div>
 
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/40 bg-gold-500/10 mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs text-gold-300 font-medium" data-i18n="heroBadge">15 वर्षों का गहन अनुसंधान • 5,000+ प्रामाणिक कुंडलियाँ</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold font-cinzel text-white mb-4 leading-tight">
+            DECODING <span class="gold-gradient-text">DESTINY.</span><br/>
+            GUIDING <span class="gold-gradient-text">LIFE.</span>
+        </h1>
+
+        <p class="font-cinzel text-xs sm:text-sm tracking-[0.25em] text-gold-400 uppercase mb-6 font-semibold">
+            ANCIENT WISDOM • MODERN INTELLIGENCE
+        </p>
+        
+        <p class="max-w-2xl mx-auto text-sm md:text-base text-gray-300 mb-8 leading-relaxed font-sans" data-i18n="heroDesc">
+            अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+            <button onclick="openBookingModal('General Consultation', 'Hero Button')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer">
+                <i data-lucide="sparkles" class="w-4 h-4"></i> <span data-i18n="heroBtnConsult">परामर्श बुक करें</span>
+            </button>
+            <button onclick="navigateToPage('muhurat-full')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 hover:border-gold-400 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
+                <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> <span data-i18n="heroBtnMuhurat">16 संस्कार मुहूर्त कोष</span>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- END: HERO_SECTION -->
+
+    
         <!-- START: GURUJI_SECTION -->
         <section id="guruji" class="py-16 px-4 max-w-5xl mx-auto">
             <div class="cosmic-glass gold-border-glow rounded-3xl p-8 md:p-12 relative overflow-hidden">
