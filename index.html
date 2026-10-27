@@ -73,37 +73,39 @@
         }
     </script>
 
-   <style>
-    body {
-        background-color: #030305;
-        color: #E2E8F0;
-        overflow-x: hidden;
-        font-family: 'Plus Jakarta Sans', sans-serif;
-        scroll-behavior: smooth;
-    }
-    .celestial-pattern-bg {
-        background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 65%);
-        background-attachment: fixed;
-    }
-    .gold-gradient-text {
-        background: linear-gradient(135deg, #FFF9E6 0%, #F5D061 30%, #D4AF37 60%, #AA771C 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .cosmic-glass {
-        background: rgba(10, 12, 18, 0.92);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-    }
-    /* Page View Isolation - Prevents all jumps and overlaps */
-    .page-view {
-        display: none !important;
-    }
-    .page-view.active {
-        display: block !important;
-    }
-</style>
-    
+    <style>
+        body {
+            background-color: #030305;
+            color: #E2E8F0;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .celestial-pattern-bg {
+            background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 65%);
+            background-attachment: fixed;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF9E6 0%, #F5D061 30%, #D4AF37 60%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cosmic-glass {
+            background: rgba(10, 12, 18, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        
+        /* Page View Isolation - Prevents all jumps and overlaps */
+        .page-view {
+            display: none !important;
+            position: relative;
+            z-index: 10;
+        }
+        .page-view.active {
+            display: block !important;
+        }
+
         /* Anti-Clipping Badge for Labels */
         .master-banner-badge {
             position: relative;
@@ -132,15 +134,6 @@
             pointer-events: none !important;
             z-index: 0 !important;
             opacity: 0.65;
-        }
-
-        .page-view {
-            display: none;
-            position: relative;
-            z-index: 10;
-        }
-        .page-view.active {
-            display: block !important;
         }
 
         .modal-backdrop {
@@ -178,9 +171,9 @@
             <button onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('vastu-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="underline hover:text-white font-bold ml-1 cursor-pointer" data-i18n="bookSeat">स्थान सुरक्षित करें →</button>
         </span>
     </div>
-
+    
 <!-- START: HEADER_NAV -->
-<header class="fixed top-0 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3">
+<header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
         <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3">
             <div class="relative w-12 h-12 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black overflow-hidden flex-shrink-0">
@@ -204,15 +197,13 @@
         </nav>
 
         <div>
-            <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md">
+            <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer">
                 परामर्श लें
             </button>
         </div>
     </div>
 </header>
-    
-    <!-- END: HEADER_NAV -->
-    
+<!-- END: HEADER_NAV -->    
     
 
     
