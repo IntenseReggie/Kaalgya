@@ -73,7 +73,7 @@
         }
     </script>
 
-    <style>
+   <style>
     body {
         background-color: #030305;
         color: #E2E8F0;
@@ -81,82 +81,21 @@
         font-family: 'Plus Jakarta Sans', sans-serif;
         scroll-behavior: smooth;
     }
-
     .celestial-pattern-bg {
-        background-image: 
-            radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 65%),
-            radial-gradient(circle at 15% 15%, rgba(212, 175, 55, 0.03) 0%, transparent 40%),
-            radial-gradient(circle at 85% 85%, rgba(212, 175, 55, 0.03) 0%, transparent 40%);
+        background-image: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 65%);
         background-attachment: fixed;
     }
-
     .gold-gradient-text {
         background: linear-gradient(135deg, #FFF9E6 0%, #F5D061 30%, #D4AF37 60%, #AA771C 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-
-    .crimson-gradient-text {
-        background: linear-gradient(135deg, #FFAEAE 0%, #FF4D4D 40%, #B91C1C 80%, #7F1D1D 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .gold-border-glow {
-        border: 1px solid rgba(212, 175, 55, 0.35);
-        box-shadow: 0 0 20px -5px rgba(212, 175, 55, 0.25);
-    }
-
-    .gold-border-glow:hover {
-        border-color: rgba(212, 175, 55, 0.75);
-        box-shadow: 0 0 30px 0px rgba(212, 175, 55, 0.45);
-    }
-
     .cosmic-glass {
         background: rgba(10, 12, 18, 0.92);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
     }
-
-    .master-banner-slot {
-        position: relative;
-        width: 100%;
-        height: 220px;
-        border-radius: 1.5rem;
-        overflow: hidden;
-        margin-bottom: 2rem;
-        border: 1.5px solid rgba(212, 175, 55, 0.4);
-        box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
-        background: linear-gradient(135deg, #0b0d14 0%, #17120a 50%, #05060a 100%);
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-    }
-
-    @media (min-width: 768px) {
-        .master-banner-slot {
-            height: 280px;
-        }
-    }
-
-    .master-banner-slot img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.6s ease;
-        z-index: 1;
-    }
-
-    .master-banner-slot:hover img {
-        transform: scale(1.03);
-    }
-
-    /* --- STRICT PAGE VIEW ISOLATION (Fixes Jumps & Overlaps) --- */
-    <style>
-    /* Strict isolation so views don't overlap or leak */
+    /* Page View Isolation - Prevents all jumps and overlaps */
     .page-view {
         display: none !important;
     }
@@ -241,38 +180,38 @@
     </div>
 
 <!-- START: HEADER_NAV -->
-<header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3 sm:py-4">
+<header class="fixed top-0 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3 sm:gap-4">
-            <div class="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black shadow-[0_0_25px_rgba(212,175,55,0.5)] overflow-hidden flex-shrink-0">
-                <video autoplay loop muted playsinline webkit-playsinline preload="auto" class="absolute pointer-events-none max-w-none rounded-full" style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
+        <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3">
+            <div class="relative w-12 h-12 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black overflow-hidden flex-shrink-0">
+                <video autoplay loop muted playsinline class="absolute pointer-events-none max-w-none rounded-full" style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
                     <source src="logo.mp4" type="video/mp4">
                 </video>
             </div>
             <div>
-                <span class="font-cinzel font-black text-2xl sm:text-3xl md:text-4xl tracking-[0.22em] gold-gradient-text block leading-none">KAALGYA</span>
-                <span class="text-[8px] sm:text-[10px] tracking-[0.18em] text-gold-300 font-semibold uppercase font-sans mt-1 block">Ancient Wisdom • Modern Intelligence</span>
+                <span class="font-cinzel font-black text-2xl gold-gradient-text block leading-none">KAALGYA</span>
+                <span class="text-[8px] tracking-[0.18em] text-gold-300 font-semibold uppercase mt-1 block">Ancient Wisdom • Modern Intelligence</span>
             </div>
         </a>
 
-        <!-- Desktop Nav Links -->
         <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold text-gray-300">
-            <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="user" class="w-3.5 h-3.5 text-gold-500"></i> मेरे बारे में</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="eye" class="w-3.5 h-3.5 text-gold-500"></i> मेरा सपना</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="hover:text-gold-400 transition-colors flex items-center gap-1"><i data-lucide="moon" class="w-3.5 h-3.5 text-gold-500"></i> सूक्ष्म पंचांग</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-gold-300 font-bold"><i data-lucide="calendar" class="w-3.5 h-3.5 text-amber-400"></i> 16 संस्कार मुहूर्त</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-gold-300 font-bold"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i> 24 होरा चक्र</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => { document.getElementById('tijori-section').scrollIntoView({behavior:'smooth'}); }, 100);" class="hover:text-amber-400 transition-colors flex items-center gap-1 text-amber-300 font-bold"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i> Bhawna ki Tijori (Feeling Vault)</a>
+            <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors">मेरे बारे में</a>
+            <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors">मेरा सपना</a>
+            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-gold-400 transition-colors">सूक्ष्म पंचांग</a>
+            <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 text-gold-300 font-bold">16 संस्कार मुहूर्त</a>
+            <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 text-gold-300 font-bold">24 होरा चक्र</a>
+            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('tijori-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-amber-400 text-amber-300 font-bold">भावनाओं की तिजोरी</a>
         </nav>
 
-        <div class="flex items-center gap-3">
-            <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 sm:px-5 py-2.5 rounded-full border border-gold-500 bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-[11px] sm:text-xs tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(212,175,55,0.4)] flex items-center gap-1.5 cursor-pointer">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i> परामर्श लें
+        <div>
+            <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md">
+                परामर्श लें
             </button>
         </div>
     </div>
 </header>
-<!-- END: HEADER_NAV -->
+    
+    <!-- END: HEADER_NAV -->
     
     
 
@@ -319,11 +258,11 @@
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-    <button onclick="openBookingModal('General Consultation', 'Hero Button')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg cursor-pointer">
-        <i data-lucide="sparkles" class="w-4 h-4"></i> परामर्श बुक करें
+    <button onclick="openBookingModal('General Consultation', 'Hero Button')" class="px-8 py-3.5 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase shadow-lg cursor-pointer">
+        परामर्श बुक करें
     </button>
-    <button onclick="navigateToPage('muhurat-full')" class="w-full sm:w-auto px-8 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 hover:border-gold-400 text-gold-300 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer">
-        <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> 16 संस्कार मुहूर्त कोष
+    <button onclick="navigateToPage('muhurat-full')" class="px-8 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 text-gold-300 font-bold text-xs uppercase shadow-lg cursor-pointer">
+        16 संस्कार मुहूर्त कोष
     </button>
 </div>
     </div>
@@ -1365,29 +1304,32 @@
         const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
 
        // Navigation Handler (Updated for Brahmastra & Pratyangira)
-        function navigateToPage(pageId) {
-            // Hide all views completely
-            document.querySelectorAll('.page-view').forEach(el => {
-                el.classList.remove('active');
-                el.style.display = 'none';
-            });
-            
-            // Find and show the target view
-            const targetView = document.getElementById(`view-${pageId}`);
-            if (targetView) {
-                targetView.classList.add('active');
-                targetView.style.display = 'block';
-            }
-            
-            // Instantly snap scroll to top without any jarring jump
-            window.scrollTo({ top: 0, behavior: 'instant' });
+        <script>
+function navigateToPage(pageId) {
+    // Hide all views completely
+    document.querySelectorAll('.page-view').forEach(el => {
+        el.classList.remove('active');
+        el.style.display = 'none';
+    });
+    
+    // Show target view
+    const targetView = document.getElementById(`view-${pageId}`);
+    if (targetView) {
+        targetView.classList.add('active');
+        targetView.style.display = 'block';
+    } else {
+        console.error("View not found: view-" + pageId);
+    }
+    
+    // Instant scroll to top
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
-            // Re-render Lucide icons if present
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        }
-        
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}
+</script>       
+    
        // Sukoon Kaksh Updated Data with Kya Kare, Kya Na Kare, Kab Tak & Note
         const sukoonData = {
             karz: { 
