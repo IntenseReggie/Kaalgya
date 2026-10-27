@@ -189,9 +189,7 @@
         </div>
     </header>
 
-    <!-- ========================================== -->
-    <!-- VIEW: HOME PAGE                            -->
-    <!-- ========================================== -->
+    <!-- VIEW: HOME -->
     <div id="view-home" class="page-view active">
         <!-- HERO SECTION -->
         <section class="min-h-[80vh] pt-36 sm:pt-40 md:pt-48 pb-16 px-4 text-center flex items-center justify-center">
@@ -342,12 +340,12 @@
                         <label for="panchang-date-input" class="text-xs text-gold-300 font-semibold flex items-center gap-1.5 cursor-pointer">
                             <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> दिनांक चुनें:
                         </label>
-                        <input type="date" id="panchang-date-input" value="2026-10-27" onchange="fetchDatePanchang(this.value)" class="bg-transparent text-white font-mono font-bold text-xs focus:outline-none cursor-pointer">
+                        <input type="date" id="panchang-date-input" value="2026-10-27" onchange="updatePanchangDisplay(this.value)" class="bg-transparent text-white font-mono font-bold text-xs focus:outline-none cursor-pointer">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1" title="Live Synced"></span>
                     </div>
                 </div>
 
-                <!-- TITHI & NAKSHATRA MULTI-TRANSITION WINDOWS -->
+                <!-- TITHI & NAKSHATRA MULTI-RANGES -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
                         <div class="flex items-center gap-2 mb-3 text-gold-300 font-bold text-sm">
@@ -356,12 +354,12 @@
                         </div>
                         <div id="tithi-container-box" class="space-y-3 text-xs font-mono text-gray-200">
                             <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block">- Sukla Paksha Chaturdashi</strong>
-                                <span class="text-gray-300 block mt-1 pl-2">1. Oct 24 01:37 PM – Oct 25 11:56 AM</span>
+                                <strong class="text-amber-300 block">- शुक्ल पक्ष चतुर्दशी</strong>
+                                <span class="text-gray-300 block mt-1 pl-2">1. 24 अक्टूबर 01:37 PM – 25 अक्टूबर 11:56 AM</span>
                             </div>
                             <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block">- Sukla Paksha Purnima</strong>
-                                <span class="text-gray-300 block mt-1 pl-2">2. Oct 25 11:56 AM – Oct 26 09:41 AM</span>
+                                <strong class="text-amber-300 block">- शुक्ल पक्ष पूर्णिमा</strong>
+                                <span class="text-gray-300 block mt-1 pl-2">2. 25 अक्टूबर 11:56 AM – 26 अक्टूबर 09:41 AM</span>
                             </div>
                         </div>
                     </div>
@@ -373,12 +371,12 @@
                         </div>
                         <div id="nakshatra-container-box" class="space-y-3 text-xs font-mono text-gray-200">
                             <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block">- Revati</strong>
-                                <span class="text-gray-300 block mt-1 pl-2">1. Oct 24 08:32 PM – Oct 25 07:22 PM</span>
+                                <strong class="text-amber-300 block">- रेवती नक्षत्र</strong>
+                                <span class="text-gray-300 block mt-1 pl-2">1. 24 अक्टूबर 08:32 PM – 25 अक्टूबर 07:22 PM</span>
                             </div>
                             <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block">- Ashwini</strong>
-                                <span class="text-gray-300 block mt-1 pl-2">2. Oct 25 07:22 PM – Oct 26 05:41 PM</span>
+                                <strong class="text-amber-300 block">- अश्विनी नक्षत्र</strong>
+                                <span class="text-gray-300 block mt-1 pl-2">2. 25 अक्टूबर 07:22 PM – 26 अक्टूबर 05:41 PM</span>
                             </div>
                         </div>
                     </div>
@@ -747,9 +745,9 @@
                 </div>
             </div>
         </section>
-    </div> <!-- Close view-home -->
+    </div>
 
-    <!-- ========================================== -->
+<!-- ========================================== -->
     <!-- VIEW: ABOUT ME PAGE                        -->
     <!-- ========================================== -->
     <div id="view-about" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24">
@@ -939,7 +937,6 @@
 
     <!-- MASTER JAVASCRIPT ENGINE -->
     <script>
-        const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
         const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
 
         // Bulletproof Single Page Navigation
@@ -1036,95 +1033,6 @@
                 document.getElementById("console-kya-na-kare").innerText = info.kyaNaKare;
                 document.getElementById("console-kab-tak").innerText = info.kabTak;
                 document.getElementById("console-note").innerText = info.note;
-            }
-        }
-
-        // Panchang Multi-Transition Engine with Safe Fallback
-        async function fetchDatePanchang(targetDate = "") {
-            let endpoint = `${KAALGYA_BACKEND_URL}?action=getPanchang`;
-            if (targetDate) endpoint += `&date=${targetDate}`;
-
-            // Exact fallback multi-transition format requested by you
-            const defaultTithiHtml = `
-                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                    <strong class="text-amber-300 block">- Sukla Paksha Chaturdashi</strong>
-                    <span class="text-gray-300 block mt-1 pl-2">1. Oct 24 01:37 PM – Oct 25 11:56 AM</span>
-                </div>
-                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                    <strong class="text-amber-300 block">- Sukla Paksha Purnima</strong>
-                    <span class="text-gray-300 block mt-1 pl-2">2. Oct 25 11:56 AM – Oct 26 09:41 AM</span>
-                </div>
-            `;
-
-            const defaultNakshatraHtml = `
-                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                    <strong class="text-amber-300 block">- Revati</strong>
-                    <span class="text-gray-300 block mt-1 pl-2">1. Oct 24 08:32 PM – Oct 25 07:22 PM</span>
-                </div>
-                <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                    <strong class="text-amber-300 block">- Ashwini</strong>
-                    <span class="text-gray-300 block mt-1 pl-2">2. Oct 25 07:22 PM – Oct 26 05:41 PM</span>
-                </div>
-            `;
-
-            try {
-                const response = await fetch(endpoint);
-                const data = await response.json();
-                
-                if (data.status !== "success") throw new Error("API status not success");
-
-                if (!targetDate && document.getElementById("panchang-date-input")) {
-                    document.getElementById("panchang-date-input").value = data.requestedDate || "2026-10-27";
-                }
-
-                if (document.getElementById("calendarTitle")) {
-                    document.getElementById("calendarTitle").innerText = data.calendarDate || (targetDate || "सोमवार, 27 अक्टूबर 2026");
-                }
-                if (document.getElementById("solarTimings")) {
-                    document.getElementById("solarTimings").innerText = `सूर्योदय: ${data.solarCoordinates?.sunrise || '06:28 AM'} • सूर्यास्त: ${data.solarCoordinates?.sunset || '05:41 PM'} • मध्याह्न: ${data.solarCoordinates?.solarNoon || '12:04 PM'}`;
-                }
-                if (document.getElementById("live-sunrise")) document.getElementById("live-sunrise").innerText = data.solarCoordinates?.sunrise || '06:28 AM';
-                if (document.getElementById("live-sunset")) document.getElementById("live-sunset").innerText = data.solarCoordinates?.sunset || '05:41 PM';
-                if (document.getElementById("bhadraText")) document.getElementById("bhadraText").innerText = data.lunarFramework?.bhadraStatus || 'शुभ (भद्रा रहित)';
-                if (document.getElementById("rahuTime")) document.getElementById("rahuTime").innerText = data.cautionaryPeriods?.rahuKaal || '07:55 AM - 09:20 AM';
-
-                // Tithi Box Rendering
-                const tithiBox = document.getElementById("tithi-container-box");
-                if (tithiBox) {
-                    if (data.lunarFramework && data.lunarFramework.tithiList && data.lunarFramework.tithiList.length > 0) {
-                        tithiBox.innerHTML = data.lunarFramework.tithiList.map((t, idx) => `
-                            <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block">- ${t.name}</strong>
-                                <span class="text-gray-300 block mt-1 pl-2">${idx + 1}. ${t.timeSpan}</span>
-                            </div>
-                        `).join('');
-                    } else {
-                        tithiBox.innerHTML = defaultTithiHtml;
-                    }
-                }
-
-                // Nakshatra Box Rendering
-                const nakshatraBox = document.getElementById("nakshatra-container-box");
-                if (nakshatraBox) {
-                    if (data.lunarFramework && data.lunarFramework.nakshatraList && data.lunarFramework.nakshatraList.length > 0) {
-                        nakshatraBox.innerHTML = data.lunarFramework.nakshatraList.map((n, idx) => `
-                            <div class="p-3 rounded-xl bg-obsidian-800/80 border border-gold-500/20">
-                                <strong class="text-amber-300 block">- ${n.name}</strong>
-                                <span class="text-gray-300 block mt-1 pl-2">${idx + 1}. ${n.timeSpan}</span>
-                            </div>
-                        `).join('');
-                    } else {
-                        nakshatraBox.innerHTML = defaultNakshatraHtml;
-                    }
-                }
-
-            } catch (err) {
-                console.warn("Panchang API fallback applied due to:", err);
-                const tithiBox = document.getElementById("tithi-container-box");
-                if (tithiBox) tithiBox.innerHTML = defaultTithiHtml;
-
-                const nakshatraBox = document.getElementById("nakshatra-container-box");
-                if (nakshatraBox) nakshatraBox.innerHTML = defaultNakshatraHtml;
             }
         }
 
@@ -1292,6 +1200,11 @@
             `).join('');
         }
 
+        // Panchang Date Switcher Simulator
+        function updatePanchangDisplay(dateStr) {
+            document.getElementById("calendarTitle").innerText = `दिनांक: ${dateStr}`;
+        }
+
         // Tijori Submission -> Mailto kaalgya@gmail.com silently
         function submitTijoriEntry(e) {
             e.preventDefault();
@@ -1348,7 +1261,6 @@
 
         // Initialization
         document.addEventListener("DOMContentLoaded", () => {
-            fetchDatePanchang();
             renderSixteenSanskars();
             renderHoraFull();
             if (typeof lucide !== 'undefined') {
@@ -1358,3 +1270,4 @@
     </script>
 </body>
 </html>
+
