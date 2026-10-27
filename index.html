@@ -188,14 +188,14 @@
         </a>
 
         <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold text-gray-300">
-            <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors">मेरे बारे में</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors">मेरा सपना</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-gold-400 transition-colors">सूक्ष्म पंचांग</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 text-gold-300 font-bold">16 संस्कार मुहूर्त</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 text-gold-300 font-bold">24 होरा चक्र</a>
-            <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('tijori-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-amber-400 text-amber-300 font-bold">भावनाओं की तिजोरी</a>
-        </nav>
-
+    <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors cursor-pointer">मेरे बारे में</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors cursor-pointer">मेरा सपना</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-gold-400 transition-colors cursor-pointer">सूक्ष्म पंचांग</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer">16 संस्कार मुहूर्त</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer">24 होरा चक्र</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('tijori-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-amber-400 text-amber-300 font-bold cursor-pointer">भावनाओं की तिजोरी</a>
+</nav>
+        
         <div>
             <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer">
                 परामर्श लें
@@ -248,7 +248,7 @@
             अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
     <button onclick="openBookingModal('General Consultation', 'Hero Button')" class="px-8 py-3.5 rounded-xl bg-gold-500 text-black font-extrabold text-xs uppercase shadow-lg cursor-pointer">
         परामर्श बुक करें
     </button>
@@ -638,27 +638,29 @@
 
         // Navigation Handler (Instant Page View Switcher - No Jumps)
         function navigateToPage(pageId) {
-            // Hide all views completely and remove active class
-            document.querySelectorAll('.page-view').forEach(el => {
-                el.classList.remove('active');
-                el.style.display = 'none';
-            });
-            
-            // Find and activate the requested target view
-            const targetView = document.getElementById(`view-${pageId}`);
-            if (targetView) {
-                targetView.classList.add('active');
-                targetView.style.display = 'block';
-            }
-            
-            // Instantly snap to the top of the page without jarring jump
-            window.scrollTo({ top: 0, behavior: 'instant' });
+    // Sabhi views ko completely hide kar do
+    document.querySelectorAll('.page-view').forEach(el => {
+        el.classList.remove('active');
+        el.style.display = 'none';
+    });
+    
+    // Target view ko dhoond kar display block kar do
+    const targetView = document.getElementById(`view-${pageId}`);
+    if (targetView) {
+        targetView.classList.add('active');
+        targetView.style.display = 'block';
+    } else {
+        console.error("Target view nahi mila: view-" + pageId);
+    }
+    
+    // Bina kisi jarring jump ke seedha top par snap karo
+    window.scrollTo({ top: 0, behavior: 'instant' });
 
-            // Re-render Lucide icons if loaded on the page
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        }
+    // Icons ko re-render karo agar zaroorat ho
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}
         
         // Panchang Fetch Engine with Clean Transition Format
         async function fetchDatePanchang(targetDate = "") {
