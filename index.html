@@ -454,93 +454,92 @@
 
     
    <!-- PANCHANG PORTAL SECTION -->
-        <section id="panchang-section" class="py-16 px-4 max-w-6xl mx-auto">
-            <div class="master-banner-slot">
-                <img src="banner-panchang.jpg" onerror="this.style.display='none'" alt="दैनिक सूक्ष्म वैदिक पंचांग">
-                <div class="master-banner-badge">
-                    <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide">दैनिक सूक्ष्म वैदिक पंचांग</h2>
+    <section id="panchang-section" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="master-banner-slot">
+            <img src="banner-panchang.jpg" onerror="this.style.display='none'" alt="दैनिक सूक्ष्म वैदिक पंचांग">
+            <div class="master-banner-badge">
+                <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide">दैनिक सूक्ष्म वैदिक पंचांग</h2>
+            </div>
+        </div>
+
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 mb-6 border-b border-gold-500/30 gap-4">
+                <div>
+                    <h3 id="calendarTitle" class="text-lg md:text-xl font-bold font-cinzel text-white uppercase tracking-wider">पंचांग लोड हो रहा है...</h3>
+                    <div id="solarTimings" class="text-xs text-gold-300 font-mono mt-1">--</div>
+                </div>
+                <div class="flex items-center gap-2 bg-obsidian-900 border border-gold-500/40 px-3.5 py-2 rounded-2xl shadow-inner">
+                    <label for="panchang-date-input" class="text-xs text-gold-300 font-semibold flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> दिनांक चुनें:
+                    </label>
+                    <input type="date" id="panchang-date-input" onchange="fetchDatePanchang(this.value)" class="bg-transparent text-white font-mono font-bold text-xs focus:outline-none cursor-pointer">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1" title="Live Synced"></span>
                 </div>
             </div>
 
-            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 mb-6 border-b border-gold-500/30 gap-4">
-                    <div>
-                        <h3 id="calendarTitle" class="text-lg md:text-xl font-bold font-cinzel text-white uppercase tracking-wider">पंचांग लोड हो रहा है...</h3>
-                        <div id="solarTimings" class="text-xs text-gold-300 font-mono mt-1">--</div>
+            <!-- TITHI & NAKSHATRA TRANSITION WINDOWS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
+                    <div class="flex items-center gap-2 mb-3 text-gold-300 font-bold text-sm">
+                        <i data-lucide="moon" class="w-4 h-4 text-gold-400"></i>
+                        <span>तिथि (Tithi Transition)</span>
                     </div>
-                    <div class="flex items-center gap-2 bg-obsidian-900 border border-gold-500/40 px-3.5 py-2 rounded-2xl shadow-inner">
-                        <label for="panchang-date-input" class="text-xs text-gold-300 font-semibold flex items-center gap-1.5 cursor-pointer">
-                            <i data-lucide="calendar" class="w-4 h-4 text-gold-400"></i> दिनांक चुनें:
-                        </label>
-                        <input type="date" id="panchang-date-input" onchange="fetchDatePanchang(this.value)" class="bg-transparent text-white font-mono font-bold text-xs focus:outline-none cursor-pointer">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1" title="Live Synced"></span>
-                    </div>
+                    <div id="tithi-container-box" class="space-y-3 text-xs font-mono text-gray-200">--</div>
                 </div>
 
-                <!-- TITHI & NAKSHATRA TRANSITION WINDOWS (Clean Format) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
-                        <div class="flex items-center gap-2 mb-3 text-gold-300 font-bold text-sm">
-                            <i data-lucide="moon" class="w-4 h-4 text-gold-400"></i>
-                            <span>तिथि (Tithi Transition)</span>
-                        </div>
-                        <div id="tithi-container-box" class="space-y-3 text-xs font-mono text-gray-200">--</div>
+                <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
+                    <div class="flex items-center gap-2 mb-3 text-gold-300 font-bold text-sm">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-gold-400"></i>
+                        <span>नक्षत्र (Nakshatra Transition)</span>
                     </div>
-
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
-                        <div class="flex items-center gap-2 mb-3 text-gold-300 font-bold text-sm">
-                            <i data-lucide="sparkles" class="w-4 h-4 text-gold-400"></i>
-                            <span>नक्षत्र (Nakshatra Transition)</span>
-                        </div>
-                        <div id="nakshatra-container-box" class="space-y-3 text-xs font-mono text-gray-200">--</div>
-                    </div>
-                </div>
-
-                <!-- SOLAR STRIP -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                    <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                        <span class="text-amber-400/80 block mb-1">🌅 सूर्योदय</span>
-                        <strong id="live-sunrise" class="font-mono text-gold-200">--</strong>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                        <span class="text-amber-600/80 block mb-1">🌇 सूर्यास्त</span>
-                        <strong id="live-sunset" class="font-mono text-gold-200">--</strong>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                        <span class="text-blue-400/80 block mb-1">🌙 भद्रा स्थिति</span>
-                        <strong id="bhadraText" class="text-blue-200 font-medium">--</strong>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
-                        <span class="text-rose-400 block mb-1">⚠️ आज का राहुकाल</span>
-                        <strong id="rahuTime" class="font-mono text-rose-300 font-bold">--</strong>
-                    </div>
-                </div>
-
-                <!-- SHUBH & ASHUBH TIMINGS -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-emerald-500 border-gold-500/20">
-                        <h3 class="text-emerald-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
-                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> शुभ एवं प्रशस्त काल
-                        </h3>
-                        <div id="shubhTimings" class="text-xs text-gray-200 leading-relaxed space-y-2"></div>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-red-500 border-gold-500/20">
-                        <h3 class="text-red-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
-                            <i data-lucide="alert-triangle" class="w-4 h-4"></i> अशुभ / सावधानी काल
-                        </h3>
-                        <div id="ashubhTimings" class="text-xs text-gray-200 leading-relaxed space-y-2"></div>
-                    </div>
-                </div>
-
-                <div class="text-center pt-2">
-                    <button onclick="navigateToPage('hora-full')" class="px-6 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-md">
-                        24 होरा चक्र व विस्तृत दिशा-निर्देश खोलें →
-                    </button>
+                    <div id="nakshatra-container-box" class="space-y-3 text-xs font-mono text-gray-200">--</div>
                 </div>
             </div>
-        </section>
 
-    
+            <!-- SOLAR STRIP -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+                <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
+                    <span class="text-amber-400/80 block mb-1">🌅 सूर्योदय</span>
+                    <strong id="live-sunrise" class="font-mono text-gold-200">--</strong>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
+                    <span class="text-amber-600/80 block mb-1">🌇 सूर्यास्त</span>
+                    <strong id="live-sunset" class="font-mono text-gold-200">--</strong>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
+                    <span class="text-blue-400/80 block mb-1">🌙 भद्रा स्थिति</span>
+                    <strong id="bhadraText" class="text-blue-200 font-medium">--</strong>
+                </div>
+                <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/20 text-xs">
+                    <span class="text-rose-400 block mb-1">⚠️ आज का राहुकाल</span>
+                    <strong id="rahuTime" class="font-mono text-rose-300 font-bold">--</strong>
+                </div>
+            </div>
+
+            <!-- SHUBH & ASHUBH TIMINGS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-emerald-500 border-gold-500/20">
+                    <h3 class="text-emerald-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
+                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> शुभ एवं प्रशस्त काल
+                    </h3>
+                    <div id="shubhTimings" class="text-xs text-gray-200 leading-relaxed space-y-2"></div>
+                </div>
+                <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-red-500 border-gold-500/20">
+                    <h3 class="text-red-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
+                        <i data-lucide="alert-triangle" class="w-4 h-4"></i> अशुभ / सावधानी काल
+                    </h3>
+                    <div id="ashubhTimings" class="text-xs text-gray-200 leading-relaxed space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="text-center pt-2">
+                <button onclick="navigateToPage('hora-full')" class="px-6 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-md">
+                    24 होरा चक्र व विस्तृत दिशा-निर्देश खोलें →
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- 16 SHODASH SANSKARS HOMEPAGE PREVIEW -->
     <section id="muhurat-section" class="py-16 px-4 max-w-6xl mx-auto">
         <div class="master-banner-slot">
@@ -558,9 +557,6 @@
                 <p>
                     सनातन परंपरा में मुहूर्त और संस्कार जीवन के महत्वपूर्ण कार्यों को श्रद्धा, विधि और संकल्प के साथ जोड़ते हैं। विवाह हो, गृह प्रवेश, भूमि पूजन, विद्यारंभ या जीवन का कोई अन्य विशेष पड़ाव—उचित मुहूर्त का चयन परंपरागत पंचांग-विचार और कार्य की प्रकृति के अनुसार किया जाता है।
                 </p>
-                <p class="text-gray-400 text-xs">
-                    यहाँ जानें मुहूर्त का शास्त्रीय महत्व, षोडश संस्कारों की परंपरा और अपने विशेष कार्य के लिए समय चुनते समय किन बातों पर विचार किया जाता है।
-                </p>
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -571,7 +567,7 @@
         </div>
     </section>
 
-   <!-- ================================================= -->
+    <!-- ================================================= -->
     <!-- VIEW: 16 SHODASH SANSKARS FULL PAGE (muhurat-full) -->
     <!-- ================================================= -->
     <div id="view-muhurat-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-6xl mx-auto">
@@ -594,12 +590,52 @@
         </button>
 
         <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 space-y-6">
-            <div id="sanskarDetailHeader" class="border-b border-gold-500/20 pb-6">
-                <!-- Dynamic Header -->
-            </div>
+            <div id="sanskarDetailHeader" class="border-b border-gold-500/20 pb-6"></div>
+            <div id="sanskarDetailBody" class="space-y-6 text-sm text-gray-200 leading-relaxed"></div>
+        </div>
+    </div>
 
-            <div id="sanskarDetailBody" class="space-y-6 text-sm text-gray-200 leading-relaxed">
-                <!-- Dynamic Body -->
+    <!-- VIEW 2: ABOUT ME PAGE (Dedicated) -->
+    <div id="view-about" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer shadow-lg">
+                ← मुख्य पृष्ठ पर वापस जाएं
+            </button>
+            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 space-y-8">
+                <div class="flex flex-col md:flex-row items-center gap-8 pb-8 border-b border-gold-500/20">
+                    <div class="w-48 h-56 rounded-2xl overflow-hidden border-2 border-gold-400 shadow-[0_0_30px_rgba(212,175,55,0.4)] flex-shrink-0 bg-obsidian-900">
+                        <img src="guruji.jpg" onerror="this.src='guruji.JPG';" alt="Arambh Nath" class="w-full h-full object-cover" style="object-position: top center;">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <span class="text-gold-400 font-cinzel text-xs uppercase tracking-widest block mb-1">Arambh Nath • Founder & Master Practitioner</span>
+                        <h1 class="text-3xl md:text-4xl font-bold font-cinzel text-white">THE MIND BEHIND KAALGYA</h1>
+                        <p class="text-sm text-gold-200 mt-2 font-serif italic">"ज्ञान का उद्देश्य केवल भविष्य नहीं—जीवन के हर अवरोध को गणितीय सटीकता से भेदना है।"</p>
+                    </div>
+                </div>
+                <div class="space-y-6 text-sm text-gray-200 leading-relaxed font-sans">
+                    <p class="text-base text-gold-300 font-medium">हर रहस्य चमत्कार नहीं होता। कुछ रहस्य गहन अध्ययन की प्रतीक्षा करते हैं।</p>
+                    <p>मैं आरंभ नाथ हूँ। पिछले 15 से अधिक वर्षों और 5,000 से अधिक जन्मकुंडलियों के विश्लेषण के अनुभव ने मुझे सिखाया है कि किसी विषय की गहराई उसके दावों से नहीं, उसे समझने की दृष्टि से आती है।</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 3: MY VISION PAGE (Dedicated) -->
+    <div id="view-vision" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer shadow-lg">
+                ← मुख्य पृष्ठ पर वापस जाएं
+            </button>
+            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 space-y-8">
+                <div class="pb-6 border-b border-gold-500/20 text-center md:text-left">
+                    <span class="text-gold-400 font-cinzel text-xs uppercase tracking-widest block mb-1">Kaalgya Core Philosophy</span>
+                    <h1 class="text-3xl md:text-4xl font-bold font-cinzel text-white">THE KAALGYA VISION</h1>
+                    <p class="text-base text-gold-200 mt-2 font-serif italic">"काल से परे। सत्य की ओर।"</p>
+                </div>
+                <div class="space-y-6 text-sm text-gray-200 leading-relaxed font-sans">
+                    <p class="text-base text-gold-300 font-medium">एक प्राचीन दृष्टि। एक आधुनिक युग। ज्ञान को समझने का एक नया मार्ग।</p>
+                    <p>हम एक ऐसे भविष्य की कल्पना करते हैं जहाँ सनातन ज्ञान केवल पुस्तकों तक सीमित न रहे, ज्योतिष भविष्यवाणियों तक न सिमटे और तकनीक गहन अध्ययन का माध्यम बने।</p>
+                </div>
             </div>
         </div>
     </div>
@@ -630,39 +666,38 @@
         <div id="kgNightHoraFull" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- SECTION 3: MASTER PANCHANG & 16-MUHURAT    -->
-    <!-- ========================================== -->
+    <!-- MASTER SCRIPT -->
     <script>
         const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
 
-        // Navigation Handler (Instant Page View Switcher - No Jumps)
+        // Bulletproof Navigation Handler
         function navigateToPage(pageId) {
-    // Sabhi views ko completely hide kar do
-    document.querySelectorAll('.page-view').forEach(el => {
-        el.classList.remove('active');
-        el.style.display = 'none';
-    });
-    
-    // Target view ko dhoond kar display block kar do
-    const targetView = document.getElementById(`view-${pageId}`);
-    if (targetView) {
-        targetView.classList.add('active');
-        targetView.style.display = 'block';
-    } else {
-        console.error("Target view nahi mila: view-" + pageId);
-    }
-    
-    // Bina kisi jarring jump ke seedha top par snap karo
-    window.scrollTo({ top: 0, behavior: 'instant' });
+            document.querySelectorAll('.page-view').forEach(el => {
+                el.classList.remove('active');
+                el.style.display = 'none';
+            });
+            
+            // If home, show view-home (if wrapped) or scroll top
+            if (pageId === 'home') {
+                window.scrollTo({ top: 0, behavior: 'instant' });
+                return;
+            }
 
-    // Icons ko re-render karo agar zaroorat ho
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-}
+            const targetView = document.getElementById(`view-${pageId}`);
+            if (targetView) {
+                targetView.classList.add('active');
+                targetView.style.display = 'block';
+            } else {
+                console.error("View not found: view-" + pageId);
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
         
-        // Panchang Fetch Engine with Clean Transition Format
         async function fetchDatePanchang(targetDate = "") {
             let endpoint = `${KAALGYA_BACKEND_URL}?action=getPanchang`;
             if (targetDate) endpoint += `&date=${targetDate}`;
@@ -687,7 +722,6 @@
                 if (document.getElementById("bhadraText")) document.getElementById("bhadraText").innerText = data.lunarFramework.bhadraStatus;
                 if (document.getElementById("rahuTime")) document.getElementById("rahuTime").innerText = data.cautionaryPeriods.rahuKaal;
 
-                // Tithi Format (As requested)
                 const tithiBox = document.getElementById("tithi-container-box");
                 if (tithiBox && data.lunarFramework.tithiSpan) {
                     tithiBox.innerHTML = `
@@ -698,7 +732,6 @@
                     `;
                 }
 
-                // Nakshatra Format (As requested)
                 const nakshatraBox = document.getElementById("nakshatra-container-box");
                 if (nakshatraBox && data.lunarFramework.nakshatraSpan) {
                     nakshatraBox.innerHTML = `
@@ -709,7 +742,6 @@
                     `;
                 }
 
-                // Shubh & Ashubh with Do's and Don'ts
                 if (document.getElementById("shubhTimings")) {
                     document.getElementById("shubhTimings").innerHTML = `
                         <div><b class="text-emerald-300">ब्रह्म मुहूर्त (${data.auspiciousDailyWindows.brahmaMuhurta}):</b> साधना, ध्यान एवं मानसिक एकाग्रता के लिए सर्वोत्तम।</div>
@@ -727,7 +759,6 @@
             }
         }
 
-        // 16 Shodash Sanskars Data & Renderer (Preserving exact user names & descriptions)
         const shodashSanskarsList = [
             { id: 1, name: "गर्भाधान संस्कार", deity: "ब्रह्मा जी", importance: "उत्तम संतान की प्राप्ति और सकारात्मक ऊर्जा का संचरण।", labh: "संतान में सात्विक गुणों का विकास व वंश वृद्धि।", nuksan: "उचित मुहूर्त के अभाव में मानसिक रूप से कमजोर संतान संभावना।" },
             { id: 2, name: "पुंसवन संस्कार", deity: "भगवान धन्वंतरि", importance: "गर्भस्थ शिशु के शारीरिक स्वास्थ्य और मानसिक स्थिरता हेतु।", labh: "शारीरिक सुदृढ़ता व आरोग्य प्राप्ति।", nuksan: "गर्भ संबंधी जटिलताओं का जोखिम।" },
@@ -772,13 +803,17 @@
             `).join('');
         }
 
-        // Instant Dedicated Interface View Switcher (No Jumps) & Backend API Integration for Yearly Muhurats
         async function openSanskarDetailPage(index) {
             const s = shodashSanskarsList[index];
-            
-            // Switch view instantly
-            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
-            document.getElementById('view-muhurat-detail').classList.add('active');
+            document.querySelectorAll('.page-view').forEach(el => {
+                el.classList.remove('active');
+                el.style.display = 'none';
+            });
+            const detailView = document.getElementById('view-muhurat-detail');
+            if (detailView) {
+                detailView.classList.add('active');
+                detailView.style.display = 'block';
+            }
             window.scrollTo({ top: 0, behavior: 'instant' });
 
             const header = document.getElementById('sanskarDetailHeader');
@@ -815,7 +850,6 @@
                 </div>
             `;
 
-            // Fetch Live Yearly Directory from Backend API
             try {
                 const currentYear = new Date().getFullYear();
                 const res = await fetch(`${KAALGYA_BACKEND_URL}?action=getYearlyMuhurats&year=${currentYear}&muhuratId=${s.id}`);
@@ -847,7 +881,6 @@
                 }
                 document.getElementById('apiYearlyMuhuratLoader').innerHTML = outHtml || "<p>इस संस्कार हेतु इस वर्ष के अनुकूल शास्त्रीय मुहूर्त सीमित हैं।</p>";
             } catch (e) {
-                // Fallback rendering if API call fails or times out
                 const months = ["जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
                 let fallbackHtml = months.map((m, mIdx) => {
                     let weight = (75 + ((index * 3 + mIdx * 5) % 23));
@@ -867,7 +900,6 @@
             }
         }
 
-        // 24 Hora Renderer
         function renderHoraFull() {
             const dayContainer = document.getElementById("kgDayHoraFull");
             const nightContainer = document.getElementById("kgNightHoraFull");
@@ -928,6 +960,7 @@
             renderHoraFull();
         });
     </script>
+    
     <!-- ========================================== -->
     <!-- END: SECTION_3_PANCHANG_AND_MUHURAT        -->
     <!-- ========================================== -->
