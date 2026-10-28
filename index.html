@@ -70,7 +70,7 @@
         }
     </script>
 
-    <style>
+<style>
     body {
         background-color: #030305;
         color: #E2E8F0;
@@ -144,24 +144,31 @@
     .master-banner-badge {
         position: relative;
         z-index: 2;
-        padding: 0.85rem 2.2rem;
+        top: 25px; /* Center se thoda niche shift kiya gaya hai */
+        padding: 1rem 3.5rem; /* Stretch aur padding badhayi gayi hai */
         background: rgba(3, 4, 6, 0.95);
         backdrop-filter: blur(20px);
         border: 1.5px solid rgba(212, 175, 55, 0.8);
         border-radius: 9999px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.3);
         text-align: center;
-        max-width: 90%;
+        max-width: 92%;
+        overflow: visible !important; /* Matrayein hide hone se bachane ke liye */
     }
 
     .master-banner-badge h2 {
         font-size: 0.95rem;
-        line-height: 1.4;
+        line-height: 1.8; /* Hindi matraon ke liye proper spacing */
+        padding-top: 2px;
+        padding-bottom: 2px;
         word-break: keep-all;
         white-space: nowrap;
     }
 
     @media (min-width: 768px) {
+        .master-banner-badge {
+            top: 35px; /* Desktop par aur behtar positioning */
+        }
         .master-banner-badge h2 {
             font-size: 1.35rem;
         }
@@ -175,8 +182,7 @@
         filter: invert(0.8) sepia(1) saturate(5) hue-rotate(5deg);
         cursor: pointer;
     }
-</style>
-    
+</style>    
 </head>
 <body class="selection:bg-gold-500 selection:text-black pb-24 md:pb-0 celestial-pattern-bg">
 
