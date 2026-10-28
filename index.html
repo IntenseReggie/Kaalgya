@@ -110,7 +110,6 @@
             display: block !important;
         }
         
-        /* Master Banner Slot with Bottom-Placed Non-Touching Badge (Fixed for Hindi Matras) */
         .master-banner-slot {
             position: relative;
             width: 100%;
@@ -160,8 +159,8 @@
         .master-banner-badge h2 {
             font-size: 0.95rem;
             line-height: 1.8; 
-            padding-top: 4px;
-            padding-bottom: 4px;
+            padding-top: 2px;
+            padding-bottom: 2px;
             word-break: keep-all;
             white-space: nowrap;
         }
@@ -378,7 +377,7 @@
 
                 <div class="text-center pt-4">
                     <button onclick="navigateToPage('pratyangira-full')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
-                        <i data-lucide="flame" class="w-4 h-4"></i> प्रत्यंगिरा पीठ विवरण देखें →
+                        <i data-lucide="flame" class="w-4 h-4"></i> महाकवच प्राप्त करें →
                     </button>
                 </div>
             </div>
@@ -437,7 +436,7 @@
             </div>
         </section>
 
-        <!-- ================= KAALGYA MASTER PANCHANG PORTAL ================= -->
+        <!-- ================= SEPARATE PANCHANG PORTAL (With Dedicated Shubh/Ashubh/Hora Page Button) ================= -->
         <section id="panchang-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="master-banner-slot">
                 <img src="banner-panchang.jpg" onerror="this.style.display='none'" alt="दैनिक सूक्ष्म वैदिक पंचांग">
@@ -446,9 +445,9 @@
                 </div>
             </div>
 
-            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
-                <!-- 1. Header & Live Date Picker -->
-                <div class="flex justify-between items-center border-b border-gold-500/30 pb-4 mb-6 flex-wrap gap-4">
+            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6">
+                <!-- Header & Date Picker -->
+                <div class="flex justify-between items-center border-b border-gold-500/30 pb-4 flex-wrap gap-4">
                     <div>
                         <h2 id="kgCalDate" class="text-lg md:text-xl font-bold font-cinzel text-white uppercase tracking-wider">पंचांग लोड हो रहा है...</h2>
                         <div id="kgSunStrip" class="text-xs text-gold-300 font-mono mt-1">
@@ -464,8 +463,8 @@
                     </div>
                 </div>
 
-                <!-- 2. Lunar Core Framework (Tithi, Nakshatra, Bhadra) -->
-                <div class="p-4 md:p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30 mb-6">
+                <!-- Lunar Details -->
+                <div class="p-4 md:p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
                     <div id="kgEkadashiBanner" style="display: none;" class="bg-gold-500 text-black font-bold text-xs px-3 py-1 rounded mb-3 inline-block"></div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
                         <div><strong class="text-gold-400 block mb-1">तिथि (Tithi):</strong> <span id="kgTithi" class="text-gray-200">--</span></div>
@@ -474,30 +473,11 @@
                     </div>
                 </div>
 
-                <!-- 3. Auspicious & Inauspicious Timings -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-emerald-500 border-gold-500/20">
-                        <h3 class="text-emerald-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
-                            <i data-lucide="check-circle-2" class="w-4 h-4"></i> शुभ एवं प्रशस्त काल
-                        </h3>
-                        <div id="kgShubhList" class="text-xs text-gray-200 leading-relaxed space-y-2">--</div>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-red-500 border-gold-500/20">
-                        <h3 class="text-red-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
-                            <i data-lucide="alert-triangle" class="w-4 h-4"></i> अशुभ / सावधानी काल
-                        </h3>
-                        <div id="kgAshubhList" class="text-xs text-gray-200 leading-relaxed space-y-2">--</div>
-                    </div>
-                </div>
-
-                <!-- 6. 24 Horas Wheel -->
-                <div>
-                    <h3 class="text-base font-bold font-cinzel text-gold-400 mb-4 uppercase border-b border-gold-500/30 pb-2">🪐 दैनिक 24 होरा चक्र एवं कार्य दिशा</h3>
-                    <h4 class="text-xs font-bold text-gold-300 mb-2 font-cinzel uppercase">☀️ दिन की 12 होरा</h4>
-                    <div id="kgDayHoraGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-6"></div>
-
-                    <h4 class="text-xs font-bold text-gold-300 mb-2 font-cinzel uppercase">🌙 रात्रि की 12 होरा</h4>
-                    <div id="kgNightHoraGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
+                <!-- Dedicated Button for Shubh/Ashubh & Hora Page -->
+                <div class="text-center pt-4">
+                    <button onclick="navigateToPage('hora-full')" class="px-8 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i> आज के शुभ, अशुभ मुहूर्त और होरा देखें →
+                    </button>
                 </div>
             </div>
         </section>
@@ -532,7 +512,7 @@
                     </button>
                 </div>
 
-                <!-- 16 Muhurats Cards Grid on Homepage -->
+                <!-- 16 Muhurats Cards Grid on Homepage with individual 'vivah muhurat dekhe' type buttons -->
                 <div id="kgSixteenGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4"></div>
             </div>
         </section>
@@ -918,23 +898,43 @@
             ← मुख्य पृष्ठ पर वापस जाएं
         </button>
         <div class="text-center mb-10">
-            <h1 class="text-2xl sm:text-4xl font-bold font-cinzel gold-gradient-text" data-i18n="muhuratFullTitle">16 षोडश संस्कार एवं वार्षिक मुहूर्त कोष</h1>
-            <p class="text-xs text-gold-300 mt-2 font-mono" data-i18n="muhuratFullSub">किसी भी संस्कार पर क्लिक करके उसके विस्तृत शास्त्रीय आयाम व 12 महीनों के शुद्ध मुहूर्त देखें</p>
+            <h1 class="text-2xl sm:text-4xl font-bold font-cinzel gold-gradient-text" data-i18n="muhuratFullTitle">16 प्रमुख कार्य-मुहूर्त: शास्त्रीय आयाम</h1>
+            <p class="text-xs text-gold-300 mt-2 font-mono" data-i18n="muhuratFullSub">प्रत्येक मुहूर्त का विस्तृत शास्त्रीय महत्व, देवता, विधान एवं 12 महीनों के शुद्ध मुहूर्त देखें</p>
         </div>
         <div id="sixteenSanskarFullGrid" class="space-y-8"></div>
     </div>
 
     <!-- ========================================== -->
-    <!-- VIEW: 24 HORA SYSTEM FULL PAGE             -->
+    <!-- VIEW: 24 HORA SYSTEM FULL PAGE (Also acts as Shubh/Ashubh Timings Dedicated Page) -->
     <!-- ========================================== -->
     <div id="view-hora-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-5xl mx-auto">
         <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer shadow-lg transition-all hover:scale-105" data-i18n="btnBackHome">
             ← मुख्य पृष्ठ पर वापस जाएं
         </button>
         <div class="text-center mb-10">
-            <h1 class="text-2xl sm:text-4xl font-bold font-cinzel gold-gradient-text" data-i18n="horaFullTitle">दैनिक 24 होरा चक्र एवं कार्य दिशा-निर्देश</h1>
-            <p class="text-xs text-gold-300 mt-2 font-mono" data-i18n="horaFullSub">ग्रहों के आधिपत्य के अनुसार प्रत्येक होरा में क्या करें और क्या न करें</p>
+            <h1 class="text-2xl sm:text-4xl font-bold font-cinzel gold-gradient-text" data-i18n="horaFullTitle">दैनिक 24 होरा चक्र, शुभ एवं अशुभ काल</h1>
+            <p class="text-xs text-gold-300 mt-2 font-mono">आज के पंचांग के अनुसार शुभ, अशुभ काल एवं प्रत्येक होरा में क्या करें और क्या न करें</p>
         </div>
+
+        <!-- Shubh & Ashubh Detailed Panel on Dedicated Page -->
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 mb-10 space-y-6">
+            <h3 class="text-base font-bold font-cinzel text-gold-300 border-b border-gold-500/30 pb-2">✦ आज के विशिष्ट काल एवं दिशा-निर्देश</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-emerald-500 border-gold-500/20">
+                    <h4 class="text-emerald-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
+                        <i data-lucide="check-circle-2" class="w-4 h-4"></i> शुभ एवं प्रशस्त काल (क्या करें)
+                    </h4>
+                    <div id="dedicatedShubhList" class="text-xs text-gray-200 leading-relaxed space-y-2">लोड हो रहा है...</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-red-500 border-gold-500/20">
+                    <h4 class="text-red-400 font-bold text-sm font-cinzel mb-3 uppercase flex items-center gap-1.5">
+                        <i data-lucide="alert-triangle" class="w-4 h-4"></i> अशुभ / सावधानी काल (क्या न करें)
+                    </h4>
+                    <div id="dedicatedAshubhList" class="text-xs text-gray-200 leading-relaxed space-y-2">लोड हो रहा है...</div>
+                </div>
+            </div>
+        </div>
+
         <h3 class="text-sm font-bold text-gold-400 mb-3 font-cinzel uppercase" data-i18n="dayHoraTitle">☀️ दिन की 12 होरा</h3>
         <div id="kgDayHoraFull" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8"></div>
         <h3 class="text-sm font-bold text-gold-400 mb-3 font-cinzel uppercase" data-i18n="nightHoraTitle">🌙 रात्रि की 12 होरा</h3>
@@ -1013,6 +1013,17 @@
                     <i data-lucide="flame" class="w-4 h-4"></i> महाकवच प्राप्त करें →
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- 12-Month Drawer Panel (Popup for Muhurat) -->
+    <div id="kgYearlyDrawer" style="display: none;" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-3xl w-full relative max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center border-b border-gold-500/30 pb-4 mb-4">
+                <h3 id="kgDrawerTitle" class="text-base font-bold font-cinzel text-gold-300">--</h3>
+                <button onclick="document.getElementById('kgYearlyDrawer').style.display='none'" class="text-gray-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div id="kgDrawerContent" class="space-y-4 text-xs"></div>
         </div>
     </div>
 
@@ -1103,69 +1114,86 @@
             }
         }
 
-        // Sukoon Kaksh Data
-        const sukoonData = {
-            karz: { 
-                title: "कर्ज मुक्ति एवं आर्थिक स्थिरता का वैदिक विधान", 
-                message: "जब कुंडली में छठा या एकादश भाव पीड़ित होता है, तो मनुष्य अपनी श्रेष्ठ मेहनत के बाद भी कर्जे में दब जाता है।", 
-                kyaKare: "मंगलवार के दिन ऋणमोचक मंगल स्तोत्र का पाठ करें तथा 3 चुटकी लाल मसूर की दाल बहते जल में प्रवाहित करें।",
-                kyaNaKare: "तामसिक भोजन, मदिरा, झूठ बोलने और दूसरों का हक मारने से पूर्णतः बचें।",
-                kabTak: "नियमित रूप से कम से कम 43 दिनों तक या लगातार 7 मंगलवार तक करें।",
-                note: "नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।"
-            },
-            career: { 
-                title: "नौकरी / करियर तनाव निवारण", 
-                message: "दशम भाव और सूर्य-शनि की स्थिति करियर में स्थिरता तय करती है।", 
-                kyaKare: "प्रतिदिन सूर्योदय के समय तांबे के लोटे से सूर्य को अर्घ्य दें और 'ॐ सूर्याय नमः' का जप करें।",
-                kyaNaKare: "सुबह सूर्योदय के बाद तक सोना और कार्यस्थल पर अहंकार या क्रोध करना वर्जित है।",
-                kabTak: "कम से कम 40 दिनों तक लगातार नियम का पालन करें।",
-                note: "नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।"
-            },
-            breakup: { 
-                title: "दांपत्य कलह एवं विवाह विलंब शांति", 
-                message: "सप्तम भाव में पाप ग्रहों का प्रभाव रिश्तों में दूरियां लाता है।", 
-                kyaKare: "गुरुवार के दिन पीपल के वृक्ष के समीप शुद्ध घी का दीपक प्रज्वलित करें और पीली वस्तुओं का दान करें।",
-                kyaNaKare: "पार्टी या घर में वाद-विवाद, अपशब्द कहने और कटु वचनों का प्रयोग बिल्कुल न करें।",
-                kabTak: "लगातार 5 गुरुवार या 3 महीने तक श्रद्धापूर्वक करें।",
-                note: "नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।"
-            },
-            anxiety: { 
-                title: "डिप्रेशन व अनिद्रा शमन", 
-                message: "चंद्रमा और केतु की युति मानसिक अशांति का मुख्य कारण बनती है।", 
-                kyaKare: "रात को सोते समय सिरहाने तांबे के पात्र में जल रखें और सुबह किसी पौधे में डालें। चांदी धारण करें।",
-                kyaNaKare: "रात में अत्यधिक स्क्रीन टाइम, नकारात्मक खबरें देखना और अकेलेपन में ज्यादा रहना टालें।",
-                kabTak: "नियमित रूप से 21 दिनों तक या जब तक मानसिक शांति न मिले।",
-                note: "नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।"
-            },
-            rahu: { 
-                title: "राहु-शनि दशा एवं पितृ दोष निवारण", 
-                message: "गोचर में राहु-शनि का प्रभाव आकस्मिक बाधाएं उत्पन्न करता है।", 
-                kyaKare: "शनिवार के दिन काले कुत्ते को रोटी खिलाएं तथा पीपल पर जल अर्पित करें।",
-                kyaNaKare: "शराब, सिगरेट, मांस-मछली का सेवन और बुजुर्गों का अपमान भूलकर भी न करें।",
-                kabTak: "कम से कम 7 शनिवार या राहु/शनि की शांति तक।",
-                note: "नोट: यदि उपाय के दौरान कोई नकारात्मक अनुभव हो, असहजता लगे या परिणाम प्राप्त न हो, तो तुरंत गुरु जी से संपर्क करें।"
-            }
-        };
+        // 16 Detailed Muhurats Database with specific content
+        const shodashSanskarsList = [
+            { id: 1, name: "विवाह मुहूर्त", subject: "विवाह और पाणिग्रहण संस्कार", importance: "विवाह हिंदू संस्कार-परंपरा में गृहस्थ जीवन का प्रमुख संस्कार है। इसके अंतर्गत वर-वधू का पाणिग्रहण, अग्नि के समक्ष धार्मिक विधियाँ तथा गृहस्थ धर्म स्वीकार करने की परंपरा आती है। धर्मशास्त्रीय परंपरा में विवाह केवल सामाजिक संबंध नहीं, बल्कि धार्मिक कर्तव्यों, पारिवारिक उत्तरदायित्व और गृहस्थ आश्रम से संबंधित संस्कार माना गया है।", devta: "अग्नि, विष्णु, गौरी-शंकर तथा कुलदेवता", vidhan: "प्रशस्त तिथि, नक्षत्र, वार, लग्न, ग्रह-शुद्धि और वर-वधू की जन्म-कुंडली तथा पारंपरिक गुण-विचार।", phal: "शास्त्रीय परंपरा में शुभ विवाह-मुहूर्त को विवाह-संस्कार के लिए प्रशस्त माना गया है।" },
+            { id: 2, name: "गृह प्रवेश मुहूर्त", subject: "नए घर में मंगल प्रवेश", importance: "गृह प्रवेश नए भवन में निवास आरंभ करने से संबंधित धार्मिक कर्म है। वास्तु परंपरा में घर को केवल निवास-स्थान नहीं, बल्कि गृहस्थ जीवन, पारिवारिक व्यवस्था और दैनिक धार्मिक कर्मों का केंद्र माना गया है।", devta: "गणेश जी, वास्तुपुरुष, लक्ष्मी-नारायण तथा कुलदेवता", vidhan: "प्रशस्त माने गए नक्षत्रों, तिथि, वार, लग्न तथा संबंधित ग्रहों की स्थिति का विचार।", phal: "निर्धारित समय पर विधिपूर्वक गृह प्रवेश करना मंगलकारी माना गया है।" },
+            { id: 3, name: "भूमि पूजन मुहूर्त", subject: "जमीन, नींव एवं निर्माण का शुभारंभ", importance: "भूमि पूजन निर्माण-कार्य आरंभ करने से पहले किया जाने वाला धार्मिक कर्म है। इसमें भूमि के प्रति सम्मान, देव-पूजन और निर्माण के मंगलमय आरंभ का संकल्प शामिल होता है।", devta: "भूमिदेवी, वास्तुपुरुष और गणेश जी", vidhan: "भूमि और निर्माण-कर्म के लिए तिथि, नक्षत्र, वार और लग्न की अनुकूलता।", phal: "निर्माण-आरंभ को निर्धारित विधि तथा शुभ समय में करना प्रशस्त माना गया है।" },
+            { id: 4, name: "वास्तु पूजन मुहूर्त", subject: "भवन की वास्तु शांति पूजा", importance: "वास्तु पूजन का संबंध भवन, भूमि और निवास-स्थान के धार्मिक संस्कार से है। वास्तु परंपरा में भवन के निर्माण, दिशाओं, भूमि और निवास से संबंधित नियमों का वर्णन मिलता है।", devta: "वास्तुपुरुष तथा गणेश जी", vidhan: "वास्तु-कर्म की प्रकृति, तिथि, वार, नक्षत्र और लग्न तथा ग्रहों की स्थिति।", phal: "वास्तु-कर्म को निर्धारित विधि और अनुकूल समय में संपन्न करना प्रशस्त माना गया है।" },
+            { id: 5, name: "व्यापार आरंभ मुहूर्त", subject: "दुकान, कार्यालय एवं व्यवसाय का शुभारंभ", importance: "व्यापार आरंभ मुहूर्त किसी नए व्यवसाय, दुकान या कार्यालय का कार्य प्रारंभ करने के लिए समय निर्धारित करने की परंपरा से संबंधित है।", devta: "गणेश जी, लक्ष्मी जी और कुबेर", vidhan: "व्यापार के प्रकार के अनुसार समय-विचार, तिथि, वार, नक्षत्र, लग्न तथा ग्रहों की स्थिति।", phal: "शुभ समय पर व्यापार आरंभ करना मंगलकारी माना गया है।" },
+            { id: 6, name: "वाहन मुहूर्त", subject: "नया वाहन खरीदना एवं प्रथम संचालन", importance: "वाहन खरीद और प्रथम संचालन के लिए शुभ समय चुनना वर्तमान पंचांग-परंपरा में प्रचलित है।", devta: "गणेश जी, हनुमान जी और परिवार के इष्टदेव", vidhan: "वाहन-क्रय के लिए प्रचलित तिथि, वार, नक्षत्र और वाहन खरीद व प्रथम यात्रा के समय में अंतर।", phal: "शुभ समय में वाहन खरीदना या उसका प्रथम संचालन करना मंगलकामना से जुड़ा है।" },
+            { id: 7, name: "यात्रा मुहूर्त", subject: "महत्वपूर्ण एवं दूरस्थ यात्रा", importance: "यात्रा-मुहूर्त भारतीय ज्योतिष की प्राचीन कार्य-विशेष परंपराओं में से एक है। यात्रा के आरंभ का समय, दिशा और यात्रा के उद्देश्य के अनुसार शुभाशुभ विचार किया जाता है।", devta: "गणेश जी, इष्टदेव, कुलदेवता और हनुमान जी", vidhan: "तिथि, वार, नक्षत्र, यात्रा की दिशा और उद्देश्य, लग्न तथा संबंधित ग्रहों की स्थिति।", phal: "अनुकूल समय पर यात्रा आरंभ करना प्रशस्त माना गया है।" },
+            { id: 8, name: "शिक्षा एवं विद्यारंभ मुहूर्त", subject: "विद्यारंभ, अध्ययन एवं प्रवेश", importance: "विद्यारंभ या अक्षरारंभ शिक्षा की शुरुआत से संबंधित धार्मिक परंपरा है। भारतीय परंपरा में ज्ञान को महत्वपूर्ण स्थान दिया गया है।", devta: "माँ सरस्वती एवं गणेश जी", vidhan: "शिक्षा आरंभ के लिए प्रशस्त तिथि, नक्षत्र, वार तथा विद्यारंभ संस्कार के नियम।", phal: "शिक्षा की शुरुआत को शुभ समय, देव-पूजन और संकल्प से जोड़ना प्रशस्त माना जाता है।" },
+            { id: 9, name: "नामकरण मुहूर्त", subject: "नवजात शिशु का नामकरण संस्कार", importance: "नामकरण हिंदू संस्कार-परंपरा का महत्वपूर्ण संस्कार है। इसमें शिशु का नाम निर्धारित किया जाता है और उसे पहचान प्रदान की जाती है।", devta: "गणेश जी, कुलदेवता", vidhan: "संस्कार के लिए तिथि, वार, नक्षत्र का विचार तथा जन्मनक्षत्र और नामाक्षर संबंधी परंपरा।", phal: "नामकरण संस्कार को विधिपूर्वक संपन्न करना प्रशस्त माना गया है।" },
+            { id: 10, name: "अन्नप्राशन मुहूर्त", subject: "शिशु को प्रथम ठोस अन्न सेवन", importance: "अन्नप्राशन शिशु को पहली बार अन्न देने से संबंधित संस्कार है। यह भोजन और जीवन-निर्वाह के प्रति सम्मान से जुड़ा है।", devta: "अन्नपूर्णा देवी, अन्नदेवता और विष्णु", vidhan: "शिशु की आयु, संस्कार का समय, तिथि, वार, नक्षत्र तथा लग्न का विचार।", phal: "निर्धारित समय पर अन्नप्राशन करना प्रशस्त माना गया है।" },
+            { id: 11, name: "मुंडन मुहूर्त", subject: "चूड़ाकर्म एवं केश-संस्कार", importance: "मुंडन या चूड़ाकर्म हिंदू संस्कार-परंपरा का महत्वपूर्ण संस्कार है। इसमें बालक के बालों से संबंधित प्रथम धार्मिक संस्कार होता है।", devta: "गणेश जी, सूर्यदेव और कुलदेवता", vidhan: "बालक की आयु, संस्कार का समय, तिथि, वार, नक्षत्र, लग्न और ग्रहों की स्थिति।", phal: "निर्धारित समय और विधि के अनुसार चूड़ाकर्म करना प्रशस्त माना गया है।" },
+            { id: 12, name: "उपनयन मुहूर्त", subject: "यज्ञोपवीत एवं गायत्री-संबंधी संस्कार", importance: "उपनयन हिंदू संस्कार-परंपरा में महत्वपूर्ण स्थान रखता है। इसका संबंध गुरु के समीप जाने और वैदिक परंपरा में प्रवेश से है।", devta: "सावित्री / गायत्री माता व आचार्य", vidhan: "निर्धारित आयु, समय, तिथि, वार, नक्षत्र और वैदिक शाखा के नियम।", phal: "उपनयन को निर्धारित विधि और समय पर संपन्न करना प्रशस्त माना गया है।" },
+            { id: 13, name: "गर्भाधान मुहूर्त", subject: "संतान प्राप्ति से संबंधित परंपरागत संस्कार", importance: "गर्भाधान हिंदू संस्कार-परंपरा के सोलह संस्कारों में गिना जाता है। इसका संबंध संतानोत्पत्ति को धार्मिक संस्कार से जोड़ने से है।", devta: "प्रजापति तथा अन्य देवता", vidhan: "संस्कार के समय, तिथि, रात्रि और ग्रह-स्थिति से संबंधित नियम।", phal: "निर्धारित समय और संस्कार-विधि का पालन प्रशस्त माना गया है।" },
+            { id: 14, name: "देव-प्रतिष्ठा मुहूर्त", subject: "मूर्ति या देवालय की प्राण-प्रतिष्ठा", importance: "देव-प्रतिष्ठा मंदिर, देवालय या मूर्ति से संबंधित धार्मिक अनुष्ठान है। प्रतिष्ठा-विधि में देवता का आवाहन और हवन शामिल होता है।", devta: "संबंधित आराध्य देव", vidhan: "तिथि, वार, नक्षत्र, लग्न और संबंधित आगम या प्रतिष्ठा-पद्धति के नियम।", phal: "देव-प्रतिष्ठा को निर्धारित विधि और शुभ समय पर संपन्न करना प्रशस्त माना गया है।" },
+            { id: 15, name: "यज्ञ एवं पूजा मुहूर्त", subject: "विशेष अनुष्ठान, हवन एवं महापूजा", importance: "यज्ञ और पूजा हिंदू धार्मिक परंपरा के प्रमुख कर्म हैं। इनके अंतर्गत देव-आवाहन, मंत्र-पाठ और अग्नि में आहुति आती है।", devta: "अग्नि देव तथा प्रधान देवता", vidhan: "यज्ञ या पूजा के उद्देश्य, विधि, तिथि, वार, नक्षत्र और संकल्प के क्रम।", phal: "निर्धारित विधि से यज्ञ और पूजा करना प्रशस्त माना गया है।" },
+            { id: 16, name: "कृषि मुहूर्त", subject: "कृषि आरंभ, बीजारोपण एवं खेती", importance: "भारतीय परंपरा में कृषि का संबंध भूमि, ऋतु, वर्षा, बीज और अन्नोत्पादन से है। कृषि-कार्य के विभिन्न चरणों के लिए समय का विचार किया जाता है।", devta: "भूमिदेवी, इंद्र और पर्जन्य", vidhan: "कृषि-कार्य के प्रकार, ऋतु, वर्षा की स्थिति, तिथि, वार और नक्षत्र का पारंपरिक विचार।", phal: "कृषि-कर्म को निर्धारित समय और विधि से आरंभ करना प्रशस्त माना गया है।" }
+        ];
 
-        function selectProblem(key) {
-            document.querySelectorAll('.problem-btn').forEach(b => {
-                b.classList.remove('border-gold-500', 'text-gold-300', 'shadow-md');
-                b.classList.add('border-gold-500/40', 'text-gray-300');
-            });
-            const activeBtn = document.getElementById(`btn-${key}`);
-            if (activeBtn) {
-                activeBtn.classList.remove('border-gold-500/40', 'text-gray-300');
-                activeBtn.classList.add('border-gold-500', 'text-gold-300', 'shadow-md');
-            }
-            const info = sukoonData[key];
-            if (info) {
-                document.getElementById("console-title").innerText = info.title;
-                document.getElementById("console-message").innerText = `"${info.message}"`;
-                document.getElementById("console-kya-kare").innerText = info.kyaKare;
-                document.getElementById("console-kya-na-kare").innerText = info.kyaNaKare;
-                document.getElementById("console-kab-tak").innerText = info.kabTak;
-                document.getElementById("console-note").innerText = info.note;
-            }
+        // Render Homepage 16 Muhurat Cards with Dedicated Links
+        function renderSixteenHomeGrid() {
+            const grid = document.getElementById("kgSixteenGrid");
+            if (!grid) return;
+            grid.innerHTML = shodashSanskarsList.map((s, idx) => `
+                <div class="cosmic-glass border border-gold-500/30 p-5 rounded-2xl flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-[10px] font-mono text-gold-400 uppercase">मुहूर्त #${s.id}</span>
+                            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">देवता: ${s.devta}</span>
+                        </div>
+                        <h3 class="text-base font-bold font-cinzel text-white mb-1">${s.name}</h3>
+                        <p class="text-[11px] text-gold-300 font-serif italic mb-2">विषय: ${s.subject}</p>
+                        <p class="text-xs text-gray-300 mb-4 line-clamp-3">${s.importance}</p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20">
+                        <button onclick="openYearlyMuhurat(${s.id})" class="w-full py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-md transition-transform hover:scale-[1.02]">
+                            ${s.name} देखें →
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Full Page 16 Muhurats List (`view-muhurat-full`)
+        function renderSixteenFullPage() {
+            const fullGrid = document.getElementById("sixteenSanskarFullGrid");
+            if (!fullGrid) return;
+            fullGrid.innerHTML = shodashSanskarsList.map((s, idx) => `
+                <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
+                    <div class="flex items-center justify-between border-b border-gold-500/25 pb-3">
+                        <span class="text-xs font-mono text-gold-400 uppercase">मुहूर्त क्रमांक #${s.id}</span>
+                        <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/25">आराध्य देवता: ${s.devta}</span>
+                    </div>
+                    <h2 class="text-xl md:text-2xl font-bold font-cinzel text-white">${s.id}. ${s.name}</h2>
+                    <p class="text-xs text-gold-300 font-serif italic">विषय: ${s.subject}</p>
+                    
+                    <div class="space-y-3 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans pt-2">
+                        <div>
+                            <strong class="text-gold-300 block mb-1">शास्त्रीय महत्व:</strong>
+                            <p>${s.importance}</p>
+                        </div>
+                        <div>
+                            <strong class="text-gold-300 block mb-1">मुहूर्त निर्धारित करने का विधान:</strong>
+                            <p>${s.vidhan}</p>
+                        </div>
+                        <div>
+                            <strong class="text-gold-300 block mb-1">मुहूर्त पालन का फल:</strong>
+                            <p>${s.phal}</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gold-500/20 text-center">
+                        <button onclick="openYearlyMuhurat(${s.id})" class="px-8 py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            <i data-lucide="calendar" class="w-4 h-4"></i> ${s.name} देखें (12 महीने के मुहूर्त) →
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
         // Live Panchang Fetch (Aapke Exact Master Script ke Anusaar)
@@ -1200,59 +1228,50 @@
                     ekBanner.style.display = "none";
                 }
 
-                document.getElementById("kgShubhList").innerHTML = `
-                    <div>ब्रह्म मुहूर्त: <b>${data.auspiciousDailyWindows.brahmaMuhurta}</b></div>
-                    <div>प्रातः सन्ध्या: <b>${data.auspiciousDailyWindows.pratahSandhya}</b></div>
-                    <div>अभिजित मुहूर्त: <b>${data.auspiciousDailyWindows.abhijitMuhurta}</b></div>
-                    <div>गोधूलि मुहूर्त: <b>${data.auspiciousDailyWindows.godhuliMuhurta}</b></div>
-                    <div>निशीथ काल: <b>${data.auspiciousDailyWindows.nishitaKaal}</b></div>
+                // Render Shubh & Ashubh details for the dedicated `view-hora-full` page
+                const shubhListHtml = `
+                    <div>ब्रह्म मुहूर्त: <b>${data.auspiciousDailyWindows.brahmaMuhurta}</b> (साधना, ध्यान एवं मानसिक एकाग्रता के लिए सर्वोत्तम)</div>
+                    <div class="mt-2">प्रातः सन्ध्या: <b>${data.auspiciousDailyWindows.pratahSandhya}</b> (नित्य कर्म एवं जप हेतु)</div>
+                    <div class="mt-2">अभिजित मुहूर्त: <b>${data.auspiciousDailyWindows.abhijitMuhurta}</b> (नया कार्य आरंभ, व्यापारिक निर्णय व विजय प्राप्ति हेतु प्रशस्त)</div>
+                    <div class="mt-2">गोधूलि मुहूर्त: <b>${data.auspiciousDailyWindows.godhuliMuhurta}</b> (मांगलिक कार्य व प्रवेश हेतु)</div>
+                    <div class="mt-2">निशीथ काल: <b>${data.auspiciousDailyWindows.nishitaKaal}</b> (विशेष तांत्रिक एवं गुप्त साधना)</div>
                 `;
 
-                document.getElementById("kgAshubhList").innerHTML = `
-                    <div>राहुकाल: <b>${data.cautionaryPeriods.rahuKaal}</b></div>
-                    <div>यमगण्ड: <b>${data.cautionaryPeriods.yamaganda}</b></div>
-                    <div>गुलिक काल: <b>${data.cautionaryPeriods.gulikaKaal}</b></div>
-                    <small style="color: #8e836f; display: block; margin-top: 4px;">${data.cautionaryPeriods.durmuhurtaNotice}</small>
+                const ashubhListHtml = `
+                    <div>राहुकाल: <b>${data.cautionaryPeriods.rahuKaal}</b> (नवीन निवेश, अनुबंध या मांगलिक यात्रा सर्वथा वर्जित)</div>
+                    <div class="mt-2">यमगण्ड: <b>${data.cautionaryPeriods.yamaganda}</b> (अग्नि कार्य या महत्वपूर्ण लेनदेन टालें)</div>
+                    <div class="mt-2">गुलिक काल: <b>${data.cautionaryPeriods.gulikaKaal}</b> (सावधानी रखें)</div>
+                    <div class="mt-2 text-rose-300 text-[11px]"><b>विशेष सूचना:</b> ${data.cautionaryPeriods.durmuhurtaNotice}</div>
                 `;
 
-                let mHtml = "";
-                data.shodashMuhuratSuitability.forEach(m => {
-                    mHtml += `
-                        <div class="cosmic-glass border border-gold-500/30 p-5 rounded-2xl flex flex-col justify-between shadow-lg">
-                            <div>
-                                <b class="text-gold-300 text-sm block mb-1">मुहूर्त #${m.id}: ${m.muhurat}</b>
-                                <span class="text-xs text-gray-300 block mb-3">${m.description}</span>
-                            </div>
-                            <div>
-                                <button onclick="openYearlyMuhurat(${m.id})" class="w-full py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-md transition-transform hover:scale-[1.02]">
-                                    ${m.muhurat} देखें →
-                                </button>
-                            </div>
-                        </div>`;
-                });
-                document.getElementById("kgSixteenGrid").innerHTML = mHtml;
+                if (document.getElementById("dedicatedShubhList")) {
+                    document.getElementById("dedicatedShubhList").innerHTML = shubhListHtml;
+                }
+                if (document.getElementById("dedicatedAshubhList")) {
+                    document.getElementById("dedicatedAshubhList").innerHTML = ashubhListHtml;
+                }
 
                 let dHora = "";
                 data.horaWheel.dayHoras.forEach(h => {
                     dHora += `
-                        <div class="p-2.5 rounded-xl bg-obsidian-900 border-l-2 border-gold-500 text-xs">
+                        <div class="p-3 rounded-xl bg-obsidian-900 border-l-2 border-gold-500 text-xs space-y-1">
                             <b>${h.hora}. ${h.ruler}</b><br>
-                            <span class="text-gold-200">${h.time}</span><br>
-                            <span class="text-gray-400 text-[10px]">${h.guidance}</span>
+                            <span class="text-gold-200 font-mono">${h.time}</span><br>
+                            <span class="text-emerald-300 block">✓ क्या करें: ${h.guidance || 'शुभ कार्य व आधिपत्य अनुसार कर्म'}</span>
                         </div>`;
                 });
-                document.getElementById("kgDayHoraGrid").innerHTML = dHora;
+                document.getElementById("kgDayHoraFull").innerHTML = dHora;
 
                 let nHora = "";
                 data.horaWheel.nightHoras.forEach(h => {
                     nHora += `
-                        <div class="p-2.5 rounded-xl bg-obsidian-900 border-l-2 border-gray-500 text-xs">
+                        <div class="p-3 rounded-xl bg-obsidian-900 border-l-2 border-gray-500 text-xs space-y-1">
                             <b>${h.hora}. ${h.ruler}</b><br>
-                            <span class="text-gold-200">${h.time}</span><br>
-                            <span class="text-gray-400 text-[10px]">${h.guidance}</span>
+                            <span class="text-gold-200 font-mono">${h.time}</span><br>
+                            <span class="text-emerald-300 block">✓ क्या करें: ${h.guidance || 'विश्राम, चिंतन व आंतरिक साधना'}</span>
                         </div>`;
                 });
-                document.getElementById("kgNightHoraGrid").innerHTML = nHora;
+                document.getElementById("kgNightHoraFull").innerHTML = nHora;
 
             } catch (err) {
                 console.error("Fetch Error:", err);
@@ -1262,7 +1281,7 @@
         async function openYearlyMuhurat(muhuratId) {
             const drawer = document.getElementById("kgYearlyDrawer");
             const content = document.getElementById("kgDrawerContent");
-            drawer.style.display = "block";
+            drawer.style.display = "flex";
             content.innerHTML = "<p class='text-gold-400'>⏳ 12 महीनों की शुद्ध शास्त्रीय गणना की जा रही है...</p>";
 
             const selectedDateVal = document.getElementById("kgDatePicker").value;
@@ -1394,7 +1413,7 @@
                 muhuratFullTitle: "16 षोडश संस्कार एवं वार्षिक मुहूर्त कोष",
                 muhuratFullSub: "किसी भी संस्कार पर क्लिक करके उसके विस्तृत शास्त्रीय आयाम व 12 महीनों के शुद्ध मुहूर्त देखें",
                 btnBackSanskar: "← सभी संस्कारों की सूची पर वापस जाएं",
-                horaFullTitle: "दैनिक 24 होरा चक्र एवं कार्य दिशा-निर्देश",
+                horaFullTitle: "दैनिक 24 होरा चक्र, शुभ एवं अशुभ काल",
                 horaFullSub: "ग्रहों के आधिपत्य के अनुसार प्रत्येक होरा में क्या करें और क्या न करें",
                 dayHoraTitle: "☀️ दिन की 12 होरा",
                 nightHoraTitle: "🌙 रात्रि की 12 होरा",
@@ -1468,8 +1487,8 @@
                 muhuratFullTitle: "16 Shodash Sanskars & Annual Muhurat Vault",
                 muhuratFullSub: "Click any sanskar to view its detailed classical dimensions and pure muhurats for all 12 months",
                 btnBackSanskar: "← Back to All Sanskars List",
-                horaFullTitle: "Daily 24 Hora Chakra & Work Guidelines",
-                horaFullSub: "What to do and what not to do in each hora according to planetary rulership",
+                horaFullTitle: "Daily 24 Hora Chakra, Favorable & Unfavorable Timings",
+                horaFullSub: "What to do and what not to do in each hora and daily timing according to Panchang",
                 dayHoraTitle: "☀️ Day 12 Horas",
                 nightHoraTitle: "🌙 Night 12 Horas",
                 footerText: "© 2026 KAALGYA. All rights reserved. 15 years of authentic Vedic tradition.<br>Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>"
@@ -1496,6 +1515,9 @@
         // Initialization
         document.addEventListener("DOMContentLoaded", () => {
             fetchDatePanchang();
+            renderSixteenHomeGrid();
+            renderSixteenFullPage();
+            renderHoraFull();
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
