@@ -110,24 +110,26 @@
             display: block !important;
         }
         
-        /* Optimized Master Banner Slot for 1200x400 / 3:1 Cinematic Ratio */
+        /* Master Banner Slot with Bottom-Placed Non-Touching Badge */
         .master-banner-slot {
             position: relative;
             width: 100%;
-            height: 220px; 
+            height: 240px; 
             border-radius: 1.5rem;
             overflow: hidden;
             margin-bottom: 2rem;
             border: 1.5px solid rgba(212, 175, 55, 0.4);
             display: flex;
-            align-items: center;
+            align-items: flex-end; /* Label ko bottom par align karne ke liye */
             justify-content: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            padding-bottom: 18px; /* Bottom se touch hone se bachane ke liye gap */
         }
 
         @media (min-width: 768px) {
             .master-banner-slot {
-                height: 300px; 
+                height: 320px; 
+                padding-bottom: 22px;
             }
         }
 
@@ -144,15 +146,14 @@
         .master-banner-badge {
             position: relative;
             z-index: 2;
-            top: 45px; /* Center se thoda niche aur proper stretch */
-            padding: 0.9rem 3.5rem;
+            padding: 0.8rem 3rem;
             background: rgba(3, 4, 6, 0.95);
             backdrop-filter: blur(20px);
             border: 1.5px solid rgba(212, 175, 55, 0.8);
             border-radius: 9999px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.3);
             text-align: center;
-            max-width: 95%;
+            max-width: 92%;
             overflow: visible !important; /* Matrayein cut hone se bachane ke liye */
         }
 
@@ -166,11 +167,8 @@
         }
 
         @media (min-width: 768px) {
-            .master-banner-badge {
-                top: 60px; 
-            }
             .master-banner-badge h2 {
-                font-size: 1.4rem;
+                font-size: 1.35rem;
             }
         }
 
@@ -439,7 +437,7 @@
             </div>
         </section>
 
-        <!-- ================= KAALGYA MASTER PANCHANG & 16 MUHURAT DISPLAY ================= -->
+        <!-- ================= KAALGYA MASTER PANCHANG PORTAL ================= -->
         <section id="panchang-section" class="py-16 px-4 max-w-6xl mx-auto">
             <div class="master-banner-slot">
                 <img src="banner-panchang.jpg" onerror="this.style.display='none'" alt="दैनिक सूक्ष्म वैदिक पंचांग">
@@ -492,18 +490,24 @@
                     </div>
                 </div>
 
-                <!-- 4. 16 Shodash Sanskar Cards -->
+                <!-- 4. 16 Major Work Muhurats (With Dedicated View Buttons) -->
                 <div class="mb-8">
                     <div class="master-banner-slot mb-4">
                         <img src="banner-muhurat.jpg" onerror="this.style.display='none'" alt="16 प्रमुख कार्य-मुहूर्त">
                         <div class="master-banner-badge">
-                            <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide" data-i18n="bannerMuhurat">16 प्रमुख कार्य-मुहूर्त</h2>
+                            <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide">16 प्रमुख कार्य-मुहूर्त</h2>
                         </div>
                     </div>
-                    <div id="kgSixteenGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+
+                    <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans bg-obsidian-900 border border-gold-500/30 p-6 rounded-2xl mb-6">
+                        <h3 class="text-base font-bold font-cinzel text-gold-300">प्रस्तावना: मुहूर्त का शास्त्रीय स्वरूप</h3>
+                        <p>भारतीय ज्योतिष परंपरा में मुहूर्त का संबंध किसी कार्य के आरंभ के लिए समय-निर्धारण से है। विवाह, गृह-प्रवेश, भूमि पूजन, यात्रा, संस्कार, यज्ञ तथा कृषि जैसे कार्यों के लिए अलग-अलग नियमों का वर्णन मिलता है। मुहूर्त का निर्णय केवल तिथि देखकर नहीं किया जाता। इसमें तिथि, वार, नक्षत्र, योग, करण, लग्न, ग्रहों की स्थिति और कार्य-विशेष के नियमों का विचार किया जाता है। प्रत्येक कार्य की प्रकृति के अनुसार इन नियमों का महत्व बदलता है। दैवज्ञ राम रचित मुहूर्तचिन्तामणि में संस्कार, विवाह, यात्रा, वास्तु तथा गृह-प्रवेश के अलग-अलग प्रकरण हैं। अन्य धर्मशास्त्रीय, गृह्यसूत्रीय और वास्तु-ग्रंथों में भी विभिन्न संस्कारों एवं कर्मों का विधान मिलता है।</p>
+                    </div>
+
+                    <div id="kgSixteenGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6"></div>
                 </div>
 
-                <!-- 5. 12-Month Drawer Panel (Popup on click) -->
+                <!-- 5. 12-Month Drawer Panel -->
                 <div id="kgYearlyDrawer" style="display: none;" class="cosmic-glass border border-gold-500 rounded-3xl p-6 mb-8 shadow-2xl">
                     <div class="flex justify-between items-center border-b border-gold-500/30 pb-3 mb-4">
                         <h3 id="kgDrawerTitle" class="text-sm font-bold font-cinzel text-gold-300">--</h3>
@@ -1219,11 +1223,16 @@
                 let mHtml = "";
                 data.shodashMuhuratSuitability.forEach(m => {
                     mHtml += `
-                        <div onclick="openYearlyMuhurat(${m.id})" class="cosmic-glass border border-gold-500/30 p-3 rounded-2xl cursor-pointer hover:border-gold-400 transition-all shadow-md">
-                            <b class="text-gold-300 text-xs block mb-1">${m.id}. ${m.muhurat}</b>
-                            <span class="text-[10px] text-gray-400 block mb-2">${m.description}</span>
-                            <span class="text-[10px] text-emerald-400 font-bold block mb-1">${m.status}</span>
-                            <span class="text-[10px] text-gold-400 underline block">📅 12 महीने देखें »</span>
+                        <div class="cosmic-glass border border-gold-500/30 p-4 rounded-2xl flex flex-col justify-between shadow-md">
+                            <div>
+                                <b class="text-gold-300 text-xs block mb-1">मुहूर्त #${m.id}: ${m.muhurat}</b>
+                                <span class="text-[11px] text-gray-300 block mb-3">${m.description}</span>
+                            </div>
+                            <div>
+                                <button onclick="openYearlyMuhurat(${m.id})" class="w-full py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-[11px] uppercase cursor-pointer shadow-md transition-transform hover:scale-[1.02]">
+                                    ${m.muhurat} देखें →
+                                </button>
+                            </div>
                         </div>`;
                 });
                 document.getElementById("kgSixteenGrid").innerHTML = mHtml;
@@ -1275,11 +1284,20 @@
                     outHtml += `<div class="font-bold text-gold-300 mt-3 mb-2 text-xs uppercase border-b border-gold-500/20 pb-1">✦ ${month}</div>`;
                     outHtml += "<div class='grid grid-cols-1 sm:grid-cols-2 gap-2'>";
                     dates.forEach(d => {
+                        let weight = d.weightage || 85;
+                        let advice = weight >= 85 
+                            ? `<span class="text-emerald-300 font-semibold">✓ इस मुहूर्त का उपयोग करना उत्तम व प्रशस्त है।</span>`
+                            : `<span class="text-amber-300 font-semibold">⚠️ अपने स्थानीय गुरु या ज्योतिष की सलाह पर ही काम करें।</span>`;
+
                         outHtml += `
-                            <div class="p-2 rounded bg-obsidian-900 border border-gold-500/20 text-[11px]">
-                                <strong class="text-white">${d.formattedDate}</strong><br>
-                                <span class="text-emerald-300">शुभ समय: ${d.timeSpan}</span><br>
-                                <small class="text-gray-400">तिथि: ${d.tithi} • नक्षत्र: ${d.nakshatra}</small>
+                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-gold-500/25 text-[11px] space-y-1">
+                                <div class="flex justify-between items-center text-white font-bold">
+                                    <span>📅 ${d.formattedDate}</span>
+                                    <span class="text-gold-400 text-[10px]">Weightage: ${weight}%</span>
+                                </div>
+                                <div class="text-gray-300">शुभ समय: ${d.timeSpan}</div>
+                                <div class="text-gray-400 text-[10px]">तिथि: ${d.tithi} • नक्षत्र: ${d.nakshatra}</div>
+                                <div class="pt-1 border-t border-gold-500/10 text-[10px]">${advice}</div>
                             </div>`;
                     });
                     outHtml += "</div>";
@@ -1483,8 +1501,6 @@
         // Initialization
         document.addEventListener("DOMContentLoaded", () => {
             fetchDatePanchang();
-            renderSixteenSanskars();
-            renderHoraFull();
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
             }
