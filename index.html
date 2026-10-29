@@ -1324,7 +1324,7 @@ function renderSixteenFullPage() {
 }
 
         
-        // Live Panchang Fetch
+       // Live Panchang Fetch
         async function fetchDatePanchang(targetDate = "") {
             let endpoint = `${KAALGYA_BACKEND_URL}?action=getPanchang`;
             if (targetDate) endpoint += `&date=${targetDate}`;
@@ -1347,6 +1347,17 @@ function renderSixteenFullPage() {
                 document.getElementById("kgTithi").innerText = data.lunarFramework.tithiSpan.formattedString;
                 document.getElementById("kgNakshatra").innerText = data.lunarFramework.nakshatraSpan.formattedString;
                 document.getElementById("kgBhadra").innerText = data.lunarFramework.bhadraStatus;
+
+                // Festival / Special Parv Banner Handling (नया जोड़ा गया सुरक्षित ब्लॉक)
+                const festivalBanner = document.getElementById("kgFestivalBanner");
+                if (festivalBanner) {
+                    if (data.lunarFramework.festivalOrSpecialName) {
+                        festivalBanner.innerText = `★ पर्व / विशेष: ${data.lunarFramework.festivalOrSpecialName} ★`;
+                        festivalBanner.style.display = "inline-block";
+                    } else {
+                        festivalBanner.style.display = "none";
+                    }
+                }
 
                 const ekBanner = document.getElementById("kgEkadashiBanner");
                 if (data.lunarFramework.ekadashiTitle) {
@@ -1399,7 +1410,6 @@ function renderSixteenFullPage() {
                 console.error("Fetch Error:", err);
             }
         }
-
         async function openYearlyMuhurat(muhuratId) {
             const drawer = document.getElementById("kgYearlyDrawer");
             const content = document.getElementById("kgDrawerContent");
