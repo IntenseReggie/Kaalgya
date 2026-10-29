@@ -1526,7 +1526,19 @@ function renderSixteenFullPage() {
                 navTijori: "भावनाओं की तिजोरी",
                 navConsult: "परामर्श लें",
                 heroBadge: "15 वर्षों का गहन अनुसंधान • 5,000+ प्रामाणिक कुंडलियाँ",
-                heroDesc: "अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।"
+                heroDesc: "अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।",
+                // --- Tijori / Emotional Vault Section ---
+                bannerTijori: "भावनाओं की तिजोरी",
+                lblYourName: "आपका नाम *",
+                lblYourPhone: "व्हाट्सएप मोबाइल नंबर *",
+                lblYourEmail: "आपकी ईमेल आईडी *",
+                lblCategory: "भावना की श्रेणी *",
+                opt1: "मेरी मनोकामना / अभीष्ट इच्छा",
+                opt2: "गहरा दुख / मन की पीड़ा",
+                opt3: "अति गोपनीय रहस्य",
+                opt4: "जीवन का अनिर्णय / द्वंद्व",
+                lblMessage: "मन की पूरी बात विस्तार से लिखें *",
+                btnSubmitUniverse: "Submit to Universe"
             },
             en: {
                 pravasTitle: "Upcoming Tour:",
@@ -1540,7 +1552,19 @@ function renderSixteenFullPage() {
                 navTijori: "Emotional Vault",
                 navConsult: "Consult Now",
                 heroBadge: "15+ Years Deep Research • 5,000+ Authentic Charts",
-                heroDesc: "No superstition, purely mathematical calculation and karma principles. When life brings indecision, business blocks, or family crisis—traditional Vedic wisdom illuminates your true path."
+                heroDesc: "No superstition, purely mathematical calculation and karma principles. When life brings indecision, business blocks, or family crisis—traditional Vedic wisdom illuminates your true path.",
+                // --- Tijori / Emotional Vault Section ---
+                bannerTijori: "Emotional Vault",
+                lblYourName: "Your Name *",
+                lblYourPhone: "WhatsApp Mobile Number *",
+                lblYourEmail: "Your Email ID *",
+                lblCategory: "Emotion Category *",
+                opt1: "My Wish / Desired Intention",
+                opt2: "Deep Pain / Mental Anguish",
+                opt3: "Top Secret Mystery",
+                opt4: "Life Dilemma / Conflict",
+                lblMessage: "Write your heart out in detail *",
+                btnSubmitUniverse: "Submit to Universe"
             }
         };
 
@@ -1556,11 +1580,15 @@ function renderSixteenFullPage() {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (t[key]) {
-                    el.innerHTML = t[key];
+                    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                        el.placeholder = t[key];
+                    } else {
+                        el.innerHTML = t[key];
+                    }
                 }
             });
         }
-
+        
         // Initialization
         document.addEventListener("DOMContentLoaded", () => {
     fetchDatePanchang();
