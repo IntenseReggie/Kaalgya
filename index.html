@@ -464,15 +464,19 @@
                     </div>
                 </div>
 
-                <!-- Lunar Details -->
-                <div class="p-4 md:p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
-                    <div id="kgEkadashiBanner" style="display: none;" class="bg-gold-500 text-black font-bold text-xs px-3 py-1 rounded mb-3 inline-block"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
-                        <div><strong class="text-gold-400 block mb-1">तिथि (Tithi):</strong> <span id="kgTithi" class="text-gray-200">--</span></div>
-                        <div><strong class="text-gold-400 block mb-1">नक्षत्र (Nakshatra):</strong> <span id="kgNakshatra" class="text-gray-200">--</span></div>
-                        <div><strong class="text-gold-400 block mb-1">भद्रा स्थिति:</strong> <span id="kgBhadra" class="text-rose-300">--</span></div>
-                    </div>
-                </div>
+               <!-- Lunar Details -->
+<div class="p-4 md:p-5 rounded-2xl bg-obsidian-900 border border-gold-500/30">
+    <!-- त्योहार / विशेष पर्व बैनर यहाँ जोड़ा गया है -->
+    <div id="kgFestivalBanner" style="display: none;" class="bg-gold-500 text-black font-bold text-xs px-3 py-1 rounded mb-3 inline-block"></div>
+    
+    <div id="kgEkadashiBanner" style="display: none;" class="bg-gold-500 text-black font-bold text-xs px-3 py-1 rounded mb-3 inline-block"></div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+        <div><strong class="text-gold-400 block mb-1">तिथि (Tithi):</strong> <span id="kgTithi" class="text-gray-200">--</span></div>
+        <div><strong class="text-gold-400 block mb-1">नक्षत्र (Nakshatra):</strong> <span id="kgNakshatra" class="text-gray-200">--</span></div>
+        <div><strong class="text-gold-400 block mb-1">भद्रा स्थिति:</strong> <span id="kgBhadra" class="text-rose-300">--</span></div>
+    </div>
+</div>
 
                 <!-- Dedicated Button for Shubh/Ashubh & Hora Page -->
                 <div class="text-center pt-4">
@@ -1488,7 +1492,7 @@ function renderSixteenFullPage() {
         document.getElementById("tijori-email").value = "";
         document.getElementById("tijori-message").value = "";
         
-        alert("आपका भाव-समर्पित संदेश ब्रह्मांड और गुरु जी के संमुख सफलतापूर्वक पहुँच गया है!");
+        alert("आपका भाव-समर्पित संदेश ब्रह्मांड के संमुख सफलतापूर्वक पहुँच गया है!");
     } catch (err) {
         // Fallback agar network issue ho
         const mailSubject = encodeURIComponent(`[भाव समर्पण - तिजोरी] श्रेणी: ${category} | नाम: ${name}`);
