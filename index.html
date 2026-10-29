@@ -1069,9 +1069,8 @@
 
     <!-- MASTER JAVASCRIPT ENGINE -->
     <script>
-        const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
-        const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
-
+const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbwTbMPOoIJ7r5ll22vockO5G_WqBdl42zoCKkchs3fGjjfguG9XqO67LTLopkFuvxo/exec";
+const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         // Bulletproof Single Page Navigation
         function navigateToPage(pageId) {
             document.querySelectorAll('.page-view').forEach(el => {
@@ -1447,43 +1446,52 @@ function renderSixteenFullPage() {
 
         // Tijori Submission -> Backend Mail Integration & Clean Form
         async function submitTijoriEntry(e) {
-            e.preventDefault();
-            const name = document.getElementById("tijori-name").value;
-            const phone = document.getElementById("tijori-phone").value;
-            const email = document.getElementById("tijori-email").value;
-            const category = document.getElementById("tijori-category").value;
-            const message = document.getElementById("tijori-message").value;
+    e.preventDefault();
+    const name = document.getElementById("tijori-name").value;
+    const phone = document.getElementById("tijori-phone").value;
+    const email = document.getElementById("tijori-email").value;
+    const category = document.getElementById("tijori-category").value;
+    const message = document.getElementById("tijori-message").value;
 
-            const submitBtn = e.target.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerText;
-            submitBtn.innerText = "ब्रह्मांड में समर्पित हो रहा है...";
-            submitBtn.disabled = true;
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = "ब्रह्मांड में समर्पित हो रहा है...";
+    submitBtn.disabled = true;
 
-            try {
-                await fetch(`${KAALGYA_BACKEND_URL}?action=submitTijori`, {
-                    method: "POST",
-                    body: JSON.stringify({ name, phone, email, category, message })
-                });
-                
-                // Form clean karna
-                document.getElementById("tijori-name").value = "";
-                document.getElementById("tijori-phone").value = "";
-                document.getElementById("tijori-email").value = "";
-                document.getElementById("tijori-message").value = "";
-                
-                alert("Aapka bhav-samarpan safalataपूर्वक brahmand aur guruji ke sammukh submit ho gaya hai!");
-            } catch (err) {
-                const mailSubject = encodeURIComponent(`[भाव समर्पण - तिजोरी] श्रेणी: ${category} | नाम: ${name}`);
-                const mailBody = encodeURIComponent(`नाम: ${name}\nमोबाइल: ${phone}\nईमेल: ${email}\nश्रेणी: ${category}\n\nसमर्पण संदेश:\n${message}`);
-                window.location.href = `mailto:kaalgya@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-                
-                e.target.reset();
-            } finally {
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-            }
-        }
-
+    try {
+        const response = await fetch(KAALGYA_BACKEND_URL, {
+            method: "POST",
+            body: JSON.stringify({ 
+                type: "tijori", // Yeh backend ko batayega ki ye tijori ka data hai
+                name, 
+                phone, 
+                email, 
+                category, 
+                message 
+            })
+        });
+        const result = await response.json();
+        
+        // Form clean karna (inputs ko khali karna)
+        document.getElementById("tijori-name").value = "";
+        document.getElementById("tijori-phone").value = "";
+        document.getElementById("tijori-email").value = "";
+        document.getElementById("tijori-message").value = "";
+        
+        alert("आपका भाव-समर्पित संदेश ब्रह्मांड और गुरु जी के संमुख सफलतापूर्वक पहुँच गया है!");
+    } catch (err) {
+        // Fallback agar network issue ho
+        const mailSubject = encodeURIComponent(`[भाव समर्पण - तिजोरी] श्रेणी: ${category} | नाम: ${name}`);
+        const mailBody = encodeURIComponent(`नाम: ${name}\nमोबाइल: ${phone}\nईमेल: ${email}\nश्रेणी: ${category}\n\nसमर्पण संदेश:\n${message}`);
+        window.location.href = `mailto:kaalgya@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+        
+        e.target.reset();
+    } finally {
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+    }
+}
+        
         // Booking Modal
         function openBookingModal(type, packageTitle) {
             window.open(GOOGLE_FORM_URL, '_blank');
