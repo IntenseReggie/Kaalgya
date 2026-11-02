@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi" class="dark">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1690,8 +1690,8 @@ function renderSixteenFullPage() {
             window.open(GOOGLE_FORM_URL, '_blank');
         }
 
-        // Bilingual Toggle Engine (EN / Hindi)
-        let isHindi = true;
+        // Default English Engine (EN default, switchable to Hindi)
+        let isHindi = false; // <-- Default English ke liye ise false karein
         const translations = {
             hi: {
                 pravasTitle: "आगामी प्रवास:",
@@ -1706,7 +1706,6 @@ function renderSixteenFullPage() {
                 navConsult: "परामर्श लें",
                 heroBadge: "15 वर्षों का गहन अनुसंधान • 5,000+ प्रामाणिक कुंडलियाँ",
                 heroDesc: "अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।",
-                // --- Tijori / Emotional Vault Section ---
                 bannerTijori: "भावनाओं की तिजोरी",
                 lblYourName: "आपका नाम *",
                 lblYourPhone: "व्हाट्सएप मोबाइल नंबर *",
@@ -1732,7 +1731,6 @@ function renderSixteenFullPage() {
                 navConsult: "Consult Now",
                 heroBadge: "15+ Years Deep Research • 5,000+ Authentic Charts",
                 heroDesc: "No superstition, purely mathematical calculation and karma principles. When life brings indecision, business blocks, or family crisis—traditional Vedic wisdom illuminates your true path.",
-                // --- Tijori / Emotional Vault Section ---
                 bannerTijori: "Emotional Vault",
                 lblYourName: "Your Name *",
                 lblYourPhone: "WhatsApp Mobile Number *",
@@ -1747,11 +1745,10 @@ function renderSixteenFullPage() {
             }
         };
 
-        function toggleSiteLanguage() {
-            isHindi = !isHindi;
+        function updateTexts() {
             const btn = document.getElementById("lang-switch-btn");
             if (btn) {
-                btn.innerText = isHindi ? "EN / हिन्दी" : "हिन्दी / EN";
+                btn.innerText = isHindi ? "English" : "हिन्दी";
             }
             document.documentElement.lang = isHindi ? "hi" : "en";
             
@@ -1767,15 +1764,21 @@ function renderSixteenFullPage() {
                 }
             });
         }
+
+        function toggleSiteLanguage() {
+            isHindi = !isHindi;
+            updateTexts();
+        }
         
         // Initialization
         document.addEventListener("DOMContentLoaded", () => {
-    fetchDatePanchang();
-    renderSixteenFullPage(); // 
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-});
+            updateTexts(); // <-- Page khulte hi English text apply karega
+            if (typeof fetchDatePanchang === 'function') fetchDatePanchang();
+            if (typeof renderSixteenFullPage === 'function') renderSixteenFullPage();
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
     </script>
 
     <!-- Background Audio Element (Loop ke sath) -->
