@@ -384,394 +384,71 @@
             </div>
 
          <!-- ========================================== -->
-         <!-- VIEW: ANUSHTHAN DIRECTORY PAGE (15 Items)  -->
-         <!-- ========================================== -->
-<div id="view-anushthan-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-6xl mx-auto">
-    <!-- Return to Home Button -->
-    <div class="mb-6 flex items-center justify-between">
-        <button type="button" onclick="navigateToPage('home')" class="px-5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/40 text-xs font-bold text-gold-300 hover:text-white flex items-center gap-2 cursor-pointer shadow-lg transition-all hover:scale-105">
-            ← मुख्य पृष्ठ पर वापस जाएं
-        </button>
-        <span class="text-xs font-mono text-gold-400">KAALGYA VAIDIK ANUSHTHAN KOSH</span>
-    </div>
+    <!-- LAYER 2: 15 ANUSHTHAN DIRECTORY PAGE       -->
+    <!-- ========================================== -->
+    <div id="view-anushthan-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-6xl mx-auto">
+        <div class="mb-6 flex items-center justify-between">
+            <button type="button" onclick="navigateToPage('home')" class="px-5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/40 text-xs font-bold text-gold-300 hover:text-white flex items-center gap-2 cursor-pointer shadow-lg transition-all hover:scale-105">
+                ← मुख्य पृष्ठ पर वापस जाएं
+            </button>
+            <span class="text-xs font-mono text-gold-400">KAALGYA VAIDIK ANUSHTHAN KOSH</span>
+        </div>
 
-    <!-- Header Banner -->
-    <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 mb-10 text-center space-y-4 shadow-2xl">
-        <h1 class="text-2xl sm:text-4xl font-bold font-cinzel text-white">
-            KAALGYA — <span class="gold-gradient-text">प्रमुख पूजा एवं अनुष्ठान</span>
-        </h1>
-        <p class="text-base sm:text-lg text-gold-200 font-serif italic max-w-3xl mx-auto">
-            "हर पूजा अनुष्ठान हो सकती है, लेकिन हर अनुष्ठान शास्त्रीय समझ के साथ हो, यह आवश्यक है।"
-        </p>
-        <p class="text-xs sm:text-sm text-gray-300 font-sans">
-            KAALGYA में हम कर्मकांड नहीं गिनते, उसके पीछे का शास्त्र समझते हैं।
-        </p>
-        <div class="inline-flex flex-wrap items-center justify-center gap-3 pt-2 text-xs font-mono text-gold-400 font-bold tracking-widest uppercase">
-            <span>✦ शास्त्र</span>
-            <span>•</span>
-            <span>संकल्प</span>
-            <span>•</span>
-            <span>साधना</span>
-            <span>•</span>
-            <span>विधान ✦</span>
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 mb-10 text-center space-y-4 shadow-2xl">
+            <h1 class="text-2xl sm:text-4xl font-bold font-cinzel text-white">
+                KAALGYA — <span class="gold-gradient-text">प्रमुख पूजा एवं अनुष्ठान</span>
+            </h1>
+            <p class="text-base sm:text-lg text-gold-200 font-serif italic max-w-3xl mx-auto">
+                "हर पूजा अनुष्ठान हो सकती है, लेकिन हर अनुष्ठान शास्त्रीय समझ के साथ हो, यह आवश्यक है।"
+            </p>
+            <p class="text-xs sm:text-sm text-gray-300 font-sans">
+                KAALGYA में हम कर्मकांड नहीं गिनते, उसके पीछे का शास्त्र समझते हैं।
+            </p>
+            <div class="inline-flex flex-wrap items-center justify-center gap-3 pt-2 text-xs font-mono text-gold-400 font-bold tracking-widest uppercase">
+                <span>✦ शास्त्र</span>
+                <span>•</span>
+                <span>संकल्प</span>
+                <span>•</span>
+                <span>साधना</span>
+                <span>•</span>
+                <span>विधान ✦</span>
+            </div>
+        </div>
+
+        <!-- 15 Cards Dynamic Grid -->
+        <div id="anushthanDirectoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+        <!-- Bottom Disclaimer & Authority Box -->
+        <div class="mt-14 space-y-6">
+            <div class="p-6 md:p-8 rounded-3xl bg-obsidian-900 border border-amber-500/40 text-xs sm:text-sm text-gray-300 leading-relaxed shadow-2xl">
+                <strong class="text-amber-400 text-sm sm:text-base font-cinzel block mb-2">⚠️ महत्वपूर्ण सूचना:</strong>
+                प्रत्येक अनुष्ठान का विधान, अवधि, मंत्र जाप संख्या एवं आवश्यक सामग्री जातक की परिस्थिति, धार्मिक परंपरा और अनुष्ठान के निर्धारित स्वरूप के अनुसार अलग हो सकती है। वेबसाइट पर दी गई कीमतें प्रारंभिक हैं। अंतिम शुल्क अनुष्ठान की संपूर्ण प्रक्रिया एवं आवश्यक व्यवस्थाओं के अनुसार परामर्श के बाद निर्धारित किया जाएगा। किसी भी धार्मिक अनुष्ठान को निश्चित ज्योतिषीय या भौतिक परिणाम की गारंटी के रूप में प्रस्तुत नहीं किया जाता।
+            </div>
+
+            <div class="p-6 rounded-2xl cosmic-glass border border-gold-500/40 text-center space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-white font-cinzel">
+                    हम अनुष्ठान की कीमत नहीं, उसके पीछे की विद्वत्ता, विधि और उत्तरदायित्व को महत्व देते हैं।
+                </h3>
+                <p class="text-xs sm:text-sm text-gold-300 font-serif italic">
+                    KAALGYA — जहाँ श्रद्धा को शास्त्रीय समझ का मार्गदर्शन मिलता है।
+                </p>
+            </div>
         </div>
     </div>
 
-    <!-- 15 Anushthan Cards (Direct Hardcoded HTML) -->
-    <div class="space-y-10">
-        
-        <!-- 01. Navagraha -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-navagraha.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="नवग्रह शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">01. नवग्रह शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">विशेष वैदिक अनुष्ठान • Navagraha Shanti Puja Vidhanam & Homam</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"ग्रहों को समझे बिना उनकी शांति का विधान कैसे निर्धारित किया जा सकता है?"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>वैदिक ज्योतिष में नवग्रहों का संबंध व्यक्ति के जीवन के विभिन्न क्षेत्रों, कर्मफल और परिस्थितियों से समझा जाता है। जब किसी जातक की कुंडली में ग्रहस्थितियों के कारण विशेष ज्योतिषीय चुनौतियाँ दिखाई देती हैं, तब नवग्रह शांति अनुष्ठान पर विचार किया जाता है।</p>
-                <p class="text-gray-300">लेकिन प्रत्येक व्यक्ति के लिए एक ही प्रकार का नवग्रह अनुष्ठान निर्धारित कर देना उचित दृष्टिकोण नहीं है। नवग्रहों की स्थिति, भाव, दृष्टि, दशा, अंतर्दशा और जातक की वास्तविक परिस्थिति को समझे बिना केवल सामान्य रूप से नवग्रह पूजा करवा लेना पर्याप्त ज्योतिषीय विवेचना नहीं है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
-                    <strong class="text-rose-400 font-semibold text-xs uppercase tracking-wider block">✗ सामान्यतः कहाँ चूक होती है:</strong>
-                    <ul class="list-disc list-inside space-y-1 text-gray-300">
-                        <li>सभी नौ ग्रहों की पूजा को हर परिस्थिति में समान रूप से आवश्यक मान लेना।</li>
-                        <li>कुंडली और दशा का विश्लेषण किए बिना अनुष्ठान निर्धारित करना।</li>
-                        <li>जाप संख्या और पूजा विधान को केवल प्रचलित तरीके से तय करना।</li>
-                        <li>अनुष्ठान के उद्देश्य और संकल्प को स्पष्ट न रखना।</li>
-                    </ul>
-                </div>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-emerald-500/30">
-                    <strong class="text-emerald-400 font-semibold text-xs uppercase tracking-wider block mb-1">✓ KAALGYA का दृष्टिकोण:</strong>
-                    <p class="text-gray-200">KAALGYA में नवग्रह शांति को केवल एक सामान्य पूजा के रूप में नहीं देखा जाता। जातक की कुंडली, ग्रहस्थितियों और उद्देश्य को समझकर अनुष्ठान की उपयुक्तता एवं उसके विधान पर विचार किया जाता है।</p>
-                </div>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Navagraha Shanti', 'Navagraha Shanti Anushthan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
+    <!-- ========================================== -->
+    <!-- LAYER 3: DEDICATED SINGLE ANUSHTHAN PAGE   -->
+    <!-- ========================================== -->
+    <div id="view-anushthan-detail" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-5xl mx-auto">
+        <div class="mb-6 flex items-center justify-between">
+            <button type="button" onclick="navigateToPage('anushthan-full')" class="px-5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/40 text-xs font-bold text-gold-300 hover:text-white flex items-center gap-2 cursor-pointer shadow-lg transition-all hover:scale-105">
+                ← सभी अनुष्ठान सूची पर वापस जाएं
+            </button>
+            <button type="button" onclick="navigateToPage('home')" class="text-xs text-gold-400 hover:underline">
+                मुख्य पृष्ठ →
+            </button>
         </div>
-
-        <!-- 02. Shani -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-shani.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="शनि ग्रह शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">02. शनि ग्रह शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">कर्म एवं न्याय कारक ग्रह शांति • Shaniwar Pujan Vidhi</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"क्या शनि का नाम सुनते ही पूजा करवा लेना ही सही उपाय है, या पहले शनि की वास्तविक स्थिति समझना आवश्यक है?"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>वैदिक ज्योतिष में शनि को कर्म, अनुशासन, धैर्य, उत्तरदायित्व और जीवन के दीर्घकालिक अनुभवों से संबंधित ग्रह माना जाता है। शनि की भूमिका को केवल भय या कष्ट के दृष्टिकोण से समझना अधूरा है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
-                    <strong class="text-rose-400 font-semibold text-xs uppercase tracking-wider block">✗ सामान्यतः कहाँ चूक होती है:</strong>
-                    <ul class="list-disc list-inside space-y-1 text-gray-300">
-                        <li>साढ़ेसाती या ढैय्या का नाम सुनकर बिना अन्य ज्योतिषीय विश्लेषण के पूजा निर्धारित कर देना।</li>
-                        <li>हर व्यक्ति को एक ही मंत्र या समान जाप संख्या बता देना।</li>
-                        <li>दान और पूजा के वास्तविक उद्देश्य को स्पष्ट न करना।</li>
-                    </ul>
-                </div>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-emerald-500/30">
-                    <strong class="text-emerald-400 font-semibold text-xs uppercase tracking-wider block mb-1">✓ KAALGYA का दृष्टिकोण:</strong>
-                    <p class="text-gray-200">हम शनि शांति का मार्गदर्शन केवल भय के आधार पर नहीं करते। पहले ग्रह की वास्तविक स्थिति और जातक की परिस्थिति को समझना हमारी प्राथमिकता है।</p>
-                </div>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</span>
-                    <button onclick="openBookingModal('Shani Shanti', 'Shani Graha Shanti')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 03. Rahu Ketu -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-rahuketu.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="राहु-केतु शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">03. राहु-केतु शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">छाया ग्रह शांति • Rahu Ketu Puja</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"राहु-केतु का नाम सुनकर अनुष्ठान तय करना आसान है, लेकिन उनकी वास्तविक ज्योतिषीय भूमिका समझना विशेषज्ञता का विषय है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>वैदिक ज्योतिष में राहु और केतु को छाया ग्रह माना जाता है। इनका संबंध कर्मफल, जीवन के असामान्य अनुभवों, आसक्ति और वैराग्य से जोड़ा जाता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
-                    <strong class="text-rose-400 font-semibold text-xs uppercase tracking-wider block">✗ सामान्यतः कहाँ चूक होती है:</strong>
-                    <ul class="list-disc list-inside space-y-1 text-gray-300">
-                        <li>राहु या केतु का नाम सुनते ही पूजा निर्धारित कर देना।</li>
-                        <li>कालसर्प योग और राहु-केतु से संबंधित अन्य ज्योतिषीय स्थितियों को एक ही मान लेना।</li>
-                    </ul>
-                </div>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-emerald-500/30">
-                    <strong class="text-emerald-400 font-semibold text-xs uppercase tracking-wider block mb-1">✓ KAALGYA का दृष्टिकोण:</strong>
-                    <p class="text-gray-200">हम राहु-केतु से संबंधित अनुष्ठान में ज्योतिषीय विवेचना और शास्त्रीय विधान को प्राथमिकता देते हैं।</p>
-                </div>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</span>
-                    <button onclick="openBookingModal('Rahu Ketu Shanti', 'Rahu Ketu Puja')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 04. Mangal Dosh -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-mangal.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="मंगल दोष शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">04. मंगल दोष शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">भौम ऊर्जा शोधन • Mangal Dosha Shanti</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"क्या कुंडली में मंगल की स्थिति देखकर ही मंगल दोष मान लेना उचित है?"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>मंगल दोष का निर्णय केवल एक भाव में मंगल की उपस्थिति देखकर नहीं किया जाना चाहिए। इसके लिए संपूर्ण कुंडली, सप्तम भाव, और दोष के परिहार की संभावनाओं का अध्ययन आवश्यक है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</span>
-                    <button onclick="openBookingModal('Mangal Dosh Shanti', 'Mangal Dosh Shanti')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 05. Vishesh Graha -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-visheshgraha.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="विशेष ग्रह शांति एवं जाप अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">05. विशेष ग्रह शांति एवं जाप अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">सटीक कारकत्व संपुट • Planetary Japa</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"हर ग्रह के लिए एक ही पूजा और एक ही मंत्र विधान पर्याप्त नहीं हो सकता।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>वैदिक ज्योतिष में प्रत्येक ग्रह का अपना विशिष्ट कारकत्व, मंत्र और उपासना पद्धति है। जातक की कुंडली के अनुसार निर्धारित जाप संख्या और संकल्प के साथ विधान संपन्न होता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Special Graha Japa', 'Special Graha Shanti')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 06. Rudrabhishek -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-rudrabhishek.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="रुद्राभिषेक">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">06. रुद्राभिषेक</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">शिव उपासना • Rudrabhishekam</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"शिवलिंग पर अभिषेक करना एक विधि है, लेकिन रुद्राभिषेक के शास्त्रीय स्वरूप को समझना उससे कहीं अधिक महत्वपूर्ण है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>रुद्राभिषेक केवल जल या दूध अर्पित करने तक सीमित नहीं है। इसकी वास्तविक महत्ता रुद्राध्याय पाठ, मंत्रों की शुद्धता और संकल्प में निहित है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹5,100 से</span>
-                    <button onclick="openBookingModal('Rudrabhishek', 'Vedic Rudrabhishek')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 07. Maha Mrityunjaya -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-mrityunjaya.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="महामृत्युंजय जाप अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">07. महामृत्युंजय जाप अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">प्राण रक्षा एवं आध्यात्मिक संबल • Maha Mrityunjaya Homa</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"महामृत्युंजय मंत्र केवल एक मंत्र नहीं, शिव उपासना की अत्यंत महत्वपूर्ण वैदिक परंपरा का हिस्सा है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>मंत्र का सही उच्चारण, संकल्प, जाप की प्रक्रिया और पूर्णाहुति का विधान इस अनुष्ठान की मूल शक्ति हैं। (धार्मिक एवं आध्यात्मिक उपासना; चिकित्सा का विकल्प नहीं।)</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Maha Mrityunjaya', 'Maha Mrityunjaya Anushthan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 08. Laghurudra -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-laghurudra.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="लघुरुद्र एवं विशेष रुद्र अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">08. लघुरुद्र एवं विशेष रुद्र अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">वृहद वैदिक पाठ • Laghu Rudra Maha Anushthan</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"जहाँ रुद्र उपासना का विस्तृत स्वरूप निर्धारित हो, वहाँ केवल आयोजन नहीं, वैदिक पाठ की व्यवस्था भी उतनी ही महत्वपूर्ण होती है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>इसमें रुद्राध्याय के पाठ की निर्धारित आवृत्तियाँ, योग्य आचार्यों की व्यवस्था, और संपूर्ण वैदिक विधान की स्पष्टता को प्राथमिकता दी जाती है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹21,000 से</span>
-                    <button onclick="openBookingModal('Laghurudra', 'Laghurudra Maha Anushthan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 09. Pitri Shanti -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-pitrishanti.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="पितृ शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">09. पितृ शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">कृतज्ञता एवं श्रद्धा • Pitru Paksha Traditions</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"पितरों के प्रति श्रद्धा केवल एक कर्मकांड नहीं, भारतीय धार्मिक परंपरा में कृतज्ञता और स्मरण का महत्वपूर्ण भाव है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>हम पितृ शांति के विषय को भय से नहीं, श्रद्धा और शास्त्रीय समझ से देखते हैं। पारिवारिक परंपरा के अनुरूप ही विधान सुनिश्चित किया जाता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Pitri Shanti', 'Pitri Shanti Anushthan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 10. Tripindi Shraddha -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-tripindi.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="त्रिपिंडी श्राद्ध">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">10. त्रिपिंडी श्राद्ध</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">विशिष्ट पितृ कर्म • Tripindi Shradha Puja</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"क्या आप जानते हैं कि त्रिपिंडी श्राद्ध एक विशिष्ट धार्मिक विधान है, जिसे सामान्य पितृ तर्पण के समान नहीं समझना चाहिए?"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>इस अनुष्ठान में पिंडदान, संकल्प और संबंधित शास्त्रीय विधान का विशेष महत्व होता है। औचित्य समझकर ही इसका आयोजन किया जाता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹15,000 से</span>
-                    <button onclick="openBookingModal('Tripindi Shraddha', 'Tripindi Shraddha Puja')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 11. Kaal Sarp -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-kaalsarp.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="कालसर्प योग शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">11. कालसर्प योग शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">कुंडली अक्षीय संतुलन • Kaal Sarp Dosh Puja</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"क्या आपकी कुंडली में वास्तव में कालसर्प योग है, या केवल उसका नाम सुनकर आपको अनुष्ठान बता दिया गया?"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>केवल नाम सुनकर डरने के बजाय ग्रहों के अपवाद, लग्न और भाव का सूक्ष्म अध्ययन करके ही शांति अनुष्ठान की आवश्यकता पर विचार किया जाता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Kaal Sarp Yoga', 'Kaal Sarp Dosh Shanti')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 12. Durga Saptashati -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-saptashati.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="दुर्गा सप्तशती पाठ एवं हवन">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">12. दुर्गा सप्तशती पाठ एवं हवन</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">मार्कण्डेय पुराणोक्त शक्ति साधना • Durga Saptashati Havan</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"दुर्गा सप्तशती का पाठ केवल अध्यायों का पाठ नहीं, देवी उपासना की एक महत्वपूर्ण शास्त्रीय परंपरा है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>अध्यायों का क्रम, पाठ की शुद्धता, न्यास एवं निर्धारित परंपरा के अनुसार हवन का अनुपालन ही इसकी वास्तविक महत्ता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Durga Saptashati', 'Durga Saptashati Path & Havan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 13. Chandi Path -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-chandi.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="चंडी पाठ एवं विशेष हवन">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">13. चंडी पाठ एवं विशेष हवन</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">महा अनुष्ठान • Shat Chandi Maha Yagya</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"शक्ति उपासना का विस्तृत अनुष्ठान केवल भव्य आयोजन से नहीं, उसके शास्त्रीय विधान से अपनी पहचान बनाता है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>हम विशेष शक्ति अनुष्ठानों को शास्त्रीय अनुशासन और सुव्यवस्थित आयोजन के साथ संपन्न कराने पर जोर देते हैं।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹21,000 से</span>
-                    <button onclick="openBookingModal('Chandi Path', 'Chandi Path & Vishesh Havan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 14. Vastu Shanti -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-vastushanti.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="वास्तु शांति अनुष्ठान">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">14. वास्तु शांति अनुष्ठान</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">भवन ऊर्जा संरेखण • Vastu Shanti Pooja</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"क्या केवल गृह प्रवेश कर लेना पर्याप्त है, या भवन के अनुरूप वास्तु संबंधी धार्मिक विधानों को भी समझना आवश्यक है?"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>भवन की वास्तविक परिस्थिति, दिशा-दोष और निर्धारित शास्त्रीय पद्धति को समझकर ही ऊर्जा संतुलन अनुष्ठान किया जाता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</span>
-                    <button onclick="openBookingModal('Vastu Shanti', 'Vastu Shanti Anushthan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 15. Griha Pravesh -->
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6 shadow-2xl">
-            <div class="master-banner-slot">
-                <img src="banner-grihapravesh.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="गृह प्रवेश एवं वैदिक पूजन">
-                <div class="master-banner-badge">
-                    <h2 class="text-lg md:text-2xl font-extrabold font-cinzel gold-gradient-text tracking-wide">15. गृह प्रवेश एवं वैदिक पूजन</h2>
-                </div>
-            </div>
-            <div class="border-b border-gold-500/20 pb-4">
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-1">नूतन गृह मंगल प्रवेश • Griha Pravesh Pooja</span>
-                <h3 class="text-lg sm:text-xl font-bold font-serif italic text-gold-200">"नया घर केवल एक नया स्थान नहीं, जीवन के एक नए अध्याय का आरंभ होता है।"</h3>
-            </div>
-            <div class="space-y-4 text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
-                <p>शुभ मुहूर्त, संकल्प, कलश स्थापना, वास्तु पूजन और हवन का व्यवस्थित अनुपालन नए भवन में सकारात्मकता सुनिश्चित करता है।</p>
-                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/40 flex flex-wrap items-center justify-between gap-3">
-                    <span class="text-xs sm:text-sm font-bold font-cinzel text-gold-300">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</span>
-                    <button onclick="openBookingModal('Griha Pravesh', 'Griha Pravesh & Vaidik Pujan')" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg hover:scale-105">संकल्प व परामर्श लें →</button>
-                </div>
-            </div>
-        </div>
-
+        <div id="anushthanFullDetailContainer"></div>
     </div>
 
     <!-- Bottom Disclaimer & Authority Box -->
@@ -1724,37 +1401,597 @@ const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbwTbMPOoIJ7
 const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         
         
-        // Bulletproof Single Page Navigation
+       // ========================================================
+        // 1. MASTER NAVIGATION ROUTER (Handles All Views Cleanly)
+        // ========================================================
         function navigateToPage(pageId) {
-    document.querySelectorAll('.page-view').forEach(el => {
-        el.classList.remove('active');
-        el.style.display = 'none';
-    });
-    
-    if (pageId === 'home') {
-        const homeView = document.getElementById('view-home');
-        if (homeView) {
-            homeView.classList.add('active');
-            homeView.style.display = 'block';
+            document.querySelectorAll('.page-view').forEach(el => {
+                el.classList.remove('active');
+                el.style.display = 'none';
+            });
+            
+            if (pageId === 'home') {
+                const homeView = document.getElementById('view-home');
+                if (homeView) {
+                    homeView.classList.add('active');
+                    homeView.style.display = 'block';
+                }
+                window.scrollTo({ top: 0, behavior: 'instant' });
+                return;
+            }
+
+            const targetView = document.getElementById(`view-${pageId}`);
+            if (targetView) {
+                targetView.classList.add('active');
+                targetView.style.display = 'block';
+
+                // Automatically renders 15 anushthan cards on tab click
+                if (pageId === 'anushthan-full' && typeof renderAnushthanDirectory === 'function') {
+                    renderAnushthanDirectory();
+                }
+            } else {
+                console.error("View not found: view-" + pageId);
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
         }
-        window.scrollTo({ top: 0, behavior: 'instant' });
-        return;
-    }
 
-    const targetView = document.getElementById(`view-${pageId}`);
-    if (targetView) {
-        targetView.classList.add('active');
-        targetView.style.display = 'block';
-    } else {
-        console.error("View not found: view-" + pageId);
-    }
-    
-    window.scrollTo({ top: 0, behavior: 'instant' });
+        // ========================================================
+        // 2. COMPLETE UN-CUT 15 ANUSHTHAN MASTER DATABASE
+        // ========================================================
+        const anushthanFullData = [
+            {
+                id: 1,
+                name: "नवग्रह शांति अनुष्ठान",
+                engTitle: "Navagraha Shanti Puja Vidhanam and Homam",
+                banner: "banner-navagraha.jpg",
+                tagline: "विशेष वैदिक अनुष्ठान",
+                brief: "ग्रहों को समझे बिना उनकी शांति का विधान कैसे निर्धारित किया जा सकता है? संपूर्ण कुंडली और दशा का विश्लेषण करके ही नवग्रह शांति का औचित्य तय होता है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">ग्रहों को समझे बिना उनकी शांति का विधान कैसे निर्धारित किया जा सकता है?</p>
+                        <p>वैदिक ज्योतिष में नवग्रहों का संबंध व्यक्ति के जीवन के विभिन्न क्षेत्रों, कर्मफल और परिस्थितियों से समझा जाता है। जब किसी जातक की कुंडली में ग्रहस्थितियों के कारण विशेष ज्योतिषीय चुनौतियाँ दिखाई देती हैं, तब नवग्रह शांति अनुष्ठान पर विचार किया जाता है। लेकिन प्रत्येक व्यक्ति के लिए एक ही प्रकार का नवग्रह अनुष्ठान निर्धारित कर देना उचित दृष्टिकोण नहीं है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">इस अनुष्ठान में सही चयन क्यों आवश्यक है?</h4>
+                        <p>नवग्रहों की स्थिति, भाव, दृष्टि, दशा, अंतर्दशा और जातक की वास्तविक परिस्थिति को समझे बिना केवल सामान्य रूप से नवग्रह पूजा करवा लेना पर्याप्त ज्योतिषीय विवेचना नहीं है। अक्सर लोग केवल यह सुनकर अनुष्ठान करवा लेते हैं कि उनकी कुंडली में ग्रह दोष है। लेकिन कौन-सा ग्रह किस प्रकार प्रभावी है, किस ग्रह की शांति आवश्यक है और किस विधान का औचित्य है, यह समझने का प्रयास नहीं करते।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">सामान्यतः कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>सभी नौ ग्रहों की पूजा को हर परिस्थिति में समान रूप से आवश्यक मान लेना।</li>
+                                <li>कुंडली और दशा का विश्लेषण किए बिना अनुष्ठान निर्धारित करना।</li>
+                                <li>जाप संख्या और पूजा विधान को केवल प्रचलित तरीके से तय करना।</li>
+                                <li>अनुष्ठान के उद्देश्य और संकल्प को स्पष्ट न रखना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">KAALGYA में नवग्रह शांति को केवल एक सामान्य पूजा के रूप में नहीं देखा जाता। जातक की कुंडली, ग्रहस्थितियों और उद्देश्य को समझकर अनुष्ठान की उपयुक्तता एवं उसके विधान पर विचार किया जाता है। हमारा जोर शास्त्रीय आधार, स्पष्ट संकल्प और निर्धारित प्रक्रिया पर रहता है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40 space-y-1">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                            <div class="text-xs text-gray-400">अंतिम मूल्य निर्धारित जाप संख्या, विधि, आचार्यों और सामग्री के अनुसार।</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 2,
+                name: "शनि ग्रह शांति अनुष्ठान",
+                engTitle: "Shaniwar Pujan Vidhi, Significance & Upay",
+                banner: "banner-shani.jpg",
+                tagline: "कर्म एवं अनुशासन कारक शांति",
+                brief: "क्या शनि का नाम सुनते ही पूजा करवा लेना ही सही उपाय है? शनि की वास्तविक स्थिति, साढ़ेसाती और कर्म-विधान को समझकर ही अनुष्ठान का निर्णय होता है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">क्या शनि का नाम सुनते ही पूजा करवा लेना ही सही उपाय है, या पहले शनि की वास्तविक स्थिति समझना आवश्यक है?</p>
+                        <p>वैदिक ज्योतिष में शनि को कर्म, अनुशासन, धैर्य, उत्तरदायित्व और जीवन के दीर्घकालिक अनुभवों से संबंधित ग्रह माना जाता है। शनि की भूमिका को केवल भय या कष्ट के दृष्टिकोण से समझना अधूरा है। शनि शांति अनुष्ठान का विचार करते समय यह समझना आवश्यक है कि जातक की कुंडली में शनि किस भाव में स्थित हैं, उनकी स्थिति कैसी है, कौन-सी दशा चल रही है और वर्तमान समस्या से उनका ज्योतिषीय संबंध क्या है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>शनि से संबंधित पूजा, मंत्र जाप, दान और हवन के अपने अलग-अलग विधान हैं। इनका चयन जातक की परिस्थिति एवं संबंधित परंपरा के अनुसार किया जाना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर होने वाली चूक:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>साढ़ेसाती या ढैय्या का नाम सुनकर बिना अन्य ज्योतिषीय विश्लेषण के पूजा निर्धारित कर देना।</li>
+                                <li>हर व्यक्ति को एक ही मंत्र या समान जाप संख्या बता देना।</li>
+                                <li>शनि को केवल अशुभ ग्रह मानकर उनकी संपूर्ण ज्योतिषीय भूमिका को अनदेखा करना।</li>
+                                <li>दान और पूजा के वास्तविक उद्देश्य को स्पष्ट न करना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम शनि शांति का मार्गदर्शन केवल भय के आधार पर नहीं करते। पहले ग्रह की वास्तविक स्थिति और जातक की परिस्थिति को समझना, फिर अनुष्ठान के औचित्य एवं विधान पर विचार करना हमारी प्राथमिकता है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 3,
+                name: "राहु-केतु शांति अनुष्ठान",
+                engTitle: "Rahu Ketu Puja & Shadow Planet Rectification",
+                banner: "banner-rahuketu.jpg",
+                tagline: "छाया ग्रह कर्म विसर्जन विधान",
+                brief: "राहु-केतु का नाम सुनकर अनुष्ठान तय करना आसान है, लेकिन उनकी भावस्थिति, नक्षत्र और कर्मफल प्रासंगिकता समझना विशेषज्ञता का विषय है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">राहु-केतु का नाम सुनकर अनुष्ठान तय करना आसान है, लेकिन उनकी वास्तविक ज्योतिषीय भूमिका समझना विशेषज्ञता का विषय है।</p>
+                        <p>वैदिक ज्योतिष में राहु और केतु को छाया ग्रह माना जाता है। इनका संबंध कर्मफल, जीवन के असामान्य अनुभवों, आसक्ति, वैराग्य और विभिन्न ज्योतिषीय परिस्थितियों से जोड़ा जाता है। इनसे संबंधित अनुष्ठान पर विचार करते समय केवल राहु-केतु की उपस्थिति देखना पर्याप्त नहीं होता। उनकी भावस्थिति, राशि, नक्षत्र, अन्य ग्रहों से संबंध और चल रही दशाओं को भी समझना आवश्यक है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही अनुष्ठान का महत्व</h4>
+                        <p>राहु-केतु शांति, संबंधित मंत्र जाप, दान और अन्य वैदिक प्रक्रियाओं का चयन बिना उचित आधार के नहीं करना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">सामान्यतः कहाँ गलती होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>राहु या केतु का नाम सुनते ही पूजा निर्धारित कर देना।</li>
+                                <li>कालसर्प योग और राहु-केतु से संबंधित अन्य ज्योतिषीय स्थितियों को एक ही मान लेना।</li>
+                                <li>बिना विश्लेषण के एक जैसी जाप संख्या और विधान अपनाना।</li>
+                                <li>जातक को अनुष्ठान का वास्तविक उद्देश्य न समझाना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम राहु-केतु से संबंधित अनुष्ठान में ज्योतिषीय विवेचना और शास्त्रीय विधान को प्राथमिकता देते हैं। हमारा प्रयास है कि पूजा केवल किसी ग्रह के नाम पर नहीं, बल्कि उसके वास्तविक औचित्य को समझकर निर्धारित हो।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 4,
+                name: "मंगल दोष शांति अनुष्ठान",
+                engTitle: "Mangal Dosha Shanti & Bhauma Energy Harmony",
+                banner: "banner-mangal.jpg",
+                tagline: "भौम ऊर्जा एवं वैवाहिक सामंजस्य",
+                brief: "क्या कुंडली में मंगल की स्थिति देखकर ही मंगल दोष मान लेना उचित है? दोषभंग, परिहार योग और अग्नि के डिग्री-संतुलन की शास्त्रीय मीमांसा।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">क्या कुंडली में मंगल की स्थिति देखकर ही मंगल दोष मान लेना उचित है?</p>
+                        <p>वैदिक ज्योतिष में मंगल को ऊर्जा, साहस, भूमि, पराक्रम और वैवाहिक जीवन से संबंधित विभिन्न पहलुओं का कारक माना जाता है। कुंडली में मंगल की स्थिति के आधार पर कुछ विशेष योगों और दोषों का विचार किया जाता है। लेकिन मंगल दोष का निर्णय केवल एक भाव में मंगल की उपस्थिति देखकर नहीं किया जाना चाहिए। इसके लिए संपूर्ण कुंडली, लग्न, चंद्र कुंडली, शुक्र, सप्तम भाव, संबंधित योग और दोष के परिहार की संभावनाओं का अध्ययन आवश्यक है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधान का महत्व</h4>
+                        <p>मंगल शांति के लिए पूजा, जाप, हवन एवं अन्य पारंपरिक विधियाँ अपनाई जाती हैं। इनका चयन जातक की कुंडली और अनुष्ठान के उद्देश्य के अनुरूप होना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>केवल मंगल की स्थिति देखकर मंगल दोष घोषित कर देना।</li>
+                                <li>दोष के प्रभाव और उसकी तीव्रता का विश्लेषण न करना।</li>
+                                <li>दोषभंग एवं परिहार योगों की अनदेखी करना।</li>
+                                <li>बिना उचित विवेचना के विवाह से पहले अनुष्ठान अनिवार्य बता देना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम मंगल दोष को केवल एक ज्योतिषीय लेबल मानकर नहीं देखते। हमारा प्रयास संपूर्ण कुंडली का अध्ययन करके दोष की वास्तविक स्थिति, उसके ज्योतिषीय औचित्य और उपयुक्त शास्त्रीय अनुष्ठान पर मार्गदर्शन देना है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 5,
+                name: "विशेष ग्रह शांति एवं जाप अनुष्ठान",
+                engTitle: "Specialized Individual Planetary Japa & Homa",
+                banner: "banner-visheshgraha.jpg",
+                tagline: "विशिष्ट कारकत्व एवं नक्षत्र संपुट",
+                brief: "हर ग्रह के लिए एक ही पूजा और एक ही मंत्र विधान पर्याप्त नहीं हो सकता। ग्रह की सटीक स्थिति और संबंधित दशा के अनुसार शास्त्रोक्त साधना।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">हर ग्रह के लिए एक ही पूजा और एक ही मंत्र विधान पर्याप्त नहीं हो सकता।</p>
+                        <p>वैदिक ज्योतिष में प्रत्येक ग्रह का अपना विशिष्ट कारकत्व, मंत्र, उपासना पद्धति और ज्योतिषीय महत्व है। इसलिए किसी ग्रह से संबंधित विशेष अनुष्ठान निर्धारित करते समय केवल उसके नाम के आधार पर निर्णय लेना पर्याप्त नहीं है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही अनुष्ठान का महत्व</h4>
+                        <p>ग्रह की स्थिति, संबंधित दशा, नक्षत्र, भाव और जातक की आवश्यकता के अनुसार मंत्र जाप, हवन, दान एवं अन्य प्रक्रियाओं का निर्धारण किया जाना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>बिना ज्योतिषीय विवेचना के इंटरनेट से मंत्र और जाप संख्या चुन लेना।</li>
+                                <li>ग्रह के मंत्र जाप और संबंधित पूजा विधान को एक ही प्रक्रिया समझ लेना।</li>
+                                <li>निर्धारित जाप संख्या, संकल्प और पूर्णाहुति के नियमों की अनदेखी करना।</li>
+                                <li>अनुष्ठान की प्रक्रिया एवं उसके उद्देश्य को स्पष्ट न रखना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हमारा प्रयास है कि प्रत्येक विशेष ग्रह अनुष्ठान को उसकी ज्योतिषीय आवश्यकता और संबंधित शास्त्रीय परंपरा के अनुसार निर्धारित किया जाए। यहाँ उद्देश्य केवल जाप करवाना नहीं, बल्कि उसके औचित्य और संपूर्ण प्रक्रिया को समझना है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 6,
+                name: "रुद्राभिषेक",
+                engTitle: "Vedic Rudrabhishek & Namakam Chamakam Path",
+                banner: "banner-rudrabhishek.jpg",
+                tagline: "शिव चेतना एवं रुद्राध्याय पाठ",
+                brief: "शिवलिंग पर अभिषेक करना एक विधि है, लेकिन रुद्राभिषेक के शास्त्रीय स्वरूप और रुद्राध्याय पाठ की शुद्धता को समझना कहीं अधिक महत्वपूर्ण है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">शिवलिंग पर अभिषेक करना एक विधि है, लेकिन रुद्राभिषेक के शास्त्रीय स्वरूप को समझना उससे कहीं अधिक महत्वपूर्ण है।</p>
+                        <p>भगवान शिव की उपासना में रुद्राभिषेक का विशेष स्थान है। इसमें अभिषेक, वैदिक मंत्रोच्चार, रुद्राध्याय और निर्धारित पूजा विधियों का महत्व होता है। रुद्राभिषेक केवल जल, दूध अथवा अन्य सामग्री अर्पित करने तक सीमित नहीं है। इसकी वास्तविक धार्मिक महत्ता संबंधित मंत्रों, पाठ, संकल्प और विधि-विधान में निहित है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>रुद्राभिषेक के विभिन्न स्वरूप और पाठ परंपराएँ हैं। कौन-सी विधि अपनाई जाएगी, यह अनुष्ठान के उद्देश्य और संबंधित परंपरा के अनुसार स्पष्ट होना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>केवल अभिषेक सामग्री को ही संपूर्ण रुद्राभिषेक समझ लेना।</li>
+                                <li>रुद्र मंत्रों के पाठ और निर्धारित क्रम की उपेक्षा करना।</li>
+                                <li>लघुरुद्र, महारुद्र और सामान्य रुद्राभिषेक को एक जैसा प्रस्तुत करना।</li>
+                                <li>पूजा के संकल्प और उद्देश्य को स्पष्ट न करना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम रुद्राभिषेक में बाहरी भव्यता से अधिक मंत्र विधान, पाठ की शुद्धता, संकल्प और निर्धारित प्रक्रिया को महत्व देते हैं। हमारा प्रयास है कि श्रद्धालु केवल अभिषेक न कराए, बल्कि जिस उपासना में सहभागी बन रहा है, उसका स्वरूप भी समझे।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹5,100 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 7,
+                name: "महामृत्युंजय जाप अनुष्ठान",
+                engTitle: "Maha Mrityunjaya Homa: Healing & Protection",
+                banner: "banner-mrityunjaya.jpg",
+                tagline: "आरोग्य, प्राण रक्षा एवं आध्यात्मिक संबल",
+                brief: "महामृत्युंजय मंत्र केवल एक मंत्र नहीं, शिव उपासना की वैदिक परंपरा है। सही उच्चारण, संकल्प, और दशांश हवन का शास्त्रीय अनुपालन।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">महामृत्युंजय मंत्र केवल एक मंत्र नहीं, शिव उपासना की अत्यंत महत्वपूर्ण वैदिक परंपरा का हिस्सा है।</p>
+                        <p>महामृत्युंजय मंत्र का संबंध ऋग्वेद के प्रसिद्ध त्र्यम्बकं यजामहे मंत्र से है। धार्मिक परंपरा में इसे आरोग्य, कल्याण, आध्यात्मिक शक्ति और शिव की उपासना से जोड़ा जाता है। इस मंत्र का जाप करते समय केवल जाप संख्या ही महत्वपूर्ण नहीं होती, बल्कि मंत्र का सही उच्चारण, संकल्प, जाप की प्रक्रिया, अनुष्ठान का स्वरूप और पूर्णाहुति का विधान भी महत्वपूर्ण हैं।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>महामृत्युंजय जाप सामान्य जाप, संकल्पित जाप और विस्तृत अनुष्ठान के विभिन्न स्वरूपों में किया जा सकता है। इसलिए पहले यह स्पष्ट होना चाहिए कि किस उद्देश्य से और किस विधान के अंतर्गत जाप कराया जा रहा है।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>केवल जाप संख्या को अनुष्ठान की संपूर्णता मान लेना।</li>
+                                <li>मंत्र के उच्चारण और पाठ की शुद्धता की उपेक्षा करना।</li>
+                                <li>बिना स्पष्ट संकल्प के जाप आरंभ कर देना।</li>
+                                <li>जाप, हवन और पूर्णाहुति की प्रक्रिया को अस्पष्ट रखना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम महामृत्युंजय अनुष्ठान में मंत्र विधान, जाप संख्या, संकल्प और पूर्णाहुति की प्रक्रिया को स्पष्ट रखने पर विशेष ध्यान देते हैं। जातक को पहले ही बताया जाता है कि अनुष्ठान किस स्वरूप में और किन प्रक्रियाओं के साथ संपन्न होगा। (धार्मिक एवं आध्यात्मिक उपासना; इसे चिकित्सा का विकल्प या रोगमुक्ति की गारंटी नहीं माना जाना चाहिए।)</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 8,
+                name: "लघुरुद्र एवं विशेष रुद्र अनुष्ठान",
+                engTitle: "Laghu Rudra Maha Anushthan & Avriti Path",
+                banner: "banner-laghurudra.jpg",
+                tagline: "वृहद वैदिक पाठ एवं आचार्य मंडल",
+                brief: "जहाँ रुद्र उपासना का विस्तृत स्वरूप निर्धारित हो, वहाँ केवल आयोजन नहीं, वैदिक पाठ की आवृत्तियाँ और व्यवस्थित आचार्य मंडल आवश्यक है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">जहाँ रुद्र उपासना का विस्तृत स्वरूप निर्धारित हो, वहाँ केवल आयोजन नहीं, वैदिक पाठ की व्यवस्था भी उतनी ही महत्वपूर्ण होती है।</p>
+                        <p>लघुरुद्र भगवान शिव की उपासना से संबंधित एक विस्तृत वैदिक अनुष्ठान परंपरा है। इसमें रुद्राध्याय के पाठ, अभिषेक, संकल्प और संबंधित वैदिक प्रक्रियाओं का विशेष महत्व होता है। यह सामान्य रुद्राभिषेक से अलग और अधिक विस्तृत स्वरूप का अनुष्ठान है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही आयोजन का महत्व</h4>
+                        <p>ऐसे अनुष्ठान में पाठ की निर्धारित आवृत्तियाँ, आचार्यों की संख्या, समय-सारणी, मंत्रोच्चार और अनुष्ठान का क्रम पहले से स्पष्ट होना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>सामान्य रुद्राभिषेक को ही लघुरुद्र बताकर प्रस्तुत करना।</li>
+                                <li>पाठ की आवृत्तियों और वास्तविक स्वरूप को स्पष्ट न करना।</li>
+                                <li>पर्याप्त योग्य आचार्यों एवं व्यवस्थित पाठ व्यवस्था का ध्यान न रखना।</li>
+                                <li>अनुष्ठान की अवधि और पूर्णता के विधान को पहले से निर्धारित न करना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम ऐसे विस्तृत अनुष्ठानों को एक व्यवस्थित वैदिक आयोजन के रूप में देखते हैं, जिसमें पाठ परंपरा, आचार्यों की व्यवस्था, संकल्प और संपूर्ण विधान की स्पष्टता को प्राथमिकता दी जाती है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹21,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 9,
+                name: "पितृ शांति अनुष्ठान",
+                engTitle: "Pitru Shanti & Traditional Ancestral Rites",
+                banner: "banner-pitrishanti.jpg",
+                tagline: "पूर्वज ऋण मुक्ति एवं श्रद्धा भाव",
+                brief: "पितरों के प्रति श्रद्धा केवल कर्मकांड नहीं, कृतज्ञता का भाव है। पारिवारिक परंपरा और औचित्य को समझकर ही तर्पण व शांति विधान संपन्न होता है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">पितरों के प्रति श्रद्धा केवल एक कर्मकांड नहीं, भारतीय धार्मिक परंपरा में कृतज्ञता और स्मरण का महत्वपूर्ण भाव है।</p>
+                        <p>हिंदू धर्म में पितरों के प्रति श्रद्धा, तर्पण, श्राद्ध और संबंधित धार्मिक कर्मों का विशेष महत्व माना गया है। पितृ शांति अनुष्ठान पर विचार करते समय जातक की पारिवारिक परंपरा, धार्मिक मान्यताओं और वास्तविक उद्देश्य को समझना आवश्यक है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>पितृ कर्मों में तिथि, पक्ष, संकल्प, पात्रता, संबंधित परंपरा और निर्धारित विधि का विशेष ध्यान रखा जाता है। प्रत्येक परिस्थिति में एक ही प्रकार का अनुष्ठान उचित नहीं होता।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>प्रत्येक पारिवारिक समस्या को पितृ दोष से जोड़ देना।</li>
+                                <li>पितृ दोष का ज्योतिषीय आधार समझे बिना महँगे अनुष्ठान सुझाना।</li>
+                                <li>श्राद्ध, तर्पण और पितृ शांति को एक ही प्रक्रिया समझ लेना।</li>
+                                <li>जातक की पारिवारिक परंपरा और अनुष्ठान के उद्देश्य की अनदेखी करना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम पितृ शांति के विषय को भय से नहीं, श्रद्धा और शास्त्रीय समझ से देखते हैं। हमारा प्रयास है कि जातक को पहले यह समझाया जाए कि उसकी परिस्थिति में कौन-सी धार्मिक प्रक्रिया प्रासंगिक है और उसका विधान क्या है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 10,
+                name: "त्रिपिंडी श्राद्ध",
+                engTitle: "Tripindi Shradha: Peaceful Moksha of Ancestors",
+                banner: "banner-tripindi.jpg",
+                tagline: "अतृप्त आत्मा शांति एवं विशिष्ट पिंडदान",
+                brief: "क्या आप जानते हैं कि त्रिपिंडी श्राद्ध एक विशिष्ट धार्मिक विधान है? इसे सामान्य तर्पण के समान नहीं समझना चाहिए; इसका अपना अलग संकल्प है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">क्या आप जानते हैं कि त्रिपिंडी श्राद्ध एक विशिष्ट धार्मिक विधान है, जिसे सामान्य पितृ तर्पण के समान नहीं समझना चाहिए?</p>
+                        <p>हिंदू धार्मिक परंपरा में त्रिपिंडी श्राद्ध को पितृ कर्मों से संबंधित एक विशिष्ट अनुष्ठान माना जाता है। इसका अपना अलग विधान, संकल्प और धार्मिक संदर्भ है। इसे केवल किसी पारिवारिक परेशानी के समाधान के नाम पर निर्धारित कर देना उचित नहीं है। पहले यह समझना आवश्यक है कि जातक की परिस्थिति में इस विशेष कर्म का औचित्य है भी या नहीं।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>इस अनुष्ठान में पिंडदान, संकल्प, संबंधित कर्म और निर्धारित धार्मिक प्रक्रियाओं का महत्व होता है। इसकी विधि परंपरा और संबंधित शास्त्रीय विधान के अनुसार संपन्न की जानी चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>त्रिपिंडी श्राद्ध और सामान्य श्राद्ध कर्म को एक जैसा मान लेना।</li>
+                                <li>बिना पर्याप्त आधार के इसे हर पितृ संबंधी समस्या का समाधान बताना।</li>
+                                <li>संकल्प एवं संबंधित धार्मिक प्रक्रिया की स्पष्टता न रखना।</li>
+                                <li>योग्य कर्मकांडी आचार्य और उचित व्यवस्था का ध्यान न रखना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम त्रिपिंडी श्राद्ध को एक विशिष्ट पितृ कर्म के रूप में देखते हैं। इसकी आवश्यकता, धार्मिक औचित्य और विधि को समझने के बाद ही इसके आयोजन का मार्गदर्शन किया जाता है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹15,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 11,
+                name: "कालसर्प योग शांति अनुष्ठान",
+                engTitle: "Kaal Sarp Dosh Puja & Classical Verification",
+                banner: "banner-kaalsarp.jpg",
+                tagline: "कुंडली चक्र एवं अक्षीय संतुलन",
+                brief: "क्या आपकी कुंडली में वास्तव में कालसर्प योग है, या केवल उसका नाम सुनकर अनुष्ठान बता दिया गया? वास्तविक ग्रह अपवादों का शास्त्रीय विश्लेषण।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">क्या आपकी कुंडली में वास्तव में कालसर्प योग है, या केवल उसका नाम सुनकर आपको अनुष्ठान बता दिया गया?</p>
+                        <p>ज्योतिष में कालसर्प योग को राहु-केतु और अन्य ग्रहों की विशेष स्थितियों के संदर्भ में देखा जाता है। लेकिन इसकी व्याख्या, मान्यता और फलित संबंधी दृष्टिकोण विभिन्न ज्योतिषीय परंपराओं में अलग-अलग हो सकते हैं। इसलिए केवल एक योग का नाम सुनकर जातक के जीवन की सभी समस्याओं को उससे जोड़ देना उचित नहीं है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विश्लेषण का महत्व</h4>
+                        <p>ग्रहों की वास्तविक स्थिति, राहु-केतु की स्थिति, लग्न, भाव, ग्रहों के अपवाद और संपूर्ण कुंडली का अध्ययन आवश्यक है।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>केवल ग्रहों की एक स्थिति देखकर कालसर्प योग घोषित कर देना।</li>
+                                <li>योग के विभिन्न स्वरूपों और ज्योतिषीय मतभेदों को अनदेखा करना।</li>
+                                <li>हर समस्या का कारण कालसर्प योग बताना।</li>
+                                <li>बिना विश्लेषण के एक ही प्रकार की पूजा और जाप निर्धारित करना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हमारा पहला उद्देश्य यह समझना है कि कुंडली में संबंधित योग की स्थिति और उसकी फलित प्रासंगिकता क्या है। उसके बाद ही शांति अनुष्ठान की आवश्यकता और संबंधित विधान पर विचार किया जाता है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 12,
+                name: "दुर्गा सप्तशती पाठ एवं हवन",
+                engTitle: "Durga Saptashati Havan & Samput Path",
+                banner: "banner-saptashati.jpg",
+                tagline: "मार्कण्डेय पुराणोक्त शक्ति साधना",
+                brief: "दुर्गा सप्तशती का पाठ केवल अध्यायों का पाठ नहीं, देवी उपासना की शास्त्रीय परंपरा है। पाठ की शुद्धता, न्यास और हवन का अचूक समन्वय।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">दुर्गा सप्तशती का पाठ केवल अध्यायों का पाठ नहीं, देवी उपासना की एक महत्वपूर्ण शास्त्रीय परंपरा है।</p>
+                        <p>मार्कण्डेय पुराण से संबंधित देवी महात्म्य, जिसे दुर्गा सप्तशती के नाम से जाना जाता है, शक्ति उपासना में विशेष स्थान रखता है। इसमें देवी के विभिन्न स्वरूपों, महिमा और दैवी शक्ति का वर्णन मिलता है। इस पाठ में अध्यायों का क्रम, पाठ की शुद्धता, संकल्प, संबंधित न्यास एवं निर्धारित परंपरा के अनुसार हवन का महत्व है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>दुर्गा सप्तशती के पाठ के विभिन्न विधान और परंपराएँ प्रचलित हैं। इसलिए पाठ का स्वरूप, क्रम, नियम और हवन की प्रक्रिया पहले से स्पष्ट होनी चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>पाठ के निर्धारित क्रम और प्रक्रिया की अनदेखी करना।</li>
+                                <li>पाठ के विभिन्न विधान को बिना समझे एक जैसा मान लेना।</li>
+                                <li>संकल्प, पाठ और हवन के बीच उचित समन्वय न रखना।</li>
+                                <li>केवल पाठ पूरा करने को ही संपूर्ण अनुष्ठान मान लेना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम दुर्गा सप्तशती को शक्ति उपासना के एक महत्वपूर्ण शास्त्रीय विधान के रूप में देखते हैं। पाठ की शुद्धता, संकल्प, निर्धारित क्रम और हवन की प्रक्रिया को स्पष्ट रखना हमारी प्राथमिकता है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 13,
+                name: "चंडी पाठ एवं विशेष हवन",
+                engTitle: "Shat Chandi Maha Yagya & Devi Sadhana",
+                banner: "banner-chandi.jpg",
+                tagline: "सर्वोच्च शक्ति अनुष्ठान एवं पूर्णाहुति",
+                brief: "शक्ति उपासना का विस्तृत अनुष्ठान केवल भव्य आयोजन से नहीं, उसके शास्त्रीय अनुशासन, आहुति-क्रम और पूर्णाहुति से पहचान बनाता है।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">शक्ति उपासना का विस्तृत अनुष्ठान केवल भव्य आयोजन से नहीं, उसके शास्त्रीय विधान से अपनी पहचान बनाता है।</p>
+                        <p>चंडी पाठ एवं चंडी हवन देवी उपासना की महत्वपूर्ण धार्मिक परंपराओं में शामिल हैं। इसमें पाठ की निर्धारित प्रक्रिया, संकल्प, मंत्रोच्चार और हवन विधान का विशेष महत्व होता है। यह समझना आवश्यक है कि चंडी पाठ, दुर्गा सप्तशती पाठ और विस्तृत चंडी अनुष्ठान के स्वरूप एवं आयोजन की व्यवस्थाएँ एक-दूसरे से भिन्न हो सकती हैं।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>ऐसे विशेष अनुष्ठान में पाठ का स्वरूप, आचार्यों की संख्या, निर्धारित मंत्र, हवन सामग्री, आहुतियों की प्रक्रिया और पूर्णाहुति की व्यवस्था पहले से तय होनी चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>सामान्य पाठ और विस्तृत चंडी अनुष्ठान को एक जैसा बताना।</li>
+                                <li>आयोजन की वास्तविक विधि और पाठ की आवृत्ति स्पष्ट न करना।</li>
+                                <li>योग्य आचार्यों एवं निर्धारित समय-सारणी की व्यवस्था न करना।</li>
+                                <li>केवल आयोजन की भव्यता को अनुष्ठान की गुणवत्ता का आधार बनाना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम विशेष शक्ति अनुष्ठानों को शास्त्रीय अनुशासन और सुव्यवस्थित आयोजन के साथ संपन्न कराने पर जोर देते हैं। प्रत्येक चरण का उद्देश्य, पाठ विधान और अनुष्ठान की प्रक्रिया पहले से स्पष्ट रखी जाती है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹21,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 14,
+                name: "वास्तु शांति अनुष्ठान",
+                engTitle: "Vastu Shanti Pooja: Cost, Benefits & Rituals",
+                banner: "banner-vastushanti.jpg",
+                tagline: "भवन ऊर्जा एवं 32 पद देवता पूजन",
+                brief: "क्या केवल गृह प्रवेश कर लेना पर्याप्त है, या भवन के अनुरूप वास्तु संबंधी धार्मिक विधानों को भी समझना आवश्यक है? दिशा संतुलन व वास्तु शांति।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">क्या केवल गृह प्रवेश कर लेना पर्याप्त है, या भवन के अनुरूप वास्तु संबंधी धार्मिक विधानों को भी समझना आवश्यक है?</p>
+                        <p>भारतीय परंपरा में वास्तु को भवन निर्माण, दिशाओं, स्थान विन्यास और निवास संबंधी सिद्धांतों से जोड़कर देखा जाता है। वास्तु शांति अनुष्ठान का धार्मिक उद्देश्य भवन से संबंधित पारंपरिक शांति एवं मंगल कामना के विधान को संपन्न करना है। लेकिन हर भवन और हर परिस्थिति में एक ही प्रकार की वास्तु पूजा निर्धारित करना उचित नहीं है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधान का महत्व</h4>
+                        <p>भवन की स्थिति, निर्माण का स्वरूप, उपयोग, प्रवेश और जातक की धार्मिक आवश्यकता के अनुसार संबंधित पूजा एवं संकल्प का निर्धारण किया जाना चाहिए।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>गृह प्रवेश और वास्तु शांति को हमेशा एक ही प्रक्रिया मान लेना।</li>
+                                <li>भवन की वास्तविक परिस्थिति समझे बिना पूजा निर्धारित करना।</li>
+                                <li>पूजा के संकल्प और उद्देश्य को स्पष्ट न रखना।</li>
+                                <li>अनुष्ठान को केवल सामग्री और हवन तक सीमित कर देना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम वास्तु संबंधी धार्मिक अनुष्ठान में भवन की परिस्थिति, पूजा के उद्देश्य और निर्धारित शास्त्रीय विधान को महत्व देते हैं। हमारा प्रयास है कि जातक को यह स्पष्ट हो कि पूजा किस कारण और किस विधि से कराई जा रही है।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
+                        </div>
+                    </div>`
+            },
+            {
+                id: 15,
+                name: "गृह प्रवेश एवं वैदिक पूजन",
+                engTitle: "Griha Pravesh Pooja – Spiritual Benefits & Rituals",
+                banner: "banner-grihapravesh.jpg",
+                tagline: "नूतन गृह मंगल प्रवेश एवं कलश स्थापना",
+                brief: "नया घर केवल नया स्थान नहीं, नए अध्याय का आरंभ है। शुभ मुहूर्त, कलश स्थापना, वास्तु पूजन और व्यवस्थित वैदिक रीति से नूतन गृह प्रवेश।",
+                content: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">नया घर केवल एक नया स्थान नहीं, जीवन के एक नए अध्याय का आरंभ होता है।</p>
+                        <p>भारतीय परंपरा में नए घर में प्रवेश से पहले गृह प्रवेश एवं संबंधित धार्मिक पूजन का विशेष महत्व माना जाता है। इसमें शुभ मुहूर्त, संकल्प, गणेश पूजन, कलश स्थापना, वास्तु संबंधी पूजा और हवन जैसे विधान सम्मिलित हो सकते हैं। लेकिन गृह प्रवेश केवल एक निर्धारित पूजा सूची नहीं है। भवन की स्थिति, निर्माण का स्वरूप और संबंधित धार्मिक परंपरा के अनुसार इसकी प्रक्रिया में अंतर हो सकता है।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
+                        <p>गृह प्रवेश के लिए शुभ मुहूर्त का विचार, संकल्प और पूजा का क्रम महत्वपूर्ण हैं। निर्माणाधीन भवन, नवनिर्मित घर और पहले से बने भवन में प्रवेश की परिस्थितियाँ अलग हो सकती हैं।</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>मुहूर्त का चयन केवल सामान्य पंचांग देखकर कर लेना।</li>
+                                <li>गृह प्रवेश और वास्तु शांति के अंतर को न समझना।</li>
+                                <li>भवन की परिस्थिति के अनुसार पूजा विधान निर्धारित न करना।</li>
+                                <li>पूजा की प्रक्रिया और आवश्यक सामग्री की पूर्व जानकारी न देना।</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">KAALGYA का दृष्टिकोण</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">हम गृह प्रवेश को केवल एक औपचारिक धार्मिक आयोजन नहीं मानते। शुभ मुहूर्त, संबंधित संकल्प, पूजा विधान और जातक की आवश्यकता को ध्यान में रखकर व्यवस्थित वैदिक पूजन का मार्गदर्शन देते हैं।</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
+                        </div>
+                    </div>`
+            }
+        ];
 
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-}
+        // ========================================================
+        // 3. LAYER 2 RENDERER (15 Cards Directory Grid)
+        // ========================================================
+        function renderAnushthanDirectory() {
+            const grid = document.getElementById("anushthanDirectoryGrid");
+            if (!grid) return;
+
+            grid.innerHTML = anushthanFullData.map(item => `
+                <div class="cosmic-glass gold-border-glow rounded-3xl p-5 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-gold-400">
+                    <div>
+                        <div class="master-banner-slot mb-4" style="height: 180px;">
+                            <img src="${item.banner}" onerror="this.src='banner-brahmastra.jpg'" alt="${item.name}">
+                            <div class="master-banner-badge" style="padding: 0.5rem 1.5rem;">
+                                <h2 class="text-sm font-extrabold font-cinzel gold-gradient-text tracking-wide">${item.name}</h2>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block mb-1">क्रमांक #${item.id} • ${item.tagline}</span>
+                        <p class="text-xs text-gray-300 font-sans leading-relaxed mb-4">
+                            ${item.brief}
+                        </p>
+                    </div>
+                    <div class="pt-3 border-t border-gold-500/20">
+                        <button type="button" onclick="openAnushthanDetailView(${item.id})" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-md transition-transform hover:scale-[1.02] flex items-center justify-center gap-1.5">
+                            ${item.name} विवरण देखें →
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
+
+        // ========================================================
+        // 4. LAYER 3 RENDERER (Full Un-cut Content + Google Form)
+        // ========================================================
+        function openAnushthanDetailView(anushthanId) {
+            const item = anushthanFullData.find(a => a.id === anushthanId);
+            if (!item) return;
+
+            const container = document.getElementById("anushthanFullDetailContainer");
+            if (!container) return;
+
+            container.innerHTML = `
+                <div class="master-banner-slot">
+                    <img src="${item.banner}" onerror="this.src='banner-brahmastra.jpg'" alt="${item.name}">
+                    <div class="master-banner-badge">
+                        <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide">${item.name}</h2>
+                    </div>
+                </div>
+
+                <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 relative overflow-hidden space-y-8 shadow-2xl">
+                    <div class="text-center pb-6 border-b border-gold-500/20">
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-2">${item.tagline}</span>
+                        <h1 class="text-2xl md:text-4xl font-bold font-cinzel text-white mb-2">${item.name}</h1>
+                        <p class="text-xs font-mono text-gray-400">${item.engTitle}</p>
+                    </div>
+
+                    ${item.content}
+
+                    <div class="text-center pt-6 border-t border-gold-500/20">
+                        <button type="button" onclick="openBookingModal('${item.name}', '${item.name} संकल्प')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i> ${item.name} बुक करें →
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            navigateToPage('anushthan-detail');
+        }
+
+        // ========================================================
+        // 5. AUTO RENDER ENGINE
+        // ========================================================
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof renderAnushthanDirectory === 'function') {
+                renderAnushthanDirectory();
+            }
+        });
         
         // Sukoon Kaksh Data
         const sukoonData = {
