@@ -1390,6 +1390,11 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
             if (targetView) {
                 targetView.classList.add('active');
                 targetView.style.display = 'block';
+
+                // --- YEH CONDITION ADD HUI HAI ---
+                if (pageId === 'anushthan-full' && typeof renderAnushthanDirectory === 'function') {
+                    renderAnushthanDirectory();
+                }
             } else {
                 console.error("View not found: view-" + pageId);
             }
@@ -1400,7 +1405,6 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
                 lucide.createIcons();
             }
         }
-
         // Sukoon Kaksh Data
         const sukoonData = {
             karz: { 
