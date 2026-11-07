@@ -1722,42 +1722,40 @@
     <script>
 const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbwTbMPOoIJ7r5ll22vockO5G_WqBdl42zoCKkchs3fGjjfguG9XqO67LTLopkFuvxo/exec";
 const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
+        
+        
         // Bulletproof Single Page Navigation
         function navigateToPage(pageId) {
-            document.querySelectorAll('.page-view').forEach(el => {
-                el.classList.remove('active');
-                el.style.display = 'none';
-            });
-            
-            if (pageId === 'home') {
-                const homeView = document.getElementById('view-home');
-                if (homeView) {
-                    homeView.classList.add('active');
-                    homeView.style.display = 'block';
-                }
-                window.scrollTo({ top: 0, behavior: 'instant' });
-                return;
-            }
-
-            const targetView = document.getElementById(`view-${pageId}`);
-            if (targetView) {
-                targetView.classList.add('active');
-                targetView.style.display = 'block';
-
-                // --- YEH CONDITION ADD HUI HAI ---
-                if (pageId === 'anushthan-full' && typeof renderAnushthanDirectory === 'function') {
-                    renderAnushthanDirectory();
-                }
-            } else {
-                console.error("View not found: view-" + pageId);
-            }
-            
-            window.scrollTo({ top: 0, behavior: 'instant' });
-
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
+    document.querySelectorAll('.page-view').forEach(el => {
+        el.classList.remove('active');
+        el.style.display = 'none';
+    });
+    
+    if (pageId === 'home') {
+        const homeView = document.getElementById('view-home');
+        if (homeView) {
+            homeView.classList.add('active');
+            homeView.style.display = 'block';
         }
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        return;
+    }
+
+    const targetView = document.getElementById(`view-${pageId}`);
+    if (targetView) {
+        targetView.classList.add('active');
+        targetView.style.display = 'block';
+    } else {
+        console.error("View not found: view-" + pageId);
+    }
+    
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+}
+        
         // Sukoon Kaksh Data
         const sukoonData = {
             karz: { 
