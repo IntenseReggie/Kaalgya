@@ -383,22 +383,27 @@
                 </div>
             </div>
 
-            <!-- ========================================== -->
+           <!-- ========================================== -->
 <!-- VIEW: ANUSHTHAN DIRECTORY PAGE (15 Items)  -->
 <!-- ========================================== -->
 <div id="view-anushthan-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-6xl mx-auto">
-    <button onclick="navigateToPage('home')" class="mb-6 px-4 py-2 rounded-xl bg-obsidian-900 border border-gold-500/30 text-xs text-gold-300 hover:text-white flex items-center gap-1.5 cursor-pointer shadow-lg transition-all hover:scale-105">
-        ← मुख्य पृष्ठ पर वापस जाएं
-    </button>
+    <!-- Return to Home Button -->
+    <div class="mb-6 flex items-center justify-between">
+        <button onclick="navigateToPage('home')" class="px-5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/40 text-xs font-bold text-gold-300 hover:text-white flex items-center gap-2 cursor-pointer shadow-lg transition-all hover:scale-105">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i> मुख्य पृष्ठ पर वापस जाएं
+        </button>
+        <span class="text-xs font-mono text-gold-400">KAALGYA VAIDIK ANUSHTHAN KOSH</span>
+    </div>
 
-    <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 mb-10 text-center space-y-4">
+    <!-- Header Banner -->
+    <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 mb-10 text-center space-y-4 shadow-2xl">
         <h1 class="text-2xl sm:text-4xl font-bold font-cinzel text-white">
             KAALGYA — <span class="gold-gradient-text">प्रमुख पूजा एवं अनुष्ठान</span>
         </h1>
         <p class="text-base sm:text-lg text-gold-200 font-serif italic max-w-3xl mx-auto">
             "हर पूजा अनुष्ठान हो सकती है, लेकिन हर अनुष्ठान शास्त्रीय समझ के साथ हो, यह आवश्यक है।"
         </p>
-        <p class="text-xs sm:text-sm text-gray-300">
+        <p class="text-xs sm:text-sm text-gray-300 font-sans">
             KAALGYA में हम कर्मकांड नहीं गिनते, उसके पीछे का शास्त्र समझते हैं।
         </p>
         <div class="inline-flex flex-wrap items-center justify-center gap-3 pt-2 text-xs font-mono text-gold-400 font-bold tracking-widest uppercase">
@@ -412,8 +417,10 @@
         </div>
     </div>
 
-    <!-- 15 Anushthan Cards Container -->
-    <div id="anushthanCardsGrid" class="space-y-10"></div>
+    <!-- 15 Anushthan Cards Grid -->
+    <div id="anushthanCardsGrid" class="space-y-10">
+        <div class="text-center py-10 text-gold-400 font-mono text-sm">लोड हो रहा है...</div>
+    </div>
 
     <!-- Bottom Disclaimer & Authority Box -->
     <div class="mt-14 space-y-6">
@@ -432,7 +439,7 @@
         </div>
     </div>
 </div>
-
+            
 <!-- ========================================== -->
 <!-- VIEW: SINGLE ANUSHTHAN DEDICATED VIEW      -->
 <!-- ========================================== -->
