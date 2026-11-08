@@ -212,7 +212,7 @@
                 <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors cursor-pointer" data-i18n="navVision">मेरा सपना</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-gold-400 transition-colors cursor-pointer" data-i18n="navPanchang">सूक्ष्म पंचांग</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer" data-i18n="navMuhurat">16 संस्कार मुहूर्त</a>
-                <a href="javascript:void(0)" onclick="navigateToPage('anushthan-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer">पूजा एवं अनुष्ठान</a>
+                <a href="javascript:void(0)" onclick="navigateToPage('anushthan-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer" data-i18n="navAnushthan">पूजा एवं अनुष्ठान</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer" data-i18n="navHora">24 होरा चक्र</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('tijori-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-amber-400 text-amber-300 font-bold cursor-pointer" data-i18n="navTijori">भावनाओं की तिजोरी</a>
             </nav>
@@ -1322,14 +1322,16 @@
         // ========================================================
         // 2. 15 PRAMUKH ANUSHTHAN AUTHENTIC VERBATIM DATABASE
         // ========================================================
-        const anushthanFullData = [
+       const anushthanFullData = [
             {
                 id: 1,
                 name: "नवग्रह शांति अनुष्ठान",
                 engTitle: "Navagraha Shanti Puja Vidhanam and Homam",
                 banner: "banner-navagraha.jpg",
                 tagline: "विशेष वैदिक अनुष्ठान",
+                taglineEn: "Comprehensive Planetary Harmony Protocol",
                 brief: "ग्रहों को समझे बिना उनकी शांति का विधान कैसे निर्धारित किया जा सकता है? संपूर्ण कुंडली और दशा का विश्लेषण करके ही नवग्रह शांति का औचित्य तय होता है।",
+                briefEn: "Without auditing planetary dignities and active Dasha periods, how can remediation be prescribed? True Navagraha alignment demands rigorous chart analysis.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">ग्रहों को समझे बिना उनकी शांति का विधान कैसे निर्धारित किया जा सकता है?</p>
@@ -1354,6 +1356,31 @@
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                             <div class="text-xs text-gray-400">अंतिम मूल्य निर्धारित जाप संख्या, विधि, आचार्यों और सामग्री के अनुसार।</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Without understanding planetary mechanics, how can a remediation protocol be legitimately ordained?</p>
+                        <p>In classical Vedic metaphysics, the Navagrahas act as karmic conduits rather than punitive deities. When systemic blockages manifest, a customized Navagraha Shanti Yagya is evaluated.</p>
+                        <p>However, prescribing an identical, generic ritual for every individual directly contradicts classical Shastric tenets.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">Why Precision Chart Auditing is Essential</h4>
+                        <p>Prescribing blanket rituals without evaluating planetary house placement (Bhava), combustion (Asta), functional beneficence, and Dasha sequence dilutes remedial efficacy. Many undertake rituals simply upon hearing they have a "Graha Dosha", without discerning which planet is causing friction, which requires pacification, and what specific Shastric procedure is warranted.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Frequent Methodological Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Assuming all nine celestial bodies require identical pacification in every case.</li>
+                                <li>Prescribing Homa without analyzing the current Mahadasha and Antardasha sequence.</li>
+                                <li>Arbitrary recitation counts (Japa Sankhya) detached from authentic Shastric texts.</li>
+                                <li>Lack of clear Sankalpa alignment with the client's actual energetic bottlenecks.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">At KAALGYA, Navagraha Shanti is not approached as routine ceremonial tokenism. Placements, transits, and elemental affiliations are evaluated before determining the specific Agni Samidha, Vedic Mantras, and Acharya requirements. Our priority remains Shastric authority, conscious intent, and methodical execution.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40 space-y-1">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                            <div class="text-xs text-gray-400">Final Dakshina depends on determined Japa counts, Shastric vidhi, Acharya assembly, and sacred offerings.</div>
+                        </div>
                     </div>`
             },
             {
@@ -1362,7 +1389,9 @@
                 engTitle: "Shaniwar Pujan Vidhi, Significance & Upay",
                 banner: "banner-shani.jpg",
                 tagline: "कर्म एवं अनुशासन कारक शांति",
+                taglineEn: "Karmic Rectification & Saturnian Balance",
                 brief: "क्या शनि का नाम सुनते ही पूजा करवा लेना ही सही उपाय है? शनि की वास्तविक स्थिति, साढ़ेसाती और कर्म-विधान को समझकर ही अनुष्ठान का निर्णय होता है।",
+                briefEn: "Is ritual fear-mongering the answer to Saturn? True relief comes from auditing Sade Sati, natal placements, and structural karma.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">क्या शनि का नाम सुनते ही पूजा करवा लेना ही सही उपाय है, या पहले शनि की वास्तविक स्थिति समझना आवश्यक है?</p>
@@ -1386,6 +1415,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Does hearing the word 'Shani' warrant panic rituals, or does Saturn demand understanding its structural accountability?</p>
+                        <p>In Vedic science, Saturn (Bhagwan Shani) represents cosmic equilibrium, structural discipline, perseverance, and long-term karmic harvest. Viewing Saturn solely through the lens of dread or affliction reflects an incomplete grasp of Jyotish.</p>
+                        <p>When considering Shani Shanti Anushthan, one must evaluate Saturn's natal house, dignity, active Dasha period, and its exact correlation to current life blockages.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Role of Methodological Accuracy</h4>
+                        <p>Saturn propitiation encompasses distinct Vedic rituals, tailored Japa, consecrated oil oblations, Dana, and Homa procedures. These must be calibrated to the native's birth chart and classical tradition.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Industry Errors:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Prescribing generic propitiation purely on the mention of Sade Sati or Dhayya.</li>
+                                <li>Recommending uniform mantras and standardized Japa counts to every individual.</li>
+                                <li>Dismissing Saturn purely as an inauspicious planet while ignoring its role as a structural Yogakaraka.</li>
+                                <li>Failing to articulate the metaphysical purpose of sacred charity and discipline.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We do not guide Saturn remedies through fear. Our priority is to diagnose the planet's exact mathematical positioning, evaluate whether pacification or behavioral alignment is required, and formulate authentic Shastric rites.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹7,100 Onwards (~ $90 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1394,7 +1447,9 @@
                 engTitle: "Rahu Ketu Puja & Shadow Planet Rectification",
                 banner: "banner-rahuketu.jpg",
                 tagline: "छाया ग्रह कर्म विसर्जन विधान",
+                taglineEn: "Lunar Node Balancing & Subconscious Clarity",
                 brief: "राहु-केतु का नाम सुनकर अनुष्ठान तय करना आसान है, लेकिन उनकी भावस्थिति, नक्षत्र और कर्मफल प्रासंगिकता समझना विशेषज्ञता का विषय है।",
+                briefEn: "Neutralizing lunar nodes requires deep comprehension of the psychological axis, nakshatra lords, and karmic debts.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">राहु-केतु का नाम सुनकर अनुष्ठान तय करना आसान है, लेकिन उनकी वास्तविक ज्योतिषीय भूमिका समझना विशेषज्ञता का विषय है।</p>
@@ -1418,6 +1473,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Prescribing nodal rituals upon hearing 'Rahu' or 'Ketu' is easy, but diagnosing their exact Shastric function demands mastery.</p>
+                        <p>In Vedic astrology, Rahu and Ketu are mathematical shadow intersections (Chhaya Grahas) governing psychological fixation, material ambition, abrupt shifts, and spiritual severance.</p>
+                        <p>Evaluating their remediation requires examining their sign, house placement, dispositor planets, Nakshatra rulers, and operational Dasha cycles.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Remediation</h4>
+                        <p>Prescribing Japa counts, Homa procedures, and specific Dana must never occur without deep technical scrutiny.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Remedial Flaws:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Recommending immediate rituals simply upon locating Rahu or Ketu in prominent houses.</li>
+                                <li>Conflating authentic Kaal Sarp structures with general planetary nodal alignments.</li>
+                                <li>Applying arbitrary, uniform Japa counts without verifying the native's D9 Navamsha.</li>
+                                <li>Failing to explain the core psychological and karmic purpose of the ritual to the seeker.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We prioritize technical analysis and authentic Shastric methodology. Our purpose is to ensure rituals are grounded in validated necessity rather than arbitrary nodal anxiety.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹7,100 Onwards (~ $90 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1426,7 +1505,9 @@
                 engTitle: "Mangal Dosha Shanti & Bhauma Energy Harmony",
                 banner: "banner-mangal.jpg",
                 tagline: "भौम ऊर्जा एवं वैवाहिक सामंजस्य",
+                taglineEn: "Kinetic Fire & Marital Equilibrium",
                 brief: "क्या कुंडली में मंगल की स्थिति देखकर ही मंगल दोष मान लेना उचित है? दोषभंग, परिहार योग और अग्नि के डिग्री-संतुलन की शास्त्रीय मीमांसा।",
+                briefEn: "Does placement alone constitute Manglik Dosha? We audit cancellation yogas (Parihara) and fire degrees before prescribing rituals.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">क्या कुंडली में मंगल की स्थिति देखकर ही मंगल दोष मान लेना उचित है?</p>
@@ -1450,6 +1531,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Is concluding 'Manglik Dosha' based on house placement alone scientifically sound?</p>
+                        <p>In Vedic astrology, Mars (Mangal) signifies biological drive, kinetic fire, courage, real estate, and marital dynamics. Specific configurations in the 1st, 4th, 7th, 8th, or 12th houses are often viewed with apprehension.</p>
+                        <p>However, concluding an affliction without auditing the Ascendant, Moon chart, Venus, the 7th house, and extensive cancellation rules (Parihara Yogas) contradicts classical texts.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Necessity of Authentic Vidhi</h4>
+                        <p>Mars remediation encompasses traditional Japa, consecrated Homa, and specific Vedic offerings aligned with the native's chart parameters.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Industry Errors:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Declaring Mangal Dosha purely by identifying Mars in standard positions.</li>
+                                <li>Failing to audit the intensity, combustion, or retrogression of the planet.</li>
+                                <li>Overlooking more than twenty classical Doshbhanga and Parihara yogas.</li>
+                                <li>Mandating pre-marital rituals without rigorous astrological justification.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We do not treat Mangal Dosha as an ominous label. We evaluate whether the kinetic fire requires propitiation or physical redirection, ensuring authentic Shastric clarity before marriage.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹7,100 Onwards (~ $90 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1458,7 +1563,9 @@
                 engTitle: "Specialized Individual Planetary Japa & Homa",
                 banner: "banner-visheshgraha.jpg",
                 tagline: "विशिष्ट कारकत्व एवं नक्षत्र संपुट",
+                taglineEn: "Tailored Planetary Frequency Alignment",
                 brief: "हर ग्रह के लिए एक ही पूजा और एक ही मंत्र विधान पर्याप्त नहीं हो सकता। ग्रह की सटीक स्थिति और संबंधित दशा के अनुसार शास्त्रोक्त साधना।",
+                briefEn: "Custom Japa, Samidha, and Vedic Suktams ordained for individual combust, debilitated, or afflicted planets.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">हर ग्रह के लिए एक ही पूजा और एक ही मंत्र विधान पर्याप्त नहीं हो सकता।</p>
@@ -1481,6 +1588,29 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">A single standard template cannot serve individual planetary acoustics.</p>
+                        <p>In Vedic astrology, every celestial Graha has unique attributes, dedicated acoustic meters (Chhandas), sacred Homa wood species (Samidha), and directional deities. A customized ritual cannot be ordained by casual planetary naming.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Role of Methodological Accuracy</h4>
+                        <p>The selection of Vedic Mantras, Japa counts, Homa Samagri, and Dana must be calibrated against the native's chart, active Dasha, transit vulnerabilities, and precise Nakshatra Pada.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Remedial Flaws:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Selecting generic Mantras and unverified recitation counts from online sources.</li>
+                                <li>Conflating standalone Japa with consecrated Shastric Homa protocols.</li>
+                                <li>Overlooking classical guidelines regarding Dashamsha Homa and Purnahuti.</li>
+                                <li>Leaving the ritual objective vague without a calibrated Sankalpa.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">Our objective is to configure specific planetary propitiations grounded in astrological necessity and authentic lineage practices. We emphasize precision, purpose, and classical compliance.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1489,7 +1619,9 @@
                 engTitle: "Vedic Rudrabhishek & Namakam Chamakam Path",
                 banner: "banner-rudrabhishek.jpg",
                 tagline: "शिव चेतना एवं रुद्राध्याय पाठ",
+                taglineEn: "Sacred Hydration & Shiva Consciousness",
                 brief: "शिवलिंग पर अभिषेक करना एक विधि है, लेकिन रुद्राभिषेक के शास्त्रीय स्वरूप और रुद्राध्याय पाठ की शुद्धता को समझना कहीं अधिक महत्वपूर्ण है।",
+                briefEn: "Classical oblations to the Shivalinga accompanied by precise phonetic chanting of Sri Rudram from the Krishna Yajurveda.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">शिवलिंग पर अभिषेक करना एक विधि है, लेकिन रुद्राभिषेक के शास्त्रीय स्वरूप को समझना उससे कहीं अधिक महत्वपूर्ण है।</p>
@@ -1513,6 +1645,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹5,100 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Pouring sacred fluids is the physical act; comprehending the authentic metaphysical structure of Rudrabhishek is what activates it.</p>
+                        <p>In the veneration of Bhagwan Shiva, Rudrabhishekam holds exceptional Shastric standing. It integrates continuous sacred libations with precise Vedic chanting from the Sri Rudram and Chamakam.</p>
+                        <p>Rudrabhishek is not merely offering water, milk, or honey. Its spiritual potency resides in metric intonation, phonetic purity, sacred Sankalpa, and adherence to tradition.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>Rudrabhishekam has distinct traditions and textual recensions. Which format is engaged must be explicitly determined by the seeker's intention and lineage parameters.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Methodological Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Assuming the physical ingredients alone constitute the full ritual without authentic chanting.</li>
+                                <li>Neglecting phonetic rigor and the structured sequence of the Sri Rudram verses.</li>
+                                <li>Misrepresenting standard Abhishek, Laghurudra, and Maharudra as interchangeable rituals.</li>
+                                <li>Failing to establish a clear spiritual Sankalpa before starting the Abhishek.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We prioritize scriptural discipline, phonetic precision, authentic Sankalpa, and classical process over superficial spectacle. We ensure the seeker does not merely observe a ritual, but understands the conscious communion taking place.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹5,100 Onwards (~ $65 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1521,7 +1677,9 @@
                 engTitle: "Maha Mrityunjaya Homa: Healing & Protection",
                 banner: "banner-mrityunjaya.jpg",
                 tagline: "आरोग्य, प्राण रक्षा एवं आध्यात्मिक संबल",
+                taglineEn: "Acoustic Shielding & Vitality Restoration",
                 brief: "महामृत्युंजय मंत्र केवल एक मंत्र नहीं, शिव उपासना की वैदिक परंपरा है। सही उच्चारण, संकल्प, और दशांश हवन का शास्त्रीय अनुपालन।",
+                briefEn: "Rigvedic Sanjeevani sound science executed with rigorous metric intonation, Samput recitation, and Dashamsha Homa.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">महामृत्युंजय मंत्र केवल एक मंत्र नहीं, शिव उपासना की अत्यंत महत्वपूर्ण वैदिक परंपरा का हिस्सा है।</p>
@@ -1545,6 +1703,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">The Maha Mrityunjaya Mantra is not merely a chant; it is a foundational pillar of Rigvedic acoustic science.</p>
+                        <p>Originating from the revered Tryambakam hymn of the Rigveda, it is historically associated with spiritual vitality, inner fortitude, psychological grounding, and communion with Shiva consciousness.</p>
+                        <p>When conducting this Anushthan, recitation numbers alone are meaningless without metric accuracy, conscious Sankalpa, verified breathing discipline, Dashamsha Homa, and Purnahuti protocols.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>Maha Mrityunjaya recitation can be executed as individual meditative Japa, consecrated Samput Japa, or extensive institutional Yagya. Determining the appropriate framework must precede the ritual.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Methodological Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Treating numerical quotas as the sole criterion of ritual completion.</li>
+                                <li>Neglecting phonetic precision and authentic Vedic Swara pronunciation.</li>
+                                <li>Initiating Japa without formal Nyasa, Kavacha, and clear Sankalpa alignment.</li>
+                                <li>Keeping the subsequent Homa, Samidha selection, and Purnahuti ambiguous.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We maintain transparency in Japa count, scriptural protocol, Acharya qualification, and final oblations. The seeker receives comprehensive clarity before commencement. (Spiritual and devotional worship; strictly not a substitute for medical therapy or a guarantee of physical cure.)</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1553,7 +1735,9 @@
                 engTitle: "Laghu Rudra Maha Anushthan & Avriti Path",
                 banner: "banner-laghurudra.jpg",
                 tagline: "वृहद वैदिक पाठ एवं आचार्य मंडल",
+                taglineEn: "Grand Vedic Rudra Assembly & Homa",
                 brief: "जहाँ रुद्र उपासना का विस्तृत स्वरूप निर्धारित हो, वहाँ केवल आयोजन नहीं, वैदिक पाठ की आवृत्तियाँ और व्यवस्थित आचार्य मंडल आवश्यक है।",
+                briefEn: "Extensive 11-fold recitation of Sri Rudram by a disciplined mandala of Vedic priests followed by consecrated Rudra Homa.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">जहाँ रुद्र उपासना का विस्तृत स्वरूप निर्धारित हो, वहाँ केवल आयोजन नहीं, वैदिक पाठ की व्यवस्था भी उतनी ही महत्वपूर्ण होती है।</p>
@@ -1577,6 +1761,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹21,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">When extensive Shiva veneration is ordained, management of pure Vedic recitation is as critical as the physical arrangement.</p>
+                        <p>Laghurudra represents an advanced Vedic ritual framework. It requires multiple calibrated recitations of the Sri Rudram, continuous sacred libations, formal Sankalpa, and extensive Homa oblations.</p>
+                        <p>This is distinct from standard Abhishek; it requires a coordinated assembly of verified Vedic scholars.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Organization</h4>
+                        <p>Recitation repetitions (Avritis), number of priests, schedule, metric chanting discipline, and Homa sequences must be structured and documented prior to execution.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Organizational Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Misrepresenting a standard single Abhishek as an authentic Laghurudra Yagya.</li>
+                                <li>Keeping the exact Avriti count and recitation math ambiguous.</li>
+                                <li>Deploying inadequate numbers of trained priests for rapid, rushed chanting.</li>
+                                <li>Failing to specify timeframes and Purnahuti parameters in advance.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We treat advanced rituals as disciplined Vedic assemblies. Chanting lineages, qualified Acharyas, conscious Sankalpa, and Shastric fidelity remain non-negotiable throughout the proceeding.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹21,000 Onwards (~ $260 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1585,13 +1793,15 @@
                 engTitle: "Pitru Shanti & Traditional Ancestral Rites",
                 banner: "banner-pitrishanti.jpg",
                 tagline: "पूर्वज ऋण मुक्ति एवं श्रद्धा भाव",
+                taglineEn: "Ancestral Honor & Lineage Pacification",
                 brief: "पितरों के प्रति श्रद्धा केवल कर्मकांड नहीं, कृतज्ञता का भाव है। पारिवारिक परंपरा और औचित्य को समझकर ही तर्पण व शांति विधान संपन्न होता है।",
+                briefEn: "Dissolving lineage blockages through reverent ancestral rites, sacred Tirth water libations, and Shastric Tarpanam.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">पितरों के प्रति श्रद्धा केवल एक कर्मकांड नहीं, भारतीय धार्मिक परंपरा में कृतज्ञता और स्मरण का महत्वपूर्ण भाव है।</p>
                         <p>हिंदू धर्म में पितरों के प्रति श्रद्धा, तर्पण, श्राद्ध और संबंधित धार्मिक कर्मों का विशेष महत्व माना गया है। पितृ शांति अनुष्ठान पर विचार करते समय जातक की पारिवारिक परंपरा, धार्मिक मान्यताओं और वास्तविक उद्देश्य को समझना आवश्यक है।</p>
-                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
                         <p>पितृ कर्मों में तिथि, पक्ष, संकल्प, पात्रता, संबंधित परंपरा और निर्धारित विधि का विशेष ध्यान रखा जाता है। प्रत्येक परिस्थिति में एक ही प्रकार का अनुष्ठान उचित नहीं होता।</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">सही विधि का महत्व</h4>
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
                             <strong class="text-rose-400 block text-xs uppercase font-cinzel">आमतौर पर कहाँ चूक होती है?</strong>
                             <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
@@ -1608,6 +1818,29 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Reverence towards ancestors is not ritualistic fear; it is an attitude of gratitude and mindful remembrance in Indian spiritual tradition.</p>
+                        <p>In Sanatana Dharma, Tarpanam, Shraddha, and ancestral peace occupy essential standing. Evaluating Pitru Shanti requires examining family heritage, regional traditions, and the seeker's precise astrological indicators.</p>
+                        <p>Tithi, lunar fortnight (Paksha), conscious Sankalpa, and Shastric qualifications must align. Prescribing a standard identical rite for every familial situation is fundamentally erroneous.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Industry Errors:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Attributing every familial or career obstacle blindly to "Pitru Dosha".</li>
+                                <li>Recommending expensive rituals without technical astrological verification in the 9th house or Sun.</li>
+                                <li>Treating annual Shraddha, simple Tarpanam, and specialized Shanti as identical processes.</li>
+                                <li>Disregarding the native's lineage traditions and the true objective of the ritual.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We approach ancestral peace through reverence, Shastric integrity, and psychological clarity rather than dread. We clarify which specific religious process applies to the seeker's circumstance and its validated procedure.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1616,7 +1849,9 @@
                 engTitle: "Tripindi Shradha: Peaceful Moksha of Ancestors",
                 banner: "banner-tripindi.jpg",
                 tagline: "अतृप्त आत्मा शांति एवं विशिष्ट पिंडदान",
+                taglineEn: "Specialized Pinda Dana for Lineage Peace",
                 brief: "क्या आप जानते हैं कि त्रिपिंडी श्राद्ध एक विशिष्ट धार्मिक विधान है? इसे सामान्य तर्पण के समान नहीं समझना चाहिए; इसका अपना अलग संकल्प है।",
+                briefEn: "A specialized rite of three consecrated Pindas for departed ancestors across generations who met unnatural departures.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">क्या आप जानते हैं कि त्रिपिंडी श्राद्ध एक विशिष्ट धार्मिक विधान है, जिसे सामान्य पितृ तर्पण के समान नहीं समझना चाहिए?</p>
@@ -1640,6 +1875,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹15,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Tripindi Shraddha is an extraordinary Shastric rite that must never be confused with routine annual Tarpanam.</p>
+                        <p>In classical tradition, Tripindi Shraddha is designated for specific lineage pacification involving three preceding ancestral tiers (father, grandfather, great-grandfather) or souls who departed under unnatural circumstances.</p>
+                        <p>Prescribing this rite merely as a panacea for generic household discord is inappropriate. Validating whether the seeker's astrological chart necessitates this specific karma is mandatory.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>This rite incorporates consecrated Pinda offerings (Sattva, Rajas, and Tamas Pindas), specific Dharma-Shastra Mantras, and precise Teertha libations conducted by qualified Karmakandi scholars.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Methodological Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Treating Tripindi Shraddha as equivalent to routine annual death anniversary rituals.</li>
+                                <li>Promoting it without technical justification as an instant cure for every familial issue.</li>
+                                <li>Failing to articulate the exact Sankalpa and procedural stages to the seeker.</li>
+                                <li>Engaging unqualified practitioners lacking rigorous scriptural training in Teertha vidhi.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We treat Tripindi Shraddha as an extraordinary ancestral resolution rite. We guide its arrangement only after verifying its contextual necessity, scriptural justification, and procedural accuracy.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹15,000 Onwards (~ $185 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1648,7 +1907,9 @@
                 engTitle: "Kaal Sarp Dosh Puja & Classical Verification",
                 banner: "banner-kaalsarp.jpg",
                 tagline: "कुंडली चक्र एवं अक्षीय संतुलन",
+                taglineEn: "Hemispheric Alignment & Karmic Unlocking",
                 brief: "क्या आपकी कुंडली में वास्तव में कालसर्प योग है, या केवल उसका नाम सुनकर अनुष्ठान बता दिया गया? वास्तविक ग्रह अपवादों का शास्त्रीय विश्लेषण।",
+                briefEn: "Distinguishing between genuine Kaal Sarp and partial nodal configurations before prescribing consecrated Sarpa Shanti.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">क्या आपकी कुंडली में वास्तव में कालसर्प योग है, या केवल उसका नाम सुनकर आपको अनुष्ठान बता दिया गया?</p>
@@ -1672,6 +1933,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Does your birth chart authentically exhibit Kaal Sarp Yoga, or was an Anushthan prescribed merely upon hearing the name?</p>
+                        <p>In Jyotish, Kaal Sarp Yoga is analyzed when all seven primary Grahas are hemmed between Rahu and Ketu. However, interpretive perspectives and predictive applications vary across classical traditions.</p>
+                        <p>Attributing every life bottleneck indiscriminately to this single yoga is technically flawed.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Diagnosis</h4>
+                        <p>Auditing the actual nodal axis, degree margins, planetary exceptions (such as one planet breaking the axis), the Ascendant, and the D9 Navamsha is essential before declaring the yoga operational.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Diagnostic Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Declaring full Kaal Sarp without checking if an outer planet breaks the nodal hemisphere.</li>
+                                <li>Ignoring classical variations across the twelve distinct house axes (Anant, Kulik, Vasuki, etc.).</li>
+                                <li>Citing Kaal Sarp as the solitary scapegoat for unrelated career or health blocks.</li>
+                                <li>Prescribing a standard uniform ritual without verifying whether Mars or Jupiter neutralizes the axis.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">Our initial priority is to determine whether the yoga exists and whether it produces practical friction. Only upon verified technical necessity do we evaluate and guide the appropriate Shanti ritual.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1680,7 +1965,9 @@
                 engTitle: "Durga Saptashati Havan & Samput Path",
                 banner: "banner-saptashati.jpg",
                 tagline: "मार्कण्डेय पुराणोक्त शक्ति साधना",
+                taglineEn: "Scriptural Shakti Invocation & Protection",
                 brief: "दुर्गा सप्तशती का पाठ केवल अध्यायों का पाठ नहीं, देवी उपासना की शास्त्रीय परंपरा है। पाठ की शुद्धता, न्यास और हवन का अचूक समन्वय।",
+                briefEn: "The 700 verses of the Devi Mahatmya chanted with rigorous Anga-Nyasa, Navarna Samput, and consecrated ghee oblations.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">दुर्गा सप्तशती का पाठ केवल अध्यायों का पाठ नहीं, देवी उपासना की एक महत्वपूर्ण शास्त्रीय परंपरा है।</p>
@@ -1704,6 +1991,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Reciting the Durga Saptashati is not merely reading chapters; it is a sacred classical science of Shakti veneration.</p>
+                        <p>Rooted in the Markandeya Purana, the Devi Mahatmya (Durga Saptashati) holds unmatched preeminence in Shakti tradition, revealing the cosmic manifestations, armor, and sovereign power of the Divine Mother.</p>
+                        <p>In this Anushthan, the sequence of chapters, phonetic purity, preliminary Kavacham, Argala, Kilakam, systematic Nyasa, and consecrated Homa carry decisive significance.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>The Saptashati has diverse classical recensions (Trayanga, Navanga, and Samput Vidhi). The recitation architecture, rules of restraint, and Homa oblations must be defined beforehand.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Methodological Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Neglecting the prescribed sequence of Shat Chandi or Saptashati preliminary angas.</li>
+                                <li>Treating varying Tantric and Vedic recitation modes as interchangeable.</li>
+                                <li>Failing to coordinate the energetic link between Japa, Sankalpa, and subsequent Homa.</li>
+                                <li>Assuming hurried book-reading constitutes an authentic consecrated Anushthan.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We approach the Durga Saptashati as a rigorous scriptural discipline. Maintaining phonetic perfection, conscious Sankalpa, exact chapter progression, and authentic Homa offerings is our standard.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1712,7 +2023,9 @@
                 engTitle: "Shat Chandi Maha Yagya & Devi Sadhana",
                 banner: "banner-chandi.jpg",
                 tagline: "सर्वोच्च शक्ति अनुष्ठान एवं पूर्णाहुति",
+                taglineEn: "Supreme Tantric-Vedic Fire Sacraments",
                 brief: "शक्ति उपासना का विस्तृत अनुष्ठान केवल भव्य आयोजन से नहीं, उसके शास्त्रीय अनुशासन, आहुति-क्रम और पूर्णाहुति से पहचान बनाता है।",
+                briefEn: "Grand-scale multi-priest recitation of the Chandi text accompanied by continuous sacred fire offerings and Purnahuti.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">शक्ति उपासना का विस्तृत अनुष्ठान केवल भव्य आयोजन से नहीं, उसके शास्त्रीय विधान से अपनी पहचान बनाता है।</p>
@@ -1736,6 +2049,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹21,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">An advanced Shakti Anushthan is characterized not by external grandiosity, but by scriptural discipline and consecrated fire offerings.</p>
+                        <p>Chandi Path and Chandi Homa represent supreme rites within Mother Goddess adoration. They demand procedural rigor, authenticated Sankalpa, metric phonetic chanting, and comprehensive oblations.</p>
+                        <p>It is vital to recognize that a standard Saptashati recitation, a Nava Chandi, and an elaborate Shat Chandi Mahayagya differ fundamentally in architecture and priest assembly.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>In this specialized sacrament, recitation parameters, priest assembly, designated Mantras, sacred Homa herbs, Ahuti counting, and final Purnahuti must be structured in advance.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Organizational Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Equating a simple reading with an authentic multi-priest Chandi Mahayagya.</li>
+                                <li>Failing to specify Avriti numbers, Samput variations, and Ahuti counts clearly.</li>
+                                <li>Neglecting to assemble disciplined, initiated Vedic scholars capable of sustained chanting.</li>
+                                <li>Using external decorative display as a substitute for ritual purity and scriptural adherence.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We execute advanced Shakti sacraments with uncompromising Shastric discipline and systematic coordination. Every stage, recitation structure, and Homa offering is maintained with transparency.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹21,000 Onwards (~ $260 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1744,7 +2081,9 @@
                 engTitle: "Vastu Shanti Pooja: Cost, Benefits & Rituals",
                 banner: "banner-vastushanti.jpg",
                 tagline: "भवन ऊर्जा एवं 32 पद देवता पूजन",
+                taglineEn: "Spatial Energy Grid & Directional Alignment",
                 brief: "क्या केवल गृह प्रवेश कर लेना पर्याप्त है, या भवन के अनुरूप वास्तु संबंधी धार्मिक विधानों को भी समझना आवश्यक है? दिशा संतुलन व वास्तु शांति।",
+                briefEn: "Harmonizing the 16 directions and 32 peripheral energy deities without structural demolition.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">क्या केवल गृह प्रवेश कर लेना पर्याप्त है, या भवन के अनुरूप वास्तु संबंधी धार्मिक विधानों को भी समझना आवश्यक है?</p>
@@ -1768,6 +2107,30 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹11,000 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">Is mere residential entry sufficient, or is evaluating scriptural Vastu rites tailored to the property essential?</p>
+                        <p>In Indian tradition, Sthapatya Veda and Vastu Shastra correlate architecture, directional grids, spatial energy zones, and planetary axes. The purpose of Vastu Shanti is to consecrate the property and honor the Vastu Purusha Mandala.</p>
+                        <p>Prescribing identical, generic Vastu rites for every architectural configuration is technically flawed.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>Plot geometry, directional tilts, usage (commercial vs. residential), entry points, and structural constraints must dictate the specific 32 Pada Devata offerings, Kilan, and Homa.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Diagnostic Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Assuming Griha Pravesh and formal Vastu Shanti are entirely identical procedures.</li>
+                                <li>Ordaining standardized rituals without auditing structural energy imbalances.</li>
+                                <li>Leaving the specific Sankalpa and directional devata invocations ambiguous.</li>
+                                <li>Reducing profound spatial energetic alignment to casual physical burning of samagri.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We prioritize the practical condition of the premises, verified objectives, and authoritative Shastric texts. Our aim is to ensure the client understands why and how the directional balance is being achieved.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹11,000 Onwards (~ $135 USD)</div>
+                        </div>
                     </div>`
             },
             {
@@ -1776,7 +2139,9 @@
                 engTitle: "Griha Pravesh Pooja – Spiritual Benefits & Rituals",
                 banner: "banner-grihapravesh.jpg",
                 tagline: "नूतन गृह मंगल प्रवेश एवं कलश स्थापना",
+                taglineEn: "Sanctified Household Consecration",
                 brief: "नया घर केवल नया स्थान नहीं, नए अध्याय का आरंभ है। शुभ मुहूर्त, कलश स्थापना, वास्तु पूजन और व्यवस्थित वैदिक रीति से नूतन गृह प्रवेश।",
+                briefEn: "Precise Muhurat selection, Kalash Sthapana, Agni consecration, and peaceful entry into your new residence.",
                 content: `
                     <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
                         <p class="text-gold-300 font-medium">नया घर केवल एक नया स्थान नहीं, जीवन के एक नए अध्याय का आरंभ होता है।</p>
@@ -1800,10 +2165,34 @@
                         <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
                             <div class="text-lg font-bold text-gold-300 font-cinzel">प्रस्तावित प्रारंभिक मूल्य: ₹7,100 से</div>
                         </div>
+                    </div>`,
+                contentEn: `
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="text-gold-300 font-medium">A new residence is not merely an address; it marks the commencement of an entirely new karmic chapter.</p>
+                        <p>In classical tradition, Griha Pravesh encompasses Gauri-Ganesh Pujan, Punyahavachanam, consecrated Kalash Sthapana, Agni consecration, Navagraha Homa, and threshold protection rites.</p>
+                        <p>However, Griha Pravesh is not an inflexible checklist. Whether the dwelling is newly constructed (Apoorva), renovated (Sapoorva), or rented dictates procedural differences.</p>
+                        <h4 class="text-base font-bold text-gold-300 font-cinzel">The Importance of Authentic Vidhi</h4>
+                        <p>Calculating the exact Muhurat aligned with the householder's Nakshatra, conscious Sankalpa, and correct ritual sequence are foundational to long-term domestic tranquility.</p>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-rose-500/30 space-y-2">
+                            <strong class="text-rose-400 block text-xs uppercase font-cinzel">Common Procedural Lapses:</strong>
+                            <ul class="list-disc list-inside space-y-1 text-gray-300 text-xs sm:text-sm">
+                                <li>Selecting Muhurats casually from a generic calendar without verifying family Nakshatras.</li>
+                                <li>Confusing simple ceremonial threshold entry with comprehensive Vastu consecration.</li>
+                                <li>Failing to adapt the ritual sequence to whether the property is new, renovated, or leased.</li>
+                                <li>Leaving the family unprepared regarding required ritual materials and personal disciplines.</li>
+                            </ul>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                            <strong class="text-emerald-400 block text-xs uppercase font-cinzel">The KAALGYA Foundation</strong>
+                            <p class="text-xs sm:text-sm text-gray-200">We do not treat Griha Pravesh as a superficial social function. Grounded in mathematical Muhurat auditing, conscious Sankalpa, and authentic Vedic rites, we facilitate an auspicious and harmonious beginning.</p>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-obsidian-900 border border-gold-500/40">
+                            <div class="text-lg font-bold text-gold-300 font-cinzel">Indicative Dakshina: ₹7,100 Onwards (~ $90 USD)</div>
+                        </div>
                     </div>`
             }
         ];
-
+        
        // ========================================================
         // 3. LAYER 2 RENDERER (15 Cards Directory Grid - Dual Language)
         // ========================================================
@@ -1859,7 +2248,10 @@
             const title = isHindi ? item.name : item.engTitle;
             const subtitle = isHindi ? item.engTitle : item.name;
             const tagline = isHindi ? item.tagline : (item.taglineEn || "Sacred Vedic Ritual");
-            const ctaBtn = isHindi ? `<i data-lucide="sparkles" class="w-4 h-4"></i> ${item.name} बुक करें →` : `<i data-lucide="sparkles" class="w-4 h-4"></i> Book ${item.engTitle} Consultation →`;
+            const detailContent = isHindi ? item.content : (item.contentEn || item.content);
+            const ctaBtn = isHindi 
+                ? `<i data-lucide="sparkles" class="w-4 h-4"></i> ${item.name} बुक करें →` 
+                : `<i data-lucide="sparkles" class="w-4 h-4"></i> Book ${item.engTitle} Consultation →`;
 
             container.innerHTML = `
                 <div class="master-banner-slot">
@@ -1876,7 +2268,7 @@
                         <p class="text-xs font-mono text-gray-400">${subtitle}</p>
                     </div>
 
-                    ${item.content}
+                    ${detailContent}
 
                     <div class="text-center pt-6 border-t border-gold-500/20">
                         <button type="button" onclick="openBookingModal('${title}', '${title} Consultation')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
@@ -1887,6 +2279,7 @@
             `;
 
             navigateToPage('anushthan-detail');
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
         
         // ========================================================
@@ -2302,7 +2695,7 @@
         // 10. MULTILINGUAL TRANSLATION ENGINE
         // ========================================================
         let isHindi = false;
-        const translations = {
+       const translations = {
             hi: {
                 pravasTitle: "आगामी प्रवास:",
                 pravasText: "दिल्ली NCR एवं लखनऊ प्रवास निश्चित है।",
@@ -2311,11 +2704,39 @@
                 navVision: "मेरा सपना",
                 navPanchang: "सूक्ष्म पंचांग",
                 navMuhurat: "16 संस्कार मुहूर्त",
+                navAnushthan: "पूजा एवं अनुष्ठान",
                 navHora: "24 होरा चक्र",
                 navTijori: "भावनाओं की तिजोरी",
                 navConsult: "परामर्श लें",
                 heroBadge: "15 वर्षों का गहन अनुसंधान • 5,000+ प्रामाणिक कुंडलियाँ",
                 heroDesc: "अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।",
+                btnBookConsult: "परामर्श बुक करें",
+                btnMuhuratVault: "16 संस्कार मुहूर्त कोष",
+                gurujiSub: "✦ परंपरा के प्रति श्रद्धा, विवेक के साथ ✦",
+                gurujiTitle: 'ज्ञान का उद्देश्य केवल बताना नहीं, <span class="gold-gradient-text">समझना भी है।</span>',
+                gurujiDesc: '"मेरा मानना है कि इंसान की हर परेशानी को केवल बाहर से देखकर नहीं समझा जा सकता। कई बार समस्या परिस्थितियों में होती है, कई बार रिश्तों में, कभी अपने निर्णयों में और कभी उन बातों में जिन्हें हम किसी से कह भी नहीं पाते। मार्गदर्शन का पहला कदम सुनना है, दूसरा परिस्थिति को समझना और तीसरा उपलब्ध विकल्पों पर विचार करना।"',
+                btnAbout: '<i data-lucide="user" class="w-4 h-4"></i> मेरे बारे में',
+                btnVision: '<i data-lucide="eye" class="w-4 h-4"></i> मेरा सपना',
+                bannerBrahma: "ब्रह्मास्त्र विधान",
+                bannerPratag: "माँ विपरीत प्रत्यंगिरा",
+                bannerPanchang: "दैनिक सूक्ष्म वैदिक पंचांग",
+                bannerSukoon: "संकट हरण व सुकून कक्ष",
+                bannerReviews: "समीक्षा कोष (9 प्रमाणित अनुभव)",
+                bannerVastu: "परामर्श एवं महावास्तु दीक्षा",
+                bannerVideo: "ज्ञान धारा एवं आधिकारिक वीडियो श्रृंखला",
+                aboutQuote: '"ज्ञान का उद्देश्य केवल भविष्य नहीं—जीवन के हर अवरोध को गणितीय सटीकता से भेदना है।"',
+                aboutBody: `
+                    <p class="text-base text-gold-300 font-medium">हर रहस्य चमत्कार नहीं होता। कुछ रहस्य गहन अध्ययन की प्रतीक्षा करते हैं।</p>
+                    <p>मैं आरंभ नाथ हूँ। पिछले 15 से अधिक वर्षों और 5,000 से अधिक जन्मकुंडलियों के विश्लेषण के अनुभव ने मुझे सिखाया है कि किसी विषय की गहराई उसके दावों से नहीं, उसे समझने की दृष्टि से सामने आती है।</p>
+                    <p>मेरे लिए ज्योतिष केवल यह जानने का प्रयास नहीं कि आगे क्या होगा। यह उन संभावनाओं, परिस्थितियों और जीवन के प्रश्नों को समझने की एक परंपरा है, जिनके उत्तर खोजते हुए मनुष्य सदियों से आकाश की ओर देखता आया है।</p>
+                    <p>कालज्ञ में मेरा प्रयास है कि ज्योतिष, वास्तु, गुण-मिलान और वैदिक परंपराओं को उनके शास्त्रीय संदर्भ, गहराई और व्यावहारिक महत्व के साथ प्रस्तुत किया जाए—बिना अनावश्यक भय, खोखले दावों या चमत्कारों के प्रदर्शन के।</p>
+                `,
+                visionBody: `
+                    <p class="text-base text-gold-300 font-medium">एक प्राचीन दृष्टि। एक आधुनिक युग। ज्ञान को समझने का एक नया मार्ग।</p>
+                    <p>हम एक ऐसे भविष्य की कल्पना करते हैं जहाँ सनातन ज्ञान केवल पुस्तकों तक सीमित न रहे, ज्योतिष केवल भविष्यवाणियों तक न सिमटे और तकनीक केवल सुविधा का साधन न होकर गहन अध्ययन का माध्यम बने।</p>
+                    <p>जहाँ पंचांग की गणना अधिक सुलभ हो, शास्त्रीय परंपराओं का अध्ययन अधिक व्यवस्थित हो और जीवन के कठिन प्रश्नों पर मार्गदर्शन भय के बजाय विवेक के साथ मिले।</p>
+                    <p>कालज्ञ का संकल्प इसी दिशा में आगे बढ़ना है—प्राचीन ज्ञान की विरासत को संरक्षित करना, उसे आधुनिक डिजिटल साधनों से जोड़ना और आने वाली पीढ़ियों तक उसकी गहराई पहुँचाना।</p>
+                `,
                 bannerTijori: "भावनाओं की तिजोरी",
                 lblYourName: "आपका नाम *",
                 lblYourPhone: "व्हाट्सएप मोबाइल नंबर *",
@@ -2326,7 +2747,8 @@
                 opt3: "अति गोपनीय रहस्य",
                 opt4: "जीवन का अनिर्णय / द्वंद्व",
                 lblMessage: "मन की पूरी बात विस्तार से लिखें *",
-                btnSubmitUniverse: "Submit to Universe"
+                btnSubmitUniverse: "Submit to Universe",
+                btnBackHome: "← मुख्य पृष्ठ पर वापस जाएं"
             },
             en: {
                 pravasTitle: "Upcoming Tour:",
@@ -2336,12 +2758,40 @@
                 navVision: "My Vision",
                 navPanchang: "Micro Panchang",
                 navMuhurat: "16 Sanskars Muhurat",
+                navAnushthan: "Puja & Anushthan",
                 navHora: "24 Hora Chakra",
                 navTijori: "Emotional Vault",
                 navConsult: "Consult Now",
                 heroBadge: "15+ Years Deep Research • 5,000+ Authentic Charts",
                 heroDesc: "No superstition, purely mathematical calculation and karma principles. When life brings indecision, business blocks, or family crisis—traditional Vedic wisdom illuminates your true path.",
-                bannerTijori: "Emotional Vault",
+                btnBookConsult: "Book Consultation",
+                btnMuhuratVault: "16 Sanskar Muhurat Vault",
+                gurujiSub: "✦ Reverence for Tradition, Guided by Reason ✦",
+                gurujiTitle: 'The purpose of knowledge is not just to predict, <span class="gold-gradient-text">but to understand.</span>',
+                gurujiDesc: '"Human struggles cannot be evaluated superficially. Often the issue lies in external circumstances, strained relationships, past decisions, or burdens people cannot articulate to anyone. The first step in authentic guidance is to listen, the second is to dissect the underlying variables, and the third is to explore structured Shastric remedies."',
+                btnAbout: '<i data-lucide="user" class="w-4 h-4"></i> About Me',
+                btnVision: '<i data-lucide="eye" class="w-4 h-4"></i> My Vision',
+                bannerBrahma: "BRAHMASTRA VIDHANAM",
+                bannerPratag: "MAA VIPARITA PRATYANGIRA",
+                bannerPanchang: "Daily Micro Vedic Panchang",
+                bannerSukoon: "Sankat Haran & Sukoon Kaksh",
+                bannerReviews: "Review Vault (9 Verified Experiences)",
+                bannerVastu: "Consultation & Maha Vastu Rectification",
+                bannerVideo: "Knowledge Stream & Official Video Series",
+                aboutQuote: '"The purpose of Jyotish is not merely predicting destiny—it is penetrating life hurdles with mathematical precision."',
+                aboutBody: `
+                    <p class="text-base text-gold-300 font-medium">Not every mystery is a miracle. True mysteries simply await rigorous investigation.</p>
+                    <p>I am Arambh Nath. Over 15 years of dedicated research and auditing more than 5,000 horoscopes have demonstrated that the depth of a discipline is defined by technical rigor, not theatrical claims.</p>
+                    <p>For me, Jyotish is not an attempt to guess tomorrow. It is an ancient tradition of auditing probabilities, human situations, and life questions that seekers have contemplated across generations.</p>
+                    <p>At KAALGYA, my commitment is to deliver Vedic Astrology, Maha Vastu, Kundali Matching, and classical remedial sciences in their authentic Shastric context—free from fear-mongering and unsubstantiated claims.</p>
+                `,
+                visionBody: `
+                    <p class="text-base text-gold-300 font-medium">Ancient Vision. Modern Age. A Discerning Path to Knowledge.</p>
+                    <p>We envision a paradigm where Vedic wisdom is not confined to archival palm leaves, astrology is not reduced to superstitious fortune-telling, and modern technology serves as a tool for rigorous computational analysis.</p>
+                    <p>Where mathematical Panchang calculations are accessible, classical rites are conducted methodically, and complex life questions are addressed with reason and empathy.</p>
+                    <p>KAALGYA's vision is to preserve our sacred heritage, bridge ancient science with modern computational interfaces, and transmit genuine Shastric wisdom to global seekers.</p>
+                `,
+                bannerTijori: "Emotional Vault (Bhavanaon Ki Tijori)",
                 lblYourName: "Your Name *",
                 lblYourPhone: "WhatsApp Mobile Number *",
                 lblYourEmail: "Your Email ID *",
@@ -2351,10 +2801,11 @@
                 opt3: "Top Secret Mystery",
                 opt4: "Life Dilemma / Conflict",
                 lblMessage: "Write your heart out in detail *",
-                btnSubmitUniverse: "Submit to Universe"
+                btnSubmitUniverse: "Submit to Universe",
+                btnBackHome: "← Return to Main Page"
             }
         };
-
+        
         function updateTexts() {
             const btn = document.getElementById("lang-switch-btn");
             if (btn) {
