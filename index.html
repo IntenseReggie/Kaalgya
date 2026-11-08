@@ -1804,34 +1804,42 @@
             }
         ];
 
-        // ========================================================
-        // 3. LAYER 2 RENDERER (15 Cards Directory Grid)
+       // ========================================================
+        // 3. LAYER 2 RENDERER (15 Cards Directory Grid - Dual Language)
         // ========================================================
         function renderAnushthanDirectory() {
             const grid = document.getElementById("anushthanDirectoryGrid");
             if (!grid) return;
 
-            grid.innerHTML = anushthanFullData.map(item => `
-                <div class="cosmic-glass gold-border-glow rounded-3xl p-5 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-gold-400">
-                    <div>
-                        <div class="master-banner-slot mb-4" style="height: 180px;">
-                            <img src="${item.banner}" onerror="this.src='banner-brahmastra.jpg'" alt="${item.name}">
-                            <div class="master-banner-badge" style="padding: 0.5rem 1.5rem;">
-                                <h2 class="text-sm font-extrabold font-cinzel gold-gradient-text tracking-wide">${item.name}</h2>
+            grid.innerHTML = anushthanFullData.map(item => {
+                const title = isHindi ? item.name : item.engTitle;
+                const tagline = isHindi ? item.tagline : (item.taglineEn || "Vedic Sacred Ritual");
+                const brief = isHindi ? item.brief : (item.briefEn || item.brief);
+                const btnLabel = isHindi ? `${item.name} विवरण देखें →` : `View ${item.engTitle} Details →`;
+                const idxLabel = isHindi ? `क्रमांक #${item.id} • ${tagline}` : `INDEX #${item.id} • ${tagline}`;
+
+                return `
+                    <div class="cosmic-glass gold-border-glow rounded-3xl p-5 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-gold-400">
+                        <div>
+                            <div class="master-banner-slot mb-4" style="height: 180px;">
+                                <img src="${item.banner}" onerror="this.src='banner-brahmastra.jpg'" alt="${title}">
+                                <div class="master-banner-badge" style="padding: 0.5rem 1.5rem;">
+                                    <h2 class="text-sm font-extrabold font-cinzel gold-gradient-text tracking-wide">${title}</h2>
+                                </div>
                             </div>
+                            <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block mb-1">${idxLabel}</span>
+                            <p class="text-xs text-gray-300 font-sans leading-relaxed mb-4">
+                                ${brief}
+                            </p>
                         </div>
-                        <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block mb-1">क्रमांक #${item.id} • ${item.tagline}</span>
-                        <p class="text-xs text-gray-300 font-sans leading-relaxed mb-4">
-                            ${item.brief}
-                        </p>
+                        <div class="pt-3 border-t border-gold-500/20">
+                            <button type="button" onclick="openAnushthanDetailView(${item.id})" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-md transition-transform hover:scale-[1.02] flex items-center justify-center gap-1.5">
+                                ${btnLabel}
+                            </button>
+                        </div>
                     </div>
-                    <div class="pt-3 border-t border-gold-500/20">
-                        <button type="button" onclick="openAnushthanDetailView(${item.id})" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-md transition-transform hover:scale-[1.02] flex items-center justify-center gap-1.5">
-                            ${item.name} विवरण देखें →
-                        </button>
-                    </div>
-                </div>
-            `).join('');
+                `;
+            }).join('');
 
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
@@ -1839,7 +1847,7 @@
         }
 
         // ========================================================
-        // 4. LAYER 3 RENDERER (Full Un-cut Content + Google Form)
+        // 4. LAYER 3 RENDERER (Full Deep-Dive Detail View - Dual Language)
         // ========================================================
         function openAnushthanDetailView(anushthanId) {
             const item = anushthanFullData.find(a => a.id === anushthanId);
@@ -1848,26 +1856,31 @@
             const container = document.getElementById("anushthanFullDetailContainer");
             if (!container) return;
 
+            const title = isHindi ? item.name : item.engTitle;
+            const subtitle = isHindi ? item.engTitle : item.name;
+            const tagline = isHindi ? item.tagline : (item.taglineEn || "Sacred Vedic Ritual");
+            const ctaBtn = isHindi ? `<i data-lucide="sparkles" class="w-4 h-4"></i> ${item.name} बुक करें →` : `<i data-lucide="sparkles" class="w-4 h-4"></i> Book ${item.engTitle} Consultation →`;
+
             container.innerHTML = `
                 <div class="master-banner-slot">
-                    <img src="${item.banner}" onerror="this.src='banner-brahmastra.jpg'" alt="${item.name}">
+                    <img src="${item.banner}" onerror="this.src='banner-brahmastra.jpg'" alt="${title}">
                     <div class="master-banner-badge">
-                        <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide">${item.name}</h2>
+                        <h2 class="text-xl md:text-3xl font-extrabold font-cinzel gold-gradient-text tracking-wide">${title}</h2>
                     </div>
                 </div>
 
                 <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 relative overflow-hidden space-y-8 shadow-2xl">
                     <div class="text-center pb-6 border-b border-gold-500/20">
-                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-2">${item.tagline}</span>
-                        <h1 class="text-2xl md:text-4xl font-bold font-cinzel text-white mb-2">${item.name}</h1>
-                        <p class="text-xs font-mono text-gray-400">${item.engTitle}</p>
+                        <span class="text-xs font-mono text-gold-400 uppercase tracking-widest block mb-2">${tagline}</span>
+                        <h1 class="text-2xl md:text-4xl font-bold font-cinzel text-white mb-2">${title}</h1>
+                        <p class="text-xs font-mono text-gray-400">${subtitle}</p>
                     </div>
 
                     ${item.content}
 
                     <div class="text-center pt-6 border-t border-gold-500/20">
-                        <button type="button" onclick="openBookingModal('${item.name}', '${item.name} संकल्प')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
-                            <i data-lucide="sparkles" class="w-4 h-4"></i> ${item.name} बुक करें →
+                        <button type="button" onclick="openBookingModal('${title}', '${title} Consultation')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            ${ctaBtn}
                         </button>
                     </div>
                 </div>
@@ -1875,7 +1888,7 @@
 
             navigateToPage('anushthan-detail');
         }
-
+        
         // ========================================================
         // 5. SUKOON KAKSH CONSOLE LOGIC
         // ========================================================
@@ -2365,12 +2378,24 @@
         function toggleSiteLanguage() {
             isHindi = !isHindi;
             updateTexts();
+
+            // Language switch hote hi Anushthan Directory aur 16 Sanskar turant naye bhasha mein re-render honge
+            if (typeof renderAnushthanDirectory === 'function') {
+                renderAnushthanDirectory();
+            }
+            if (typeof renderSixteenFullPage === 'function') {
+                renderSixteenFullPage();
+            }
         }
 
         // ========================================================
-        // 11. INITIALIZATION DISPATCHER
+        // 11. INITIALIZATION DISPATCHER (With Geo-Language Auto Detect)
         // ========================================================
         document.addEventListener("DOMContentLoaded", () => {
+            // Agar browser/system Hindi set hai toh Hindi, warna South India aur International ke liye English default
+            const userLang = navigator.language || navigator.userLanguage || "";
+            isHindi = userLang.toLowerCase().startsWith('hi');
+
             updateTexts();
             if (typeof fetchDatePanchang === 'function') fetchDatePanchang();
             if (typeof renderSixteenFullPage === 'function') renderSixteenFullPage();
@@ -2463,7 +2488,3 @@
 </body>
 </html>
 
-
-
-
-        
