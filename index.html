@@ -1184,7 +1184,7 @@
         <div id="sixteenSanskarFullGrid" class="space-y-8"></div>
     </div>
 
-   <!-- ========================================== -->
+    <!-- ========================================== -->
     <!-- VIEW: 24 HORA & SHUBH/ASHUBH DEDICATED PAGE -->
     <!-- ========================================== -->
     <div id="view-hora-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-5xl mx-auto">
@@ -2697,9 +2697,73 @@
             if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
+         // ========================================================
+        // 7. COMPREHENSIVE SHASTRIYA HORA MATRIX (Dual Language)
         // ========================================================
-        // 7. LIVE PANCHANG & YEARLY MUHURAT DRAWER (Dual Language)
-        // ========================================================
+        const horaShastraGuidelines = {
+            "Sun": {
+                nameHi: "सूर्य",
+                kyaKareHi: "सरकारी कार्य, टेंडर व कॉन्ट्रैक्ट, उच्चाधिकारियों से भेंट, नवीन पदभार ग्रहण, सोने की खरीद, माणिक्य धारण, औषधि निर्माण व सेवन, पैतृक संपत्ति के निर्णय।",
+                kyaKareEn: "Government paperwork, corporate deals, meeting executives, assuming new office/promotion, buying gold, consuming first dose of medicine, ancestral property decisions.",
+                kyaNaKareHi: "नया वाहन चलाना, गृह प्रवेश, विवाह वार्ता, झगड़ा-फसाद, किसी से कर्ज या उधार लेना।",
+                kyaNaKareEn: "Inaugural vehicle drive, marriage negotiations, taking financial loans or debts, aggressive confrontations."
+            },
+            "Venus": {
+                nameHi: "शुक्र",
+                kyaKareHi: "प्रेम प्रस्ताव, रोमांस, विवाह वार्ता, नए वस्त्र-आभूषण पहनना, कला व संगीत आरंभ, सौंदर्य प्रसाधन, नवीन वाहन क्रय, सुख-सुविधाओं की खरीदारी, लग्जरी निवेश।",
+                kyaKareEn: "Love proposals, romance, wedding talks, luxury shopping, buying new vehicles, beauty & styling treatments, launching artistic/musical creative tasks, fashion investments.",
+                kyaNaKareHi: "लोहे व मशीनरी का सौदा, कर्ज लेनदेन, विवाद, कड़े अनुशासनात्मक एक्शन लेना।",
+                kyaNaKareEn: "Iron or scrap metal trading, severe disciplinary actions, harsh confrontations, borrowing loans."
+            },
+            "Mercury": {
+                nameHi: "बुध",
+                kyaKareHi: "व्यापारिक डील, बहीखाता आरंभ, शेयर मार्केट ट्रेडिंग, एग्रीमेंट साइन करना, अध्ययन, लेखन, कोडिंग व रिसर्च, कम्युनिकेशन, बैंकिंग व लेन-देन।",
+                kyaKareEn: "Business deals & negotiations, signing contracts, stock trading, financial accounting, study, writing, coding, software launches, banking transactions.",
+                kyaNaKareHi: "जमीन-मकान की रजिस्ट्री, विवाह संस्कार, तामसिक भोजन, उग्र शारीरिक श्रम।",
+                kyaNaKareEn: "Real-estate title registration, nuptial ceremonies, aggressive manual confrontations, intoxicants."
+            },
+            "Moon": {
+                nameHi: "चन्द्र",
+                kyaKareHi: "जल यात्रा, नवीन पदभार, चांदी व मोती खरीदना, जनसंपर्क, मातृ सेवा, नया भोजन बनाना/खाना, बागवानी, मानसिक शांति व ध्यान के कार्य।",
+                kyaKareEn: "Public relations, water-based travel, buying silver or pearls, culinary arts, dining, nurturing family, meditation, emotional healing, intuitive planning.",
+                kyaNaKareHi: "अग्नि व शस्त्र का कार्य, मुकदमा दायर करना, कठोर व कटु निर्णय लेना, ऋण देना।",
+                kyaNaKareEn: "Filing court cases, weapon handling, harsh confrontations, lending major money, fire rites."
+            },
+            "Saturn": {
+                nameHi: "शनि",
+                kyaKareHi: "फैक्ट्री व मशीनरी स्थापना, लोहा, तेल व खनिज का सौदा, पुराना कर्ज चुकाना, भूमि खुदाई व नींव डालना, गंभीर चिंतन, गुप्त कार्य व तंत्र साधना।",
+                kyaKareEn: "Factory/machinery setup, iron/oil/mining deals, paying off old debts, land excavation & foundation laying, deep focus, technical troubleshooting, ascetic Sadhana.",
+                kyaNaKareHi: "शुभ मांगलिक कार्य, विवाह वार्ता, नए वस्त्र पहनना, प्रथम यात्रा, कर्ज लेना, अधिकारियों से उलझना।",
+                kyaNaKareEn: "Auspicious wedding talks, wearing brand-new clothes, initiating swift journeys, borrowing money, provoking authorities."
+            },
+            "Jupiter": {
+                nameHi: "बृहस्पति",
+                kyaKareHi: "विवाह, सगाई, गृह प्रवेश, बैंक डिपॉजिट, स्वर्ण आभूषण, ज्ञान व दीक्षा ग्रहण, धार्मिक अनुष्ठान, उच्च शिक्षा, कोर्ट में समझौते की वार्ता।",
+                kyaKareEn: "Marriage & engagement, Griha Pravesh, high-stakes investments, gold purchases, receiving initiation (Deeksha), religious Yagyas, higher education, legal settlements.",
+                kyaNaKareHi: "झूठ बोलना, अनैतिक व्यापार, लोहे का क्रय, तामसिक भोजन, जुआ व सट्टा।",
+                kyaNaKareEn: "Speculative gambling, false declarations, unethical business, buying scrap iron, heavy intoxicants."
+            },
+            "Mars": {
+                nameHi: "मंगल",
+                kyaKareHi: "जिम, भारी कसरत, स्पोर्ट्स, सैन्य व पुलिस कार्य, भूमि व प्लॉट की खरीद-बिक्री, सर्जरी व ऑपरेशन, शत्रु दमन, साहसिक निर्णय, तकनीकी कार्य।",
+                kyaKareEn: "Gym workouts, intense athletics, real-estate purchase/sale, surgical procedures, technical/engineering troubleshooting, competitive conquests, taking bold risks.",
+                kyaNaKareHi: "विवाह वार्ता, नए वस्त्र पहनना, यात्रा आरंभ, कर्ज देना, साझेदार से विवाद करना।",
+                kyaNaKareEn: "Wedding discussions, inaugurating peaceful journeys, lending capital, arguments with partners."
+            }
+        };
+
+        function getHoraDetails(rulerString) {
+            const raw = String(rulerString || "").toLowerCase();
+            if (raw.includes("sun") || raw.includes("सूर्य")) return horaShastraGuidelines["Sun"];
+            if (raw.includes("venus") || raw.includes("शुक्र")) return horaShastraGuidelines["Venus"];
+            if (raw.includes("mercury") || raw.includes("बुध")) return horaShastraGuidelines["Mercury"];
+            if (raw.includes("moon") || raw.includes("चन्द्र") || raw.includes("चंद्र")) return horaShastraGuidelines["Moon"];
+            if (raw.includes("saturn") || raw.includes("शनि")) return horaShastraGuidelines["Saturn"];
+            if (raw.includes("jupiter") || raw.includes("बृहस्पति") || raw.includes("गुरु")) return horaShastraGuidelines["Jupiter"];
+            if (raw.includes("mars") || raw.includes("मंगल")) return horaShastraGuidelines["Mars"];
+            return horaShastraGuidelines["Jupiter"];
+        }
+
         let lastCachedPanchangData = null;
 
         async function fetchDatePanchang(targetDate = "") {
@@ -2717,92 +2781,172 @@
                     document.getElementById("kgDatePicker").value = data.requestedDate;
                 }
 
-                document.getElementById("kgCalDate").innerText = data.calendarDate;
-                document.getElementById("kgSunrise").innerText = data.solarCoordinates.sunrise;
-                document.getElementById("kgSunset").innerText = data.solarCoordinates.sunset;
-                document.getElementById("kgSolarNoon").innerText = data.solarCoordinates.solarNoon;
+                if (document.getElementById("kgCalDate")) document.getElementById("kgCalDate").innerText = data.calendarDate || "--";
+                if (document.getElementById("kgSunrise")) document.getElementById("kgSunrise").innerText = data.solarCoordinates?.sunrise || "--";
+                if (document.getElementById("kgSunset")) document.getElementById("kgSunset").innerText = data.solarCoordinates?.sunset || "--";
+                if (document.getElementById("kgSolarNoon")) document.getElementById("kgSolarNoon").innerText = data.solarCoordinates?.solarNoon || "--";
 
-                document.getElementById("kgTithi").innerText = data.lunarFramework.tithiSpan.formattedString;
-                document.getElementById("kgNakshatra").innerText = data.lunarFramework.nakshatraSpan.formattedString;
-                document.getElementById("kgBhadra").innerText = data.lunarFramework.bhadraStatus;
+                if (document.getElementById("kgTithi")) document.getElementById("kgTithi").innerText = data.lunarFramework?.tithiSpan?.formattedString || data.lunarFramework?.currentTithi || "--";
+                if (document.getElementById("kgNakshatra")) document.getElementById("kgNakshatra").innerText = data.lunarFramework?.nakshatraSpan?.formattedString || data.lunarFramework?.nakshatraSpan?.name || "--";
+                if (document.getElementById("kgBhadra")) document.getElementById("kgBhadra").innerText = data.lunarFramework?.bhadraStatus || "--";
 
+                // Live Festival Banner
                 const festivalBanner = document.getElementById("kgFestivalBanner");
                 if (festivalBanner) {
-                    if (data.lunarFramework.festivalOrSpecialName) {
-                        festivalBanner.innerText = isHindi ? `★ पर्व / विशेष: ${data.lunarFramework.festivalOrSpecialName} ★` : `★ Sacred Festival: ${data.lunarFramework.festivalOrSpecialName} ★`;
+                    const festName = data.lunarFramework?.festivalOrSpecialName || "";
+                    if (festName && festName.trim() !== "") {
+                        festivalBanner.innerText = isHindi ? `★ पावन पर्व: ${festName} ★` : `★ Sacred Festival: ${festName} ★`;
                         festivalBanner.style.display = "inline-block";
                     } else {
                         festivalBanner.style.display = "none";
                     }
                 }
 
+                // Ekadashi Banner
                 const ekBanner = document.getElementById("kgEkadashiBanner");
                 if (ekBanner) {
-                    if (data.lunarFramework.ekadashiTitle) {
-                        ekBanner.innerText = isHindi ? `★ पावन पर्व: ${data.lunarFramework.ekadashiTitle} ★` : `★ Sacred Observance: ${data.lunarFramework.ekadashiTitle} ★`;
+                    const ekTitle = data.lunarFramework?.ekadashiTitle || "";
+                    if (ekTitle && ekTitle.trim() !== "") {
+                        ekBanner.innerText = isHindi ? `★ पावन व्रत: ${ekTitle} ★` : `★ Sacred Observance: ${ekTitle} ★`;
                         ekBanner.style.display = "inline-block";
                     } else {
                         ekBanner.style.display = "none";
                     }
                 }
 
-                if (isHindi) {
-                    document.getElementById("dedicatedShubhList").innerHTML = `
-                        <div>ब्रह्म मुहूर्त: <b>${data.auspiciousDailyWindows.brahmaMuhurta}</b><br><span class="text-gray-400">✓ क्या करें: साधना, ध्यान एवं मानसिक एकाग्रता। ✗ क्या न करें: सोना या आलस्य।</span></div>
-                        <div class="mt-2">प्रातः सन्ध्या: <b>${data.auspiciousDailyWindows.pratahSandhya}</b><br><span class="text-gray-400">✓ क्या करें: नित्य कर्म व जप। ✗ क्या न करें: वाद-विवाद।</span></div>
-                        <div class="mt-2">अभिजित मुहूर्त: <b>${data.auspiciousDailyWindows.abhijitMuhurta}</b><br><span class="text-gray-400">✓ क्या करें: नया कार्य आरंभ व निर्णय। ✗ क्या न करें: टालमटोल।</span></div>
-                        <div class="mt-2">गोधूलि मुहूर्त: <b>${data.auspiciousDailyWindows.godhuliMuhurta}</b><br><span class="text-gray-400">✓ क्या करें: मांगलिक कार्य व प्रवेश। ✗ क्या न करें: यात्रा आरंभ।</span></div>
-                    `;
+                // Shubh & Ashubh Windows (Bilingual)
+                const shubhEl = document.getElementById("dedicatedShubhList");
+                const ashubhEl = document.getElementById("dedicatedAshubhList");
+                const dw = data.auspiciousDailyWindows || {};
+                const cp = data.cautionaryPeriods || {};
 
-                    document.getElementById("dedicatedAshubhList").innerHTML = `
-                        <div>राहुकाल: <b>${data.cautionaryPeriods.rahuKaal}</b><br><span class="text-gray-400">✓ क्या करें: ईश्वर आराधना। ✗ क्या न करें: नवीन निवेश, अनुबंध या यात्रा।</span></div>
-                        <div class="mt-2">यमगण्ड: <b>${data.cautionaryPeriods.yamaganda}</b><br><span class="text-gray-400">✓ क्या करें: सामान्य विश्राम। ✗ क्या न करें: अग्नि कार्य या महत्वपूर्ण लेनदेन।</span></div>
-                        <div class="mt-2">गुलिक काल: <b>${data.cautionaryPeriods.gulikaKaal}</b><br><span class="text-gray-400">✓ क्या करें: रूटीन कार्य। ✗ क्या न करें: नया अनुबंध।</span></div>
-                    `;
-                } else {
-                    document.getElementById("dedicatedShubhList").innerHTML = `
-                        <div>Brahma Muhurta: <b>${data.auspiciousDailyWindows.brahmaMuhurta}</b><br><span class="text-gray-400">✓ Recommended: Meditation, mental focus & Sadhana. ✗ Avoid: Sleep or lethargy.</span></div>
-                        <div class="mt-2">Pratah Sandhya: <b>${data.auspiciousDailyWindows.pratahSandhya}</b><br><span class="text-gray-400">✓ Recommended: Daily spiritual duties & Japa. ✗ Avoid: Conflicts & arguments.</span></div>
-                        <div class="mt-2">Abhijit Muhurta: <b>${data.auspiciousDailyWindows.abhijitMuhurta}</b><br><span class="text-gray-400">✓ Recommended: Important beginnings & key decisions. ✗ Avoid: Hesitation & delays.</span></div>
-                        <div class="mt-2">Godhuli Muhurta: <b>${data.auspiciousDailyWindows.godhuliMuhurta}</b><br><span class="text-gray-400">✓ Recommended: Auspicious activities & entries. ✗ Avoid: Commencing journeys.</span></div>
-                    `;
-
-                    document.getElementById("dedicatedAshubhList").innerHTML = `
-                        <div>Rahu Kaal: <b>${data.cautionaryPeriods.rahuKaal}</b><br><span class="text-gray-400">✓ Recommended: Worship & prayer. ✗ Avoid: New investments, contracts or travel.</span></div>
-                        <div class="mt-2">Yamaganda: <b>${data.cautionaryPeriods.yamaganda}</b><br><span class="text-gray-400">✓ Recommended: General rest. ✗ Avoid: Fire-related rites or financial pacts.</span></div>
-                        <div class="mt-2">Gulika Kaal: <b>${data.cautionaryPeriods.gulikaKaal}</b><br><span class="text-gray-400">✓ Recommended: Routine work. ✗ Avoid: Finalizing fresh agreements.</span></div>
-                    `;
+                if (shubhEl) {
+                    if (isHindi) {
+                        shubhEl.innerHTML = `
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20">
+                                <b class="text-emerald-300">ब्रह्म मुहूर्त: ${dw.brahmaMuhurta || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: साधना, योग, ध्यान, मंत्र जप, पठन-पाठन।<br>✗ क्या न करें: सोना, आलस्य, भोजन या कलह।</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20 mt-2">
+                                <b class="text-emerald-300">प्रातः सन्ध्या: ${dw.pratahSandhya || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: सूर्य अर्घ्य, नित्य देव पूजन, गायत्री जप।<br>✗ क्या न करें: तामसिक विचार, कटु वचन या वाद-विवाद।</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20 mt-2">
+                                <b class="text-emerald-300">अभिजित मुहूर्त: ${dw.abhijitMuhurta || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: व्यापार शुभारंभ, नवीन अनुबंध, निवेश, महत्वपूर्ण निर्णय।<br>✗ क्या न करें: दक्षिण दिशा की यात्रा (यदि बुधवार हो)।</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20 mt-2">
+                                <b class="text-emerald-300">गोधूलि मुहूर्त: ${dw.godhuliMuhurta || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: संध्या वंदन, दीप प्रज्वलन, लक्ष्मी पूजन, गृह प्रवेश।<br>✗ क्या न करें: दूरस्थ यात्रा आरंभ करना या भोजन।</span>
+                            </div>
+                        `;
+                    } else {
+                        shubhEl.innerHTML = `
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20">
+                                <b class="text-emerald-300">Brahma Muhurta: ${dw.brahmaMuhurta || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Meditation, Pranayama, Mantra Japa, study.<br>✗ Avoid: Sleep, heavy meals, sensual indulgence, arguments.</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20 mt-2">
+                                <b class="text-emerald-300">Pratah Sandhya: ${dw.pratahSandhya || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Sun libations (Arghya), Gayatri recitation, daily worship.<br>✗ Avoid: Harsh speech, anger, domestic conflict.</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20 mt-2">
+                                <b class="text-emerald-300">Abhijit Muhurta: ${dw.abhijitMuhurta || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Commercial launches, contract signings, property booking.<br>✗ Avoid: Southward journeys (if Wednesday).</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-emerald-500/20 mt-2">
+                                <b class="text-emerald-300">Godhuli Muhurta: ${dw.godhuliMuhurta || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Lighting evening ghee lamps, twilight prayers, entering homes.<br>✗ Avoid: Commencing long travels or heavy dining.</span>
+                            </div>
+                        `;
+                    }
                 }
 
-                let dHora = "";
-                data.horaWheel.dayHoras.forEach(h => {
-                    dHora += `
-                        <div class="p-3 rounded-xl bg-obsidian-900 border-l-2 border-gold-500 text-xs space-y-1">
-                            <b>${h.hora}. ${h.ruler}</b><br>
-                            <span class="text-gold-200 font-mono">${h.time}</span><br>
-                            <span class="text-emerald-300 block">${isHindi ? '✓ क्या करें:' : '✓ Recommended:'} ${isHindi ? (h.guidance || 'शुभ कार्य') : 'Constructive actions, focus'}</span>
-                            <span class="text-rose-400 block">${isHindi ? '✗ क्या न करें:' : '✗ Avoid:'} ${isHindi ? (h.dont || 'अनावश्यक विवाद या आलस्य') : 'Disputes or procrastination'}</span>
-                        </div>`;
-                });
-                document.getElementById("kgDayHoraFull").innerHTML = dHora;
+                if (ashubhEl) {
+                    if (isHindi) {
+                        ashubhEl.innerHTML = `
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-rose-500/20">
+                                <b class="text-rose-400">राहुकाल: ${cp.rahuKaal || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: केवल इष्ट मंत्र जप व ध्यान।<br>✗ क्या न करें: नया अनुबंध, बयाना, यात्रा प्रस्थान, आभूषण व वाहन क्रय।</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-rose-500/20 mt-2">
+                                <b class="text-rose-400">यमगण्ड: ${cp.yamaganda || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: सामान्य दिनचर्या व विश्राम।<br>✗ क्या न करें: महत्वपूर्ण बैठक, साझेदारी, संतान संबंधी शुभ कार्य।</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-rose-500/20 mt-2">
+                                <b class="text-rose-400">गुलिक काल: ${cp.gulikaKaal || '--'}</b><br>
+                                <span class="text-gray-300">✓ क्या करें: पुराने कार्य पूर्ण करना, स्वच्छता।<br>✗ क्या न करें: नया व्यापार आरंभ, संपत्ति रजिस्ट्री, कर्ज लेना।</span>
+                            </div>
+                        `;
+                    } else {
+                        ashubhEl.innerHTML = `
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-rose-500/20">
+                                <b class="text-rose-400">Rahu Kaal: ${cp.rahuKaal || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Spiritual meditation and solitary prayer only.<br>✗ Avoid: Executing contracts, asset booking, departures, purchasing vehicles.</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-rose-500/20 mt-2">
+                                <b class="text-rose-400">Yamaganda: ${cp.yamaganda || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Routine maintenance and peaceful rest.<br>✗ Avoid: Critical high-stakes meetings, partnership pacts, fire rites.</span>
+                            </div>
+                            <div class="p-2.5 rounded-xl bg-obsidian-950/60 border border-rose-500/20 mt-2">
+                                <b class="text-rose-400">Gulika Kaal: ${cp.gulikaKaal || '--'}</b><br>
+                                <span class="text-gray-300">✓ Do: Concluding pending work, domestic cleaning.<br>✗ Avoid: Inaugurating new ventures, real-estate deeds, borrowing loans.</span>
+                            </div>
+                        `;
+                    }
+                }
 
-                let nHora = "";
-                data.horaWheel.nightHoras.forEach(h => {
-                    nHora += `
-                        <div class="p-3 rounded-xl bg-obsidian-900 border-l-2 border-gray-500 text-xs space-y-1">
-                            <b>${h.hora}. ${h.ruler}</b><br>
-                            <span class="text-gold-200 font-mono">${h.time}</span><br>
-                            <span class="text-emerald-300 block">${isHindi ? '✓ क्या करें:' : '✓ Recommended:'} ${isHindi ? (h.guidance || 'विश्राम व ध्यान') : 'Rest, study & meditation'}</span>
-                            <span class="text-rose-400 block">${isHindi ? '✗ क्या न करें:' : '✗ Avoid:'} ${isHindi ? (h.dont || 'तनाव या भारी भोजन') : 'Stress or heavy meals'}</span>
-                        </div>`;
-                });
-                document.getElementById("kgNightHoraFull").innerHTML = nHora;
+                // 24 Horas Detailed Grid
+                const dayContainer = document.getElementById("kgDayHoraFull");
+                const nightContainer = document.getElementById("kgNightHoraFull");
+
+                if (dayContainer && data.horaWheel?.dayHoras) {
+                    let dHora = "";
+                    data.horaWheel.dayHoras.forEach(h => {
+                        const info = getHoraDetails(h.ruler);
+                        const title = isHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameHi} (${h.ruler.split(' ')[0]}) Hora`;
+                        const doText = isHindi ? info.kyaKareHi : info.kyaKareEn;
+                        const dontText = isHindi ? info.kyaNaKareHi : info.kyaNaKareEn;
+
+                        dHora += `
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-gold-500/30 text-xs space-y-1.5 shadow-md">
+                                <div class="flex justify-between items-center border-b border-gold-500/20 pb-1">
+                                    <b class="text-gold-300 font-cinzel text-sm">${title}</b>
+                                    <span class="text-gold-200 font-mono text-[11px]">${h.time}</span>
+                                </div>
+                                <div class="text-emerald-300 leading-relaxed"><b class="text-emerald-400">${isHindi ? '✓ क्या करें:' : '✓ Recommended:'}</b> ${doText}</div>
+                                <div class="text-rose-300 leading-relaxed pt-1 border-t border-gold-500/10"><b class="text-rose-400">${isHindi ? '✗ क्या न करें:' : '✗ Avoid:'}</b> ${dontText}</div>
+                            </div>`;
+                    });
+                    dayContainer.innerHTML = dHora;
+                }
+
+                if (nightContainer && data.horaWheel?.nightHoras) {
+                    let nHora = "";
+                    data.horaWheel.nightHoras.forEach(h => {
+                        const info = getHoraDetails(h.ruler);
+                        const title = isHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameHi} (${h.ruler.split(' ')[0]}) Hora`;
+                        const doText = isHindi ? info.kyaKareHi : info.kyaKareEn;
+                        const dontText = isHindi ? info.kyaNaKareHi : info.kyaNaKareEn;
+
+                        nHora += `
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-gray-600/40 text-xs space-y-1.5 shadow-md">
+                                <div class="flex justify-between items-center border-b border-gray-500/20 pb-1">
+                                    <b class="text-amber-200 font-cinzel text-sm">${title}</b>
+                                    <span class="text-gold-200 font-mono text-[11px]">${h.time}</span>
+                                </div>
+                                <div class="text-emerald-300 leading-relaxed"><b class="text-emerald-400">${isHindi ? '✓ क्या करें:' : '✓ Recommended:'}</b> ${doText}</div>
+                                <div class="text-rose-300 leading-relaxed pt-1 border-t border-gray-500/10"><b class="text-rose-400">${isHindi ? '✗ क्या न करें:' : '✗ Avoid:'}</b> ${dontText}</div>
+                            </div>`;
+                    });
+                    nightContainer.innerHTML = nHora;
+                }
 
             } catch (err) {
                 console.error("Fetch Error:", err);
             }
         }
-
+        
         async function openYearlyMuhurat(muhuratId) {
             const drawer = document.getElementById("kgYearlyDrawer");
             const content = document.getElementById("kgDrawerContent");
