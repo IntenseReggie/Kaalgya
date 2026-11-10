@@ -663,22 +663,22 @@
 <!-- ======================================================== -->
 <section id="rashifal-gateway-section" class="py-16 px-4 max-w-6xl mx-auto">
     
-    <!-- 1. Master 3:1 Cinematic Banner Slot -->
+    <!-- 1. Master 3:1 Cinematic Banner Slot (Text Cut-Off Fixed) -->
     <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/30 shadow-[0_0_30px_rgba(197,155,39,0.15)] mb-8 bg-obsidian-950">
-        <!-- 3:1 Aspect Ratio Container -->
-        <div class="w-full aspect-[3/1] relative">
+        <!-- 3:1 Aspect Ratio Container with Centered Alignment -->
+        <div class="w-full aspect-[3/1] relative flex items-center justify-center">
             <img src="banner-rashifal.jpg" 
                  onerror="this.src='banner-panchang.jpg'" 
                  alt="द्वादश राशि गोचर चक्र" 
-                 class="w-full h-full object-cover object-center filter brightness-90">
+                 class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90">
             <!-- Ambient Glow Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
             <!-- Dynamic Centered Title Badge -->
-            <div class="absolute inset-0 flex flex-col items-center justify-end pb-4 sm:pb-8 text-center px-4">
-                <span class="text-[10px] sm:text-xs font-mono uppercase tracking-[0.3em] text-gold-400 mb-1">
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 pt-4 sm:pt-6">
+                <span class="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-gold-400 mb-1 drop-shadow">
                     ✦ वैदिक गोचर चक्र • Shastriya Ephemeris ✦
                 </span>
-                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide drop-shadow-md">
+                <h2 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide drop-shadow-lg leading-tight py-1">
                     द्वादश राशि गोचर
                 </h2>
             </div>
