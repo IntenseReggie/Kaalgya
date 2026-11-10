@@ -36,6 +36,11 @@
             backdrop-filter: blur(16px);
             border: 1px solid rgba(197, 155, 39, 0.25);
         }
+        .gold-capsule-badge {
+            background: rgba(5, 5, 8, 0.88);
+            border: 1px solid rgba(197, 155, 39, 0.85);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.9), 0 0 15px rgba(197, 155, 39, 0.25);
+        }
         .gold-gradient-text {
             background: linear-gradient(135deg, #fff7d6 0%, #f3c242 50%, #b8860b 100%);
             -webkit-background-clip: text;
@@ -46,14 +51,13 @@
 <body class="min-h-screen font-sans selection:bg-gold-500 selection:text-black">
 
     <!-- TOP NAVIGATION -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/85 backdrop-blur-md border-b border-gold-500/20 py-3.5 px-4 sm:px-8">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/90 backdrop-blur-md border-b border-gold-500/20 py-3.5 px-4 sm:px-8">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <a href="https://kaalgya.com" class="flex items-center gap-2">
                 <span class="text-xl font-bold font-cinzel gold-gradient-text tracking-widest">KAALGYA</span>
                 <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/30">Portal</span>
             </a>
             <div class="flex items-center gap-3 sm:gap-4">
-                <!-- Dual Language Switcher Button -->
                 <button type="button" onclick="switchLanguage()" id="langToggleBtn" class="px-2.5 py-1 rounded-lg border border-gold-500/40 bg-obsidian-900 text-gold-300 hover:text-white text-xs font-mono font-bold cursor-pointer transition-all">
                     EN / HI
                 </button>
@@ -68,23 +72,29 @@
     <!-- MAIN PORTAL -->
     <main class="pt-24 pb-20 px-4 max-w-6xl mx-auto">
 
-        <!-- DYNAMIC 3:1 VISUAL BANNER -->
-        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/30 shadow-[0_0_30px_rgba(197,155,39,0.15)] mb-8 bg-obsidian-950">
+        <!-- 3:1 VISUAL BANNER WITH OBSIDIAN-GOLD CAPSULE (Exact Match to Panchang Attachment) -->
+        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/40 shadow-[0_0_30px_rgba(197,155,39,0.2)] mb-8 bg-obsidian-950">
             <div class="w-full aspect-[3/1] relative flex items-center justify-center">
                 <img src="../banner-rashifal.jpg" onerror="this.src='../banner-panchang.jpg'" alt="द्वादश राशि गोचर चक्र" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/30 to-transparent"></div>
-                <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono mb-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Ephemeris Synced
-                    </div>
-                    <h1 id="bannerTitle" class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide drop-shadow-md">
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-obsidian-950/40"></div>
+                
+                <!-- The Signature Pill Badge -->
+                <div class="relative z-10 px-4 py-2 sm:px-10 sm:py-3.5 rounded-full gold-capsule-badge flex items-center justify-center max-w-[90%]">
+                    <h1 id="bannerTitle" class="text-base sm:text-2xl md:text-3xl font-bold font-sans text-gold-300 tracking-wide text-center whitespace-nowrap">
                         द्वादश राशि गोचर चक्र
                     </h1>
-                    <p id="weekRangeDisplay" class="text-xs sm:text-base font-cinzel text-gold-300 tracking-wider mt-1">
-                        साप्ताहिक वैदिक फलादेश
-                    </p>
                 </div>
             </div>
+        </div>
+
+        <!-- LIVE SYNC BAR -->
+        <div class="flex items-center justify-between mb-6 px-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Shastriya Ephemeris Synced
+            </div>
+            <p id="weekRangeDisplay" class="text-xs sm:text-sm font-cinzel text-gold-300 tracking-wider">
+                साप्ताहिक वैदिक फलादेश
+            </p>
         </div>
 
         <!-- KAALGYA SHASTRIYA PROTOCOL BOX -->
@@ -97,7 +107,7 @@
             </p>
         </div>
 
-        <!-- 12 RASHIS GRID -->
+        <!-- 12 RASHIS SELECTOR -->
         <div id="rashiGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-8"></div>
 
         <!-- ACTIVE RASHI CONSOLE -->
@@ -163,7 +173,11 @@
         async function initPortal() {
             updateStaticText();
             try {
-                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
+                // Fixed fetch with redirect support for Google Apps Script
+                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`, {
+                    method: 'GET',
+                    redirect: 'follow'
+                });
                 const json = await res.json();
                 if (json.status === "success" && json.data) {
                     rashifalPayload = json.data;
@@ -173,13 +187,14 @@
                 } else {
                     document.getElementById("rashifalConsole").innerHTML = `
                         <div class="text-center py-10 text-rose-400 text-xs font-mono">
-                            ⚠️ फलादेश लोड नहीं हो सका: ${json.message || 'Data Empty'}
+                            ⚠️ डेटा अभी उपलब्ध नहीं है। Apps Script में autoGenerateWeeklyRashifal चलाएं।
                         </div>`;
                 }
             } catch (e) {
+                console.error(e);
                 document.getElementById("rashifalConsole").innerHTML = `
                     <div class="text-center py-10 text-rose-400 text-xs font-mono">
-                        ⚠️ सर्वर से कनेक्ट करने में त्रुटि।
+                        ⚠️ सर्वर से कनेक्ट करने में त्रुटि। कृपया सुनिश्चित करें कि Apps Script में कोड रन हो चुका है।
                     </div>`;
             }
         }
