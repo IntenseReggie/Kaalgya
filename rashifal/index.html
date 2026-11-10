@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>द्वादश राशि गोचर चक्र | साप्ताहिक वैदिक राशिफल | KAALGYA</title>
-    <meta name="description" content="कालज्ञ साप्ताहिक वैदिक राशिफल: चंद्र गोचर, सूर्य, गुरु एवं शनि के भाव संचरण पर आधारित समस्त 12 राशियों का प्रामाणिक गणितीय फलादेश।">
+    <meta name="description" content="कालज्ञ साप्ताहिक वैदिक राशिफल: समस्त 12 राशियों का प्रामाणिक गणितीय फलादेश।">
     <link rel="canonical" href="https://kaalgya.com/rashifal/">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -52,9 +52,13 @@
                 <span class="text-xl font-bold font-cinzel gold-gradient-text tracking-widest">KAALGYA</span>
                 <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/30">Portal</span>
             </a>
-            <div class="flex items-center gap-4">
-                <a href="https://kaalgya.com" class="text-xs text-gray-300 hover:text-gold-300 font-medium transition-colors">← मुख्य वेबसाइट</a>
-                <a href="https://wa.me/919506795756" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-transform hover:scale-105">
+            <div class="flex items-center gap-3 sm:gap-4">
+                <!-- Dual Language Switcher Button -->
+                <button type="button" onclick="switchLanguage()" id="langToggleBtn" class="px-2.5 py-1 rounded-lg border border-gold-500/40 bg-obsidian-900 text-gold-300 hover:text-white text-xs font-mono font-bold cursor-pointer transition-all">
+                    EN / HI
+                </button>
+                <a href="https://kaalgya.com" id="navHomeLink" class="text-xs text-gray-300 hover:text-gold-300 font-medium transition-colors">← मुख्य वेबसाइट</a>
+                <a href="https://wa.me/919506795756" target="_blank" id="navConsultBtn" class="px-3.5 py-1.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-transform hover:scale-105">
                     परामर्श बुक करें
                 </a>
             </div>
@@ -73,7 +77,7 @@
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono mb-2">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Ephemeris Synced
                     </div>
-                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide drop-shadow-md">
+                    <h1 id="bannerTitle" class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide drop-shadow-md">
                         द्वादश राशि गोचर चक्र
                     </h1>
                     <p id="weekRangeDisplay" class="text-xs sm:text-base font-cinzel text-gold-300 tracking-wider mt-1">
@@ -85,10 +89,10 @@
 
         <!-- KAALGYA SHASTRIYA PROTOCOL BOX -->
         <div class="cosmic-glass rounded-3xl p-6 sm:p-8 mb-8 border border-gold-500/30 text-center max-w-5xl mx-auto shadow-2xl space-y-3">
-            <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">
+            <span id="protocolTag" class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">
                 ✦ KAALGYA SHASTRIYA PROTOCOL • प्रामाणिक ज्योतिषीय मापदंड ✦
             </span>
-            <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-sans max-w-4xl mx-auto">
+            <p id="protocolText" class="text-xs sm:text-sm text-gray-200 leading-relaxed font-sans max-w-4xl mx-auto">
                 प्रत्येक ज्योतिषीय विवेचन का आधार प्रामाणिक ज्योतिषीय सिद्धांत एवं पारंपरिक ज्ञान होना चाहिए, न कि मनगढ़ंत कथन या लोकप्रिय धारणाएँ। किसी एक ग्रह या एक योग के आधार पर निष्कर्ष निकालने के स्थान पर संबंधित ज्योतिषीय परिस्थितियों को समग्रता में समझने का प्रयास किया जाता है। राशिफल का उद्देश्य अनावश्यक भय, निश्चित घटनाओं के दावे या अंधविश्वास को बढ़ावा देना नहीं, बल्कि व्यक्ति को समय और परिस्थितियों के प्रति जागरूक बनाना है।
             </p>
         </div>
@@ -109,36 +113,67 @@
         const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
         let rashifalPayload = null;
         let selectedRashiId = 1;
+        let currentLang = localStorage.getItem("kaalgya_lang") || "hi";
 
         const rashis = [
-            { id: 1, name: "मेष", en: "Aries", glyph: "♈", lord: "मंगल" },
-            { id: 2, name: "वृषभ", en: "Taurus", glyph: "♉", lord: "शुक्र" },
-            { id: 3, name: "मिथुन", en: "Gemini", glyph: "♊", lord: "बुध" },
-            { id: 4, name: "कर्क", en: "Cancer", glyph: "♋", lord: "चन्द्र" },
-            { id: 5, name: "सिंह", en: "Leo", glyph: "♌", lord: "सूर्य" },
-            { id: 6, name: "कन्या", en: "Virgo", glyph: "♍", lord: "बुध" },
-            { id: 7, name: "तुला", en: "Libra", glyph: "♎", lord: "शुक्र" },
-            { id: 8, name: "वृश्चिक", en: "Scorpio", glyph: "♏", lord: "मंगल" },
-            { id: 9, name: "धनु", en: "Sagittarius", glyph: "♐", lord: "बृहस्पति" },
-            { id: 10, name: "मकर", en: "Capricorn", glyph: "♑", lord: "शनि" },
-            { id: 11, name: "कुंभ", en: "Aquarius", glyph: "♒", lord: "शनि" },
-            { id: 12, name: "मीन", en: "Pisces", glyph: "♓", lord: "बृहस्पति" }
+            { id: 1, nameHi: "मेष", nameEn: "Aries", glyph: "♈", lordHi: "मंगल", lordEn: "Mars" },
+            { id: 2, nameHi: "वृषभ", nameEn: "Taurus", glyph: "♉", lordHi: "शुक्र", lordEn: "Venus" },
+            { id: 3, nameHi: "मिथुन", nameEn: "Gemini", glyph: "♊", lordHi: "बुध", lordEn: "Mercury" },
+            { id: 4, nameHi: "कर्क", nameEn: "Cancer", glyph: "♋", lordHi: "चन्द्र", lordEn: "Moon" },
+            { id: 5, nameHi: "सिंह", nameEn: "Leo", glyph: "♌", lordHi: "सूर्य", lordEn: "Sun" },
+            { id: 6, nameHi: "कन्या", nameEn: "Virgo", glyph: "♍", lordHi: "बुध", lordEn: "Mercury" },
+            { id: 7, nameHi: "तुला", nameEn: "Libra", glyph: "♎", lordHi: "शुक्र", lordEn: "Venus" },
+            { id: 8, nameHi: "वृश्चिक", nameEn: "Scorpio", glyph: "♏", lordHi: "मंगल", lordEn: "Mars" },
+            { id: 9, nameHi: "धनु", nameEn: "Sagittarius", glyph: "♐", lordHi: "बृहस्पति", lordEn: "Jupiter" },
+            { id: 10, nameHi: "मकर", nameEn: "Capricorn", glyph: "♑", lordHi: "शनि", lordEn: "Saturn" },
+            { id: 11, nameHi: "कुंभ", nameEn: "Aquarius", glyph: "♒", lordHi: "शनि", lordEn: "Saturn" },
+            { id: 12, nameHi: "मीन", nameEn: "Pisces", glyph: "♓", lordHi: "बृहस्पति", lordEn: "Jupiter" }
         ];
 
+        function switchLanguage() {
+            currentLang = (currentLang === "hi") ? "en" : "hi";
+            localStorage.setItem("kaalgya_lang", currentLang);
+            updateStaticText();
+            renderPills();
+            renderDetail();
+        }
+
+        function updateStaticText() {
+            const isHi = currentLang === "hi";
+            document.getElementById("langToggleBtn").innerText = isHi ? "EN" : "HI";
+            document.getElementById("navHomeLink").innerText = isHi ? "← मुख्य वेबसाइट" : "← Main Website";
+            document.getElementById("navConsultBtn").innerText = isHi ? "परामर्श बुक करें" : "Book Consultation";
+            document.getElementById("bannerTitle").innerText = isHi ? "द्वादश राशि गोचर चक्र" : "12 Signs Planetary Transit";
+            
+            if (rashifalPayload) {
+                document.getElementById("weekRangeDisplay").innerText = isHi 
+                    ? `साप्ताहिक फलादेश • ${rashifalPayload.weekRange || ''}` 
+                    : `Weekly Insights • ${rashifalPayload.weekRangeEn || rashifalPayload.weekRange || ''}`;
+            }
+
+            document.getElementById("protocolTag").innerText = isHi 
+                ? "✦ KAALGYA SHASTRIYA PROTOCOL • प्रामाणिक ज्योतिषीय मापदंड ✦" 
+                : "✦ KAALGYA SHASTRIYA PROTOCOL • AUTHENTIC VEDIC STANDARDS ✦";
+
+            document.getElementById("protocolText").innerText = isHi 
+                ? "प्रत्येक ज्योतिषीय विवेचन का आधार प्रामाणिक ज्योतिषीय सिद्धांत एवं पारंपरिक ज्ञान होना चाहिए, न कि मनगढ़ंत कथन या लोकप्रिय धारणाएँ। किसी एक ग्रह या एक योग के आधार पर निष्कर्ष निकालने के स्थान पर संबंधित ज्योतिषीय परिस्थितियों को समग्रता में समझने का प्रयास किया जाता है। राशिफल का उद्देश्य अनावश्यक भय, निश्चित घटनाओं के दावे या अंधविश्वास को बढ़ावा देना नहीं, बल्कि व्यक्ति को समय और परिस्थितियों के प्रति जागरूक बनाना है।"
+                : "The foundation of astrological interpretation must be grounded in authentic Vedic principles rather than arbitrary claims. Instead of deriving conclusions from an isolated planetary placement, transits are evaluated holistically. The true purpose of astrology is not to provoke fear or fatalistic claims, but to empower individuals with mindful awareness of time and circumstances.";
+        }
+
         async function initPortal() {
+            updateStaticText();
             try {
                 const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
                 const json = await res.json();
                 if (json.status === "success" && json.data) {
                     rashifalPayload = json.data;
-                    document.getElementById("weekRangeDisplay").innerText = `साप्ताहिक फलादेश • ${rashifalPayload.weekRange}`;
+                    updateStaticText();
                     renderPills();
                     renderDetail();
                 } else {
                     document.getElementById("rashifalConsole").innerHTML = `
                         <div class="text-center py-10 text-rose-400 text-xs font-mono">
-                            ⚠️ फलादेश लोड नहीं हो सका: ${json.message || 'डेटा अभी उत्पन्न नहीं हुआ है'}।<br>
-                            <span class="text-gray-400 text-[11px] mt-2 block">कृपया Apps Script में autoGenerateWeeklyRashifal चलाएं।</span>
+                            ⚠️ फलादेश लोड नहीं हो सका: ${json.message || 'Data Empty'}
                         </div>`;
                 }
             } catch (e) {
@@ -151,14 +186,15 @@
 
         function renderPills() {
             const grid = document.getElementById("rashiGrid");
+            const isHi = currentLang === "hi";
             grid.innerHTML = rashis.map(r => {
                 const active = r.id === selectedRashiId;
                 const cls = active ? "border-gold-400 bg-gold-500/20 text-white shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "border-gold-500/30 bg-obsidian-900 text-gray-300 hover:border-gold-500/70";
                 return `
                     <button onclick="changeRashi(${r.id})" class="p-3 rounded-2xl border ${cls} flex flex-col items-center justify-center gap-1 transition-all cursor-pointer">
                         <span class="text-2xl font-bold">${r.glyph}</span>
-                        <span class="text-xs font-cinzel font-bold">${r.name}</span>
-                        <span class="text-[9px] font-mono text-gold-400/80">${r.en}</span>
+                        <span class="text-xs font-cinzel font-bold">${isHi ? r.nameHi : r.nameEn}</span>
+                        <span class="text-[9px] font-mono text-gold-400/80">${isHi ? r.nameEn : r.nameHi}</span>
                     </button>
                 `;
             }).join('');
@@ -174,6 +210,7 @@
             const consoleBox = document.getElementById("rashifalConsole");
             const rInfo = rashis.find(r => r.id === selectedRashiId);
             const p = (rashifalPayload.predictions || []).find(x => x.rashiId === selectedRashiId) || {};
+            const isHi = currentLang === "hi";
 
             consoleBox.innerHTML = `
                 <div class="flex flex-wrap items-center justify-between border-b border-gold-500/20 pb-4 gap-3">
@@ -182,16 +219,21 @@
                             ${rInfo.glyph}
                         </div>
                         <div>
-                            <h2 class="text-2xl font-bold font-cinzel text-white">${rInfo.name} राशि (${rInfo.en})</h2>
-                            <span class="text-xs font-mono text-gold-400">राशि स्वामी: ${rInfo.lord} • गोचर स्थिति: ${p.chandraGochar || 'सक्रिय'}</span>
+                            <h2 class="text-2xl font-bold font-cinzel text-white">
+                                ${isHi ? rInfo.nameHi : rInfo.nameEn} (${isHi ? rInfo.nameEn : rInfo.nameHi})
+                            </h2>
+                            <span class="text-xs font-mono text-gold-400">
+                                ${isHi ? `राशि स्वामी: ${rInfo.lordHi}` : `Ruler: ${rInfo.lordEn}`} • 
+                                ${isHi ? `गोचर: ${p.chandraGocharHi || p.chandraGochar || 'सक्रिय'}` : `Transit: ${p.chandraGocharEn || p.chandraGochar || 'Active'}`}
+                            </span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
                         <span class="px-3 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
-                            शुभ रंग: <b>${p.shubhRang || '--'}</b>
+                            ${isHi ? 'शुभ रंग:' : 'Lucky Color:'} <b>${isHi ? (p.shubhRangHi || p.shubhRang || '--') : (p.shubhRangEn || p.shubhRang || '--')}</b>
                         </span>
                         <span class="px-3 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
-                            शुभ अंक: <b>${p.shubhAnk || '--'}</b>
+                            ${isHi ? 'शुभ अंक:' : 'Lucky No:'} <b>${p.shubhAnk || '--'}</b>
                         </span>
                     </div>
                 </div>
@@ -199,31 +241,33 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-3">
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-amber-500/30 space-y-2">
                         <span class="text-amber-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
-                            <i data-lucide="briefcase" class="w-4 h-4"></i> कार्यक्षेत्र एवं अर्थ
+                            <i data-lucide="briefcase" class="w-4 h-4"></i> ${isHi ? 'कार्यक्षेत्र एवं अर्थ' : 'Career & Wealth'}
                         </span>
-                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.career || '--'}</p>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${isHi ? (p.careerHi || p.career || '--') : (p.careerEn || p.career || '--')}</p>
                     </div>
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
                         <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
-                            <i data-lucide="heart-pulse" class="w-4 h-4"></i> स्वास्थ्य एवं मनःस्थिति
+                            <i data-lucide="heart-pulse" class="w-4 h-4"></i> ${isHi ? 'स्वास्थ्य एवं मनःस्थिति' : 'Health & Vitality'}
                         </span>
-                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.health || '--'}</p>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${isHi ? (p.healthHi || p.health || '--') : (p.healthEn || p.health || '--')}</p>
                     </div>
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-indigo-500/30 space-y-2">
                         <span class="text-indigo-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
-                            <i data-lucide="users" class="w-4 h-4"></i> पारिवारिक संबंध
+                            <i data-lucide="users" class="w-4 h-4"></i> ${isHi ? 'पारिवारिक संबंध' : 'Relationships'}
                         </span>
-                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.relationships || '--'}</p>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${isHi ? (p.relationsHi || p.relationships || '--') : (p.relationsEn || p.relationships || '--')}</p>
                     </div>
                 </div>
 
                 <div class="p-5 rounded-2xl bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
                     <div class="space-y-1 text-center sm:text-left">
-                        <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">✦ साप्ताहिक वैदिक संबल (उपाय) ✦</span>
-                        <p class="text-xs sm:text-sm text-gold-200">${p.upay || '--'}</p>
+                        <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">
+                            ✦ ${isHi ? 'साप्ताहिक वैदिक संबल (उपाय)' : 'Weekly Remedial Protocol'} ✦
+                        </span>
+                        <p class="text-xs sm:text-sm text-gold-200">${isHi ? (p.upayHi || p.upay || '--') : (p.upayEn || p.upay || '--')}</p>
                     </div>
                     <a href="https://kaalgya.com/#sukoon-kaksh" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg whitespace-nowrap transition-transform hover:scale-105">
-                        सुकून कक्ष उपाय देखें →
+                        ${isHi ? 'सुकून कक्ष उपाय देखें →' : 'View Sukoon Remedies →'}
                     </a>
                 </div>
             `;
@@ -233,4 +277,3 @@
     </script>
 </body>
 </html>
-
