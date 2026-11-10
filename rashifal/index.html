@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
         tailwind.config = {
@@ -62,21 +63,28 @@
 
     <!-- MAIN PORTAL -->
     <main class="pt-24 pb-20 px-4 max-w-6xl mx-auto">
-        <!-- HEADER -->
-        <div class="text-center space-y-3 mb-8 pt-4">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Gochar Ephemeris Synced
+
+        <!-- DYNAMIC 3:1 VISUAL BANNER -->
+        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/30 shadow-[0_0_30px_rgba(197,155,39,0.15)] mb-8 bg-obsidian-950">
+            <div class="w-full aspect-[3/1] relative flex items-center justify-center">
+                <img src="../banner-rashifal.jpg" onerror="this.src='../banner-panchang.jpg'" alt="द्वादश राशि गोचर चक्र" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90">
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/30 to-transparent"></div>
+                <div class="relative z-10 flex flex-col items-center justify-center text-center px-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono mb-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Ephemeris Synced
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide drop-shadow-md">
+                        द्वादश राशि गोचर चक्र
+                    </h1>
+                    <p id="weekRangeDisplay" class="text-xs sm:text-base font-cinzel text-gold-300 tracking-wider mt-1">
+                        साप्ताहिक वैदिक फलादेश
+                    </p>
+                </div>
             </div>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide">
-                द्वादश राशि गोचर चक्र
-            </h1>
-            <p id="weekRangeDisplay" class="text-sm sm:text-base font-cinzel text-gold-300 tracking-wider">
-                साप्ताहिक वैदिक फलादेश
-            </p>
         </div>
 
         <!-- KAALGYA SHASTRIYA PROTOCOL BOX -->
-        <div class="cosmic-glass rounded-3xl p-6 sm:p-8 mb-10 border border-gold-500/30 text-center max-w-5xl mx-auto shadow-2xl space-y-3">
+        <div class="cosmic-glass rounded-3xl p-6 sm:p-8 mb-8 border border-gold-500/30 text-center max-w-5xl mx-auto shadow-2xl space-y-3">
             <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">
                 ✦ KAALGYA SHASTRIYA PROTOCOL • प्रामाणिक ज्योतिषीय मापदंड ✦
             </span>
@@ -127,10 +135,17 @@
                     renderPills();
                     renderDetail();
                 } else {
-                    document.getElementById("rashifalConsole").innerHTML = `<div class="text-center py-10 text-rose-400 text-xs font-mono">⚠️ फलादेश लोड नहीं हो सका।</div>`;
+                    document.getElementById("rashifalConsole").innerHTML = `
+                        <div class="text-center py-10 text-rose-400 text-xs font-mono">
+                            ⚠️ फलादेश लोड नहीं हो सका: ${json.message || 'डेटा अभी उत्पन्न नहीं हुआ है'}।<br>
+                            <span class="text-gray-400 text-[11px] mt-2 block">कृपया Apps Script में autoGenerateWeeklyRashifal चलाएं।</span>
+                        </div>`;
                 }
             } catch (e) {
-                document.getElementById("rashifalConsole").innerHTML = `<div class="text-center py-10 text-rose-400 text-xs font-mono">⚠️ सर्वर कनेक्शन त्रुटि।</div>`;
+                document.getElementById("rashifalConsole").innerHTML = `
+                    <div class="text-center py-10 text-rose-400 text-xs font-mono">
+                        ⚠️ सर्वर से कनेक्ट करने में त्रुटि।
+                    </div>`;
             }
         }
 
@@ -141,7 +156,7 @@
                 const cls = active ? "border-gold-400 bg-gold-500/20 text-white shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "border-gold-500/30 bg-obsidian-900 text-gray-300 hover:border-gold-500/70";
                 return `
                     <button onclick="changeRashi(${r.id})" class="p-3 rounded-2xl border ${cls} flex flex-col items-center justify-center gap-1 transition-all cursor-pointer">
-                        <span class="text-xl font-bold">${r.glyph}</span>
+                        <span class="text-2xl font-bold">${r.glyph}</span>
                         <span class="text-xs font-cinzel font-bold">${r.name}</span>
                         <span class="text-[9px] font-mono text-gold-400/80">${r.en}</span>
                     </button>
@@ -163,40 +178,46 @@
             consoleBox.innerHTML = `
                 <div class="flex flex-wrap items-center justify-between border-b border-gold-500/20 pb-4 gap-3">
                     <div class="flex items-center gap-3">
-                        <div class="w-12 h-12 rounded-full border border-gold-400 bg-obsidian-950 flex items-center justify-center text-2xl font-bold">
+                        <div class="w-14 h-14 rounded-2xl border border-gold-400/50 bg-gradient-to-br from-obsidian-900 to-obsidian-950 flex items-center justify-center text-3xl font-bold shadow-inner">
                             ${rInfo.glyph}
                         </div>
                         <div>
                             <h2 class="text-2xl font-bold font-cinzel text-white">${rInfo.name} राशि (${rInfo.en})</h2>
-                            <span class="text-xs font-mono text-gold-400">स्वामी: ${rInfo.lord} • गोचर: ${p.chandraGochar || 'सक्रिय'}</span>
+                            <span class="text-xs font-mono text-gold-400">राशि स्वामी: ${rInfo.lord} • गोचर स्थिति: ${p.chandraGochar || 'सक्रिय'}</span>
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="px-3 py-1 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
+                        <span class="px-3 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
                             शुभ रंग: <b>${p.shubhRang || '--'}</b>
                         </span>
-                        <span class="px-3 py-1 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
+                        <span class="px-3 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
                             शुभ अंक: <b>${p.shubhAnk || '--'}</b>
                         </span>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-3">
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-amber-500/30 space-y-2">
-                        <span class="text-amber-400 font-cinzel text-xs font-bold uppercase block">✦ कार्यक्षेत्र एवं अर्थ</span>
+                        <span class="text-amber-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="briefcase" class="w-4 h-4"></i> कार्यक्षेत्र एवं अर्थ
+                        </span>
                         <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.career || '--'}</p>
                     </div>
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
-                        <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase block">✦ स्वास्थ्य एवं मनःस्थिति</span>
+                        <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="heart-pulse" class="w-4 h-4"></i> स्वास्थ्य एवं मनःस्थिति
+                        </span>
                         <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.health || '--'}</p>
                     </div>
                     <div class="p-5 rounded-2xl bg-obsidian-900 border border-indigo-500/30 space-y-2">
-                        <span class="text-indigo-400 font-cinzel text-xs font-bold uppercase block">✦ पारिवारिक संबंध</span>
+                        <span class="text-indigo-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="users" class="w-4 h-4"></i> पारिवारिक संबंध
+                        </span>
                         <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.relationships || '--'}</p>
                     </div>
                 </div>
 
-                <div class="p-5 rounded-2xl bg-obsidian-950 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
                     <div class="space-y-1 text-center sm:text-left">
                         <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">✦ साप्ताहिक वैदिक संबल (उपाय) ✦</span>
                         <p class="text-xs sm:text-sm text-gold-200">${p.upay || '--'}</p>
@@ -206,8 +227,10 @@
                     </a>
                 </div>
             `;
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
         window.addEventListener('DOMContentLoaded', initPortal);
     </script>
 </body>
 </html>
+
