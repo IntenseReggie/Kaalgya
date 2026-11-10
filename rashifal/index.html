@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>द्वादश राशि गोचर चक्र | साप्ताहिक वैदिक राशिफल | KAALGYA</title>
+    <meta name="description" content="कालज्ञ साप्ताहिक वैदिक राशिफल: चंद्र गोचर, सूर्य, गुरु एवं शनि के भाव संचरण पर आधारित समस्त 12 राशियों का प्रामाणिक गणितीय फलादेश।">
+    <link rel="canonical" href="https://kaalgya.com/rashifal/">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: { 950: '#030305', 900: '#070709', 850: '#0d0d12' },
+                        gold: { 300: '#f9e79f', 400: '#f3c242', 500: '#c59b27' }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Yantramanav', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #030305; color: #e0e0e0; }
+        .cosmic-glass {
+            background: rgba(13, 13, 18, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(197, 155, 39, 0.25);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fff7d6 0%, #f3c242 50%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-gold-500 selection:text-black">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/85 backdrop-blur-md border-b border-gold-500/20 py-3.5 px-4 sm:px-8">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="https://kaalgya.com" class="flex items-center gap-2">
+                <span class="text-xl font-bold font-cinzel gold-gradient-text tracking-widest">KAALGYA</span>
+                <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-gold-500/10 text-gold-400 border border-gold-500/30">Portal</span>
+            </a>
+            <div class="flex items-center gap-4">
+                <a href="https://kaalgya.com" class="text-xs text-gray-300 hover:text-gold-300 font-medium transition-colors">← मुख्य वेबसाइट</a>
+                <a href="https://wa.me/919506795756" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-transform hover:scale-105">
+                    परामर्श बुक करें
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN PORTAL -->
+    <main class="pt-24 pb-20 px-4 max-w-6xl mx-auto">
+        <!-- HEADER -->
+        <div class="text-center space-y-3 mb-8 pt-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Gochar Ephemeris Synced
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-cinzel gold-gradient-text tracking-wide">
+                द्वादश राशि गोचर चक्र
+            </h1>
+            <p id="weekRangeDisplay" class="text-sm sm:text-base font-cinzel text-gold-300 tracking-wider">
+                साप्ताहिक वैदिक फलादेश
+            </p>
+        </div>
+
+        <!-- KAALGYA SHASTRIYA PROTOCOL BOX -->
+        <div class="cosmic-glass rounded-3xl p-6 sm:p-8 mb-10 border border-gold-500/30 text-center max-w-5xl mx-auto shadow-2xl space-y-3">
+            <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">
+                ✦ KAALGYA SHASTRIYA PROTOCOL • प्रामाणिक ज्योतिषीय मापदंड ✦
+            </span>
+            <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-sans max-w-4xl mx-auto">
+                प्रत्येक ज्योतिषीय विवेचन का आधार प्रामाणिक ज्योतिषीय सिद्धांत एवं पारंपरिक ज्ञान होना चाहिए, न कि मनगढ़ंत कथन या लोकप्रिय धारणाएँ। किसी एक ग्रह या एक योग के आधार पर निष्कर्ष निकालने के स्थान पर संबंधित ज्योतिषीय परिस्थितियों को समग्रता में समझने का प्रयास किया जाता है। राशिफल का उद्देश्य अनावश्यक भय, निश्चित घटनाओं के दावे या अंधविश्वास को बढ़ावा देना नहीं, बल्कि व्यक्ति को समय और परिस्थितियों के प्रति जागरूक बनाना है।
+            </p>
+        </div>
+
+        <!-- 12 RASHIS GRID -->
+        <div id="rashiGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-8"></div>
+
+        <!-- ACTIVE RASHI CONSOLE -->
+        <div id="rashifalConsole" class="cosmic-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl space-y-6">
+            <div class="text-center py-16 text-gold-400 font-mono text-xs animate-pulse">
+                ⏳ वैदिक ग्रह गोचर गणना लोड हो रही है...
+            </div>
+        </div>
+    </main>
+
+    <!-- ENGINE SCRIPT -->
+    <script>
+        const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
+        let rashifalPayload = null;
+        let selectedRashiId = 1;
+
+        const rashis = [
+            { id: 1, name: "मेष", en: "Aries", glyph: "♈", lord: "मंगल" },
+            { id: 2, name: "वृषभ", en: "Taurus", glyph: "♉", lord: "शुक्र" },
+            { id: 3, name: "मिथुन", en: "Gemini", glyph: "♊", lord: "बुध" },
+            { id: 4, name: "कर्क", en: "Cancer", glyph: "♋", lord: "चन्द्र" },
+            { id: 5, name: "सिंह", en: "Leo", glyph: "♌", lord: "सूर्य" },
+            { id: 6, name: "कन्या", en: "Virgo", glyph: "♍", lord: "बुध" },
+            { id: 7, name: "तुला", en: "Libra", glyph: "♎", lord: "शुक्र" },
+            { id: 8, name: "वृश्चिक", en: "Scorpio", glyph: "♏", lord: "मंगल" },
+            { id: 9, name: "धनु", en: "Sagittarius", glyph: "♐", lord: "बृहस्पति" },
+            { id: 10, name: "मकर", en: "Capricorn", glyph: "♑", lord: "शनि" },
+            { id: 11, name: "कुंभ", en: "Aquarius", glyph: "♒", lord: "शनि" },
+            { id: 12, name: "मीन", en: "Pisces", glyph: "♓", lord: "बृहस्पति" }
+        ];
+
+        async function initPortal() {
+            try {
+                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
+                const json = await res.json();
+                if (json.status === "success" && json.data) {
+                    rashifalPayload = json.data;
+                    document.getElementById("weekRangeDisplay").innerText = `साप्ताहिक फलादेश • ${rashifalPayload.weekRange}`;
+                    renderPills();
+                    renderDetail();
+                } else {
+                    document.getElementById("rashifalConsole").innerHTML = `<div class="text-center py-10 text-rose-400 text-xs font-mono">⚠️ फलादेश लोड नहीं हो सका।</div>`;
+                }
+            } catch (e) {
+                document.getElementById("rashifalConsole").innerHTML = `<div class="text-center py-10 text-rose-400 text-xs font-mono">⚠️ सर्वर कनेक्शन त्रुटि।</div>`;
+            }
+        }
+
+        function renderPills() {
+            const grid = document.getElementById("rashiGrid");
+            grid.innerHTML = rashis.map(r => {
+                const active = r.id === selectedRashiId;
+                const cls = active ? "border-gold-400 bg-gold-500/20 text-white shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "border-gold-500/30 bg-obsidian-900 text-gray-300 hover:border-gold-500/70";
+                return `
+                    <button onclick="changeRashi(${r.id})" class="p-3 rounded-2xl border ${cls} flex flex-col items-center justify-center gap-1 transition-all cursor-pointer">
+                        <span class="text-xl font-bold">${r.glyph}</span>
+                        <span class="text-xs font-cinzel font-bold">${r.name}</span>
+                        <span class="text-[9px] font-mono text-gold-400/80">${r.en}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function changeRashi(id) {
+            selectedRashiId = id;
+            renderPills();
+            renderDetail();
+        }
+
+        function renderDetail() {
+            const consoleBox = document.getElementById("rashifalConsole");
+            const rInfo = rashis.find(r => r.id === selectedRashiId);
+            const p = (rashifalPayload.predictions || []).find(x => x.rashiId === selectedRashiId) || {};
+
+            consoleBox.innerHTML = `
+                <div class="flex flex-wrap items-center justify-between border-b border-gold-500/20 pb-4 gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full border border-gold-400 bg-obsidian-950 flex items-center justify-center text-2xl font-bold">
+                            ${rInfo.glyph}
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold font-cinzel text-white">${rInfo.name} राशि (${rInfo.en})</h2>
+                            <span class="text-xs font-mono text-gold-400">स्वामी: ${rInfo.lord} • गोचर: ${p.chandraGochar || 'सक्रिय'}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-3 py-1 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
+                            शुभ रंग: <b>${p.shubhRang || '--'}</b>
+                        </span>
+                        <span class="px-3 py-1 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
+                            शुभ अंक: <b>${p.shubhAnk || '--'}</b>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-2">
+                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-amber-500/30 space-y-2">
+                        <span class="text-amber-400 font-cinzel text-xs font-bold uppercase block">✦ कार्यक्षेत्र एवं अर्थ</span>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.career || '--'}</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                        <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase block">✦ स्वास्थ्य एवं मनःस्थिति</span>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.health || '--'}</p>
+                    </div>
+                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-indigo-500/30 space-y-2">
+                        <span class="text-indigo-400 font-cinzel text-xs font-bold uppercase block">✦ पारिवारिक संबंध</span>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${p.relationships || '--'}</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-obsidian-950 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="space-y-1 text-center sm:text-left">
+                        <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">✦ साप्ताहिक वैदिक संबल (उपाय) ✦</span>
+                        <p class="text-xs sm:text-sm text-gold-200">${p.upay || '--'}</p>
+                    </div>
+                    <a href="https://kaalgya.com/#sukoon-kaksh" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg whitespace-nowrap transition-transform hover:scale-105">
+                        सुकून कक्ष उपाय देखें →
+                    </a>
+                </div>
+            `;
+        }
+        window.addEventListener('DOMContentLoaded', initPortal);
+    </script>
+</body>
+</html>
