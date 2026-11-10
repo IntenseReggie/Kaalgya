@@ -3053,7 +3053,9 @@
         // ========================================================
         // 10. MULTILINGUAL TRANSLATION ENGINE
         // ========================================================
-        let isHindi = false;
+       let isHindi = localStorage.getItem("kaalgya_lang") !== null 
+              ? (localStorage.getItem("kaalgya_lang") === "hi") 
+              : true;
        const translations = {
             hi: {
                 pravasTitle: "आगामी प्रवास:",
@@ -3643,18 +3645,19 @@
             });
         }
 
-        function toggleSiteLanguage() {
-            isHindi = !isHindi;
-            updateTexts();
+       function toggleSiteLanguage() {
+    isHindi = !isHindi;
+    
+    // YEH LINE US CHOICE KO BROWSER MEIN SAVE KARTI HAI:
+    localStorage.setItem("kaalgya_lang", isHindi ? "hi" : "en");
 
-            // Language switch hote hi Anushthan Directory aur 16 Sanskar turant naye bhasha mein re-render honge
-            if (typeof renderAnushthanDirectory === 'function') {
-                renderAnushthanDirectory();
-            }
-            if (typeof renderSixteenFullPage === 'function') {
-                renderSixteenFullPage();
-            }
-        }
+    updateTexts();
+    if (typeof renderAnushthanDirectory === 'function') renderAnushthanDirectory();
+    if (typeof renderSixteenFullPage === 'function') renderSixteenFullPage();
+    if (lastCachedPanchangData) {
+        fetchDatePanchang(document.getElementById("kgDatePicker")?.value || "");
+    }
+}
 
         // ========================================================
         // 11. INITIALIZATION DISPATCHER (With Geo-Language Auto Detect)
