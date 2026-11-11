@@ -319,45 +319,90 @@
         </span>
     </div>
 
-    <!-- HEADER NAV -->
+    <!-- HEADER NAV WITH MOBILE 3-LINE BUTTON -->
     <header class="fixed top-8 left-0 right-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <a href="javascript:void(0)" onclick="navigateToPage('home')" class="flex items-center gap-3">
-                <div class="relative w-12 h-12 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black overflow-hidden flex-shrink-0">
+                <div class="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 border-gold-500/80 p-0.5 flex items-center justify-center bg-black overflow-hidden flex-shrink-0">
                     <video autoplay loop muted playsinline class="absolute pointer-events-none max-w-none rounded-full" style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
                         <source src="logo.mp4" type="video/mp4">
                     </video>
                 </div>
                 <div>
-                    <span class="font-cinzel font-black text-2xl gold-gradient-text block leading-none">KAALGYA</span>
-                    <span class="text-[8px] tracking-[0.18em] text-gold-300 font-semibold uppercase mt-1 block">Ancient Wisdom • Modern Intelligence</span>
+                    <span class="font-cinzel font-black text-xl sm:text-2xl gold-gradient-text block leading-none">KAALGYA</span>
+                    <span class="text-[7px] sm:text-[8px] tracking-[0.18em] text-gold-300 font-semibold uppercase mt-1 block">Ancient Wisdom • Modern Intelligence</span>
                 </div>
             </a>
 
+            <!-- Desktop Links (XL Screens) -->
             <nav class="hidden xl:flex items-center gap-5 text-xs font-semibold text-gray-300">
                 <a href="javascript:void(0)" onclick="navigateToPage('about')" class="hover:text-gold-400 transition-colors cursor-pointer" data-i18n="navAbout">मेरे बारे में</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('vision')" class="hover:text-gold-400 transition-colors cursor-pointer" data-i18n="navVision">मेरा सपना</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('panchang-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-gold-400 transition-colors cursor-pointer" data-i18n="navPanchang">सूक्ष्म पंचांग</a>
-                <!-- Live Rashifal Header Link (Fully Switchable) -->
-<a href="https://kaalgya.com/rashifal/" class="hover:text-amber-300 text-gold-300 font-bold flex items-center gap-1.5 whitespace-nowrap text-sm px-2 py-1">
-    <span data-i18n="navRashifal">राशिफल</span>
-    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-ping"></span>
-</a>
+                <a href="https://kaalgya.com/rashifal/" class="hover:text-amber-300 text-gold-300 font-bold flex items-center gap-1.5 whitespace-nowrap text-sm px-2 py-1">
+                    <span data-i18n="navRashifal">राशिफल</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-ping"></span>
+                </a>
                 <a href="javascript:void(0)" onclick="navigateToPage('muhurat-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer" data-i18n="navMuhurat">16 संस्कार मुहूर्त</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('anushthan-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer" data-i18n="navAnushthan">पूजा एवं अनुष्ठान</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('hora-full')" class="hover:text-amber-300 text-gold-300 font-bold cursor-pointer" data-i18n="navHora">24 होरा चक्र</a>
                 <a href="javascript:void(0)" onclick="navigateToPage('home'); setTimeout(() => document.getElementById('tijori-section').scrollIntoView({behavior:'smooth'}), 100);" class="hover:text-amber-400 text-amber-300 font-bold cursor-pointer" data-i18n="navTijori">भावनाओं की तिजोरी</a>
             </nav>
             
-            <div class="flex items-center gap-3">
-                <button id="lang-switch-btn" onclick="toggleSiteLanguage()" class="px-3 py-1.5 rounded-full border border-gold-500/40 bg-obsidian-900 text-gold-300 text-xs font-bold hover:bg-gold-500 hover:text-black transition-all cursor-pointer">EN / हिन्दी</button>
-                <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer" data-i18n="navConsult">
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="lang-switch-btn" onclick="toggleSiteLanguage()" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full border border-gold-500/40 bg-obsidian-900 text-gold-300 text-xs font-bold hover:bg-gold-500 hover:text-black transition-all cursor-pointer">EN / हिन्दी</button>
+                <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="hidden sm:inline-block px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer hover:bg-gold-400 transition-all" data-i18n="navConsult">
                     परामर्श लें
+                </button>
+
+                <!-- 3-Lines Mobile Menu Button -->
+                <button type="button" onclick="toggleMobileMenu()" class="xl:hidden w-10 h-10 rounded-xl bg-obsidian-900 border border-gold-500/40 text-gold-300 hover:text-white flex items-center justify-center cursor-pointer transition-all shadow-md" aria-label="Toggle Menu">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
             </div>
         </div>
     </header>
 
+    <!-- SLIDING MOBILE DRAWER -->
+    <div id="mobileMenuDrawer" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl transition-opacity duration-300 hidden opacity-0">
+        <div class="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs bg-obsidian-950 border-l border-gold-500/30 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-gold-500/25 pb-4">
+                    <span class="font-cinzel font-bold text-lg gold-gradient-text tracking-wider">KAALGYA</span>
+                    <button type="button" onclick="toggleMobileMenu()" class="w-8 h-8 rounded-lg bg-obsidian-900 border border-gold-500/30 text-gold-300 hover:text-white flex items-center justify-center cursor-pointer">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col space-y-3.5 text-sm font-semibold text-gray-200">
+                    <a href="javascript:void(0)" onclick="mobileNavAction('about')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-gold-300 transition-all" data-i18n="navAbout">मेरे बारे में</a>
+                    <a href="javascript:void(0)" onclick="mobileNavAction('vision')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-gold-300 transition-all" data-i18n="navVision">मेरा सपना</a>
+                    <a href="javascript:void(0)" onclick="mobileNavAction('home', 'panchang-section')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-gold-300 transition-all" data-i18n="navPanchang">सूक्ष्म पंचांग</a>
+                    
+                    <a href="https://kaalgya.com/rashifal/" class="py-2 px-3 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 hover:text-white flex items-center justify-between">
+                        <span class="font-bold flex items-center gap-2">
+                            <i data-lucide="compass" class="w-4 h-4 text-gold-400"></i>
+                            <span data-i18n="navRashifal">राशिफल</span>
+                        </span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    </a>
+
+                    <a href="javascript:void(0)" onclick="mobileNavAction('muhurat-full')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-gold-300 transition-all" data-i18n="navMuhurat">16 संस्कार मुहूर्त</a>
+                    <a href="javascript:void(0)" onclick="mobileNavAction('anushthan-full')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-gold-300 transition-all" data-i18n="navAnushthan">पूजा एवं अनुष्ठान</a>
+                    <a href="javascript:void(0)" onclick="mobileNavAction('hora-full')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-gold-300 transition-all" data-i18n="navHora">24 होरा चक्र</a>
+                    <a href="javascript:void(0)" onclick="mobileNavAction('home', 'tijori-section')" class="py-1.5 px-3 rounded-lg hover:bg-gold-500/10 hover:text-amber-300 transition-all" data-i18n="navTijori">भावनाओं की तिजोरी</a>
+                </nav>
+            </div>
+
+            <div class="pt-6 border-t border-gold-500/20 space-y-3">
+                <button onclick="openBookingModal('General Consultation', 'Mobile Drawer CTA'); toggleMobileMenu();" class="w-full py-3 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2" data-i18n="navConsult">
+                    परामर्श लें
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    
     <!-- ========================================== -->
     <!-- VIEW: HOME PAGE                            -->
     <!-- ========================================== -->
@@ -1471,6 +1516,39 @@
     <script>
         const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbwTbMPOoIJ7r5ll22vockO5G_WqBdl42zoCKkchs3fGjjfguG9XqO67LTLopkFuvxo/exec";
         const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
+
+        // Mobile Menu Helper Functions
+        function toggleMobileMenu() {
+            const drawer = document.getElementById("mobileMenuDrawer");
+            if (!drawer) return;
+
+            if (drawer.classList.contains("hidden")) {
+                drawer.classList.remove("hidden");
+                setTimeout(() => {
+                    drawer.classList.remove("opacity-0");
+                    drawer.classList.add("opacity-100");
+                }, 10);
+            } else {
+                drawer.classList.remove("opacity-100");
+                drawer.classList.add("opacity-0");
+                setTimeout(() => {
+                    drawer.classList.add("hidden");
+                }, 300);
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function mobileNavAction(pageId, sectionId = null) {
+            toggleMobileMenu();
+            navigateToPage(pageId);
+            if (sectionId) {
+                setTimeout(() => {
+                    const sec = document.getElementById(sectionId);
+                    if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+                }, 150);
+            }
+        }
+        
 
         // ========================================================
         // 1. MASTER NAVIGATION ROUTER (3-Tier Layer Controller)
