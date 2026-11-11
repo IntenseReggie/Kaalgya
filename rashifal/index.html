@@ -172,33 +172,36 @@
 
         async function initPortal() {
             updateStaticText();
+            const consoleBox = document.getElementById("rashifalConsole");
             try {
-                // Fixed fetch with redirect support for Google Apps Script
                 const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`, {
                     method: 'GET',
                     redirect: 'follow'
                 });
                 const json = await res.json();
-                if (json.status === "success" && json.data) {
+                
+                if (json.status === "success" && json.data && json.data.predictions) {
                     rashifalPayload = json.data;
                     updateStaticText();
                     renderPills();
                     renderDetail();
                 } else {
-                    document.getElementById("rashifalConsole").innerHTML = `
-                        <div class="text-center py-10 text-rose-400 text-xs font-mono">
-                            ⚠️ डेटा अभी उपलब्ध नहीं है। Apps Script में autoGenerateWeeklyRashifal चलाएं।
+                    consoleBox.innerHTML = `
+                        <div class="text-center py-16 space-y-3">
+                            <div class="w-8 h-8 mx-auto border-2 border-gold-400 border-t-transparent rounded-full animate-spin"></div>
+                            <p class="text-gold-300 font-cinzel text-sm tracking-widest">✦ वैदिक ग्रह गोचर गणना संकलित हो रही है ✦</p>
+                            <p class="text-gray-400 text-xs">कृपया कुछ क्षण पश्चात् पुनः देखें।</p>
                         </div>`;
                 }
             } catch (e) {
-                console.error(e);
-                document.getElementById("rashifalConsole").innerHTML = `
-                    <div class="text-center py-10 text-rose-400 text-xs font-mono">
-                        ⚠️ सर्वर से कनेक्ट करने में त्रुटि। कृपया सुनिश्चित करें कि Apps Script में कोड रन हो चुका है।
+                consoleBox.innerHTML = `
+                    <div class="text-center py-16 space-y-3">
+                        <div class="w-8 h-8 mx-auto border-2 border-gold-400 border-t-transparent rounded-full animate-spin"></div>
+                        <p class="text-gold-300 font-cinzel text-sm tracking-widest">✦ वैदिक ग्रह गोचर गणना संकलित हो रही है ✦</p>
+                        <p class="text-gray-400 text-xs">कृपया पृष्ठ को पुनः लोड करें।</p>
                     </div>`;
             }
         }
-
         function renderPills() {
             const grid = document.getElementById("rashiGrid");
             const isHi = currentLang === "hi";
