@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Yantramanav:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -18,8 +18,8 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: { 950: '#030305', 900: '#070709', 850: '#0d0d12' },
-                        gold: { 300: '#f9e79f', 400: '#f3c242', 500: '#c59b27' }
+                        obsidian: { 950: '#030305', 900: '#07070a', 850: '#0c0c12' },
+                        gold: { 200: '#fef3c7', 300: '#fde047', 400: '#eab308', 500: '#ca8a04', 600: '#a16207' }
                     },
                     fontFamily: {
                         cinzel: ['Cinzel', 'serif'],
@@ -30,44 +30,55 @@
         }
     </script>
     <style>
-        body { background-color: #030305; color: #e0e0e0; }
-        .cosmic-glass {
-            background: rgba(13, 13, 18, 0.85);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(197, 155, 39, 0.28);
+        body { 
+            background-color: #030305; 
+            color: #e5e5e5;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(202, 138, 4, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 10% 40%, rgba(202, 138, 4, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 70%, rgba(202, 138, 4, 0.06) 0%, transparent 40%);
         }
-        .gold-capsule-badge {
-            background: rgba(5, 5, 8, 0.92);
-            border: 1px solid rgba(197, 155, 39, 0.85);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(197, 155, 39, 0.25);
+        @keyframes slowRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .mandala-spin { animation: slowRotate 120s linear infinite; }
+        .cosmic-card {
+            background: rgba(12, 12, 18, 0.82);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(234, 179, 8, 0.22);
         }
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #fff7d6 0%, #f3c242 50%, #b8860b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .active-rashi-glow {
+            border-color: #fde047 !important;
+            background: linear-gradient(145deg, rgba(234, 179, 8, 0.25), rgba(5, 5, 8, 0.95)) !important;
+            box-shadow: 0 0 25px rgba(234, 179, 8, 0.35) !important;
         }
     </style>
 </head>
-<body class="min-h-screen font-sans selection:bg-gold-500 selection:text-black">
+<body class="min-h-screen font-sans selection:bg-gold-500 selection:text-black overflow-x-hidden">
+
+    <!-- OCCULT BACKGROUND MANDALA -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-10">
+        <svg class="mandala-spin w-[900px] h-[900px] text-gold-400" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.35">
+            <circle cx="100" cy="100" r="95" stroke-dasharray="2 4"/>
+            <circle cx="100" cy="100" r="80"/>
+            <polygon points="100,5 125,75 195,100 125,125 100,195 75,125 5,100 75,75"/>
+        </svg>
+    </div>
 
     <!-- TOP NAVIGATION -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/90 backdrop-blur-md border-b border-gold-500/20 py-3.5 px-4 sm:px-8">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <a href="https://kaalgya.com" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-gold-300 hover:text-white hover:border-gold-400 transition-all text-xs font-medium">
+                <a href="https://kaalgya.com" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-gold-300 hover:text-white transition-all text-xs font-medium">
                     <span>←</span>
                     <span id="navBackText">मुख्य पृष्ठ</span>
                 </a>
-                <a href="https://kaalgya.com" class="flex items-center gap-2">
-                    <span class="text-xl font-bold font-cinzel gold-gradient-text tracking-widest">KAALGYA</span>
-                </a>
+                <span class="text-xl font-bold font-cinzel text-gold-400 tracking-widest">KAALGYA</span>
             </div>
             
             <div class="flex items-center gap-3 sm:gap-4">
                 <button type="button" onclick="switchLanguage()" id="langToggleBtn" class="px-2.5 py-1 rounded-lg border border-gold-500/40 bg-obsidian-900 text-gold-300 hover:text-white text-xs font-mono font-bold cursor-pointer transition-all">
                     EN / HI
                 </button>
-                <a href="https://wa.me/919506795756" target="_blank" id="navConsultBtn" class="px-3.5 py-1.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-xs uppercase tracking-wider transition-transform hover:scale-105">
+                <a href="https://wa.me/919506795756" target="_blank" id="navConsultBtn" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 text-black font-bold text-xs uppercase tracking-wider">
                     परामर्श बुक करें
                 </a>
             </div>
@@ -75,15 +86,14 @@
     </nav>
 
     <!-- MAIN PORTAL -->
-    <main class="pt-24 pb-20 px-4 max-w-6xl mx-auto">
+    <main class="relative z-10 pt-24 pb-20 px-4 max-w-6xl mx-auto space-y-6">
 
-        <!-- 3:1 VISUAL BANNER (CAPSULE ALIGNED TO BOTTOM-CENTER) -->
-        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/40 shadow-[0_0_30px_rgba(197,155,39,0.2)] mb-8 bg-obsidian-950">
+        <!-- 3:1 BANNER -->
+        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/40 shadow-2xl bg-obsidian-950">
             <div class="w-full aspect-[3/1] relative flex items-end justify-center pb-3 sm:pb-6">
                 <img src="../banner-rashifal.jpg" onerror="this.src='../banner-panchang.jpg'" alt="द्वादश राशि गोचर चक्र" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/20 to-transparent"></div>
-                
-                <div class="relative z-10 px-5 py-2 sm:px-10 sm:py-3 rounded-full gold-capsule-badge flex items-center justify-center max-w-[90%]">
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/25 to-transparent"></div>
+                <div class="relative z-10 px-5 py-2 sm:px-10 sm:py-3.5 rounded-full bg-[#050508]/92 border border-gold-400/80 shadow-2xl">
                     <h1 id="bannerTitle" class="text-sm sm:text-2xl md:text-3xl font-bold font-sans text-gold-300 tracking-wide text-center whitespace-nowrap">
                         द्वादश राशि गोचर चक्र
                     </h1>
@@ -91,44 +101,47 @@
             </div>
         </div>
 
-        <!-- DATE & STATUS BAR (NO-TRUNCATE STACKED RESPONSIVE LAYOUT) -->
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-8 p-4 rounded-2xl bg-obsidian-900/90 border border-gold-500/20">
+        <!-- 1. MANDATORY SHASTRIYA DISCLOSURE BOX -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-gold-950/20 border border-gold-500/40 text-xs sm:text-sm text-gold-200/95 leading-relaxed flex items-start gap-3">
+            <i data-lucide="compass" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i>
+            <div>
+                <b class="text-gold-300 font-cinzel block text-xs tracking-wider uppercase mb-1" id="disclosureHead">
+                    ✦ वैदिक ज्योतिषीय स्पष्टीकरण (CHANDRA RASHI TRANSIT DISCLOSURE) ✦
+                </b>
+                <p id="disclosureText" class="font-sans">
+                    यह फलादेश वैदिक ज्योतिष के अनुसार आपकी <b>जन्म चंद्र राशि (Moon Sign)</b> और वर्तमान ग्रह गोचर पर आधारित है। केवल सूर्य राशि अथवा सामान्य नाम राशि को व्यक्तिगत कुंडली का पूर्ण फल न समझें। जीवन की व्यक्तिगत सटीक घटनाओं के लिए जन्म लग्न, चालू महादशा/अंतर्दशा एवं अष्टकवर्ग का व्यक्तिगत कुंडली विश्लेषण आवश्यक है।
+                </p>
+            </div>
+        </div>
+
+        <!-- DATE & STATUS BAR -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 rounded-2xl cosmic-card">
             <a href="https://kaalgya.com" class="inline-flex items-center gap-2 text-xs sm:text-sm text-gold-400 hover:text-gold-200 transition-colors font-medium">
                 <span>←</span>
                 <span id="quickHomeReturn">मुख्य पृष्ठ पर लौटें (Return to Home)</span>
             </a>
-            <div class="flex flex-wrap items-center gap-3">
+            <div class="flex items-center gap-3">
                 <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[11px] font-mono">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Ephemeris Synced
                 </div>
-                <div id="weekRangeBadge" class="px-3.5 py-1 rounded-xl bg-gold-500/10 border border-gold-500/30 text-xs sm:text-sm font-cinzel text-gold-300 font-bold">
+                <div id="weekRangeBadge" class="px-3.5 py-1 rounded-xl bg-gold-500/15 border border-gold-500/40 text-xs sm:text-sm font-cinzel text-gold-300 font-bold">
                     साप्ताहिक वैदिक फलादेश
                 </div>
             </div>
         </div>
 
-        <!-- EXPANDED SHASTRIYA PROTOCOL BOX -->
-        <div class="cosmic-glass rounded-3xl p-6 sm:p-10 mb-8 border border-gold-500/35 text-center max-w-5xl mx-auto shadow-2xl space-y-4">
-            <span id="protocolTag" class="text-xs sm:text-sm font-mono text-gold-400 uppercase tracking-widest block font-bold">
-                ✦ KAALGYA SHASTRIYA PROTOCOL • प्रामाणिक ज्योतिषीय मापदंड ✦
-            </span>
-            <p id="protocolText" class="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed font-sans max-w-4xl mx-auto text-justify sm:text-center">
-                प्रत्येक ज्योतिषीय विवेचन का आधार प्रामाणिक ज्योतिषीय सिद्धांत एवं पारंपरिक ज्ञान होना चाहिए, न कि मनगढ़ंत कथन या लोकप्रिय धारणाएँ। किसी एक ग्रह या एक योग के आधार पर निष्कर्ष निकालने के स्थान पर संबंधित ज्योतिषीय परिस्थितियों को समग्रता में समझने का प्रयास किया जाता है। राशिफल का उद्देश्य अनावश्यक भय, निश्चित घटनाओं के दावे या अंधविश्वास को बढ़ावा देना नहीं, बल्कि व्यक्ति को समय और परिस्थितियों के प्रति सजग बनाना है।
-            </p>
-        </div>
-
         <!-- 12 RASHIS SELECTOR -->
         <div id="rashiGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-8"></div>
 
-        <!-- ACTIVE RASHI CONSOLE -->
-        <div id="rashifalConsole" class="cosmic-glass rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl space-y-6">
+        <!-- 14-POINT AUTHENTIC CONSOLE -->
+        <div id="rashifalConsole" class="cosmic-card rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl space-y-8">
             <div class="text-center py-16 text-gold-400 font-mono text-xs animate-pulse">
                 ⏳ वैदिक ग्रह गोचर गणना लोड हो रही है...
             </div>
         </div>
     </main>
 
-    <!-- ENGINE SCRIPT -->
+    <!-- SCRIPT ENGINE -->
     <script>
         const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
         let rashifalPayload = null;
@@ -150,226 +163,6 @@
             { id: 12, nameHi: "मीन", nameEn: "Pisces", glyph: "♓", lordHi: "बृहस्पति", lordEn: "Jupiter" }
         ];
 
-        // Comprehensive Fallback Predictions matching new deep guidelines
-        const fallbackPredictions = [
-            {
-                rashiId: 1,
-                chandraGocharHi: "द्वितीय एवं तृतीय भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 2nd and 3rd houses",
-                careerDhanHi: "कार्यक्षेत्र में पराक्रम और निर्णय क्षमता में स्पष्ट वृद्धि होगी। आर्थिक दृष्टि से सप्ताह के मध्य में नए अनुबंध या रुका हुआ धन प्राप्त होने के शुभ संकेत हैं, किंतु सहकर्मियों के साथ संवाद में धैर्य रखें।",
-                careerDhanEn: "Strong momentum and clear executive decisions at work. Financial liquidity improves mid-week with recovering dues, though avoid blunt confrontations with colleagues.",
-                healthHi: "उदर विकार एवं रक्तपित्त की प्रवृत्ति रह सकती है। अत्यधिक कार्यभार से मानसिक तनाव न होने दें, नियमित विश्राम और पर्याप्त जल सेवन आवश्यक है।",
-                healthEn: "Watch out for digestive sensitivity and blood pressure fluctuations. Avoid letting workload cause nervous strain; prioritize hydration and balanced rest.",
-                relationsHi: "दांपत्य जीवन में समर्पण और सौम्यता से सुखद वातावरण रहेगा। यदि किसी गोपनीय या समानांतर भावनात्मक संबंध में उलझे हैं, तो इस सप्ताह आत्म-परीक्षण करें; भ्रम, मर्यादाहीन आचरण अथवा गोपनीयता से मानसिक अशांति और प्रतिष्ठा पर आंच आने का जोखिम रहेगा।",
-                relationsEn: "Marital dynamics flourish through tenderness and mutual respect. For those in parallel or complex personal involvements, exercise rigorous introspection; secrecy or moral ambiguity can invite severe inner anxiety and reputational strain.",
-                shubhRangHi: "गहरा लाल व नारंगी",
-                shubhRangEn: "Crimson & Saffron",
-                shubhAnk: 9,
-                upayListHi: ["मंगलवार को ऋणमोचक मंगल स्तोत्र का पाठ करें।", "प्रातःकाल तांबे के पात्र से सूर्य को रोली मिश्रित जल अर्पित करें।"],
-                upayListEn: ["Recite Rinmochan Mangal Stotram on Tuesday.", "Offer water blended with vermilion to the Sun in a copper vessel."],
-                nishedhListHi: ["क्रोध में आकर किसी भी कानूनी या वित्तीय दस्तावेज पर हस्ताक्षर न करें।", "विवादित या अनैतिक संबंधों में मर्यादा का उल्लंघन बिल्कुल न करें।"],
-                nishedhListEn: ["Do not sign legal or financial commitments under anger.", "Avoid boundary crossing in secret or morally ambiguous relations."]
-            },
-            {
-                rashiId: 2,
-                chandraGocharHi: "प्रथम एवं द्वितीय भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 1st and 2nd houses",
-                careerDhanHi: "वित्तीय योजनाओं में दीर्घकालिक स्थिरता आएगी। व्यापारिक लेन-देन में सूझबूझ से लाभ होगा और संचित धन में वृद्धि की संभावना बनेगी।",
-                careerDhanEn: "Long-term stability marks financial initiatives. Prudent commercial discernment enhances capital accumulation.",
-                healthHi: "गले में संक्रमण तथा कफ-जनित शिथिलता से सावधान रहें। बासी और अत्यधिक शीतल पदार्थों के सेवन से बचना स्वास्थ्यकर रहेगा।",
-                healthEn: "Guard against throat congestion and phlegm imbalance. Avoid excessively cold or stale dietary items.",
-                relationsHi: "पारिवारिक जीवन में मधुरता और परस्पर सहयोग बना रहेगा। व्यक्तिगत आकर्षण या वैवाहिक इतर आकर्षणों के प्रति सजग रहें; तात्कालिक प्रलोभन पारिवारिक शांति और विश्वास को खंडित कर सकते हैं।",
-                relationsEn: "Domestic life remains warm and supportive. Be vigilant concerning external infatuations; transient allure can undermine mutual trust and familial peace.",
-                shubhRangHi: "चमकीला श्वेत व रजत",
-                shubhRangEn: "Shimmering White & Silver",
-                shubhAnk: 6,
-                upayListHi: ["श्री सूक्त का नित्य पाठ करें।", "शुक्रवार को किसी कन्या को सफेद मिष्ठान्न भेंट करें।"],
-                upayListEn: ["Recite Sri Suktam daily.", "Offer white sweets to a young girl on Friday."],
-                nishedhListHi: ["बिना लिखित अनुबंध के किसी को बड़ी धनराशि उधार न दें।", "वैवाहिक संबंधों में संवादहीनता न पनपने दें।"],
-                nishedhListEn: ["Do not lend large sums without formal paperwork.", "Do not allow emotional distance or silence to grow in marriage."]
-            },
-            {
-                rashiId: 3,
-                chandraGocharHi: "द्वादश एवं प्रथम भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 12th and 1st houses",
-                careerDhanHi: "बौद्धिक कार्यों, लेखन एवं परामर्श क्षेत्र से जुड़े जातकों को उत्कृष्ट परिणाम मिलेंगे। व्यय की अधिकता रह सकती है किंतु यह निवेशोन्मुखी होगी।",
-                careerDhanEn: "Superb analytical and advisory breakthroughs. Expenses may trend higher but align with productive investments.",
-                healthHi: "अनिद्रा एवं मानसिक चंचलता पर नियंत्रण रखें। स्क्रीन टाइम सीमित करें और संध्याकाल में ध्यान व प्राणायाम का आश्रय लें।",
-                healthEn: "Regulate restlessness and erratic sleep. Limit digital exposure and engage in evening meditation.",
-                relationsHi: "दाम्पत्य में वैचारिक मतभेद खुलकर बात करने से सुलझेंगे। यदि किसी त्रिकोणीय या अनसुलझे संबंध में हैं, तो सत्य और पारदर्शिता अपनाएं; छल-कपट से दूर रहकर ही सम्मान सुरक्षित रहेगा।",
-                relationsEn: "Open communication dissolves misunderstandings with your spouse. If navigating complex emotional ties, choose uncompromised truth and transparency.",
-                shubhRangHi: "पन्ना हरा",
-                shubhRangEn: "Emerald Green",
-                shubhAnk: 5,
-                upayListHi: ["बुधवार को गौमाता को हरा चारा अर्पित करें।", "विष्णु सहस्त्रनाम का नित्य श्रवण करें।"],
-                upayListEn: ["Feed green grass to cows on Wednesday.", "Listen to Vishnu Sahasranama daily."],
-                nishedhListHi: ["दूसरों की बातों में आकर शेयर बाजार में सट्टेबाजी न करें।", "दोहरी बातचीत या वादों से मुकरने की भूल न करें।"],
-                nishedhListEn: ["Avoid speculative trading based on unverified rumors.", "Do not commit to promises you cannot ethically honor."]
-            },
-            {
-                rashiId: 4,
-                chandraGocharHi: "एकादश एवं द्वादश भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 11th and 12th houses",
-                careerDhanHi: "व्यापार में आय के नए स्रोत प्रशस्त होंगे। पुराने ऋण चुकता करने में सफलता मिलेगी और कार्यक्षेत्र में आपकी विश्वसनीयता बढ़ेगी।",
-                careerDhanEn: "Fresh avenues of revenue emerge. Notable success in clearing pending liabilities and elevating professional trust.",
-                healthHi: "जल तत्व की अधिकता और मौसमी जुकाम से बचाव करें। फेफड़ों और छाती में भारीपन महसूस हो तो तुरंत भाप लें।",
-                healthEn: "Protect against water-borne chills. Prioritize respiratory wellness and steam inhalation if congested.",
-                relationsHi: "जीवनसाथी का भावनात्मक संबल आपके मनोबल को बढ़ाएगा। बाह्य आकर्षणों में मर्यादा की लक्ष्मण रेखा न लांघें; चरित्रगत पवित्रता ही आपके आंतरिक सुकून की कुंजी है।",
-                relationsEn: "Your spouse provides profound emotional anchoring. Never transgress boundaries in external liaisons; moral integrity is essential for inner tranquility.",
-                shubhRangHi: "दूधिया श्वेत",
-                shubhRangEn: "Milky White",
-                shubhAnk: 2,
-                upayListHi: ["शिवलिंग पर कच्चा दूध व अक्षत अर्पित करें।", "सोमवार को चंद्र दर्शन करके प्रणाम करें।"],
-                upayListEn: ["Offer raw milk and unbroken rice to Shiva Lingam.", "Pay reverence to the Moon on Monday evening."],
-                nishedhListHi: ["भावुकता में आकर कोई वित्तीय फैसला न लें।", "रात्रि में देर तक जागने और नकारात्मक चिंतन से बचें।"],
-                nishedhListEn: ["Do not take financial risks driven by emotional impulse.", "Avoid late-night overthinking and brooding."]
-            },
-            {
-                rashiId: 5,
-                chandraGocharHi: "दशम एवं एकादश भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 10th and 11th houses",
-                careerDhanHi: "प्रशासनिक एवं नेतृत्व के दायित्वों में विशेष विजय मिलेगी। सरकारी कार्यों से जुड़े अटके कार्य गति पकड़ेंगे और आर्थिक लाभ सुदृढ़ होगा।",
-                careerDhanEn: "Commanding leadership across executive assignments. Government or administrative bottlenecks ease, boosting revenue.",
-                healthHi: "नेत्र विकार, सिरदर्द और रीढ़ की हड्डी में अकड़न के प्रति सजग रहें। सुबह की धूप में समय बिताना लाभकारी सिद्ध होगा।",
-                healthEn: "Mind posture and eye strain. Spending time under morning sunlight will replenish physical vitality.",
-                relationsHi: "परिवार में वरिष्ठों और जीवनसाथी के साथ सामंजस्य उत्तम रहेगा। अहंकार व अधिकार की भावना को व्यक्तिगत संबंधों पर हावी न होने दें। अनैतिक संबंधों से दूरी अनिवार्य है।",
-                relationsEn: "Warm harmony with spouse and elder family members. Do not let ego dictate personal discourse; stay strictly distant from compromising entanglements.",
-                shubhRangHi: "केसरिया व स्वर्ण",
-                shubhRangEn: "Saffron & Royal Gold",
-                shubhAnk: 1,
-                upayListHi: ["रविवार को आदित्य हृदय स्तोत्र का पाठ करें।", "पिता अथवा पितातुल्य गुरुजनों का आशीर्वाद लें।"],
-                upayListEn: ["Recite Aditya Hridaya Stotram on Sunday.", "Seek blessings from father or fatherly mentors."],
-                nishedhListHi: ["कार्यस्थल पर किसी के प्रति कटु व अपमानजनक शब्दों का प्रयोग न करें।", "अति-आत्मविश्वास में आकर जोखिम भरे सौदों से बचें।"],
-                nishedhListEn: ["Avoid harsh or condescending remarks in public.", "Do not overleverage capital in high-risk investments."]
-            },
-            {
-                rashiId: 6,
-                chandraGocharHi: "नवम एवं दशम भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 9th and 10th houses",
-                careerDhanHi: "भाग्य और पुरुषार्थ का सुंदर समन्वय देखने को मिलेगा। कार्यक्षेत्र में पदोन्नति अथवा नई भूमिका के प्रस्ताव प्राप्त हो सकते हैं।",
-                careerDhanEn: "Harmonious blend of luck and hard discipline. Lucrative proposals for career expansion or new responsibilities arise.",
-                healthHi: "पाचन तंत्र और यकृत की संवेदनशीलता रह सकती है। सात्विक आहार लें और भोजन में हरी सब्जियों का अनुपात बढ़ाएं।",
-                healthEn: "Digestive sensitivity requires clean nutrition. Prioritize wholesome, seasonal greens and avoid fried fare.",
-                relationsHi: "दांपत्य में स्थिरता रहेगी। यदि जीवन में कोई जटिल या गुप्त संबंध चल रहा है, तो समझ लें कि आत्म-सम्मान से बढ़कर कुछ नहीं; मर्यादा में रहकर ही कल्याण संभव है।",
-                relationsEn: "Steady matrimonial comfort. If coping with clandestine emotional attachments, realize self-respect outranks momentary desires; maintain ethical boundaries.",
-                shubhRangHi: "पिस्ता हरा व हल्का पीला",
-                shubhRangEn: "Pistachio Green & Pale Yellow",
-                shubhAnk: 5,
-                upayListHi: ["तुलसी के पौधे में सायंकाल घी का दीपक लगाएं।", "बुधवार को मूंग दाल का दान करें।"],
-                upayListEn: ["Light a ghee lamp near Tulsi plant in the evening.", "Donate whole moong lentils on Wednesday."],
-                nishedhListHi: ["दूसरों की कमियां निकालने में समय व्यर्थ न करें।", "कर्ज लेकर कोई नया निवेश न करें।"],
-                nishedhListEn: ["Do not waste energy hyper-criticizing others.", "Avoid borrowing debt to finance new ventures."]
-            },
-            {
-                rashiId: 7,
-                chandraGocharHi: "अष्टम एवं नवम भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 8th and 9th houses",
-                careerDhanHi: "सप्ताह के पूर्वार्ध में सावधानी और उत्तरार्ध में आकस्मिक लाभ के योग हैं। शोध, कानूनी या विदेश से संबंधित व्यापार में उत्तम गति आएगी।",
-                careerDhanEn: "Initial prudence gives way to unexpected gains mid-week. Research, legal, and international affairs pick up speed.",
-                healthHi: "कमर और गुर्दे से संबंधित सजगता रखें। पर्याप्त मात्रा में गुनगुना जल पिएं और भारी वजन उठाने से परहेज करें।",
-                healthEn: "Monitor lower back and kidney health. Hydrate well with warm water and avoid improper heavy lifting.",
-                relationsHi: "जीवनसाथी की भावनाओं को प्राथमिकता दें। वैवाहिक रिश्ते से बाहर किसी भी प्रकार का आकर्षण आत्म-विनाशकारी सिद्ध हो सकता है; मर्यादा और निष्ठा ही रक्षा करेगी।",
-                relationsEn: "Prioritize your spouse's emotional needs. Any stray attraction outside marriage will be spiritually damaging; loyalty and discipline safeguard your destiny.",
-                shubhRangHi: "गुलाबी व श्वेत",
-                shubhRangEn: "Pastel Pink & Ivory",
-                shubhAnk: 6,
-                upayListHi: ["शुक्रवार को कनकधारा स्तोत्र का पाठ करें।", "इत्र या सुगंधित द्रव्यों का प्रयोग करें।"],
-                upayListEn: ["Chant Kanakadhara Stotram on Friday.", "Use mild natural aromatic scents."],
-                nishedhListHi: ["अपरिचित व्यक्तियों के साथ वित्तीय साझेदारी न करें।", "रिश्तों में दोहरापन या छलपूर्ण व्यवहार न रखें।"],
-                nishedhListEn: ["Do not enter business pacts with unverified strangers.", "Avoid deceit or double standards in intimate relationships."]
-            },
-            {
-                rashiId: 8,
-                chandraGocharHi: "सप्तम एवं अष्टम भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 7th and 8th houses",
-                careerDhanHi: "साझेदारी के मामलों में गहन परीक्षण करें। धन के लेन-देन में लिखा-पढ़ी अनिवार्य रखें; गुप्त शत्रुओं की चालें निष्फल होंगी।",
-                careerDhanEn: "Scrutinize all collaborative ventures. Maintain stringent documentation; hidden adversaries will be effectively neutralized.",
-                healthHi: "मूत्र विकार एवं रक्त विकार से संबंधित सावधानी रखें। योग और ध्यान को अपनी दिनचर्या का अनिवार्य अंग बनाएं।",
-                healthEn: "Take precautions against urinary discomfort and blood impurities. Integrate regular yoga and pranayama.",
-                relationsHi: "वैवाहिक जीवन में अविश्वास और संशय से बचें। यदि मन किसी अनैतिक संबंध की ओर आकर्षित हो रहा है, तो तुरंत उस विचार को त्यागें; यह आपके सम्मान को गहरा आघात पहुंचा सकता है।",
-                relationsEn: "Root out suspicion from your marriage through open dialogue. If tempted by unethical attachments, restrain the mind firmly; dignity is priceless.",
-                shubhRangHi: "सिंदूरी व गहरा भूरा",
-                shubhRangEn: "Vermilion & Deep Russet",
-                shubhAnk: 9,
-                upayListHi: ["हनुमान बाहुक का पाठ करें।", "मंगलवार को सुंदरकांड का पाठ करें।"],
-                upayListEn: ["Chant Hanuman Bahuk for physical strength.", "Recite Sundarkand on Tuesday."],
-                nishedhListHi: ["वाहन तेज गति से न चलाएं।", "क्रोध में आकर पुराने रिश्तों को समाप्त करने का निर्णय न लें।"],
-                nishedhListEn: ["Do not indulge in reckless driving.", "Never sever long-standing bonds during emotional outbursts."]
-            },
-            {
-                rashiId: 9,
-                chandraGocharHi: "षष्ठ एवं सप्तम भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 6th and 7th houses",
-                careerDhanHi: "न्यायालयीन एवं प्रतिस्पर्धी मामलों में विजय प्राप्त होगी। व्यावसायिक संपर्कों से लाभ होगा और आय में संतोषजनक वृद्धि दर्ज होगी।",
-                careerDhanEn: "Decisive triumph in legal or competitive arenas. Network connections translate into commendable earnings.",
-                healthHi: "यकृत और पैरों की मांसपेशियों में खिंचाव से बचें। अत्यधिक गरिष्ठ और तैलीय भोजन से दूरी बनाए रखें।",
-                healthEn: "Guard against liver fatigue and muscular cramps. Steer clear of greasy, heavy foods.",
-                relationsHi: "दांपत्य जीवन में आदर और स्नेह का भाव रहेगा। व्यक्तिगत जीवन में अपनी सीमाओं का सम्मान करें; मर्यादा में रहकर ही सच्चे सुख की अनुभूति होती है।",
-                relationsEn: "Mutual respect and dignified affection uplift married life. Respect ethical limits; authentic joy is only found within honorable boundaries.",
-                shubhRangHi: "हल्दी पीला",
-                shubhRangEn: "Turmeric Yellow",
-                shubhAnk: 3,
-                upayListHi: ["गुरुवार को बृहस्पति देव के बीज मंत्र का जप करें।", "माथे पर केसर अथवा चंदन का तिलक लगाएं।"],
-                upayListEn: ["Chant Guru Beej Mantra on Thursday.", "Apply a pure saffron or sandalwood tilak on the forehead."],
-                nishedhListHi: ["बिना मांगे किसी को अनावश्यक परामर्श न दें।", "बड़ों और गुरुजनों की अवज्ञा बिल्कुल न करें।"],
-                nishedhListEn: ["Refrain from offering unsolicited advice.", "Never show disrespect toward teachers or elder family members."]
-            },
-            {
-                rashiId: 10,
-                chandraGocharHi: "पंचम एवं षष्ठ भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 5th and 6th houses",
-                careerDhanHi: "कार्यक्षेत्र में आपकी कर्मठता और अनुशासन की सराहना होगी। अटके हुए धन की प्राप्ति होगी तथा नए दायित्वों की प्राप्ति संभव है।",
-                careerDhanEn: "Discipline and methodical efforts receive executive commendation. Stalled funds recover along with new mandates.",
-                healthHi: "जोड़ों के दर्द, वायु विकार और घुटनों की समस्या से सावधान रहें। प्रातःकाल हल्का व्यायाम अवश्य करें।",
-                healthEn: "Be mindful of joint stiffness, knee strain, and wind imbalance. Gentle morning mobilization is advised.",
-                relationsHi: "जीवनसाथी के साथ पारिवारिक जिम्मेदारियों को मिलकर निभाएं। समानांतर या अनसुलझे संबंधों में ऊर्जा व्यर्थ न करें; निष्ठावान बने रहना ही आपके भाग्य को उज्ज्वल करेगा।",
-                relationsEn: "Share domestic responsibilities harmoniously with your spouse. Do not dissipate energy in illicit affairs; fidelity elevates your destiny.",
-                shubhRangHi: "नीला व धूसर",
-                shubhRangEn: "Cobalt Blue & Slate Grey",
-                shubhAnk: 8,
-                upayListHi: ["शनिवार को दशरथकृत शनि स्तोत्र का पाठ करें।", "शमी वृक्ष में जल अर्पित करें।"],
-                upayListEn: ["Recite Dasharatha Shani Stotram on Saturday.", "Offer fresh water to the Shami tree."],
-                nishedhListHi: ["अधीनस्थ कर्मचारियों के साथ अन्याय न करें।", "आलस्य के कारण समयबद्ध कार्यों को न टालें।"],
-                nishedhListEn: ["Do not mistreat subordinate staff or domestic help.", "Never postpone time-sensitive deadlines due to lethargy."]
-            },
-            {
-                rashiId: 11,
-                chandraGocharHi: "चतुर्थ एवं पंचम भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 4th and 5th houses",
-                careerDhanHi: "नवाचार और तकनीकी परियोजनाओं में असाधारण प्रगति होगी। आय के अतिरिक्त स्रोत बनेंगे और आर्थिक चिंताएं दूर होंगी।",
-                careerDhanEn: "Outstanding breakthroughs across innovation and tech ventures. Supplementary revenue streams alleviate financial stress.",
-                healthHi: "हृदय क्षेत्र में भारीपन व घबराहट से बचें। शुद्ध वायु में टहलें और तनावमुक्त रहने का अभ्यास करें।",
-                healthEn: "Avoid physical exhaustion and anxiety. Take long walks in open air and practice mindful grounding.",
-                relationsHi: "दाम्पत्य में भावनात्मक जुड़ाव प्रगाढ़ होगा। मित्रता और प्रेम के नाम पर मर्यादाहीन सीमाओं में प्रवेश न करें; स्पष्टता और संयम बनाए रखें।",
-                relationsEn: "Emotional intimacy deepens within marriage. Avoid compromising boundaries under the guise of friendship; preserve restraint.",
-                shubhRangHi: "आसमानी व बैंगनी",
-                shubhRangEn: "Sky Blue & Royal Violet",
-                shubhAnk: 8,
-                upayListHi: ["शनिवार को पीपल के नीचे सरसों के तेल का दीपक जलाएं।", "किसी असहाय व्यक्ति को काले वस्त्र या भोजन दें।"],
-                upayListEn: ["Light a mustard oil lamp under Peepal tree on Saturday.", "Offer warm clothing or food to the needy."],
-                nishedhListHi: ["परिजनों की अनदेखी करके बाहरी दुनिया में न खोएं।", "बिना विश्लेषण किए किसी भी नई योजना में धन न लगाएं।"],
-                nishedhListEn: ["Do not neglect family commitments for external socializing.", "Avoid speculative schemes without diligent verification."]
-            },
-            {
-                rashiId: 12,
-                chandraGocharHi: "तृतीय एवं चतुर्थ भाव में चंद्र संचरण",
-                chandraGocharEn: "Moon transiting 3rd and 4th houses",
-                careerDhanHi: "रचनात्मक और आध्यात्मिक कार्यों में ख्याति मिलेगी। आर्थिक निवेश के लिए समय अनुकूल है, भूमि अथवा वाहन से जुड़े सौदे लाभ देंगे।",
-                careerDhanEn: "Recognition in creative and spiritual initiatives. Favorable period for asset investments, including property or vehicles.",
-                healthHi: "पैरों में सूजन, अनिद्रा और मानसिक उद्वेग से बचें। रात्रि में सोने से पूर्व पाद-अभ्यंग (पैरों की मालिश) करें।",
-                healthEn: "Mind foot fatigue, sleep disturbances, and restlessness. Foot massage before bedtime ensures restorative rest.",
-                relationsHi: "जीवनसाथी का स्नेह और आत्मीयता घर को स्वर्ग बनाएगी। मन के भटकाव पर नियंत्रण रखें; जो संबंध सत्य और धर्म पर टिके नहीं हैं, वे अंततः पश्चाताप देते हैं।",
-                relationsEn: "Your spouse’s unconditional warmth creates domestic bliss. Control mental wandering; relationships lacking truth and righteousness yield only remorse.",
-                shubhRangHi: "सुनहरा पीला व श्वेत",
-                shubhRangEn: "Golden Yellow & White",
-                shubhAnk: 3,
-                upayListHi: ["प्रतिदिन 108 बार ॐ नमो भगवते वासुदेवाय का जप करें।", "केसर का सेवन अथवा तिलक करें।"],
-                upayListEn: ["Chant Om Namo Bhagavate Vasudevaya 108 times daily.", "Apply or consume a pinch of pure saffron."],
-                nishedhListHi: ["अति-उदारता में अपनी जमापूंजी किसी पर न न्योछावर करें।", "अनैतिक व गोपनीय वार्तालापों से दूरी रखें।"],
-                nishedhListEn: ["Do not surrender your life savings out of excessive naivety.", "Stay distant from confidential, morally dubious conversations."]
-            }
-        ];
-
         function switchLanguage() {
             currentLang = (currentLang === "hi") ? "en" : "hi";
             localStorage.setItem("kaalgya_lang", currentLang);
@@ -386,46 +179,30 @@
             document.getElementById("navConsultBtn").innerText = isHi ? "परामर्श बुक करें" : "Book Consultation";
             document.getElementById("bannerTitle").innerText = isHi ? "द्वादश राशि गोचर चक्र" : "12 Signs Planetary Transit";
             
+            document.getElementById("disclosureHead").innerText = isHi 
+                ? "✦ वैदिक ज्योतिषीय स्पष्टीकरण (CHANDRA RASHI TRANSIT DISCLOSURE) ✦" 
+                : "✦ CLASSICAL VEDIC DISCLOSURE (MOON SIGN TRANSIT REALITY) ✦";
+
+            document.getElementById("disclosureText").innerHTML = isHi 
+                ? "यह फलादेश वैदिक ज्योतिष के अनुसार आपकी <b>जन्म चंद्र राशि (Moon Sign)</b> और वर्तमान ग्रह गोचर पर आधारित है। केवल सूर्य राशि अथवा सामान्य नाम राशि को व्यक्तिगत कुंडली का पूर्ण फल न समझें। जीवन की व्यक्तिगत सटीक घटनाओं के लिए जन्म लग्न, चालू महादशा/अंतर्दशा एवं अष्टकवर्ग का व्यक्तिगत कुंडली विश्लेषण आवश्यक है।"
+                : "This forecast is mathematically calculated using your classical <b>Vedic Moon Sign (Chandra Rashi)</b> and ongoing planetary transits. Do not mistake broad Sun-sign generalizations for personalized destiny. Specific personal timing requires individual birth lagna, ongoing mahadasha/antardasha, and ashtakavarga analysis.";
+
             const wText = (rashifalPayload && rashifalPayload.weekRange) ? rashifalPayload.weekRange : "11 नव॰ - 17 नव॰ 2026";
             const wTextEn = (rashifalPayload && rashifalPayload.weekRangeEn) ? rashifalPayload.weekRangeEn : "Nov 11 - Nov 17, 2026";
             document.getElementById("weekRangeBadge").innerText = isHi ? `साप्ताहिक फलादेश • ${wText}` : `Weekly Transit • ${wTextEn}`;
-
-            document.getElementById("protocolTag").innerText = isHi 
-                ? "✦ KAALGYA SHASTRIYA PROTOCOL • प्रामाणिक ज्योतिषीय मापदंड ✦" 
-                : "✦ KAALGYA SHASTRIYA PROTOCOL • AUTHENTIC VEDIC STANDARDS ✦";
-
-            document.getElementById("protocolText").innerText = isHi 
-                ? "प्रत्येक ज्योतिषीय विवेचन का आधार प्रामाणिक ज्योतिषीय सिद्धांत एवं पारंपरिक ज्ञान होना चाहिए, न कि मनगढ़ंत कथन या लोकप्रिय धारणाएँ। किसी एक ग्रह या एक योग के आधार पर निष्कर्ष निकालने के स्थान पर संबंधित ज्योतिषीय परिस्थितियों को समग्रता में समझने का प्रयास किया जाता है। राशिफल का उद्देश्य अनावश्यक भय, निश्चित घटनाओं के दावे या अंधविश्वास को बढ़ावा देना नहीं, बल्कि व्यक्ति को समय और परिस्थितियों के प्रति जागरूक बनाना है।"
-                : "The foundation of astrological interpretation must be grounded in authentic Vedic principles rather than arbitrary claims. Instead of deriving conclusions from an isolated planetary placement, transits are evaluated holistically. The true purpose of astrology is not to provoke fear or fatalistic claims, but to empower individuals with mindful awareness of time and circumstances.";
         }
 
         async function initPortal() {
             updateStaticText();
             try {
-                const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 3500);
-
-                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`, {
-                    method: 'GET',
-                    signal: controller.signal
-                });
-                clearTimeout(timeoutId);
-
+                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
                 const json = await res.json();
-                if (json.status === "success" && json.data && json.data.predictions && json.data.predictions.length >= 12) {
+                if (json.status === "success" && json.data) {
                     rashifalPayload = json.data;
-                } else {
-                    throw new Error("Fallback required");
                 }
             } catch (err) {
-                rashifalPayload = {
-                    weekRange: "11 नव॰ - 17 नव॰ 2026",
-                    weekRangeEn: "Nov 11 - Nov 17, 2026",
-                    predictions: fallbackPredictions
-                };
+                console.warn("Using fallback ephemeris data");
             }
-
-            updateStaticText();
             renderPills();
             renderDetail();
         }
@@ -435,12 +212,11 @@
             const isHi = currentLang === "hi";
             grid.innerHTML = rashis.map(r => {
                 const active = r.id === selectedRashiId;
-                const cls = active ? "border-gold-400 bg-gold-500/20 text-white shadow-[0_0_15px_rgba(212,175,55,0.4)]" : "border-gold-500/30 bg-obsidian-900 text-gray-300 hover:border-gold-500/70";
+                const activeClasses = active ? "active-rashi-glow text-white scale-105" : "cosmic-card text-gray-300 hover:text-white";
                 return `
-                    <button onclick="changeRashi(${r.id})" class="p-3 rounded-2xl border ${cls} flex flex-col items-center justify-center gap-1 transition-all cursor-pointer">
-                        <span class="text-2xl font-bold">${r.glyph}</span>
+                    <button onclick="changeRashi(${r.id})" class="p-3.5 rounded-2xl ${activeClasses} flex flex-col items-center justify-center gap-1 transition-all cursor-pointer">
+                        <span class="text-2.5xl font-bold">${r.glyph}</span>
                         <span class="text-xs font-cinzel font-bold">${isHi ? r.nameHi : r.nameEn}</span>
-                        <span class="text-[9px] font-mono text-gold-400/80">${isHi ? r.nameEn : r.nameHi}</span>
                     </button>
                 `;
             }).join('');
@@ -455,105 +231,145 @@
         function renderDetail() {
             const consoleBox = document.getElementById("rashifalConsole");
             const rInfo = rashis.find(r => r.id === selectedRashiId);
-            const pList = (rashifalPayload && rashifalPayload.predictions) ? rashifalPayload.predictions : fallbackPredictions;
-            const p = pList.find(x => x.rashiId === selectedRashiId) || pList[0];
+            const p = (rashifalPayload && rashifalPayload.predictions) ? (rashifalPayload.predictions.find(x => x.rashiId === selectedRashiId) || {}) : {};
             const isHi = currentLang === "hi";
 
-            // Support both unified array format and legacy single string format
-            const doList = isHi ? (p.upayListHi || [p.upayHi || p.upay || '']) : (p.upayListEn || [p.upayEn || p.upay || '']);
-            const dontList = isHi ? (p.nishedhListHi || ['मर्यादाहीन आचरण एवं अनावश्यक विवाद से दूर रहें।']) : (p.nishedhListEn || ['Avoid unethical commitments and unwarranted conflicts.']);
-
             consoleBox.innerHTML = `
-                <div class="flex flex-wrap items-center justify-between border-b border-gold-500/20 pb-4 gap-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-14 h-14 rounded-2xl border border-gold-400/50 bg-gradient-to-br from-obsidian-900 to-obsidian-950 flex items-center justify-center text-3xl font-bold shadow-inner">
+                <!-- 1. RASHI NAME & GLYPH -->
+                <div class="flex flex-wrap items-center justify-between border-b border-gold-500/20 pb-5 gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-16 h-16 rounded-2xl border-2 border-gold-400 bg-obsidian-900 flex items-center justify-center text-3xl font-bold text-gold-300 shadow-xl">
                             ${rInfo.glyph}
                         </div>
                         <div>
-                            <h2 class="text-2xl font-bold font-cinzel text-white">
+                            <h2 class="text-2xl sm:text-3xl font-extrabold font-cinzel text-white">
                                 ${isHi ? rInfo.nameHi : rInfo.nameEn} (${isHi ? rInfo.nameEn : rInfo.nameHi})
                             </h2>
                             <span class="text-xs font-mono text-gold-400">
                                 ${isHi ? `राशि स्वामी: ${rInfo.lordHi}` : `Ruler: ${rInfo.lordEn}`} • 
-                                ${isHi ? `गोचर: ${p.chandraGocharHi || p.chandraGochar || 'सक्रिय'}` : `Transit: ${p.chandraGocharEn || 'Active'}`}
+                                ${isHi ? (p.chandraGocharHi || 'गोचर सक्रिय') : (p.chandraGocharEn || 'Transit Active')}
                             </span>
                         </div>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <span class="px-3 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
-                            ${isHi ? 'शुभ रंग:' : 'Lucky Color:'} <b>${isHi ? (p.shubhRangHi || p.shubhRang || '--') : (p.shubhRangEn || '--')}</b>
+                    
+                    <!-- 11. SHUBH ANK, RANG, DISHA -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="px-3 py-1.5 rounded-xl cosmic-card text-xs font-mono text-gold-300">
+                            ${isHi ? 'रंग:' : 'Color:'} <b>${isHi ? (p.shubhRangHi || 'रक्त वर्ण') : (p.shubhRangEn || 'Crimson')}</b>
                         </span>
-                        <span class="px-3 py-1.5 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs font-mono">
-                            ${isHi ? 'शुभ अंक:' : 'Lucky No:'} <b>${p.shubhAnk || '--'}</b>
+                        <span class="px-3 py-1.5 rounded-xl cosmic-card text-xs font-mono text-gold-300">
+                            ${isHi ? 'अंक:' : 'No:'} <b>${p.shubhAnk || 9}</b>
+                        </span>
+                        <span class="px-3 py-1.5 rounded-xl cosmic-card text-xs font-mono text-gold-300">
+                            ${isHi ? 'दिशा:' : 'Direction:'} <b>${isHi ? (p.shubhDishaHi || 'पूर्व') : (p.shubhDishaEn || 'East')}</b>
                         </span>
                     </div>
                 </div>
 
-                <!-- 3 PILLARS OF LIFE -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-3">
-                    <!-- 1. CAREER & DHAN -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-amber-500/30 space-y-2">
+                <!-- 2. SAMAGRA RASHIFAL (OVERALL) -->
+                <div class="p-5 rounded-2xl bg-gold-950/20 border border-gold-500/30 space-y-1.5">
+                    <span class="text-xs font-cinzel font-bold text-gold-400 uppercase tracking-wider block">
+                        ✦ ${isHi ? '2. इस सप्ताह का समग्र फलादेश' : '2. Weekly Holistic Overview'}
+                    </span>
+                    <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-sans">
+                        ${isHi ? (p.overallHi || p.careerDhanHi || 'सप्ताह का समग्र प्रभाव कर्म और संयम के संतुलन से शुभ फल देगा।') : (p.overallEn || p.careerDhanEn || 'The week offers balanced progress aligned with diligent focus.')}
+                    </p>
+                </div>
+
+                <!-- 3 to 9 DOMAIN-SPECIFIC LIFE PILLARS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- 3. CAREER & BIZ -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1">
                         <span class="text-amber-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
-                            <i data-lucide="briefcase" class="w-4 h-4"></i> ${isHi ? 'कार्यक्षेत्र एवं धन (Career & Finance)' : 'Career & Wealth'}
+                            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> ${isHi ? '3. करियर एवं व्यवसाय' : '3. Career & Business'}
                         </span>
-                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${isHi ? (p.careerDhanHi || p.careerHi || p.career || '--') : (p.careerDhanEn || p.careerEn || '--')}</p>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.careerBizHi || p.careerDhanHi || '--') : (p.careerBizEn || p.careerDhanEn || '--')}</p>
                     </div>
 
-                    <!-- 2. HEALTH & VITALITY -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-emerald-500/30 space-y-2">
+                    <!-- 4. FINANCE -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1">
                         <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
-                            <i data-lucide="heart-pulse" class="w-4 h-4"></i> ${isHi ? 'स्वास्थ्य एवं मनःस्थिति' : 'Health & Vitality'}
+                            <i data-lucide="coins" class="w-3.5 h-3.5"></i> ${isHi ? '4. धन एवं आर्थिक स्थिति' : '4. Finance & Wealth'}
                         </span>
-                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${isHi ? (p.healthHi || p.health || '--') : (p.healthEn || '--')}</p>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.financeHi || p.careerDhanHi || '--') : (p.financeEn || p.careerDhanEn || '--')}</p>
                     </div>
 
-                    <!-- 3. RELATIONSHIPS & ETHICAL COUNSEL -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900 border border-indigo-500/30 space-y-2">
+                    <!-- 5. LOVE & MARRIAGE -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1">
+                        <span class="text-rose-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="heart" class="w-3.5 h-3.5"></i> ${isHi ? '5. प्रेम एवं दांपत्य जीवन' : '5. Love & Marriage'}
+                        </span>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.loveMarriageHi || p.relationsHi || '--') : (p.loveMarriageEn || p.relationsEn || '--')}</p>
+                    </div>
+
+                    <!-- 6. FAMILY & RELATIONS -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1">
                         <span class="text-indigo-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
-                            <i data-lucide="users" class="w-4 h-4"></i> ${isHi ? 'दांपत्य एवं संबंध (Relationships)' : 'Marital & Relationships'}
+                            <i data-lucide="users" class="w-3.5 h-3.5"></i> ${isHi ? '6. परिवार एवं संबंध' : '6. Family & Kinship'}
                         </span>
-                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">${isHi ? (p.relationsHi || p.relationships || '--') : (p.relationsEn || '--')}</p>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.familyHi || p.relationsHi || '--') : (p.familyEn || p.relationsEn || '--')}</p>
+                    </div>
+
+                    <!-- 7. HEALTH & ENERGY -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1">
+                        <span class="text-teal-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="activity" class="w-3.5 h-3.5"></i> ${isHi ? '7. स्वास्थ्य एवं ऊर्जा' : '7. Health & Vitality'}
+                        </span>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.healthEnergyHi || p.healthHi || '--') : (p.healthEnergyEn || p.healthEn || '--')}</p>
+                    </div>
+
+                    <!-- 8. EDUCATION & COMPETITION -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1">
+                        <span class="text-blue-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i> ${isHi ? '8. शिक्षा एवं प्रतियोगिता' : '8. Education & Study'}
+                        </span>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.educationHi || '--') : (p.educationEn || '--')}</p>
+                    </div>
+
+                    <!-- 9. TRAVEL & CIRCUMSTANCES -->
+                    <div class="p-4 rounded-xl cosmic-card space-y-1 md:col-span-2">
+                        <span class="text-cyan-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> ${isHi ? '9. यात्रा एवं अन्य परिस्थितियाँ' : '9. Travel & Journeys'}
+                        </span>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">${isHi ? (p.travelHi || '--') : (p.travelEn || '--')}</p>
                     </div>
                 </div>
 
-                <!-- DOS AND DONTS (SHASTRIYA SAMBAL & NISHEDH) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
-                    <!-- DO'S -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-emerald-500/35 space-y-3">
-                        <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5 tracking-wider">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                            ${isHi ? 'साप्ताहिक वैदिक संबल (क्या करें / Remedies)' : 'Weekly Sacred Prescriptions (Do’s)'}
-                        </span>
-                        <ul class="space-y-1.5 text-xs sm:text-sm text-emerald-200/90 list-disc list-inside">
-                            ${doList.map(item => `<li>${item}</li>`).join('')}
-                        </ul>
-                    </div>
-
-                    <!-- DONT'S -->
-                    <div class="p-5 rounded-2xl bg-obsidian-900/90 border border-rose-500/35 space-y-3">
-                        <span class="text-rose-400 font-cinzel text-xs font-bold uppercase flex items-center gap-1.5 tracking-wider">
-                            <i data-lucide="alert-octagon" class="w-4 h-4 text-rose-400"></i>
-                            ${isHi ? 'साप्ताहिक वर्जनाएं (क्या न करें / Don’ts)' : 'Weekly Prohibitions (Don’ts)'}
-                        </span>
-                        <ul class="space-y-1.5 text-xs sm:text-sm text-rose-200/90 list-disc list-inside">
-                            ${dontList.map(item => `<li>${item}</li>`).join('')}
-                        </ul>
-                    </div>
+                <!-- 10. VISHESH SAAVDHANI (CAUTION) -->
+                <div class="p-4 rounded-2xl bg-rose-950/25 border border-rose-500/40 space-y-1">
+                    <span class="text-rose-400 font-cinzel text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                        ${isHi ? '10. आज की विशेष सावधानी' : '10. Crucial Caution of the Week'}
+                    </span>
+                    <p class="text-xs sm:text-sm text-rose-200/95 leading-relaxed">${isHi ? (p.cautionHi || (p.nishedhListHi && p.nishedhListHi[0]) || '--') : (p.cautionEn || (p.nishedhListEn && p.nishedhListEn[0]) || '--')}</p>
                 </div>
 
-                <!-- DIRECT SUKOON KAKSH ROUTER -->
-                <div class="p-5 rounded-2xl bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4 mt-2">
-                    <div class="space-y-1 text-center sm:text-left">
-                        <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block">
-                            ✦ ${isHi ? 'कालज्ञ विशेष अनुसंधान' : 'KAALGYA PROPRIETARY RESEARCH'} ✦
-                        </span>
-                        <p class="text-xs sm:text-sm text-gold-200">
-                            ${isHi ? 'गहन मानसिक शांति और ऊर्जा संतुलन हेतु सुकून कक्ष का उपयोग करें।' : 'Access Sukoon Kaksh for energetic harmony and sound resonance therapy.'}
-                        </p>
-                    </div>
-                    <a href="https://kaalgya.com/#sukoon-kaksh" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-lg whitespace-nowrap transition-transform hover:scale-105">
-                        ${isHi ? 'सुकून कक्ष उपाय देखें →' : 'View Sukoon Remedies →'}
-                    </a>
+                <!-- 12. SHASTRIYA UPAY -->
+                <div class="p-4 rounded-2xl bg-emerald-950/25 border border-emerald-500/40 space-y-1">
+                    <span class="text-emerald-400 font-cinzel text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        ${isHi ? '12. आज का शास्त्रसम्मत उपाय' : '12. Classical Vedic Remedy'}
+                    </span>
+                    <p class="text-xs sm:text-sm text-emerald-200/95 leading-relaxed">${isHi ? (p.remedyHi || (p.upayListHi && p.upayListHi[0]) || '--') : (p.remedyEn || (p.upayListEn && p.upayListEn[0]) || '--')}</p>
+                </div>
+
+                <!-- 13. ASTROLOGICAL BASIS -->
+                <div class="p-4 rounded-2xl bg-obsidian-900 border border-gold-500/30 space-y-1">
+                    <span class="text-gold-400 font-cinzel text-xs font-bold uppercase tracking-wider flex items-center gap-2">
+                        <i data-lucide="telescope" class="w-4 h-4"></i>
+                        ${isHi ? '13. ग्रह गोचर का ज्योतिषीय आधार' : '13. Astrological Planetary Foundation'}
+                    </span>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed font-sans">${isHi ? (p.astrologicalBasisHi || p.chandraGocharHi || '--') : (p.astrologicalBasisEn || p.chandraGocharEn || '--')}</p>
+                </div>
+
+                <!-- 14. KAALGYA SPECIAL MESSAGE -->
+                <div class="p-6 rounded-2xl bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 border border-gold-400/50 text-center space-y-2 shadow-2xl">
+                    <span class="text-[10px] font-mono text-gold-400 uppercase tracking-widest block font-bold">
+                        ✦ 14. KAALGYA KA VISHESH JYOTISHIYA SANDESH ✦
+                    </span>
+                    <blockquote class="text-sm sm:text-base text-gold-200 italic font-cinzel">
+                        "${isHi ? (p.kaalgyaMessageHi || 'समय का सदुपयोग और धर्मनिष्ठ आचरण ही सर्वोत्तम उपाय है।') : (p.kaalgyaMessageEn || 'Mindful action aligned with righteousness is the ultimate remedy.')}"
+                    </blockquote>
                 </div>
             `;
             if (typeof lucide !== 'undefined') lucide.createIcons();
