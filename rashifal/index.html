@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Yantramanav:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Yantramanav:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <script>
@@ -18,8 +18,8 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: { 950: '#030305', 900: '#07070a', 850: '#0c0c12' },
-                        gold: { 200: '#fef3c7', 300: '#fde047', 400: '#eab308', 500: '#ca8a04', 600: '#a16207' }
+                        obsidian: { 950: '#020204', 900: '#06070a', 850: '#0b0c13' },
+                        gold: { 200: '#fff4cc', 300: '#fde047', 400: '#eab308', 500: '#ca8a04', 600: '#996515' }
                     },
                     fontFamily: {
                         cinzel: ['Cinzel', 'serif'],
@@ -31,50 +31,82 @@
     </script>
     <style>
         body { 
-            background-color: #030305; 
-            color: #e5e5e5;
+            background-color: #020204; 
+            color: #e6e6e6;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(202, 138, 4, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 10% 40%, rgba(202, 138, 4, 0.05) 0%, transparent 40%),
-                radial-gradient(circle at 90% 70%, rgba(202, 138, 4, 0.06) 0%, transparent 40%);
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.18) 0%, transparent 55%),
+                radial-gradient(circle at 15% 45%, rgba(202, 138, 4, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 65%, rgba(212, 175, 55, 0.09) 0%, transparent 45%);
+            background-attachment: fixed;
         }
-        @keyframes slowRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .mandala-spin { animation: slowRotate 120s linear infinite; }
-        .cosmic-card {
-            background: rgba(12, 12, 18, 0.82);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(234, 179, 8, 0.22);
-            transition: all 0.3s ease;
+
+        /* Occult Rotations & Sacred Geometry Animations */
+        @keyframes slowRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes cosmicBreathe {
+            0%, 100% { opacity: 0.25; transform: scale(1); filter: drop-shadow(0 0 15px rgba(212,175,55,0.2)); }
+            50% { opacity: 0.55; transform: scale(1.04); filter: drop-shadow(0 0 35px rgba(212,175,55,0.45)); }
+        }
+        @keyframes auraPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(212,175,55,0.25); }
+            50% { box-shadow: 0 0 35px rgba(212,175,55,0.55); }
+        }
+
+        .mandala-aura-spin {
+            animation: slowRotate 140s linear infinite;
+        }
+        .cosmic-breathe-glow {
+            animation: cosmicBreathe 7s ease-in-out infinite;
         }
         .active-rashi-glow {
             border-color: #fde047 !important;
-            background: linear-gradient(145deg, rgba(234, 179, 8, 0.25), rgba(5, 5, 8, 0.95)) !important;
-            box-shadow: 0 0 25px rgba(234, 179, 8, 0.35) !important;
+            background: linear-gradient(145deg, rgba(212, 175, 55, 0.28), rgba(6, 7, 10, 0.96)) !important;
+            animation: auraPulse 3s ease-in-out infinite;
+            transform: scale(1.05);
         }
+
         .gold-capsule-badge {
-            background: rgba(5, 5, 8, 0.94);
-            border: 1px solid rgba(234, 179, 8, 0.85);
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.95), 0 0 20px rgba(234, 179, 8, 0.3);
+            background: rgba(3, 4, 7, 0.95);
+            border: 1.5px solid rgba(212, 175, 55, 0.85);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 175, 55, 0.35);
         }
         .gold-gradient-text {
-            background: linear-gradient(135deg, #fffbeb 0%, #fde047 35%, #ca8a04 70%, #854d0e 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #fff2b2 25%, #fde047 50%, #ca8a04 80%, #996515 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .cosmic-glass-panel {
+            background: rgba(11, 12, 19, 0.82);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.24);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .cosmic-glass-panel:hover {
+            border-color: rgba(212, 175, 55, 0.55);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.18);
         }
     </style>
 </head>
 <body class="min-h-screen font-sans selection:bg-gold-500 selection:text-black overflow-x-hidden">
 
-    <!-- OCCULT BACKGROUND MANDALA -->
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-10">
-        <svg class="mandala-spin w-[900px] h-[900px] text-gold-400" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.35">
-            <circle cx="100" cy="100" r="95" stroke-dasharray="2 4"/>
-            <circle cx="100" cy="100" r="80"/>
-            <polygon points="100,5 125,75 195,100 125,125 100,195 75,125 5,100 75,75"/>
+    <!-- OCCULT BACKGROUND ROTATING MANDALA (Atmospheric Depth) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden flex items-center justify-center opacity-20">
+        <svg class="mandala-aura-spin w-[1000px] h-[1000px] text-gold-400" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.35">
+            <circle cx="100" cy="100" r="96" stroke-dasharray="2 4"/>
+            <circle cx="100" cy="100" r="82"/>
+            <circle cx="100" cy="100" r="68" stroke-dasharray="1 3"/>
+            <circle cx="100" cy="100" r="52"/>
+            <circle cx="100" cy="100" r="36"/>
+            <polygon points="100,4 124,76 196,100 124,124 100,196 76,124 4,100 76,76"/>
+            <polygon points="100,16 116,84 184,100 116,116 100,184 84,116 16,100 84,84" stroke-dasharray="2 2"/>
+            <circle cx="100" cy="100" r="12" fill="currentColor" fill-opacity="0.12"/>
         </svg>
     </div>
 
-    <!-- TOP NAVIGATION -->
+    <!-- TOP NAVIGATION (Google Form Consultation Hook) -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-obsidian-950/90 backdrop-blur-md border-b border-gold-500/20 py-3.5 px-4 sm:px-8">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
@@ -89,7 +121,8 @@
                 <button type="button" onclick="switchLanguage()" id="langToggleBtn" class="px-2.5 py-1 rounded-lg border border-gold-500/40 bg-obsidian-900 text-gold-300 hover:text-white text-xs font-mono font-bold cursor-pointer transition-all">
                     EN / HI
                 </button>
-                <a href="https://wa.me/919506795756" target="_blank" id="navConsultBtn" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 text-black font-bold text-xs uppercase tracking-wider">
+                <!-- Direct Google Form Trigger -->
+                <a href="https://forms.gle/TqZrbxcDQFmxy6iH9" target="_blank" rel="noopener noreferrer" id="navConsultBtn" class="px-4 py-2 rounded-xl bg-gradient-to-r from-gold-500 via-amber-400 to-gold-500 text-black font-extrabold text-xs uppercase tracking-wider transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(202,138,4,0.45)]">
                     परामर्श बुक करें
                 </a>
             </div>
@@ -97,24 +130,27 @@
     </nav>
 
     <!-- MAIN PORTAL -->
-    <main class="relative z-10 pt-24 pb-20 px-4 max-w-6xl mx-auto space-y-6">
+    <main class="relative z-10 pt-24 pb-20 px-4 max-w-6xl mx-auto space-y-7">
 
-        <!-- 3:1 HERO BANNER (CAPSULE ALIGNED BOTTOM CENTER) -->
-        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/40 shadow-2xl bg-obsidian-950">
-            <div class="w-full aspect-[3/1] relative flex items-end justify-center pb-3 sm:pb-6">
+        <!-- 3:1 HERO BANNER (CAPSULE ALIGNED TO BOTTOM-CENTER) -->
+        <div class="relative w-full rounded-3xl overflow-hidden border border-gold-500/50 shadow-[0_0_45px_rgba(212,175,55,0.22)] bg-obsidian-950">
+            <!-- Radiant Background Glow behind banner -->
+            <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-gold-500/20 rounded-full blur-3xl cosmic-breathe-glow pointer-events-none"></div>
+
+            <div class="w-full aspect-[3/1] relative flex items-end justify-center pb-3.5 sm:pb-6">
                 <img src="../banner-rashifal.jpg" onerror="this.src='../banner-panchang.jpg'" alt="द्वादश राशि गोचर चक्र" class="absolute inset-0 w-full h-full object-cover object-center filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/25 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-950/30 to-transparent"></div>
                 
-                <div class="relative z-10 px-5 py-2 sm:px-10 sm:py-3.5 rounded-full gold-capsule-badge flex items-center justify-center max-w-[90%]">
-                    <h1 id="bannerTitle" class="text-sm sm:text-2xl md:text-3xl font-bold font-sans text-gold-300 tracking-wide text-center whitespace-nowrap drop-shadow">
+                <div class="relative z-10 px-6 py-2.5 sm:px-12 sm:py-3.5 rounded-full gold-capsule-badge flex items-center justify-center max-w-[90%]">
+                    <h1 id="bannerTitle" class="text-sm sm:text-2xl md:text-3xl font-bold font-sans text-gold-300 tracking-wide text-center whitespace-nowrap drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
                         द्वादश राशि गोचर चक्र
                     </h1>
                 </div>
             </div>
         </div>
 
-        <!-- BOX 1: RESTORED ORIGINAL SHASTRIYA PREFIX MANIFESTO (Banner ke Theek Neeche) -->
-        <div class="cosmic-card rounded-3xl p-6 sm:p-8 text-center max-w-5xl mx-auto shadow-2xl space-y-3 border border-gold-500/35">
+        <!-- BOX 1: SHASTRIYA PREFIX MANIFESTO (Banner ke Theek Neeche) -->
+        <div class="cosmic-glass-panel rounded-3xl p-6 sm:p-8 text-center max-w-5xl mx-auto space-y-3 border border-gold-500/35 relative overflow-hidden">
             <span id="manifestoTag" class="text-xs sm:text-sm font-mono text-gold-400 uppercase tracking-widest block font-bold">
                 ✦ KAALGYA SHASTRIYA DRISHTIKON • शास्त्रीय साधना एवं जीवन दृष्टि ✦
             </span>
@@ -127,7 +163,7 @@
         </div>
 
         <!-- DATE & STATUS BAR -->
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 rounded-2xl cosmic-card">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-4 rounded-2xl cosmic-glass-panel">
             <a href="https://kaalgya.com" class="inline-flex items-center gap-2 text-xs sm:text-sm text-gold-400 hover:text-gold-200 transition-colors font-medium">
                 <span>←</span>
                 <span id="quickHomeReturn">मुख्य पृष्ठ पर लौटें (Return to Home)</span>
@@ -142,10 +178,10 @@
             </div>
         </div>
 
-        <!-- 12 RASHIS SELECTION GRID -->
-        <div id="rashiGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 sm:gap-4 mb-4"></div>
+        <!-- 12 SACRED RASHIS SELECTION GRID -->
+        <div id="rashiGrid" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 sm:gap-4 mb-3"></div>
 
-        <!-- BOX 2: CHANDRA RASHI TRANSIT DISCLOSURE (Rashi Selector ke Theek Neeche) -->
+        <!-- BOX 2: CHANDRA RASHI TRANSIT DISCLOSURE (Rashi Grid ke Theek Neeche) -->
         <div class="p-4 sm:p-5 rounded-2xl bg-gold-950/20 border border-gold-500/40 text-xs sm:text-sm text-gold-200/95 leading-relaxed flex items-start gap-3 shadow-lg">
             <i data-lucide="compass" class="w-5 h-5 text-gold-400 shrink-0 mt-0.5"></i>
             <div>
@@ -159,7 +195,7 @@
         </div>
 
         <!-- 14-POINT AUTHENTIC SHASTRIYA CONSOLE -->
-        <div id="rashifalConsole" class="cosmic-card rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl space-y-8">
+        <div id="rashifalConsole" class="cosmic-glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden shadow-2xl space-y-8">
             <div class="text-center py-16 text-gold-400 font-mono text-xs animate-pulse">
                 ⏳ वैदिक ग्रह गोचर गणना लोड हो रही है...
             </div>
@@ -169,6 +205,7 @@
     <!-- SCRIPT ENGINE -->
     <script>
         const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyNpfVuqOMQtiLeYkKHuavAsNwuPcdAIyhAkwqUx0_9RX1rQEOkVxoe9WmTT3OQgE4/exec";
+        const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         let rashifalPayload = null;
         let selectedRashiId = 1;
         let currentLang = localStorage.getItem("kaalgya_lang") || "hi";
@@ -289,7 +326,7 @@
             const isHi = currentLang === "hi";
             grid.innerHTML = rashis.map(r => {
                 const active = r.id === selectedRashiId;
-                const activeClasses = active ? "active-rashi-glow text-white scale-105" : "cosmic-card text-gray-300 hover:text-white";
+                const activeClasses = active ? "active-rashi-glow text-white" : "cosmic-glass-panel text-gray-300 hover:text-white";
                 return `
                     <button onclick="changeRashi(${r.id})" class="p-3.5 rounded-2xl ${activeClasses} flex flex-col items-center justify-center gap-1 transition-all cursor-pointer">
                         <span class="text-2.5xl font-bold">${r.glyph}</span>
@@ -335,15 +372,15 @@
                     
                     <!-- 11. SHUBH ANK, RANG, DISHA -->
                     <div class="flex flex-wrap items-center gap-2">
-                        <div class="px-3 py-1.5 rounded-xl cosmic-card flex flex-col items-center">
+                        <div class="px-3 py-1.5 rounded-xl cosmic-glass-panel flex flex-col items-center">
                             <span class="text-[9px] font-mono text-gray-400 uppercase">${isHi ? '11. शुभ रंग' : '11. Lucky Color'}</span>
                             <span class="text-xs font-bold text-gold-300">${isHi ? (p.shubhRangHi || 'रक्त वर्ण') : (p.shubhRangEn || 'Crimson')}</span>
                         </div>
-                        <div class="px-3 py-1.5 rounded-xl cosmic-card flex flex-col items-center">
+                        <div class="px-3 py-1.5 rounded-xl cosmic-glass-panel flex flex-col items-center">
                             <span class="text-[9px] font-mono text-gray-400 uppercase">${isHi ? 'शुभ अंक' : 'Lucky No'}</span>
                             <span class="text-xs font-bold text-gold-300">${p.shubhAnk || 9}</span>
                         </div>
-                        <div class="px-3 py-1.5 rounded-xl cosmic-card flex flex-col items-center">
+                        <div class="px-3 py-1.5 rounded-xl cosmic-glass-panel flex flex-col items-center">
                             <span class="text-[9px] font-mono text-gray-400 uppercase">${isHi ? 'शुभ दिशा' : 'Direction'}</span>
                             <span class="text-xs font-bold text-gold-300">${isHi ? (p.shubhDishaHi || 'पूर्व') : (p.shubhDishaEn || 'East')}</span>
                         </div>
@@ -363,7 +400,7 @@
                 <!-- 3 to 9 DOMAIN-SPECIFIC LIFE PILLARS -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <!-- 3. CAREER & BIZ -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 border-t-2 border-t-amber-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 border-t-2 border-t-amber-400/70">
                         <span class="text-amber-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="briefcase" class="w-4 h-4"></i> ${isHi ? '3. करियर एवं व्यवसाय' : '3. Career & Business'}
                         </span>
@@ -371,7 +408,7 @@
                     </div>
 
                     <!-- 4. FINANCE -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 border-t-2 border-t-emerald-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 border-t-2 border-t-emerald-400/70">
                         <span class="text-emerald-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="coins" class="w-4 h-4"></i> ${isHi ? '4. धन एवं आर्थिक स्थिति' : '4. Finance & Wealth'}
                         </span>
@@ -379,7 +416,7 @@
                     </div>
 
                     <!-- 5. LOVE & MARRIAGE -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 border-t-2 border-t-rose-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 border-t-2 border-t-rose-400/70">
                         <span class="text-rose-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="heart" class="w-4 h-4"></i> ${isHi ? '5. प्रेम एवं दांपत्य जीवन' : '5. Love & Marriage'}
                         </span>
@@ -387,7 +424,7 @@
                     </div>
 
                     <!-- 6. FAMILY & RELATIONS -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 border-t-2 border-t-indigo-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 border-t-2 border-t-indigo-400/70">
                         <span class="text-indigo-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="users" class="w-4 h-4"></i> ${isHi ? '6. परिवार एवं संबंध' : '6. Family & Kinship'}
                         </span>
@@ -395,7 +432,7 @@
                     </div>
 
                     <!-- 7. HEALTH & ENERGY -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 border-t-2 border-t-teal-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 border-t-2 border-t-teal-400/70">
                         <span class="text-teal-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="activity" class="w-4 h-4"></i> ${isHi ? '7. स्वास्थ्य एवं ऊर्जा' : '7. Health & Vitality'}
                         </span>
@@ -403,7 +440,7 @@
                     </div>
 
                     <!-- 8. EDUCATION & COMPETITION -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 border-t-2 border-t-blue-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 border-t-2 border-t-blue-400/70">
                         <span class="text-blue-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="graduation-cap" class="w-4 h-4"></i> ${isHi ? '8. शिक्षा एवं प्रतियोगिता' : '8. Education & Study'}
                         </span>
@@ -411,7 +448,7 @@
                     </div>
 
                     <!-- 9. TRAVEL & CIRCUMSTANCES -->
-                    <div class="p-5 rounded-2xl cosmic-card space-y-2 md:col-span-2 border-t-2 border-t-cyan-400/70">
+                    <div class="p-5 rounded-2xl cosmic-glass-panel space-y-2 md:col-span-2 border-t-2 border-t-cyan-400/70">
                         <span class="text-cyan-400 font-cinzel text-xs sm:text-sm font-bold uppercase flex items-center gap-1.5">
                             <i data-lucide="map-pin" class="w-4 h-4"></i> ${isHi ? '9. यात्रा एवं अन्य परिस्थितियाँ' : '9. Travel & Journeys'}
                         </span>
@@ -452,7 +489,7 @@
                         ✦ 14. KAALGYA KA VISHESH JYOTISHIYA SANDESH ✦
                     </span>
                     <blockquote class="text-sm sm:text-base md:text-lg text-gold-200 italic font-cinzel leading-relaxed">
-                        "${isHi ? (p.kaalgyaMessageHi || 'भाग्य केवल द्वार खोल सकता है, किंतु उस द्वार के पार चलने का सामर्थ्य केवल आपके धर्मनिष्ठ कर्म और विवेक में है।') : (p.kaalgyaMessageEn || 'Destiny can only open the gateway; the strength to cross it lies solely in righteous action and discerning wisdom.')}"
+                        "${isHi ? (p.kaalgyaMessageHi || 'समय केवल अवसर देता है; संकल्प और धर्मनिष्ठ कर्म ही उस अवसर को सिद्धि में रूपांतरित करते हैं।') : (p.kaalgyaMessageEn || 'Time merely provides the gateway; unwavering resolve and righteous karma transform opportunities into fulfillment.')}"
                     </blockquote>
                 </div>
             `;
