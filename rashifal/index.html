@@ -307,20 +307,21 @@
         }
 
         async function initPortal() {
-            updateStaticText();
-            try {
-                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
-                const json = await res.json();
-                if (json.status === "success" && json.data && json.data.predictions) {
-                    rashifalPayload = json.data;
-                }
-            } catch (err) {
-                console.warn("Using verified shastriya ephemeris payload");
-            }
-            renderPills();
-            renderDetail();
+    updateStaticText();
+    try {
+        // यहाँ KAALGYA_BACKEND_URL का उपयोग किया गया है और ?v=3 जोड़ा गया है
+        const res = await fetch(`${KAALGYA_BACKEND_URL}?action=getWeeklyRashifal&v=3`);
+        const json = await res.json();
+        if (json.status === "success" && json.data && json.data.predictions) {
+            rashifalPayload = json.data;
         }
-
+    } catch (err) {
+        console.warn("Using verified shastriya ephemeris payload", err);
+    }
+    renderPills();
+    renderDetail();
+}
+        
         function renderPills() {
             const grid = document.getElementById("rashiGrid");
             const isHi = currentLang === "hi";
