@@ -2963,9 +2963,15 @@
                 if (data.status !== "success") return;
                 lastCachedPanchangData = data;
 
-                if (!targetDate && document.getElementById("kgDatePicker")) {
-                    document.getElementById("kgDatePicker").value = data.requestedDate;
-                }
+                // Safely check karein ki data aur requestedDate maujud hain ya nahi
+if (!targetDate && document.getElementById("kgDatePicker")) {
+    if (typeof data !== 'undefined' && data && data.requestedDate) {
+        document.getElementById("kgDatePicker").value = data.requestedDate;
+    } else {
+        // Agar requestedDate na mile, toh aaj ki date default set kar do
+        document.getElementById("kgDatePicker").value = new Date().toISOString().split('T')[0];
+    }
+}
 
                if (document.getElementById("kgCalDate")) document.getElementById("kgCalDate").innerText = data.calendarDate || "--";
                 
