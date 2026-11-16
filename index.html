@@ -2966,7 +2966,7 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         const response = await fetch(endpoint);
         const data = await response.json();
 
-        // status check hata diya gaya hai taaki data bina ruke render ho
+        if (!data) return;
         lastCachedPanchangData = data;
 
         if (!targetDate && document.getElementById("kgDatePicker") && data.requestedDate) {
@@ -3099,10 +3099,10 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         if (dayContainer && data.horaWheel?.dayHoras) {
             let dHora = "";
             data.horaWheel.dayHoras.forEach(h => {
-                const info = getHoraDetails(h.ruler);
-                const title = isHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameHi} (${h.ruler.split(' ')[0]}) Hora`;
-                const doText = isHindi ? info.kyaKareHi : info.kyaKareEn;
-                const dontText = isHindi ? info.kyaNaKareHi : info.kyaNaKareEn;
+                const info = typeof getHoraDetails === 'function' ? getHoraDetails(h.ruler) : { nameHi: h.ruler, kyaKareHi: h.guidance, kyaNaKareHi: h.dont };
+                const title = isHindi ? `${h.hora}. ${info.nameHi || h.ruler} होरा` : `${h.hora}. ${h.ruler} Hora`;
+                const doText = h.guidance || "--";
+                const dontText = h.dont || "--";
 
                 dHora += `
                     <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-gold-500/30 text-xs space-y-1.5 shadow-md">
@@ -3120,10 +3120,10 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         if (nightContainer && data.horaWheel?.nightHoras) {
             let nHora = "";
             data.horaWheel.nightHoras.forEach(h => {
-                const info = getHoraDetails(h.ruler);
-                const title = isHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameHi} (${h.ruler.split(' ')[0]}) Hora`;
-                const doText = isHindi ? info.kyaKareHi : info.kyaKareEn;
-                const dontText = isHindi ? info.kyaNaKareHi : info.kyaNaKareEn;
+                const info = typeof getHoraDetails === 'function' ? getHoraDetails(h.ruler) : { nameHi: h.ruler, kyaKareHi: h.guidance, kyaNaKareHi: h.dont };
+                const title = isHindi ? `${h.hora}. ${info.nameHi || h.ruler} होरा` : `${h.hora}. ${h.ruler} Hora`;
+                const doText = h.guidance || "--";
+                const dontText = h.dont || "--";
 
                 nHora += `
                     <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-gray-600/40 text-xs space-y-1.5 shadow-md">
@@ -3140,6 +3140,56 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
 
     } catch (err) {
         console.error("Fetch Error:", err);
+    }
+}
+
+async function openYearlyMuhurat(muhuratId) {
+    const drawer = document.getElementById("kgYearlyDrawer");
+    const content = document.getElementById("kgDrawerContent");
+    drawer.style.display = "flex";
+    content.innerHTML = isHindi 
+        ? "<p class='text-gold-400'>⏳ 12 महीनों की शुद्ध शास्त्रीय गणना की जा रही है...</p>"
+        : "<p class='text-gold-400'>⏳ Calculating 12-month Shastric Muhurat alignments...</p>";
+
+    const selectedDateVal = document.getElementById("kgDatePicker") ? document.getElementById("kgDatePicker").value : "";
+    const currentYear = selectedDateVal ? new Date(selectedDateVal).getFullYear() : new Date().getFullYear();
+
+    try {
+        const res = await fetch(`${KAALGYA_BACKEND_URL}?action=getYearlyMuhurats&year=${currentYear}&muhuratId=${muhuratId}`);
+        const data = await res.json();
+
+        const mTitle = isHindi 
+            ? `📅 ${data.muhuratName} • वर्ष ${data.year} (${data.totalDatesFound} शुद्ध मुहूर्त प्राप्त)`
+            : `📅 ${data.muhuratName} • Year ${data.year} (${data.totalDatesFound} Verified Muhurats Found)`;
+
+        document.getElementById("kgDrawerTitle").innerText = mTitle;
+
+        let outHtml = "";
+        for (const [month, dates] of Object.entries(data.monthlyDirectory)) {
+            outHtml += `<div class="font-bold text-gold-300 mt-3 mb-2 text-xs uppercase border-b border-gold-500/20 pb-1">✦ ${month}</div>`;
+            outHtml += "<div class='grid grid-cols-1 sm:grid-cols-2 gap-2'>";
+            dates.forEach(d => {
+                let weight = d.weightage || 85;
+                let advice = weight >= 85 
+                    ? (isHindi ? `<span class="text-emerald-300 font-semibold">✓ इस मुहूर्त का उपयोग करना उत्तम व प्रशस्त है।</span>` : `<span class="text-emerald-300 font-semibold">✓ Highly recommended & auspicious window.</span>`)
+                    : (isHindi ? `<span class="text-amber-300 font-semibold">⚠️ अपने स्थानीय गुरु या ज्योतिष की सलाह पर ही काम करें।</span>` : `<span class="text-amber-300 font-semibold">⚠️ Moderate alignment; consult your spiritual guide.</span>`);
+
+                outHtml += `
+                    <div class="p-2.5 rounded-xl bg-obsidian-900 border border-gold-500/25 text-[11px] space-y-1">
+                        <div class="flex justify-between items-center text-white font-bold">
+                            <span>📅 ${d.formattedDate}</span>
+                            <span class="text-gold-400 text-[10px]">Weightage: ${weight}%</span>
+                        </div>
+                        <div class="text-gray-300">${isHindi ? 'शुभ समय:' : 'Auspicious Time:'} ${d.timeSpan}</div>
+                        <div class="text-gray-400 text-[10px]">${isHindi ? 'तिथि:' : 'Tithi:'} ${d.tithi} • ${isHindi ? 'नक्षत्र:' : 'Nakshatra:'} ${d.nakshatra}</div>
+                        <div class="pt-1 border-t border-gold-500/10 text-[10px]">${advice}</div>
+                    </div>`;
+            });
+            outHtml += "</div>";
+        }
+        content.innerHTML = outHtml || (isHindi ? "<p>इस वर्ष में शुद्ध शास्त्रीय मुहूर्त के अनुकूल दिन सीमित हैं।</p>" : "<p>Limited auspicious windows available for this year.</p>");
+    } catch (e) {
+        content.innerHTML = isHindi ? "<p class='text-rose-400'>त्रुटि: डेटा लोड नहीं हो सका।</p>" : "<p class='text-rose-400'>Error: Unable to fetch calendar data.</p>";
     }
 }
         
