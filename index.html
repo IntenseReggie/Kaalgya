@@ -3881,7 +3881,7 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         isHindi = (saved === "hi");
     } else {
         const userLang = navigator.language || navigator.userLanguage || "";
-        isHindi = userLang.toLowerCase().startsWith('hi') ? true : true; // Default Hindi
+        isHindi = userLang.toLowerCase().startsWith('hi'); // Default true agar Hindi ho, nahi toh false (English)
     }
 
     updateTexts();
@@ -3892,8 +3892,7 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         lucide.createIcons();
     }
 });
-    </script>
-
+        
     <!-- Background Audio Track -->
     <audio id="bgMusic" loop preload="auto">
       <source src="./ambient.mp3" type="audio/mpeg">
