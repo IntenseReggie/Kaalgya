@@ -2966,8 +2966,7 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         const response = await fetch(endpoint);
         const data = await response.json();
 
-        // यदि डेटा में calendarDate या lunarFramework मौजूद है, तो आगे बढ़ें
-        if (!data) return;
+        // status check hata diya gaya hai taaki data bina ruke render ho
         lastCachedPanchangData = data;
 
         if (!targetDate && document.getElementById("kgDatePicker") && data.requestedDate) {
@@ -3100,10 +3099,10 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         if (dayContainer && data.horaWheel?.dayHoras) {
             let dHora = "";
             data.horaWheel.dayHoras.forEach(h => {
-                const info = typeof getHoraDetails === 'function' ? getHoraDetails(h.ruler) : { nameHi: h.ruler, kyaKareHi: h.guidance, kyaNaKareHi: h.dont };
-                const title = isHindi ? `${h.hora}. ${info.nameHi || h.ruler} होरा` : `${h.hora}. ${h.ruler} Hora`;
-                const doText = h.guidance || "--";
-                const dontText = h.dont || "--";
+                const info = getHoraDetails(h.ruler);
+                const title = isHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameHi} (${h.ruler.split(' ')[0]}) Hora`;
+                const doText = isHindi ? info.kyaKareHi : info.kyaKareEn;
+                const dontText = isHindi ? info.kyaNaKareHi : info.kyaNaKareEn;
 
                 dHora += `
                     <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-gold-500/30 text-xs space-y-1.5 shadow-md">
@@ -3121,10 +3120,10 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         if (nightContainer && data.horaWheel?.nightHoras) {
             let nHora = "";
             data.horaWheel.nightHoras.forEach(h => {
-                const info = typeof getHoraDetails === 'function' ? getHoraDetails(h.ruler) : { nameHi: h.ruler, kyaKareHi: h.guidance, kyaNaKareHi: h.dont };
-                const title = isHindi ? `${h.hora}. ${info.nameHi || h.ruler} होरा` : `${h.hora}. ${h.ruler} Hora`;
-                const doText = h.guidance || "--";
-                const dontText = h.dont || "--";
+                const info = getHoraDetails(h.ruler);
+                const title = isHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameHi} (${h.ruler.split(' ')[0]}) Hora`;
+                const doText = isHindi ? info.kyaKareHi : info.kyaKareEn;
+                const dontText = isHindi ? info.kyaNaKareHi : info.kyaNaKareEn;
 
                 nHora += `
                     <div class="p-3.5 rounded-2xl bg-obsidian-900 border border-gray-600/40 text-xs space-y-1.5 shadow-md">
@@ -3143,6 +3142,7 @@ const GOOGLE_FORM_URL = "https://forms.gle/TqZrbxcDQFmxy6iH9";
         console.error("Fetch Error:", err);
     }
 }
+        
         // ========================================================
         // 8. TIJORI SUBMISSION ENGINE
        // ========================================================
