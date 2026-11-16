@@ -307,27 +307,19 @@
         }
 
         async function initPortal() {
-    updateStaticText();
-    try {
-        // यहाँ ध्यान दें: URL के आगे ?action=getWeeklyRashifal और &v=3 लगाना अनिवार्य है
-        const endpoint = KAALGYA_BACKEND_URL.includes("?") 
-            ? `${KAALGYA_BACKEND_URL}&action=getWeeklyRashifal&v=3` 
-            : `${KAALGYA_BACKEND_URL}?action=getWeeklyRashifal&v=3`;
-
-        const res = await fetch(endpoint);
-        const json = await res.json();
-        
-        if (json.status === "success" && json.data && json.data.predictions) {
-            rashifalPayload = json.data;
-        } else {
-            console.warn("API returned error or invalid format:", json);
-        }
-    } catch (err) {
-        console.warn("Using fallback ephemeris payload due to fetch error:", err);
-    }
-    renderPills();
-    renderDetail();
-}
+            updateStaticText();
+            try {
+                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
+                const json = await res.json();
+                if (json.status === "success" && json.data && json.data.predictions) {
+                    rashifalPayload = json.data;
+                }
+            } catch (err) {
+                console.warn("Using verified shastriya ephemeris payload");
+            }
+            renderPills();
+            renderDetail();
+        }
         
         
         function renderPills() {
