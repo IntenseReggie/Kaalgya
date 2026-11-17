@@ -2982,7 +2982,11 @@
     if (targetDate) endpoint += `&date=${targetDate}`;
 
     try {
-        const response = await fetch(endpoint);
+        // 👉 Yahan redirect: 'follow' jodh dein
+        const response = await fetch(endpoint, {
+            method: "GET",
+            redirect: "follow"
+        });
         const data = await response.json();
 
         if (!data) return;
