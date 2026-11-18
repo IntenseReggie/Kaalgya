@@ -3332,10 +3332,11 @@
         // ========================================================
         // 10. MULTILINGUAL TRANSLATION ENGINE
         // ========================================================
-       let isHindi = localStorage.getItem("kaalgya_lang") !== null 
+        let isHindi = localStorage.getItem("kaalgya_lang") !== null 
               ? (localStorage.getItem("kaalgya_lang") === "hi") 
               : true;
-       const translations = {
+
+        const translations = {
             hi: {
                 pravasTitle: "आगामी प्रवास:",
                 pravasText: "दिल्ली NCR एवं लखनऊ प्रवास निश्चित है।",
@@ -3356,7 +3357,7 @@
                 rashifalP3: "KAALGYA में हमारा प्रयास राशिफल को केवल शब्दों का संग्रह बनाना नहीं, बल्कि शास्त्रीय आधार, सूक्ष्म ज्योतिषीय अध्ययन और उत्तरदायी विवेचन के साथ प्रस्तुत करना है।",
                 rashifalP4: "हमारा विश्वास है कि ज्योतिष का उद्देश्य मन में भय उत्पन्न करना नहीं, बल्कि समय की प्रकृति को समझने, अवसरों के प्रति सजग रहने और चुनौतियों का सामना विवेकपूर्वक करने की दृष्टि प्रदान करना है।",
                 rashifalBtn: "साप्ताहिक राशि गोचर देखें",
-                heroBadge: "15 वर्षों का गहन अनुसंधान • 5,00,0+ प्रामाणिक कुंडलियाँ",
+                heroBadge: "15 वर्षों का गहन अनुसंधान • 5,000+ प्रामाणिक कुंडलियाँ",
                 heroDesc: "अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। जब जीवन में अनिर्णय, व्यापारिक अवरोध या पारिवारिक संकट आए—तब भारतीय परंपराओं का सही संदर्भ और अध्ययन आपका मार्ग प्रशस्त करता है।",
                 btnBookConsult: "परामर्श बुक करें",
                 btnMuhuratVault: "16 संस्कार मुहूर्त कोष",
@@ -3623,9 +3624,9 @@
                 btnBackHome: "← मुख्य पृष्ठ पर वापस जाएं",
                 footerText: `
                     © 2026 KAALGYA. सर्वाधिकार सुरक्षित। 15 वर्षों की प्रामाणिक वैदिक परंपरा।<br>
-                    Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>,
+                    Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>
+                `,
 
-                    ,
                 // Brahmastra Vidhan Dedicated Page (Hindi)
                 bvCaption: '"जब संकल्प असाधारण हो, तो विधान भी विशिष्ट होना चाहिए।"',
                 bvFullContent: `
@@ -4091,9 +4092,9 @@
                 btnBackHome: "← Return to Main Page",
                 footerText: `
                     © 2026 KAALGYA. All Rights Reserved. 15+ Years of Authentic Vedic Tradition.<br>
-                    Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>,
+                    Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>
+                `,
 
-                    ,
                 // Brahmastra Vidhan Dedicated Page (English)
                 bvCaption: '"When the resolve is extraordinary, the ritual protocol must be equally distinguished."',
                 bvFullContent: `
@@ -4269,10 +4270,9 @@
                         </button>
                     </div>
                 `
-                `
             }
         };
-        
+
         function updateTexts() {
             const btn = document.getElementById("lang-switch-btn");
             if (btn) {
@@ -4294,7 +4294,7 @@
 
             if (typeof lucide !== 'undefined') lucide.createIcons();
         }
-
+        
        function toggleSiteLanguage() {
     isHindi = !isHindi;
     
