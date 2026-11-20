@@ -1,15 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Landing Page -->
   <url>
     <loc>https://kaalgya.com/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Weekly Rashifal -->
   <url>
     <loc>https://kaalgya.com/rashifal/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- 24 Hora Chakra & Shubh/Ashubh Muhurat -->
+  <url>
+    <loc>https://kaalgya.com/hora/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 16 Sanskar Muhurat -->
+  <url>
+    <loc>https://kaalgya.com/16-sanskaar-muhurat/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Puja & Anushthan -->
+  <url>
+    <loc>https://kaalgya.com/anushthan/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Bhavnaon Ki Tijori / Vedic Manifestation -->
+  <url>
+    <loc>https://kaalgya.com/manifestation/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
