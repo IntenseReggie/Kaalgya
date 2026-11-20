@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>16 संस्कार मुहूर्त (Shodash Sanskaar Muhurat) | KAALGYA (कालज्ञ)</title>
-    <meta name="description" content="15+ वर्षों के शास्त्रसम्मत अनुभव के साथ KAALGYA पर 16 संस्कार मुहूर्त—विवाह, गृह प्रवेश, भूमि पूजन, व्यापार आरंभ सहित सभी 16 संस्कारों का विस्तृत शास्त्रीय महत्व, देवता, विधान, फल व वार्षिक मुहूर्त।">
+    <meta name="description" content="15+ वर्षों के शास्त्रसम्मत अनुभव के साथ KAALGYA पर 16 संस्कार मुहूर्त—विवाह, गृह प्रवेश, भूमि पूजन, व्यापार आरंभ सहित सभी 16 संस्कारों का विस्तृत महत्व, देवता, विधान, फल, अनदेखी के अवरोध और पूरे वर्ष के लाइव मुहूर्त।">
     <link rel="canonical" href="https://kaalgya.com/16-sanskaar-muhurat/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#030305">
@@ -52,6 +52,31 @@
             border: 1px solid rgba(212, 175, 55, 0.35);
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
         }
+        .pano-banner-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3 / 1;
+            min-height: 150px;
+            max-height: 360px;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            background: #020204;
+        }
+        .pano-banner-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        .pano-vignette {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(2,2,4,0.35) 0%, rgba(2,2,4,0.08) 50%, rgba(2,2,4,0.35) 100%),
+                        linear-gradient(180deg, rgba(2,2,4,0.12) 0%, rgba(2,2,4,0.45) 100%);
+            pointer-events: none;
+        }
         input[type="number"]::-webkit-inner-spin-button {
             opacity: 1;
         }
@@ -91,18 +116,19 @@
     <!-- Main Content -->
     <main class="py-10 px-4 max-w-6xl mx-auto space-y-8">
 
-        <!-- Banner -->
-        <div class="w-full rounded-3xl overflow-hidden border border-gold-500/40 bg-obsidian-950 shadow-xl">
-            <img src="https://kaalgya.com/banner-muhurat.jpg" onerror="this.src='https://kaalgya.com/banner-panchang.jpg'" alt="16 संस्कार मुहूर्त - Shodash Sanskaar Muhurat" class="w-full h-48 sm:h-64 md:h-72 object-cover object-center opacity-85">
+        <!-- Page Hero 3:1 Banner -->
+        <div class="pano-banner-frame shadow-2xl">
+            <img src="https://kaalgya.com/banner-muhurat.jpg" onerror="this.src='https://kaalgya.com/banner-panchang.jpg'" alt="16 संस्कार मुहूर्त - Shodash Sanskaar Muhurat">
+            <div class="pano-vignette"></div>
         </div>
 
         <!-- Title & Year Selector -->
         <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 text-center overflow-visible space-y-3">
             <h1 id="muhurat-main-title" class="text-xl sm:text-3xl md:text-4xl font-bold font-cinzel gold-gradient-text leading-[1.85] py-1 overflow-visible">
-                16 संस्कार मुहूर्त: शास्त्रीय महत्व, देवता, विधान एवं फल
+                16 संस्कार मुहूर्त: शास्त्रीय महत्व, देवता, विधान, फल व अवरोध
             </h1>
             <p id="muhurat-main-sub" class="text-xs sm:text-sm text-gold-200 max-w-3xl mx-auto leading-relaxed">
-                प्रत्येक संस्कार का शास्त्रीय महत्व, आराध्य देवता, मुहूर्त निर्धारित करने का विधान, पालन का फल और लाइव वार्षिक मुहूर्त देखें।
+                प्रत्येक संस्कार का विस्तृत शास्त्रीय महत्व, आराध्य देवता, विधान, शुभ फल, मुहूर्त न पालन करने पर संभावित अवरोध और पूरे वर्ष के सभी संभावित मुहूर्त देखें।
             </p>
             <div class="pt-2 flex justify-center">
                 <div class="flex items-center gap-2 bg-obsidian-900 border border-gold-500/40 px-4 py-2 rounded-2xl">
@@ -113,7 +139,7 @@
         </div>
 
         <!-- 16 Sanskars Detailed Cards -->
-        <div id="dedicatedSanskarsList" class="space-y-6"></div>
+        <div id="dedicatedSanskarsList" class="space-y-8"></div>
 
         <!-- Bottom Return Link -->
         <div class="pt-4 text-center">
@@ -123,16 +149,16 @@
         </div>
     </main>
 
-    <!-- Live 12-Month Drawer -->
+    <!-- Full-Year Live Muhurat Drawer -->
     <div id="yearlyMuhuratModal" style="display: none;" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-3xl w-full relative max-h-[90vh] overflow-y-auto space-y-4">
-            <div class="flex justify-between items-center border-b border-gold-500/30 pb-3 gap-3">
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 max-w-4xl w-full relative max-h-[90vh] overflow-y-auto space-y-4">
+            <div class="flex justify-between items-center border-b border-gold-500/30 pb-3 gap-3 sticky top-0 bg-obsidian-950/95 py-2 z-10">
                 <h2 id="modalMuhuratTitle" class="text-sm sm:text-base font-bold font-cinzel text-gold-300 leading-[1.6]">--</h2>
                 <button type="button" onclick="document.getElementById('yearlyMuhuratModal').style.display='none'" class="px-3 py-1 rounded-lg border border-gold-500/40 text-xs text-gold-300 hover:text-white cursor-pointer">
                     ✕
                 </button>
             </div>
-            <div id="modalMuhuratBody" class="space-y-4 text-xs"></div>
+            <div id="modalMuhuratBody" class="space-y-5 text-xs"></div>
         </div>
     </div>
 
@@ -146,6 +172,7 @@
         const shodashSanskarsFull = [
             {
                 id: 1,
+                banner: "https://kaalgya.com/banner-muhurat-1.jpg",
                 nameHi: "विवाह मुहूर्त",
                 nameEn: "Vivah Muhurat (Sacred Nuptials)",
                 subjectHi: "विवाह और पाणिग्रहण संस्कार",
@@ -156,11 +183,14 @@
                 importanceEn: "Marriage represents the principal gateway into the Grihastha Ashram (householder order). In classical Dharmashastra, marriage is not merely a social contract, but the sacred union of karmic destinies, spiritual obligations, and ancestral continuity.",
                 vidhanHi: "विवाह के लिए प्रशस्त तिथि और नक्षत्र, वार तथा लग्न की अनुकूलता, गुरु-शुक्र-चंद्रमा की स्थिति और वर-वधू की जन्म-कुंडली तथा पारंपरिक गुण-विचार।",
                 vidhanEn: "Verification of auspicious lunar Tithis, favorable Nakshatras, uncombust Jupiter and Venus, and comprehensive chart compatibility (Ashtakoota and D9 Navamsha analysis).",
-                phalHi: "शास्त्रीय परंपरा में शुभ विवाह-मुहूर्त को विवाह-संस्कार के लिए प्रशस्त माना गया है।",
-                phalEn: "Executing marriage during mathematically calibrated Muhurats safeguards domestic harmony, longevity of union, and familial prosperity."
+                phalHi: "शास्त्रीय परंपरा में शुभ विवाह-मुहूर्त को विवाह-संस्कार के लिए प्रशस्त माना गया है, जिससे दांपत्य में सामंजस्य, उत्तरदायित्वबोध और पारिवारिक स्थिरता को बल मिलता है।",
+                phalEn: "Executing marriage during mathematically calibrated Muhurats supports marital harmony, shared responsibility, and long-term domestic stability.",
+                riskHi: "शास्त्रीय दृष्टि से प्रतिकूल काल, शुक्र/गुरु अस्त या अशुद्ध तिथि-नक्षत्र में विवाह करने पर आयोजन में अड़चनें, आपसी तालमेल में तनाव, भावनात्मक दूरी या निर्णयों में बार-बार मतभेद जैसी चुनौतियाँ उभर सकती हैं।",
+                riskEn: "From a Shastric viewpoint, marrying during inauspicious windows, combust Venus/Jupiter, or afflicted Tithi-Nakshatra combinations can bring procedural hurdles, emotional friction, or recurring decision conflicts."
             },
             {
                 id: 2,
+                banner: "https://kaalgya.com/banner-muhurat-2.jpg",
                 nameHi: "गृह प्रवेश मुहूर्त",
                 nameEn: "Griha Pravesh Muhurat (Housewarming)",
                 subjectHi: "नए घर में मंगल प्रवेश",
@@ -171,11 +201,14 @@
                 importanceEn: "Griha Pravesh consecrates entry into a newly constructed or acquired dwelling. In Vastu tradition, a home is not merely bricks and mortar, but a living energetic sanctum for the family's spiritual and physical wellbeing.",
                 vidhanHi: "गृह प्रवेश के लिए प्रशस्त माने गए नक्षत्रों का विचार, तिथि और वार की शुद्धि, लग्न तथा संबंधित ग्रहों की स्थिति।",
                 vidhanEn: "Calculation of fixed Ascendants (Sthira Lagna), evaluation of solar ingress, purification of directional quadrants, and avoidance of inauspicious lunar days.",
-                phalHi: "शास्त्रीय परंपरा में निर्धारित समय पर विधिपूर्वक गृह प्रवेश करना मंगलकारी माना गया है।",
-                phalEn: "Ensures enduring spatial tranquility, protection from negative energetic currents, and domestic stability."
+                phalHi: "शास्त्रीय परंपरा में निर्धारित समय पर विधिपूर्वक गृह प्रवेश करना मंगलकारी माना गया है, जिससे घर में शांति, सकारात्मक वातावरण और पारिवारिक सौहार्द का भाव रहता है।",
+                phalEn: "Ensures enduring spatial tranquility, steady domestic harmony, and a settled, supportive home atmosphere.",
+                riskHi: "प्रतिकूल समय या बिना मुहूर्त-शुद्धि के गृह प्रवेश करने पर परिवार में अनावश्यक कलह, मानसिक अशांति, निर्माण/शिफ्टिंग में विलंब या घर के वातावरण में भारीपन महसूस हो सकता है।",
+                riskEn: "Entering a home without Muhurat alignment or during discordant periods can coincide with household restlessness, shifting delays, or strained family peace."
             },
             {
                 id: 3,
+                banner: "https://kaalgya.com/banner-muhurat-3.jpg",
                 nameHi: "भूमि पूजन मुहूर्त",
                 nameEn: "Bhumi Pujan Muhurat (Groundbreaking)",
                 subjectHi: "जमीन, नींव एवं निर्माण का शुभारंभ",
@@ -186,11 +219,14 @@
                 importanceEn: "Bhumi Pujan venerates Mother Earth prior to physical excavation, seeking subterranean permission, pacifying directional deities, and safeguarding construction workers.",
                 vidhanHi: "भूमि और निर्माण-कर्म के लिए तिथि तथा नक्षत्र का विचार, वार और लग्न की अनुकूलता तथा वास्तु संबंधी नियम।",
                 vidhanEn: "Auditing Rahu-Mukha orientation, Dig-Sadhana, seasonal alignments, and choosing favorable Earth-dominant Nakshatras.",
-                phalHi: "शास्त्रीय परंपरा में भूमि पूजन और निर्माण-आरंभ को निर्धारित विधि तथा शुभ समय में करना प्रशस्त माना गया है।",
-                phalEn: "Guarantees smooth, uninterrupted architectural completion and structural longevity for generations."
+                phalHi: "शास्त्रीय परंपरा में भूमि पूजन और निर्माण-आरंभ को निर्धारित विधि तथा शुभ समय में करना प्रशस्त माना गया है, जिससे कार्य क्रमबद्ध रूप से आगे बढ़ता है।",
+                phalEn: "Supports orderly construction progress, structural continuity, and a grounded start to long-term property plans.",
+                riskHi: "अनुचित समय या दिशा-नियमों की अनदेखी करके नींव रखने पर निर्माण कार्य बार-बार रुकना, बजट या अनुमतियों में अड़चन और कार्यस्थल पर अस्थिरता देखी जा सकती है।",
+                riskEn: "Breaking ground during unfavorable times or ignoring directional rules can lead to stalled construction, approval delays, or site disruptions."
             },
             {
                 id: 4,
+                banner: "https://kaalgya.com/banner-muhurat-4.jpg",
                 nameHi: "वास्तु पूजन मुहूर्त",
                 nameEn: "Vastu Pujan Muhurat (Spatial Harmony)",
                 subjectHi: "भवन की वास्तु शांति पूजा",
@@ -201,11 +237,14 @@
                 importanceEn: "Vastu Pujan is ordained for harmonizing the 16 directional zones and 32 peripheral deities governing spatial prosperity, pacifying architectural flaws without physical demolition.",
                 vidhanHi: "वास्तु-कर्म की प्रकृति का निर्धारण, तिथि, वार और नक्षत्र का विचार, लग्न तथा ग्रहों की स्थिति से संबंधित नियम।",
                 vidhanEn: "Precise selection of non-afflicted Lagna, evaluating Agni-Vasa for Homa offerings, and synchronizing with favorable planetary transits.",
-                phalHi: "शास्त्रीय परंपरा के अनुसार वास्तु-कर्म को निर्धारित विधि और अनुकूल समय में संपन्न करना प्रशस्त माना गया है।",
-                phalEn: "Neutralizes spatial toxicity, establishing Pranic vitality, mental clarity, and commercial liquidity."
+                phalHi: "शास्त्रीय परंपरा के अनुसार वास्तु-कर्म को निर्धारित विधि और अनुकूल समय में संपन्न करना प्रशस्त माना गया है, जिससे स्थान की ऊर्जा संतुलित रहती है।",
+                phalEn: "Helps harmonize spatial energy, supporting mental clarity and steady functioning within the premises.",
+                riskHi: "प्रतिकूल काल या अधूरी विधि से वास्तु कर्म करने पर स्थान में अपेक्षित संतुलन नहीं बन पाता और निवासियों को मानसिक दबाव या कार्यों में रुकावट का अनुभव हो सकता है।",
+                riskEn: "Performing Vastu rites in discordant hours or incomplete form may fail to settle spatial friction and leave occupants feeling unsettled."
             },
             {
                 id: 5,
+                banner: "https://kaalgya.com/banner-muhurat-5.jpg",
                 nameHi: "व्यापार आरंभ मुहूर्त",
                 nameEn: "Vyapar Arambh Muhurat (Business Launch)",
                 subjectHi: "दुकान, कार्यालय एवं व्यवसाय का शुभारंभ",
@@ -216,11 +255,14 @@
                 importanceEn: "Vyapar Arambh aligns commercial ventures, enterprise launches, and storefront openings with expansive cosmic windows to ensure enduring capital flow and reputation.",
                 vidhanHi: "व्यापार के प्रकार के अनुसार समय-विचार, तिथि, वार और नक्षत्र की अनुकूलता, लग्न तथा ग्रहों की स्थिति।",
                 vidhanEn: "Auditing the 10th and 11th houses of commerce, evaluating strong Mercury/Jupiter placements, and choosing active Cardinal Ascendants.",
-                phalHi: "शास्त्रीय परंपरा में शुभ समय पर व्यापार आरंभ करना मंगलकारी माना गया है।",
-                phalEn: "Promotes uninterrupted trade liquidity, client patronage, and commercial longevity."
+                phalHi: "शास्त्रीय परंपरा में शुभ समय पर व्यापार आरंभ करना मंगलकारी माना गया है, जिससे नए उद्यम को सुव्यवस्थित शुरुआत और गति मिलती है।",
+                phalEn: "Supports an organized launch, smoother initial traction, and steady commercial momentum.",
+                riskHi: "अशुभ काल, राहुकाल या प्रतिकूल ग्रह-स्थिति में व्यापार शुरू करने पर शुरुआती दौर में ग्राहक या भुगतान में देरी, साझेदारी में खींचतान या अनावश्यक खर्च बढ़ सकते हैं।",
+                riskEn: "Launching a venture during Rahu Kaal or unfavorable planetary windows can bring early payment delays, partner friction, or extra expenses."
             },
             {
                 id: 6,
+                banner: "https://kaalgya.com/banner-muhurat-6.jpg",
                 nameHi: "वाहन मुहूर्त",
                 nameEn: "Vahan Kharid Muhurat (Vehicle Acquisition)",
                 subjectHi: "नया वाहन खरीदना एवं प्रथम संचालन",
@@ -231,11 +273,14 @@
                 importanceEn: "Aligns automotive acquisition and maiden driving with protective cosmic frequencies, shielding the native against transit-induced mechanical accidents and Mars-Rahu vehicular friction.",
                 vidhanHi: "वाहन-क्रय के लिए प्रचलित तिथि, वार और नक्षत्र का विचार, वाहन खरीद और प्रथम यात्रा के समय में अंतर।",
                 vidhanEn: "Selection of swift Nakshatras (Ashwini, Pushya, Hasta, Swati) while strictly eliminating Rahu Kaal and combustion periods.",
-                phalHi: "परंपरा के अनुसार शुभ समय में वाहन खरीदना या उसका प्रथम संचालन करना मंगलकामना से जुड़ा है।",
-                phalEn: "Wards off sudden transit hazards, mechanical breakdowns, and ensures secure travels."
+                phalHi: "परंपरा के अनुसार शुभ समय में वाहन खरीदना या उसका प्रथम संचालन करना मंगलकामना से जुड़ा है, जिससे आवागमन में सहजता और संतोष रहता है।",
+                phalEn: "Aligns vehicle acquisition and first drives with smoother transit experiences and peace of mind.",
+                riskHi: "प्रतिकूल समय या सावधानी काल में वाहन लेने/चलाने पर कागज़ी या डिलीवरी में अड़चन, बार-बार मरम्मत का खर्च या यात्रा के दौरान असहज परिस्थितियाँ आ सकती हैं।",
+                riskEn: "Taking delivery or driving first during cautionary periods can coincide with paperwork snags, recurring repairs, or uneasy travel moments."
             },
             {
                 id: 7,
+                banner: "https://kaalgya.com/banner-muhurat-7.jpg",
                 nameHi: "यात्रा मुहूर्त",
                 nameEn: "Yatra Muhurat (Strategic Journeys)",
                 subjectHi: "महत्वपूर्ण एवं दूरस्थ यात्रा",
@@ -246,11 +291,14 @@
                 importanceEn: "One of the most ancient branches of electional astrology, calculating safe departure windows for overseas voyages, critical diplomatic negotiations, and pilgrimages.",
                 vidhanHi: "तिथि, वार और नक्षत्र का विचार, यात्रा की दिशा और उद्देश्य, लग्न तथा संबंधित ग्रहों की स्थिति।",
                 vidhanEn: "Neutralization of directional spikes (Disha Shool), Yogini chakra orientation, and calculating supportive Moon transits.",
-                phalHi: "शास्त्रीय परंपरा में अनुकूल समय पर यात्रा आरंभ करना प्रशस्त माना गया है।",
-                phalEn: "Facilitates successful negotiation outcomes, travel safety, and smooth return."
+                phalHi: "शास्त्रीय परंपरा में अनुकूल समय पर यात्रा आरंभ करना प्रशस्त माना गया है, जिससे यात्रा का उद्देश्य पूरा होने में सहजता रहती है।",
+                phalEn: "Supports smoother transit, better alignment with the purpose of travel, and a settled return.",
+                riskHi: "प्रतिकूल समय या दिशा-विरोध में यात्रा शुरू करने पर मार्ग में विलंब, थकान, योजना में बदलाव या जिस कार्य के लिए यात्रा की गई है उसमें रुकावट आ सकती है।",
+                riskEn: "Departing in unfavorable timing or against directional rules can bring delays, itinerary disruption, or hurdles in the purpose of travel."
             },
             {
                 id: 8,
+                banner: "https://kaalgya.com/banner-muhurat-8.jpg",
                 nameHi: "शिक्षा एवं विद्यारंभ मुहूर्त",
                 nameEn: "Vidyarambh Muhurat (Initiation of Learning)",
                 subjectHi: "विद्यारंभ, अध्ययन एवं प्रवेश",
@@ -261,11 +309,14 @@
                 importanceEn: "The sacred ceremony of writing the first syllable (Akshararambha), connecting the child's neurological pathways to Saraswati consciousness and higher intellectual wisdom.",
                 vidhanHi: "शिक्षा आरंभ के लिए प्रशस्त तिथि और नक्षत्र, वार तथा अन्य पंचांग-अंगों का विचार।",
                 vidhanEn: "Auditing benefic waxing lunar days (Shukla Paksha), exalted Mercury or Jupiter transits, and academic Nakshatras.",
-                phalHi: "शास्त्रीय परंपरा में शिक्षा की शुरुआत को शुभ समय, देव-पूजन और संकल्प से जोड़ना प्रशस्त माना जाता है।",
-                phalEn: "Augments analytical acumen, concentration, eloquence, and scholastic distinction."
+                phalHi: "शास्त्रीय परंपरा में शिक्षा की शुरुआत को शुभ समय, देव-पूजन और संकल्प से जोड़ना प्रशस्त माना जाता है, जिससे सीखने की एकाग्रता व रुचि को बल मिलता है।",
+                phalEn: "Encourages focused learning habits, steady concentration, and a constructive start to studies.",
+                riskHi: "प्रतिकूल समय या बिना तैयारी के अध्ययन/प्रवेश शुरू करने पर ध्यान भटकना, शुरुआती अरुचि या प्रवेश/पाठ्यक्रम से जुड़ी छोटी-बड़ी अड़चनें आ सकती हैं।",
+                riskEn: "Starting studies or admissions during discordant hours can coincide with scattered focus, initial hesitation, or minor administrative delays."
             },
             {
                 id: 9,
+                banner: "https://kaalgya.com/banner-muhurat-9.jpg",
                 nameHi: "नामकरण मुहूर्त",
                 nameEn: "Namkaran Muhurat (Sacred Naming)",
                 subjectHi: "नवजात शिशु का नामकरण संस्कार",
@@ -276,11 +327,14 @@
                 importanceEn: "The essential sacrament of bestowing an acoustic identity (Nama-Akshara) based upon the child's exact natal Moon Nakshatra Pada.",
                 vidhanHi: "संस्कार के लिए तिथि, वार और नक्षत्र का विचार, जन्मनक्षत्र और नामाक्षर संबंधी परंपरा।",
                 vidhanEn: "Calculated strictly on the 10th, 11th, or 12th solar day following birth in accordance with classical Grihyasutra tenets.",
-                phalHi: "शास्त्रीय परंपरा में नामकरण संस्कार को विधिपूर्वक संपन्न करना प्रशस्त माना गया है।",
-                phalEn: "Synchronizes the individual's lifelong vocal vibration with cosmic planetary beneficence."
+                phalHi: "शास्त्रीय परंपरा में नामकरण संस्कार को विधिपूर्वक संपन्न करना प्रशस्त माना गया है, जिससे परिवार में उत्सव और सकारात्मक भाव बना रहता है।",
+                phalEn: "Brings joyful family participation and aligns the naming ceremony with traditional order.",
+                riskHi: "अशुभ या अस्थिर काल में संस्कार करने या जल्दबाजी में नाम तय करने पर परिवार में मतभेद या बाद में नाम/दस्तावेज़ों में सुधार की स्थिति बन सकती है।",
+                riskEn: "Rushing the naming ceremony in discordant hours may lead to family disagreement or later document/spelling corrections."
             },
             {
                 id: 10,
+                banner: "https://kaalgya.com/banner-muhurat-10.jpg",
                 nameHi: "अन्नप्राशन मुहूर्त",
                 nameEn: "Annaprashan Muhurat (First Solid Grain)",
                 subjectHi: "शिशु को प्रथम ठोस अन्न सेवन",
@@ -291,11 +345,14 @@
                 importanceEn: "The sacramental feeding of consecrated grain to the infant, consecrating metabolic pathways and the digestive fire (Jatharagni).",
                 vidhanHi: "शिशु की आयु और संस्कार का समय, तिथि, वार, नक्षत्र तथा लग्न का विचार।",
                 vidhanEn: "Observance of even lunar months for male infants (6th, 8th) and odd months for female infants (5th, 7th), auditing Moon purity.",
-                phalHi: "शास्त्रीय परंपरा में निर्धारित समय पर अन्नप्राशन करना प्रशस्त माना गया है।",
-                phalEn: "Bestows constitutional metabolic resilience, cellular vitality, and lifelong digestive health."
+                phalHi: "शास्त्रीय परंपरा में निर्धारित समय पर अन्नप्राशन करना प्रशस्त माना गया है, जिससे शिशु के खान-पान की सहज शुरुआत होती है।",
+                phalEn: "Supports an orderly introduction of solid nourishment alongside sensible pediatric care.",
+                riskHi: "अनुचित समय या शिशु की स्थिति का ध्यान रखे बिना जल्दबाजी करने पर भोजन के प्रति अरुचि या पेट/पाचन से जुड़ी हल्की असहजता हो सकती है।",
+                riskEn: "Rushing the first feeding at an unsuitable time or without observing the child's readiness can cause reluctance or mild digestive unease."
             },
             {
                 id: 11,
+                banner: "https://kaalgya.com/banner-muhurat-11.jpg",
                 nameHi: "मुंडन मुहूर्त",
                 nameEn: "Mundan Muhurat (Chudakarana)",
                 subjectHi: "चूड़ाकर्म एवं केश-संस्कार",
@@ -307,10 +364,13 @@
                 vidhanHi: "बालक की आयु तथा संस्कार का समय, तिथि, वार और नक्षत्र का विचार, लग्न और ग्रहों की स्थिति।",
                 vidhanEn: "Strict adherence to Uttarayana (northern solar transit), auditing infant age milestones, and eliminating combust planetary phases.",
                 phalHi: "शास्त्रीय परंपरा में निर्धारित समय और विधि के अनुसार चूड़ाकर्म करना प्रशस्त माना गया है।",
-                phalEn: "Enhances intellectual radiance, cranial cooling, and purifies karmic maternal imprints."
+                phalEn: "Completes the traditional Chudakarana milestone with orderly family observance.",
+                riskHi: "प्रतिकूल मास, तिथि या नक्षत्र में संस्कार करने पर आयोजन में अड़चन, यात्रा/व्यवस्था में कठिनाई या बालक को असुविधा हो सकती है।",
+                riskEn: "Holding tonsure in an unfavorable month or Tithi can create arrangement hurdles or discomfort for the child."
             },
             {
                 id: 12,
+                banner: "https://kaalgya.com/banner-muhurat-12.jpg",
                 nameHi: "उपनयन मुहूर्त",
                 nameEn: "Upanayan Muhurat (Sacred Thread Initiation)",
                 subjectHi: "यज्ञोपवीत एवं गायत्री-संबंधी संस्कार",
@@ -321,11 +381,14 @@
                 importanceEn: "The profound spiritual rebirth (Dvija) anchoring the triple-strand sacred thread, marking official entry into Vedic discipline and Gayatri Sadhana.",
                 vidhanHi: "उपनयन के लिए निर्धारित आयु और समय, तिथि, वार और नक्षत्र का विचार, संबंधित वैदिक शाखा।",
                 vidhanEn: "Strict avoidance of combust Jupiter and Venus, selection of auspicious solar seasons, and auditing the native's 9th house of Dharma.",
-                phalHi: "शास्त्रीय परंपरा में उपनयन को निर्धारित विधि और समय पर संपन्न करना प्रशस्त माना गया है।",
-                phalEn: "Awakens internal spiritual gravitas, ethical discipline, and sharp cognitive memory."
+                phalHi: "शास्त्रीय परंपरा में उपनयन को निर्धारित विधि और समय पर संपन्न करना प्रशस्त माना गया है, जिससे अनुशासन और अध्ययन के प्रति गंभीरता आती है।",
+                phalEn: "Encourages disciplined study habits, reverence for learning, and commitment to spiritual practice.",
+                riskHi: "शास्त्रीय नियमों और शुभ काल की अनदेखी करने पर संस्कार के उद्देश्य व अनुशासन में शिथिलता आ सकती है।",
+                riskEn: "Overlooking scriptural timing rules can weaken the discipline and structured spirit of the initiation."
             },
             {
                 id: 13,
+                banner: "https://kaalgya.com/banner-muhurat-13.jpg",
                 nameHi: "गर्भाधान मुहूर्त",
                 nameEn: "Garbhadhan Muhurat (Sacred Conception)",
                 subjectHi: "संतान प्राप्ति से संबंधित परंपरागत संस्कार",
@@ -337,10 +400,13 @@
                 vidhanHi: "संस्कार के समय और तिथि का विचार, रात्रि तथा अन्य काल-संबंधी नियम, संबंधित पंचांग-अंग।",
                 vidhanEn: "Exacting calculation of post-menstrual ovulatory days (Ritu-Kala), avoiding inauspicious lunar days (Parva Tithis), and auditing Moon-Mars strength.",
                 phalHi: "शास्त्रीय परंपरा में निर्धारित समय और संस्कार-विधि का पालन प्रशस्त माना गया है।",
-                phalEn: "Ensures physiological health, high moral fortitude, and intellectual radiance in progeny."
+                phalEn: "Honors traditional family values and mindful planning alongside health guidance.",
+                riskHi: "अत्यधिक तनाव, अनियमित दिनचर्या या प्रतिकूल समय में प्रयास करने पर मानसिक थकान व अपेक्षाओं का दबाव बढ़ सकता है।",
+                riskEn: "Excessive stress, irregular routines, or poorly timed efforts can heighten mental strain and expectation pressure."
             },
             {
                 id: 14,
+                banner: "https://kaalgya.com/banner-muhurat-14.jpg",
                 nameHi: "देव-प्रतिष्ठा मुहूर्त",
                 nameEn: "Deva Pratishtha Muhurat (Deity Consecration)",
                 subjectHi: "मूर्ति या देवालय की प्राण-प्रतिष्ठा",
@@ -352,10 +418,13 @@
                 vidhanHi: "तिथि, वार, नक्षत्र और लग्न का विचार, संबंधित आगम या प्रतिष्ठा-पद्धति के नियम।",
                 vidhanEn: "Pristine alignment of fixed Ascendants, flawless Kendra and Trikona houses, and extensive Agamic purification.",
                 phalHi: "शास्त्रीय परंपरा में देव-प्रतिष्ठा को निर्धारित विधि और शुभ समय पर संपन्न करना प्रशस्त माना गया है।",
-                phalEn: "Radiates permanent metaphysical protection, spiritual peace, and community harmony."
+                phalEn: "Establishes the consecrated space in accordance with traditional Agamic and Vedic order.",
+                riskHi: "अशुद्ध समय या अधूरी शास्त्रीय विधि से प्रतिष्ठा करने पर आयोजन की पवित्रता व व्यवस्था में त्रुटियाँ रह सकती हैं।",
+                riskEn: "Conducting consecration in unverified timing or incomplete rites can introduce procedural lapses in the sacred setup."
             },
             {
                 id: 15,
+                banner: "https://kaalgya.com/banner-muhurat-15.jpg",
                 nameHi: "यज्ञ एवं पूजा मुहूर्त",
                 nameEn: "Yagya & Puja Muhurat (Vedic Sacraments)",
                 subjectHi: "विशेष अनुष्ठान, हवन एवं महापूजा",
@@ -366,11 +435,14 @@
                 importanceEn: "Synchronizing Vedic fire oblations (Homa) with planetary windows for maximum cosmic receptivity and divine communion.",
                 vidhanHi: "यज्ञ या पूजा के उद्देश्य का निर्धारण, संबंधित विधि और ग्रंथ के नियम, तिथि, वार, नक्षत्र।",
                 vidhanEn: "Auditing Agni-Vasa (presence of fire on Earth) and Shiva-Vasa alignments, while ensuring correct sacrificial wood (Samidha) selection.",
-                phalHi: "शास्त्रीय परंपरा में निर्धारित विधि से यज्ञ और पूजा करना प्रशस्त माना गया है।",
-                phalEn: "Guarantees direct acceptance of oblations, nullifying impending catastrophes and bestowing spiritual merit."
+                phalHi: "शास्त्रीय परंपरा में निर्धारित विधि से यज्ञ और पूजा करना प्रशस्त माना गया है, जिससे संकल्प की एकाग्रता और श्रद्धा को संबल मिलता है।",
+                phalEn: "Supports focused devotion, clear Sankalpa, and orderly execution of sacred rites.",
+                riskHi: "बिना स्पष्ट उद्देश्य, अनुचित समय या अव्यवस्थित विधि से अनुष्ठान करने पर पूजा केवल औपचारिकता बनकर रह जाती है और मन को संतोष नहीं मिल पाता।",
+                riskEn: "Performing rituals without clear purpose, suitable timing, or proper order can make the ceremony feel mechanical and unfulfilling."
             },
             {
                 id: 16,
+                banner: "https://kaalgya.com/banner-muhurat-16.jpg",
                 nameHi: "कृषि मुहूर्त",
                 nameEn: "Krishi Muhurat (Agrarian Cycles)",
                 subjectHi: "कृषि आरंभ, बीजारोपण एवं खेती",
@@ -382,7 +454,9 @@
                 vidhanHi: "कृषि-कार्य के प्रकार का निर्धारण, ऋतु तथा वर्षा की स्थिति, तिथि, वार और नक्षत्र का पारंपरिक विचार।",
                 vidhanEn: "Verification of fertile water-element Nakshatras, supportive waxing Moon phases, and favorable planetary Horas.",
                 phalHi: "शास्त्रीय परंपरा में कृषि-कर्म को निर्धारित समय और विधि से आरंभ करना प्रशस्त माना गया है।",
-                phalEn: "Protects crops against natural blights, ensuring agrarian abundance and prosperity."
+                phalEn: "Aligns seasonal agricultural steps with traditional timing and practical field planning.",
+                riskHi: "प्रतिकूल मौसम, अनुचित समय या नक्षत्र-अवहेलना के साथ बुवाई या कार्य करने पर फसल/उत्पादन में अपेक्षित लाभ न मिलने या परिश्रम बढ़ने की संभावना रहती है।",
+                riskEn: "Sowing or starting field work against seasonal conditions or unfavorable timing can increase labor strain or reduce expected yield."
             }
         ];
 
@@ -393,11 +467,11 @@
             document.getElementById("muhurat-return-bottom").innerText = isMuhuratHindi ? "← मुख्य पृष्ठ पर वापस जाएं" : "← Back to Main Page";
             document.getElementById("muhurat-consult-top").innerText = isMuhuratHindi ? "परामर्श लें" : "Consult Now";
             document.getElementById("muhurat-main-title").innerText = isMuhuratHindi
-                ? "16 संस्कार मुहूर्त: शास्त्रीय महत्व, देवता, विधान एवं फल"
-                : "16 Sanskaar Muhurat: Significance, Deities, Protocol & Fruits";
+                ? "16 संस्कार मुहूर्त: शास्त्रीय महत्व, देवता, विधान, फल व अवरोध"
+                : "16 Sanskaar Muhurat: Significance, Deities, Protocol, Fruits & Pitfalls";
             document.getElementById("muhurat-main-sub").innerText = isMuhuratHindi
-                ? "प्रत्येक संस्कार का शास्त्रीय महत्व, आराध्य देवता, मुहूर्त निर्धारित करने का विधान, पालन का फल और लाइव वार्षिक मुहूर्त देखें।"
-                : "View each sacrament's classical significance, presiding deities, calculation protocol, metaphysical fruit, and live yearly Muhurats.";
+                ? "प्रत्येक संस्कार का विस्तृत शास्त्रीय महत्व, आराध्य देवता, विधान, शुभ फल, मुहूर्त न पालन करने पर संभावित अवरोध और पूरे वर्ष के सभी संभावित मुहूर्त देखें।"
+                : "Explore classical significance, presiding deities, calculation protocol, auspicious outcomes, potential hurdles when ignored, and every possible Muhurat across the full year.";
             document.getElementById("lbl-muhurat-year").innerText = isMuhuratHindi ? "मुहूर्त वर्ष:" : "Muhurat Year:";
 
             const listEl = document.getElementById("dedicatedSanskarsList");
@@ -408,25 +482,35 @@
                 const importance = isMuhuratHindi ? item.importanceHi : item.importanceEn;
                 const vidhan = isMuhuratHindi ? item.vidhanHi : item.vidhanEn;
                 const phal = isMuhuratHindi ? item.phalHi : item.phalEn;
+                const risk = isMuhuratHindi ? item.riskHi : item.riskEn;
 
                 const lblIdx = isMuhuratHindi ? `संस्कार क्रमांक #${item.id}` : `SACRAMENT #${item.id}`;
                 const lblDeity = isMuhuratHindi ? "आराध्य देवता:" : "Presiding Deity:";
                 const lblSub = isMuhuratHindi ? "विषय:" : "Domain:";
                 const lblImp = isMuhuratHindi ? "शास्त्रीय महत्व:" : "Classical Significance:";
                 const lblVidhan = isMuhuratHindi ? "मुहूर्त निर्धारित करने का विधान:" : "Calculation Protocol:";
-                const lblPhal = isMuhuratHindi ? "मुहूर्त पालन का फल:" : "Metaphysical Fruit:";
-                const btnLabel = isMuhuratHindi ? `${title} देखें →` : `View ${title} Dates →`;
+                const lblPhal = isMuhuratHindi ? "मुहूर्त पालन का फल:" : "Auspicious Outcome:";
+                const lblRisk = isMuhuratHindi ? "मुहूर्त न पालन करने पर शास्त्रीय दृष्टिकोण से संभावित अवरोध:" : "Potential Hurdles When Ignored (Shastric View):";
+                const btnLabel = isMuhuratHindi ? `${title} — पूरे वर्ष के मुहूर्त देखें →` : `View All ${title} Dates (${document.getElementById("muhuratYearInput")?.value || 2026}) →`;
 
                 return `
-                    <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-4 shadow-xl">
+                    <article class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-5 shadow-xl">
+                        <div class="pano-banner-frame shadow-lg">
+                            <img src="${item.banner}" onerror="this.src='https://kaalgya.com/banner-muhurat.jpg'" alt="${title}">
+                            <div class="pano-vignette"></div>
+                        </div>
+
                         <div class="flex flex-wrap items-center justify-between border-b border-gold-500/25 pb-3 gap-2">
                             <span class="text-xs font-mono text-gold-400 uppercase">${lblIdx}</span>
                             <span class="text-xs text-emerald-300 bg-emerald-500/10 px-3 py-1 rounded border border-emerald-500/25"><b>${lblDeity}</b> ${deity}</span>
                         </div>
-                        <h2 class="text-xl md:text-2xl font-bold font-cinzel text-white leading-[1.6]">${item.id}. ${title}</h2>
-                        <p class="text-xs text-gold-300 font-serif italic"><b>${lblSub}</b> ${subject}</p>
 
-                        <div class="space-y-3 text-xs sm:text-sm text-gray-200 leading-relaxed pt-2">
+                        <div class="space-y-1">
+                            <h2 class="text-xl md:text-2xl font-bold font-cinzel text-white leading-[1.6]">${item.id}. ${title}</h2>
+                            <p class="text-xs text-gold-300 font-serif italic"><b>${lblSub}</b> ${subject}</p>
+                        </div>
+
+                        <div class="space-y-3 text-xs sm:text-sm text-gray-200 leading-relaxed pt-1">
                             <div>
                                 <strong class="text-gold-300 block mb-1">${lblImp}</strong>
                                 <p>${importance}</p>
@@ -435,9 +519,13 @@
                                 <strong class="text-gold-300 block mb-1">${lblVidhan}</strong>
                                 <p>${vidhan}</p>
                             </div>
-                            <div>
-                                <strong class="text-gold-300 block mb-1">${lblPhal}</strong>
-                                <p>${phal}</p>
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900/90 border border-emerald-500/25">
+                                <strong class="text-emerald-400 block mb-1">${lblPhal}</strong>
+                                <p class="text-emerald-100/90">${phal}</p>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900/90 border border-amber-500/30">
+                                <strong class="text-amber-400 block mb-1">${lblRisk}</strong>
+                                <p class="text-amber-100/90">${risk}</p>
                             </div>
                         </div>
 
@@ -446,33 +534,68 @@
                                 ${btnLabel}
                             </button>
                         </div>
-                    </div>
+                    </article>
                 `;
             }).join('');
+        }
+
+        function flattenMuhuratsFromResponse(data) {
+            const grouped = {};
+            let totalCount = 0;
+
+            if (data.monthlyDirectory && typeof data.monthlyDirectory === "object") {
+                for (const [month, dates] of Object.entries(data.monthlyDirectory)) {
+                    if (Array.isArray(dates) && dates.length > 0) {
+                        grouped[month] = dates;
+                        totalCount += dates.length;
+                    }
+                }
+            }
+
+            if (totalCount === 0 && Array.isArray(data.muhurats)) {
+                data.muhurats.forEach(d => {
+                    const monthKey = d.monthName || d.month || "All Dates";
+                    if (!grouped[monthKey]) grouped[monthKey] = [];
+                    grouped[monthKey].push(d);
+                    totalCount += 1;
+                });
+            }
+
+            return { grouped, totalCount: data.totalDatesFound || totalCount };
         }
 
         async function fetchYearlyDrawer(muhuratId) {
             const modal = document.getElementById("yearlyMuhuratModal");
             const body = document.getElementById("modalMuhuratBody");
             const year = document.getElementById("muhuratYearInput")?.value || new Date().getFullYear();
+            const fallbackItem = shodashSanskarsFull.find(s => s.id === muhuratId);
+            const fallbackName = fallbackItem ? (isMuhuratHindi ? fallbackItem.nameHi : fallbackItem.nameEn) : `#${muhuratId}`;
 
             modal.style.display = "flex";
+            document.getElementById("modalMuhuratTitle").innerText = isMuhuratHindi
+                ? `📅 ${fallbackName} • वर्ष ${year}`
+                : `📅 ${fallbackName} • Year ${year}`;
+
             body.innerHTML = isMuhuratHindi
-                ? "<p class='text-gold-400'>⏳ 12 महीनों की शुद्ध शास्त्रीय गणना की जा रही है...</p>"
-                : "<p class='text-gold-400'>⏳ Calculating 12-month Shastric Muhurat alignments...</p>";
+                ? "<p class='text-gold-400'>⏳ पूरे वर्ष के सभी संभावित मुहूर्त लाइव फ़ेच किए जा रहे हैं...</p>"
+                : "<p class='text-gold-400'>⏳ Fetching every possible Muhurat across the entire year in real time...</p>";
 
             try {
-                const res = await fetch(`${KAALGYA_BACKEND_URL}?action=getYearlyMuhurats&year=${year}&muhuratId=${muhuratId}`);
+                const url = `${KAALGYA_BACKEND_URL}?action=getYearlyMuhurats&year=${year}&muhuratId=${muhuratId}&limit=500&_t=${Date.now()}`;
+                const res = await fetch(url);
                 const data = await res.json();
 
+                const nameDisplay = data.muhuratName || fallbackName;
+                const { grouped, totalCount } = flattenMuhuratsFromResponse(data);
+
                 document.getElementById("modalMuhuratTitle").innerText = isMuhuratHindi
-                    ? `📅 ${data.muhuratName} • वर्ष ${data.year} (${data.totalDatesFound} शुद्ध मुहूर्त प्राप्त)`
-                    : `📅 ${data.muhuratName} • Year ${data.year} (${data.totalDatesFound} Verified Muhurats Found)`;
+                    ? `📅 ${nameDisplay} • वर्ष ${data.year || year} (${totalCount} मुहूर्त प्राप्त)`
+                    : `📅 ${nameDisplay} • Year ${data.year || year} (${totalCount} Muhurats Found)`;
 
                 let html = "";
-                for (const [month, dates] of Object.entries(data.monthlyDirectory || {})) {
-                    html += `<div class="font-bold text-gold-300 mt-3 mb-2 text-xs uppercase border-b border-gold-500/20 pb-1">✦ ${month}</div>`;
-                    html += "<div class='grid grid-cols-1 sm:grid-cols-2 gap-2'>";
+                for (const [month, dates] of Object.entries(grouped)) {
+                    html += `<div class="font-bold text-gold-300 mt-4 mb-2 text-xs uppercase border-b border-gold-500/20 pb-1 flex justify-between"><span>✦ ${month}</span><span class="text-gold-400 font-mono">${dates.length}</span></div>`;
+                    html += "<div class='grid grid-cols-1 sm:grid-cols-2 gap-2.5'>";
                     dates.forEach(d => {
                         const weight = d.weightage || 85;
                         const advice = weight >= 85
@@ -484,26 +607,27 @@
                                 : `<span class="text-amber-300 font-semibold">⚠️ Moderate alignment; consult your spiritual guide.</span>`);
 
                         html += `
-                            <div class="p-2.5 rounded-xl bg-obsidian-900 border border-gold-500/25 text-[11px] space-y-1">
-                                <div class="flex justify-between items-center text-white font-bold">
-                                    <span>📅 ${d.formattedDate}</span>
-                                    <span class="text-gold-400 text-[10px]">Weightage: ${weight}%</span>
+                            <div class="p-3 rounded-xl bg-obsidian-900 border border-gold-500/25 text-[11px] space-y-1">
+                                <div class="flex justify-between items-center text-white font-bold gap-2">
+                                    <span>📅 ${d.formattedDate || d.date || '--'}</span>
+                                    <span class="text-gold-400 text-[10px] whitespace-nowrap">Weightage: ${weight}%</span>
                                 </div>
-                                <div class="text-gray-300">${isMuhuratHindi ? 'शुभ समय:' : 'Auspicious Time:'} ${d.timeSpan}</div>
-                                <div class="text-gray-400 text-[10px]">${isMuhuratHindi ? 'तिथि:' : 'Tithi:'} ${d.tithi} • ${isMuhuratHindi ? 'नक्षत्र:' : 'Nakshatra:'} ${d.nakshatra}</div>
+                                <div class="text-gray-300">${isMuhuratHindi ? 'शुभ समय:' : 'Auspicious Time:'} ${d.timeSpan || d.time || '--'}</div>
+                                <div class="text-gray-400 text-[10px]">${isMuhuratHindi ? 'तिथि:' : 'Tithi:'} ${d.tithi || '--'} • ${isMuhuratHindi ? 'नक्षत्र:' : 'Nakshatra:'} ${d.nakshatra || '--'}</div>
                                 <div class="pt-1 border-t border-gold-500/10 text-[10px]">${advice}</div>
                             </div>
                         `;
                     });
                     html += "</div>";
                 }
+
                 body.innerHTML = html || (isMuhuratHindi
-                    ? "<p>इस वर्ष में शुद्ध शास्त्रीय मुहूर्त के अनुकूल दिन सीमित हैं।</p>"
-                    : "<p>Limited auspicious windows available for this year.</p>");
+                    ? "<p class='text-gray-300'>इस वर्ष के लिए बैकएंड से कोई मुहूर्त प्रविष्टि नहीं मिली।</p>"
+                    : "<p class='text-gray-300'>No Muhurat entries returned by the backend for this year.</p>");
             } catch (e) {
                 body.innerHTML = isMuhuratHindi
-                    ? "<p class='text-rose-400'>त्रुटि: डेटा लोड नहीं हो सका।</p>"
-                    : "<p class='text-rose-400'>Error: Unable to fetch calendar data.</p>";
+                    ? "<p class='text-rose-400'>त्रुटि: लाइव मुहूर्त डेटा लोड नहीं हो सका।</p>"
+                    : "<p class='text-rose-400'>Error: Unable to fetch live yearly Muhurat data.</p>";
             }
         }
 
@@ -513,7 +637,13 @@
             applyMuhuratLabels();
         }
 
-        document.addEventListener("DOMContentLoaded", applyMuhuratLabels);
+        document.addEventListener("DOMContentLoaded", () => {
+            applyMuhuratLabels();
+            const yearInput = document.getElementById("muhuratYearInput");
+            if (yearInput) {
+                yearInput.addEventListener("change", applyMuhuratLabels);
+            }
+        });
     </script>
 </body>
 </html>
