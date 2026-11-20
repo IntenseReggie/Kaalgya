@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>दैनिक शुभ, अशुभ मुहूर्त एवं 24 होरा चक्र | KAALGYA (कालज्ञ)</title>
-    <meta name="description" content="15+ वर्षों के शास्त्रसम्मत अनुभव के साथ KAALGYA पर देखें दैनिक शुभ-अशुभ मुहूर्त और 24 होरा चक्र—प्रत्येक काल व होरा में क्या करें और क्या न करें का विस्तृत मार्गदर्शन।">
+    <meta name="description" content="15+ वर्षों के शास्त्रसम्मत अनुभव के साथ KAALGYA पर देखें 24 होरा चक्र व शुभ-अशुभ मुहूर्त—रोमांस, यात्रा, प्रस्ताव रखने व स्वीकार/अस्वीकार करने सहित दैनिक जीवन के व्यावहारिक नियम।">
     <link rel="canonical" href="https://kaalgya.com/hora/">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#030305">
@@ -62,7 +62,7 @@
 
     <!-- Header -->
     <header class="sticky top-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3">
-        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-3">
             <a href="https://kaalgya.com/" class="flex items-center gap-3">
                 <div class="relative w-11 h-11 rounded-full border-2 border-gold-500/80 bg-black overflow-hidden flex-shrink-0">
                     <video autoplay loop muted playsinline class="absolute pointer-events-none max-w-none rounded-full" style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
@@ -76,10 +76,13 @@
             </a>
 
             <div class="flex items-center gap-2 sm:gap-3">
-                <a href="https://kaalgya.com/" class="px-4 py-2 rounded-xl border border-gold-500/50 bg-obsidian-900 text-gold-300 text-xs font-bold hover:border-gold-400 hover:text-white transition-colors">
+                <button id="hora-lang-btn" type="button" onclick="toggleHoraLanguage()" class="px-3 py-2 rounded-xl border border-gold-500/40 bg-obsidian-900 text-gold-300 text-xs font-bold hover:bg-gold-500 hover:text-black transition-all cursor-pointer">
+                    English
+                </button>
+                <a href="https://kaalgya.com/" id="top-return-btn" class="px-3.5 py-2 rounded-xl border border-gold-500/50 bg-obsidian-900 text-gold-300 text-xs font-bold hover:border-gold-400 hover:text-white transition-colors">
                     ← मुख्य पृष्ठ
                 </a>
-                <a href="https://forms.gle/TqZrbxcDQFmxy6iH9" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase">
+                <a href="https://forms.gle/TqZrbxcDQFmxy6iH9" target="_blank" rel="noopener noreferrer" id="top-consult-btn" class="px-4 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase">
                     परामर्श लें
                 </a>
             </div>
@@ -96,14 +99,14 @@
 
         <!-- Title Box with generous line-height so top matras never clip -->
         <div class="cosmic-glass gold-border-glow rounded-3xl p-6 text-center overflow-visible space-y-2">
-            <h1 class="text-xl sm:text-3xl md:text-4xl font-bold font-cinzel gold-gradient-text leading-[1.85] py-1 overflow-visible">
+            <h1 id="hora-main-heading" class="text-xl sm:text-3xl md:text-4xl font-bold font-cinzel gold-gradient-text leading-[1.85] py-1 overflow-visible">
                 दैनिक शुभ, अशुभ मुहूर्त एवं 24 होरा चक्र
             </h1>
             <p id="horaPageDate" class="text-xs sm:text-sm text-gold-300 font-mono">पंचांग लोड हो रहा है...</p>
 
             <div class="pt-3 flex justify-center">
                 <div class="flex items-center gap-2 bg-obsidian-900 border border-gold-500/40 px-4 py-2 rounded-2xl">
-                    <label for="horaDatePicker" class="text-xs text-gold-300 font-semibold">दिनांक चुनें:</label>
+                    <label for="horaDatePicker" id="lbl-select-date" class="text-xs text-gold-300 font-semibold">दिनांक चुनें:</label>
                     <input type="date" id="horaDatePicker" onchange="loadHoraPage(this.value)" class="bg-transparent text-white font-mono font-bold text-xs focus:outline-none cursor-pointer">
                 </div>
             </div>
@@ -111,18 +114,18 @@
 
         <!-- Detailed Shubh & Ashubh Muhurat -->
         <section class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8 space-y-6">
-            <h2 class="text-base sm:text-lg font-bold font-cinzel text-gold-300 border-b border-gold-500/30 pb-3 leading-[1.6]">
-                ✦ शुभ एवं अशुभ मुहूर्त — विस्तृत क्या करें और क्या न करें
+            <h2 id="lbl-muhurat-section" class="text-base sm:text-lg font-bold font-cinzel text-gold-300 border-b border-gold-500/30 pb-3 leading-[1.6]">
+                ✦ शुभ एवं अशुभ मुहूर्त — दैनिक जीवन, यात्रा, प्रस्ताव व व्यवहार के नियम
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-emerald-500 space-y-3">
-                    <h3 class="text-emerald-400 font-bold text-sm font-cinzel uppercase leading-[1.5]">
+                    <h3 id="lbl-shubh-heading" class="text-emerald-400 font-bold text-sm font-cinzel uppercase leading-[1.5]">
                         शुभ एवं प्रशस्त काल (विस्तृत विवरण)
                     </h3>
                     <div id="pageShubhList" class="text-xs text-gray-200 leading-relaxed space-y-3">लोड हो रहा है...</div>
                 </div>
                 <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-red-500 space-y-3">
-                    <h3 class="text-red-400 font-bold text-sm font-cinzel uppercase leading-[1.5]">
+                    <h3 id="lbl-ashubh-heading" class="text-red-400 font-bold text-sm font-cinzel uppercase leading-[1.5]">
                         अशुभ / सावधानी काल (विस्तृत विवरण)
                     </h3>
                     <div id="pageAshubhList" class="text-xs text-gray-200 leading-relaxed space-y-3">लोड हो रहा है...</div>
@@ -132,18 +135,18 @@
 
         <!-- Detailed 24 Horas -->
         <section class="space-y-4">
-            <h2 class="text-base font-bold text-gold-400 font-cinzel uppercase leading-[1.6]">☀️ दिन की 12 होरा (विस्तृत क्या करें व क्या न करें)</h2>
+            <h2 id="lbl-day-hora-heading" class="text-base font-bold text-gold-400 font-cinzel uppercase leading-[1.6]">☀️ दिन की 12 होरा (रोमांस, यात्रा, प्रस्ताव व दैनिक नियम)</h2>
             <div id="pageDayHora" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
         </section>
 
         <section class="space-y-4">
-            <h2 class="text-base font-bold text-gold-400 font-cinzel uppercase leading-[1.6]">🌙 रात्रि की 12 होरा (विस्तृत क्या करें व क्या न करें)</h2>
+            <h2 id="lbl-night-hora-heading" class="text-base font-bold text-gold-400 font-cinzel uppercase leading-[1.6]">🌙 रात्रि की 12 होरा (रोमांस, यात्रा, प्रस्ताव व दैनिक नियम)</h2>
             <div id="pageNightHora" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
         </section>
 
         <!-- Bottom Return Link -->
         <div class="pt-4 text-center">
-            <a href="https://kaalgya.com/" class="inline-block px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider">
+            <a href="https://kaalgya.com/" id="bottom-return-btn" class="inline-block px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase tracking-wider">
                 ← मुख्य पृष्ठ पर वापस जाएं
             </a>
         </div>
@@ -152,41 +155,68 @@
     <script>
         const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbw9PfIaOjI31X8cQh17Q6Q4EBH2HA2T4ngpGsm4HxPA-m4gJyLF4cuEXxOXdq3IyDE/exec";
 
+        let isHoraHindi = localStorage.getItem("kaalgya_lang") !== null
+            ? (localStorage.getItem("kaalgya_lang") === "hi")
+            : true;
+
+        let cachedHoraData = null;
+
         const horaGuidelines = {
             "Sun": {
-                name: "सूर्य",
-                do: "सरकारी विभाग के कार्य, टेंडर, लाइसेंस, प्रशासनिक अनुमति, उच्च अधिकारियों या वरिष्ठों से भेंट, नवीन पदभार ग्रहण, सोने की खरीदारी, नेतृत्व या प्रबंधन से जुड़े निर्णय तथा प्रातःकालीन सूर्य अर्घ्य व आध्यात्मिक तेज की साधना।",
-                dont: "नया वाहन खरीदना या पहली बार चलाना, गृह प्रवेश, विवाह की बातचीत या रस्में, किसी से कर्ज लेना या उधार देना, तथा अनावश्यक अहंकार या टकराव से बचें।"
+                nameHi: "सूर्य",
+                nameEn: "Sun (Surya)",
+                doHi: "सरकारी काम, टेंडर, पदभार ग्रहण, नेतृत्व या अधिकारी से मीटिंग, स्पष्ट व अधिकारपूर्ण प्रस्ताव रखना, तथा स्पष्ट 'हाँ या ना' का निर्णय लेना। यात्रा: प्रशासनिक/कार्यक्षेत्र की यात्रा अनुकूल; रोमांस व अंतरंगता: तनाव या अहंकार से बचकर संयमित व सम्मानजनक संवाद रखें।",
+                dontHi: "नया वाहन चलाना, गृह प्रवेश, भावुक/रोमांटिक प्रस्ताव रखना, तथा कर्ज का लेन-देन। यात्रा: बिना उद्देश्य या जल्दबाजी में निकलने से बचें; रोमांस व प्रस्ताव: अहंकार या कठोरता से किसी प्रस्ताव को अस्वीकार न करें।",
+                doEn: "Government work, tenders, assuming authority/leadership roles, meeting seniors, presenting clear formal/business proposals, and giving firm 'yes or no' decisions. Travel: Work or official trips work well; Romance & intimacy: Keep affection calm, respectful, and free of ego.",
+                dontEn: "First vehicle drive, Griha Pravesh, emotional/romantic proposals, and taking or lending loans. Travel: Avoid aimless or rushed departures; Romance & proposals: Avoid rejecting proposals harshly or with ego."
             },
             "Venus": {
-                name: "शुक्र",
-                do: "विवाह प्रस्ताव व सगाई की चर्चा, पारिवारिक सामंजस्य, नए वस्त्र या आभूषण पहनना/खरीदना, कला, संगीत, अभिनय, डिज़ाइन व सौंदर्य से जुड़े कार्य, नया वाहन या सुख-सुविधा की वस्तु लेना तथा रचनात्मक निवेश।",
-                dont: "लोहे, कबाड़ या भारी मशीनरी का बड़ा सौदा, कर्ज का लेन-देन, कड़े अनुशासनात्मक या दंडात्मक फैसले, तथा रिश्तों में कटुता लाने वाले संवाद।"
+                nameHi: "शुक्र",
+                nameEn: "Venus (Shukra)",
+                doHi: "रोमांस, प्रेम व अंतरंगता के लिए सबसे अनुकूल समय; रिश्तों या जीवनसाथी से जुड़ा प्रस्ताव रखना या मधुरता से स्वीकार करना; नए वस्त्र/आभूषण, कला, सौंदर्य, वाहन या सुख-सुविधा के कार्य। यात्रा: मनोरंजन, परिवार या प्रियजन से मिलने की यात्रा उत्तम।",
+                dontHi: "लोहे/कबाड़/भारी मशीनरी के सौदे, कर्ज का लेन-देन, तथा कठोर दंडात्मक निर्णय। यात्रा: कठिन या असुविधाजनक यात्रा टालें; प्रस्ताव: किसी को रूखा या अपमानजनक 'ना' कहने से बचें—सौम्यता रखें।",
+                doEn: "Most favorable window for romance, affection, and closeness; sharing relationship proposals or warmly accepting heartfelt ones; buying clothes/jewelry, art, beauty, vehicles, or comfort items. Travel: Leisure, family, or visiting loved ones is ideal.",
+                dontEn: "Iron/scrap/heavy machinery deals, loan transactions, and harsh punitive actions. Travel: Avoid grueling or uncomfortable trips; Proposals: Avoid cold or hurtful rejections—stay gentle."
             },
             "Mercury": {
-                name: "बुध",
-                do: "व्यापारिक सौदे, मोलभाव व एग्रीमेंट साइन करना, बहीखाता व हिसाब-किताब शुरू करना, बैंकिंग, शेयर/निवेश विश्लेषण, पढ़ाई, लेखन, कोडिंग, वेबसाइट/डिजिटल कार्य, कम्युनिकेशन, इंटरव्यू और बुद्धि-कौशल से जुड़े कार्य।",
-                dont: "जमीन-मकान की स्थायी रजिस्ट्री, विवाह संस्कार, तामसिक भोजन, नशा, तथा जल्दबाजी में बिना पढ़े किसी दस्तावेज़ पर हस्ताक्षर करना।"
+                nameHi: "बुध",
+                nameEn: "Mercury (Budha)",
+                doHi: "व्यापार, सौदे, एग्रीमेंट, बहीखाता, पढ़ाई, लेखन, कोडिंग, बैंकिंग व बातचीत से जुड़े प्रस्ताव रखना या शर्तों को परखकर स्वीकार करना। यात्रा: छोटी दूरी, बिज़नेस मीटिंग या संवाद की यात्रा अच्छी; रोमांस: हल्की-फुल्की बातचीत, समझ और दोस्ती बढ़ाने के लिए सही।",
+                dontHi: "जमीन-मकान की स्थायी रजिस्ट्री, विवाह संस्कार या बिना पढ़े किसी प्रस्ताव/कागज़ पर दस्तखत करना। यात्रा: लंबी या थका देने वाली यात्रा टालें; रोमांस: केवल बातों या चालाकी में न उलझें, स्पष्टता रखें।",
+                doEn: "Business deals, agreements, accounting, study, writing, coding, banking, and presenting or evaluating work/partnership proposals after checking terms. Travel: Short trips, meetings, and networking journeys suit well; Romance: Good for light conversation, clarity, and friendly bonding.",
+                dontEn: "Permanent real-estate deeds, wedding rites, or signing/accepting any proposal without reading terms. Travel: Avoid long or exhausting trips; Romance: Keep things honest rather than overly clever or non-committal."
             },
             "Moon": {
-                name: "चन्द्र",
-                do: "जल या यात्रा से जुड़े कार्य, चांदी या मोती की खरीद, जनसंपर्क, मातृ सेवा, भोजन पकाना व ग्रहण करना, बागवानी, ध्यान, प्राणायाम और मन को शांत रखने वाले सौम्य कार्य।",
-                dont: "अग्नि या शस्त्र से जुड़े जोखिम भरे कार्य, नया मुकदमा दायर करना, कठोर या भावनाहीन निर्णय लेना, तथा बिना विचार किए बड़ा उधार देना।"
+                nameHi: "चन्द्र",
+                nameEn: "Moon (Chandra)",
+                doHi: "भावनात्मक जुड़ाव, परिवार व देखभाल, जनसंपर्क, भोजन, ध्यान व शांत निर्णय; संवेदनशील या पारिवारिक प्रस्ताव पर विचार करना। यात्रा: जल के समीप, घर/परिवार या शांत स्थान की यात्रा अनुकूल; रोमांस: कोमलता, देखभाल और भावनात्मक सुरक्षा के साथ समय बिताएं।",
+                dontHi: "अग्नि/शस्त्र के जोखिम, नया मुकदमा या अस्थिर मन से बड़ा फ़ैसला लेना। यात्रा: तूफ़ानी, असुरक्षित या अनजान सुनसान मार्ग की यात्रा टालें; रोमांस व प्रस्ताव: मूड स्विंग्स में आकर तुरंत 'हाँ' या 'ना' न कहें।",
+                doEn: "Emotional bonding, family care, public relations, meals, meditation, and calm decisions; reflecting gently on personal or family proposals. Travel: Trips near water, home/family, or peaceful places suit well; Romance: Spend time with warmth, care, and emotional safety.",
+                dontEn: "Fire/weapon risks, filing lawsuits, or major choices made in an unsettled mood. Travel: Avoid rough, unsafe, or isolated routes; Romance & proposals: Avoid instant 'yes' or 'no' driven by mood swings."
             },
             "Saturn": {
-                name: "शनि",
-                do: "कारखाना या मशीनरी से जुड़े कार्य, लोहा, कोयला, तेल या खनिज का काम, पुराना कर्ज चुकाना, भूमि की खुदाई व नींव डालना, अनुशासन, गहन अध्ययन, शोध और गोपनीय साधना।",
-                dont: "शुभ मांगलिक कार्य, विवाह वार्ता, नए वस्त्र पहनना, नई यात्रा आरंभ करना, नया कर्ज लेना तथा अधिकारियों या बड़ों से अनावश्यक विवाद करना।"
+                nameHi: "शनि",
+                nameEn: "Saturn (Shani)",
+                doHi: "पुराना कर्ज चुकाना, मशीनरी/लोहा/भूमि की नींव, अनुशासन, शोध व साधना; किसी गंभीर या दीर्घकालिक प्रस्ताव को परखने या अस्वीकार करने के लिए व्यावहारिक दृष्टि। यात्रा: अनिवार्य या कामकाजी यात्रा करें, अनावश्यक घूमने से बचें; रोमांस: गंभीर व जिम्मेदार व्यवहार रखें।",
+                dontHi: "मांगलिक कार्य, नया विवाह/रोमांस प्रस्ताव रखना, नए वस्त्र पहनना या नया कर्ज लेना। यात्रा: बिना तैयारी या जल्दबाजी में नई यात्रा शुरू न करें; रोमांस: ठंडेपन, दूरी या रूखेपन से रिश्ते को आहत न करें।",
+                doEn: "Clearing old debts, machinery/iron/foundation work, discipline, research, and Sadhana; practical judgment for vetting or declining long-term proposals. Travel: Stick to necessary/work trips rather than casual roaming; Romance: Stay steady, mature, and dependable.",
+                dontEn: "Auspicious ceremonies, initiating new romantic/wedding proposals, wearing new clothes, or taking loans. Travel: Avoid rushed or unprepared departures; Romance: Do not hurt closeness through coldness or distance."
             },
             "Jupiter": {
-                name: "बृहस्पति",
-                do: "विवाह, सगाई, गृह प्रवेश, धार्मिक अनुष्ठान, यज्ञ, गुरु या आचार्य से मार्गदर्शन/दीक्षा, उच्च शिक्षा, ज्ञान अर्जन, बैंक/दीर्घकालिक निवेश, स्वर्ण आभूषण और न्याय/समझौते से जुड़े कार्य।",
-                dont: "झूठ बोलना, अनैतिक या छलपूर्ण व्यापार, लोहे/कबाड़ का सौदा, तामसिक भोजन, मदिरा, तथा जुआ या सट्टेबाजी।"
+                nameHi: "बृहस्पति",
+                nameEn: "Jupiter (Brihaspati)",
+                doHi: "विवाह/सगाई/गृह प्रवेश, गुरु व उच्च शिक्षा, धर्म/अनुष्ठान, निवेश तथा सम्मानजनक व भविष्य-निर्माण वाले प्रस्ताव रखना या स्वीकार करना। यात्रा: तीर्थ, ज्ञान या उच्च उद्देश्य की यात्रा अत्यंत शुभ; रोमांस: सम्मान, विश्वास और दीर्घकालिक प्रतिबद्धता के साथ आगे बढ़ें।",
+                dontHi: "झूठ, छल, सट्टा/जुआ या अनैतिक सौदे। यात्रा: अनैतिक या संदिग्ध उद्देश्य वाली यात्रा टालें; रोमांस व प्रस्ताव: गरिमा और मर्यादा के विपरीत कोई वचन या स्वीकारोक्ति न दें।",
+                doEn: "Marriage/engagement/Griha Pravesh, mentors & higher study, rituals, investments, and presenting or accepting honorable, growth-oriented proposals. Travel: Pilgrimage, learning, or purposeful journeys are auspicious; Romance: Move forward with mutual respect, trust, and long-term commitment.",
+                dontEn: "Dishonesty, deception, gambling, or unethical deals. Travel: Avoid dubious or improper trips; Romance & proposals: Never make promises or acceptances that compromise dignity."
             },
             "Mars": {
-                name: "मंगल",
-                do: "जिम, शारीरिक व्यायाम, खेलकूद, भूमि या प्लॉट से जुड़े कार्य, तकनीकी/इंजीनियरिंग कार्य, साहसिक निर्णय, प्रतियोगिता और अवरोधों को दूर करने वाले सक्रिय कार्य।",
-                dont: "विवाह की बातचीत या रस्में, नए वस्त्र पहनना, शांत/मांगलिक यात्रा का आरंभ, किसी को कर्ज देना, तथा साझेदार या जीवनसाथी से क्रोध में बहस करना।"
+                nameHi: "मंगल",
+                nameEn: "Mars (Mangala)",
+                doHi: "जिम, खेल, भूमि/प्लॉट, तकनीकी कार्य और साहसिक फ़ैसले; स्पष्ट व सीधी बात के साथ निर्णय लेना। यात्रा: सक्रिय या कार्य-संबंधी यात्रा करें; रोमांस: उत्साह और आकर्षण बना रहता है, पर जल्दबाजी व ज़िद से बचें।",
+                dontHi: "विवाह प्रस्ताव रखना, नए वस्त्र पहनना या कर्ज देना। यात्रा: क्रोध, हड़बड़ी या लापरवाही से वाहन चलाने/यात्रा करने से बचें; रोमांस व प्रस्ताव: गुस्से या ज़िद में आकर कोई प्रस्ताव न रखें और न ही कठोरता से अस्वीकार करें।",
+                doEn: "Gym, sports, land/plot matters, technical work, and bold decisions; making direct, decisive calls. Travel: Active or work-driven trips fit well; Romance: Energy and attraction run high, but avoid rush or stubbornness.",
+                dontEn: "Presenting marriage proposals, wearing new clothes, or lending money. Travel: Avoid driving or traveling in anger, haste, or carelessness; Romance & proposals: Do not propose or reject harshly in anger or stubbornness."
             }
         };
 
@@ -202,6 +232,164 @@
             return horaGuidelines.Jupiter;
         }
 
+        function applyHoraLabels() {
+            document.documentElement.lang = isHoraHindi ? "hi" : "en";
+            document.getElementById("hora-lang-btn").innerText = isHoraHindi ? "English" : "हिन्दी";
+            document.getElementById("top-return-btn").innerText = isHoraHindi ? "← मुख्य पृष्ठ" : "← Main Page";
+            document.getElementById("bottom-return-btn").innerText = isHoraHindi ? "← मुख्य पृष्ठ पर वापस जाएं" : "← Back to Main Page";
+            document.getElementById("top-consult-btn").innerText = isHoraHindi ? "परामर्श लें" : "Consult Now";
+            document.getElementById("hora-main-heading").innerText = isHoraHindi
+                ? "दैनिक शुभ, अशुभ मुहूर्त एवं 24 होरा चक्र"
+                : "Daily Shubh & Ashubh Muhurat & 24 Hora Chakra";
+            document.getElementById("lbl-select-date").innerText = isHoraHindi ? "दिनांक चुनें:" : "Select Date:";
+            document.getElementById("lbl-muhurat-section").innerText = isHoraHindi
+                ? "✦ शुभ एवं अशुभ मुहूर्त — दैनिक जीवन, यात्रा, प्रस्ताव व व्यवहार के नियम"
+                : "✦ Shubh & Ashubh Muhurat — Daily Life, Travel, Proposals & Conduct Rules";
+            document.getElementById("lbl-shubh-heading").innerText = isHoraHindi
+                ? "शुभ एवं प्रशस्त काल (विस्तृत विवरण)"
+                : "Auspicious Windows (Detailed Do's & Don'ts)";
+            document.getElementById("lbl-ashubh-heading").innerText = isHoraHindi
+                ? "अशुभ / सावधानी काल (विस्तृत विवरण)"
+                : "Cautionary Periods (Detailed Do's & Don'ts)";
+            document.getElementById("lbl-day-hora-heading").innerText = isHoraHindi
+                ? "☀️ दिन की 12 होरा (रोमांस, यात्रा, प्रस्ताव व दैनिक नियम)"
+                : "☀️ 12 Daytime Horas (Romance, Travel, Proposals & Daily Rules)";
+            document.getElementById("lbl-night-hora-heading").innerText = isHoraHindi
+                ? "🌙 रात्रि की 12 होरा (रोमांस, यात्रा, प्रस्ताव व दैनिक नियम)"
+                : "🌙 12 Nighttime Horas (Romance, Travel, Proposals & Daily Rules)";
+        }
+
+        function renderHoraData(data) {
+            if (!data || data.status !== "success") return;
+
+            if (document.getElementById("horaPageDate")) {
+                document.getElementById("horaPageDate").innerText = data.calendarDate || "";
+            }
+
+            const dw = data.auspiciousDailyWindows || {};
+            const cp = data.cautionaryPeriods || {};
+
+            if (isHoraHindi) {
+                document.getElementById("pageShubhList").innerHTML = `
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">ब्रह्म मुहूर्त (${dw.brahmaMuhurta || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> ध्यान, प्राणायाम, योग, मंत्र जप, स्वाध्याय और शांत आत्म-चिंतन। यात्रा/प्रस्ताव: बड़े प्रस्तावों या यात्रा की शांत योजना बनाएं।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> देर तक सोना, आलस्य या कलह। रोमांस/प्रस्ताव: जल्दबाजी या शोर-शराबे में कोई प्रस्ताव न रखें।</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">प्रातः सन्ध्या (${dw.pratahSandhya || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> सूर्य अर्घ्य, नित्य देव-पूजन, गायत्री/स्तोत्र पाठ और सकारात्मक संकल्प। यात्रा: साफ़-सुथरी और शांत शुरुआत करें।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> कटु वचन, क्रोध या नकारात्मक चर्चा। प्रस्ताव: बिना स्पष्टता के किसी प्रस्ताव को स्वीकार या अस्वीकार न करें।</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">अभिजित मुहूर्त (${dw.abhijitMuhurta || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> नए कार्य/व्यापार का शुभारंभ, महत्वपूर्ण मीटिंग/एग्रीमेंट, निवेश, और ठोस प्रस्ताव रखना या स्वीकार करना। यात्रा: कार्य या महत्वपूर्ण उद्देश्य की यात्रा के लिए उत्तम।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> बुधवार होने पर दक्षिण दिशा की यात्रा तथा अधूरी जानकारी में बड़ा जोखिम। रोमांस/प्रस्ताव: जल्दबाजी में बिना सोचे-समझे 'हाँ' न कहें।</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">गोधूलि मुहूर्त (${dw.godhuliMuhurta || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> संध्या वंदन, दीप प्रज्वलन, पूजा-आरती, पारिवारिक मेल-मिलाप और मंगल संकल्प। रोमांस: सौम्य व सम्मानजनक समय बिताएं।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> लंबी नई यात्रा शुरू करना या झगड़ा करना। प्रस्ताव: तनाव या जल्दबाजी में कोई तीखा जवाब न दें।</div>
+                    </div>
+                `;
+
+                document.getElementById("pageAshubhList").innerHTML = `
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
+                        <div class="text-rose-400 font-bold">राहुकाल (${cp.rahuKaal || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> इष्ट मंत्र जप, ध्यान, शांत चिंतन या पहले से चल रहे रूटीन कार्य।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> नया व्यापार शुरू करना, एग्रीमेंट/बयाना देना, वाहन/आभूषण खरीदना। यात्रा: नई या अहम यात्रा पर निकलने से बचें; प्रस्ताव: नया प्रस्ताव रखने या बड़ा फ़ैसला स्वीकार करने से बचें।</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
+                        <div class="text-rose-400 font-bold">यमगण्ड (${cp.yamaganda || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> सामान्य दिनचर्या, कागज़ात जांचना या विश्राम।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> बड़ी बैठक, नई साझेदारी या संवेदनशील निर्णय। यात्रा: अनावश्यक यात्रा टालें; रोमांस/प्रस्ताव: भावनात्मक या नाज़ुक प्रस्तावों पर बात टालना बेहतर है।</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
+                        <div class="text-rose-400 font-bold">गुलिक काल (${cp.gulikaKaal || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> पुराने रुके छोटे काम निपटाना, सफ़ाई या स्थिर साधना।</div>
+                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> नया कारोबार, प्रॉपर्टी रजिस्ट्री या कर्ज लेना/देना। यात्रा: नई यात्रा आरंभ न करें; प्रस्ताव: नए अवसर/प्रस्ताव पर अंतिम निर्णय बाद के लिए रखें।</div>
+                    </div>
+                `;
+            } else {
+                document.getElementById("pageShubhList").innerHTML = `
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">Brahma Muhurta (${dw.brahmaMuhurta || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Meditation, Pranayama, yoga, Mantra Japa, self-study, and calm reflection. Travel/Proposals: Plan upcoming journeys or major proposals quietly.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Oversleep, stay sluggish, or quarrel. Romance/Proposals: Avoid pitching proposals in haste or noisy settings.</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">Pratah Sandhya (${dw.pratahSandhya || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Surya Arghya, daily worship, Gayatri/stotra recitation, and clear positive intention. Travel: Start cleanly and calmly.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Harsh words, anger, or negative talk. Proposals: Avoid accepting or rejecting a proposal without clear facts.</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">Abhijit Muhurta (${dw.abhijitMuhurta || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Launch new work/business, key meetings/agreements, investments, and presenting or accepting solid proposals. Travel: Great for work or purposeful travel.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Southward travel on Wednesday or big risks on incomplete info. Romance/Proposals: Avoid rushing into a 'yes' without thinking through.</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
+                        <div class="text-emerald-300 font-bold">Godhuli Muhurta (${dw.godhuliMuhurta || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Evening prayers, lighting lamps, Aarti, family time, and auspicious resolve. Romance: Enjoy warm, respectful time together.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Start a long new journey or argue. Proposals: Avoid sharp or rushed replies under stress.</div>
+                    </div>
+                `;
+
+                document.getElementById("pageAshubhList").innerHTML = `
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
+                        <div class="text-rose-400 font-bold">Rahu Kaal (${cp.rahuKaal || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Mantra repetition, meditation, quiet thinking, or routine ongoing tasks.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Launch new business, sign contracts/token money, or buy vehicles/jewelry. Travel: Avoid starting new or key trips; Proposals: Hold off on pitching or accepting major proposals.</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
+                        <div class="text-rose-400 font-bold">Yamaganda (${cp.yamaganda || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Routine chores, checking papers, or rest.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Major negotiations, new partnerships, or sensitive decisions. Travel: Skip unneeded trips; Romance/Proposals: Better to postpone delicate or romantic proposals.</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
+                        <div class="text-rose-400 font-bold">Gulika Kaal (${cp.gulikaKaal || '--'})</div>
+                        <div class="text-emerald-200/90"><b>✓ Do:</b> Finish small pending tasks, tidy up, or do steady Sadhana.</div>
+                        <div class="text-rose-300/90"><b>✗ Don't:</b> Start new business, property deeds, or loans. Travel: Avoid beginning new travel; Proposals: Defer final acceptance or rejection of new offers.</div>
+                    </div>
+                `;
+            }
+
+            const renderCards = (list, targetId, borderClass, titleColor) => {
+                const el = document.getElementById(targetId);
+                if (!el || !Array.isArray(list)) return;
+                el.innerHTML = list.map(h => {
+                    const info = pickHoraRule(h.ruler);
+                    const heading = isHoraHindi ? `${h.hora}. ${info.nameHi} होरा` : `${h.hora}. ${info.nameEn} Hora`;
+                    const doLabel = isHoraHindi ? "✓ क्या करें:" : "✓ Do:";
+                    const dontLabel = isHoraHindi ? "✗ क्या न करें:" : "✗ Don't:";
+                    const doText = isHoraHindi ? info.doHi : info.doEn;
+                    const dontText = isHoraHindi ? info.dontHi : info.dontEn;
+
+                    return `
+                        <div class="p-4 rounded-2xl bg-obsidian-900 border ${borderClass} text-xs space-y-2 shadow-md">
+                            <div class="flex justify-between items-center border-b border-gold-500/20 pb-1.5 gap-2">
+                                <b class="${titleColor} font-cinzel text-sm leading-[1.5]">${heading}</b>
+                                <span class="text-gold-200 font-mono text-[11px] whitespace-nowrap">${h.time}</span>
+                            </div>
+                            <div class="text-emerald-300 leading-relaxed"><b class="text-emerald-400">${doLabel}</b> ${doText}</div>
+                            <div class="text-rose-300 leading-relaxed pt-1 border-t border-gold-500/10"><b class="text-rose-400">${dontLabel}</b> ${dontText}</div>
+                        </div>
+                    `;
+                }).join('');
+            };
+
+            renderCards(data.horaWheel?.dayHoras, "pageDayHora", "border-gold-500/30", "text-gold-300");
+            renderCards(data.horaWheel?.nightHoras, "pageNightHora", "border-gray-600/40", "text-amber-200");
+        }
+
+        function toggleHoraLanguage() {
+            isHoraHindi = !isHoraHindi;
+            localStorage.setItem("kaalgya_lang", isHoraHindi ? "hi" : "en");
+            applyHoraLabels();
+            if (cachedHoraData) {
+                renderHoraData(cachedHoraData);
+            }
+        }
+
         async function loadHoraPage(targetDate = "") {
             let url = `${KAALGYA_BACKEND_URL}?action=getPanchang`;
             if (targetDate) url += `&date=${targetDate}`;
@@ -211,83 +399,18 @@
                 const data = await res.json();
                 if (data.status !== "success") return;
 
+                cachedHoraData = data;
                 if (!targetDate && document.getElementById("horaDatePicker")) {
                     document.getElementById("horaDatePicker").value = data.requestedDate;
                 }
-                if (document.getElementById("horaPageDate")) {
-                    document.getElementById("horaPageDate").innerText = data.calendarDate || "";
-                }
-
-                const dw = data.auspiciousDailyWindows || {};
-                const cp = data.cautionaryPeriods || {};
-
-                document.getElementById("pageShubhList").innerHTML = `
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
-                        <div class="text-emerald-300 font-bold">ब्रह्म मुहूर्त (${dw.brahmaMuhurta || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> ध्यान, प्राणायाम, योग, मंत्र जप, स्वाध्याय, आध्यात्मिक चिंतन और दिन की शांत योजना बनाना।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> अधिक देर तक सोना, आलस्य, भारी भोजन, शोर-शराबा या किसी प्रकार का वाद-विवाद।</div>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
-                        <div class="text-emerald-300 font-bold">प्रातः सन्ध्या (${dw.pratahSandhya || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> सूर्य को जल अर्घ्य, नित्य देव-पूजन, गायत्री मंत्र/स्तोत्र पाठ, घर की स्वच्छता और सकारात्मक संकल्प।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> कटु वचन, क्रोध, नकारात्मक चर्चा या दिन की शुरुआत बिना उद्देश्य के करना।</div>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
-                        <div class="text-emerald-300 font-bold">अभिजित मुहूर्त (${dw.abhijitMuhurta || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> नए कार्य या व्यापार का शुभारंभ, महत्वपूर्ण मीटिंग/एग्रीमेंट, निवेश, आवेदन और कठिन कार्यों में पहल करना।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> यदि बुधवार हो तो दक्षिण दिशा की यात्रा तथा जल्दबाजी में अधूरी जानकारी के साथ कोई बड़ा जोखिम लेना।</div>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-emerald-500/20 space-y-1">
-                        <div class="text-emerald-300 font-bold">गोधूलि मुहूर्त (${dw.godhuliMuhurta || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> संध्या वंदन, दीप प्रज्वलन, पूजा-आरती, पारिवारिक मेल-मिलाप और शुभ कार्यों से जुड़े मंगल संकल्प।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> लंबी यात्रा शुरू करना, क्रोध/झगड़ा करना या अनावश्यक तनाव लेना।</div>
-                    </div>
-                `;
-
-                document.getElementById("pageAshubhList").innerHTML = `
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
-                        <div class="text-rose-400 font-bold">राहुकाल (${cp.rahuKaal || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> केवल इष्ट मंत्र जप, ध्यान, शांत चिंतन या पहले से चल रहे सामान्य रूटीन कार्य।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> नया व्यापार या काम शुरू करना, एग्रीमेंट/बयाना देना, महत्वपूर्ण यात्रा पर निकलना, या वाहन/आभूषण/संपत्ति खरीदना।</div>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
-                        <div class="text-rose-400 font-bold">यमगण्ड (${cp.yamaganda || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> सामान्य दिनचर्या, दस्तावेज़ों की जांच, फाइलें व्यवस्थित करना या विश्राम।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> बड़ी व्यावसायिक बैठक, नई साझेदारी, मांगलिक/संतान संबंधी शुरुआत या जल्दबाजी में बड़े फैसले लेना।</div>
-                    </div>
-                    <div class="p-3 rounded-xl bg-obsidian-950/70 border border-rose-500/20 space-y-1">
-                        <div class="text-rose-400 font-bold">गुलिक काल (${cp.gulikaKaal || '--'})</div>
-                        <div class="text-emerald-200/90"><b>✓ क्या करें:</b> पुराने रुके हुए छोटे काम निपटाना, साफ-सफाई, साधना या स्थिर कार्य पूरे करना।</div>
-                        <div class="text-rose-300/90"><b>✗ क्या न करें:</b> नया कारोबार शुरू करना, प्रॉपर्टी/रजिस्ट्री, कर्ज लेना या किसी को बड़ा धन उधार देना।</div>
-                    </div>
-                `;
-
-                const renderCards = (list, targetId, borderClass, titleColor) => {
-                    const el = document.getElementById(targetId);
-                    if (!el || !Array.isArray(list)) return;
-                    el.innerHTML = list.map(h => {
-                        const info = pickHoraRule(h.ruler);
-                        return `
-                            <div class="p-4 rounded-2xl bg-obsidian-900 border ${borderClass} text-xs space-y-2 shadow-md">
-                                <div class="flex justify-between items-center border-b border-gold-500/20 pb-1.5">
-                                    <b class="${titleColor} font-cinzel text-sm leading-[1.5]">${h.hora}. ${info.name} होरा</b>
-                                    <span class="text-gold-200 font-mono text-[11px]">${h.time}</span>
-                                </div>
-                                <div class="text-emerald-300 leading-relaxed"><b class="text-emerald-400">✓ क्या करें:</b> ${info.do}</div>
-                                <div class="text-rose-300 leading-relaxed pt-1 border-t border-gold-500/10"><b class="text-rose-400">✗ क्या न करें:</b> ${info.dont}</div>
-                            </div>
-                        `;
-                    }).join('');
-                };
-
-                renderCards(data.horaWheel?.dayHoras, "pageDayHora", "border-gold-500/30", "text-gold-300");
-                renderCards(data.horaWheel?.nightHoras, "pageNightHora", "border-gray-600/40", "text-amber-200");
+                renderHoraData(data);
             } catch (e) {
                 console.error("Hora page error:", e);
             }
         }
 
         document.addEventListener("DOMContentLoaded", () => {
+            applyHoraLabels();
             loadHoraPage();
         });
     </script>
