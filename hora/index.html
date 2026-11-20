@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="hi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 होरा चक्र व शुभ-अशुभ मुहूर्त | KAALGYA (कालज्ञ)</title>
+    <meta name="description" content="15+ वर्षों के शास्त्रसम्मत अनुभव के साथ KAALGYA पर देखें आज का 24 होरा चक्र, शुभ मुहूर्त, राहुकाल और किस होरा में क्या करें व क्या न करें।">
+    <link rel="canonical" href="https://kaalgya.com/hora/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#030305">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#FBDD80', 400: '#F9CF4D', 500: '#D4AF37', 600: '#B8860B' },
+                        obsidian: { 950: '#020204', 900: '#05060A' }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030305;
+            color: #E2E8F0;
+            overflow-x: hidden;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF9E6 0%, #F5D061 30%, #D4AF37 60%, #AA771C 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cosmic-glass {
+            background: rgba(10, 12, 18, 0.92);
+            backdrop-filter: blur(16px);
+        }
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
+        }
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(0.8) sepia(1) saturate(5) hue-rotate(5deg);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="selection:bg-gold-500 selection:text-black min-h-screen">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 cosmic-glass border-b border-gold-500/20 px-4 lg:px-10 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+            <a href="https://kaalgya.com/" class="flex items-center gap-3">
+                <div class="relative w-11 h-11 rounded-full border-2 border-gold-500/80 bg-black overflow-hidden flex-shrink-0">
+                    <video autoplay loop muted playsinline class="absolute pointer-events-none max-w-none rounded-full" style="width: 197%; height: 197%; object-fit: contain; top: 50%; left: 50%; transform: translate(-49.6%, -44%);">
+                        <source src="https://kaalgya.com/logo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div>
+                    <span class="font-cinzel font-black text-xl gold-gradient-text block leading-none">KAALGYA</span>
+                    <span class="text-[8px] tracking-[0.18em] text-gold-300 font-semibold uppercase mt-1 block">Ancient Wisdom • Modern Intelligence</span>
+                </div>
+            </a>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+                <a href="https://kaalgya.com/" class="px-3.5 py-2 rounded-xl border border-gold-500/40 bg-obsidian-900 text-gold-300 text-xs font-bold hover:border-gold-400">
+                    ← मुख्य पृष्ठ
+                </a>
+                <a href="https://forms.gle/TqZrbxcDQFmxy6iH9" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase">
+                    परामर्श लें
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-12 px-4 max-w-5xl mx-auto space-y-8">
+        <div class="w-full rounded-3xl overflow-hidden border border-gold-500/40 bg-obsidian-950">
+            <img src="https://kaalgya.com/banner-panchang.jpg" onerror="this.style.display='none'" alt="24 होरा चक्र एवं शुभ-अशुभ मुहूर्त" class="w-full h-52 sm:h-72 object-cover object-center opacity-75">
+        </div>
+
+        <div class="text-center space-y-2">
+            <h1 class="text-2xl sm:text-4xl font-bold font-cinzel gold-gradient-text">दैनिक शुभ, अशुभ मुहूर्त एवं 24 होरा चक्र</h1>
+            <p id="horaPageDate" class="text-xs sm:text-sm text-gold-300 font-mono">पंचांग लोड हो रहा है...</p>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="flex items-center gap-2 bg-obsidian-900 border border-gold-500/40 px-4 py-2 rounded-2xl">
+                <label for="horaDatePicker" class="text-xs text-gold-300 font-semibold">दिनांक चुनें:</label>
+                <input type="date" id="horaDatePicker" onchange="loadHoraPage(this.value)" class="bg-transparent text-white font-mono font-bold text-xs focus:outline-none cursor-pointer">
+            </div>
+        </div>
+
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-emerald-500">
+                    <h2 class="text-emerald-400 font-bold text-sm font-cinzel mb-3 uppercase">शुभ एवं प्रशस्त काल (क्या करें)</h2>
+                    <div id="pageShubhList" class="text-xs text-gray-200 leading-relaxed space-y-2">लोड हो रहा है...</div>
+                </div>
+                <div class="p-5 rounded-2xl bg-obsidian-900 border-l-4 border-red-500">
+                    <h2 class="text-red-400 font-bold text-sm font-cinzel mb-3 uppercase">अशुभ / सावधानी काल (क्या न करें)</h2>
+                    <div id="pageAshubhList" class="text-xs text-gray-200 leading-relaxed space-y-2">लोड हो रहा है...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <h2 class="text-sm font-bold text-gold-400 font-cinzel uppercase">☀️ दिन की 12 होरा</h2>
+            <div id="pageDayHora" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+        </div>
+
+        <div class="space-y-4">
+            <h2 class="text-sm font-bold text-gold-400 font-cinzel uppercase">🌙 रात्रि की 12 होरा</h2>
+            <div id="pageNightHora" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
+        </div>
+    </main>
+
+    <script>
+        const KAALGYA_BACKEND_URL = "https://script.google.com/macros/s/AKfycbw9PfIaOjI31X8cQh17Q6Q4EBH2HA2T4ngpGsm4HxPA-m4gJyLF4cuEXxOXdq3IyDE/exec";
+
+        const horaGuidelines = {
+            "Sun": { name: "सूर्य", do: "सरकारी कार्य, टेंडर व कॉन्ट्रैक्ट, उच्चाधिकारियों से भेंट, नवीन पदभार, सोने की खरीद।", dont: "नया वाहन चलाना, गृह प्रवेश, विवाह वार्ता, झगड़ा या कर्ज लेना।" },
+            "Venus": { name: "शुक्र", do: "प्रेम प्रस्ताव, विवाह वार्ता, नए वस्त्र-आभूषण, कला/संगीत, सौंदर्य व वाहन क्रय।", dont: "लोहे/मशीनरी का सौदा, कर्ज लेनदेन, विवाद या कड़े दंडात्मक निर्णय।" },
+            "Mercury": { name: "बुध", do: "व्यापारिक डील, बहीखाता, शेयर/निवेश, एग्रीमेंट, अध्ययन, लेखन व बैंकिंग।", dont: "जमीन-मकान रजिस्ट्री, विवाह संस्कार, तामसिक भोजन या उग्र वाद-विवाद।" },
+            "Moon": { name: "चन्द्र", do: "जल यात्रा, चांदी/मोती खरीदना, जनसंपर्क, मातृ सेवा, ध्यान व मानसिक शांति।", dont: "अग्नि/शस्त्र कार्य, मुकदमा दायर करना, कठोर निर्णय या बड़ा कर्ज देना।" },
+            "Saturn": { name: "शनि", do: "फैक्ट्री/मशीनरी, लोहा/तेल/खनिज, पुराना कर्ज चुकाना, नींव डालना व साधना।", dont: "मांगलिक कार्य, विवाह वार्ता, नए वस्त्र, यात्रा आरंभ या कर्ज लेना।" },
+            "Jupiter": { name: "बृहस्पति", do: "विवाह, सगाई, गृह प्रवेश, निवेश, स्वर्ण, दीक्षा, अनुष्ठान व उच्च शिक्षा।", dont: "झूठ बोलना, अनैतिक व्यापार, लोहे का क्रय या सट्टा/जुआ।" },
+            "Mars": { name: "मंगल", do: "जिम/व्यायाम, खेल, भूमि/प्लॉट, तकनीकी कार्य व साहसिक निर्णय।", dont: "विवाह वार्ता, नए वस्त्र, शांत यात्रा आरंभ या साझेदार से विवाद।" }
+        };
+
+        function pickHoraRule(rulerStr) {
+            const r = String(rulerStr || "").toLowerCase();
+            if (r.includes("sun") || r.includes("सूर्य")) return horaGuidelines.Sun;
+            if (r.includes("venus") || r.includes("शुक्र")) return horaGuidelines.Venus;
+            if (r.includes("mercury") || r.includes("बुध")) return horaGuidelines.Mercury;
+            if (r.includes("moon") || r.includes("चन्द्र") || r.includes("चंद्र")) return horaGuidelines.Moon;
+            if (r.includes("saturn") || r.includes("शनि")) return horaGuidelines.Saturn;
+            if (r.includes("jupiter") || r.includes("बृहस्पति") || r.includes("गुरु")) return horaGuidelines.Jupiter;
+            if (r.includes("mars") || r.includes("मंगल")) return horaGuidelines.Mars;
+            return horaGuidelines.Jupiter;
+        }
+
+        async function loadHoraPage(targetDate = "") {
+            let url = `${KAALGYA_BACKEND_URL}?action=getPanchang`;
+            if (targetDate) url += `&date=${targetDate}`;
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                if (data.status !== "success") return;
+
+                if (!targetDate && document.getElementById("horaDatePicker")) {
+                    document.getElementById("horaDatePicker").value = data.requestedDate;
+                }
+                if (document.getElementById("horaPageDate")) {
+                    document.getElementById("horaPageDate").innerText = data.calendarDate || "";
+                }
+
+                const dw = data.auspiciousDailyWindows || {};
+                const cp = data.cautionaryPeriods || {};
+
+                document.getElementById("pageShubhList").innerHTML = `
+                    <div><b class="text-emerald-300">ब्रह्म मुहूर्त:</b> ${dw.brahmaMuhurta || '--'} — साधना, योग, ध्यान, मंत्र जप।</div>
+                    <div><b class="text-emerald-300">प्रातः सन्ध्या:</b> ${dw.pratahSandhya || '--'} — सूर्य अर्घ्य, नित्य देव पूजन, गायत्री जप।</div>
+                    <div><b class="text-emerald-300">अभिजित मुहूर्त:</b> ${dw.abhijitMuhurta || '--'} — व्यापार शुभारंभ, अनुबंध व महत्वपूर्ण निर्णय।</div>
+                    <div><b class="text-emerald-300">गोधूलि मुहूर्त:</b> ${dw.godhuliMuhurta || '--'} — संध्या वंदन, दीप प्रज्वलन, लक्ष्मी पूजन।</div>
+                `;
+
+                document.getElementById("pageAshubhList").innerHTML = `
+                    <div><b class="text-rose-400">राहुकाल:</b> ${cp.rahuKaal || '--'} — नया अनुबंध, यात्रा प्रस्थान, वाहन/आभूषण क्रय टालें।</div>
+                    <div><b class="text-rose-400">यमगण्ड:</b> ${cp.yamaganda || '--'} — महत्वपूर्ण बैठक व साझेदारी निर्णयों से बचें।</div>
+                    <div><b class="text-rose-400">गुलिक काल:</b> ${cp.gulikaKaal || '--'} — नया व्यापार आरंभ, रजिस्ट्री व कर्ज लेने से बचें।</div>
+                `;
+
+                const renderCards = (list, targetId, borderClass, titleColor) => {
+                    const el = document.getElementById(targetId);
+                    if (!el || !Array.isArray(list)) return;
+                    el.innerHTML = list.map(h => {
+                        const info = pickHoraRule(h.ruler);
+                        return `
+                            <div class="p-3.5 rounded-2xl bg-obsidian-900 border ${borderClass} text-xs space-y-1.5">
+                                <div class="flex justify-between items-center border-b border-gold-500/20 pb-1">
+                                    <b class="${titleColor} font-cinzel text-sm">${h.hora}. ${info.name} होरा</b>
+                                    <span class="text-gold-200 font-mono text-[11px]">${h.time}</span>
+                                </div>
+                                <div class="text-emerald-300"><b>✓ क्या करें:</b> ${info.do}</div>
+                                <div class="text-rose-300"><b>✗ क्या न करें:</b> ${info.dont}</div>
+                            </div>
+                        `;
+                    }).join('');
+                };
+
+                renderCards(data.horaWheel?.dayHoras, "pageDayHora", "border-gold-500/30", "text-gold-300");
+                renderCards(data.horaWheel?.nightHoras, "pageNightHora", "border-gray-600/40", "text-amber-200");
+            } catch (e) {
+                console.error("Hora page error:", e);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadHoraPage();
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
