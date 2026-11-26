@@ -301,25 +301,39 @@
                 ? "यह फलादेश वैदिक ज्योतिष के अनुसार आपकी <b>जन्म चंद्र राशि (Moon Sign)</b> और वर्तमान ग्रह गोचर पर आधारित है। केवल सूर्य राशि अथवा सामान्य नाम राशि को व्यक्तिगत कुंडली का पूर्ण फल न समझें। जीवन की व्यक्तिगत सटीक घटनाओं के लिए जन्म लग्न, चालू महादशा/अंतर्दशा एवं अष्टकवर्ग का व्यक्तिगत कुंडली विश्लेषण आवश्यक है।"
                 : "This forecast is mathematically calculated using your classical <b>Vedic Moon Sign (Chandra Rashi)</b> and ongoing planetary transits. Do not mistake broad Sun-sign generalizations for personalized destiny. Specific personal timing requires individual birth lagna, ongoing mahadasha/antardasha, and ashtakavarga analysis.";
 
-            const wText = (rashifalPayload && rashifalPayload.weekRange) ? rashifalPayload.weekRange : "16 नव॰ - 22 नव॰ 2026";
-const wTextEn = (rashifalPayload && rashifalPayload.weekRangeEn) ? rashifalPayload.weekRangeEn : "Nov 16 - Nov 22, 2026";
+            const fallbackHi = "साप्ताहिक फलादेश";
+const fallbackEn = "Weekly Transit";
+const wText = (rashifalPayload && rashifalPayload.weekRange) ? rashifalPayload.weekRange : fallbackHi;
+const wTextEn = (rashifalPayload && rashifalPayload.weekRangeEn) ? rashifalPayload.weekRangeEn : fallbackEn;
             document.getElementById("weekRangeBadge").innerText = isHi ? `साप्ताहिक फलादेश • ${wText}` : `Weekly Transit • ${wTextEn}`;
         }
 
         async function initPortal() {
-            updateStaticText();
-            try {
-                const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`);
-                const json = await res.json();
-                if (json.status === "success" && json.data && json.data.predictions) {
-                    rashifalPayload = json.data;
-                }
-            } catch (err) {
-                console.warn("Using verified shastriya ephemeris payload");
-            }
-            renderPills();
-            renderDetail();
-        }
+    updateStaticText();
+    renderPills();
+    renderDetail();
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+    try {
+        const res = await fetch(`${BACKEND_URL}?action=getWeeklyRashifal`, {
+            signal: controller.signal,
+            cache: "no-store"
+        });
+        const json = await res.json();
+        if (json && json.status === "success" && json.data && Array.isArray(json.data.predictions) && json.data.predictions.length > 0) {
+            rashifalPayload = json.data;
+            updateStaticText();
+            renderPills();
+            renderDetail();
+        }
+    } catch (err) {
+        console.warn("Using verified shastriya ephemeris payload");
+    } finally {
+        clearTimeout(timeoutId);
+    }
+}
         
         
         function renderPills() {
