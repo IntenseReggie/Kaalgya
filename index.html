@@ -6,7 +6,7 @@
     <title>KAALGYA | Ancient Wisdom • Modern Intelligence | Vedic Astrology, Panchang & Occult Science</title>
     
     <!-- Global & Regional SEO Meta Tags -->
-    <meta name="description" content="KAALGYA (कालज्ञ) - Arambh Nath | 15+ years experience & 5,000+ charts analyzed. Vedic Astrology, Maha Vastu Rectification, 16 Shodash Sanskars Muhurat, 24 Hora Chakra, Panchang, Rashifal, Manifestation & Spiritual Tantra Science.">
+    <meta name="description" content="KAALGYA (कालज्ञ) - Arambh Nath | 15+ years experience & 5,000+ charts analyzed. Vedic Astrology, Maha Vastu Rectification, 16 Shodash Sanskars Muhurat, 24 Hora Chakra, Panchang, Rashifal, Manifestation, Brahmashtra Vidhan & Pratyangira Sadhana.">
     <meta name="keywords" content="Kaalgya, Arambh Nath, Vedic Astrology, Occult Practitioner, Maha Vastu, Kundali Matching, Shodash Sanskars, 24 Hora, Panchang, Muhurat, Rashifal, Manifestation, Brahmashtra Vidhan, Pratyangira Sadhana, Global Astrologer">
     <meta name="author" content="Arambh Nath - KAALGYA">
     <meta name="publisher" content="KAALGYA">
@@ -31,7 +31,7 @@
     <meta property="og:site_name" content="KAALGYA">
     <meta property="og:url" content="https://kaalgya.com/">
     <meta property="og:title" content="KAALGYA - Decoding Destiny, Guiding Life | Vedic Astrology & Occult Science">
-    <meta property="og:description" content="अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। दैनिक पंचांग, होरा चक्र, 16 संस्कार मुहूर्त, राशिफल, अनुष्ठान एवं महावास्तु मार्गदर्शन।">
+    <meta property="og:description" content="अंधविश्वास नहीं, गणितीय गणना और कर्म सिद्धांत। दैनिक पंचांग, होरा चक्र, 16 संस्कार मुहूर्त, राशिफल, अनुष्ठान, ब्रह्मास्त्र विधान एवं प्रत्यंगिरा साधना।">
     <meta property="og:image" content="https://kaalgya.com/guruji.jpg">
     <meta property="og:locale" content="hi_IN">
     <meta property="og:locale:alternate" content="en_US">
@@ -40,7 +40,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://kaalgya.com/">
     <meta name="twitter:title" content="KAALGYA - Ancient Wisdom • Modern Intelligence">
-    <meta name="twitter:description" content="Vedic Astrology, Maha Vastu, 24 Hora Chakra, 16 Sanskars Muhurat, Panchang & Occult Science by Arambh Nath.">
+    <meta name="twitter:description" content="Vedic Astrology, Maha Vastu, 24 Hora Chakra, 16 Sanskars Muhurat, Panchang, Brahmashtra Vidhan & Pratyangira Sadhana by Arambh Nath.">
     <meta name="twitter:image" content="https://kaalgya.com/guruji.jpg">
 
     <!-- Microsoft Clarity -->
@@ -79,7 +79,7 @@
           "@id": "https://kaalgya.com/#organization",
           "name": "KAALGYA",
           "alternateName": "कालज्ञ",
-          "description": "15+ years experience & 5,000+ authentic charts analyzed. Vedic Astrology, Maha Vastu Rectification, 16 Shodash Sanskars Muhurats, 24 Hora Chakra, Rashifal, Manifestation & Anushthan by Arambh Nath.",
+          "description": "15+ years experience & 5,000+ authentic charts analyzed. Vedic Astrology, Maha Vastu Rectification, 16 Shodash Sanskars Muhurats, 24 Hora Chakra, Rashifal, Manifestation, Brahmashtra Vidhan & Pratyangira Sadhana by Arambh Nath.",
           "url": "https://kaalgya.com/",
           "image": "https://kaalgya.com/guruji.jpg",
           "telephone": "+919506795756",
@@ -362,7 +362,7 @@
                 </button>
                 <!-- Mobile Menu Toggle Button -->
                 <button id="mobile-menu-btn" type="button" onclick="toggleMobileMenu()" aria-label="Toggle Menu" aria-expanded="false" class="xl:hidden w-10 h-10 rounded-xl bg-obsidian-900 border border-gold-500/50 text-gold-300 hover:text-white hover:border-gold-400 flex items-center justify-center cursor-pointer transition-all">
-                    <i data-lucide="menu" class="w-5 h-5"></i>
+                    <i id="mobile-menu-icon" data-lucide="menu" class="w-5 h-5"></i>
                 </button>
             </div>
         </div>
@@ -503,7 +503,7 @@
                 </div>
 
                 <div class="text-center pt-4">
-                    <button onclick="openBookingModal('Brahmastra Vidhan', 'Brahmastra Vidhan Button')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
+                    <button onclick="navigateToPage('brahmastra-full')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
                         <i data-lucide="zap" class="w-4 h-4"></i> <span data-i18n="brahmaBtn">ब्रह्मास्त्र विधान विवरण देखें →</span>
                     </button>
                 </div>
@@ -540,7 +540,7 @@
                 </div>
 
                 <div class="text-center pt-4">
-                    <button onclick="openBookingModal('Viparita Pratyangira Mahakavach', 'Pratyangira Button')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
+                    <button onclick="navigateToPage('pratyangira-full')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl inline-flex items-center gap-2 transition-transform hover:scale-105">
                         <i data-lucide="flame" class="w-4 h-4"></i> <span data-i18n="pratagBtn">महाकवच प्राप्त करें →</span>
                     </button>
                 </div>
@@ -1122,6 +1122,85 @@
         </section>
     </div> <!-- Close view-home -->
 
+    <!-- ======================================================== -->
+    <!-- VIEW: BRAHMASTRA VIDHAN FULL PAGE (VISUALS + BILINGUAL)  -->
+    <!-- ======================================================== -->
+    <div id="view-brahmastra-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-5xl mx-auto">
+        <div class="mb-6 flex items-center justify-between">
+            <button type="button" onclick="navigateToPage('home')" class="px-5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/40 text-xs font-bold text-gold-300 hover:text-white flex items-center gap-2 cursor-pointer shadow-lg transition-all hover:scale-105" data-i18n="btnBackHome">
+                ← मुख्य पृष्ठ पर वापस जाएं
+            </button>
+            <span class="text-xs font-mono text-gold-400">KAALGYA • BRAHMASTRA VIDHANAM</span>
+        </div>
+
+        <div class="w-full rounded-3xl overflow-hidden border border-gold-500/40 shadow-[0_10px_35px_rgba(212,175,55,0.2)] mb-6 bg-obsidian-950">
+            <img src="banner-brahmastra-portal.jpg" onerror="this.src='banner-brahmastra.jpg'" alt="ब्रह्मास्त्र विधान" class="w-full h-56 sm:h-72 md:h-80 object-cover object-center">
+        </div>
+
+        <div class="cosmic-glass border border-gold-500/50 rounded-2xl p-4 sm:p-5 text-center mb-8 shadow-lg">
+            <p class="text-base sm:text-xl font-bold font-serif italic text-gold-300" data-i18n="bvCaption">
+                "जब संकल्प असाधारण हो, तो विधान भी विशिष्ट होना चाहिए।"
+            </p>
+        </div>
+
+        <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-12 space-y-8 shadow-2xl" data-i18n="bvFullContent"></div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- VIEW: MAA VIPARITA PRATYANGIRA FULL PAGE (VISUALS + BI)  -->
+    <!-- ======================================================== -->
+    <div id="view-pratyangira-full" class="page-view pt-36 sm:pt-40 md:pt-48 pb-24 px-4 max-w-5xl mx-auto space-y-12">
+        <div class="flex items-center justify-between">
+            <button type="button" onclick="navigateToPage('home')" class="px-5 py-2.5 rounded-xl bg-obsidian-900 border border-red-500/40 text-xs font-bold text-red-300 hover:text-white flex items-center gap-2 cursor-pointer shadow-lg transition-all hover:scale-105" data-i18n="btnBackHome">
+                ← मुख्य पृष्ठ पर वापस जाएं
+            </button>
+            <span class="text-xs font-mono text-red-400">KAALGYA • VIPARITA PRATYANGIRA PEETH</span>
+        </div>
+
+        <div class="space-y-6">
+            <div class="w-full rounded-3xl overflow-hidden border border-red-500/40 shadow-[0_10px_35px_rgba(220,38,38,0.2)] bg-obsidian-950">
+                <img src="banner-pratyangira-devi.jpg" onerror="this.src='banner-pratyangira.jpg'" alt="माँ प्रत्यंगिरा देवी स्वरूप" class="w-full h-56 sm:h-72 md:h-80 object-cover object-center">
+            </div>
+
+            <div class="cosmic-glass border border-red-500/50 rounded-2xl p-4 sm:p-5 text-center shadow-lg" data-i18n="mpCap1">
+                <h3 class="text-base sm:text-xl font-bold font-cinzel text-red-300">माँ प्रत्यंगिरा — महाशक्ति का अद्वितीय स्वरूप</h3>
+                <p class="text-xs sm:text-sm text-amber-200 font-serif italic mt-1">सिंहमुखी शक्ति, दिव्य तेज और आध्यात्मिक संरक्षण का प्रतीक।</p>
+            </div>
+
+            <div class="cosmic-glass border border-red-500/35 rounded-3xl p-6 md:p-10 space-y-5 shadow-2xl bg-gradient-to-b from-red-950/15 to-obsidian-950" data-i18n="mpContent1"></div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="w-full rounded-3xl overflow-hidden border border-amber-500/40 shadow-[0_10px_35px_rgba(217,119,6,0.2)] bg-obsidian-950">
+                <img src="banner-pratyangira-tantra.jpg" onerror="this.src='banner-pratyangira.jpg'" alt="विपरीत प्रत्यंगिरा तंत्र साधना" class="w-full h-56 sm:h-72 md:h-80 object-cover object-center">
+            </div>
+
+            <div class="cosmic-glass border border-amber-500/50 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
+                <p class="text-base sm:text-xl font-bold font-serif italic text-amber-300" data-i18n="mpCap2">
+                    तंत्र की गहन परंपरा। मंत्र की शुद्धता। शक्ति का अनुशासन।
+                </p>
+            </div>
+
+            <div class="cosmic-glass border border-amber-500/35 rounded-3xl p-6 md:p-10 space-y-6 shadow-2xl" data-i18n="mpContent2"></div>
+        </div>
+
+        <div class="space-y-6">
+            <div class="w-full rounded-3xl overflow-hidden border border-gold-500/40 shadow-[0_10px_35px_rgba(212,175,55,0.2)] bg-obsidian-950">
+                <img src="banner-pratyangira-moksha.jpg" onerror="this.src='banner-pratyangira.jpg'" alt="अतृप्त आत्मा शांति एवं सद्गति" class="w-full h-56 sm:h-72 md:h-80 object-cover object-center">
+            </div>
+
+            <div class="cosmic-glass border border-gold-500/50 rounded-2xl p-4 sm:p-5 text-center shadow-lg">
+                <p class="text-base sm:text-xl font-bold font-serif italic text-gold-300" data-i18n="mpCap3">
+                    जहाँ कामना हो शांति की, वहाँ प्रार्थना हो सद्गति की।
+                </p>
+            </div>
+
+            <div class="cosmic-glass gold-border-glow rounded-3xl p-6 md:p-10 space-y-6 shadow-2xl" data-i18n="mpContent3"></div>
+
+            <div class="cosmic-glass border-2 border-red-500/50 rounded-3xl p-6 md:p-10 text-center space-y-6 bg-gradient-to-b from-red-950/30 to-obsidian-950 shadow-2xl" data-i18n="mpFooterBox"></div>
+        </div>
+    </div>
+
     <!-- ========================================== -->
     <!-- VIEW: ABOUT ME PAGE                        -->
     <!-- ========================================== -->
@@ -1268,7 +1347,7 @@
         }
 
         // ========================================================
-        // 2. NAVIGATION ROUTER (Home, About, Vision)
+        // 2. NAVIGATION ROUTER (Home, About, Vision, Brahmastra, Pratyangira)
         // ========================================================
         function navigateToPage(pageId) {
             closeMobileMenu();
@@ -1592,7 +1671,7 @@
                 bannerMuhurat: "16 संस्कार मुहूर्त",
                 muhuratHeroHeading: "16 प्रमुख कार्य-मुहूर्त: शास्त्रीय महत्व, देवता, उत्पत्ति, विधान एवं फल",
                 muhuratHeroSub: "मुहूर्त का शास्त्रीय स्वरूप",
-                muhuratHeroDesc: "भारतीय ज्योतिष परंपरा में मुहूर्त का संबंध किसी कार्य के आरंभ के लिए समय-निर्धारण से है। विवाह, गृह-प्रवेश, भूमि पूजन, यात्रा, संस्कार, यज्ञ तथा कृषि जैसे कार्यों के लिए अलग-अलग नियमों का वर्णन मिलता है। मुहूर्त का निर्णय केवल तिथि देखकर नहीं किया जाता। इसमें तिथि, वार, नक्षत्र, योग, करण, लग्न, ग्रहों की स्थिति और कार्य-विशेष के नियमों का विचार किया जाता है। प्रत्येक कार्य की प्रकृति के अनुसार इन नियमों का महत्व बदलता है। दैवज्ञ राम रचित मुहूर्तचिन्तामणि में संस्कार, विवाह, यात्रा, वास्तु तथा गृह-प्रवेश के अलग-अलग प्रकरण हैं।",
+                muhuratHeroDesc: "भारतीय ज्योतिष परंपरा में मुहूर्त का संबंध किसी कार्य के आरंभ के लिए समय-निर्धारण से है। विवाह, गृह-प्रवेश, भूमि पूजन, यात्रा, संस्कार, यज्ञ तथा कृषि जैसे कार्यों के लिए अलग-अलग नियमों का वर्णन मिलता है। मुहूर्त का निर्णय केवल तिथि देखकर नहीं किया जाता। इसमें तिथि, वार, नक्षत्र, योग, करण, लग्न, ग्रहों की स्थिति और कार्य-विशेष के नियमों का विचार किया जाता है। प्रत्येक कार्य की प्रकृति के अनुसार इन नियमों का महत्व बदलता है। दैवज्ञ राम रचित मुहूर्तचिन्तामणि में संस्कार, विवाह, यात्रा, वास्तु तथा गृह-प्रवेश के अलग-अलग प्रकरण हैं। अन्य धर्मशास्त्रीय, गृह्यसूत्रीय और वास्तु-ग्रंथों में भी विभिन्न संस्कारों एवं कर्मों का विधान मिलता है।",
                 btnViewMuhurat: "16 संस्कार मुहूर्त देखें →",
 
                 bannerPanchang: "दैनिक सूक्ष्म वैदिक पंचांग",
@@ -1780,6 +1859,71 @@
                 footerText: `
                     © 2026 KAALGYA. सर्वाधिकार सुरक्षित। 15 वर्षों की प्रामाणिक वैदिक परंपरा।<br>
                     Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>
+                `,
+
+                bvCaption: '"जब संकल्प असाधारण हो, तो विधान भी विशिष्ट होना चाहिए।"',
+                bvFullContent: `
+                    <div class="text-center pb-6 border-b border-gold-500/25">
+                        <h1 class="text-3xl md:text-5xl font-bold font-cinzel text-white mb-2">
+                            ब्रह्मास्त्र <span class="gold-gradient-text">विधान</span>
+                        </h1>
+                        <p class="text-sm sm:text-lg text-gold-300 font-serif italic">
+                            असाधारण संकल्पों के लिए विशिष्ट अनुष्ठान विधान
+                        </p>
+                    </div>
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p>जब अभिलाषा साधारण न हो, लक्ष्य असाधारण हो और प्रयासों के बाद भी अपेक्षित उपलब्धि न मिल रही हो, तब अपने संकल्प के लिए एक विशेष आध्यात्मिक मार्ग को समझना आवश्यक हो जाता है।</p>
+                        <p>जीवन में कुछ लक्ष्य ऐसे होते हैं जिन्हें पाने के लिए व्यक्ति वर्षों तक प्रयास करता है। कभी योग्यताएँ होने के बावजूद मनचाहा पद नहीं मिलता, कभी करियर में निरंतर उन्नति नहीं बन पाती, कभी व्यवसाय में सामर्थ्य होने के बाद भी अपेक्षित विस्तार नहीं होता, तो कभी धन, संतान, प्रतिष्ठा, अधिकार अथवा किसी विशेष भौतिक उपलब्धि की अभिलाषा लंबे समय तक अधूरी रह जाती है।</p>
+                        <p class="text-gold-200 font-medium">ऐसी परिस्थितियों में व्यक्ति केवल सफलता नहीं चाहता, वह अपने जीवन की परिस्थितियों में एक महत्वपूर्ण परिवर्तन चाहता है।</p>
+                        <p>इसी प्रकार के विशिष्ट संकल्पों को ध्यान में रखते हुए <strong class="text-white font-cinzel">KAALGYA</strong> में ब्रह्मास्त्र विधान को एक विशेष अनुष्ठानिक विधान के रूप में प्रस्तुत किया जाता है।</p>
+                        <div class="pt-4 space-y-3">
+                            <h2 class="text-xl md:text-2xl font-bold font-cinzel text-gold-300 border-l-4 border-gold-500 pl-3">ब्रह्मास्त्र विधान क्या है?</h2>
+                            <p>ब्रह्मास्त्र भारतीय आध्यात्मिक एवं पौराणिक परंपरा में असाधारण सामर्थ्य का प्रतीक रहा है। इसी प्रतीकात्मक गंभीरता से प्रेरित ब्रह्मास्त्र विधान का स्वरूप विशेष संकल्प, अनुष्ठानिक अनुशासन और उद्देश्य के अनुरूप निर्धारित विधि से जुड़ा है।</p>
+                            <p class="p-4 rounded-xl bg-obsidian-900/90 border border-gold-500/30 text-gold-200 font-medium italic">जब लक्ष्य बड़ा हो, तो उसके लिए अपनाए जाने वाले मार्ग की गंभीरता भी उतनी ही महत्वपूर्ण होती है।</p>
+                        </div>
+                    </div>
+                    <div class="text-center pt-6 border-t border-gold-500/25">
+                        <button type="button" onclick="openBookingModal('Brahmastra Vidhan', 'Brahmastra Vidhan Sankalp Booking')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(212,175,55,0.45)] inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            <i data-lucide="zap" class="w-4 h-4"></i> अपना अनुष्ठान संकल्प बुक करें →
+                        </button>
+                    </div>
+                `,
+
+                mpCap1: '<h3 class="text-base sm:text-xl font-bold font-cinzel text-red-300">माँ प्रत्यंगिरा — महाशक्ति का अद्वितीय स्वरूप</h3><p class="text-xs sm:text-sm text-amber-200 font-serif italic mt-1">सिंहमुखी शक्ति, दिव्य तेज और आध्यात्मिक संरक्षण का प्रतीक।</p>',
+                mpCap2: 'तंत्र की गहन परंपरा। मंत्र की शुद्धता। शक्ति का अनुशासन।',
+                mpCap3: 'जहाँ कामना हो शांति की, वहाँ प्रार्थना हो सद्गति की।',
+                mpContent1: `
+                    <div class="text-center pb-4 border-b border-red-500/20">
+                        <h1 class="text-3xl md:text-5xl font-bold font-cinzel text-white mb-2">विपरीत <span class="crimson-gradient-text">प्रत्यंगिरा विधान</span></h1>
+                        <p class="text-sm sm:text-lg text-red-300 font-semibold">आदिशक्ति का उग्र स्वरूप। तंत्र परंपरा की परम रहस्यमयी महाशक्ति।</p>
+                    </div>
+                    <div class="space-y-4 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p class="p-4 rounded-xl bg-red-950/30 border-l-4 border-red-500 text-amber-200 font-bold">जहाँ सामान्य उपायों की सीमाएँ समाप्त होती हैं, वहाँ शक्ति उपासना की गहन परंपराओं को समझने की आवश्यकता होती है।</p>
+                        <p>सिंहमुखी स्वरूप, उग्र तेज और असाधारण शक्ति के प्रतीक के रूप में प्रतिष्ठित माँ प्रत्यंगिरा की उपासना का भाव भय पर नहीं, बल्कि श्रद्धा, अनुशासन और दिव्य संरक्षण की कामना पर आधारित होना चाहिए।</p>
+                    </div>
+                `,
+                mpContent2: `
+                    <div class="space-y-4 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <h2 class="text-xl md:text-2xl font-bold font-cinzel text-amber-300 border-l-4 border-amber-500 pl-3">विपरीत प्रत्यंगिरा विधान क्या है?</h2>
+                        <p>विपरीत प्रत्यंगिरा विधान एक विशिष्ट तांत्रिक अनुष्ठानिक परंपरा से संबंधित विधान है, जिसमें माँ प्रत्यंगिरा की उपासना को विशेष संकल्प, मंत्र एवं निर्धारित विधि के साथ संपन्न किया जाता है।</p>
+                    </div>
+                `,
+                mpContent3: `
+                    <div class="space-y-4 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <h2 class="text-xl md:text-2xl font-bold font-cinzel text-gold-300 border-l-4 border-gold-500 pl-3">प्रेतयोनि, अतृप्त आत्माएँ एवं उनकी शांति</h2>
+                        <p>अशांत आत्माओं की शांति, सद्गति और प्रतिकूल ऊर्जाओं से संरक्षण के लिए शास्त्रोक्त विधान एवं अनुशासन को प्राथमिकता दी जाती है।</p>
+                    </div>
+                `,
+                mpFooterBox: `
+                    <p class="text-sm sm:text-lg text-gold-200 font-serif italic max-w-3xl mx-auto leading-relaxed">
+                        "महाशक्ति का स्मरण वहाँ किया जाता है, जहाँ साधक अपने भय, संशय और प्रतिकूलताओं से ऊपर उठकर दिव्य संरक्षण की शरण ग्रहण करता है।"
+                    </p>
+                    <div class="text-xs font-mono text-red-300 font-bold tracking-widest uppercase">विपरीत प्रत्यंगिरा — KAALGYA</div>
+                    <div class="pt-2">
+                        <button type="button" onclick="openBookingModal('Viparita Pratyangira Mahakavach', 'Viparita Pratyangira Mahakavach Booking')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(220,38,38,0.5)] inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i> अपना महाकवच प्राप्त करें →
+                        </button>
+                    </div>
                 `
             },
             en: {
@@ -2047,6 +2191,62 @@
                 footerText: `
                     © 2026 KAALGYA. All Rights Reserved. 15+ Years of Authentic Vedic Tradition.<br>
                     Email: <strong>kaalgya@gmail.com</strong> | WhatsApp: <strong>+91 95067 95756</strong>
+                `,
+
+                bvCaption: '"When the resolve is extraordinary, the ritual protocol must be equally distinguished."',
+                bvFullContent: `
+                    <div class="text-center pb-6 border-b border-gold-500/25">
+                        <h1 class="text-3xl md:text-5xl font-bold font-cinzel text-white mb-2">
+                            BRAHMASTRA <span class="gold-gradient-text">VIDHANAM</span>
+                        </h1>
+                        <p class="text-sm sm:text-lg text-gold-300 font-serif italic">
+                            Specialized Spiritual Protocol for Extraordinary Resolves
+                        </p>
+                    </div>
+                    <div class="space-y-5 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p>When aspirations are far from ordinary and goals demand monumental breakthroughs, Brahmastra Vidhanam serves as a dedicated, high-discipline ritual framework anchored in conscious Sankalpa and Shastric methodology.</p>
+                    </div>
+                    <div class="text-center pt-6 border-t border-gold-500/25">
+                        <button type="button" onclick="openBookingModal('Brahmastra Vidhan', 'Brahmastra Vidhan Sankalp Booking')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(212,175,55,0.45)] inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            <i data-lucide="zap" class="w-4 h-4"></i> Book Your Anushthan Sankalpa →
+                        </button>
+                    </div>
+                `,
+
+                mpCap1: '<h3 class="text-base sm:text-xl font-bold font-cinzel text-red-300">Maa Pratyangira — Sovereign Manifestation of Adi Shakti</h3><p class="text-xs sm:text-sm text-amber-200 font-serif italic mt-1">Emblem of Lion-Faced Valor, Divine Radiance, and Spiritual Shielding.</p>',
+                mpCap2: 'Profound Tantric Lineage. Phonetic Purity of Mantra. Discipline of Shakti.',
+                mpCap3: 'Where the aspiration is peace, the prayer is for liberation and Sadgati.',
+                mpContent1: `
+                    <div class="text-center pb-4 border-b border-red-500/20">
+                        <h1 class="text-3xl md:text-5xl font-bold font-cinzel text-white mb-2">VIPARITA <span class="crimson-gradient-text">PRATYANGIRA VIDHANAM</span></h1>
+                        <p class="text-sm sm:text-lg text-red-300 font-semibold">The Fierce Aspect of Adi Shakti. Supreme Esoteric Power of Tantric Heritage.</p>
+                    </div>
+                    <div class="space-y-4 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <p>Revered in classical Tantric texts for her lion-faced (Simhamukhi) countenance and blazing radiance, Maa Pratyangira is invoked through disciplined Sankalpa and authentic ritual purity.</p>
+                    </div>
+                `,
+                mpContent2: `
+                    <div class="space-y-4 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <h2 class="text-xl md:text-2xl font-bold font-cinzel text-amber-300 border-l-4 border-amber-500 pl-3">What is Viparita Pratyangira Vidhanam?</h2>
+                        <p>A specialized Tantric ritual framework requiring lineage authenticity, phonetic precision, and qualified guidance.</p>
+                    </div>
+                `,
+                mpContent3: `
+                    <div class="space-y-4 text-sm sm:text-base text-gray-200 leading-relaxed font-sans">
+                        <h2 class="text-xl md:text-2xl font-bold font-cinzel text-gold-300 border-l-4 border-gold-500 pl-3">Restless Souls, Ancestral Peace & Sadgati</h2>
+                        <p>Compassionate rites seeking peace, release, and onward spiritual progression in alignment with Shastric tradition.</p>
+                    </div>
+                `,
+                mpFooterBox: `
+                    <p class="text-sm sm:text-lg text-gold-200 font-serif italic max-w-3xl mx-auto leading-relaxed">
+                        "Mahashakti is invoked where the seeker rises above fear, doubt, and adversity to take refuge in sovereign divine protection."
+                    </p>
+                    <div class="text-xs font-mono text-red-300 font-bold tracking-widest uppercase">VIPARITA PRATYANGIRA — KAALGYA</div>
+                    <div class="pt-2">
+                        <button type="button" onclick="openBookingModal('Viparita Pratyangira Mahakavach', 'Viparita Pratyangira Mahakavach Booking')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(220,38,38,0.5)] inline-flex items-center gap-2 transition-transform hover:scale-105">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i> Acquire Your Mahakavach →
+                        </button>
+                    </div>
                 `
             }
         };
