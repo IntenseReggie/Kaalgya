@@ -2651,18 +2651,27 @@
 
     <!-- KAALGYA UNIFIED SMART BOOKING MODAL -->
     <div id="kaalgya-smart-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 overflow-y-auto">
-        <div class="cosmic-glass gold-border-glow rounded-3xl w-full max-w-xl p-6 sm:p-8 relative my-auto shadow-2xl border border-gold-500/50">
+        <div class="cosmic-glass gold-border-glow rounded-3xl w-full max-w-2xl p-6 sm:p-8 relative my-auto shadow-2xl border border-gold-500/50">
             <button type="button" onclick="closeKaalgyaModal()" aria-label="Close Modal" class="w-9 h-9 rounded-full bg-obsidian-900 border border-gold-500/40 text-gold-300 hover:text-white flex items-center justify-center absolute top-4 right-4 cursor-pointer text-lg font-bold">
                 ×
             </button>
 
-            <div class="mb-5 pr-8">
+            <div class="mb-4 pr-8">
                 <span id="kg-modal-badge" class="text-[11px] font-mono uppercase tracking-widest text-gold-400 block mb-1">KAALGYA BOOKING & ENQUIRY</span>
                 <h3 id="kg-modal-title" class="text-xl sm:text-2xl font-bold font-cinzel text-white">परामर्श एवं संकल्प बुकिंग</h3>
-                <p id="kg-modal-subtitle" class="text-xs text-gray-300 mt-1">कृपया अपना विवरण भरें — हमारी टीम / मार्गदर्शन आपसे संपर्क करेगा।</p>
+                <p id="kg-modal-subtitle" class="text-xs text-gray-300 mt-1">कृपया अपना विवरण भरें — मार्गदर्शन के लिए शीघ्र संपर्क किया जाएगा।</p>
             </div>
 
-            <form id="kg-smart-booking-form" onsubmit="submitKaalgyaBooking(event)" class="space-y-3.5 text-xs">
+            <!-- Maha Vastu Authority Block (Shows only for Vastu) -->
+            <div id="kg-vastu-authority-box" class="hidden mb-4 p-4 rounded-2xl bg-obsidian-900/95 border border-gold-500/40 space-y-1.5 text-xs">
+                <div class="font-cinzel font-bold text-gold-300 text-sm">KAALGYA Vastu Science & Spatial Analysis</div>
+                <div class="text-amber-200 font-semibold">वास्तु शास्त्र • दिशात्मक विश्लेषण • स्थानिक ऊर्जा व्यवस्था</div>
+                <div class="text-gray-200 font-medium">स्थान का अध्ययन। दिशाओं का विश्लेषण। संतुलित वास्तु का मार्गदर्शन।</div>
+                <p class="text-gray-300 text-[11px] leading-relaxed">प्रत्येक संपत्ति की संरचना, दिशा, उपयोग एवं वास्तु संबंधी विशेषताओं के आधार पर विस्तृत परामर्श।</p>
+                <div id="kg-vastu-tier-display" class="pt-1.5 border-t border-gold-500/20 text-gold-300 font-semibold"></div>
+            </div>
+
+            <form id="kg-smart-booking-form" onsubmit="submitKaalgyaBooking(event)" class="space-y-3 text-xs">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
                         <label class="block text-gold-300 font-semibold mb-1">आपका नाम / Name *</label>
@@ -2679,16 +2688,43 @@
                     <input id="kg-f-email" type="email" required placeholder="name@domain.com" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
                 </div>
 
+                <!-- Dynamic Dropdown (Brahmastra / Pratyangira / Vastu / Single Question / Tantra) -->
                 <div id="kg-dyn-select-wrap" class="hidden">
                     <label id="kg-dyn-select-label" class="block text-gold-300 font-semibold mb-1">विकल्प चुनें</label>
                     <select id="kg-dyn-select" onchange="onDynamicSelectChange()" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white font-semibold focus:outline-none focus:border-gold-400"></select>
                 </div>
 
-                <div id="kg-dyn-extra-wrap" class="hidden">
-                    <label id="kg-dyn-extra-label" class="block text-gold-300 font-semibold mb-1">अतिरिक्त विवरण</label>
-                    <input id="kg-dyn-extra" type="text" placeholder="" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                <!-- Separate Birth Details Boxes (DOB | TOB | Birth Place | District & State) -->
+                <div id="kg-birth-grid" class="hidden space-y-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-gold-300 font-semibold mb-1">जन्म तिथि / Date of Birth (DOB) *</label>
+                            <input id="kg-f-dob" type="date" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                        <div>
+                            <label class="block text-gold-300 font-semibold mb-1">जन्म समय / Time of Birth (TOB)</label>
+                            <input id="kg-f-tob" type="time" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-gold-300 font-semibold mb-1">जन्म स्थान / Birth Place (City / Town)</label>
+                            <input id="kg-f-place" type="text" placeholder="जैसे: लखनऊ / कानपुर / हरदोई" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                        <div>
+                            <label class="block text-gold-300 font-semibold mb-1">जिला एवं राज्य / District & State</label>
+                            <input id="kg-f-dist-state" type="text" placeholder="जैसे: लखनऊ, उत्तर प्रदेश" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Vastu Location & Facing Box -->
+                <div id="kg-vastu-loc-wrap" class="hidden">
+                    <label class="block text-gold-300 font-semibold mb-1">संपत्ति का स्थान, जिला/राज्य व दिशा / Location, District-State & Facing *</label>
+                    <input id="kg-f-vastu-loc" type="text" placeholder="जैसे: गोमती नगर, लखनऊ (UP) — पूर्व मुखी / क्षेत्रफल" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                </div>
+
+                <!-- Dynamic Vastu / Custom Quotation Note -->
                 <div id="kg-dyn-note-box" class="hidden p-3.5 rounded-2xl bg-obsidian-900 border border-gold-500/35 text-[11px] text-amber-200 leading-relaxed"></div>
 
                 <div>
@@ -2709,15 +2745,47 @@
         let currentBookingMeta = {
             formatKey: "complete_analysis",
             packageTitle: "परामर्श",
-            dealValue: "5100"
+            dealValue: "5100",
+            pricingMode: "Fixed / Standard"
         };
 
         const VASTU_TIER_MAP = {
-            "घर / Residence (Standard)": { amount: "21000", note: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards)। साइट विजिट होने पर आने-जाने, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" },
-            "ऑफिस / Commercial Space": { amount: "21000", note: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards) — आकार व स्कोप के अनुसार। साइट विजिट पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त होगा।" },
-            "डबल स्टोरी घर / Double Storey": { amount: "35000", note: "प्रारंभिक शुल्क: ₹35,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" },
-            "थर्ड स्टोरी घर / 3rd Storey": { amount: "51000", note: "प्रारंभिक शुल्क: ₹51,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" },
-            "फैक्ट्री / Factory & Industrial": { amount: "111000", note: "प्रारंभिक शुल्क: ₹1,11,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" }
+            "घर / Residence (Standard)": {
+                amount: "21000",
+                mode: "₹21,000 Onwards",
+                tierLine: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards) — मानक आवास हेतु।",
+                note: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards)। साइट विजिट होने पर आने-जाने, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।"
+            },
+            "ऑफिस / Commercial Space": {
+                amount: "21000",
+                mode: "₹21,000 Onwards",
+                tierLine: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards) — आकार व स्कोप के अनुसार।",
+                note: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards)। साइट विजिट पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त होगा।"
+            },
+            "डबल स्टोरी घर / Double Storey": {
+                amount: "35000",
+                mode: "₹35,000 Onwards",
+                tierLine: "प्रारंभिक शुल्क: ₹35,000 से शुरू (Onwards) — डबल स्टोरी भवन हेतु।",
+                note: "प्रारंभिक शुल्क: ₹35,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।"
+            },
+            "थर्ड स्टोरी घर / 3rd Storey": {
+                amount: "51000",
+                mode: "₹51,000 Onwards",
+                tierLine: "प्रारंभिक शुल्क: ₹51,000 से शुरू (Onwards) — थर्ड स्टोरी भवन हेतु।",
+                note: "प्रारंभिक शुल्क: ₹51,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।"
+            },
+            "फैक्ट्री / Factory & Industrial": {
+                amount: "111000",
+                mode: "₹1,11,000 Onwards",
+                tierLine: "प्रारंभिक शुल्क: ₹1,11,000 से शुरू (Onwards) — फैक्ट्री / इंडस्ट्रियल परिसर हेतु।",
+                note: "प्रारंभिक शुल्क: ₹1,11,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।"
+            },
+            "Hotels / Hospitals / Institutions / Large Commercial Projects": {
+                amount: "0",
+                mode: "Custom Quotation",
+                tierLine: "Custom Quotation — परियोजना के आकार, जटिलता, निरीक्षण एवं कार्यक्षेत्र के अनुसार अलग प्रस्ताव।",
+                note: "Custom Quotation: परियोजना के आकार, जटिलता, निरीक्षण एवं कार्यक्षेत्र के अनुसार अलग प्रस्ताव तैयार किया जाता है। साइट विजिट पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त रहेगा।"
+            }
         };
 
         function getUtmParams() {
@@ -2740,12 +2808,15 @@
         function onDynamicSelectChange() {
             const sel = document.getElementById("kg-dyn-select");
             const noteBox = document.getElementById("kg-dyn-note-box");
+            const tierDisplay = document.getElementById("kg-vastu-tier-display");
             if (!sel || !noteBox) return;
 
             if (currentBookingMeta.formatKey === "vastu") {
                 const info = VASTU_TIER_MAP[sel.value];
                 if (info) {
                     currentBookingMeta.dealValue = info.amount;
+                    currentBookingMeta.pricingMode = info.mode;
+                    if (tierDisplay) tierDisplay.innerText = info.tierLine;
                     noteBox.innerHTML = info.note;
                     noteBox.classList.remove("hidden");
                 }
@@ -2759,27 +2830,30 @@
             currentBookingMeta = {
                 formatKey: formatKey || "complete_analysis",
                 packageTitle: packageTitle || "Consultation",
-                dealValue: String(dealValue || "0")
+                dealValue: String(dealValue || "0"),
+                pricingMode: dealValue && dealValue !== "0" ? "₹" + dealValue + " Onwards" : "Consultation"
             };
 
             document.getElementById("kg-modal-title").innerText = packageTitle || "परामर्श एवं बुकिंग";
             document.getElementById("kg-form-status").className = "hidden text-xs font-semibold rounded-xl p-2.5";
             document.getElementById("kg-form-status").innerText = "";
 
+            const authBox = document.getElementById("kg-vastu-authority-box");
             const selWrap = document.getElementById("kg-dyn-select-wrap");
             const selLabel = document.getElementById("kg-dyn-select-label");
             const selEl = document.getElementById("kg-dyn-select");
 
-            const extraWrap = document.getElementById("kg-dyn-extra-wrap");
-            const extraLabel = document.getElementById("kg-dyn-extra-label");
-            const extraEl = document.getElementById("kg-dyn-extra");
-
+            const birthGrid = document.getElementById("kg-birth-grid");
+            const dobInput = document.getElementById("kg-f-dob");
+            const vastuLocWrap = document.getElementById("kg-vastu-loc-wrap");
             const noteBox = document.getElementById("kg-dyn-note-box");
 
+            authBox.classList.add("hidden");
             selWrap.classList.add("hidden");
-            extraWrap.classList.add("hidden");
+            birthGrid.classList.add("hidden");
+            vastuLocWrap.classList.add("hidden");
             noteBox.classList.add("hidden");
-            extraEl.value = "";
+            dobInput.required = false;
 
             if (formatKey === "brahmastra") {
                 document.getElementById("kg-modal-badge").innerText = "BRAHMASTRA VIDHANAM • SANKALP";
@@ -2795,9 +2869,7 @@
                     "भूमि / भवन / वाहन",
                     "अन्य विशेष संकल्प"
                 ]);
-                extraWrap.classList.remove("hidden");
-                extraLabel.innerText = "जन्म विवरण या शहर / Birth or City";
-                extraEl.placeholder = "DOB, Time, Place या शहर";
+                birthGrid.classList.remove("hidden");
             } else if (formatKey === "pratyangira") {
                 document.getElementById("kg-modal-badge").innerText = "VIPARITA PRATYANGIRA • MAHAKAVACH";
                 document.getElementById("kg-modal-subtitle").innerText = "प्रारंभिक दक्षिणा ₹71,000 से शुरू — रक्षा व साधना का उद्देश्य चुनें।";
@@ -2810,28 +2882,24 @@
                     "पितृ / अशांत ऊर्जा शांति",
                     "आध्यात्मिक कवच / शक्ति उपासना"
                 ]);
-                extraWrap.classList.remove("hidden");
-                extraLabel.innerText = "जन्म विवरण या शहर / Birth or City";
-                extraEl.placeholder = "DOB, Time, Place या शहर";
+                birthGrid.classList.remove("hidden");
             } else if (formatKey === "vastu") {
                 document.getElementById("kg-modal-badge").innerText = "MAHA VASTU RECTIFICATION";
-                document.getElementById("kg-modal-subtitle").innerText = "प्रॉपर्टी प्रकार चुनें — शुल्क क्षेत्र/मंजिल के अनुसार शुरू होता है।";
+                document.getElementById("kg-modal-subtitle").innerText = "प्रॉपर्टी प्रकार चुनें — शुल्क संरचना व आकार के अनुसार तय होता है।";
+                authBox.classList.remove("hidden");
                 selWrap.classList.remove("hidden");
                 selLabel.innerText = "प्रॉपर्टी का प्रकार / Property Type *";
                 fillSelectOptions(selEl, Object.keys(VASTU_TIER_MAP));
-                extraWrap.classList.remove("hidden");
-                extraLabel.innerText = "शहर / स्थान व दिशा / Location & Facing *";
-                extraEl.placeholder = "जैसे: लखनऊ / गोमती नगर, पूर्व मुखी";
+                vastuLocWrap.classList.remove("hidden");
                 onDynamicSelectChange();
             } else if (formatKey === "single_question") {
                 document.getElementById("kg-modal-badge").innerText = "SINGLE QUESTION • ₹1,100";
-                document.getElementById("kg-modal-subtitle").innerText = "किसी एक विशिष्ट प्रश्न पर स्पष्ट मार्गदर्शन के लिए विवरण भरें।";
+                document.getElementById("kg-modal-subtitle").innerText = "किसी एक विशिष्ट प्रश्न पर स्पष्ट मार्गदर्शन के लिए जन्म विवरण भरें।";
                 selWrap.classList.remove("hidden");
                 selLabel.innerText = "प्रश्न का विषय / Topic *";
                 fillSelectOptions(selEl, ["करियर / नौकरी", "विवाह / दांपत्य", "व्यापार / धन", "स्वास्थ्य / मन", "अन्य"]);
-                extraWrap.classList.remove("hidden");
-                extraLabel.innerText = "जन्म विवरण / Birth Details (DOB, Time, Place) *";
-                extraEl.placeholder = "DD/MM/YYYY, HH:MM AM/PM, जन्म स्थान";
+                birthGrid.classList.remove("hidden");
+                dobInput.required = true;
             } else if (formatKey === "tantra_siddhi") {
                 document.getElementById("kg-modal-badge").innerText = "TANTRA / SIDDHI / DOSHA GUIDANCE";
                 document.getElementById("kg-modal-subtitle").innerText = "तंत्र समस्या, सिद्धि मार्गदर्शन या दोष निवारण हेतु विवरण चुनें।";
@@ -2843,15 +2911,12 @@
                     "दोष निवारण (कालसर्प / पितृ / मांगलिक)",
                     "ग्रह शांति अनुष्ठान"
                 ]);
-                extraWrap.classList.remove("hidden");
-                extraLabel.innerText = "जन्म विवरण / Birth Details (DOB, Time, Place)";
-                extraEl.placeholder = "DD/MM/YYYY, HH:MM AM/PM, जन्म स्थान";
+                birthGrid.classList.remove("hidden");
             } else {
                 document.getElementById("kg-modal-badge").innerText = "COMPLETE ANALYSIS & CONSULTATION";
                 document.getElementById("kg-modal-subtitle").innerText = "संपूर्ण कुंडली विश्लेषण व परामर्श के लिए जन्म विवरण दें।";
-                extraWrap.classList.remove("hidden");
-                extraLabel.innerText = "जन्म विवरण / Birth Details (DOB, Time, Place) *";
-                extraEl.placeholder = "DD/MM/YYYY, HH:MM AM/PM, जन्म स्थान";
+                birthGrid.classList.remove("hidden");
+                dobInput.required = true;
             }
 
             modal.classList.remove("hidden");
@@ -2874,11 +2939,17 @@
             const name = document.getElementById("kg-f-name").value.trim();
             const phone = document.getElementById("kg-f-phone").value.trim();
             const email = document.getElementById("kg-f-email").value.trim();
+
             const selWrap = document.getElementById("kg-dyn-select-wrap");
-            const extraWrap = document.getElementById("kg-dyn-extra-wrap");
+            const birthGrid = document.getElementById("kg-birth-grid");
+            const vastuLocWrap = document.getElementById("kg-vastu-loc-wrap");
 
             const contextOption = (!selWrap.classList.contains("hidden")) ? document.getElementById("kg-dyn-select").value : "";
-            const extraVal = (!extraWrap.classList.contains("hidden")) ? document.getElementById("kg-dyn-extra").value.trim() : "";
+            const dob = (!birthGrid.classList.contains("hidden")) ? document.getElementById("kg-f-dob").value.trim() : "";
+            const tob = (!birthGrid.classList.contains("hidden")) ? document.getElementById("kg-f-tob").value.trim() : "";
+            const birthPlace = (!birthGrid.classList.contains("hidden")) ? document.getElementById("kg-f-place").value.trim() : "";
+            const distState = (!birthGrid.classList.contains("hidden")) ? document.getElementById("kg-f-dist-state").value.trim() : "";
+            const vastuLoc = (!vastuLocWrap.classList.contains("hidden")) ? document.getElementById("kg-f-vastu-loc").value.trim() : "";
             const message = document.getElementById("kg-f-message").value.trim();
 
             const utm = getUtmParams();
@@ -2887,10 +2958,14 @@
                 format_key: currentBookingMeta.formatKey,
                 service_interest: currentBookingMeta.packageTitle,
                 package_title: currentBookingMeta.packageTitle,
+                pricing_mode: currentBookingMeta.pricingMode,
                 deal_value: currentBookingMeta.dealValue,
                 context_option: contextOption,
-                location_property: currentBookingMeta.formatKey === "vastu" ? extraVal : "",
-                gotra_birth: currentBookingMeta.formatKey !== "vastu" ? extraVal : "",
+                dob: dob,
+                tob: tob,
+                birth_place: birthPlace,
+                district_state: distState,
+                location_property: vastuLoc,
                 name: name,
                 phone: phone,
                 email: email,
