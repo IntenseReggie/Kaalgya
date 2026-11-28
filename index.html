@@ -357,7 +357,7 @@
             
             <div class="flex items-center gap-2 sm:gap-3">
                 <button id="lang-switch-btn" onclick="toggleSiteLanguage()" class="px-2.5 sm:px-3 py-1.5 rounded-full border border-gold-500/40 bg-obsidian-900 text-gold-300 text-[11px] sm:text-xs font-bold hover:bg-gold-500 hover:text-black transition-all cursor-pointer">EN / हिन्दी</button>
-                <button onclick="openBookingModal('General Consultation', 'Header CTA')" class="hidden sm:inline-flex px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer" data-i18n="navConsult">
+                <button onclick="openBookingModal('complete_analysis', 'परामर्श / संपूर्ण कुंडली विश्लेषण', '5100')" class="hidden sm:inline-flex px-4 py-2 rounded-full border border-gold-500 bg-gold-500 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer" data-i18n="navConsult">
                     परामर्श लें
                 </button>
                 <!-- Mobile Menu Toggle Button -->
@@ -383,7 +383,7 @@
                 <a href="/manifestation/" onclick="closeMobileMenu()" class="px-3 py-2.5 rounded-xl hover:bg-gold-500/10 text-amber-300 font-bold" data-i18n="navTijori">भावनाओं की तिजोरी</a>
             </div>
             <div class="pt-2 border-t border-gold-500/20">
-                <button onclick="closeMobileMenu(); openBookingModal('General Consultation', 'Mobile Menu CTA')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer" data-i18n="navConsult">
+                <button onclick="closeMobileMenu(); openBookingModal('complete_analysis', 'परामर्श / संपूर्ण कुंडली विश्लेषण', '5100')" class="w-full py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase shadow-md cursor-pointer" data-i18n="navConsult">
                     परामर्श लें
                 </button>
             </div>
@@ -426,7 +426,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-                    <button onclick="openBookingModal('General Consultation', 'Hero Button')" class="px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase shadow-lg cursor-pointer transition-transform hover:scale-105" data-i18n="btnBookConsult">
+                    <button onclick="openBookingModal('complete_analysis', 'परामर्श / संपूर्ण कुंडली विश्लेषण', '5100')" class="px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase shadow-lg cursor-pointer transition-transform hover:scale-105" data-i18n="btnBookConsult">
                         परामर्श बुक करें
                     </button>
                     <a href="/muhurat/" class="px-8 py-3.5 rounded-xl cosmic-glass border border-gold-500/50 hover:border-gold-400 text-gold-300 font-bold text-xs uppercase shadow-lg cursor-pointer transition-transform hover:scale-105 inline-flex items-center justify-center" data-i18n="btnMuhuratVault">
@@ -593,7 +593,7 @@
                 </div>
 
                 <div class="pt-4">
-                    <button onclick="openBookingModal('Finance', 'Sukoon Kaksh Special')" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase flex items-center gap-1.5 cursor-pointer shadow-lg">
+                    <button onclick="openBookingModal('complete_analysis', 'संकट हरण व सुकून कक्ष मार्गदर्शन', '0')" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase flex items-center gap-1.5 cursor-pointer shadow-lg">
                         <i data-lucide="message-square" class="w-4 h-4"></i> <span data-i18n="btnGuidance">मार्गदर्शन लें</span>
                     </button>
                 </div>
@@ -1029,7 +1029,7 @@
                         <p class="text-xs text-gray-400 mb-4" data-i18n="p1Desc">करियर या विवाह से जुड़ी किसी एक समस्या पर स्पष्टता।</p>
                         <div class="text-2xl font-extrabold text-emerald-300 font-cinzel mb-6" data-i18n="p1Price">₹1,100</div>
                     </div>
-                    <button onclick="openBookingModal('Career', 'Single Query Package (₹1,100)')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase cursor-pointer transition-transform hover:scale-[1.02]" data-i18n="btnBook1">स्लॉट बुक करें (₹1,100)</button>
+                    <button onclick="openBookingModal('single_question', 'एकल प्रश्न समाधान (₹1,100)', '1100')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase cursor-pointer transition-transform hover:scale-[1.02]" data-i18n="btnBook1">स्लॉट बुक करें (₹1,100)</button>
                 </div>
 
                 <div class="cosmic-glass gold-border-glow rounded-3xl p-6 flex flex-col justify-between relative bg-gradient-to-b from-gold-950/40 to-obsidian-900 shadow-xl">
@@ -1040,7 +1040,7 @@
                         <p class="text-xs text-gray-300 mb-4" data-i18n="p2Desc">12 भावों का 45 मिनट गहन गणितीय व आध्यात्मिक शोधन।</p>
                         <div class="text-3xl font-extrabold text-gold-300 font-cinzel mb-6" data-i18n="p2Price">₹5,100</div>
                     </div>
-                    <button onclick="openBookingModal('General Consultation', 'Complete Life Cycle Audit (₹5,100)')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-lg transition-transform hover:scale-[1.02]" data-i18n="btnBook2">स्लॉट बुक करें (₹5,100)</button>
+                    <button onclick="openBookingModal('complete_analysis', 'संपूर्ण जीवन चक्र विश्लेषण (₹5,100)', '5100')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-black font-extrabold text-xs uppercase cursor-pointer shadow-lg transition-transform hover:scale-[1.02]" data-i18n="btnBook2">स्लॉट बुक करें (₹5,100)</button>
                 </div>
 
                 <div class="cosmic-glass border border-indigo-500/30 rounded-3xl p-6 flex flex-col justify-between shadow-lg">
@@ -1050,7 +1050,7 @@
                         <p class="text-xs text-gray-400 mb-4" data-i18n="p3Desc">कालसर्प, पितृ दोष, मांगलिक दोष एवं भारी शनि शांति।</p>
                         <div class="text-2xl font-extrabold text-indigo-300 font-cinzel mb-6" data-i18n="p3Price">₹11,000</div>
                     </div>
-                    <button onclick="openBookingModal('Tantra Sadhana', 'Dosh Nivaran (₹11,000)')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase cursor-pointer transition-transform hover:scale-[1.02]" data-i18n="btnBook3">संकल्प बुक करें (₹11,000)</button>
+                    <button onclick="openBookingModal('tantra_siddhi', 'दोष निवारण / तंत्र व सिद्धि मार्गदर्शन (₹11,000)', '11000')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs uppercase cursor-pointer transition-transform hover:scale-[1.02]" data-i18n="btnBook3">संकल्प बुक करें (₹11,000)</button>
                 </div>
 
                 <div class="cosmic-glass border-2 border-amber-500/50 rounded-3xl p-6 flex flex-col justify-between bg-gradient-to-b from-amber-950/30 to-obsidian-900 shadow-xl">
@@ -1060,7 +1060,7 @@
                         <p class="text-xs text-amber-200/90 mb-4" data-i18n="p4Desc">बिना तोड़-फोड़ 16 दिशाओं व 32 पद-देवताओं का ऊर्जा कीलन।</p>
                         <div class="text-3xl font-extrabold text-amber-300 font-cinzel mb-6" data-i18n="p4Price">₹21,000</div>
                     </div>
-                    <button onclick="openBookingModal('Vastu Consultation', 'Maha Vastu Rectification (₹21,000)')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-500 hover:to-rose-500 text-white font-bold text-xs uppercase cursor-pointer shadow-lg transition-transform hover:scale-[1.02]" data-i18n="btnBook4">वास्तु शोधन बुक करें (₹21,000)</button>
+                    <button onclick="openBookingModal('vastu', 'महावास्तु शोधन (₹21,000 Onwards)', '21000')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 hover:from-amber-500 hover:to-rose-500 text-white font-bold text-xs uppercase cursor-pointer shadow-lg transition-transform hover:scale-[1.02]" data-i18n="btnBook4">वास्तु शोधन बुक करें (₹21,000)</button>
                 </div>
             </div>
         </section>
@@ -1115,7 +1115,7 @@
             </div>
 
             <div class="text-center pt-10">
-                <button onclick="openBookingModal('General Consultation', 'FAQ Bottom CTA')" class="px-10 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase shadow-xl cursor-pointer transition-transform hover:scale-105" data-i18n="btnFaqAudit">
+                <button onclick="openBookingModal('complete_analysis', 'कुंडली विश्लेषण परामर्श', '5100')" class="px-10 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-extrabold text-xs uppercase shadow-xl cursor-pointer transition-transform hover:scale-105" data-i18n="btnFaqAudit">
                     अपनी कुंडली का वैज्ञानिक एवं प्रमाणिक विश्लेषण कराएं →
                 </button>
             </div>
@@ -1983,7 +1983,7 @@
                         </div>
                     </div>
                     <div class="text-center pt-6 border-t border-gold-500/25">
-                        <button type="button" onclick="openBookingModal('Brahmastra Vidhan', 'Brahmastra Vidhan Sankalp Booking')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(212,175,55,0.45)] inline-flex items-center gap-2 transition-transform hover:scale-105">
+                        <button type="button" onclick="openBookingModal('brahmastra', 'ब्रह्मास्त्र विधान संकल्प (₹5,00,000 Onwards)', '500000')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(212,175,55,0.45)] inline-flex items-center gap-2 transition-transform hover:scale-105">
                             <i data-lucide="zap" class="w-4 h-4"></i> अपना अनुष्ठान संकल्प बुक करें →
                         </button>
                     </div>
@@ -2067,7 +2067,7 @@
                     </p>
                     <div class="text-xs font-mono text-red-300 font-bold tracking-widest uppercase">विपरीत प्रत्यंगिरा — KAALGYA</div>
                     <div class="pt-2">
-                        <button type="button" onclick="openBookingModal('Viparita Pratyangira Mahakavach', 'Viparita Pratyangira Mahakavach Booking')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(220,38,38,0.5)] inline-flex items-center gap-2 transition-transform hover:scale-105">
+                        <button type="button" onclick="openBookingModal('pratyangira', 'विपरीत प्रत्यंगिरा महाकवच (₹71,000 Onwards)', '71000')" class="px-10 py-4 rounded-xl bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider cursor-pointer shadow-[0_0_30px_rgba(220,38,38,0.5)] inline-flex items-center gap-2 transition-transform hover:scale-105">
                             <i data-lucide="shield-check" class="w-4 h-4"></i> अपना महाकवच प्राप्त करें →
                         </button>
                     </div>
@@ -2647,6 +2647,285 @@
           audio.volume = parseFloat(val);
         }
       }
+    </script>
+
+    <!-- KAALGYA UNIFIED SMART BOOKING MODAL -->
+    <div id="kaalgya-smart-modal" class="fixed inset-0 z-[9999] hidden items-center justify-center bg-black/85 backdrop-blur-md p-4 overflow-y-auto">
+        <div class="cosmic-glass gold-border-glow rounded-3xl w-full max-w-xl p-6 sm:p-8 relative my-auto shadow-2xl border border-gold-500/50">
+            <button type="button" onclick="closeKaalgyaModal()" aria-label="Close Modal" class="w-9 h-9 rounded-full bg-obsidian-900 border border-gold-500/40 text-gold-300 hover:text-white flex items-center justify-center absolute top-4 right-4 cursor-pointer text-lg font-bold">
+                ×
+            </button>
+
+            <div class="mb-5 pr-8">
+                <span id="kg-modal-badge" class="text-[11px] font-mono uppercase tracking-widest text-gold-400 block mb-1">KAALGYA BOOKING & ENQUIRY</span>
+                <h3 id="kg-modal-title" class="text-xl sm:text-2xl font-bold font-cinzel text-white">परामर्श एवं संकल्प बुकिंग</h3>
+                <p id="kg-modal-subtitle" class="text-xs text-gray-300 mt-1">कृपया अपना विवरण भरें — हमारी टीम / मार्गदर्शन आपसे संपर्क करेगा।</p>
+            </div>
+
+            <form id="kg-smart-booking-form" onsubmit="submitKaalgyaBooking(event)" class="space-y-3.5 text-xs">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-gold-300 font-semibold mb-1">आपका नाम / Name *</label>
+                        <input id="kg-f-name" type="text" required placeholder="पूरा नाम लिखें" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div>
+                        <label class="block text-gold-300 font-semibold mb-1">व्हाट्सएप नंबर / WhatsApp *</label>
+                        <input id="kg-f-phone" type="tel" required placeholder="10-digit mobile / WhatsApp" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gold-300 font-semibold mb-1">ईमेल आईडी / Email *</label>
+                    <input id="kg-f-email" type="email" required placeholder="name@domain.com" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div id="kg-dyn-select-wrap" class="hidden">
+                    <label id="kg-dyn-select-label" class="block text-gold-300 font-semibold mb-1">विकल्प चुनें</label>
+                    <select id="kg-dyn-select" onchange="onDynamicSelectChange()" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white font-semibold focus:outline-none focus:border-gold-400"></select>
+                </div>
+
+                <div id="kg-dyn-extra-wrap" class="hidden">
+                    <label id="kg-dyn-extra-label" class="block text-gold-300 font-semibold mb-1">अतिरिक्त विवरण</label>
+                    <input id="kg-dyn-extra" type="text" placeholder="" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div id="kg-dyn-note-box" class="hidden p-3.5 rounded-2xl bg-obsidian-900 border border-gold-500/35 text-[11px] text-amber-200 leading-relaxed"></div>
+
+                <div>
+                    <label id="kg-f-msg-label" class="block text-gold-300 font-semibold mb-1">अपनी स्थिति / प्रश्न / संकल्प का संक्षिप्त विवरण *</label>
+                    <textarea id="kg-f-message" rows="3" required placeholder="संक्षेप में लिखें..." class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+
+                <div id="kg-form-status" class="hidden text-xs font-semibold rounded-xl p-2.5"></div>
+
+                <button id="kg-f-submit" type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-black font-extrabold text-xs uppercase tracking-wider cursor-pointer shadow-xl transition-transform hover:scale-[1.01]">
+                    अनुरोध भेजें / Submit Request →
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentBookingMeta = {
+            formatKey: "complete_analysis",
+            packageTitle: "परामर्श",
+            dealValue: "5100"
+        };
+
+        const VASTU_TIER_MAP = {
+            "घर / Residence (Standard)": { amount: "21000", note: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards)। साइट विजिट होने पर आने-जाने, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" },
+            "ऑफिस / Commercial Space": { amount: "21000", note: "प्रारंभिक शुल्क: ₹21,000 से शुरू (Onwards) — आकार व स्कोप के अनुसार। साइट विजिट पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त होगा।" },
+            "डबल स्टोरी घर / Double Storey": { amount: "35000", note: "प्रारंभिक शुल्क: ₹35,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" },
+            "थर्ड स्टोरी घर / 3rd Storey": { amount: "51000", note: "प्रारंभिक शुल्क: ₹51,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" },
+            "फैक्ट्री / Factory & Industrial": { amount: "111000", note: "प्रारंभिक शुल्क: ₹1,11,000 से शुरू (Onwards)। साइट विजिट होने पर यात्रा, ठहरने व भोजन का खर्च अतिरिक्त देय होगा।" }
+        };
+
+        function getUtmParams() {
+            const params = new URLSearchParams(window.location.search || "");
+            return {
+                utm_source: params.get("utm_source") || "",
+                utm_medium: params.get("utm_medium") || "",
+                utm_campaign: params.get("utm_campaign") || "",
+                utm_term: params.get("utm_term") || "",
+                utm_content: params.get("utm_content") || "",
+                page_source: window.location.pathname || "/",
+                referrer: document.referrer || ""
+            };
+        }
+
+        function fillSelectOptions(selectEl, optionsArr) {
+            selectEl.innerHTML = optionsArr.map(opt => `<option value="${opt}">${opt}</option>`).join("");
+        }
+
+        function onDynamicSelectChange() {
+            const sel = document.getElementById("kg-dyn-select");
+            const noteBox = document.getElementById("kg-dyn-note-box");
+            if (!sel || !noteBox) return;
+
+            if (currentBookingMeta.formatKey === "vastu") {
+                const info = VASTU_TIER_MAP[sel.value];
+                if (info) {
+                    currentBookingMeta.dealValue = info.amount;
+                    noteBox.innerHTML = info.note;
+                    noteBox.classList.remove("hidden");
+                }
+            }
+        }
+
+        function openBookingModal(formatKey, packageTitle, dealValue = "0") {
+            const modal = document.getElementById("kaalgya-smart-modal");
+            if (!modal) return;
+
+            currentBookingMeta = {
+                formatKey: formatKey || "complete_analysis",
+                packageTitle: packageTitle || "Consultation",
+                dealValue: String(dealValue || "0")
+            };
+
+            document.getElementById("kg-modal-title").innerText = packageTitle || "परामर्श एवं बुकिंग";
+            document.getElementById("kg-form-status").className = "hidden text-xs font-semibold rounded-xl p-2.5";
+            document.getElementById("kg-form-status").innerText = "";
+
+            const selWrap = document.getElementById("kg-dyn-select-wrap");
+            const selLabel = document.getElementById("kg-dyn-select-label");
+            const selEl = document.getElementById("kg-dyn-select");
+
+            const extraWrap = document.getElementById("kg-dyn-extra-wrap");
+            const extraLabel = document.getElementById("kg-dyn-extra-label");
+            const extraEl = document.getElementById("kg-dyn-extra");
+
+            const noteBox = document.getElementById("kg-dyn-note-box");
+
+            selWrap.classList.add("hidden");
+            extraWrap.classList.add("hidden");
+            noteBox.classList.add("hidden");
+            extraEl.value = "";
+
+            if (formatKey === "brahmastra") {
+                document.getElementById("kg-modal-badge").innerText = "BRAHMASTRA VIDHANAM • SANKALP";
+                document.getElementById("kg-modal-subtitle").innerText = "प्रारंभिक दक्षिणा ₹5,00,000 से शुरू — संकल्प व स्थिति का संक्षिप्त विवरण दें।";
+                selWrap.classList.remove("hidden");
+                selLabel.innerText = "मुख्य संकल्प श्रेणी / Sankalp Goal *";
+                fillSelectOptions(selEl, [
+                    "करियर / मनचाहा पद",
+                    "धन / संपत्ति / आर्थिक उन्नति",
+                    "व्यवसाय विस्तार",
+                    "संतान सुख",
+                    "विरोध / प्रतिकूल परिस्थिति",
+                    "भूमि / भवन / वाहन",
+                    "अन्य विशेष संकल्प"
+                ]);
+                extraWrap.classList.remove("hidden");
+                extraLabel.innerText = "जन्म विवरण या शहर / Birth or City";
+                extraEl.placeholder = "DOB, Time, Place या शहर";
+            } else if (formatKey === "pratyangira") {
+                document.getElementById("kg-modal-badge").innerText = "VIPARITA PRATYANGIRA • MAHAKAVACH";
+                document.getElementById("kg-modal-subtitle").innerText = "प्रारंभिक दक्षिणा ₹71,000 से शुरू — रक्षा व साधना का उद्देश्य चुनें।";
+                selWrap.classList.remove("hidden");
+                selLabel.innerText = "उपासना / संरक्षण का विषय *";
+                fillSelectOptions(selEl, [
+                    "नकारात्मक प्रभाव / अभिचार आशंका",
+                    "लगातार अवरोध / भय या अशांति",
+                    "शत्रु / विरोधी बाधा",
+                    "पितृ / अशांत ऊर्जा शांति",
+                    "आध्यात्मिक कवच / शक्ति उपासना"
+                ]);
+                extraWrap.classList.remove("hidden");
+                extraLabel.innerText = "जन्म विवरण या शहर / Birth or City";
+                extraEl.placeholder = "DOB, Time, Place या शहर";
+            } else if (formatKey === "vastu") {
+                document.getElementById("kg-modal-badge").innerText = "MAHA VASTU RECTIFICATION";
+                document.getElementById("kg-modal-subtitle").innerText = "प्रॉपर्टी प्रकार चुनें — शुल्क क्षेत्र/मंजिल के अनुसार शुरू होता है।";
+                selWrap.classList.remove("hidden");
+                selLabel.innerText = "प्रॉपर्टी का प्रकार / Property Type *";
+                fillSelectOptions(selEl, Object.keys(VASTU_TIER_MAP));
+                extraWrap.classList.remove("hidden");
+                extraLabel.innerText = "शहर / स्थान व दिशा / Location & Facing *";
+                extraEl.placeholder = "जैसे: लखनऊ / गोमती नगर, पूर्व मुखी";
+                onDynamicSelectChange();
+            } else if (formatKey === "single_question") {
+                document.getElementById("kg-modal-badge").innerText = "SINGLE QUESTION • ₹1,100";
+                document.getElementById("kg-modal-subtitle").innerText = "किसी एक विशिष्ट प्रश्न पर स्पष्ट मार्गदर्शन के लिए विवरण भरें।";
+                selWrap.classList.remove("hidden");
+                selLabel.innerText = "प्रश्न का विषय / Topic *";
+                fillSelectOptions(selEl, ["करियर / नौकरी", "विवाह / दांपत्य", "व्यापार / धन", "स्वास्थ्य / मन", "अन्य"]);
+                extraWrap.classList.remove("hidden");
+                extraLabel.innerText = "जन्म विवरण / Birth Details (DOB, Time, Place) *";
+                extraEl.placeholder = "DD/MM/YYYY, HH:MM AM/PM, जन्म स्थान";
+            } else if (formatKey === "tantra_siddhi") {
+                document.getElementById("kg-modal-badge").innerText = "TANTRA / SIDDHI / DOSHA GUIDANCE";
+                document.getElementById("kg-modal-subtitle").innerText = "तंत्र समस्या, सिद्धि मार्गदर्शन या दोष निवारण हेतु विवरण चुनें।";
+                selWrap.classList.remove("hidden");
+                selLabel.innerText = "मार्गदर्शन का प्रकार / Guidance Type *";
+                fillSelectOptions(selEl, [
+                    "तंत्र-बाधा / नकारात्मक ऊर्जा शंका",
+                    "सिद्धि / साधना मार्गदर्शन",
+                    "दोष निवारण (कालसर्प / पितृ / मांगलिक)",
+                    "ग्रह शांति अनुष्ठान"
+                ]);
+                extraWrap.classList.remove("hidden");
+                extraLabel.innerText = "जन्म विवरण / Birth Details (DOB, Time, Place)";
+                extraEl.placeholder = "DD/MM/YYYY, HH:MM AM/PM, जन्म स्थान";
+            } else {
+                document.getElementById("kg-modal-badge").innerText = "COMPLETE ANALYSIS & CONSULTATION";
+                document.getElementById("kg-modal-subtitle").innerText = "संपूर्ण कुंडली विश्लेषण व परामर्श के लिए जन्म विवरण दें।";
+                extraWrap.classList.remove("hidden");
+                extraLabel.innerText = "जन्म विवरण / Birth Details (DOB, Time, Place) *";
+                extraEl.placeholder = "DD/MM/YYYY, HH:MM AM/PM, जन्म स्थान";
+            }
+
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
+
+        function closeKaalgyaModal() {
+            const modal = document.getElementById("kaalgya-smart-modal");
+            if (modal) {
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }
+        }
+
+        async function submitKaalgyaBooking(e) {
+            e.preventDefault();
+            const statusEl = document.getElementById("kg-form-status");
+            const submitBtn = document.getElementById("kg-f-submit");
+
+            const name = document.getElementById("kg-f-name").value.trim();
+            const phone = document.getElementById("kg-f-phone").value.trim();
+            const email = document.getElementById("kg-f-email").value.trim();
+            const selWrap = document.getElementById("kg-dyn-select-wrap");
+            const extraWrap = document.getElementById("kg-dyn-extra-wrap");
+
+            const contextOption = (!selWrap.classList.contains("hidden")) ? document.getElementById("kg-dyn-select").value : "";
+            const extraVal = (!extraWrap.classList.contains("hidden")) ? document.getElementById("kg-dyn-extra").value.trim() : "";
+            const message = document.getElementById("kg-f-message").value.trim();
+
+            const utm = getUtmParams();
+            const payload = {
+                type: "booking_lead",
+                format_key: currentBookingMeta.formatKey,
+                service_interest: currentBookingMeta.packageTitle,
+                package_title: currentBookingMeta.packageTitle,
+                deal_value: currentBookingMeta.dealValue,
+                context_option: contextOption,
+                location_property: currentBookingMeta.formatKey === "vastu" ? extraVal : "",
+                gotra_birth: currentBookingMeta.formatKey !== "vastu" ? extraVal : "",
+                name: name,
+                phone: phone,
+                email: email,
+                message: message,
+                utm_source: utm.utm_source,
+                utm_medium: utm.utm_medium,
+                utm_campaign: utm.utm_campaign,
+                utm_term: utm.utm_term,
+                utm_content: utm.utm_content,
+                page_source: utm.page_source,
+                referrer: utm.referrer
+            };
+
+            submitBtn.disabled = true;
+            const origText = submitBtn.innerText;
+            submitBtn.innerText = "भेजा जा रहा है...";
+
+            try {
+                await fetch(KAALGYA_BACKEND_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                });
+
+                statusEl.className = "text-xs font-semibold rounded-xl p-2.5 bg-emerald-500/15 border border-emerald-500/40 text-emerald-300";
+                statusEl.innerText = "✓ आपका विवरण दर्ज हो गया है। शीघ्र ही संपर्क किया जाएगा।";
+                document.getElementById("kg-smart-booking-form").reset();
+                setTimeout(() => closeKaalgyaModal(), 1400);
+            } catch (err) {
+                statusEl.className = "text-xs font-semibold rounded-xl p-2.5 bg-amber-500/15 border border-amber-500/40 text-amber-300";
+                statusEl.innerText = "नेटवर्क त्रुटि — कृपया व्हाट्सएप (+91 95067 95756) या ईमेल (kaalgya@gmail.com) से संपर्क करें।";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = origText;
+            }
+        }
     </script>
 </body>
 </html>
