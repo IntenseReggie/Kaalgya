@@ -1186,9 +1186,10 @@
             <div class="mb-4 pr-8">
                 <span class="text-[11px] font-mono uppercase tracking-widest text-gold-400 block mb-1">KAALGYA • ANUSHTHAN SANKALP</span>
                 <h3 id="an-modal-title" class="text-xl sm:text-2xl font-bold font-cinzel text-white">अनुष्ठान संकल्प बुकिंग</h3>
-                <p class="text-xs text-amber-200 mt-1 leading-relaxed">
-                    प्रत्येक अनुष्ठान की दक्षिणा निर्धारित स्तर (<strong>Simple, Moderate, Advance, Maha-Anushthan</strong>), मंत्र जाप संख्या और विधान के अनुसार तय होती है।
-                </p>
+                <div class="mt-2 p-3 rounded-2xl bg-obsidian-900/90 border border-gold-500/35 text-[11px] text-amber-200 space-y-1.5 leading-relaxed">
+                    <p>प्रत्येक अनुष्ठान अपने विशिष्ट उद्देश्य, शास्त्रोक्त विधान, मंत्र-जाप संख्या एवं अनुष्ठानिक प्रक्रियाओं के अनुसार भिन्न होता है। इसी आधार पर अनुष्ठानों की श्रेणियां <strong>Simple</strong>, <strong>Moderate</strong>, <strong>Advanced</strong> एवं <strong>Maha-Anushthan</strong> निर्धारित की गई हैं।</p>
+                    <p>अनुष्ठान की संपूर्ण रूपरेखा, आवश्यक सामग्री, आचार्य व्यवस्था एवं दक्षिणा का निर्धारण संबंधित विधान के अनुरूप किया जाता है।</p>
+                </div>
             </div>
 
             <form id="an-booking-form" onsubmit="submitAnushthanBooking(event)" class="space-y-3 text-xs">
@@ -1214,7 +1215,7 @@
                         <select id="an-f-level" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white font-semibold">
                             <option value="Simple">Simple (सामान्य / प्रारंभिक)</option>
                             <option value="Moderate" selected>Moderate (मध्यम / मानक)</option>
-                            <option value="Advance">Advance (विस्तृत जाप व हवन)</option>
+                            <option value="Advanced">Advanced (विस्तृत जाप व हवन)</option>
                             <option value="Maha-Anushthan">Maha-Anushthan (महाअनुष्ठान / पूर्ण विधान)</option>
                         </select>
                     </div>
@@ -1229,8 +1230,8 @@
                 </div>
 
                 <div>
-                    <label class="block text-gold-300 font-semibold mb-1">गोत्र व जन्म विवरण / Gotra & Birth Details</label>
-                    <input id="an-f-gotra" type="text" placeholder="गोत्र (यदि ज्ञात हो), DOB, Time, Place" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white">
+                    <label class="block text-gold-300 font-semibold mb-1">गोत्र / Gotra (वैकल्पिक / Optional)</label>
+                    <input id="an-f-gotra" type="text" placeholder="यदि ज्ञात हो तो गोत्र लिखें (अनिवार्य नहीं)" class="w-full px-3.5 py-2.5 rounded-xl bg-obsidian-900 border border-gold-500/30 text-white">
                 </div>
 
                 <div>
@@ -1275,6 +1276,7 @@
             const btn = document.getElementById("an-f-submit");
 
             const params = new URLSearchParams(window.location.search || "");
+            const gotraVal = document.getElementById("an-f-gotra").value.trim();
             const payload = {
                 type: "anushthan_booking",
                 format_key: "anushthan",
@@ -1282,7 +1284,7 @@
                 package_title: selectedAnushthanName,
                 anushthan_level: document.getElementById("an-f-level").value,
                 preferred_mode: document.getElementById("an-f-mode").value,
-                gotra_birth: document.getElementById("an-f-gotra").value.trim(),
+                gotra_birth: gotraVal ? ("Gotra: " + gotraVal) : "",
                 deal_value: 0,
                 name: document.getElementById("an-f-name").value.trim(),
                 phone: document.getElementById("an-f-phone").value.trim(),
